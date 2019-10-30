@@ -111,6 +111,77 @@ void set_dlp_led3(bool on)  // labelled as ISO15693
     }
 }
 
+void sleep(uint16_t ms)
+{
+    uint32_t currentTime = msSinceBoot;
+    while (msSinceBoot < (currentTime + ms));
+}
+
+void spi_test()
+{
+    // Quick test, write a byte to the RAM register (0x12) and read it back
+    bool ok;
+    uint8_t dummy;
+
+    // assert slave select
+    set_trf7970a_ss(true);
+    // need to wait 200ns before a clock edge
+    // CPU runs at 16MHz, so one cycle is 62.5ns
+    // not sure how many cycles there will be between ss active and the first clock edge
+    // but I'll throw in a couple of NOPs to be sure.
+    // scope says I have 1us here ATM (could change with optimisations / inlining)
+    asm("NOP\n"
+        "NOP\n");
+
+    UCB0TXBUF = 0x12;               // address mode, write, not continuous, RAM reg
+    while (!(IFG2 & UCB0TXIFG));    // wait for space in the fifo
+    UCB0TXBUF = 0xAB;               // data to write
+    while (UCB0STAT & UCBUSY);      // wait for the send to finish
+
+    // again there's a 200ns min between the last clock edge and the SS deasserting
+    // scope says I have 1us here ATM (could change with optimisations / inlining)
+    asm("NOP\n"
+        "NOP\n"
+        "NOP\n"
+        "NOP\n");
+
+    // deassert slave select
+    set_trf7970a_ss(false);
+
+    sleep(1000); // wait 1s
+
+    // read it back
+    // assert slave select
+    set_trf7970a_ss(true);
+    asm("NOP\n"
+        "NOP\n");
+
+    UCB0TXBUF = 0x40 | 0x12;        // address mode, read, not continuous, RAM reg
+    while (UCB0STAT & UCBUSY);      // wait for the send to finish
+    UCB0TXBUF = 0;                  // dummy write
+    while (UCB0STAT & UCBUSY);      // wait for the send to finish
+    ok = UCB0RXBUF == 0xAB;
+
+    asm("NOP\n"
+        "NOP\n"
+        "NOP\n"
+        "NOP\n");
+
+    // deassert slave select
+    set_trf7970a_ss(false);
+
+    uart_puts("SPI Test: ");
+    if (ok)
+    {
+        uart_puts("OK");
+    }
+    else
+    {
+        uart_puts("Fail");
+    }
+    uart_puts("\n");
+}
+
 /*
  *  ======== main ========
  */
@@ -131,13 +202,22 @@ int main( void )
     set_dlp_led2(false);
     set_dlp_led3(false);
 
-    // UART Tx test
-    uart_puts("Hello World!\n");
-
     // enable global interrupts
     __bis_SR_register(GIE);
     // enable WDT irq   (in timeout mode with a 2ms timeout, used to update msSinceBoot
     IE1 |= WDTIE;
+
+    // leave the TRF7970A in reset for 100ms
+    // then power it up and wait another 100ms (I can't find any timing info for reset, so 100ms seems safe)
+    sleep(100);
+    set_trf7970a_enable(true);
+    sleep(100);
+
+    // UART Tx test
+    uart_puts("Hello World!\n");
+
+    // SPI test
+    spi_test();
 
     // 16 bit CPU, so 32 bit ops are only to be used when necessary
     uint32_t lastHB = 0;
