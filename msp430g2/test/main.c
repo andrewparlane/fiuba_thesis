@@ -35,16 +35,19 @@ int main( void )
 
     // >>>>> Fill-in user code here <<<<<
 
+    // Note: I'm leaving this as close to the original generated code as possible
+    //       For ease of diffing, to see what various changes in the GRACE GUI do to the code
+    //       For real projects the code should be tidied up some more.
+
+    // UART Tx test
     uart_puts("Hello World!\n");
 
     // enable global interrupts
     __bis_SR_register(GIE);
-
-    // enable WDT irq
+    // enable WDT irq   (in timeout mode with a 2ms timeout, used to update msSinceBoot
     IE1 |= WDTIE;
 
     uint16_t lastHB = 0;
-
     while(1)
     {
         if ((msSinceBoot - lastHB) > 500)
@@ -54,7 +57,6 @@ int main( void )
             uart_puts("Toggle\n");
         }
     }
-
 
     return 0;
 }
