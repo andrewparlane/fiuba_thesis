@@ -40,9 +40,9 @@ void USCI_B0_graceInit(void)
     /* 
      * Control Register 0
      * 
-     * UCCKPH -- Data is captured on the first UCLK edge and changed on the following edge
+     * ~UCCKPH -- Data is changed on the first UCLK edge and captured on the following edge
      * ~UCCKPL -- Inactive state is low
-     * ~UCMSB -- LSB first
+     * UCMSB -- MSB first
      * ~UC7BIT -- 8-bit
      * UCMST -- Master mode
      * UCMODE_0 -- 3-Pin SPI
@@ -50,7 +50,7 @@ void USCI_B0_graceInit(void)
      * 
      * Note: ~<BIT> indicates that <BIT> has value zero
      */
-    UCB0CTL0 = UCCKPH | UCMST | UCMODE_0 | UCSYNC;
+    UCB0CTL0 = UCMSB | UCMST | UCMODE_0 | UCSYNC;
     
     /* 
      * Control Register 1
