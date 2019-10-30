@@ -27,6 +27,25 @@ void uart_puts(const char *s)
     }
 }
 
+void uart_put_hex_nibble(uint8_t b)
+{
+    b &= 0x0F;
+    if (b < 10)
+    {
+        uart_putc('0' + b);
+    }
+    else
+    {
+        uart_putc('A' + b - 10);
+    }
+}
+
+void uart_put_hex_byte(uint8_t b)
+{
+    uart_put_hex_nibble(b >> 4);
+    uart_put_hex_nibble(b);
+}
+
 void set_trf7970a_ss(bool en)   // slave select (en = 1 -> ss = 0 = chip active)
 {
     // P2.1
