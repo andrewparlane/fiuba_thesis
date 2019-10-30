@@ -9,7 +9,7 @@
  * ======== Grace related declaration ========
  */
 extern void Grace_init(void);
-extern volatile uint16_t msSinceBoot;
+extern volatile uint32_t msSinceBoot;
 
 void uart_putc(char c)
 {
@@ -47,7 +47,8 @@ int main( void )
     // enable WDT irq   (in timeout mode with a 2ms timeout, used to update msSinceBoot
     IE1 |= WDTIE;
 
-    uint16_t lastHB = 0;
+    // 16 bit CPU, so 32 bit ops are only to be used when necessary
+    uint32_t lastHB = 0;
     while(1)
     {
         if ((msSinceBoot - lastHB) > 500)

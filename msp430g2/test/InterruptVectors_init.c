@@ -38,7 +38,8 @@ void InterruptVectors_graceInit(void)
 /*
  *  ======== Watchdog Timer Interval Interrupt Handler Generation ========
  */
-uint16_t volatile msSinceBoot = 0;
+// 32 bit var (software emulation) - times out after ~49 days
+uint32_t volatile msSinceBoot = 0;
 void __attribute__ ((interrupt(WDT_VECTOR))) watchdog_isr (void)
 {
     /* USER CODE START (section: WDT_ISR_HOOK) */
