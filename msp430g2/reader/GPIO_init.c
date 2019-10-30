@@ -61,7 +61,7 @@ void GPIO_graceInit(void)
     P1SEL = BIT2 | BIT5 | BIT6 | BIT7;
 
     /* Port 1 Direction Register */
-    P1DIR = BIT0 | BIT6;
+    P1DIR = BIT6;
 
     /* Port 1 Interrupt Edge Select Register */
     P1IES = 0;

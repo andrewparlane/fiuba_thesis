@@ -198,7 +198,7 @@ int main( void )
     // Set up the DLP-7970ABP boosterpack
     set_trf7970a_ss(false);
     set_trf7970a_enable(false);
-    set_dlp_led1(true);
+    set_dlp_led1(false);
     set_dlp_led2(false);
     set_dlp_led3(false);
 
@@ -221,7 +221,7 @@ int main( void )
 
     // 16 bit CPU, so 32 bit ops are only to be used when necessary
     uint32_t lastHB = 0;
-    uint8_t dlp_leds = 0x01;
+    bool hb_led = false;
     while(1)
     {
         if ((msSinceBoot - lastHB) > 500)
@@ -229,18 +229,9 @@ int main( void )
             lastHB = msSinceBoot;
             uart_puts("Timeout\n");
 
-            // toggle LED
-            P1OUT ^= BIT0;
-
-            // update DLP LEDs
-            dlp_leds <<= 1;
-            if (dlp_leds > 0x04)
-            {
-                dlp_leds = 0x01;
-            }
-            set_dlp_led1(dlp_leds & 0x01);
-            set_dlp_led2(dlp_leds & 0x02);
-            set_dlp_led3(dlp_leds & 0x04);
+            // toggle heartbeat LED
+            hb_led = !hb_led;
+            set_dlp_led3(hb_led);
         }
     }
 
