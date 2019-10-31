@@ -25,7 +25,7 @@ INCLUDES        := -I $(GCC_MSP_INC_DIR) -I $(GCC_INC_DIR)
 default: $(TARGET).hex
 all: default
 
-SOURCEDIR	= .
+SOURCEDIR	= src
 BUILDDIR	= build
 SRC			= $(wildcard $(SOURCEDIR)/*.c)
 OBJECTS 	= $(patsubst $(SOURCEDIR)/%.c,$(BUILDDIR)/%.o,$(SRC))
