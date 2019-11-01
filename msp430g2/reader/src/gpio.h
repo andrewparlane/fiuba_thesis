@@ -13,6 +13,11 @@
 
 // see hardware.c for full pinout
 
+//  Pin 8   - P2.0  - IRQ (2)               - GPIO Input
+#define GPIO_TRF7970A_IRQ2_PORT     (P2IN)
+#define GPIO_TRF7970A_IRQ2_BIT      (BIT0)
+#define GPIO_TRF7970A_IRQ2_GET()    ((GPIO_TRF7970A_IRQ2_PORT) & (GPIO_TRF7970A_IRQ2_BIT))
+
 //  Pin 9   - P2.1  - SLAVE_SELECT          - GPIO Output (active low)
 #define GPIO_TRF7970A_SS_PORT       (P2OUT)
 #define GPIO_TRF7970A_SS_BIT        (BIT1)
@@ -45,6 +50,11 @@
 #define GPIO_ASSERT_LED2()          ((GPIO_LED2_PORT) |= (GPIO_LED2_BIT))
 #define GPIO_DEASSERT_LED2()        ((GPIO_LED2_PORT) &= ~(GPIO_LED2_BIT))
 #define GPIO_TOGGLE_LED2()          ((GPIO_LED2_PORT) ^= (GPIO_LED2_BIT))
+
+//  Pin 18  - P2.7  - IRQ (1)               - GPIO Input
+#define GPIO_TRF7970A_IRQ1_PORT     (P2IN)
+#define GPIO_TRF7970A_IRQ1_BIT      (BIT7)
+#define GPIO_TRF7970A_IRQ1_GET()    ((GPIO_TRF7970A_IRQ1_PORT) & (GPIO_TRF7970A_IRQ1_BIT))
 
 enum Led
 {

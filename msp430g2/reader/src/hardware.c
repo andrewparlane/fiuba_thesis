@@ -30,7 +30,7 @@
 //  Pin 15  - P1.7  - MOSI                  - USCI B0 SPI MOSI (sel = 2'b11)
 //  Pin 16  - RST   - RST                   - Not Used
 //  Pin 17  - TEST  - TEST                  - Not Used
-//  Pin 18  - XOUTR - IRQ (1)               - Not Used
+//  Pin 18  - XOUTR - IRQ (1)               - GPIO Input
 //  Pin 19  - XINR  - I/O_3                 - Not Used
 //  Pin 20  - GND   - GND                   - GND
 
