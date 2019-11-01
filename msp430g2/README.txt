@@ -23,3 +23,20 @@ test:
         LED1 is controlled by p1.0, which is the ULP Wakeup on the DLP-7970ABP booster pack board
             Not sure if this jumper being on or not will affect the TRF7970A, but might be worth
             making sure it's not there when in use with the booster pack.
+
+reader:
+    A project to read the radiation sensor tag.
+    It uses the DLP-7970ABP booster pack, with the TRF7970A to talk ISO 14443-4A
+    Then uses my custom protocol to request and read the sensor data.
+    This project can be used with the actual tag fabricated in an ASIC, or to a tag running in an FPGA.
+    In the case of the tag running in an FPGA, an analogue front end (AFE) must be used to convert the RF
+    signals into digital clock and data and send them to the FPGA, take the digital response and
+    send it back to the reader using load modulation. My intention is to use a second msp-exp430g2
+    + dlp-7970ABP setup as the AFE, however any other AFE will work providing it produces the correct
+    data signals.
+    Notes:
+        Requires the msp-exp430g2 + DLP-7970ABP.
+        Boths LED jumpers should not be present.
+        The UART jumpers should be in HW mode in order to access the debug UART interface.
+        There are two IRQ pins. My board uses IRQ1. However the schematic indicates that IRQ2
+            should be the default. If you use IRQ2 then you will need to modify the code or your board.
