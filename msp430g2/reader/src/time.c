@@ -26,7 +26,7 @@ void time_init(void)
 // 32 bit var (software emulation) - times out after ~49 days
 // Hmm, this isn't great, as there is a race condition here
 #warning TODO - change msSinceBoot to 16 bits, and figure out a solution for being accurate over longer times
-uint32_t volatile msSinceBoot = 0;
+static uint32_t volatile msSinceBoot = 0;
 static void __attribute__ ((interrupt(WDT_VECTOR))) watchdog_isr (void)
 {
     msSinceBoot += 2;
@@ -36,4 +36,9 @@ void sleep_ms(uint16_t ms)
 {
     uint32_t currentTime = msSinceBoot;
     while (msSinceBoot < (currentTime + ms));
+}
+
+uint32_t get_ms_since_boot()
+{
+    return msSinceBoot;
 }

@@ -20,7 +20,6 @@
 // Changelog:
 //      v0.1    - initial build
 
-extern uint32_t volatile msSinceBoot;
 
 int main( void )
 {
@@ -52,9 +51,9 @@ int main( void )
     uint32_t lastHB = 0;
     while(1)
     {
-        if ((msSinceBoot - lastHB) > 500)
+        if ((get_ms_since_boot() - lastHB) > 500)
         {
-            lastHB = msSinceBoot;
+            lastHB = get_ms_since_boot();
 
             // toggle heartbeat LED
             gpio_toggle_led(Led_HEARTBEET);
