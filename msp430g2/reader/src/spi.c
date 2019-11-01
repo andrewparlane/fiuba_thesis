@@ -13,6 +13,7 @@
 #include <msp430.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <string.h>
 
 void spi_init(void)
 {
@@ -32,11 +33,8 @@ void spi_init(void)
     UCB0CTL1 &= ~UCSWRST;
 }
 
-void spi_test(void)
+void spi_tfer_ext(const uint8_t *txBuf1, uint16_t txLen1, const uint8_t *txBuf2, uint16_t txLen2, uint8_t *rxBuf, uint16_t rxLen)
 {
-    // Quick test, write a byte to the RAM register (0x12) and read it back
-    bool ok;
-
     // assert slave select
     GPIO_ASSERT_TRF7970A_SS();
     // need to wait 200ns before a clock edge
@@ -44,54 +42,48 @@ void spi_test(void)
     // not sure how many cycles there will be between ss active and the first clock edge
     // but I'll throw in a couple of NOPs to be sure.
     // scope says I have 1us here ATM (could change with optimisations / inlining)
-    asm("NOP\n"
-        "NOP\n");
 
-    UCB0TXBUF = 0x12;               // address mode, write, not continuous, RAM reg
-    while (!(IFG2 & UCB0TXIFG));    // wait for space in the fifo
-    UCB0TXBUF = 0xAB;               // data to write
-    while (UCB0STAT & UCBUSY);      // wait for the send to finish
+    for (int i = 0; i < txLen1; i++)
+    {
+        // wait for space in the fifo
+        while (!(IFG2 & UCB0TXIFG));
 
-    // again there's a 200ns min between the last clock edge and the SS deasserting
-    // scope says I have 1us here ATM (could change with optimisations / inlining)
-    asm("NOP\n"
-        "NOP\n"
-        "NOP\n"
-        "NOP\n");
+        // send the data
+        UCB0TXBUF = txBuf1[i];
+    }
+
+    for (int i = 0; i < txLen2; i++)
+    {
+        // wait for space in the fifo
+        while (!(IFG2 & UCB0TXIFG));
+
+        // send the data
+        UCB0TXBUF = txBuf2[i];
+    }
+
+    // wait for the tx to finish before starting the rx
+    while (UCB0STAT & UCBUSY);
+
+    for (int i = 0; i < rxLen; i++)
+    {
+        // dummy write
+        UCB0TXBUF = 0;
+
+        // wait for the send to finish (and the rx data to be available)
+        while (UCB0STAT & UCBUSY);
+
+        // read the rx data
+        rxBuf[i] = UCB0RXBUF;
+    }
+
+    // again we need a 200ns delay here.
+    // Scope says we have ~1us ATM.
 
     // deassert slave select
     GPIO_DEASSERT_TRF7970A_SS();
+}
 
-    sleep_ms(1000); // wait 1s
-
-    // read it back
-    // assert slave select
-    GPIO_ASSERT_TRF7970A_SS();
-    asm("NOP\n"
-        "NOP\n");
-
-    UCB0TXBUF = 0x40 | 0x12;        // address mode, read, not continuous, RAM reg
-    while (UCB0STAT & UCBUSY);      // wait for the send to finish
-    UCB0TXBUF = 0;                  // dummy write
-    while (UCB0STAT & UCBUSY);      // wait for the send to finish
-    ok = UCB0RXBUF == 0xAB;
-
-    asm("NOP\n"
-        "NOP\n"
-        "NOP\n"
-        "NOP\n");
-
-    // deassert slave select
-    GPIO_DEASSERT_TRF7970A_SS();
-
-    uart_puts("SPI Test: ");
-    if (ok)
-    {
-        uart_puts("OK");
-    }
-    else
-    {
-        uart_puts("Fail");
-    }
-    uart_puts("\n");
+void spi_tfer(const uint8_t *txBuf, uint16_t txLen, uint8_t *rxBuf, uint16_t rxLen)
+{
+    spi_tfer_ext(txBuf, txLen, NULL, 0, rxBuf, rxLen);
 }

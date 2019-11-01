@@ -47,8 +47,6 @@ int main( void )
     uart_puts("Version " VERSION_STRING " built on " __DATE__ " at " __TIME__ "\n");
     uart_puts("======================================================================\n");
 
-    // SPI test
-    spi_test();
 
     // 16 bit CPU, so 32 bit ops are only to be used when necessary
     uint32_t lastHB = 0;
