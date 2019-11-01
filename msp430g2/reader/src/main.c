@@ -10,6 +10,7 @@
 #include "time.h"
 #include "hardware.h"
 #include "gpio.h"
+#include "trf7970a.h"
 
 #include <msp430.h>
 #include <stdint.h>
@@ -20,23 +21,29 @@
 // Changelog:
 //      v0.1    - initial build
 
+void poll_tags()
+{
+    // Check for other active RF fields
+    // we don't want to collide with another reader
+    // Note: this is more relevant for NFC when you can have peer-to-peer mode
+    //       but would still cause issues to have two active readers in the same area
+    if (trf7970a_detect_other_rf_fields())
+    {
+        uart_puts("RF field detected, staying offline to avoid collisions\n");
+        return;
+    }
+
+    // TODO
+}
 
 int main( void )
 {
     hardware_init();
 
-    // Set up the DLP-7970ABP boosterpack
-    GPIO_DEASSERT_TRF7970A_SS();
-    GPIO_DEASSERT_TRF7970A_EN();
+    // turn off the LEDs
     gpio_set_led(Led_0, false);
     gpio_set_led(Led_1, false);
     gpio_set_led(Led_2, false);
-
-    // leave the TRF7970A in reset for 100ms
-    // then power it up and wait another 100ms (I can't find any timing info for reset, so 100ms seems safe)
-    sleep_ms(100);
-    GPIO_ASSERT_TRF7970A_EN();
-    sleep_ms(100);
 
     uart_puts("======================================================================\n");
     uart_puts("MSP-EXP430G2 + DLP-7970ABP as a ISO 14443-4A reader\n");
@@ -45,7 +52,20 @@ int main( void )
     uart_puts("======================================================================\n");
     uart_puts("Version " VERSION_STRING " built on " __DATE__ " at " __TIME__ "\n");
     uart_puts("======================================================================\n");
+    uart_puts("\n");
 
+    // Initialise the TRF7970A
+    bool trf7970aOk = trf7970a_init();
+    uart_puts("\t\tTRF7970A: ");
+    if (trf7970aOk)
+    {
+        uart_puts("OK");
+    }
+    else
+    {
+        uart_puts("FAIL");
+    }
+    uart_puts("\n");
 
     // 16 bit CPU, so 32 bit ops are only to be used when necessary
     uint32_t lastHB = 0;
@@ -57,6 +77,8 @@ int main( void )
 
             // toggle heartbeat LED
             gpio_toggle_led(Led_HEARTBEET);
+
+            poll_tags();
         }
     }
 
