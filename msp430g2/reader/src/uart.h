@@ -15,5 +15,6 @@ void uart_putc(char c);
 void uart_puts(const char *s);
 void uart_put_hex_nibble(uint8_t b);
 void uart_put_hex_byte(uint8_t b);
+void uart_put_hex_word(uint16_t w);
 
 #endif

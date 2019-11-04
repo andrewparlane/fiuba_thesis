@@ -64,3 +64,9 @@ void uart_put_hex_byte(uint8_t b)
     uart_put_hex_nibble(b >> 4);
     uart_put_hex_nibble(b);
 }
+
+void uart_put_hex_word(uint16_t w)
+{
+    uart_put_hex_byte(w >> 8);
+    uart_put_hex_byte(w);
+}
