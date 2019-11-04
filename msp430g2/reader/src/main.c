@@ -11,6 +11,7 @@
 #include "hardware.h"
 #include "gpio.h"
 #include "trf7970a.h"
+#include "iso14443.h"
 
 #include <msp430.h>
 #include <stdint.h>
@@ -33,7 +34,7 @@ void poll_tags()
         return;
     }
 
-    // TODO
+    iso14443_scan_for_tags();
 }
 
 int main( void )
