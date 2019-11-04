@@ -138,18 +138,34 @@
 // API
 // ----------------------------------------------------------------------------
 
+enum TRF7970A_Status
+{
+    TRF7970A_Status_OK = 0,
+    TRF7970A_Status_TX_TIMEOUT,
+    TRF7970A_Status_RX_TIMEOUT,
+    TRF7970A_Status_TX_ERR,
+    TRF7970A_Status_RX_ERR,
+};
+
+
 // Register read / writes and Direct commands
 void trf7970a_send_direct_command(uint8_t cmd);
+
 void trf7970a_write_register(uint8_t addr, uint8_t val);
 void trf7970a_write_registers_cont(uint8_t addr, const uint8_t *buf, uint16_t len);
+
 uint8_t trf7970a_read_register(uint8_t addr);
 void trf7970a_read_register_cont(uint8_t addr, uint8_t *buf, uint16_t len);
 
-// FIFO access
-void trf7970a_tx_without_crc(const uint8_t *data, uint16_t len, uint8_t brokenBits);
+// Tx / Rx
+// txBuf is a buffer of length txLen bytes.
+// if txBrokenBits == 0, we transmit txLen bytes
+// else, we transmit (txLen-1) bytes + txBrokenBits bits (max 7 bits)
+enum TRF7970A_Status trf7970a_transmit_frame_wait_for_reply(bool withCRC, const uint8_t *txBuf, uint16_t txLen, uint8_t txBrokenBits, uint8_t *rxBuf, uint8_t rxBufLen);
 
 // High level API functions
 bool trf7970a_init(void);
 bool trf7970a_detect_other_rf_fields(void);
+void trf7970a_initialise_as_14443A_reader(void);
 
 #endif

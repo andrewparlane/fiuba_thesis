@@ -28,6 +28,77 @@ static void write_ram_byte(uint8_t val)
     trf7970a_write_register(TRF7970A_REG_RAM_1, val);
 }
 
+// data is a buffer of length len bytes.
+// if brokenBits == 0, we transmit len bytes
+// else, we transmit (len-1) bytes + brokenBits bits (max 7 bits)
+static void tx_internal(bool withCRC, const uint8_t *data, uint16_t len, uint8_t brokenBits)
+{
+    // The FIFO is 127 bytes long, I don't support sending more than that yet.
+    if ((len == 0) || (len > 127))
+    {
+        return;
+    }
+
+    if (brokenBits > 7)
+    {
+        return;
+    }
+
+    // Calculate the byte and bit lengths
+    // The length field is two bytes (see Table 6-57 and 6-58 in the TRF7970A datasheet)
+    //   1) 7:0 - num bytes to Tx, bits 11:4
+    //   2) 7:4 - num bytes to Tx, bits 3:0
+    //      3:1 - num broken bits to send
+    //        0 - send broken bits (0 -> whole number of bytes)
+    uint16_t bytes;
+    if (brokenBits == 0)
+    {
+        bytes = len;
+    }
+    else
+    {
+        bytes = len-1;
+        brokenBits = (brokenBits << 1) | 0x01;
+    }
+
+    // For this to work the TRF7970A_CMD_TX_WITH[OUT]_CRC, two length registers and the fifo data
+    // must be in the same transaction. The TRF7970A_CMD_RESET_FIFO can be separate but we may
+    // as well add it in.
+
+    uint8_t txBuf[5] =
+    {
+        // First reset the FIFO
+        TRF7970A_ADDR_CMD_BYTE_CMD(TRF7970A_CMD_RESET_FIFO),
+        // then send the Tx without CRC command
+        TRF7970A_ADDR_CMD_BYTE_CMD(withCRC ? TRF7970A_CMD_TX_WITH_CRC : TRF7970A_CMD_TX_WITHOUT_CRC),
+        // Write continuous, starting with the TX len 1 register
+        TRF7970A_ADDR_CMD_BYTE_WRITE_ADDR_CONT(TRF7970A_REG_TX_LEN_1),
+        // Tx len 1
+        (bytes >> 4) & 0xFF,
+        // Tx len 2
+        ((bytes & 0x0F) << 4) | brokenBits,
+    };
+
+    spi_tfer_ext(txBuf, 5, data, len, NULL, 0);
+}
+
+static uint8_t rx_internal(uint8_t *rxBuf, uint8_t rxBufLen)
+{
+    // Rx Done, read data len
+    uint8_t rxLen = trf7970a_read_register(TRF7970A_REG_FIFO_STATUS);
+    if (rxLen > rxBufLen)
+    {
+        // buffer not big enough
+        uart_puts("Rx buff too small, fifo_status: ");
+        uart_put_hex_byte(rxLen);
+        uart_puts("\n");
+        return 0;
+    }
+
+    trf7970a_read_register_cont(TRF7970A_REG_FIFO_IO, rxBuf, rxLen);
+    return rxLen;
+}
+
 bool trf7970a_init(void)
 {
     // initialise our outputs
@@ -98,6 +169,17 @@ bool trf7970a_init(void)
     //    For details on this requirement, see the TRF7970A Silicon Errata.
     trf7970a_write_register(TRF7970A_REG_NFC_TARGET_DETECTION_LEVEL, 0x00);
 
+    // Disable FIFO IRQ for now, as we don't use it.
+    // The rest are left as defaults (all on except NORESP)
+    trf7970a_write_register(TRF7970A_REG_COLLISION_POSITION_INTERRUPT_MASK, 0x1E);
+
+    // Enable anticollision framing permenantly
+    // I'm not sure why you would need to disable this, since you can
+    // just say you are sending N bytes and 0 bits
+    // clear b1 of special func register to enable anticollision framing
+    // which lets us send broken byte frames
+    trf7970a_write_register(TRF7970A_REG_SPECIAL_FUNC_1, 0);
+
     return true;
 }
 
@@ -135,58 +217,86 @@ void trf7970a_read_register_cont(uint8_t addr, uint8_t *buf, uint16_t len)
     spi_tfer(&addr, 1, buf, len);
 }
 
-// data is a buffer of length len bytes.
-// if brokenBits == 0, we transmit len bytes
-// else, we transmit (len-1) bytes + brokenBits bits (max 7 bits)
-void trf7970a_tx_without_crc(const uint8_t *data, uint16_t len, uint8_t brokenBits)
+// txBuf is a buffer of length txLen bytes.
+// if txBrokenBits == 0, we transmit txLen bytes
+// else, we transmit (txLen-1) bytes + txBrokenBits bits (max 7 bits)
+enum TRF7970A_Status trf7970a_transmit_frame_wait_for_reply(bool withCRC, const uint8_t *txBuf, uint16_t txLen, uint8_t txBrokenBits, uint8_t *rxBuf, uint8_t rxBufLen)
 {
-    // The FIFO is 127 bytes long, I don't support sending more than that yet.
-    if ((len == 0) || (len > 127))
+    // clear the IRQ register and line
+    trf7970a_read_register(TRF7970A_REG_IRQ_STATUS);
+
+    // write to the FIFO
+    tx_internal(withCRC, txBuf, txLen, txBrokenBits);
+
+    // wait a bit for Tx to complete.
+    // Maybe should use IRQs
+    // and figure out how long we should expect to wait
+#warning TODO: Improve Tx timeouts
+    uint32_t startTime = get_ms_since_boot();
+    while (!GPIO_TRF7970A_IRQ1_GET() &&
+           get_ms_since_boot() < (startTime + 6));
+
+    uint8_t irqStatus = trf7970a_read_register(TRF7970A_REG_IRQ_STATUS);
+
+    // clear the fifo bit - we currently ignore this
+    irqStatus &= ~TRF7970A_REG_IRQ_STATUS_IRQ_FIFO;
+
+    if (irqStatus & ~(TRF7970A_REG_IRQ_STATUS_IRQ_TX))
     {
-        return;
+        // Unexpected IRQ occurred
+        uart_puts("TRF7970A IRQ status unexpected during Tx: ");
+        uart_put_hex_byte(irqStatus);
+        uart_puts("\n");
+
+        return TRF7970A_Status_TX_ERR;
     }
 
-    if (brokenBits > 7)
+    if (irqStatus != (TRF7970A_REG_IRQ_STATUS_IRQ_TX))
     {
-        return;
+        // Timeout
+        uart_puts("TRF7970A Tx Timeout\n");
+        return TRF7970A_Status_TX_TIMEOUT;
     }
 
-    // Calculate the byte and bit lengths
-    // The length field is two bytes (see Table 6-57 and 6-58 in the TRF7970A datasheet)
-    //   1) 7:0 - num bytes to Tx, bits 11:4
-    //   2) 7:4 - num bytes to Tx, bits 3:0
-    //      3:1 - num broken bits to send
-    //        0 - send broken bits (0 -> whole number of bytes)
-    uint16_t bytes;
-    if (brokenBits == 0)
+    // Tx done OK, reset the fifo
+    // this doesn't seem to be needed?
+    //trf7970a_send_direct_command(TRF7970A_CMD_RESET_FIFO);
+
+    // Wait for Rx
+#warning TODO: Improve Rx timeouts
+    startTime = get_ms_since_boot();
+    while (!GPIO_TRF7970A_IRQ1_GET() &&
+           get_ms_since_boot() < (startTime + 20));
+
+    irqStatus = trf7970a_read_register(TRF7970A_REG_IRQ_STATUS);
+
+    // clear the fifo bit - we currently ignore this
+    irqStatus &= ~TRF7970A_REG_IRQ_STATUS_IRQ_FIFO;
+
+    if (irqStatus & ~(TRF7970A_REG_IRQ_STATUS_IRQ_SRX))
     {
-        bytes = len;
+        // Unexpected IRQ occurred
+        uart_puts("TRF7970A IRQ status unexpected during Rx: ");
+        uart_put_hex_byte(irqStatus);
+        uart_puts("\n");
+
+        return TRF7970A_Status_RX_ERR;
     }
-    else
+
+    if (irqStatus != (TRF7970A_REG_IRQ_STATUS_IRQ_SRX))
     {
-        bytes = len-1;
-        brokenBits = (brokenBits << 1) | 0x01;
+        // Timeout
+        //uart_puts("TRF7970A Rx Timeout\n");
+        return TRF7970A_Status_RX_TIMEOUT;
     }
 
-    // For this to work the TRF7970A_CMD_TX_WITHOUT_CRC, two length registers and the fifo data
-    // must be in the same transaction. The TRF7970A_CMD_RESET_FIFO can be separate but we may
-    // as well add it in.
-
-    uint8_t txBuf[5] =
+    // read the data
+    if (rx_internal(rxBuf, rxBufLen) == 0)
     {
-        // First reset the FIFO
-        TRF7970A_ADDR_CMD_BYTE_CMD(TRF7970A_CMD_RESET_FIFO),
-        // then send the Tx without CRC command
-        TRF7970A_ADDR_CMD_BYTE_CMD(TRF7970A_CMD_TX_WITHOUT_CRC),
-        // Write continuous, starting with the TX len 1 register
-        TRF7970A_ADDR_CMD_BYTE_WRITE_ADDR_CONT(TRF7970A_REG_TX_LEN_1),
-        // Tx len 1
-        (bytes >> 4) & 0xFF,
-        // Tx len 2
-        ((bytes & 0x0F) << 4) | brokenBits,
-    };
+        return TRF7970A_Status_RX_ERR;
+    }
 
-    spi_tfer_ext(txBuf, 5, data, len, NULL, 0);
+    return TRF7970A_Status_OK;
 }
 
 bool trf7970a_detect_other_rf_fields(void)
@@ -226,4 +336,15 @@ bool trf7970a_detect_other_rf_fields(void)
         // No RF field detected
         return false;
     }
+}
+
+void trf7970a_initialise_as_14443A_reader(void)
+{
+    // Turn the RF field on.
+    // Also we are a 3V system
+    trf7970a_write_register(TRF7970A_REG_STATUS_CONTROL, 0x20);
+
+    // discard the Rx CRC (after it has been checked)
+    // and enable ISO 14443A mode with an Rx bit rate of 106Kbps
+    trf7970a_write_register(TRF7970A_REG_ISO_CONTROL, 0x88);
 }
