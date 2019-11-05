@@ -40,3 +40,18 @@ reader:
         The UART jumpers should be in HW mode in order to access the debug UART interface.
         There are two IRQ pins. My board uses IRQ1. However the schematic indicates that IRQ2
             should be the default. If you use IRQ2 then you will need to modify the code or your board.
+
+card_emulator:
+    A project to emulate an RFID card
+    It uses the DLP-7970ABP booster pack, with the TRF7970A to emulate an ISO 14443-4A card
+    It responds to my custom protocol for reading the radiation sensor.
+    The goal of this project is to learn more about how a tag responds, and the timings,
+    as a quick test to make sure the reader project is working correctly, and to confirm
+    that the TRF7970A is correctly set up in card emulation mode.
+    This project will eventually be replaced by the AFE project + my design running in an FPGA.
+    Notes:
+        Requires the msp-exp430g2 + DLP-7970ABP.
+        Boths LED jumpers should not be present.
+        The UART jumpers should be in HW mode in order to access the debug UART interface.
+        There are two IRQ pins. My board uses IRQ1. However the schematic indicates that IRQ2
+            should be the default. If you use IRQ2 then you will need to modify the code or your board.
