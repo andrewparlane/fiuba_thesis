@@ -16,6 +16,11 @@
 #include <stdbool.h>
 #include <string.h>
 
+// the IRQ status and the collision position registers clear on read,
+// so cache their values here
+static uint8_t _gIRQStatus = 0;
+static uint16_t _gCollisionPosition = 0;
+
 // This is just for testing the prescence of the TRF7970A ATM
 static uint8_t read_ram_byte(void)
 {
@@ -217,13 +222,26 @@ void trf7970a_read_register_cont(uint8_t addr, uint8_t *buf, uint16_t len)
     spi_tfer(&addr, 1, buf, len);
 }
 
-// txBuf is a buffer of length txLen bytes.
-// if txBrokenBits == 0, we transmit txLen bytes
-// else, we transmit (txLen-1) bytes + txBrokenBits bits (max 7 bits)
-enum TRF7970A_Status trf7970a_transmit_frame_wait_for_reply(bool withCRC, const uint8_t *txBuf, uint16_t txLen, uint8_t txBrokenBits, uint8_t *rxBuf, uint8_t rxBufLen)
+uint8_t trf7970a_get_last_irq_status(void)
 {
-    // clear the IRQ register and line
+    return _gIRQStatus;
+}
+
+void trf7970a_get_last_collision_position(uint8_t *byteIdx, uint8_t *bitIdx)
+{
+    // byte idx is encoded in the upper 6 bits.
+    // bit idx is encoded in the lower 4 bits.
+    // Nothing says this, but it's the only interpretation I can find that works.
+    *byteIdx = _gCollisionPosition >> 4;
+    *bitIdx = _gCollisionPosition & 0x07;   // can't be more than 7
+}
+
+enum TRF7970A_Status trf7970a_transmit_frame(bool withCRC, const uint8_t *txBuf, uint16_t txLen, uint8_t txBrokenBits)
+{
+    // clear the IRQ / collision position registers and IRQ line
     trf7970a_read_register(TRF7970A_REG_IRQ_STATUS);
+    trf7970a_read_register(TRF7970A_REG_COLLISION_POSITION);
+    trf7970a_read_register(TRF7970A_REG_COLLISION_POSITION_INTERRUPT_MASK);
 
     // write to the FIFO
     tx_internal(withCRC, txBuf, txLen, txBrokenBits);
@@ -236,22 +254,22 @@ enum TRF7970A_Status trf7970a_transmit_frame_wait_for_reply(bool withCRC, const 
     while (!GPIO_TRF7970A_IRQ1_GET() &&
            get_ms_since_boot() < (startTime + 6));
 
-    uint8_t irqStatus = trf7970a_read_register(TRF7970A_REG_IRQ_STATUS);
+    _gIRQStatus = trf7970a_read_register(TRF7970A_REG_IRQ_STATUS);
 
     // clear the fifo bit - we currently ignore this
-    irqStatus &= ~TRF7970A_REG_IRQ_STATUS_IRQ_FIFO;
+    _gIRQStatus &= ~TRF7970A_REG_IRQ_STATUS_IRQ_FIFO;
 
-    if (irqStatus & ~(TRF7970A_REG_IRQ_STATUS_IRQ_TX))
+    if (_gIRQStatus & ~(TRF7970A_REG_IRQ_STATUS_IRQ_TX))
     {
         // Unexpected IRQ occurred
         uart_puts("TRF7970A IRQ status unexpected during Tx: ");
-        uart_put_hex_byte(irqStatus);
+        uart_put_hex_byte(_gIRQStatus);
         uart_puts("\n");
 
         return TRF7970A_Status_TX_ERR;
     }
 
-    if (irqStatus != (TRF7970A_REG_IRQ_STATUS_IRQ_TX))
+    if (_gIRQStatus != (TRF7970A_REG_IRQ_STATUS_IRQ_TX))
     {
         // Timeout
         uart_puts("TRF7970A Tx Timeout\n");
@@ -262,28 +280,54 @@ enum TRF7970A_Status trf7970a_transmit_frame_wait_for_reply(bool withCRC, const 
     // this doesn't seem to be needed?
     //trf7970a_send_direct_command(TRF7970A_CMD_RESET_FIFO);
 
+    return TRF7970A_Status_OK;
+}
+
+enum TRF7970A_Status trf7970a_transmit_frame_wait_for_reply(bool withCRC, const uint8_t *txBuf, uint16_t txLen, uint8_t txBrokenBits, uint8_t *rxBuf, uint8_t rxBufLen)
+{
+    enum TRF7970A_Status res = trf7970a_transmit_frame(withCRC, txBuf, txLen, txBrokenBits);
+    if (res != TRF7970A_Status_OK)
+    {
+        return res;
+    }
+
     // Wait for Rx
 #warning TODO: Improve Rx timeouts
-    startTime = get_ms_since_boot();
+    uint32_t startTime = get_ms_since_boot();
     while (!GPIO_TRF7970A_IRQ1_GET() &&
            get_ms_since_boot() < (startTime + 20));
 
-    irqStatus = trf7970a_read_register(TRF7970A_REG_IRQ_STATUS);
+    _gIRQStatus = trf7970a_read_register(TRF7970A_REG_IRQ_STATUS);
 
     // clear the fifo bit - we currently ignore this
-    irqStatus &= ~TRF7970A_REG_IRQ_STATUS_IRQ_FIFO;
+    _gIRQStatus &= ~TRF7970A_REG_IRQ_STATUS_IRQ_FIFO;
 
-    if (irqStatus & ~(TRF7970A_REG_IRQ_STATUS_IRQ_SRX))
+    if (_gIRQStatus & (TRF7970A_REG_IRQ_STATUS_IRQ_COLLISION))
+    {
+        // collision
+        // get position
+        _gCollisionPosition = trf7970a_read_register(TRF7970A_REG_COLLISION_POSITION_INTERRUPT_MASK);
+        _gCollisionPosition = (_gCollisionPosition & 0x00C0) << 2;
+        _gCollisionPosition |= trf7970a_read_register(TRF7970A_REG_COLLISION_POSITION);
+
+        // clear the irq flag so we can easily check for other errors / rx done
+        _gIRQStatus &= ~(TRF7970A_REG_IRQ_STATUS_IRQ_COLLISION);
+
+        // note that there was a collision
+        res = TRF7970A_Status_RX_COLLISION;
+    }
+
+    if (_gIRQStatus & ~(TRF7970A_REG_IRQ_STATUS_IRQ_SRX))
     {
         // Unexpected IRQ occurred
         uart_puts("TRF7970A IRQ status unexpected during Rx: ");
-        uart_put_hex_byte(irqStatus);
+        uart_put_hex_byte(_gIRQStatus);
         uart_puts("\n");
 
         return TRF7970A_Status_RX_ERR;
     }
 
-    if (irqStatus != (TRF7970A_REG_IRQ_STATUS_IRQ_SRX))
+    if (_gIRQStatus != (TRF7970A_REG_IRQ_STATUS_IRQ_SRX))
     {
         // Timeout
         //uart_puts("TRF7970A Rx Timeout\n");
@@ -296,7 +340,7 @@ enum TRF7970A_Status trf7970a_transmit_frame_wait_for_reply(bool withCRC, const 
         return TRF7970A_Status_RX_ERR;
     }
 
-    return TRF7970A_Status_OK;
+    return res;
 }
 
 bool trf7970a_detect_other_rf_fields(void)
@@ -347,4 +391,9 @@ void trf7970a_initialise_as_14443A_reader(void)
     // discard the Rx CRC (after it has been checked)
     // and enable ISO 14443A mode with an Rx bit rate of 106Kbps
     trf7970a_write_register(TRF7970A_REG_ISO_CONTROL, 0x88);
+}
+
+void trf7970a_disable_rf_field(void)
+{
+    trf7970a_write_register(TRF7970A_REG_STATUS_CONTROL, 0x00);
 }

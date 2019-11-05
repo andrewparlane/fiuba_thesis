@@ -144,6 +144,7 @@ enum TRF7970A_Status
     TRF7970A_Status_TX_TIMEOUT,
     TRF7970A_Status_RX_TIMEOUT,
     TRF7970A_Status_TX_ERR,
+    TRF7970A_Status_RX_COLLISION,
     TRF7970A_Status_RX_ERR,
 };
 
@@ -157,15 +158,21 @@ void trf7970a_write_registers_cont(uint8_t addr, const uint8_t *buf, uint16_t le
 uint8_t trf7970a_read_register(uint8_t addr);
 void trf7970a_read_register_cont(uint8_t addr, uint8_t *buf, uint16_t len);
 
+uint8_t trf7970a_get_last_irq_status(void);
+// only valid after a return of TRF7970A_Status_RX_COLLISION
+void trf7970a_get_last_collision_position(uint8_t *byteIdx, uint8_t *bitIdx);
+
 // Tx / Rx
 // txBuf is a buffer of length txLen bytes.
 // if txBrokenBits == 0, we transmit txLen bytes
 // else, we transmit (txLen-1) bytes + txBrokenBits bits (max 7 bits)
+enum TRF7970A_Status trf7970a_transmit_frame(bool withCRC, const uint8_t *txBuf, uint16_t txLen, uint8_t txBrokenBits);
 enum TRF7970A_Status trf7970a_transmit_frame_wait_for_reply(bool withCRC, const uint8_t *txBuf, uint16_t txLen, uint8_t txBrokenBits, uint8_t *rxBuf, uint8_t rxBufLen);
 
 // High level API functions
 bool trf7970a_init(void);
 bool trf7970a_detect_other_rf_fields(void);
 void trf7970a_initialise_as_14443A_reader(void);
+void trf7970a_disable_rf_field(void);
 
 #endif

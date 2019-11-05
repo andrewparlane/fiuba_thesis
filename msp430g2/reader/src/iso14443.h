@@ -12,6 +12,7 @@
 #include <stdbool.h>
 
 // Only support type A for now
+#define ISO14443A_NUM_SUPPORTED_TAGS    (4)     // DLP can't seem to read more than 2
 
 // --------------------------------------------------------
 // Short frames
@@ -47,8 +48,16 @@ struct ISO14443_AnticollisionSelect
                     (((num_uid_bits) % 8) |                             \
                      ((2 + ((num_uid_bits) >> 3)) << 4))
 
+#define ISO14443_ANTICOLLISION_SELECT_GET_NVB_BYTES(nvb)    ((nvb) >> 4)
+#define ISO14443_ANTICOLLISION_SELECT_GET_NVB_BITS(nvb)     ((nvb) & 0x0F)
+
 #define ISO14443_ANTICOLLISION_SELECT_CALC_BCC(uid)                     \
                     ((uid[0]) ^ (uid[1]) ^ (uid[2]) ^ (uid[3]))
+
+// --------------------------------------------------------
+// Standard frames
+// --------------------------------------------------------
+#define ISO14443_STANDARD_HLTA                              (0x0050)
 
 // --------------------------------------------------------
 // Tag responses
@@ -90,11 +99,17 @@ struct ISO14443_SAK
 #define ISO_14443_SAK_4_COMPAT_MASK                 (0x20)
 #define ISO_14443_SAK_CASCADE_MASK                  (0x04)
 
-
 // --------------------------------------------------------
 // API
 // --------------------------------------------------------
 
-bool iso14443_scan_for_tags(void);
+struct ISO14443A_Tag
+{
+    enum ISO14443_UID_Size  uidSize;
+    uint8_t                 uid[10];
+    uint8_t                 sak;
+};
+
+void iso14443_scan_for_tags(void);
 
 #endif
