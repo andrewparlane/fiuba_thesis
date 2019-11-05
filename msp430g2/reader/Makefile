@@ -1,10 +1,21 @@
 TARGET 				:= reader
 DEVICE				:= MSP430G2553
 
+SOURCEDIR		= src
+COMMONDIR 		= ../common
+BUILDDIR		= build
+COMMONBUILDDIR	= $(BUILDDIR)/common
+
+SRC				= $(wildcard $(SOURCEDIR)/*.c)
+COMMONSRC   	= $(wildcard $(COMMONDIR)/*.c)
+
+OBJECTS 		= $(patsubst $(SOURCEDIR)/%.c,$(BUILDDIR)/%.o,$(SRC))
+COMMONOBJECTS 	= $(patsubst $(COMMONDIR)/%.c,$(COMMONBUILDDIR)/%.o,$(COMMONSRC))
+
 GCC_DIR     		?= C:/ti/msp430-gcc/
 GCC_MSP_INC_DIR 	?= $(GCC_DIR)/include
 LDDIR       		:= $(GCC_MSP_INC_DIR)/$(DEVICE)
-RM          		:= rm -rf
+RM          		:= rm
 
 ######################################
 GCC_BIN_DIR     ?= $(GCC_DIR)/bin
@@ -17,7 +28,7 @@ MSPFLASHER		:= C:/ti/MSPFlasher_1.3.20/MSP430Flasher
 ######################################
 CFLAGS          := -Os -D__$(DEVICE)__ -mmcu=$(DEVICE) -g -ffunction-sections -fdata-sections -Wall -MMD -fdiagnostics-color=always
 LDFLAGS         := -T $(LDDIR).ld -L $(GCC_MSP_INC_DIR) -mmcu=$(DEVICE) -g -Wl,--gc-sections
-INCLUDES        := -I $(GCC_MSP_INC_DIR) -I $(GCC_INC_DIR)
+INCLUDES        := -I $(GCC_MSP_INC_DIR) -I $(GCC_INC_DIR) -I $(COMMONDIR)
 ######################################
 
 ######################################
@@ -25,21 +36,23 @@ INCLUDES        := -I $(GCC_MSP_INC_DIR) -I $(GCC_INC_DIR)
 default: $(TARGET).hex
 all: default
 
-SOURCEDIR	= src
-BUILDDIR	= build
-SRC			= $(wildcard $(SOURCEDIR)/*.c)
-OBJECTS 	= $(patsubst $(SOURCEDIR)/%.c,$(BUILDDIR)/%.o,$(SRC))
-
 # Include dependencies build by the -MMD in CFLAGS
 -include $(OBJECTS:.o=.d)
+-include $(COMMONOBJECTS:.o=.d)
 
 $(OBJECTS): $(BUILDDIR)/%.o : $(SOURCEDIR)/%.c
 	@echo ============================================
-	@echo Compiling $@
+	@echo Compiling $<
 	mkdir -p $(BUILDDIR)
 	$(CC) $(INCLUDES) $(CFLAGS) -c $< -o $@
 
-$(TARGET).out: $(OBJECTS)
+$(COMMONOBJECTS): $(COMMONBUILDDIR)/%.o : $(COMMONDIR)/%.c
+	@echo ============================================
+	@echo Compiling $<
+	mkdir -p $(COMMONBUILDDIR)
+	$(CC) $(INCLUDES) $(CFLAGS) -c $< -o $@
+
+$(TARGET).out: $(OBJECTS) $(COMMONOBJECTS)
 	@echo ============================================
 	@echo Linking objects and generating output binary
 	$(CC) $(LDFLAGS) $^ -o $(TARGET).out
@@ -51,7 +64,8 @@ program: $(TARGET).hex
 	$(MSPFLASHER) -w $(TARGET).hex -z [VCC]
 
 clean:
-	-$(RM) -rf $(BUILDDIR)
+	-$(RM) -f $(BUILDDIR)/*.o
+	-$(RM) -f $(BUILDDIR)/*.d
 	-$(RM) -f $(TARGET).out
 	-$(RM) -f $(TARGET).hex
 
