@@ -1,0 +1,18 @@
+# This file determines which board gets programmed with which firmware.
+# If you have multiple boards plugged in for example the reader and card_emulator,
+# Then you don't want to program the card emulator fw to the board that's acting
+# as the reader.
+
+# You should have one entry per target in the format:
+# target: DEVICE
+# You can get the correct device to use by only having one board plugged in
+# and commenting out that line. The makefile will then program whichever board is available.
+# From the command line output of MSP430Flasher you will see something like:
+# * Initializing interface @ COM11
+# or:
+# * Initializing interface @ HID0117:COM6
+# copy the part from after the @ and use that as your DEVICE
+
+#test:          COM11           # program whatever board is available for the test project
+reader:         COM11
+card_emulator:  HID0117:COM6

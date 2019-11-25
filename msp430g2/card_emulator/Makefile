@@ -17,6 +17,16 @@ GCC_MSP_INC_DIR 	?= $(GCC_DIR)/include
 LDDIR       		:= $(GCC_MSP_INC_DIR)/$(DEVICE)
 RM          		:= rm
 
+# Look in ../flasher_config for the correct COM port to use to program this device
+DEV := $(strip $(shell cat ../flasher_config | grep -ve '^\#' | grep -i $(TARGET) | awk ' { print $$2; } '))
+ifeq ($(DEV),)
+$(warning "No entry found in flasher config for target: $(TARGET), programming any available board")
+else
+MSPFLASHER_FLAGS	:= -i $(DEV)
+endif
+
+MSPFLASHER_FLAGS	+= -w $(TARGET).hex -z [VCC]
+
 ######################################
 GCC_BIN_DIR     ?= $(GCC_DIR)/bin
 GCC_INC_DIR     ?= $(GCC_DIR)/msp430-elf/include
@@ -61,7 +71,7 @@ $(TARGET).hex: $(TARGET).out
 	$(OBJCOPY) -O ihex $(TARGET).out $(TARGET).hex
 
 program: $(TARGET).hex
-	$(MSPFLASHER) -w $(TARGET).hex -z [VCC]
+	$(MSPFLASHER) $(MSPFLASHER_FLAGS)
 
 clean:
 	-$(RM) -f $(BUILDDIR)/*.o
