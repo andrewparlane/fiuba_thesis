@@ -1,82 +1,23 @@
-TARGET 				:= card_emulator
-DEVICE				:= MSP430G2553
+# Project Makefile should define the following vars:
+#	TARGET 			- project name
+# 	TOP_LEVEL_DIR	- relative path to the msp430g2/ folder
+#	SOURCEDIR		- where the project specific source is
+# 	BUILDDIR		- where to build the project
 
-SOURCEDIR		= src
-COMMONDIR 		= ../common
-BUILDDIR		= build
-COMMONBUILDDIR	= $(BUILDDIR)/common
+# It should provide the default / all rules as desired
+# and it should include $(TOP_LEVEL_DIR)/helper.mk where the magic happens
 
-SRC				= $(wildcard $(SOURCEDIR)/*.c)
-COMMONSRC   	= $(wildcard $(COMMONDIR)/*.c)
+# It should be possible to customise this Makefile to do anything project specific
 
-OBJECTS 		= $(patsubst $(SOURCEDIR)/%.c,$(BUILDDIR)/%.o,$(SRC))
-COMMONOBJECTS 	= $(patsubst $(COMMONDIR)/%.c,$(COMMONBUILDDIR)/%.o,$(COMMONSRC))
+TARGET 				= card_emulator
+TOP_LEVEL_DIR		= ..
 
-GCC_DIR     		?= C:/ti/msp430-gcc/
-GCC_MSP_INC_DIR 	?= $(GCC_DIR)/include
-LDDIR       		:= $(GCC_MSP_INC_DIR)/$(DEVICE)
-RM          		:= rm
-
-# Look in ../flasher_config for the correct COM port to use to program this device
-DEV := $(strip $(shell cat ../flasher_config | grep -ve '^\#' | grep -i $(TARGET) | awk ' { print $$2; } '))
-ifeq ($(DEV),)
-$(warning "No entry found in flasher config for target: $(TARGET), programming any available board")
-else
-MSPFLASHER_FLAGS	:= -i $(DEV)
-endif
-
-MSPFLASHER_FLAGS	+= -w $(TARGET).hex -z [VCC]
-
-######################################
-GCC_BIN_DIR     ?= $(GCC_DIR)/bin
-GCC_INC_DIR     ?= $(GCC_DIR)/msp430-elf/include
-######################################
-CC              := $(GCC_BIN_DIR)/msp430-elf-gcc
-GDB			    := $(GCC_BIN_DIR)/msp430-elf-gdb
-OBJCOPY			:= $(GCC_BIN_DIR)/msp430-elf-objcopy
-MSPFLASHER		:= C:/ti/MSPFlasher_1.3.20/MSP430Flasher
-######################################
-CFLAGS          := -Os -D__$(DEVICE)__ -mmcu=$(DEVICE) -g -ffunction-sections -fdata-sections -Wall -MMD -fdiagnostics-color=always
-LDFLAGS         := -T $(LDDIR).ld -L $(GCC_MSP_INC_DIR) -mmcu=$(DEVICE) -g -Wl,--gc-sections
-INCLUDES        := -I $(GCC_MSP_INC_DIR) -I $(GCC_INC_DIR) -I $(COMMONDIR)
-######################################
-
-######################################
+SOURCEDIR			= src
+BUILDDIR			= build
 
 default: $(TARGET).hex
 all: default
 
-# Include dependencies build by the -MMD in CFLAGS
--include $(OBJECTS:.o=.d)
--include $(COMMONOBJECTS:.o=.d)
+include ../helper.mk
 
-$(OBJECTS): $(BUILDDIR)/%.o : $(SOURCEDIR)/%.c
-	@echo ============================================
-	@echo Compiling $<
-	mkdir -p $(BUILDDIR)
-	$(CC) $(INCLUDES) $(CFLAGS) -c $< -o $@
-
-$(COMMONOBJECTS): $(COMMONBUILDDIR)/%.o : $(COMMONDIR)/%.c
-	@echo ============================================
-	@echo Compiling $<
-	mkdir -p $(COMMONBUILDDIR)
-	$(CC) $(INCLUDES) $(CFLAGS) -c $< -o $@
-
-$(TARGET).out: $(OBJECTS) $(COMMONOBJECTS)
-	@echo ============================================
-	@echo Linking objects and generating output binary
-	$(CC) $(LDFLAGS) $^ -o $(TARGET).out
-
-$(TARGET).hex: $(TARGET).out
-	$(OBJCOPY) -O ihex $(TARGET).out $(TARGET).hex
-
-program: $(TARGET).hex
-	$(MSPFLASHER) $(MSPFLASHER_FLAGS)
-
-clean:
-	-$(RM) -f $(BUILDDIR)/*.o
-	-$(RM) -f $(BUILDDIR)/*.d
-	-$(RM) -f $(TARGET).out
-	-$(RM) -f $(TARGET).hex
-
-.PHONY: default all clean program
+.PHONY: default all
