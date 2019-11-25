@@ -2,10 +2,11 @@
 # It has a bunch of common defines / rules
 # It should be included from the project specific makefile
 # With the following variables defined:
-#	TARGET 			- project name
-# 	TOP_LEVEL_DIR	- relative path to the msp430g2/ folder
-#	SOURCEDIR		- where the project specific source is
-# 	BUILDDIR		- where to build the project
+#	TARGET 					- project name
+# 	TOP_LEVEL_DIR			- relative path to the msp430g2/ folder
+#	SOURCEDIR				- where the project specific source is
+# 	BUILDDIR				- where to build the project
+# 	NO_COMMON (optional)	- define when you don't want to use the source in common/
 
 # All projects use the MSP430G2553 device for now.
 DEVICE				= MSP430G2553
@@ -19,6 +20,13 @@ COMMONOBJECTS 		= $(patsubst $(COMMONDIR)/%.c,$(COMMONBUILDDIR)/%.o,$(COMMONSRC)
 # The project specific code
 SRC					= $(wildcard $(SOURCEDIR)/*.c)
 OBJECTS 			= $(patsubst $(SOURCEDIR)/%.c,$(BUILDDIR)/%.o,$(SRC))
+
+# All objects for the target
+ifdef NO_COMMON
+	TARGET_OBJECTS	= $(OBJECTS)
+else
+	TARGET_OBJECTS	= $(COMMONOBJECTS) $(OBJECTS)
+endif
 
 # Look in ../flasher_config for the correct COM port to use to program this device
 DEV := $(strip $(shell cat ../flasher_config | grep -ve '^\#' | grep -i $(TARGET) | awk ' { print $$2; } '))
@@ -71,7 +79,7 @@ $(OBJECTS): $(BUILDDIR)/%.o : $(SOURCEDIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Link
-$(TARGET).out: $(COMMONOBJECTS) $(OBJECTS)
+$(TARGET).out: $(TARGET_OBJECTS)
 	@echo ============================================
 	@echo Linking objects and generating output binary
 	$(CC) $(LDFLAGS) $^ -o $(TARGET).out

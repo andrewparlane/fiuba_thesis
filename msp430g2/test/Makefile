@@ -1,55 +1,26 @@
-TARGET 				:= test
-DEVICE				:= MSP430G2553
+# Project Makefile should define the following vars:
+#	TARGET 					- project name
+# 	TOP_LEVEL_DIR			- relative path to the msp430g2/ folder
+#	SOURCEDIR				- where the project specific source is
+# 	BUILDDIR				- where to build the project
+# 	NO_COMMON (optional)	- define when you don't want to use the source in common/
 
-GCC_DIR     		?= C:/ti/msp430-gcc/
-GCC_MSP_INC_DIR 	?= $(GCC_DIR)/include
-LDDIR       		:= $(GCC_MSP_INC_DIR)/$(DEVICE)
-RM          		:= rm -rf
+# It should provide the default / all rules as desired
+# and it should include $(TOP_LEVEL_DIR)/helper.mk where the magic happens
 
-######################################
-GCC_BIN_DIR     ?= $(GCC_DIR)/bin
-GCC_INC_DIR     ?= $(GCC_DIR)/msp430-elf/include
-######################################
-CC              := $(GCC_BIN_DIR)/msp430-elf-gcc
-GDB			    := $(GCC_BIN_DIR)/msp430-elf-gdb
-OBJCOPY			:= $(GCC_BIN_DIR)/msp430-elf-objcopy
-MSPFLASHER		:= C:/ti/MSPFlasher_1.3.20/MSP430Flasher
-######################################
-CFLAGS          := -Os -D__$(DEVICE)__ -mmcu=$(DEVICE) -g -ffunction-sections -fdata-sections -Wall
-LDFLAGS         := -T $(LDDIR).ld -L $(GCC_MSP_INC_DIR) -mmcu=$(DEVICE) -g -Wl,--gc-sections
-INCLUDES        := -I $(GCC_MSP_INC_DIR) -I $(GCC_INC_DIR)
-######################################
+# It should be possible to customise this Makefile to do anything project specific
 
-######################################
+TARGET 				= test
+TOP_LEVEL_DIR		= ..
+
+SOURCEDIR			= src
+BUILDDIR			= build
+
+NO_COMMON			= 1
 
 default: $(TARGET).hex
 all: default
 
-SOURCEDIR	= .
-BUILDDIR	= build
-SRC			= $(wildcard $(SOURCEDIR)/*.c)
-OBJECTS 	= $(patsubst $(SOURCEDIR)/%.c,$(BUILDDIR)/%.o,$(SRC))
+include ../helper.mk
 
-$(OBJECTS): $(BUILDDIR)/%.o : $(SOURCEDIR)/%.c
-	@echo ============================================
-	@echo Compiling $@
-	mkdir -p $(BUILDDIR)
-	$(CC) $(INCLUDES) $(CFLAGS) -c $< -o $@
-
-$(TARGET).out: $(OBJECTS)
-	@echo ============================================
-	@echo Linking objects and generating output binary
-	$(CC) $(LDFLAGS) $^ -o $(TARGET).out
-
-$(TARGET).hex: $(TARGET).out
-	$(OBJCOPY) -O ihex $(TARGET).out $(TARGET).hex
-
-program: $(TARGET).hex
-	$(MSPFLASHER) -w $(TARGET).hex -z [VCC]
-
-clean:
-	-$(RM) -rf $(BUILDDIR)
-	-$(RM) -f $(TARGET).out
-	-$(RM) -f $(TARGET).hex
-
-.PHONY: default all clean program
+.PHONY: default all
