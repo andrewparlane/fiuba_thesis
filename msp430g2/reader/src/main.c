@@ -51,7 +51,7 @@ int main( void )
     uart_puts("Written by Andrew Parlane <andrew.parlane@gmail.com>\n");
     uart_puts("as part of my masters thesis for the University of Buenos Aires (UBA)\n");
     uart_puts("======================================================================\n");
-    uart_puts("Version " VERSION_STRING " built on " __DATE__ " at " __TIME__ "\n");
+    uart_puts("Version " VERSION_STRING " built on " __TIMESTAMP__ "\n");
     uart_puts("======================================================================\n");
     uart_puts("\n");
 
