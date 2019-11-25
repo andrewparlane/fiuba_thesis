@@ -17,7 +17,7 @@
 //  Pin 2   - P1.0  - ULP Wakeup            - GPIO Input
 //  Pin 3   - P1.1  - UART Rx               - Not Used
 //  Pin 4   - P1.2  - UART Tx               - USCI A0 UART Tx (sel = 2'b11)
-//  Pin 5   - P1.3  - I/O_5                 - GPIO Input (for now)
+//  Pin 5   - P1.3  - I/O_5                 - GPIO Input (for now) - has external pullup on ET board
 //  Pin 6   - P1.4  - I/O_2                 - GPIO Input (for now)
 //  Pin 7   - P1.5  - SPI_CLK               - USCI B0 SPI Clk (sel = 2'b11)
 //  Pin 8   - P2.0  - IRQ (2)               - GPIO Input
