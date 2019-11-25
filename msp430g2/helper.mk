@@ -78,11 +78,15 @@ $(OBJECTS): $(BUILDDIR)/%.o : $(SOURCEDIR)/%.c
 	mkdir -p $(BUILDDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+# Force a rebuild of timestamp.c
+timestamp:
+	touch $(COMMONDIR)/timestamp.c
+
 # Link
-$(TARGET).out: $(TARGET_OBJECTS)
+$(TARGET).out: timestamp $(TARGET_OBJECTS)
 	@echo ============================================
 	@echo Linking objects and generating output binary
-	$(CC) $(LDFLAGS) $^ -o $(TARGET).out
+	$(CC) $(LDFLAGS) $(TARGET_OBJECTS) -o $(TARGET).out
 
 # Create a .hex file
 $(TARGET).hex: $(TARGET).out
@@ -103,4 +107,4 @@ clean: common_clean
 	-$(RM) -f $(TARGET).out
 	-$(RM) -f $(TARGET).hex
 
-.PHONY: program common_clean clean
+.PHONY: timestamp program common_clean clean

@@ -12,6 +12,7 @@
 #include "gpio.h"
 #include "trf7970a.h"
 #include "iso14443.h"
+#include "timestamp.h"
 
 #include <msp430.h>
 #include <stdint.h>
@@ -36,7 +37,8 @@ int main( void )
     uart_puts("Written by Andrew Parlane <andrew.parlane@gmail.com>\n");
     uart_puts("as part of my masters thesis for the University of Buenos Aires (UBA)\n");
     uart_puts("======================================================================\n");
-    uart_puts("Version " VERSION_STRING " built on " __TIMESTAMP__ "\n");
+    uart_puts("Version " VERSION_STRING "\n");
+    output_build_timestamp();
     uart_puts("======================================================================\n");
     uart_puts("\n");
 
