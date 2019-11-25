@@ -128,11 +128,20 @@
 #define TRF7970A_REG_IRQ_STATUS_IRQ_TX                      (0x80)
 #define TRF7970A_REG_IRQ_STATUS_IRQ_SRX                     (0x40)
 #define TRF7970A_REG_IRQ_STATUS_IRQ_FIFO                    (0x20)
+
+// In RFID mode
 #define TRF7970A_REG_IRQ_STATUS_IRQ_CRC_ERR                 (0x10)
 #define TRF7970A_REG_IRQ_STATUS_IRQ_PARITY_ERR              (0x08)
 #define TRF7970A_REG_IRQ_STATUS_IRQ_FRAME_ERR               (0x04)
 #define TRF7970A_REG_IRQ_STATUS_IRQ_COLLISION               (0x02)
 #define TRF7970A_REG_IRQ_STATUS_IRQ_NORESP                  (0x01)
+
+// In NFC / card emulator mode
+#define TRF7970A_REG_IRQ_STATUS_IRQ_PROTOCOL_ERR            (0x10)
+#define TRF7970A_REG_IRQ_STATUS_IRQ_SDD_COMPLETE            (0x08)
+#define TRF7970A_REG_IRQ_STATUS_IRQ_RF_CHANGE               (0x04)
+#define TRF7970A_REG_IRQ_STATUS_IRQ_COLLISION_AVOIDANCE_OK  (0x02)
+#define TRF7970A_REG_IRQ_STATUS_IRQ_COLLISION_AVOIDANCE_ERR (0x01)
 
 // ----------------------------------------------------------------------------
 // API
