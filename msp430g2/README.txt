@@ -3,8 +3,24 @@ Software projects for the msp430g2 eval boards
 I'm building using Cygwin + Windows 10 but should be simple to adapt to other environments
 Requirements
     msp430-gcc:     https://www.ti.com/tool/MSP430-GCC-OPENSOURCE
-    msp430flasher:  https://www.ti.com/tool/MSP430-FLASHER (note you can use UniFlash if you want a GUI)
+    MSP430Flasher:  https://www.ti.com/tool/MSP430-FLASHER (note you can use UniFlash if you want a GUI)
     GRACE:          https://www.ti.com/tool/GRACE (I used this to help get started, but it's not necessary)
+
+Building:
+    Each project directory should have a Makefile which defines a couple of variables
+    and then includes helper.mk which builds everything.
+    To build a project go to it's directory in cygwin and run "make".
+    You can cleanup with "make clean".
+    You can also build each project via the top level Makefile (in this directory)
+    with for example "make reader" or "make card_emulator".
+
+Programming:
+    You can program the target board using "make program" from the project directory.
+    Or with for example "make reader_program" from the top level directory.
+    The helper.mk looks at flasher_config in this directory to work out which device should
+    be used to program the board. This allows you to have multiple boards connected at once
+    and to only ever program the correct project to the correct board. Please see notes in
+    flasher_config for more information.
 
 test:
     basic hello world project to test peripheral control.
