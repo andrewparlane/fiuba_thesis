@@ -324,7 +324,7 @@ static bool do_anticollision_loop(struct ISO14443A_Tag *tag)
     return true;
 }
 
-void iso14443_scan_for_tags(void)
+void iso14443a_scan_for_tags(void)
 {
     uint8_t idx = 0;
 

@@ -110,6 +110,6 @@ struct ISO14443A_Tag
     uint8_t                 sak;
 };
 
-void iso14443_scan_for_tags(void);
+void iso14443a_scan_for_tags(void);
 
 #endif

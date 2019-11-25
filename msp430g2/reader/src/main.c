@@ -34,7 +34,7 @@ void poll_tags()
         return;
     }
 
-    iso14443_scan_for_tags();
+    iso14443a_scan_for_tags();
 }
 
 int main( void )
