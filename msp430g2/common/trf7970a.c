@@ -393,6 +393,54 @@ void trf7970a_initialise_as_14443A_reader(void)
     trf7970a_write_register(TRF7970A_REG_ISO_CONTROL, 0x88);
 }
 
+void trf7970a_initialise_as_14443A_card_emulator(void)
+{
+    // Turn the RF field on.
+    trf7970a_write_register(TRF7970A_REG_STATUS_CONTROL, 0x20);
+
+    // Card emulation ISO 14443A mode
+    trf7970a_write_register(TRF7970A_REG_ISO_CONTROL, 0xA4);
+
+    // Disable auto SDD and set RF wakeup level (for the RF IRQ)
+    trf7970a_write_register(TRF7970A_REG_NFC_TARGET_DETECTION_LEVEL, 7);
+
+    // Enable Rx
+    trf7970a_send_direct_command(TRF7970A_CMD_EN_RECEIVER);
+
+    // clear the IRQ status reg
+    trf7970a_read_register(TRF7970A_REG_IRQ_STATUS);
+}
+
+void trf7970a_enable_auto_sdd(uint8_t uidLen, const uint8_t *uid)
+{
+    uint8_t reg = 0x27; // enable SDD, RF field level for wakeup 7
+    switch (uidLen)
+    {
+        case 4:     reg |= 0x00; break;
+        case 7:     reg |= 0x40; break;
+        case 10:    reg |= 0x80; break;
+        default:    return; // invalid
+    }
+
+    trf7970a_write_register(TRF7970A_REG_NFC_TARGET_DETECTION_LEVEL, reg);
+    trf7970a_write_registers_cont(TRF7970A_REG_NFCID1, uid, uidLen);
+}
+
+void trf7970a_set_iso_14443_4_compliance(bool compliant)
+{
+    trf7970a_write_register(TRF7970A_REG_14443B_TX_OPTIONS, compliant ? 0x01 : 0x00);
+}
+
+bool trf7970a_card_emulation_poll_irq(void)
+{
+    if (GPIO_TRF7970A_IRQ1_GET())
+    {
+        _gIRQStatus = trf7970a_read_register(TRF7970A_REG_IRQ_STATUS);
+        return true;
+    }
+    return false;
+}
+
 void trf7970a_disable_rf_field(void)
 {
     trf7970a_write_register(TRF7970A_REG_STATUS_CONTROL, 0x00);

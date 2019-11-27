@@ -112,4 +112,7 @@ struct ISO14443A_Tag
 
 void iso14443a_scan_for_tags(void);
 
+void iso14443a_initialise_in_card_emulation_mode(enum ISO14443_UID_Size uidSize, const uint8_t *uid);
+bool iso14443_card_emulation_poll(void);    // returns true if tag is active
+
 #endif

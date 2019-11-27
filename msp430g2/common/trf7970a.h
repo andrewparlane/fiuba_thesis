@@ -181,7 +181,14 @@ enum TRF7970A_Status trf7970a_transmit_frame_wait_for_reply(bool withCRC, const 
 // High level API functions
 bool trf7970a_init(void);
 bool trf7970a_detect_other_rf_fields(void);
+
 void trf7970a_initialise_as_14443A_reader(void);
+
+void trf7970a_initialise_as_14443A_card_emulator(void);
+void trf7970a_enable_auto_sdd(uint8_t uidLen, const uint8_t *uid);
+void trf7970a_set_iso_14443_4_compliance(bool compliant);
+bool trf7970a_card_emulation_poll_irq(void);
+
 void trf7970a_disable_rf_field(void);
 
 #endif

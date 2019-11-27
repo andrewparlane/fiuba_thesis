@@ -14,7 +14,13 @@
 #include <string.h>
 #include <stdbool.h>
 
-static struct ISO14443A_Tag _gTags[ISO14443A_NUM_SUPPORTED_TAGS];
+// Reader global vars
+static struct ISO14443A_Tag     _gTags[ISO14443A_NUM_SUPPORTED_TAGS];
+
+// Card Emulator global vars
+static enum ISO14443_UID_Size   _gUIDSize;
+static const uint8_t *          _gUIDptr;
+static bool                     _gTagActive = false;
 
 // CRC calculation code based on Annex B of ISO/IEC 14443-3
 static uint16_t computeCrc(const uint8_t *data, uint8_t len)
@@ -362,4 +368,83 @@ void iso14443a_scan_for_tags(void)
     }
 
     trf7970a_disable_rf_field();
+}
+
+void iso14443a_initialise_in_card_emulation_mode(enum ISO14443_UID_Size uidSize, const uint8_t *uid)
+{
+    // cache the arguments
+    _gUIDSize = uidSize;
+    _gUIDptr = uid;
+
+    uint8_t uidLen;
+    switch (uidSize)
+    {
+        case ISO14443_UID_Size_SINGLE:  uidLen = 4;  break;
+        case ISO14443_UID_Size_DOUBLE:  uidLen = 7;  break;
+        case ISO14443_UID_Size_TRIPLE:  uidLen = 10; break;
+        default:                        return; // invalid
+    }
+
+    trf7970a_initialise_as_14443A_card_emulator();
+    trf7970a_enable_auto_sdd(uidLen, uid);
+
+    // we only support 14443-4 compliant comms ATM
+    trf7970a_set_iso_14443_4_compliance(true);
+
+    _gTagActive = false;
+}
+
+bool iso14443_card_emulation_poll(void)
+{
+    if (trf7970a_card_emulation_poll_irq())
+    {
+        uint8_t irqStatus = trf7970a_get_last_irq_status();
+        if (irqStatus & (TRF7970A_REG_IRQ_STATUS_IRQ_RF_CHANGE))
+        {
+            uint8_t target_protocol = trf7970a_read_register(TRF7970A_REG_NFC_TARGET_PROTOCOL);
+            if (!(target_protocol & 0x80))
+            {
+                // field has gone away, reset
+                iso14443a_initialise_in_card_emulation_mode(_gUIDSize, _gUIDptr);
+            }
+        }
+
+        if (irqStatus & (TRF7970A_REG_IRQ_STATUS_IRQ_SDD_COMPLETE))
+        {
+            // SDD is complete
+
+            uint8_t target_protocol = trf7970a_read_register(TRF7970A_REG_NFC_TARGET_PROTOCOL);
+            if (target_protocol != 0x89)
+            {
+                // not ISO 14443A, or field has now gone away
+                // reset
+                iso14443a_initialise_in_card_emulation_mode(_gUIDSize, _gUIDptr);
+            }
+
+            // we have to wait a little bit because the SDD complete flag
+            // occurs before we have finished sending the SAK (in ISO 14443A) mode.
+            // if we don't sleep we change the settings during SAK transmission
+            // resulting in a CRC error
+#warning TODO: Sleep for less time
+            sleep_ms(4);
+
+            // reset the fifo
+            trf7970a_send_direct_command(TRF7970A_CMD_RESET_FIFO);
+
+            // disable anticollision frames
+            // we don't want to answer future SELECT / anticollision commands
+            trf7970a_write_register(TRF7970A_REG_SPECIAL_FUNC_1, 2);
+
+            // disable auto SDD
+            trf7970a_write_register(TRF7970A_REG_NFC_TARGET_DETECTION_LEVEL, 7);
+
+            // Comms should now contain CRCs
+            trf7970a_write_register(TRF7970A_REG_ISO_CONTROL, 0x24);
+
+            _gTagActive = true;
+            uart_puts("SDD complete\n");
+        }
+    }
+
+    return _gTagActive;
 }
