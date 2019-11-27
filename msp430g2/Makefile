@@ -1,3 +1,6 @@
+all: test reader card_emulator
+default: all
+
 test:
 	echo "Building the Test project"
 	make -C test/
