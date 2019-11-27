@@ -23,6 +23,9 @@
 // Changelog:
 //      v0.1    - initial build
 
+const enum ISO14443_UID_Size    _gUIDSize   = ISO14443_UID_Size_DOUBLE;
+const uint8_t                   _gUID[]     = {0x12, 0x34, 0x56, 0x78, 0xC0, 0xFF, 0xEE};
+
 int main( void )
 {
     hardware_init();
@@ -55,8 +58,11 @@ int main( void )
     }
     uart_puts("\n");
 
+    iso14443a_initialise_in_card_emulation_mode(_gUIDSize, _gUID);
+
     // 16 bit CPU, so 32 bit ops are only to be used when necessary
     uint32_t lastHB = 0;
+    uint32_t tagLastActive = 0;
     while(1)
     {
         if ((get_ms_since_boot() - lastHB) > 500)
@@ -65,6 +71,23 @@ int main( void )
 
             // toggle heartbeat LED
             gpio_toggle_led(Led_HEARTBEET);
+        }
+
+        if (iso14443_card_emulation_poll())
+        {
+            tagLastActive = get_ms_since_boot();
+        }
+
+        if ((tagLastActive != 0) &&
+            ((get_ms_since_boot() - tagLastActive) < 500))
+        {
+            // tag has been active in the last second
+            gpio_set_led(Led_TAG_ACTIVE, true);
+        }
+        else
+        {
+            // tag has not been active for at least a second
+            gpio_set_led(Led_TAG_ACTIVE, false);
         }
     }
 

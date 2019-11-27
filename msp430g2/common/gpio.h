@@ -62,7 +62,13 @@ enum Led
     Led_1,
     Led_2,
 
+    // Common
     Led_HEARTBEET = Led_2,
+
+    // Reader
+
+    // Card Emulation
+    Led_TAG_ACTIVE = Led_0,
 };
 
 void gpio_set_led(enum Led led, bool on);
