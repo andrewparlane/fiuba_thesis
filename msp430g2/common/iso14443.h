@@ -52,6 +52,8 @@ struct ISO14443_AnticollisionSelect
 #define ISO14443_ANTICOLLISION_SELECT_GET_NVB_BYTES(nvb)    ((nvb) >> 4)
 #define ISO14443_ANTICOLLISION_SELECT_GET_NVB_BITS(nvb)     ((nvb) & 0x0F)
 
+#define ISO14443_ANTICOLLISION_SELECT_CASCADE_TAG           (0x88)
+
 #define ISO14443_ANTICOLLISION_SELECT_CALC_BCC(uid)                     \
                     ((uid[0]) ^ (uid[1]) ^ (uid[2]) ^ (uid[3]))
 
@@ -83,10 +85,16 @@ enum ISO14443_UID_Size
 #define ISO_14443_ATQA_UID_SIZE_MASK                (0xC0)
 #define ISO_14443_ATQA_UID_SIZE_LSB                 (6)
 #define ISO_14443_ATQA_GET_UID_SIZE(atqa)           ((enum ISO14443_UID_Size)(((atqa) & (ISO_14443_ATQA_UID_SIZE_MASK)) >> (ISO_14443_ATQA_UID_SIZE_LSB)))
+#define ISO_14443_ATQA_SET_UID_SIZE(size)           (((size) << (ISO_14443_ATQA_UID_SIZE_LSB)) & (ISO_14443_ATQA_UID_SIZE_MASK))
 
 #define ISO_14443_ATQA_ANTICOLLISION_BITS_MASK      (0x1F)
 #define ISO_14443_ATQA_ANTICOLLISION_BITS_LSB       (0)
 #define ISO_14443_ATQA_GET_ANTICOLLISION_BITS(atqa) (((atqa) & (ISO_14443_ATQA_ANTICOLLISION_BITS_MASK)) >> (ISO_14443_ATQA_ANTICOLLISION_BITS_LSB))
+#define ISO_14443_ATQA_ATICOLLISION_BITS_1          (0x01)
+#define ISO_14443_ATQA_ATICOLLISION_BITS_2          (0x02)
+#define ISO_14443_ATQA_ATICOLLISION_BITS_4          (0x04)
+#define ISO_14443_ATQA_ATICOLLISION_BITS_8          (0x08)
+#define ISO_14443_ATQA_ATICOLLISION_BITS_10         (0x10)
 
 // SAK - 3 bytes
 struct ISO14443_SAK

@@ -14,13 +14,37 @@
 #include <string.h>
 #include <stdbool.h>
 
-// Reader global vars
+// ------------------------------------------------------------------
+// Reader global vars / defines
+// ------------------------------------------------------------------
 static struct ISO14443A_Tag     _gTags[ISO14443A_NUM_SUPPORTED_TAGS];
 
-// Card Emulator global vars
+// ------------------------------------------------------------------
+// Card Emulator global vars / defines
+// ------------------------------------------------------------------
+//#define USE_AUTO_SDD
+#define RX_BUFFER_LEN           (16)
+
+enum State
+{
+    State_POWER_OFF = 0,
+    State_IDLE,
+    State_HALT,
+    State_READY,
+    State_READY_STAR,
+    State_ACTIVE,
+    State_ACTIVE_STAR,
+    State_PROTOCOL
+};
+
 static enum ISO14443_UID_Size   _gUIDSize;
 static const uint8_t *          _gUIDptr;
-static bool                     _gTagActive = false;
+static uint8_t                  _gRxBuffer[RX_BUFFER_LEN];
+static enum State               _gTagState;
+
+#ifndef USE_AUTO_SDD
+static uint8_t                  _gTagCurrentACLevel;
+#endif
 
 // CRC calculation code based on Annex B of ISO/IEC 14443-3
 static uint16_t computeCrc(const uint8_t *data, uint8_t len)
@@ -385,30 +409,252 @@ void iso14443a_initialise_in_card_emulation_mode(enum ISO14443_UID_Size uidSize,
     // cache the arguments
     _gUIDSize   = uidSize;
     _gUIDptr    = uid;
+    _gTagState  = State_POWER_OFF;
 
     trf7970a_initialise_as_14443A_card_emulator();
+
+#ifdef USE_AUTO_SDD
+    // Enable auto-SDD
     trf7970a_enable_auto_sdd(get_uid_len(uidSize), uid);
 
     // we only support 14443-4 compliant comms ATM
     trf7970a_set_iso_14443_4_compliance(true);
+#endif
 
-    _gTagActive = false;
+    // check if we are already in an RF field
+    uint8_t target_protocol = trf7970a_read_register(TRF7970A_REG_NFC_TARGET_PROTOCOL);
+    if (target_protocol & 0x80)
+    {
+        _gTagState = State_IDLE;
+    }
 }
+
+#ifndef USE_AUTO_SDD
+static void card_emulation_handle_anticollision_select_cmd(struct ISO14443_AnticollisionSelect *acs, uint8_t rxLen)
+{
+    // + 2 for CRC
+    if ((rxLen < 2) || (rxLen > (sizeof(struct ISO14443_AnticollisionSelect) + 2)))
+    {
+        uart_puts("AC / SELECT of invalid size\n");
+        _gTagState = State_IDLE;
+        return;
+    }
+
+    // get our UID bytes for this level (and BCC)
+    uint8_t uid[5];
+    bool cascade = false;
+    enum ISO_14443_SelectLevel nextLevel = 0;
+    switch (acs->level)
+    {
+        case ISO_14443_SelectLevel_1:
+        {
+            if (_gUIDSize == ISO14443_UID_Size_SINGLE)
+            {
+                memcpy(uid, &_gUIDptr[0], 4);
+            }
+            else
+            {
+                uid[0] = (ISO14443_ANTICOLLISION_SELECT_CASCADE_TAG);
+                memcpy(&uid[1], &_gUIDptr[0], 3);
+                cascade = true;
+                nextLevel = ISO_14443_SelectLevel_2;
+            }
+            break;
+        }
+        case ISO_14443_SelectLevel_2:
+        {
+            if (_gUIDSize == ISO14443_UID_Size_SINGLE)
+            {
+                // can't have level 2 when we only have a single UID
+                _gTagState = State_IDLE;
+                uart_puts("level 2 but we are single UID\n");
+                return;
+            }
+            else if (_gUIDSize == ISO14443_UID_Size_DOUBLE)
+            {
+                memcpy(&uid[0], &_gUIDptr[3], 4);
+            }
+            else
+            {
+                uid[0] = (ISO14443_ANTICOLLISION_SELECT_CASCADE_TAG);
+                memcpy(&uid[1], &_gUIDptr[3], 3);
+                cascade = true;
+                nextLevel = ISO_14443_SelectLevel_3;
+            }
+            break;
+        }
+        case ISO_14443_SelectLevel_3:
+        {
+            if (_gUIDSize != ISO14443_UID_Size_TRIPLE)
+            {
+                // can't have level 3 when we only have a single / double UID
+                _gTagState = State_IDLE;
+                uart_puts("level 3 but we are not triple UID\n");
+                return;
+            }
+            else
+            {
+                memcpy(&uid[0], &_gUIDptr[6], 4);
+            }
+            break;
+        }
+        default:
+        {
+            uart_puts("Not AC / SELECT command\n");
+            _gTagState = State_IDLE;
+            return;
+        }
+    }
+
+    // calculate the BCC
+    uid[4] = ISO14443_ANTICOLLISION_SELECT_CALC_BCC(uid);
+
+    uint8_t nvb_bytes = ISO14443_ANTICOLLISION_SELECT_GET_NVB_BYTES(acs->nvb);
+    uint8_t nvb_bits = ISO14443_ANTICOLLISION_SELECT_GET_NVB_BITS(acs->nvb);
+    uint8_t expectedRxLen = nvb_bytes + ((nvb_bits != 0) ? 1 : 0);
+    if ((nvb_bytes == 7) && (nvb_bits == 0))
+    {
+        // Select command, includes the CRC
+        expectedRxLen += 2;
+    }
+
+    if (rxLen != expectedRxLen)
+    {
+        uart_puts("rxLen doesn't match NVB\n");
+        _gTagState = State_IDLE;
+        return;
+    }
+
+    // valid AC / select command
+    if (acs->level != _gTagCurrentACLevel)
+    {
+        uart_puts("unexpected AC level\n");
+        _gTagState = State_IDLE;
+        return;
+    }
+
+    // check if the UID / BCC matches ours
+    uint8_t i;
+    for (i = 0; i < nvb_bytes-2; i++)
+    {
+        if (acs->uid[i] != uid[i])
+        {
+            // not us
+            uart_puts("UID doesn't match\n");
+            _gTagState = State_IDLE;
+            return;
+        }
+    }
+
+    // received nvb_bits more bits (LSbs), create a mask for them
+    // 0 - 0
+    // 1 - 1
+    // 2 - 3
+    // 3 - 7
+    // ...
+    uint8_t mask = (1 << nvb_bits) - 1;
+    if ((acs->uid[i] & mask) != (uid[i] & mask))
+    {
+        // not us
+        uart_puts("UID doesn't match (bits)\n");
+        _gTagState = State_IDLE;
+        return;
+    }
+
+    // OK, this is still for us
+    // send our reply
+
+    if ((nvb_bytes == 7) && (nvb_bits == 0))
+    {
+        // Select command.
+        // Check the CRC
+        if (acs->crc != computeCrc((uint8_t *)acs, 7))
+        {
+            uart_puts("CRC mismatch\n");
+            _gTagState = State_IDLE;
+            return;
+        }
+        else
+        {
+            // finished this level
+
+            if (cascade)
+            {
+                _gTagCurrentACLevel = nextLevel;
+            }
+            else
+            {
+                // reset the fifo
+                trf7970a_send_direct_command(TRF7970A_CMD_RESET_FIFO);
+
+                // disable anticollision frames
+                // we don't want to answer future SELECT / anticollision commands
+                trf7970a_write_register(TRF7970A_REG_SPECIAL_FUNC_1, 2);
+
+                // Comms should now contain CRCs
+                trf7970a_write_register(TRF7970A_REG_ISO_CONTROL, 0x24);
+
+                _gTagState = State_ACTIVE;
+                uart_puts("SDD complete\n");
+            }
+
+            // Send our SAK
+            struct ISO14443_SAK sak;
+            sak.sak = (ISO_14443_SAK_4_COMPAT_MASK) | (cascade ? (ISO_14443_SAK_CASCADE_MASK) : 0);
+            trf7970a_transmit_frame(true, (uint8_t *)&sak, 1, 0);
+        }
+    }
+    else if (nvb_bits == 0)
+    {
+        // got a whole number of bytes of the UID, but not all, respond with the rest
+        trf7970a_transmit_frame(false, &uid[nvb_bytes-2], 7 - nvb_bytes, 0);
+    }
+    else
+    {
+        // I can't make this work, I spent a lot of time trying to figure out how to formulate
+        // the reply so that the reader gets the correct value, but failed.
+        // There were very strange things happening, such as sending all 0s
+        // resultad in the reader receiving 00010101011 (for the reader sending us 1 bit of the UID)
+        // or 0002020202 (for the reader sending us 2 bits of the UID etc...).
+        // Changing 1 bit of the reply could change multiple bits of what was received.
+        // The TRF7970A does not have a way to enforce the anti-collision timing restrictions
+        // stated in ISO/IEC 14443-3A, so it could be related to that, but I was getting the
+        // same results if I had uart comms between receiving and tranmitting the reply, or not.
+
+        uart_puts("Got AC with nvb_bits ");
+        uart_put_hex_byte(nvb_bits);
+        uart_puts(", currently don't support broken bytes replies\n");
+
+        _gTagState = State_IDLE;
+        return;
+    }
+}
+#endif
 
 bool iso14443_card_emulation_poll(void)
 {
     if (trf7970a_card_emulation_poll_irq())
     {
         uint8_t irqStatus = trf7970a_get_last_irq_status();
+        /* uart_puts("irq: ");
+        uart_put_hex_byte(irqStatus); */
         if (irqStatus & (TRF7970A_REG_IRQ_STATUS_IRQ_RF_CHANGE))
         {
             uint8_t target_protocol = trf7970a_read_register(TRF7970A_REG_NFC_TARGET_PROTOCOL);
+            /* uart_puts(" ");
+            uart_put_hex_byte(target_protocol); */
             if (!(target_protocol & 0x80))
             {
                 // field has gone away, reset
                 iso14443a_initialise_in_card_emulation_mode(_gUIDSize, _gUIDptr);
             }
+            else
+            {
+                // in an RF field
+                _gTagState = State_IDLE;
+            }
         }
+        //uart_puts("\n");
 
         if (irqStatus & (TRF7970A_REG_IRQ_STATUS_IRQ_SDD_COMPLETE))
         {
@@ -442,10 +688,113 @@ bool iso14443_card_emulation_poll(void)
             // Comms should now contain CRCs
             trf7970a_write_register(TRF7970A_REG_ISO_CONTROL, 0x24);
 
-            _gTagActive = true;
-            uart_puts("SDD complete\n");
+            _gTagState = State_ACTIVE;
+            uart_puts("Auto SDD complete\n");
+        }
+
+        if (irqStatus & TRF7970A_REG_IRQ_STATUS_IRQ_SRX)
+        {
+            // Receive
+            uint8_t rxLen = trf7970a_receive_frame(_gRxBuffer, (RX_BUFFER_LEN));
+            /* uart_puts("Rx ");
+            uart_put_hex_byte(rxLen);
+            uart_puts(" bytes,");
+            for (int i = 0; i < rxLen; i++)
+            {
+                uart_puts(" ");
+                uart_put_hex_byte(_gRxBuffer[i]);
+            }
+            uart_puts("\n"); */
+
+            switch (_gTagState)
+            {
+                case State_IDLE:
+                case State_HALT:
+                {
+#ifndef USE_AUTO_SDD
+                    // Expect REQA or WUPA
+                    if ((rxLen == 1) &&
+                        ((_gRxBuffer[0] == (ISO_14443_SHORT_REQA)) ||
+                         (_gRxBuffer[0] == (ISO_14443_SHORT_WUPA))))
+                    {
+                        if ((_gTagState == State_HALT) &&
+                            (_gRxBuffer[0] == (ISO_14443_SHORT_REQA)))
+                        {
+                            // we ignore REQA in the HALT state
+                        }
+                        else
+                        {
+                            // respond with our ATQA
+                            // I can't see anything that says which anticollision bit
+                            // I should use, so just using 04, as do all my other cards
+                            uint16_t atqa = (ISO_14443_ATQA_ATICOLLISION_BITS_4) |
+                                            (ISO_14443_ATQA_SET_UID_SIZE(_gUIDSize));
+                            if (trf7970a_transmit_frame(false, (uint8_t *)&atqa, 2, 0) != TRF7970A_Status_OK)
+                            {
+                                uart_puts("Failed to send ATQA\n");
+                            }
+                            else
+                            {
+                                _gTagState = State_READY;
+                                _gTagCurrentACLevel = ISO_14443_SelectLevel_1;
+                            }
+                        }
+                    }
+                    else
+#endif
+                    {
+                        // unexpected message, remain idle
+                        uart_puts("Unexpected Rx whilst idle / halted\n");
+                    }
+                    break;
+                }
+#ifndef USE_AUTO_SDD
+                case State_READY:
+                {
+                    struct ISO14443_AnticollisionSelect *acs = (struct ISO14443_AnticollisionSelect *)_gRxBuffer;
+                    card_emulation_handle_anticollision_select_cmd(acs, rxLen);
+                    break;
+                }
+#endif
+                case State_ACTIVE:
+                {
+                    // for now we only accept the HLTA command
+                    // the TRF7970A auto-checks the CRC and discards
+                    if ((rxLen == 2) &&
+                        ((*(uint16_t *)_gRxBuffer) == (ISO14443_STANDARD_HLTA)))
+                    {
+                        // HLTA command go to the HLT state
+                        _gTagState = State_HALT;
+
+                        // Note: once in the halt state, REQAs should be ignored
+                        //       and we should only respond to WUPA.
+                        //       The TRF7970A does not have a mode to support that
+                        //       whilst using auto-sdd. So we either re-enable SDD here
+                        //       and immediately get selected again with the next REQA
+                        //       or we have to deal with manual AC this time round.
+                        //       Ignoring for now, as my reader app doesn't do anything
+                        //       more with a tag once it sends HLTA. This may change later.
+
+                        uart_puts("Got HLTA\n");
+                    }
+                    else
+                    {
+                        // unexpected command, ignore
+                        // technically there are some commands here that would transitition us
+                        // to either the State_PROTOCOL or State_IDLE
+                    }
+
+                    break;
+                }
+                default:
+                {
+                    uart_puts("Got Rx while in unexpected state, ignoring\n");
+                }
+            }
         }
     }
 
-    return _gTagActive;
+    return ((_gTagState == State_ACTIVE) ||
+            (_gTagState == State_ACTIVE_STAR) ||
+            (_gTagState == State_PROTOCOL));
 }
