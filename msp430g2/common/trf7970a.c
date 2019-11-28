@@ -404,6 +404,17 @@ void trf7970a_initialise_as_14443A_card_emulator(void)
     // Disable auto SDD and set RF wakeup level (for the RF IRQ)
     trf7970a_write_register(TRF7970A_REG_NFC_TARGET_DETECTION_LEVEL, 7);
 
+    // Clear the target detection register (has to be a continuous read
+    uint8_t tmp[2];
+    trf7970a_read_register_cont(TRF7970A_REG_NFC_TARGET_PROTOCOL, tmp, 2);
+
+    // reset the fifo
+    trf7970a_send_direct_command(TRF7970A_CMD_RESET_FIFO);
+
+    // enable anticollision frames
+    // we want to answer future SELECT / anticollision commands
+    trf7970a_write_register(TRF7970A_REG_SPECIAL_FUNC_1, 0);
+
     // Enable Rx
     trf7970a_send_direct_command(TRF7970A_CMD_EN_RECEIVER);
 
