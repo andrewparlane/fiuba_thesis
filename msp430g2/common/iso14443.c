@@ -383,20 +383,11 @@ void iso14443a_scan_for_tags(void)
 void iso14443a_initialise_in_card_emulation_mode(enum ISO14443_UID_Size uidSize, const uint8_t *uid)
 {
     // cache the arguments
-    _gUIDSize = uidSize;
-    _gUIDptr = uid;
-
-    uint8_t uidLen;
-    switch (uidSize)
-    {
-        case ISO14443_UID_Size_SINGLE:  uidLen = 4;  break;
-        case ISO14443_UID_Size_DOUBLE:  uidLen = 7;  break;
-        case ISO14443_UID_Size_TRIPLE:  uidLen = 10; break;
-        default:                        return; // invalid
-    }
+    _gUIDSize   = uidSize;
+    _gUIDptr    = uid;
 
     trf7970a_initialise_as_14443A_card_emulator();
-    trf7970a_enable_auto_sdd(uidLen, uid);
+    trf7970a_enable_auto_sdd(get_uid_len(uidSize), uid);
 
     // we only support 14443-4 compliant comms ATM
     trf7970a_set_iso_14443_4_compliance(true);
