@@ -87,23 +87,6 @@ static void tx_internal(bool withCRC, const uint8_t *data, uint16_t len, uint8_t
     spi_tfer_ext(txBuf, 5, data, len, NULL, 0);
 }
 
-static uint8_t rx_internal(uint8_t *rxBuf, uint8_t rxBufLen)
-{
-    // Rx Done, read data len
-    uint8_t rxLen = trf7970a_read_register(TRF7970A_REG_FIFO_STATUS);
-    if (rxLen > rxBufLen)
-    {
-        // buffer not big enough
-        uart_puts("Rx buff too small, fifo_status: ");
-        uart_put_hex_byte(rxLen);
-        uart_puts("\n");
-        return 0;
-    }
-
-    trf7970a_read_register_cont(TRF7970A_REG_FIFO_IO, rxBuf, rxLen);
-    return rxLen;
-}
-
 bool trf7970a_init(void)
 {
     // initialise our outputs
@@ -335,12 +318,29 @@ enum TRF7970A_Status trf7970a_transmit_frame_wait_for_reply(bool withCRC, const 
     }
 
     // read the data
-    if (rx_internal(rxBuf, rxBufLen) == 0)
+    if (trf7970a_receive_frame(rxBuf, rxBufLen) == 0)
     {
         return TRF7970A_Status_RX_ERR;
     }
 
     return res;
+}
+
+uint8_t trf7970a_receive_frame(uint8_t *rxBuf, uint8_t rxBufLen)
+{
+    // Rx Done, read data len
+    uint8_t rxLen = trf7970a_read_register(TRF7970A_REG_FIFO_STATUS);
+    if (rxLen > rxBufLen)
+    {
+        // buffer not big enough
+        uart_puts("Rx buff too small, fifo_status: ");
+        uart_put_hex_byte(rxLen);
+        uart_puts("\n");
+        return 0;
+    }
+
+    trf7970a_read_register_cont(TRF7970A_REG_FIFO_IO, rxBuf, rxLen);
+    return rxLen;
 }
 
 bool trf7970a_detect_other_rf_fields(void)

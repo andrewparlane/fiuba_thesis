@@ -177,6 +177,8 @@ void trf7970a_get_last_collision_position(uint8_t *byteIdx, uint8_t *bitIdx);
 // else, we transmit (txLen-1) bytes + txBrokenBits bits (max 7 bits)
 enum TRF7970A_Status trf7970a_transmit_frame(bool withCRC, const uint8_t *txBuf, uint16_t txLen, uint8_t txBrokenBits);
 enum TRF7970A_Status trf7970a_transmit_frame_wait_for_reply(bool withCRC, const uint8_t *txBuf, uint16_t txLen, uint8_t txBrokenBits, uint8_t *rxBuf, uint8_t rxBufLen);
+// this does not block on the Rx IRQ, it just reads what's there now
+uint8_t trf7970a_receive_frame(uint8_t *rxBuf, uint8_t rxBufLen);
 
 // High level API functions
 bool trf7970a_init(void);
