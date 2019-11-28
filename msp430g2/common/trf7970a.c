@@ -161,11 +161,7 @@ bool trf7970a_init(void)
     // The rest are left as defaults (all on except NORESP)
     trf7970a_write_register(TRF7970A_REG_COLLISION_POSITION_INTERRUPT_MASK, 0x1E);
 
-    // Enable anticollision framing permenantly
-    // I'm not sure why you would need to disable this, since you can
-    // just say you are sending N bytes and 0 bits
-    // clear b1 of special func register to enable anticollision framing
-    // which lets us send broken byte frames
+    // Enable anticollision framing.
     trf7970a_write_register(TRF7970A_REG_SPECIAL_FUNC_1, 0);
 
     return true;
