@@ -139,6 +139,7 @@ static bool do_anticollision_loop(struct ISO14443A_Tag *tag)
         uart_puts("\n"); */
 
         uint8_t selReply[5];
+        memset(selReply, 0, 5);
         status = trf7970a_transmit_frame_wait_for_reply(false, (uint8_t *)&selCmd, txLen, bitsToSend, selReply, 5);
 
         if ((status == TRF7970A_Status_OK) ||
