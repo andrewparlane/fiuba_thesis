@@ -254,7 +254,9 @@ static bool do_anticollision_loop(struct ISO14443A_Tag *tag)
         // transmit select as a standard frame, with the full UID + BCC
         selCmd.nvb = ISO14443_ANTICOLLISION_SELECT_SET_NVB(40);
         selCmd.bcc = ISO14443_ANTICOLLISION_SELECT_CALC_BCC(selCmd.uid);
-        status = trf7970a_transmit_frame_wait_for_reply(true, (uint8_t *)&selCmd, sizeof(selCmd), 0, (uint8_t *)&sak, sizeof(struct ISO14443_SAK));
+        // don't need to set the CRC manually, the TRF7970A will send it for us
+        // hence the sizeof(selCmd) - 2
+        status = trf7970a_transmit_frame_wait_for_reply(true, (uint8_t *)&selCmd, sizeof(selCmd)-2, 0, (uint8_t *)&sak, sizeof(struct ISO14443_SAK));
 
         if (status == TRF7970A_Status_OK)
         {

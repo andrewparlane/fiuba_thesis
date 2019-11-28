@@ -33,11 +33,12 @@ enum ISO_14443_SelectLevel
 
 struct ISO14443_AnticollisionSelect
 {
-    uint8_t level;  // ISO_14443_SelectLevel
-    uint8_t nvb;    // format using ISO14443_ANTICOLLISION_SELECT_SET_NVB
-    uint8_t uid[4]; // UID bits
-    uint8_t bcc;    // exclusive OR of UID
-};
+    uint8_t     level;  // ISO_14443_SelectLevel
+    uint8_t     nvb;    // format using ISO14443_ANTICOLLISION_SELECT_SET_NVB
+    uint8_t     uid[4]; // UID bits
+    uint8_t     bcc;    // exclusive OR of UID
+    uint16_t    crc;
+} __attribute__((packed));
 
 // NVB is formatted as:
 // [7:4] - num valid bytes transmitted by the PCD (including sel and nvb, so minimum 2)
