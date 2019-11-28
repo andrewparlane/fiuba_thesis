@@ -74,7 +74,7 @@ int main( void )
     uint32_t lastHB = 0;
     while(1)
     {
-        if ((get_ms_since_boot() - lastHB) > 500)
+        if ((get_ms_since_boot() - lastHB) > 1000)
         {
             lastHB = get_ms_since_boot();
 
