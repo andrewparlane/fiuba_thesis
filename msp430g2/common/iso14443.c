@@ -321,6 +321,11 @@ static bool do_anticollision_loop(struct ISO14443A_Tag *tag)
         memset(selCmd.uid, 0, 4);
     }
 
+    // wait a little while before putting the tag to sleep
+    // this is because in the card_emulator project with auto-sdd
+    // we miss the HLTA command if it comes too quickly.
+    sleep_ms(100);
+
     // Put the card in HALT state while we scan for other tags
     uint16_t hltaCmd = ISO14443_STANDARD_HLTA;
     if (trf7970a_transmit_frame(true, (uint8_t *)&hltaCmd, 2, 0) != TRF7970A_Status_OK)
@@ -369,6 +374,8 @@ void iso14443a_scan_for_tags(void)
         }
         uart_puts("\n");
     }
+
+    sleep_ms(20); // wait a little bit before disabling the field
 
     trf7970a_disable_rf_field();
 }
