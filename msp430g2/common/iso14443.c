@@ -621,6 +621,36 @@ static void card_emulation_handle_anticollision_select_cmd(struct ISO14443_Antic
         // stated in ISO/IEC 14443-3A, so it could be related to that, but I was getting the
         // same results if I had uart comms between receiving and tranmitting the reply, or not.
 
+        // Note: I think the issue here is the parity bits.
+        //       if the reader sends us 2 bits of the UID the expected format is:
+        //
+        //       PCD -> PICC - LEVEL NVB bb
+        //       PICC -> PCD -             bbbbbb I bbbbbbbb P bbbbbbbb P bbbbbbbb P bbbbbbbb P
+        //
+        //       where b is a bit (0 or 1)
+        //       P is a parity bit
+        //       I is an ignored bit (parity bits of broken bytes are ignored)
+        //
+        //       Now what I think is happening is we are transmitting 4 bytes and 6 bits
+        //       so the TRF7970A adds the parity bits automatically after each byte.
+        //       giving us:
+        //
+        //       PCD -> PICC - LEVEL NVB bb
+        //       PICC -> PCD -             bbbbbbbb P bbbbbbbb P bbbbbbbb P bbbbbbbb P bbbbbb
+        //
+        //       So the PCD auto receives this data and ditches the expected parity bits.
+        //       except that was actual data, and uses the auto inserted parity bits as actual data.
+        //       which is why when the PICC sends: 0x00, 0x00, 0x00, 0x00, 0x00:
+        //
+        //       We want to send:               000000 I 00000000 1 00000000 1 00000000 1 00000000 1
+        //       The TRF7970A actually sends:   00000000 1 00000000 1 00000000 1 00000000 1 000000
+        //       which gets received as:      00000000 I 01000000 0 01000000 0 01000000 0 01000000
+        //       which is:                      0x00, 0x02, 0x02, 0x02, 0x02
+        //
+        //       The fix for this is to get the TRF7970A in card emulator mode
+        //       to not auto insert parity bits, or to get it to insert them in the correct
+        //       location. I have not found a way to do this yet.
+
         uart_puts("Got AC with nvb_bits ");
         uart_put_hex_byte(nvb_bits);
         uart_puts(", currently don't support broken bytes replies\n");
