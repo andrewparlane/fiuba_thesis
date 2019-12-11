@@ -600,7 +600,10 @@ static void card_emulation_handle_anticollision_select_cmd(struct ISO14443_Antic
 
             // Send our SAK
             struct ISO14443_SAK sak;
-            sak.sak = (ISO_14443_SAK_4_COMPAT_MASK) | (cascade ? (ISO_14443_SAK_CASCADE_MASK) : 0);
+            // send just the cascade flag if there's more UID to send
+            // else just the 14443-4 compatiblity flag.
+            // as per section 6.5.3.4 of 14443-3 2016
+            sak.sak = cascade ? (ISO_14443_SAK_CASCADE_MASK) : (ISO_14443_SAK_4_COMPAT_MASK);
             trf7970a_transmit_frame(true, (uint8_t *)&sak, 1, 0);
         }
     }
