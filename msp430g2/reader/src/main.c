@@ -29,11 +29,11 @@ void poll_tags()
     // we don't want to collide with another reader
     // Note: this is more relevant for NFC when you can have peer-to-peer mode
     //       but would still cause issues to have two active readers in the same area
-    if (trf7970a_detect_other_rf_fields())
+    /* if (trf7970a_detect_other_rf_fields())
     {
         uart_puts("RF field detected, staying offline to avoid collisions\n");
         return;
-    }
+    } */
 
     iso14443a_scan_for_tags();
 }
