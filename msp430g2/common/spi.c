@@ -33,7 +33,7 @@ void spi_init(void)
     UCB0CTL1 &= ~UCSWRST;
 }
 
-void spi_tfer_ext(const uint8_t *txBuf1, uint16_t txLen1, const uint8_t *txBuf2, uint16_t txLen2, uint8_t *rxBuf, uint16_t rxLen)
+void spi_tfer_ext(const uint8_t *txBuf1, uint16_t txLen1, const uint8_t *txBuf2, uint16_t txLen2, uint8_t *rxBuf, uint16_t rxLen, bool send_stop)
 {
     // assert slave select
     GPIO_ASSERT_TRF7970A_SS();
@@ -79,11 +79,14 @@ void spi_tfer_ext(const uint8_t *txBuf1, uint16_t txLen1, const uint8_t *txBuf2,
     // again we need a 200ns delay here.
     // Scope says we have ~1us ATM.
 
-    // deassert slave select
-    GPIO_DEASSERT_TRF7970A_SS();
+    if (send_stop)
+    {
+        // deassert slave select
+        GPIO_DEASSERT_TRF7970A_SS();
+    }
 }
 
 void spi_tfer(const uint8_t *txBuf, uint16_t txLen, uint8_t *rxBuf, uint16_t rxLen)
 {
-    spi_tfer_ext(txBuf, txLen, NULL, 0, rxBuf, rxLen);
+    spi_tfer_ext(txBuf, txLen, NULL, 0, rxBuf, rxLen, true);
 }

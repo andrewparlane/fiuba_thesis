@@ -9,6 +9,7 @@
 #define __SPI_H
 
 #include <stdint.h>
+#include <stdbool.h>
 
 void spi_init(void);
 
@@ -20,6 +21,8 @@ void spi_tfer(const uint8_t *txBuf, uint16_t txLen, uint8_t *rxBuf, uint16_t rxL
 // Tranmits txLen2 bytes of txBuf2, ignoring the rx data.
 // Followed by rxLen bytes of dummy writes, and reading the rx data into rxBuf
 // We have this, as it's common to set up a command buffer followed by data to write
-void spi_tfer_ext(const uint8_t *txBuf1, uint16_t txLen1, const uint8_t *txBuf2, uint16_t txLen2, uint8_t *rxBuf, uint16_t rxLen);
+// additionally the send_stop allows us to not deassert the slave select line after the TFER
+// this is needed to enter direct mode 0
+void spi_tfer_ext(const uint8_t *txBuf1, uint16_t txLen1, const uint8_t *txBuf2, uint16_t txLen2, uint8_t *rxBuf, uint16_t rxLen, bool send_stop);
 
 #endif

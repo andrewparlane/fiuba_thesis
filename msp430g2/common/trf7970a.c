@@ -84,7 +84,7 @@ static void tx_internal(bool withCRC, const uint8_t *data, uint16_t len, uint8_t
         ((bytes & 0x0F) << 4) | brokenBits,
     };
 
-    spi_tfer_ext(txBuf, 5, data, len, NULL, 0);
+    spi_tfer_ext(txBuf, 5, data, len, NULL, 0, true);
 }
 
 bool trf7970a_init(void)
@@ -182,7 +182,7 @@ void trf7970a_write_register(uint8_t addr, uint8_t val)
 void trf7970a_write_registers_cont(uint8_t addr, const uint8_t *buf, uint16_t len)
 {
     uint8_t addrByte = TRF7970A_ADDR_CMD_BYTE_WRITE_ADDR_CONT(addr);
-    spi_tfer_ext(&addrByte, 1, buf, len, NULL, 0);
+    spi_tfer_ext(&addrByte, 1, buf, len, NULL, 0, true);
 }
 
 uint8_t trf7970a_read_register(uint8_t addr)
