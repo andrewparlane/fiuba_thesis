@@ -193,4 +193,6 @@ bool trf7970a_card_emulation_poll_irq(void);
 
 void trf7970a_disable_rf_field(void);
 
+void trf7970a_enter_direct_mode(void);
+
 #endif

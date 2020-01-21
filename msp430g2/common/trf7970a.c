@@ -452,3 +452,13 @@ void trf7970a_disable_rf_field(void)
 {
     trf7970a_write_register(TRF7970A_REG_STATUS_CONTROL, 0x00);
 }
+
+void trf7970a_enter_direct_mode(void)
+{
+    uint8_t buf[3] = {TRF7970A_ADDR_CMD_BYTE_WRITE_ADDR_CONT(TRF7970A_REG_STATUS_CONTROL),
+                      0x60,     // rf field on, direct mode, 3.3V
+                      0x00};    // dumy cycles
+
+    // send the command but don't clear slave select
+    spi_tfer_ext(buf, 3, NULL, 0, NULL, 0, false);
+}
