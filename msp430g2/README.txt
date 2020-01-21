@@ -71,3 +71,10 @@ card_emulator:
         The UART jumpers should be in HW mode in order to access the debug UART interface.
         There are two IRQ pins. My board uses IRQ1. However the schematic indicates that IRQ2
             should be the default. If you use IRQ2 then you will need to modify the code or your board.
+
+card_emulator_dm0:
+    This project configures the TRF7970A in card emulation mode, and then enters direct mode 0.
+    It does nothing after that.
+    If you connect the MISO net to an FPGA you can use the TRF7970A as an analogue front end
+    and the FPGA as the digital back end. This lets me verify my design before I fabricate the ASIC
+    See the emulation/ top level directory for more information
