@@ -20,6 +20,8 @@
 
 #define VERSION_STRING "0.1"
 
+#define ONLY_POLL_ON_BUTTON_PRESS
+
 // Changelog:
 //      v0.1    - initial build
 
@@ -81,8 +83,18 @@ int main( void )
             // toggle heartbeat LED
             gpio_toggle_led(Led_HEARTBEET);
 
+#ifndef ONLY_POLL_ON_BUTTON_PRESS
+            poll_tags();
+#endif
+        }
+
+#ifdef ONLY_POLL_ON_BUTTON_PRESS
+        if (gpio_get_button_debounced())
+        {
+            uart_puts("polling\n");
             poll_tags();
         }
+#endif
     }
 
     return 0;
