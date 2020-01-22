@@ -13,6 +13,11 @@
 
 // see hardware.c for full pinout
 
+//  Pin 5   - P1.3  - BUTTON                - GPIO Input (active low)
+#define GPIO_TRF7970A_BUTTON_PORT   (P1IN)
+#define GPIO_TRF7970A_BUTTON_BIT    (BIT3)
+#define GPIO_TRF7970A_BUTTON_GET()  (!((GPIO_TRF7970A_BUTTON_PORT) & (GPIO_TRF7970A_BUTTON_BIT)))
+
 //  Pin 8   - P2.0  - IRQ (2)               - GPIO Input
 #define GPIO_TRF7970A_IRQ2_PORT     (P2IN)
 #define GPIO_TRF7970A_IRQ2_BIT      (BIT0)
@@ -73,5 +78,8 @@ enum Led
 
 void gpio_set_led(enum Led led, bool on);
 void gpio_toggle_led(enum Led led);
+
+// should be called every loop
+bool gpio_get_button_debounced(void);
 
 #endif
