@@ -16,4 +16,3 @@
 #test:              COM11           # program whatever board is available for the test project
 reader:             COM11
 card_emulator:      HID0117:COM6
-card_emulator_dm0:  HID0117:COM6
