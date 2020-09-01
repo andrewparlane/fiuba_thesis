@@ -151,7 +151,8 @@ ISO_IEC_14443A_BFM_SRCS =	$(wildcard $(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/inter
 							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/monitors/load_modulator_monitor.sv						\
 							$(wildcard $(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/analogue/*.sv)
 
-SYNTH_SRCS = 				$(wildcard $(ROOT_DIR)/$(SRC_DIR)/*.sv)
+SYNTH_SRCS = 				$(wildcard $(ROOT_DIR)/$(SRC_DIR)/pkg/*.sv) \
+							$(wildcard $(ROOT_DIR)/$(SRC_DIR)/*.sv)
 
 							$(wildcard $(ROOT_DIR)/$(BFM_SRC_DIR)/analogue/*.sv)	\
 							$(wildcard $(ROOT_DIR)/$(TB_SRC_DIR)/*.sv)
@@ -164,7 +165,7 @@ SRCS = 	$(ISO_IEC_14443A_SYNTH_SRCS) 	\
 # testbenches
 
 # This is used to generate the rules
-TBS		= radiation_sensor_top_tb
+TBS	= 	signal_control_tb
 
 # This is for TBs that need to do something custom, it's only used for list_tbs and all_tbs
 CUSTOM_TBS	=

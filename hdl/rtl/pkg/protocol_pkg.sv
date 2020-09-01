@@ -92,15 +92,13 @@ package protocol_pkg;
         // If this command is another SET_SIGNAL / AUTO_READ it will not be started.
         logic       already_busy;
 
-        // A pause that was determined to be a glitch rather than a genuine message was
-        // detected during the sync period of the previous SET_SIGNAL or AUTO_READ command.
-        // Since the sync period resets on a pause, it's possible that if this bit is set
-        // the operation may have not been synchronised as expected.
-        logic       glitch_detected;
-
-        // Similar to glitch_detected, but in this case the pause was detected during the
-        // timing1 or timing2 period.
-        logic       pause_during_auto_read_timing;
+        // During the sync period pauses are used to synchronise multiple PICCs so that readings
+        // can all occur simultaneously. However during timing1 / timing2 (AUTO_READ only),
+        // or while waiting for the ADC read to complete (SET_SIGNAL / AUTO_READ), we don't expect
+        // any pauses. Pauses during this period affect timing since the clock stops, and affects
+        // our voltage rails since there is no power transferred during a pause. Both of which <could>
+        // affect the accuracy of the results, and so we want to detect such pauses and alert the user.
+        logic       unexpected_pause;
 
         // An error for the current command has been detected:
         //  Invalid start state for an AUTO_READ command.
@@ -108,7 +106,7 @@ package protocol_pkg;
         logic       error;
 
         // currently unused flags
-        logic [2:0] padding;
+        logic [3:0] padding;
     } StatusFlags;
 
     // Arguments for the Command_SET_SIGNAL request (PCD -> PICC) message
