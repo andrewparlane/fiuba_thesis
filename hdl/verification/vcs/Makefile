@@ -125,13 +125,9 @@ ISO_IEC_14443A_BFM_SRCS =	$(wildcard $(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/inter
 							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/transactions/tx_bit_transaction.sv						\
 							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/transactions/tx_byte_transaction.sv						\
 							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/transaction_generators/transaction_generator.sv			\
-							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/transaction_generators/rx_transaction_generator.sv		\
-							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/transaction_generators/rx_byte_transaction_generator.sv	\
-							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/transaction_generators/rx_bit_transaction_generator.sv	\
-							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/transaction_generators/rx_pause_transaction_generator.sv	\
-							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/transaction_generators/tx_transaction_generator.sv		\
-							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/transaction_generators/tx_byte_transaction_generator.sv	\
-							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/transaction_generators/tx_bit_transaction_generator.sv	\
+							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/transaction_converters/transaction_converter.sv			\
+							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/transaction_converters/rx_transaction_converter.sv		\
+							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/transaction_converters/tx_transaction_converter.sv		\
 							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/sequences/sequence.sv										\
 							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/sequences/specific_target_sequence.sv						\
 							$(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/sequences/comms_tests_sequence.sv							\
