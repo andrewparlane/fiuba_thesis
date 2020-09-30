@@ -100,6 +100,7 @@ ISO_IEC_14443A_BFM_DIR	= $(ISO_IEC_14443A_ROOT_DIR)/verification/bfms
 
 SRC_DIR					= hdl/rtl
 VERIFICATION_DIR		= hdl/verification
+BFM_SRC_DIR				= $(VERIFICATION_DIR)/bfms
 TB_SRC_DIR				= $(VERIFICATION_DIR)/tb
 VCS_DIR					= $(VERIFICATION_DIR)/vcs
 
@@ -152,7 +153,8 @@ ISO_IEC_14443A_BFM_SRCS =	$(wildcard $(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/inter
 
 SYNTH_SRCS = 				$(wildcard $(ROOT_DIR)/$(SRC_DIR)/*.sv)
 
-TB_SRCS	=					$(wildcard $(ROOT_DIR)/$(TB_SRC_DIR)/*.sv)
+							$(wildcard $(ROOT_DIR)/$(BFM_SRC_DIR)/analogue/*.sv)	\
+							$(wildcard $(ROOT_DIR)/$(TB_SRC_DIR)/*.sv)
 
 SRCS = 	$(ISO_IEC_14443A_SYNTH_SRCS) 	\
 		$(SYNTH_SRCS)					\
@@ -346,7 +348,7 @@ clean:
 push_to_remote:
 	cd $(ROOT_DIR) && rsync -rRv --delete 													\
 		--exclude $(VCS_DIR)/work/ --exclude $(VCS_DIR)/csrc/ --exclude $(VCS_DIR)/*_simv* 	\
-		$(SRC_DIR) $(TB_SRC_DIR) $(VCS_DIR) 												\
+		$(SRC_DIR) $(TB_SRC_DIR) $(BFM_SRC_DIR) $(VCS_DIR) 												\
 		$(ISO_IEC_14443A_RTL_DIR) $(ISO_IEC_14443A_BFM_DIR)									\
 		$(REMOTE_SERVER):$(REMOTE_PATH)
 
