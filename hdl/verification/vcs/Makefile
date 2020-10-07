@@ -154,7 +154,9 @@ ISO_IEC_14443A_BFM_SRCS =	$(wildcard $(ROOT_DIR)/$(ISO_IEC_14443A_BFM_DIR)/inter
 SYNTH_SRCS = 				$(wildcard $(ROOT_DIR)/$(SRC_DIR)/pkg/*.sv) \
 							$(wildcard $(ROOT_DIR)/$(SRC_DIR)/*.sv)
 
+TB_SRCS	=					$(wildcard $(ROOT_DIR)/$(BFM_SRC_DIR)/helper/*.sv)		\
 							$(wildcard $(ROOT_DIR)/$(BFM_SRC_DIR)/analogue/*.sv)	\
+							$(wildcard $(ROOT_DIR)/$(BFM_SRC_DIR)/sequences/*.sv)	\
 							$(wildcard $(ROOT_DIR)/$(TB_SRC_DIR)/*.sv)
 
 SRCS = 	$(ISO_IEC_14443A_SYNTH_SRCS) 	\
@@ -165,7 +167,8 @@ SRCS = 	$(ISO_IEC_14443A_SYNTH_SRCS) 	\
 # testbenches
 
 # This is used to generate the rules
-TBS	= 	signal_control_tb
+TBS	= 	adapter_tb		\
+		signal_control_tb
 
 # This is for TBs that need to do something custom, it's only used for list_tbs and all_tbs
 CUSTOM_TBS	=
