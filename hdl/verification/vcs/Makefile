@@ -77,6 +77,27 @@
 #						user input in the UCLI. You can add breakpoints / step through, etc..
 #	GUI:				running "make GUI=1 X" will start VCS with the -gui flag, opening DVE
 #	RANDOM_SEED=X:		set the random number generator's seed to X
+#	DEBUG:				running "make DEBUUG=1 X" will start VCS with the -debug_acc+all argument
+#						this makes it slower to run, but provides more debug information.
+
+# Example use:
+#	On the local machine (if using VCS on a remote server) run:
+#		make push_to_remote
+#		make connect_to_remote
+#	On the remote machine:
+# 		To simulate the frame_decode_tb run:
+#			make frame_decode_tb
+#		Then to view the coverage report in DVE run:
+#			dve -dir frame_decode_tb/simv.vdb
+#		To simulate in the GUI (DVE) run (make sure you have X forwarding set up):
+#			make GUI=1 frame_decode_tb
+#		To simulate with a specific (e.g. 1234) random seed run:
+#			make RANDOM_SEED=1234 frame_decode_tb
+#		To simulate in debug mode:
+#			make DEBUG=1 frame_decode_tb
+#	To view the reports on the local machine, on the local machine run:
+# 		make pull_reports_from_remote
+#		Then open frame_decode_tb/reports/dashboard.html
 
 # Note: This is copied (with modifications) from the ISO/IEC 14443A IP core
 #		See: https://github.com/andrewparlane/iso_iec_14443a
@@ -221,8 +242,20 @@ COLOURISE = (set -o pipefail; $(1) | $(COLOURISE_SED_ALL))
 
 # arguments to the various commands
 VLOGAN_ARGS	= -full64 +lint=all +warn=all -sverilog
-VCS_ARGS	= -full64 +lint=all,noSVA-DIU,noSVA-LDA,noSVA-ADORM,noSVA-NSVU,noSVA-AECASR +warn=all -assert enable_diag -debug_acc+all -ntb_opts check=all
-SIMV_ARGS	= -assert global_finish_maxfail=10 -cm assert -ucli
+
+VCS_ARGS	= -full64 +lint=all,noSVA-DIU,noSVA-LDA,noSVA-ADORM,noSVA-NSVU,noSVA-AECASR \
+			  +warn=all -assert enable_diag -ntb_opts check=all							\
+			  -cm line+cond+fsm+tgl+branch+assert
+
+ifdef DEBUG
+	# full debug mode
+	VCS_ARGS	+= -debug_acc+all
+else
+	# release mode, leave the basic debug_access on, this lets us output our assertion report
+	VCS_ARGS	+= -debug_access
+endif
+
+SIMV_ARGS	= -assert global_finish_maxfail=10 -cm line+cond+fsm+tgl+branch+assert -ucli
 
 ifdef RANDOM_SEED
 	SIMV_ARGS 		+= +ntb_random_seed=$(RANDOM_SEED)
@@ -252,34 +285,35 @@ endef
 # The ELABORATE macro runs vcs to build the simv binary for the particular testbench
 # Takes one argument:
 #		1) The testbench module to run
-#		2) Name of the output simv file
+#		2) Name of the directory to put the generated files
 #		3) List of additional VCS arguments, e.g. "-pvalue+WIDTH=32 -pvalue+FOO=BAR" without the quotes
 define ELABORATE
 	$(eval TB_NAME  = $(call strip, $(1)))
-	$(eval OUT_NAME = $(call strip, $(2)))
-	echo -e "$(COLOUR_BLUE)elaborating $(TB_NAME) with arguments $(3) as $(OUT_NAME)$(COLOUR_NONE)\n"
-	$(call COLOURISE, vcs $(VCS_ARGS) work.$(TB_NAME) $(3) -o $(OUT_NAME))
+	$(eval DIR_NAME = $(call strip, $(2)))
+	mkdir -p $(DIR_NAME)
+	echo -e "$(COLOUR_BLUE)elaborating $(TB_NAME) with arguments $(3) as $(DIR_NAME)/simv $(COLOUR_NONE)\n"
+	$(call COLOURISE, vcs $(VCS_ARGS) work.$(TB_NAME) $(3) -o $(DIR_NAME)/simv)
 endef
 
 # The RUN_SIM macro runs the simv binary produced by vcs.
 # Takes one argument:
-#		1) The testbench module name to run
+#		1) The directory containing the simv to run
 # Has different behaviour depending on if we set INTERACTIVE=1 or not
 # In interactive mode we don't colourise the output.
 # In batch mode we run the do.tcl script
 ifndef INTERACTIVE
 # batch mode
 define RUN_SIM
-	$(eval TB_NAME = $(call strip, $(1)))
-	echo -e "$(COLOUR_BLUE)Simulating $(TB_NAME)$(COLOUR_NONE)\n"
-	$(call COLOURISE, ./$(TB_NAME)_simv $(SIMV_ARGS) -do do.tcl)
+	$(eval DIR_NAME = $(call strip, $(1)))
+	echo -e "$(COLOUR_BLUE)Simulating $(DIR_NAME)$(COLOUR_NONE)\n"
+	$(call COLOURISE, ./$(DIR_NAME)/simv $(SIMV_ARGS) -do do.tcl)
 endef
 else
 # interactive mode
 define RUN_SIM
-	$(eval TB_NAME = $(call strip, $(1)))
-	echo -e "$(COLOUR_BLUE)Simulating $(TB_NAME)$(COLOUR_NONE)\n"
-	./$(TB_NAME)_simv $(SIMV_ARGS)
+	$(eval DIR_NAME = $(call strip, $(1)))
+	echo -e "$(COLOUR_BLUE)Simulating $(DIR_NAME)$(COLOUR_NONE)\n"
+	./$(DIR_NAME)/simv $(SIMV_ARGS)
 endef
 endif
 
@@ -310,17 +344,18 @@ $(AN_DB_DIR): $(SRCS)
 	@echo -e "$(COLOUR_BLUE)Analysing because of changes in: $? $(COLOUR_NONE)\n"
 	@$(call ANALYSE)
 
-# Elaborate rules, of the format sequence_decode_tb_simv:
-$(patsubst %,%_simv,$(TBS)): $(AN_DB_DIR)
-	@$(call ELABORATE, $(subst _simv,,$@), $@)
+# Elaborate rules, of the format sequence_decode_tb/simv:
+$(patsubst %,%_sim/simv,$(TBS)): $(AN_DB_DIR)
+	@$(call ELABORATE, $(subst _sim/simv,,$@), $(subst /simv,,$@))
 
 # Simulation rules
-%: %_simv
-	@$(call RUN_SIM, $@)
+%: %_sim/simv
+	@$(call RUN_SIM, $@_sim)
+	@urg -dir $@_sim/simv.vdb -report $@_sim/report
 
 # PHONY rules
 analyse: $(AN_DB_DIR)
-elaborate: $(patsubst %,%_simv,$(TBS))
+elaborate: $(patsubst %,%_sim/simv,$(TBS))
 
 # Rule to always force making a target
 .FORCE:
@@ -334,8 +369,7 @@ list_tbs:
 all_tbs: $(TBS) $(CUSTOM_TBS)
 
 clean:
-	-@rm ???*_simv
-	-@rm -rf ???*_simv.daidir/
+	-@rm -rf *_sim/
 	-@rm -rf $(ROOT_DIR)/$(WORK_DIR)
 	-@rm -rf csrc/
 
@@ -347,14 +381,19 @@ clean:
 
 # We push (overwriting all files) the src files, testbenches and the VCS dir.
 # We delete any file on the server that doesn't exist locally
-# except for: work/ csrc/ and *_simv*
+# except for: work/ csrc/ and *_sim/
 # Which means we don't need to rebuild everything each time
 push_to_remote:
 	cd $(ROOT_DIR) && rsync -rRv --delete 													\
-		--exclude $(VCS_DIR)/work/ --exclude $(VCS_DIR)/csrc/ --exclude $(VCS_DIR)/*_simv* 	\
-		$(SRC_DIR) $(TB_SRC_DIR) $(BFM_SRC_DIR) $(VCS_DIR) 												\
+		--exclude $(VCS_DIR)/work/ --exclude $(VCS_DIR)/csrc/ --exclude $(VCS_DIR)/\*_sim/ 	\
+		$(SRC_DIR) $(TB_SRC_DIR) $(BFM_SRC_DIR) $(VCS_DIR) 									\
 		$(ISO_IEC_14443A_RTL_DIR) $(ISO_IEC_14443A_BFM_DIR)									\
 		$(REMOTE_SERVER):$(REMOTE_PATH)
+
+# Pull coverage reports, this deletes existing ones
+pull_reports_from_remote:
+	-@rm -rf *_sim/
+	rsync -rRv $(REMOTE_SERVER):$(REMOTE_PATH)/$(VCS_DIR)/./*_sim/report .
 
 # ssh to the remote server and cd to the VCS dir
 # we use -Y so we can launch graphical apps
