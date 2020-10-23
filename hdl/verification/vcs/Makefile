@@ -188,8 +188,10 @@ SRCS = 	$(ISO_IEC_14443A_SYNTH_SRCS) 	\
 # testbenches
 
 # This is used to generate the rules
-TBS	= 	adapter_tb		\
-		signal_control_tb
+TBS	= 	signal_control_tb				\
+		adapter_tb						\
+		radiation_sensor_digital_top_tb
+
 
 # This is for TBs that need to do something custom, it's only used for list_tbs and all_tbs
 CUSTOM_TBS	=
