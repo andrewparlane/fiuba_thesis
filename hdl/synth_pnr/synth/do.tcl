@@ -1,0 +1,2 @@
+source synth.tcl
+exit

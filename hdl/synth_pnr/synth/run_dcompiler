@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Variables:
+#   INTERACTIVE - don't run do.tcl, just start the shell "INTERACTIVE=1 ./run_dcompiler"
+#   PAUSE       - set the pause_between_commands variable, which prompts you to continue or abort
+#                 after every group of commands, this makes it easier to view the output
+#                 "PAUSE=1 ./run_dcompiler"
+
+#delete old work dir
+rm -rf work
+mkdir work
+
+export dc_shell_args="-64bit -no_gui -topographical -output_log_file log.txt"
+
+# if we are not interactive then run do.tcl, otherwise just open the shell
+if [[ "$INTERACTIVE" = "" ]]; then
+    export dc_shell_args="$dc_shell_args -f do.tcl"
+fi
+
+if [[ "$PAUSE" != "" ]]; then
+    export dc_shell_args="$dc_shell_args -x \"set pause_between_commands 1\""
+fi
+
+dc_shell $dc_shell_args
