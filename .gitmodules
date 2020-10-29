@@ -1,3 +1,3 @@
 [submodule "hdl/components/iso_iec_14443A"]
 	path = hdl/components/iso_iec_14443A
-	url = git@github.com:andrewparlane/iso_iec_14443A.git
+	url = ../iso_iec_14443A.git
