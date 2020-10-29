@@ -418,10 +418,26 @@ module adapter
     // ========================================================================
 
     logic [3:0] tx_len;
-    logic [3:0] tx_idx = '0;    // must be initialised here since it's used as an index
+    logic [3:0] tx_idx;
     assign tx_len = get_reply_len(reply_cmd);
 
-    assign tx_iface.data        = tx_buffer[tx_idx];
+    // since tx_idx is not initialised until rst_n asserts
+    // VCS doesn't like it if we use it as an index:
+    // assign tx_iface.data = tx_buffer[tx_idx];
+    // However if we initialise tx_idx in the declaration to '0; then
+    // dc_compiler complains about initial assignments being ignored.
+    // the below code should synthesise to a mux with inputs 0 to TX_BUFF_LEN-1
+    // being tx_buffer[0] to tx_buffer[TX_BUFF_LEN-1], and all remaining inputs being
+    // tx_buffer[0]. Both synthesis and simulation are happy with this
+    always_comb begin
+        tx_iface.data = tx_buffer[0]; // default to [0]
+        for (int i = 0; i < TX_BUFF_LEN; i++) begin
+            if (tx_idx == 4'(i)) begin
+                tx_iface.data = tx_buffer[i];
+                break;
+            end
+        end
+    end
     assign tx_iface.data_bits   = 3'd0;         // all transfers are 8 bits wide
 
     always_ff @(posedge clk, negedge rst_n) begin

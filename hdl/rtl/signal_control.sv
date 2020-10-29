@@ -97,7 +97,7 @@ module signal_control
     Signals         new_signals;
 
     // State machine
-    typedef enum
+    typedef enum logic [2:0]
     {
         State_IDLE,
         State_SYNC,

@@ -195,7 +195,7 @@ package protocol_pkg;
     //                         and respond with an error if the FSD is less than necessary
     localparam int TX_BUFF_LEN = 10;
 
-    function logic [3:0] get_reply_len (Command cmd);
+    function automatic logic [3:0] get_reply_len (Command cmd);
         case (cmd)
             Command_IDENTIFY:   return COMMAND_IDENTIFY_REPLY_LEN;
             Command_GET_RESULT: return COMMAND_GET_RESULT_REPLY_LEN;
