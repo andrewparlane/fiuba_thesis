@@ -19,93 +19,18 @@
 # You should have received a copy of the GNU General Public License
 # along with this code. If not, see <http://www.gnu.org/licenses/>.
 
-# for debugging purposes
-if {![info exists pause_between_commands]} {
-    set pause_between_commands 0
-}
-
 # =============================================================================
-# Colourisation
+# scripts
 # =============================================================================
 
-set COLOUR_RED     1
-set COLOUR_GREEN   2
-set COLOUR_YELLOW  3
-set COLOUR_BLUE    6
+# colourisation
+source ../common/colourisation.tcl
 
-# Set text colour to $colour
-proc colour {colour} {
-    return [exec tput setaf $colour]
-}
+# debug
+source ../common/debug.tcl
 
-# Set text colour to default
-proc clear_colour {} {
-    return [exec tput sgr0]
-}
-
-# Highlight warnings and errors in $buffer
-proc colourise {buffer} {
-    variable COLOUR_RED
-    variable COLOUR_YELLOW
-    variable COLOUR_GREEN
-    variable COLOUR_BLUE
-
-    # Highlight lines that start with Error: in red
-    regsub -line -all {^Error:.*$}          $buffer "[colour $COLOUR_RED]\\0[clear_colour]"     buffer
-
-    # Highlight lines that start with Warning: in yellow
-    regsub -line -all {^Warning:.*$}        $buffer "[colour $COLOUR_YELLOW]\\0[clear_colour]"  buffer
-
-    # Highlight lines that start with Information: in blue
-    regsub -line -all {^Information:.*$}    $buffer "[colour $COLOUR_BLUE]\\0[clear_colour]"    buffer
-
-    # Highlight lines that start with "Presto compilation completed successfully" in green
-    regsub -line -all {^Presto compilation completed successfully.*$} \
-                                            $buffer "[colour $COLOUR_GREEN]\\0[clear_colour]"   buffer
-
-    return $buffer
-}
-
-proc colourise_cmd {cmd} {
-    # redirect the output of the command to a variable (buffer) so we can later apply our colourisation to it
-    redirect -variable buffer {
-        # save the result
-        set res [eval $cmd]
-    }
-
-    # Colourise the output
-    puts [colourise $buffer]
-
-    # return the result
-    return $res
-}
-
-# =============================================================================
-# Helper functions
-# =============================================================================
-
-# sauce: https://stackoverflow.com/a/19003443
-proc do_continue {} {
-    set stty_settings [exec stty -g]
-    exec stty raw -echo
-
-    while {1} {
-        puts "Press Y to continue or N to abort"
-        set c [string tolower [read stdin 1]]
-        puts $c
-
-        if {$c == "y"} {
-            set res 1
-            break
-        } elseif {$c == "n"} {
-            set res 0
-            break
-        }
-    }
-
-    exec stty $stty_settings
-    return $res
-}
+# libs
+source ../common/libraries.tcl
 
 # =============================================================================
 # RTL source files
@@ -142,76 +67,22 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
 # Set up libraries
 # =============================================================================
 puts "[colour $COLOUR_BLUE]Setting up libraries[clear_colour]"
-puts "[colour $COLOUR_YELLOW]WARNING: Confirm all these are correct. I don't know what I'm doing!!![clear_colour]"
+puts "[colour $COLOUR_YELLOW]WARNING: Confirm all these are correct.[clear_colour]"
 
-# TODO: Tidy all this up, move common definitions and paths to a settings script
-set PDK_DIR             "/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018"
+# Max libs
+set_app_var target_library  "$TARGET_MAX_LIBS"
 
-# Just add to this as we start having errors about missing files
-#set_app_var search_path ""
+# Iterate through each of the MAX libs and set the corresponding min lib
+set lib_idx 0
+foreach max_lib ${TARGET_MAX_LIBS} {
+   set min_lib [lindex ${TARGET_MIN_LIBS} ${lib_idx}]
+   set_min_library   ${max_lib} -min_version ${min_lib}
+   set lib_idx [expr ${lib_idx} + 1]
+}
 
-# On the 30th October Mariano stated (in an e-mail) that he should confirm later but he thinks that the
-# metals are: # 4 thin metals + Top & Thick metal.
-# Using /usr/pdks/xfab180/xfab180, and based on Marianos statement, I determined that our tech is xh018,
-# and our process code is 1143.
-# There seems to be two options for the tech file with xx43 (process code):
-#   xh018_xx43_MET4_METMID_METTHK.tf
-#   xh018_xx43_HD_MET4_METMID_METTHK.tf
-# AFAICT the HD one is needed for 1.8V, so I'm using that.
-set TECH_FILE_DIR       "$PDK_DIR/synopsys/v8_0/techMW/v8_0_1/xh018-synopsys-techMW-v8_0_1"
-set mw_techfile         "$TECH_FILE_DIR/xh018_xx43_HD_MET4_METMID_METTHK.tf"
-
-set PDK_DIGLIBS_DIR     "$PDK_DIR/diglibs"
-set PDK_D_CELLS_DIR     "$PDK_DIGLIBS_DIR/D_CELLS_HD/v3_0"
-set PDK_IO_CELLS_DIR    "$PDK_DIGLIBS_DIR/IO_CELLS_C1V8/v1_1"
-
-# Max and Min libs are the "logical libraries" (I think)
-set PDK_D_CELLS_LIBERTY_DIR     "$PDK_D_CELLS_DIR/liberty_LPMOS/v3_0_1/PVT_1_80V_range"
-set PDK_IO_CELLS_LIBERTY_DIR    "$PDK_IO_CELLS_DIR/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range"
-
-# Max lib is for max delays analysis, which means the slow, hot, undervoltage corner
-# The only choice we have here is for max temperature:
-#   (D_CELLS)  - 85C, 125C, 150C, 175C
-#   (IO_CELLS) -      125C, 150C, 175C
-# Using 125C for now
-set PDK_D_CELLS_MAX_LIB         "$PDK_D_CELLS_LIBERTY_DIR/D_CELLS_HD_LPMOS_slow_1_62V_125C.db"
-set PDK_IO_CELLS_MAX_LIB        "$PDK_IO_CELLS_LIBERTY_DIR/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db"
-
-# Min lib is for min delay analysis, which means the fast, cold, overvoltage corner
-#   (D_CELLS)  - -40C, 0C
-#   (IO_CELLS) - -40C, 125C, 150C, 175C - I'm not sure why we have so many hot options here and only one cold?
-# Using -40C for now
-set PDK_D_CELLS_MIN_LIB         "$PDK_D_CELLS_LIBERTY_DIR/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db"
-set PDK_IO_CELLS_MIN_LIB        "$PDK_IO_CELLS_LIBERTY_DIR/IO_CELLS_C1V8_LPMOS_fast_1_98V_1_98V_m40C.db"
-
-set target_max_libs             "$PDK_D_CELLS_MAX_LIB $PDK_IO_CELLS_MAX_LIB"
-set_app_var target_library      "$target_max_libs"
-set_min_library $PDK_D_CELLS_MAX_LIB -min_version $PDK_D_CELLS_MIN_LIB
-set_min_library $PDK_IO_CELLS_MAX_LIB -min_version $PDK_IO_CELLS_MIN_LIB
-
-set SYNOPSYS_LIBS_DIR           "/usr/synopsys2/syn/P-2019.03/libraries/syn"
-
-# The synthetic library is for DesignWave components
-# Frome the DC userguide chapter 4:
-#   DesignWare components that implement many of the built-in HDL operators are provided
-#   by Synopsys. These operators include +, -, *, <, >, <=, >=, and the operations defined by if
-#   and case statements.
-# The only one I've found is the dw_foundation.sldb below
-set_app_var synthetic_library   "$SYNOPSYS_LIBS_DIR/dw_foundation.sldb"
-
-# The symbol library is used to display a schematic of the design
-set_app_var symbol_library      "$PDK_D_CELLS_DIR/dc_shell_symb/v3_0_0/D_CELLS_HD.sdb $PDK_IO_CELLS_DIR/dc_shell_symb/v1_1_0/IO_CELLS_C1V8.sdb $SYNOPSYS_LIBS_DIR/generic.sdb"
-
-# The * means search loaded libraries in memory for references
-set_app_var link_library        "* $target_max_libs $synthetic_library"
-
-# The milkyway ref lib is the "physical library" (I think)
-# These should correspond to the "logical libraries" from before
-# Not sure if I need these during synthesis, I think it's a PnR only thing
-set PDK_D_CELLS_MW_REF_DIR     "$PDK_D_CELLS_DIR/synopsys_ICC/v3_0_1/xh018-D_CELLS_HD-synopsys_ICCompiler-v3_0_1/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HD"
-set PDK_IO_CELLS_MW_REF_DIR    "$PDK_IO_CELLS_DIR/synopsys_ICC/v1_1_0/xh018-IO_CELLS_C1V8-synopsys_ICCompiler-v1_1_0/xh018_xx43_MET4_METMID_METTHK_IO_CELLS_C1V8"
-
-set milkyway_ref_lib            "$PDK_D_CELLS_MW_REF_DIR $PDK_IO_CELLS_MW_REF_DIR"
+set_app_var synthetic_library   "$SYNTHETIC_LIBRARY"
+set_app_var symbol_library      "$SYMBOL_LIBRARY"
+set_app_var link_library        "$LINK_LIBRARY"
 
 # Create (and open) our milkyway lib
 set mw_design_lib "work/mw_lib"
@@ -219,14 +90,10 @@ if {[file isdirectory $mw_design_lib]} {
     # delete the old one first
     exec rm -rf $mw_design_lib
 }
-colourise_cmd "create_mw_lib -open -technology $mw_techfile -mw_reference_library \"$milkyway_ref_lib\" $mw_design_lib"
+colourise_cmd "create_mw_lib -open -technology $MW_TECHFILE -mw_reference_library \"$MILKYWAY_REF_LIB\" $mw_design_lib"
 
-set tlup_dir "$PDK_DIR/synopsys/v8_0/TLUplus/v8_0_1"
-set tlup_max "$tlup_dir/xh018_xx43_MET4_METMID_METTHK_max.tlu"
-set tlup_min "$tlup_dir/xh018_xx43_MET4_METMID_METTHK_min.tlu"
-set tlup_map "$tlup_dir/xh018_xx43_MET4_METMID_METTHK.map"
-
-set_tlu_plus_files -max_tluplus $tlup_max -min_tluplus $tlup_min -tech2itf_map  $tlup_map
+# Add the TLU+ files
+set_tlu_plus_files -max_tluplus $TLUP_MAX -min_tluplus $TLUP_MIN -tech2itf_map  $TLUP_MAP
 check_tlu_plus_files
 
 # Set up our WORK lib

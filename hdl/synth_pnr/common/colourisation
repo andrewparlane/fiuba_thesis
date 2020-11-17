@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# Make lines starting with "Error" red
-# Make lines starting with "Warning" yellow
-
-cat $1 | sed -r -e "s/^(Error.*$)/`tput setaf 1`\1`tput sgr0`/I" \
-                -e "s/^(Warning.*$)/`tput setaf 3`\1`tput sgr0`/I"
