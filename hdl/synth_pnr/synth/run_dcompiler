@@ -6,11 +6,15 @@
 #                 after every group of commands, this makes it easier to view the output
 #                 "PAUSE=1 ./run_dcompiler"
 
-#delete old work dir
+# delete and re-create logs dir
+rm -rf logs
+mkdir logs
+
+# delete and re-create the work dir
 rm -rf work
 mkdir work
 
-export dc_shell_args="-64bit -no_gui -topographical -output_log_file log.txt"
+export dc_shell_args="-64bit -no_gui -topographical -output_log_file logs/log.txt"
 
 # if we are not interactive then run do.tcl, otherwise just open the shell
 if [[ "$INTERACTIVE" = "" ]]; then

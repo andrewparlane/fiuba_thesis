@@ -60,7 +60,7 @@
 #		VCS_ARGS
 #		SIMV_ARGS
 
-#	push_to_remote:		syncs local files to the remote server
+#	sync_with_remote:	syncs files with the remote server
 # 	connect_to_remote:	ssh to the remote server and cd to the vcs dir
 
 # ----------------------------------------------------------------------------------
@@ -87,11 +87,14 @@ SYNTH_PNR_DIR			= hdl/synth_pnr
 
 # We push (overwriting all files) the src files and this synth_pnr dir
 # We delete any file on the server that doesn't exist locally
-# except for: synth/work and custom_compiler_project/ (at least for now)
-# Which means we don't need to rebuild everything each time
-push_to_remote:
+# except for: synth/work, synth/log and custom_compiler_project/
+# We also pull the logs so we always have the latest logs saved locally
+sync_with_remote:
+	-rm -rf synth/logs
+	scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/logs/	synth/
 	cd $(ROOT_DIR) && rsync -rRv --delete 						\
 		--exclude $(SYNTH_PNR_DIR)/synth/work/					\
+		--exclude $(SYNTH_PNR_DIR)/synth/logs/					\
 		--exclude $(SYNTH_PNR_DIR)/custom_compiler_project/		\
 		$(SRC_DIR) $(ISO_IEC_14443A_RTL_DIR) $(SYNTH_PNR_DIR)	\
 		$(REMOTE_SERVER):$(REMOTE_PATH)
@@ -100,3 +103,5 @@ push_to_remote:
 # we use -Y so we can launch graphical apps
 connect_to_remote:
 	ssh -Yt $(REMOTE_SERVER) "cd $(REMOTE_PATH)/$(SYNTH_PNR_DIR); bash"
+
+.PHONY: sync_with_remote connect_to_remote

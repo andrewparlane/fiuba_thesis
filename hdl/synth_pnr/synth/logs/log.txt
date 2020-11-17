@@ -1,0 +1,1052 @@
+Starting shell in Topographical mode...
+source synth.tcl
+[36mFound sources:(B[m
+  ../../../hdl/components/iso_iec_14443a/rtl/pkg/iso14443a_pkg.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/interfaces/tx_interface.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/interfaces/rx_interface.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/tx.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/sequence_decode.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/bit_encoder.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/subcarrier.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/iso14443_2a.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/fdt.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/serialiser.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/crc_a.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/deserialiser.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/initialisation.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/frame_decode.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/frame_encode.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/routing.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/crc_control.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_4a/iso14443_4a.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/active_low_reset_synchroniser.sv
+  ../../../hdl/components/iso_iec_14443a/rtl/synchroniser.sv
+  ../../../hdl/rtl/pkg/protocol_pkg.sv
+  ../../../hdl/rtl/adapter.sv
+  ../../../hdl/rtl/signal_control.sv
+  ../../../hdl/rtl/radiation_sensor_digital_top.sv
+
+
+[36mSetting up libraries(B[m
+[33mWARNING: Confirm all these are correct.(B[m
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_fast_1_98V_1_98V_m40C.db'
+Start to load technology file /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/techMW/v8_0_1/xh018-synopsys-techMW-v8_0_1/xh018_xx43_HD_MET4_METMID_METTHK.tf.
+[33mWarning: Layer 'MET1' has a pitch 0.56 that does not match the recommended wire-to-via pitch 0.535. (TFCHK-049)(B[m
+[33mWarning: Layer 'MET4' has a pitch 0.56 that does not match the recommended wire-to-via pitch 0.61 or 0.66. (TFCHK-049)(B[m
+[33mWarning: Layer 'METTP' has a pitch 1.12 that does not match the recommended wire-to-via pitch 1.43. (TFCHK-049)(B[m
+[33mWarning: Layer 'METTPL' has a pitch 5.6 that does not match the recommended wire-to-via pitch 5.5. (TFCHK-049)(B[m
+[33mWarning: CapModel sections are missing. Capacitance models should be loaded with a TLU+ file later. (TFCHK-084)(B[m
+Technology file /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/techMW/v8_0_1/xh018-synopsys-techMW-v8_0_1/xh018_xx43_HD_MET4_METMID_METTHK.tf has been loaded successfully.
+[33mWarning: Reference Library Inconsistent With Main Library(B[m
+Reference Library: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/synopsys_ICC/v3_0_1/xh018-D_CELLS_HD-synopsys_ICCompiler-v3_0_1/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HD (MWLIBP-300)
+[33mWarning: Inconsistent Data for Layer 122(B[m
+        Main Library (mw_lib)       |   Reference Library (xh018_xx43_MET4_METMID_METTHK_D_CELLS_HD)
+        Layer Name     BNIMP        |   _strm_layer330
+        Mask Name      bnimp        |   corner   (MWLIBP-319)
+[33mWarning: Reference Library Inconsistent With Main Library(B[m
+Reference Library: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/synopsys_ICC/v2_1_0/xh018-D_CELLS_HDLL-synopsys_ICCompiler-v2_1_0/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HDLL (MWLIBP-300)
+[33mWarning: Inconsistent Data for Layer 122(B[m
+        Main Library (mw_lib)       |   Reference Library (xh018_xx43_MET4_METMID_METTHK_D_CELLS_HDLL)
+        Layer Name     BNIMP        |   _strm_layer330
+        Mask Name      bnimp        |   corner   (MWLIBP-319)
+{mw_lib}
+
+
+Sanity check for TLU+ vs MW-Tech files:
+ max_tlu+: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/TLUplus/v8_0_1/xh018_xx43_MET4_METMID_METTHK_max.tlu
+ min_tlu+: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/TLUplus/v8_0_1/xh018_xx43_MET4_METMID_METTHK_min.tlu
+ mapping_file: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/TLUplus/v8_0_1/xh018_xx43_MET4_METMID_METTHK.map
+ max_emul_tlu+: **NONE**
+ min_emul_tlu+: **NONE**
+ MW design lib: mw_lib
+
+--------- Sanity Check on TLUPlus Files -------------
+1. Checking the conducting layer names in ITF and mapping file ... 
+[ Passed! ]
+2. Checking the via layer names in ITF and mapping file ... 
+[ Passed! ]
+3. Checking the consistency of Min Width and Min Spacing between MW-tech and ITF ... 
+[ Passed! ]
+----------------- Check Ends ------------------
+
+#BEGIN_XCHECK_LIBRARY
+
+Logic Library:    D_CELLS_HD_LPMOS_slow_1_62V_125C 
+                  D_CELLS_HDLL_LPMOS_slow_1_62V_125C 
+                  IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C 
+Physical Library: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/synopsys_ICC/v3_0_1/xh018-D_CELLS_HD-synopsys_ICCompiler-v3_0_1/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HD 
+                  /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/synopsys_ICC/v2_1_0/xh018-D_CELLS_HDLL-synopsys_ICCompiler-v2_1_0/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HDLL 
+                  /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/synopsys_ICC/v1_1_0/xh018-IO_CELLS_C1V8-synopsys_ICCompiler-v1_1_0/xh018_xx43_MET4_METMID_METTHK_IO_CELLS_C1V8 
+check_library options:  
+Version:                                P-2019.03
+Check date and time:    Tue Nov 17 12:43:25 2020
+
+          List of logic library and file names
+------------------------------------------------------------------------------
+Logic library name           Logic library file name
+------------------------------------------------------------------------------
+D_CELLS_HD_LPMOS_slow_1_62V_125C /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db
+D_CELLS_HDLL_LPMOS_slow_1_62V_125C /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db
+IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db
+------------------------------------------------------------------------------
+
+#BEGIN_XCHECK_LOGICCELLS
+
+Number of cells missing in logic library:       0 (out of 1762)
+
+#END_XCHECK_LOGICCELLS
+
+#BEGIN_XCHECK_PHYSICALCELLS
+
+Number of cells missing in physical library:    0 (out of 1762)
+
+#END_XCHECK_PHYSICALCELLS
+
+#BEGIN_XCHECK_PINS
+
+Number of cells with missing or mismatched pins in libraries:   0
+
+#END_XCHECK_PINS
+
+#BEGIN_XCHECK_CELLANTENNADIODETYPE
+
+Number of cells with inconsistent antenna_diode_type:   6
+
+[33mWarning: List of cells mismatched in logic and physical libraries (LIBCHK-217)(B[m
+Logic library:    D_CELLS_HD_LPMOS_slow_1_62V_125C
+Physical library: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/synopsys_ICC/v3_0_1/xh018-D_CELLS_HD-synopsys_ICCompiler-v3_0_1/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HD
+-----------------------------------------------------------------------------------
+                                  Antenna Diode Type
+Cell name                    Logic                 Physical
+-----------------------------------------------------------------------------------
+ANTENNACELLN2HD         ground                missing
+ANTENNACELLNP2HD        power_and_ground      missing
+ANTENNACELLP2HD         power                 missing
+-----------------------------------------------------------------------------------
+
+Logic library:    D_CELLS_HDLL_LPMOS_slow_1_62V_125C
+Physical library: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/synopsys_ICC/v2_1_0/xh018-D_CELLS_HDLL-synopsys_ICCompiler-v2_1_0/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HDLL
+-----------------------------------------------------------------------------------
+                                  Antenna Diode Type
+Cell name                    Logic                 Physical
+-----------------------------------------------------------------------------------
+ANTENNACELLNP2HDLL      power_and_ground      missing
+ANTENNACELLN2HDLL       ground                missing
+ANTENNACELLP2HDLL       power                 missing
+-----------------------------------------------------------------------------------
+#END_XCHECK_CELLANTENNADIODETYPE
+
+Logic vs. physical library check summary:
+Total number of cells checked in logic library: 1762 
+Total number of cells checked in physical library:      1762 
+Logic vs. physical library quality checking PASSED.
+
+#END_XCHECK_LIBRARY
+
+1
+
+
+
+[36mSetting up libraries(B[m
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/pkg/iso14443a_pkg.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/pkg/iso14443a_pkg.sv
+[32mPresto compilation completed successfully.(B[m
+Loading db file '/usr/synopsys2/syn/P-2019.03/libraries/syn/dw_foundation.sldb'
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/interfaces/tx_interface.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/interfaces/tx_interface.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/interfaces/rx_interface.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/interfaces/rx_interface.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/tx.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/tx.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/sequence_decode.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/sequence_decode.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/bit_encoder.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/bit_encoder.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/subcarrier.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/subcarrier.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/iso14443_2a.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/iso14443_2a.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/fdt.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/fdt.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/serialiser.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/serialiser.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/crc_a.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/crc_a.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/deserialiser.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/deserialiser.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/initialisation.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/initialisation.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/frame_decode.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/frame_decode.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/frame_encode.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/frame_encode.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/routing.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/routing.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/crc_control.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/crc_control.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443_4a/iso14443_4a.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443_4a/iso14443_4a.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/active_low_reset_synchroniser.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/active_low_reset_synchroniser.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/synchroniser.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/components/iso_iec_14443a/rtl/synchroniser.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/rtl/pkg/protocol_pkg.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/rtl/pkg/protocol_pkg.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/rtl/adapter.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/rtl/adapter.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/rtl/signal_control.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/rtl/signal_control.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mAnalysing ../../../hdl/rtl/radiation_sensor_digital_top.sv(B[m
+Running PRESTO HDLC
+Compiling source file ../../../hdl/rtl/radiation_sensor_digital_top.sv
+[32mPresto compilation completed successfully.(B[m
+1
+
+[36mElaborating design(B[m
+Loading db file '/usr/synopsys2/syn/P-2019.03/libraries/syn/gtech.db'
+Loading db file '/usr/synopsys2/syn/P-2019.03/libraries/syn/standard.sldb'
+  Loading link library 'D_CELLS_HD_LPMOS_slow_1_62V_125C'
+  Loading link library 'D_CELLS_HDLL_LPMOS_slow_1_62V_125C'
+  Loading link library 'IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:172: Variables crossing hierarchy: interface content 'app_rx_iface.soc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:172: Variables crossing hierarchy: interface content 'app_rx_iface.eoc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:172: Variables crossing hierarchy: interface content 'app_rx_iface.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:172: Variables crossing hierarchy: interface content 'app_rx_iface.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:172: Variables crossing hierarchy: interface content 'app_rx_iface.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:172: Variables crossing hierarchy: interface content 'app_rx_iface.error' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:172: Variables crossing hierarchy: interface content 'app_tx_iface.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:172: Variables crossing hierarchy: interface content 'app_tx_iface.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:172: Variables crossing hierarchy: interface content 'app_tx_iface.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:172: Variables crossing hierarchy: interface content 'app_tx_iface.last_bit_in_byte' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:172: Variables crossing hierarchy: interface content 'app_tx_iface.req' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:149: Variables crossing hierarchy: interface content 'part2_to_part3_rx_iface.soc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:149: Variables crossing hierarchy: interface content 'part2_to_part3_rx_iface.eoc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:149: Variables crossing hierarchy: interface content 'part2_to_part3_rx_iface.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:149: Variables crossing hierarchy: interface content 'part2_to_part3_rx_iface.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:149: Variables crossing hierarchy: interface content 'part2_to_part3_rx_iface.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:149: Variables crossing hierarchy: interface content 'part2_to_part3_rx_iface.error' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:149: Variables crossing hierarchy: interface content 'part3_to_part2_tx_iface.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:149: Variables crossing hierarchy: interface content 'part3_to_part2_tx_iface.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:149: Variables crossing hierarchy: interface content 'part3_to_part2_tx_iface.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:149: Variables crossing hierarchy: interface content 'part3_to_part2_tx_iface.last_bit_in_byte' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:149: Variables crossing hierarchy: interface content 'part3_to_part2_tx_iface.req' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part2_to_part3_rx_iface.soc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part2_to_part3_rx_iface.eoc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part2_to_part3_rx_iface.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part2_to_part3_rx_iface.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part2_to_part3_rx_iface.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part2_to_part3_rx_iface.error' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part3_to_part2_tx_iface.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part3_to_part2_tx_iface.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part3_to_part2_tx_iface.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part3_to_part2_tx_iface.last_bit_in_byte' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part3_to_part2_tx_iface.req' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part3_to_part4_rx_iface.soc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part3_to_part4_rx_iface.eoc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part3_to_part4_rx_iface.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part3_to_part4_rx_iface.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part3_to_part4_rx_iface.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part3_to_part4_rx_iface.error' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part4_to_part3_tx_iface.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part4_to_part3_tx_iface.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part4_to_part3_tx_iface.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part4_to_part3_tx_iface.last_bit_in_byte' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:184: Variables crossing hierarchy: interface content 'part4_to_part3_tx_iface.req' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:210: Variables crossing hierarchy: interface content 'part3_to_part4_rx_iface.soc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:210: Variables crossing hierarchy: interface content 'part3_to_part4_rx_iface.eoc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:210: Variables crossing hierarchy: interface content 'part3_to_part4_rx_iface.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:210: Variables crossing hierarchy: interface content 'part3_to_part4_rx_iface.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:210: Variables crossing hierarchy: interface content 'part3_to_part4_rx_iface.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:210: Variables crossing hierarchy: interface content 'part3_to_part4_rx_iface.error' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:210: Variables crossing hierarchy: interface content 'part4_to_part3_tx_iface.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:210: Variables crossing hierarchy: interface content 'part4_to_part3_tx_iface.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:210: Variables crossing hierarchy: interface content 'part4_to_part3_tx_iface.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:210: Variables crossing hierarchy: interface content 'part4_to_part3_tx_iface.last_bit_in_byte' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443a.sv:210: Variables crossing hierarchy: interface content 'part4_to_part3_tx_iface.req' may become connected to an inout port. (VER-735)(B[m
+[33mWarning:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:172: A symbol named 'rx_interface' is already defined differently in the receiving scope.   (ELAB-106)(B[m
+[33mWarning:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:172: A symbol named 'tx_interface' is already defined differently in the receiving scope.   (ELAB-106)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:200: Variables crossing hierarchy: interface content 'app_rx_iface.soc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:200: Variables crossing hierarchy: interface content 'app_rx_iface.eoc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:200: Variables crossing hierarchy: interface content 'app_rx_iface.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:200: Variables crossing hierarchy: interface content 'app_rx_iface.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:200: Variables crossing hierarchy: interface content 'app_rx_iface.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:200: Variables crossing hierarchy: interface content 'app_rx_iface.error' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:200: Variables crossing hierarchy: interface content 'app_tx_iface.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:200: Variables crossing hierarchy: interface content 'app_tx_iface.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:200: Variables crossing hierarchy: interface content 'app_tx_iface.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:200: Variables crossing hierarchy: interface content 'app_tx_iface.last_bit_in_byte' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:200: Variables crossing hierarchy: interface content 'app_tx_iface.req' may become connected to an inout port. (VER-735)(B[m
+[32mPresto compilation completed successfully. (radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1)(B[m
+Elaborated 1 design.
+Current design is now 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1'.
+[36mInformation: Building the design 'active_low_reset_synchroniser'. (HDL-193)(B[m
+
+Inferred memory devices in process
+        in routine active_low_reset_synchroniser line 48 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/active_low_reset_synchroniser.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    shift_reg_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+[32mPresto compilation completed successfully. (active_low_reset_synchroniser)(B[m
+[36mInformation: Building the design 'synchroniser' instantiated from design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1' with(B[m
+        the parameters "WIDTH=2,RESET_VAL=2'h0". (HDL-193)
+
+Inferred memory devices in process
+        in routine synchroniser_2_0 line 42 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/synchroniser.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        q_reg        | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       tmp_reg       | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+[32mPresto compilation completed successfully. (synchroniser_2_0)(B[m
+[36mInformation: Building the design 'iso14443_2a' instantiated from design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1' with(B[m
+        the parameters "|((N%clk%)(N%rst_n%)(N%pause_n_synchronised%)(N%rx_iface%I%WORK/rx_interface%%BY_BYTE=0)(N%tx_iface%I%WORK/tx_interface%%BY_BYTE=0)(N%lm_out%))". (HDL-193)
+[32mPresto compilation completed successfully. (iso14443_2a_I_rx_iface_rx_interface__BY_BYTE_0I_tx_iface_tx_interface__BY_BYTE_0)(B[m
+[36mInformation: Building the design 'iso14443_3a' instantiated from design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1' with(B[m
+        the parameters "UID_SIZE=2'h0,UID_INPUT_BITS=3,UID_FIXED=29'h1dffd8e0,FDT_TIMING_ADJUST=3|((N%clk%)(N%rst_n%)(N%uid_variable%)(N%pause_n_synchronised%)(N%rx_iface_from_14443_2a%I%WORK/rx_interface%%BY_BYTE=0)(N%tx_iface_to_14443_2a%I%WORK/tx_interface%%BY_BYTE=0)(N%rx_iface_to_14443_4a%I%WORK/rx_interface%%BY_BYTE=1)(N%rx_crc_ok%)(N%tx_iface_from_14443_4a%I%WORK/tx_interface%%BY_BYTE=1)(N%tx_append_crc_14443_4a%)(N%iso14443_4a_deselect%)(N%iso14443_4a_rats%)(N%iso14443_4a_tag_active%))". (HDL-193)
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_routing.soc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_routing.eoc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_routing.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_routing.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_routing.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_routing.error' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'rx_iface_bits_to_init.soc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'rx_iface_bits_to_init.eoc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'rx_iface_bits_to_init.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'rx_iface_bits_to_init.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'rx_iface_bits_to_init.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'rx_iface_bits_to_init.error' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'tx_iface_from_routing.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'tx_iface_from_routing.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'tx_iface_from_routing.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'tx_iface_from_routing.last_bit_in_byte' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:102: Variables crossing hierarchy: interface content 'tx_iface_from_routing.req' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_routing.soc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_routing.eoc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_routing.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_routing.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_routing.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_routing.error' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_init.soc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_init.eoc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_init.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_init.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_init.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_init.error' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'tx_iface_from_init.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'tx_iface_from_init.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'tx_iface_from_init.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'tx_iface_from_init.last_bit_in_byte' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'tx_iface_from_init.req' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'tx_iface_from_routing.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'tx_iface_from_routing.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'tx_iface_from_routing.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'tx_iface_from_routing.last_bit_in_byte' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:136: Variables crossing hierarchy: interface content 'tx_iface_from_routing.req' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_init.soc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_init.eoc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_init.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_init.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_init.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'rx_iface_bytes_to_init.error' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'rx_iface_bits_to_init.soc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'rx_iface_bits_to_init.eoc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'rx_iface_bits_to_init.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'rx_iface_bits_to_init.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'rx_iface_bits_to_init.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'rx_iface_bits_to_init.error' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'tx_iface_from_init.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'tx_iface_from_init.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'tx_iface_from_init.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'tx_iface_from_init.last_bit_in_byte' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/iso14443_3a.sv:167: Variables crossing hierarchy: interface content 'tx_iface_from_init.req' may become connected to an inout port. (VER-735)(B[m
+[32mPresto compilation completed successfully. (iso14443_3a_0_3_1dffd8e0_3_I_rx_iface_from_14443_2a_rx_interface__BY_BYTE_0I_tx_iface_to_14443_2a_tx_interface__BY_BYTE_0I_rx_iface_to_14443_4a_rx_interface__BY_BYTE_1I_tx_iface_from_14443_4a_tx_interface__BY_BYTE_1)(B[m
+[36mInformation: Building the design 'iso14443_4a' instantiated from design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1' with(B[m
+        the parameters "|((N%clk%)(N%rst_n%)(N%power%)(N%rx_iface%I%WORK/rx_interface%%BY_BYTE=1)(N%rx_crc_ok%)(N%tx_iface%I%WORK/tx_interface%%BY_BYTE=1)(N%tx_append_crc%)(N%tag_active%)(N%rx_rats%)(N%rx_deselect%)(N%app_rx_iface%I%WORK/rx_interface%out_byte%BY_BYTE=1)(N%app_tx_iface%I%WORK/tx_interface%in_byte%BY_BYTE=1)(N%app_resend_last%))". (HDL-193)
+[33mWarning:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_4a/iso14443_4a.sv:190: signed to unsigned conversion occurs. (VER-318)(B[m
+
+Statistics for case statements in always block at line 498 in file
+        '../../../hdl/components/iso_iec_14443a/rtl/iso14443_4a/iso14443_4a.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           557            |     no/auto      |
+|           577            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+        in routine iso14443_4a_I_rx_iface_rx_interface__BY_BYTE_1I_tx_iface_tx_interface__BY_BYTE_1I_app_rx_iface_rx_interface_out_byte_BY_BYTE_1I_app_tx_iface_tx_interface_in_byte_BY_BYTE_1 line 131 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_4a/iso14443_4a.sv'.
+============================================================================================================
+|                  Register Name                   |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+============================================================================================================
+|                  rx_buffer_reg                   | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|                   rx_count_reg                   | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|                rx_error_flag_reg                 | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|                 pkt_received_reg                 | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|                forward_to_app_reg                | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|               app_rx_iface.soc_reg               | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|               app_rx_iface.eoc_reg               | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|           app_rx_iface.data_valid_reg            | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|              app_rx_iface.error_reg              | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|         check_need_to_forward_to_app_reg         | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              app_rx_iface.data_reg               | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+| check_need_to_forward_to_app_after_next_byte_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+============================================================================================================
+
+Inferred memory devices in process
+        in routine iso14443_4a_I_rx_iface_rx_interface__BY_BYTE_1I_tx_iface_tx_interface__BY_BYTE_1I_app_rx_iface_rx_interface_out_byte_BY_BYTE_1I_app_tx_iface_tx_interface_in_byte_BY_BYTE_1 line 326 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_4a/iso14443_4a.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     our_cid_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|    allow_pps_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| app_resend_last_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   send_reply_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      reply_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|  replyStdBlock_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|  our_block_num_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine iso14443_4a_I_rx_iface_rx_interface__BY_BYTE_1I_tx_iface_tx_interface__BY_BYTE_1I_app_rx_iface_rx_interface_out_byte_BY_BYTE_1I_app_tx_iface_tx_interface_in_byte_BY_BYTE_1 line 498 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_4a/iso14443_4a.sv'.
+===================================================================================
+|      Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================
+|      tx_buffer_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+| tx_iface.data_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  forward_from_app_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     rx_deselect_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  app_tx_iface.req_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  tx_count_minus_1_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===================================================================================
+[32mPresto compilation completed successfully. (iso14443_4a_I_rx_iface_rx_interface__BY_BYTE_1I_tx_iface_tx_interface__BY_BYTE_1I_app_rx_iface_rx_interface_out_byte_BY_BYTE_1I_app_tx_iface_tx_interface_in_byte_BY_BYTE_1)(B[m
+[36mInformation: Building the design 'adapter' instantiated from design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1' with(B[m
+        the parameters "ISO_IEC_14443A_VERSION=1,SENSOR_VERSION=1,ADC_VERSION=1|((N%clk%)(N%rst_n%)(N%pause_n_synchronised%)(N%rx_iface%I%WORK/rx_interface%%BY_BYTE=1)(N%tx_iface%I%WORK/tx_interface%%BY_BYTE=1)(N%app_resend_last%)(N%sens_config%)(N%sens_enable%)(N%sens_read%)(N%adc_enable%)(N%adc_read%)(N%adc_conversion_complete%)(N%adc_value%))". (HDL-193)
+[33mWarning:  ../../../hdl/rtl/adapter.sv:435: signed to unsigned conversion occurs. (VER-318)(B[m
+
+Statistics for case statements in always block at line 170 in file
+        '../../../hdl/rtl/adapter.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           174            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 422 in file
+        '../../../hdl/rtl/adapter.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           199            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine adapter_ISO_IEC_14443A_VERSION1_SENSOR_VERSION1_ADC_VERSION1_I_rx_iface_rx_interface__BY_BYTE_1I_tx_iface_tx_interface__BY_BYTE_1 line 238 in file
+                '../../../hdl/rtl/adapter.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    rx_buffer_reg    | Flip-flop |  106  |  Y  | N  | N  | N  | N  | N  | N  |
+|    rx_count_reg     | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  rx_error_flag_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine adapter_ISO_IEC_14443A_VERSION1_SENSOR_VERSION1_ADC_VERSION1_I_rx_iface_rx_interface__BY_BYTE_1I_tx_iface_tx_interface__BY_BYTE_1 line 297 in file
+                '../../../hdl/rtl/adapter.sv'.
+==========================================================================================
+|         Register Name          |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==========================================================================================
+|    signal_control_abort_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|         send_reply_reg         | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|         reply_cmd_reg          | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+| last_rx_had_invalid_magic_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|        status_flags_reg        | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        status_flags_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      cached_adc_value_reg      | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+| signal_control_result_read_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    signal_control_start_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+==========================================================================================
+
+Inferred memory devices in process
+        in routine adapter_ISO_IEC_14443A_VERSION1_SENSOR_VERSION1_ADC_VERSION1_I_rx_iface_rx_interface__BY_BYTE_1I_tx_iface_tx_interface__BY_BYTE_1 line 443 in file
+                '../../../hdl/rtl/adapter.sv'.
+===================================================================================
+|      Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================
+|       tx_idx_reg        | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| tx_iface.data_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===================================================================================
+[32mPresto compilation completed successfully. (adapter_ISO_IEC_14443A_VERSION1_SENSOR_VERSION1_ADC_VERSION1_I_rx_iface_rx_interface__BY_BYTE_1I_tx_iface_tx_interface__BY_BYTE_1)(B[m
+[36mInformation: Building the design 'sequence_decode' instantiated from design 'iso14443_2a_I_rx_iface_rx_interface__BY_BYTE_0I_tx_iface_tx_interface__BY_BYTE_0' with(B[m
+        the parameters "|((N%clk%)(N%rst_n%)(N%pause_n_synchronised%)(N%out_iface%I%WORK/rx_interface%out_bit%BY_BYTE=0))". (HDL-193)
+
+Statistics for case statements in always block at line 162 in file
+        '../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/sequence_decode.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           165            |    auto/auto     |
+|           168            |    auto/auto     |
+|           176            |    auto/auto     |
+|           185            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine sequence_decode_I_out_iface_rx_interface_out_bit_BY_BYTE_0 line 133 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/sequence_decode.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  last_pause_n_reg   | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine sequence_decode_I_out_iface_rx_interface_out_bit_BY_BYTE_0 line 211 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/sequence_decode.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       seq_reg       | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|      idle_reg       | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|    seq_valid_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  detected_soc_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     counter_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine sequence_decode_I_out_iface_rx_interface_out_bit_BY_BYTE_0 line 278 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/sequence_decode.sv'.
+====================================================================================
+|      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+====================================================================================
+|     prev_is_soc_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    out_iface.soc_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    out_iface.eoc_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   out_iface.error_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| out_iface.data_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|       in_frame_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    out_iface.data_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|         prev_reg         | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+====================================================================================
+[32mPresto compilation completed successfully. (sequence_decode_I_out_iface_rx_interface_out_bit_BY_BYTE_0)(B[m
+[36mInformation: Building the design 'tx' instantiated from design 'iso14443_2a_I_rx_iface_rx_interface__BY_BYTE_0I_tx_iface_tx_interface__BY_BYTE_0' with(B[m
+        the parameters "|((N%clk%)(N%rst_n%)(N%in_iface%I%WORK/tx_interface%in_bit%BY_BYTE=0)(N%lm_out%))". (HDL-193)
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/tx.sv:135: Variables crossing hierarchy: interface content 'be_iface.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/tx.sv:135: Variables crossing hierarchy: interface content 'be_iface.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/tx.sv:135: Variables crossing hierarchy: interface content 'be_iface.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/tx.sv:135: Variables crossing hierarchy: interface content 'be_iface.last_bit_in_byte' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/tx.sv:135: Variables crossing hierarchy: interface content 'be_iface.req' may become connected to an inout port. (VER-735)(B[m
+
+Statistics for case statements in always block at line 58 in file
+        '../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/tx.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            67            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine tx_I_in_iface_tx_interface_in_bit_BY_BYTE_0 line 58 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/tx.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  in_iface.req_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine tx_I_in_iface_tx_interface_in_bit_BY_BYTE_0 line 146 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/tx.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     lm_out_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+[32mPresto compilation completed successfully. (tx_I_in_iface_tx_interface_in_bit_BY_BYTE_0)(B[m
+[36mInformation: Building the design 'framing' instantiated from design 'iso14443_3a_0_3_1dffd8e0_3_I_rx_iface_from_14443_2a_rx_interface__BY_BYTE_0I_tx_iface_to_14443_2a_tx_interface__BY_BYTE_0I_rx_iface_to_14443_4a_rx_interface__BY_BYTE_1I_tx_iface_from_14443_4a_tx_interface__BY_BYTE_1' with(B[m
+        the parameters "FDT_TIMING_ADJUST=3|((N%clk%)(N%rst_n%)(N%pause_n_synchronised%)(N%in_rx_iface%I%WORK/rx_interface%in_bit%BY_BYTE=0)(N%out_rx_iface_bytes%I%WORK/rx_interface%%BY_BYTE=1)(N%out_rx_iface_bits%I%WORK/rx_interface%%BY_BYTE=0)(N%rx_crc_ok%)(N%in_tx_iface%I%WORK/tx_interface%%BY_BYTE=1)(N%tx_append_crc%)(N%out_tx_iface%I%WORK/tx_interface%out_bit%BY_BYTE=0))". (HDL-193)
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:81: Variables crossing hierarchy: interface content 'rx_iface_bits.soc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:81: Variables crossing hierarchy: interface content 'rx_iface_bits.eoc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:81: Variables crossing hierarchy: interface content 'rx_iface_bits.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:81: Variables crossing hierarchy: interface content 'rx_iface_bits.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:81: Variables crossing hierarchy: interface content 'rx_iface_bits.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:81: Variables crossing hierarchy: interface content 'rx_iface_bits.error' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:92: Variables crossing hierarchy: interface content 'rx_iface_bits.soc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:92: Variables crossing hierarchy: interface content 'rx_iface_bits.eoc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:92: Variables crossing hierarchy: interface content 'rx_iface_bits.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:92: Variables crossing hierarchy: interface content 'rx_iface_bits.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:92: Variables crossing hierarchy: interface content 'rx_iface_bits.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:92: Variables crossing hierarchy: interface content 'rx_iface_bits.error' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:141: Variables crossing hierarchy: interface content 'tx_iface_bits.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:141: Variables crossing hierarchy: interface content 'tx_iface_bits.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:141: Variables crossing hierarchy: interface content 'tx_iface_bits.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:141: Variables crossing hierarchy: interface content 'tx_iface_bits.last_bit_in_byte' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:141: Variables crossing hierarchy: interface content 'tx_iface_bits.req' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:153: Variables crossing hierarchy: interface content 'tx_iface_bits.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:153: Variables crossing hierarchy: interface content 'tx_iface_bits.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:153: Variables crossing hierarchy: interface content 'tx_iface_bits.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:153: Variables crossing hierarchy: interface content 'tx_iface_bits.last_bit_in_byte' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:153: Variables crossing hierarchy: interface content 'tx_iface_bits.req' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:172: Variables crossing hierarchy: interface content 'rx_iface_bits.soc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:172: Variables crossing hierarchy: interface content 'rx_iface_bits.eoc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:172: Variables crossing hierarchy: interface content 'rx_iface_bits.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:172: Variables crossing hierarchy: interface content 'rx_iface_bits.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:172: Variables crossing hierarchy: interface content 'rx_iface_bits.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:172: Variables crossing hierarchy: interface content 'rx_iface_bits.error' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:172: Variables crossing hierarchy: interface content 'tx_iface_bits.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:172: Variables crossing hierarchy: interface content 'tx_iface_bits.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:172: Variables crossing hierarchy: interface content 'tx_iface_bits.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:172: Variables crossing hierarchy: interface content 'tx_iface_bits.last_bit_in_byte' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/framing.sv:172: Variables crossing hierarchy: interface content 'tx_iface_bits.req' may become connected to an inout port. (VER-735)(B[m
+[32mPresto compilation completed successfully. (framing_FDT_TIMING_ADJUST3_I_in_rx_iface_rx_interface_in_bit_BY_BYTE_0I_out_rx_iface_bytes_rx_interface__BY_BYTE_1I_out_rx_iface_bits_rx_interface__BY_BYTE_0I_in_tx_iface_tx_interface__BY_BYTE_1I_out_tx_iface_tx_interface_out_bit_BY_BYTE_0)(B[m
+[36mInformation: Building the design 'routing' instantiated from design 'iso14443_3a_0_3_1dffd8e0_3_I_rx_iface_from_14443_2a_rx_interface__BY_BYTE_0I_tx_iface_to_14443_2a_tx_interface__BY_BYTE_0I_rx_iface_to_14443_4a_rx_interface__BY_BYTE_1I_tx_iface_from_14443_4a_tx_interface__BY_BYTE_1' with(B[m
+        the parameters "|((N%route_rx_to_initialisation%)(N%route_rx_to_14443_4%)(N%route_tx_from_14443_4%)(N%in_rx_iface%I%WORK/rx_interface%%BY_BYTE=1)(N%out_rx_iface_init%I%WORK/rx_interface%%BY_BYTE=1)(N%out_rx_iface_14443_4%I%WORK/rx_interface%out_byte%BY_BYTE=1)(N%in_tx_iface_init%I%WORK/tx_interface%%BY_BYTE=1)(N%in_tx_iface_14443_4%I%WORK/tx_interface%in_byte%BY_BYTE=1)(N%out_tx_iface%I%WORK/tx_interface%%BY_BYTE=1)(N%in_tx_append_crc_init%)(N%in_tx_append_crc_14443_4%)(N%out_tx_append_crc%))". (HDL-193)
+[32mPresto compilation completed successfully. (routing_I_in_rx_iface_rx_interface__BY_BYTE_1I_out_rx_iface_init_rx_interface__BY_BYTE_1I_out_rx_iface_14443_4_rx_interface_out_byte_BY_BYTE_1I_in_tx_iface_init_tx_interface__BY_BYTE_1I_in_tx_iface_14443_4_tx_interface_in_byte_BY_BYTE_1I_out_tx_iface_tx_interface__BY_BYTE_1)(B[m
+[33mWarning: Filename too long >255 chars. Renaming file:(B[m
+'/home/aparlane/fiuba_thesis/hdl/synth_pnr/synth/work/ROUTING_I_IN_RX_IFACE_RX_INTERFACE__BY_BYTE_1I_OUT_RX_IFACE_INIT_RX_INTERFACE__BY_BYTE_1I_OUT_RX_IFACE_14443_4_RX_INTERFACE_OUT_BYTE_BY_BYTE_1I_IN_TX_IFACE_INIT_TX_INTERFACE__BY_BYTE_1I_IN_TX_IFACE_14443_4_TX_INTERFACE_IN_BYTE_BY_BYTE_1I_OUT_TX_IFACE_TX_INTERFACE__BY_BYTE_1.mr'
+to
+'/home/aparlane/fiuba_thesis/hdl/synth_pnr/synth/work/ROUTING_I_IN_RX_IFACE_RX_INTERFACE__BY_BYTE_1I_OUT_RX_IFACE_INIT_RX_INTERFACE__BY_BYTE_1I_OUT_RX_IFACE_14443_4_RX_INTERFACE_OUT_BYTE_BY_BYTE_1I_IN_TX_IFACE_INIT_TX_INTERFACE__BY_BYTE_1I_IN_TX_IFACE_1_86778E80FA7B0A4867833E412FAFB191A8BB92BD39C817B1_000.mr'
+[36mInformation: Building the design 'initialisation' instantiated from design 'iso14443_3a_0_3_1dffd8e0_3_I_rx_iface_from_14443_2a_rx_interface__BY_BYTE_0I_tx_iface_to_14443_2a_tx_interface__BY_BYTE_0I_rx_iface_to_14443_4a_rx_interface__BY_BYTE_1I_tx_iface_from_14443_4a_tx_interface__BY_BYTE_1' with(B[m
+        the parameters "UID_SIZE=2'h0,UID_INPUT_BITS=3,UID_FIXED=29'h1dffd8e0|((N%clk%)(N%rst_n%)(N%uid_variable%)(N%rx_iface%I%WORK/rx_interface%%BY_BYTE=1)(N%rx_iface_bits%I%WORK/rx_interface%%BY_BYTE=0)(N%rx_crc_ok%)(N%tx_iface%I%WORK/tx_interface%%BY_BYTE=1)(N%tx_append_crc%)(N%iso14443_4a_deselect%)(N%iso14443_4a_rats%)(N%iso14443_4a_tag_active%)(N%route_rx_to_initialisation%)(N%route_rx_to_14443_4a%)(N%route_tx_from_14443_4a%))". (HDL-193)
+[33mWarning:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/initialisation.sv:225: signed to unsigned conversion occurs. (VER-318)(B[m
+[33mWarning:  ../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/initialisation.sv:399: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)(B[m
+
+Statistics for case statements in always block at line 374 in file
+        '../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/initialisation.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           399            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 517 in file
+        '../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/initialisation.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           548            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+        in routine initialisation_0_3_1dffd8e0_I_rx_iface_rx_interface__BY_BYTE_1I_rx_iface_bits_rx_interface__BY_BYTE_0I_tx_iface_tx_interface__BY_BYTE_1 line 91 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/initialisation.sv'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+| current_cascade_level_reg | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+=====================================================================================
+
+Inferred memory devices in process
+        in routine initialisation_0_3_1dffd8e0_I_rx_iface_rx_interface__BY_BYTE_1I_rx_iface_bits_rx_interface__BY_BYTE_0I_tx_iface_tx_interface__BY_BYTE_1 line 188 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/initialisation.sv'.
+===================================================================================
+|      Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================
+|   ac_reply_buffer_reg   | Flip-flop |  40   |  Y  | N  | N  | N  | N  | N  | N  |
+|      rx_count_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    rx_error_flag_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    pkt_received_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    uid_matching_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| is_AC_SELECT_for_us_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      rx_buffer_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===================================================================================
+
+Inferred memory devices in process
+        in routine initialisation_0_3_1dffd8e0_I_rx_iface_rx_interface__BY_BYTE_1I_rx_iface_bits_rx_interface__BY_BYTE_0I_tx_iface_tx_interface__BY_BYTE_1 line 355 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/initialisation.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   state_star_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine initialisation_0_3_1dffd8e0_I_rx_iface_rx_interface__BY_BYTE_1I_rx_iface_bits_rx_interface__BY_BYTE_0I_tx_iface_tx_interface__BY_BYTE_1 line 517 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/initialisation.sv'.
+===================================================================================
+|      Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================
+|    tx_append_crc_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| tx_iface.data_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      tx_buffer_reg      | Flip-flop |  40   |  Y  | N  | N  | N  | N  | N  | N  |
+|  tx_count_minus_1_reg   | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+| tx_iface.data_bits_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===================================================================================
+[32mPresto compilation completed successfully. (initialisation_0_3_1dffd8e0_I_rx_iface_rx_interface__BY_BYTE_1I_rx_iface_bits_rx_interface__BY_BYTE_0I_tx_iface_tx_interface__BY_BYTE_1)(B[m
+[36mInformation: Building the design 'signal_control'. (HDL-193)(B[m
+
+Statistics for case statements in always block at line 118 in file
+        '../../../hdl/rtl/signal_control.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           200            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine signal_control line 78 in file
+                '../../../hdl/rtl/signal_control.sv'.
+========================================================================================
+|        Register Name         |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+========================================================================================
+| pause_n_synchronised_old_reg | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+========================================================================================
+
+Inferred memory devices in process
+        in routine signal_control line 118 in file
+                '../../../hdl/rtl/signal_control.sv'.
+==============================================================================================
+|           Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==============================================================================================
+|          new_signals_reg           | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|             state_reg              | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|            signals_reg             | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|            counter_reg             | Flip-flop |  25   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        unexpected_pause_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| cached_adc_conversion_complete_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|        cached_adc_value_reg        | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        starts_adc_read_reg         | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       cached_sync_timing_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|    cached_auto_read_timing1_reg    | Flip-flop |  25   |  Y  | N  | N  | N  | N  | N  | N  |
+|    cached_auto_read_timing2_reg    | Flip-flop |  25   |  Y  | N  | N  | N  | N  | N  | N  |
+|           cached_cmd_reg           | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+==============================================================================================
+[32mPresto compilation completed successfully. (signal_control)(B[m
+[36mInformation: Building the design 'subcarrier'. (HDL-193)(B[m
+
+Inferred memory devices in process
+        in routine subcarrier line 52 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/subcarrier.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   subcarrier_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      count_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+[32mPresto compilation completed successfully. (subcarrier)(B[m
+[36mInformation: Building the design 'bit_encoder' instantiated from design 'tx_I_in_iface_tx_interface_in_bit_BY_BYTE_0' with(B[m
+        the parameters "|((N%clk%)(N%rst_n%)(N%en%)(N%in_iface%I%WORK/tx_interface%%BY_BYTE=0)(N%encoded_data%)(N%last_tick%))". (HDL-193)
+
+Inferred memory devices in process
+        in routine bit_encoder_I_in_iface_tx_interface__BY_BYTE_0 line 51 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_2a/bit_encoder.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  encoded_data_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      count_reg      | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+[32mPresto compilation completed successfully. (bit_encoder_I_in_iface_tx_interface__BY_BYTE_0)(B[m
+[36mInformation: Building the design 'frame_decode' instantiated from design 'framing_FDT_TIMING_ADJUST3_I_in_rx_iface_rx_interface_in_bit_BY_BYTE_0I_out_rx_iface_bytes_rx_interface__BY_BYTE_1I_out_rx_iface_bits_rx_interface__BY_BYTE_0I_in_tx_iface_tx_interface__BY_BYTE_1I_out_tx_iface_tx_interface_out_bit_BY_BYTE_0' with(B[m
+        the parameters "|((N%clk%)(N%rst_n%)(N%in_iface%I%WORK/rx_interface%in_bit%BY_BYTE=0)(N%out_iface%I%WORK/rx_interface%%BY_BYTE=0)(N%last_bit%))". (HDL-193)
+
+Inferred memory devices in process
+        in routine frame_decode_I_in_iface_rx_interface_in_bit_BY_BYTE_0I_out_iface_rx_interface__BY_BYTE_0 line 55 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/frame_decode.sv'.
+====================================================================================
+|      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+====================================================================================
+|    out_iface.data_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| out_iface.data_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   out_iface.error_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    out_iface.eoc_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|       last_bit_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  next_bit_is_parity_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    data_received_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      bit_count_reg       | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|   expected_parity_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    error_detected_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+====================================================================================
+[32mPresto compilation completed successfully. (frame_decode_I_in_iface_rx_interface_in_bit_BY_BYTE_0I_out_iface_rx_interface__BY_BYTE_0)(B[m
+[36mInformation: Building the design 'deserialiser' instantiated from design 'framing_FDT_TIMING_ADJUST3_I_in_rx_iface_rx_interface_in_bit_BY_BYTE_0I_out_rx_iface_bytes_rx_interface__BY_BYTE_1I_out_rx_iface_bits_rx_interface__BY_BYTE_0I_in_tx_iface_tx_interface__BY_BYTE_1I_out_tx_iface_tx_interface_out_bit_BY_BYTE_0' with(B[m
+        the parameters "|((N%clk%)(N%rst_n%)(N%in_iface%I%WORK/rx_interface%%BY_BYTE=0)(N%out_iface%I%WORK/rx_interface%out_byte%BY_BYTE=1))". (HDL-193)
+
+Inferred memory devices in process
+        in routine deserialiser_I_in_iface_rx_interface__BY_BYTE_0I_out_iface_rx_interface_out_byte_BY_BYTE_1 line 45 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/deserialiser.sv'.
+====================================================================================
+|      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+====================================================================================
+|    out_iface.data_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+| out_iface.data_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    out_iface.eoc_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   out_iface.error_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      seen_error_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| out_iface.data_bits_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+====================================================================================
+[32mPresto compilation completed successfully. (deserialiser_I_in_iface_rx_interface__BY_BYTE_0I_out_iface_rx_interface_out_byte_BY_BYTE_1)(B[m
+[36mInformation: Building the design 'fdt' instantiated from design 'framing_FDT_TIMING_ADJUST3_I_in_rx_iface_rx_interface_in_bit_BY_BYTE_0I_out_rx_iface_bytes_rx_interface__BY_BYTE_1I_out_rx_iface_bits_rx_interface__BY_BYTE_0I_in_tx_iface_tx_interface__BY_BYTE_1I_out_tx_iface_tx_interface_out_bit_BY_BYTE_0' with(B[m
+        the parameters "TIMING_ADJUST=4". (HDL-193)
+
+Inferred memory devices in process
+        in routine fdt_TIMING_ADJUST4 line 124 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/fdt.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  last_pause_n_reg   | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine fdt_TIMING_ADJUST4 line 141 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/fdt.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   seen_pause_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     trigger_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      count_reg      | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+[32mPresto compilation completed successfully. (fdt_TIMING_ADJUST4)(B[m
+[36mInformation: Building the design 'serialiser' instantiated from design 'framing_FDT_TIMING_ADJUST3_I_in_rx_iface_rx_interface_in_bit_BY_BYTE_0I_out_rx_iface_bytes_rx_interface__BY_BYTE_1I_out_rx_iface_bits_rx_interface__BY_BYTE_0I_in_tx_iface_tx_interface__BY_BYTE_1I_out_tx_iface_tx_interface_out_bit_BY_BYTE_0' with(B[m
+        the parameters "|((N%clk%)(N%rst_n%)(N%in_iface%I%WORK/tx_interface%in_byte%BY_BYTE=1)(N%out_iface%I%WORK/tx_interface%%BY_BYTE=0))". (HDL-193)
+
+Inferred memory devices in process
+        in routine serialiser_I_in_iface_tx_interface_in_byte_BY_BYTE_1I_out_iface_tx_interface__BY_BYTE_0 line 47 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/serialiser.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   cached_data_reg   | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|  in_iface.req_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      idle_reg       | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|    bit_count_reg    | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|   cache_data_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+[32mPresto compilation completed successfully. (serialiser_I_in_iface_tx_interface_in_byte_BY_BYTE_1I_out_iface_tx_interface__BY_BYTE_0)(B[m
+[36mInformation: Building the design 'frame_encode' instantiated from design 'framing_FDT_TIMING_ADJUST3_I_in_rx_iface_rx_interface_in_bit_BY_BYTE_0I_out_rx_iface_bytes_rx_interface__BY_BYTE_1I_out_rx_iface_bits_rx_interface__BY_BYTE_0I_in_tx_iface_tx_interface__BY_BYTE_1I_out_tx_iface_tx_interface_out_bit_BY_BYTE_0' with(B[m
+        the parameters "|((N%clk%)(N%rst_n%)(N%fdt_trigger%)(N%in_iface%I%WORK/tx_interface%%BY_BYTE=0)(N%append_crc%)(N%crc%)(N%out_iface%I%WORK/tx_interface%out_bit%BY_BYTE=0))". (HDL-193)
+
+Statistics for case statements in always block at line 71 in file
+        '../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/frame_encode.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            81            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine frame_encode_I_in_iface_tx_interface__BY_BYTE_0I_out_iface_tx_interface_out_bit_BY_BYTE_0 line 71 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/frame_encode.sv'.
+==========================================================================================
+|         Register Name          |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==========================================================================================
+|          crc_byte_reg          | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|           state_reg            | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        in_iface.req_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    out_iface.data_valid_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|         cached_crc_reg         | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       out_iface.data_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| out_iface.last_bit_in_byte_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|           parity_reg           | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       bits_remaining_reg       | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+==========================================================================================
+[32mPresto compilation completed successfully. (frame_encode_I_in_iface_tx_interface__BY_BYTE_0I_out_iface_tx_interface_out_bit_BY_BYTE_0)(B[m
+[36mInformation: Building the design 'crc_control' instantiated from design 'framing_FDT_TIMING_ADJUST3_I_in_rx_iface_rx_interface_in_bit_BY_BYTE_0I_out_rx_iface_bytes_rx_interface__BY_BYTE_1I_out_rx_iface_bits_rx_interface__BY_BYTE_0I_in_tx_iface_tx_interface__BY_BYTE_1I_out_tx_iface_tx_interface_out_bit_BY_BYTE_0' with(B[m
+        the parameters "|((N%clk%)(N%rst_n%)(N%rx_iface%I%WORK/rx_interface%%BY_BYTE=0)(N%rx_crc_ok%)(N%tx_iface%I%WORK/tx_interface%%BY_BYTE=0)(N%tx_append_crc%)(N%fdt_trigger%)(N%crc%))". (HDL-193)
+
+Inferred memory devices in process
+        in routine crc_control_I_rx_iface_rx_interface__BY_BYTE_0I_tx_iface_tx_interface__BY_BYTE_0 line 70 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/crc_control.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    crc_data_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    crc_type_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    crc_start_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   crc_sample_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+[32mPresto compilation completed successfully. (crc_control_I_rx_iface_rx_interface__BY_BYTE_0I_tx_iface_tx_interface__BY_BYTE_0)(B[m
+[36mInformation: Building the design 'crc_a'. (HDL-193)(B[m
+
+Inferred memory devices in process
+        in routine crc_a line 55 in file
+                '../../../hdl/components/iso_iec_14443a/rtl/iso14443_3a/crc_a.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      lfsr_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      lfsr_reg       | Flip-flop |   8   |  Y  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+[32mPresto compilation completed successfully. (crc_a)(B[m
+1
+
+[33mWarning: TODO: set synthesis variables(B[m
+[36mLinking design(B[m
+
+  Linking design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (22 designs)              /home/aparlane/fiuba_thesis/hdl/synth_pnr/synth/radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1.db, etc
+  D_CELLS_HD_LPMOS_slow_1_62V_125C (library) /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db
+  D_CELLS_HDLL_LPMOS_slow_1_62V_125C (library) /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db
+  IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C (library) /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db
+  dw_foundation.sldb (library) /usr/synopsys2/syn/P-2019.03/libraries/syn/dw_foundation.sldb
+
+1
+
+[36mChecking design(B[m
+ 
+****************************************
+check_design summary:
+Version:     P-2019.03
+Date:        Tue Nov 17 12:43:28 2020
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                    169
+    Unconnected ports (LINT-28)                                   117
+    Feedthrough (LINT-29)                                          24
+    Shorted outputs (LINT-31)                                      18
+    Constant outputs (LINT-52)                                     10
+
+Cells                                                             109
+    Cells do not drive (LINT-1)                                    21
+    Nets connected to multiple pins on same cell (LINT-33)         42
+    Hier pins without driver and load (LINT-60)                    46
+
+Nets                                                               23
+    Unloaded nets (LINT-2)                                          1
+    Undriven nets (LINT-3)                                         22
+--------------------------------------------------------------------------------
+
+[36mInformation: Use the 'check_design' command for (B[m
+         more information about warnings. (LINT-98)
+
+1
+
+[32mScript finished successfully(B[m
+exit
+
+Thank you...
+

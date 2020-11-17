@@ -201,6 +201,9 @@ if {[expr [colourise_cmd "check_design -summary"] == 0]} {
     return
 }
 
+# Save the full check_design output (not just the sumarry)
+check_design > logs/check_design.log
+
 if {($pause_between_commands == 1) && ([do_continue] == 0)} {
     return
 }
