@@ -19,6 +19,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this code. If not, see <http://www.gnu.org/licenses/>.
 
+if {![info exists no_colours]} {
+    set no_colours 0
+}
 
 set COLOUR_RED     1
 set COLOUR_GREEN   2
@@ -27,11 +30,19 @@ set COLOUR_BLUE    6
 
 # Set text colour to $colour
 proc colour {colour} {
+    variable no_colours
+    if {$no_colours == 1} {
+        return ""
+    }
     return [exec tput setaf $colour]
 }
 
 # Set text colour to default
 proc clear_colour {} {
+    variable no_colours
+    if {$no_colours == 1} {
+        return ""
+    }
     return [exec tput sgr0]
 }
 
@@ -65,6 +76,11 @@ proc colourise {buffer} {
 }
 
 proc colourise_cmd {cmd} {
+    variable no_colours
+    if {$no_colours == 1} {
+        return [eval $cmd]
+    }
+
     # redirect the output of the command to a variable (buffer) so we can later apply our colourisation to it
     redirect -variable buffer {
         # save the result
