@@ -115,7 +115,7 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
 # Analyze source files
 # =============================================================================
 
-puts "[colour $COLOUR_BLUE]Setting up libraries[clear_colour]"
+puts "[colour $COLOUR_BLUE]Analysing source files[clear_colour]"
 foreach file_name $SRC_FILES {
     puts "[colour $COLOUR_BLUE]Analysing $file_name[clear_colour]"
     if {[expr [colourise_cmd "analyze -library WORK -format sverilog $file_name"] == 0]} {
