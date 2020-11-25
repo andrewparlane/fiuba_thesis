@@ -91,7 +91,7 @@ SYNTH_PNR_DIR			= hdl/synth_pnr
 # We also pull the logs so we always have the latest logs saved locally
 sync_with_remote:
 	-rm -rf synth/logs
-	scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/logs/	synth/
+	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/logs/	synth/
 	cd $(ROOT_DIR) && rsync -rRv --delete 						\
 		--exclude $(SYNTH_PNR_DIR)/synth/work/					\
 		--exclude $(SYNTH_PNR_DIR)/synth/logs/					\
