@@ -431,7 +431,7 @@ module adapter
     // tx_buffer[0]. Both synthesis and simulation are happy with this
     always_comb begin
         tx_iface.data = tx_buffer[0]; // default to [0]
-        for (int i = 0; i < TX_BUFF_LEN; i++) begin
+        for (int unsigned i = 0; i < TX_BUFF_LEN; i++) begin
             if (tx_idx == 4'(i)) begin
                 tx_iface.data = tx_buffer[i];
                 break;
