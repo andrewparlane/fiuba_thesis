@@ -1,5 +1,5 @@
 Starting shell in Topographical mode...
-source synth.tcl
+dc_shell> source synth.tcl
 [36mFound sources:(B[m
   ../../../hdl/components/iso_iec_14443a/rtl/pkg/iso14443a_pkg.sv
   ../../../hdl/components/iso_iec_14443a/rtl/interfaces/tx_interface.sv
@@ -30,6 +30,8 @@ source synth.tcl
   ../../../hdl/rtl/radiation_sensor_digital_top.sv
 
 
+Press Y to continue or N to abort
+y
 [36mSetting up libraries(B[m
 [33mWARNING: Confirm all these are correct.(B[m
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
@@ -87,7 +89,7 @@ Physical Library: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh01
                   /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/synopsys_ICC/v1_1_0/xh018-IO_CELLS_C1V8-synopsys_ICCompiler-v1_1_0/xh018_xx43_MET4_METMID_METTHK_IO_CELLS_C1V8 
 check_library options:  
 Version:                                P-2019.03
-Check date and time:    Tue Nov 17 12:43:25 2020
+Check date and time:    Wed Nov 25 11:25:59 2020
 
           List of logic library and file names
 ------------------------------------------------------------------------------
@@ -155,6 +157,8 @@ Logic vs. physical library quality checking PASSED.
 
 
 
+Press Y to continue or N to abort
+y
 [36mSetting up libraries(B[m
 [36mAnalysing ../../../hdl/components/iso_iec_14443a/rtl/pkg/iso14443a_pkg.sv(B[m
 Running PRESTO HDLC
@@ -319,6 +323,8 @@ Compiling source file ../../../hdl/rtl/radiation_sensor_digital_top.sv
 [32mPresto compilation completed successfully.(B[m
 1
 
+Press Y to continue or N to abort
+y
 [36mElaborating design(B[m
 Loading db file '/usr/synopsys2/syn/P-2019.03/libraries/syn/gtech.db'
 Loading db file '/usr/synopsys2/syn/P-2019.03/libraries/syn/standard.sldb'
@@ -1000,7 +1006,77 @@ Inferred memory devices in process
 [32mPresto compilation completed successfully. (crc_a)(B[m
 1
 
-[33mWarning: TODO: set synthesis variables(B[m
+Press Y to continue or N to abort
+
+Press Y to continue or N to abort
+[
+Press Y to continue or N to abort
+b
+Press Y to continue or N to abort
+
+Press Y to continue or N to abort
+[
+Press Y to continue or N to abort
+a
+Press Y to continue or N to abort
+
+Press Y to continue or N to abort
+[
+Press Y to continue or N to abort
+b
+Press Y to continue or N to abort
+
+Press Y to continue or N to abort
+[
+Press Y to continue or N to abort
+b
+Press Y to continue or N to abort
+
+Press Y to continue or N to abort
+[
+Press Y to continue or N to abort
+b
+Press Y to continue or N to abort
+
+Press Y to continue or N to abort
+[
+Press Y to continue or N to abort
+b
+Press Y to continue or N to abort
+y
+Information: linking reference library : /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/synopsys_ICC/v3_0_1/xh018-D_CELLS_HD-synopsys_ICCompiler-v3_0_1/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HD. (PSYN-878)
+Information: linking reference library : /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/synopsys_ICC/v2_1_0/xh018-D_CELLS_HDLL-synopsys_ICCompiler-v2_1_0/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HDLL. (PSYN-878)
+Information: linking reference library : /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/synopsys_ICC/v1_1_0/xh018-IO_CELLS_C1V8-synopsys_ICCompiler-v1_1_0/xh018_xx43_MET4_METMID_METTHK_IO_CELLS_C1V8. (PSYN-878)
+
+  Linking design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (22 designs)              /home/aparlane/fiuba_thesis/hdl/synth_pnr/synth/radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1.db, etc
+  D_CELLS_HD_LPMOS_slow_1_62V_125C (library) /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db
+  D_CELLS_HDLL_LPMOS_slow_1_62V_125C (library) /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db
+  IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C (library) /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db
+  dw_foundation.sldb (library) /usr/synopsys2/syn/P-2019.03/libraries/syn/dw_foundation.sldb
+
+Warning: Failed to derive preferred routing direction for the design routing layers. (DCT-033)
+Warning: Not all metal layers have preferred routing direction. (OPT-1427)
+ 
+****************************************
+Report : Layers
+Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
+Version: P-2019.03
+Date   : Wed Nov 25 11:30:54 2020
+****************************************
+
+Layer Name                   Library             Design              Tool understands
+MET1                         Unknown             Horizontal          Horizontal
+MET2                         Unknown             Vertical            Vertical
+MET3                         Unknown             Horizontal          Horizontal
+MET4                         Unknown             Vertical            Vertical
+METTP                        Unknown             Horizontal          Horizontal
+METTPL                       Unknown             Vertical            Vertical
+
+1
+
 [36mLinking design(B[m
 
   Linking design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1'
@@ -1014,12 +1090,14 @@ Inferred memory devices in process
 
 1
 
+Press Y to continue or N to abort
+y
 [36mChecking design(B[m
  
 ****************************************
 check_design summary:
 Version:     P-2019.03
-Date:        Tue Nov 17 12:43:28 2020
+Date:        Wed Nov 25 11:31:00 2020
 ****************************************
 
                    Name                                            Total
@@ -1045,8 +1123,1285 @@ Nets                                                               23
 
 1
 
+Press Y to continue or N to abort
+y
+[36mUniquifying design(B[m
+Information: Uniquified 2 instances of design 'active_low_reset_synchroniser'. (OPT-1056)
+Press Y to continue or N to abort
+y
+[36mSetting design constraints(B[m
+[33mWarning: Revisit these constraints when we have the analogue parts of the design (14443, sensor, ADC).(B[m
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+[33mWarning: Design rule attributes from the driving cell will be(B[m
+        set on the port. (UID-401)
+1
+
+Information: Updating graph... (UID-83)
+Warning: Design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+[36mInformation: Checking out the license 'DesignWare'. (SEC-104)(B[m
+[36mInformation: Updating design information... (UID-85)(B[m
+[33mWarning: Design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)(B[m
+
+[36mInformation: Checking generated_clocks...(B[m
+
+[36mInformation: Checking loops...(B[m
+
+[36mInformation: Checking no_input_delay...(B[m
+[33mWarning: The following input ports have no clock_relative delay specified, the command set_input_delay without -clock option will be ignored. (TIM-216)(B[m
+--------------------
+power_async[1]
+power_async[0]
+uid_variable[2]
+uid_variable[1]
+uid_variable[0]
+
+[36mInformation: Checking unconstrained_endpoints...(B[m
+
+[36mInformation: Checking pulse_clock_cell_type...(B[m
+
+[36mInformation: Checking no_driving_cell...(B[m
+
+[36mInformation: Checking partial_input_delay...(B[m
+1
+
+ 
+****************************************
+Report : constraint
+        -verbose
+Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
+Version: P-2019.03
+Date   : Wed Nov 25 11:31:46 2020
+****************************************
+
+
+  Startpoint: adc_conversion_complete
+              (input port clocked by clk)
+  Endpoint: adapter_inst/signal_control_inst/cached_adc_conversion_complete_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   36.87      36.87 r
+  adc_conversion_complete (in)                            0.00      36.87 r
+  adapter_inst/signal_control_inst/C1556/Z_0 (*SELECT_OP_6.1_6.1_1)
+                                                          0.00      36.87 r
+  adapter_inst/signal_control_inst/C1567/Z_0 (*SELECT_OP_2.1_2.1_1)
+                                                          0.00      36.87 r
+  adapter_inst/signal_control_inst/cached_adc_conversion_complete_reg/next_state (**SEQGEN**)
+                                                          0.00      36.87 r
+  data arrival time                                                 36.87
+
+  clock clk (rise edge)                                  73.75      73.75
+  clock network delay (ideal)                             0.00      73.75
+  clock uncertainty                                     -14.75      59.00
+  adapter_inst/signal_control_inst/cached_adc_conversion_complete_reg/clocked_on (**SEQGEN**)
+                                                          0.00      59.00 r
+  library setup time                                      0.00      59.00
+  data required time                                                59.00
+  --------------------------------------------------------------------------
+  data required time                                                59.00
+  data arrival time                                                -36.87
+  --------------------------------------------------------------------------
+[32m  slack (MET)                                                       22.12(B[m
+
+
+  Startpoint: adapter_inst/signal_control_inst/cached_adc_value_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: adapter_inst/cached_adc_value_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  adapter_inst/signal_control_inst/cached_adc_value_reg[0]/clocked_on (**SEQGEN**)
+                                                          0.00       0.00 r
+  adapter_inst/signal_control_inst/cached_adc_value_reg[0]/Q (**SEQGEN**)
+                                                          0.00       0.00 r
+  adapter_inst/cached_adc_value_reg[0]/next_state (**SEQGEN**)
+                                                          0.00       0.00 r
+  data arrival time                                                  0.00
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.50       0.50
+  adapter_inst/cached_adc_value_reg[0]/clocked_on (**SEQGEN**)
+                                                          0.00       0.50 r
+  library hold time                                       0.00       0.50
+  data required time                                                 0.50
+  --------------------------------------------------------------------------
+  data required time                                                 0.50
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+[31m  slack (VIOLATED)                                                  -0.50(B[m
+
+
+    Net: adc_conversion_complete
+
+    max_transition         7.60
+  - Transition Time        0.03
+  ------------------------------
+[32m    Slack                  7.57  (MET)(B[m
+
+
+    Net: adc_conversion_complete
+
+    max_fanout           320.00
+  - Fanout                20.00
+  ------------------------------
+[32m    Slack                300.00  (MET)(B[m
+
+
+    Net: adc_conversion_complete
+
+    max_capacitance        0.76
+  - Capacitance            0.00
+  ------------------------------
+[32m    Slack                  0.76  (MET)(B[m
+
+
+    Design: radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
+
+    max_area               0.00
+  - Current Area           0.00
+  ------------------------------
+[32m    Slack                  0.00  (MET)(B[m
+
+
+1
+
+Press Y to continue or N to abort
+y
+Using operating conditions 'slow_1_62V_125C' found in library 'D_CELLS_HD_LPMOS_slow_1_62V_125C'.
+Using operating conditions 'fast_1_98V_m40C' found in library 'D_CELLS_HD_LPMOS_fast_1_98V_m40C'.
+[36mCompiling design(B[m
+[36mThis may take awhile with no output(B[m
+[36mInformation: Performing power optimization. (PWR-850)(B[m
+Analyzing: "/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db"
+Analyzing: "/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db"
+Analyzing: "/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db"
+Library analysis succeeded.
+
+TLU+ File = /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/TLUplus/v8_0_1/xh018_xx43_MET4_METMID_METTHK_max.tlu
+TLU+ File = /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/TLUplus/v8_0_1/xh018_xx43_MET4_METMID_METTHK_min.tlu
+
+--------- Sanity Check on TLUPlus Files -------------
+1. Checking the conducting layer names in ITF and mapping file ... 
+[ Passed! ]
+2. Checking the via layer names in ITF and mapping file ... 
+[ Passed! ]
+3. Checking the consistency of Min Width and Min Spacing between MW-tech and ITF ... 
+[ Passed! ]
+----------------- Check Ends ------------------
+[36mInformation: Evaluating DesignWare library utilization. (UISN-27)(B[m
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | P-2019.03-DWBB_201903.0 |     *     |
+| Licensed DW Building Blocks        | P-2019.03-DWBB_201903.0 |     *     |
+============================================================================
+
+[36mInformation: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)(B[m
+
+[36mInformation: There are 67 potential problems in your design. Please run 'check_design' for more information. (LINT-99)(B[m
+
+  Simplifying Design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1'
+[36mInformation: The register 'adapter_inst/signal_control_inst/new_signals_reg[padding]' will be removed. (OPT-1207)(B[m
+[36mInformation: The register 'adapter_inst/signal_control_inst/signals_reg[padding]' will be removed. (OPT-1207)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/framing_inst/fe_inst/out_iface.last_bit_in_byte_reg' will be removed. (OPT-1207)(B[m
+
+****************************************************************
+[36mInformation: TLUPlus based RC computation is enabled. (RCEX-141)(B[m
+****************************************************************
+[36mInformation: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)(B[m
+[36mInformation: The RC model used is TLU+. (RCEX-015)(B[m
+[36mInformation: Library Derived Cap for layer MET1 : 0.00025 0.00019 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET1 : 0.00063 0.00022 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET2 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET2 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET3 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET3 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET4 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET4 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer METTP : 0.00023 0.00017 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer METTP : 0.00018 5.5e-05 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer METTPL : 0.00039 0.00025 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer METTPL : 6.1e-06 1.9e-06 (RCEX-011)(B[m
+[36mInformation: Library Derived Horizontal Cap : 0.00025 0.00019 (RCEX-011)(B[m
+[36mInformation: Library Derived Horizontal Res : 0.00045 0.00015 (RCEX-011)(B[m
+[36mInformation: Library Derived Vertical Cap : 0.00032 0.00022 (RCEX-011)(B[m
+[36mInformation: Library Derived Vertical Res : 0.00037 0.00012 (RCEX-011)(B[m
+[36mInformation: Using derived R and C coefficients. (RCEX-008)(B[m
+[36mInformation: Using region-based R and C coefficients. (RCEX-013)(B[m
+[36mInformation: Library Derived Via Res : 0.0056 0.0021 (RCEX-011)(B[m
+  Loading target library 'IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C'
+Loaded alib file './alib-52/D_CELLS_HD_LPMOS_slow_1_62V_125C.db.alib' (placeholder)
+Loaded alib file './alib-52/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db.alib'
+Loaded alib file './alib-52/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db.alib' (placeholder)
+  Building model 'DW01_NAND2'
+[36mInformation: Ungrouping 0 of 1 hierarchies before Pass 1 (OPT-775)(B[m
+[36mInformation: State dependent leakage is now switched from on to off.(B[m
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1'
+[36mInformation: Added key list 'DesignWare' to design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1'. (DDB-72)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/ac_reply_buffer_reg[4][7]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/ac_reply_buffer_reg[4][6]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/ac_reply_buffer_reg[4][4]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: In design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1', the register 'iso14443a_inst/part3/framing_inst/fdt_inst/last_pause_n_reg' is removed because it is merged to 'adapter_inst/signal_control_inst/pause_n_synchronised_old_reg'. (OPT-1215)(B[m
+[36mInformation: In design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1', the register 'iso14443a_inst/part2/sd_inst/last_pause_n_reg' is removed because it is merged to 'adapter_inst/signal_control_inst/pause_n_synchronised_old_reg'. (OPT-1215)(B[m
+[36mInformation: In design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1', the register 'iso14443a_inst/part4/tx_buffer_reg[1][4]' is removed because it is merged to 'iso14443a_inst/part4/tx_buffer_reg[1][5]'. (OPT-1215)(B[m
+[36mInformation: In design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1', the register 'iso14443a_inst/part3/initialisation_inst/ac_reply_buffer_reg[4][3]' is removed because it is merged to 'iso14443a_inst/part3/initialisation_inst/ac_reply_buffer_reg[4][5]'. (OPT-1215)(B[m
+ Implement Synthetic for 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1'.
+
+  Updating timing information
+[36mInformation: Updating design information... (UID-85)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/current_cascade_level_reg[0]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/current_cascade_level_reg[1]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/ac_reply_buffer_reg[4][5]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/tx_buffer_reg[4][3]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/tx_buffer_reg[4][5]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part4/tx_buffer_reg[1][5]' is a constant and will be removed. (OPT-1206)(B[m
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/ac_reply_buffer_reg[3][7]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/ac_reply_buffer_reg[3][6]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/ac_reply_buffer_reg[2][6]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/ac_reply_buffer_reg[2][7]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/ac_reply_buffer_reg[1][6]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/ac_reply_buffer_reg[1][7]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/tx_buffer_reg[4][4]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/tx_buffer_reg[4][6]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/tx_buffer_reg[4][7]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'adapter_inst/signal_control_inst/cached_cmd_reg[2]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'adapter_inst/signal_control_inst/cached_cmd_reg[3]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'adapter_inst/signal_control_inst/cached_cmd_reg[4]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'adapter_inst/signal_control_inst/cached_cmd_reg[5]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'adapter_inst/signal_control_inst/cached_cmd_reg[6]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'adapter_inst/signal_control_inst/cached_cmd_reg[7]' is a constant and will be removed. (OPT-1206)(B[m
+
+  Beginning Global Optimizations
+  ------------------------------
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+
+  Beginning Delay Optimization
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:20   56711.5      0.00       0.0       3.2                           408366.5625
+    0:00:20   56711.5      0.00       0.0       3.2                           408366.5625
+    0:00:20   56711.5      0.00       0.0       3.2                           408366.5625
+    0:00:20   56711.5      0.00       0.0       3.2                           408366.5625
+    0:00:20   56711.5      0.00       0.0       3.2                           408366.5625
+    0:00:20   56711.5      0.00       0.0       3.2                           408366.5625
+    0:00:20   56711.5      0.00       0.0       3.2                           408366.5625
+    0:00:20   56663.9      0.00       0.0       3.2                           409503.1562
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/tx_buffer_reg[3][7]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/tx_buffer_reg[3][6]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/tx_buffer_reg[2][7]' is a constant and will be removed. (OPT-1206)(B[m
+[36mInformation: The register 'iso14443a_inst/part3/initialisation_inst/tx_buffer_reg[2][6]' is a constant and will be removed. (OPT-1206)(B[m
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_fast_1_98V_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db'
+  Loading design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1'
+****************************************************************
+[36mInformation: TLUPlus based RC computation is enabled. (RCEX-141)(B[m
+****************************************************************
+[36mInformation: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)(B[m
+[36mInformation: The RC model used is TLU+. (RCEX-015)(B[m
+[36mInformation: Library Derived Cap for layer MET1 : 0.00025 0.00019 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET1 : 0.00063 0.00022 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET2 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET2 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET3 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET3 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET4 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET4 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer METTP : 0.00023 0.00017 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer METTP : 0.00018 5.5e-05 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer METTPL : 0.00039 0.00025 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer METTPL : 6.1e-06 1.9e-06 (RCEX-011)(B[m
+[36mInformation: Library Derived Horizontal Cap : 0.00025 0.00019 (RCEX-011)(B[m
+[36mInformation: Library Derived Horizontal Res : 0.00045 0.00015 (RCEX-011)(B[m
+[36mInformation: Library Derived Vertical Cap : 0.00032 0.00022 (RCEX-011)(B[m
+[36mInformation: Library Derived Vertical Res : 0.00037 0.00012 (RCEX-011)(B[m
+[36mInformation: Using derived R and C coefficients. (RCEX-008)(B[m
+[36mInformation: Using region-based R and C coefficients. (RCEX-013)(B[m
+[36mInformation: Library Derived Via Res : 0.0056 0.0021 (RCEX-011)(B[m
+
+...25%...50%...75%...100% done.
+
+
+ Collecting Buffer Trees ... Found 45
+
+ Processing Buffer Trees ... 
+
+    [5]  10% ...
+    [10]  20% ...
+    [15]  30% ...
+    [20]  40% ...
+    [25]  50% ...
+    [30]  60% ...
+    [35]  70% ...
+    [40]  80% ...
+    [45]  90% ...
+    [45] 100% Done ...
+
+
+[36mInformation: Automatic high-fanout synthesis deletes 79 cells. (HFS-802)(B[m
+[36mInformation: Automatic high-fanout synthesis adds 56 new cells. (PSYN-864)(B[m
+
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:29   56232.8      0.00       0.0       2.3                           406837.0938
+
+
+  Beginning Timing Optimizations
+  ------------------------------
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+    0:00:29   56313.8      0.00       0.0       0.0                           408021.1250
+    0:00:29   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:29   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:29   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:29   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:29   56166.7      0.00       0.0       0.0                           405352.2500
+
+  Beginning Delay Optimization HSVT Pass
+  --------------------------------------
+    0:00:32   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:32   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:32   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:32   56166.7      0.00       0.0       0.0                           405352.2500
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:35   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:35   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:35   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:35   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:35   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:35   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:35   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:35   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:35   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:35   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:35   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:35   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:35   56166.7      0.00       0.0       0.0                           405352.2500
+    0:00:35   56078.9      0.00       0.0       0.0                           404201.2188
+
+
+  Beginning High Effort Optimization Phase
+  ----------------------------------------
+
+
+  Beginning Timing Optimization
+  -----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:35   56078.9      0.00       0.0       0.0                           404201.2188
+    0:00:35   56078.9      0.00       0.0       0.0                           404201.2188
+    0:00:35   56078.9      0.00       0.0       0.0                           404201.2188
+    0:00:35   56078.9      0.00       0.0       0.0                           404201.2188
+    0:00:35   56078.9      0.00       0.0       0.0                           404201.2188
+
+
+  High Effort Optimization Phase Complete
+  ---------------------------------------
+
+Skipping remaining steps due to timing met. Go to finish
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+[36mInformation: Fail to create cell *cell*9513 in dpi.(B[m
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_fast_1_98V_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db'
+  Loading target library 'IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C'
+[36mInformation: State dependent leakage is now switched from off to on.(B[m
+[36mInformation: Propagating switching activity (low effort zero delay simulation). (PWR-6)(B[m
+1
+
+Press Y to continue or N to abort
+y
+[36mInserting Clock Gating(B[m
+[36mInformation: Performing power optimization. (PWR-850)(B[m
+Alib files are up-to-date.
+[36mInformation: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)(B[m
+
+  Loading target library 'IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C'
+Loaded alib file './alib-52/D_CELLS_HD_LPMOS_slow_1_62V_125C.db.alib' (placeholder)
+Loaded alib file './alib-52/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db.alib'
+Loaded alib file './alib-52/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db.alib' (placeholder)
+[36mInformation: State dependent leakage is now switched from on to off.(B[m
+[36mInformation: Updating design information... (UID-85)(B[m
+[36mInformation: Performing clock-gating on design radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1. (PWR-730)(B[m
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_fast_1_98V_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db'
+  Loading design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1'
+****************************************************************
+[36mInformation: TLUPlus based RC computation is enabled. (RCEX-141)(B[m
+****************************************************************
+[36mInformation: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)(B[m
+[36mInformation: The RC model used is TLU+. (RCEX-015)(B[m
+[36mInformation: Library Derived Cap for layer MET1 : 0.00025 0.00019 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET1 : 0.00063 0.00022 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET2 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET2 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET3 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET3 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET4 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET4 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer METTP : 0.00023 0.00017 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer METTP : 0.00018 5.5e-05 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer METTPL : 0.00039 0.00025 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer METTPL : 6.1e-06 1.9e-06 (RCEX-011)(B[m
+[36mInformation: Library Derived Horizontal Cap : 0.00025 0.00019 (RCEX-011)(B[m
+[36mInformation: Library Derived Horizontal Res : 0.00045 0.00015 (RCEX-011)(B[m
+[36mInformation: Library Derived Vertical Cap : 0.00032 0.00022 (RCEX-011)(B[m
+[36mInformation: Library Derived Vertical Res : 0.00037 0.00012 (RCEX-011)(B[m
+[36mInformation: Using derived R and C coefficients. (RCEX-008)(B[m
+[36mInformation: Using region-based R and C coefficients. (RCEX-013)(B[m
+[36mInformation: Library Derived Via Res : 0.0056 0.0021 (RCEX-011)(B[m
+
+Info: skipped to derive cell locations.
+
+[33mWarning: Found 14 percent of cells (314) without DC Topographical data. Generating data for those cells... (OPT-1404)(B[m
+43%...57%...71%...86%...100% done.
+
+
+ Collecting Buffer Trees ... Found 18
+
+ Processing Buffer Trees ... 
+
+    [2]  10% ...
+    [4]  20% ...
+    [6]  30% ...
+    [8]  40% ...
+    [10]  50% ...
+    [12]  60% ...
+    [14]  70% ...
+    [16]  80% ...
+    [18]  90% ...
+    [18] 100% Done ...
+
+
+[36mInformation: Automatic high-fanout synthesis deletes 0 cells. (HFS-802)(B[m
+[36mInformation: Automatic high-fanout synthesis adds 0 new cells. (PSYN-864)(B[m
+
+
+
+  Beginning Design Rule Fixing  (max_transition)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:15   55133.4      0.00       0.0       0.9                           433622.8750
+
+
+  Beginning Timing Optimizations
+  ------------------------------
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+    0:00:17   55103.3      0.00       0.0       0.0                           433181.6875
+    0:00:17   52454.4      0.00       0.0       0.0                           382102.8125
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:21   52454.4      0.00       0.0       0.0                           382102.8125
+    0:00:21   52454.4      0.00       0.0       0.0                           382102.8125
+    0:00:21   52454.4      0.00       0.0       0.0                           382102.8125
+    0:00:21   52454.4      0.00       0.0       0.0                           382102.8125
+    0:00:21   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:21   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:21   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:21   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:21   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:21   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:21   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:21   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:21   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:21   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:21   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:21   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:22   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:22   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:22   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:22   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:22   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:22   52427.0      0.00       0.0       0.0                           381737.4688
+    0:00:22   52381.7      0.00       0.0       0.0                           381304.6562
+    0:00:22   52376.4      0.00       0.0       0.0                           381197.2500
+
+
+  Beginning High Effort Optimization Phase
+  ----------------------------------------
+
+
+  Beginning Timing Optimization
+  -----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:22   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:23   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:24   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:24   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:24   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:24   52376.4      0.00       0.0       0.0                           381197.2500
+    0:00:24   52376.4      0.00       0.0       0.0                           381197.2500
+
+
+  High Effort Optimization Phase Complete
+  ---------------------------------------
+
+Skipping remaining steps due to timing met. Go to finish
+    0:00:24   52700.0      0.00       0.0       0.0                           381200.1562
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+[36mInformation: Fail to create cell *cell*10125 in dpi.(B[m
+
+  Beginning Buftree Cleanup
+  -------------------------
+[36mInformation: Fail to create cell *cell*10125 in dpi.(B[m
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:24   52700.0      0.00       0.0       0.0                           381200.1562
+    0:00:24   52700.0      0.00       0.0       0.0                           381200.1562
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_fast_1_98V_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db'
+  Loading target library 'IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C'
+[36mInformation: State dependent leakage is now switched from off to on.(B[m
+[36mInformation: Propagating switching activity (low effort zero delay simulation). (PWR-6)(B[m
+1
+
+Press Y to continue or N to abort
+y
+[36mExtracting RC estimates(B[m
+****************************************************************
+[36mInformation: TLUPlus based RC computation is enabled. (RCEX-141)(B[m
+****************************************************************
+[36mInformation: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)(B[m
+[36mInformation: The RC model used is TLU+. (RCEX-015)(B[m
+[36mInformation: Library Derived Cap for layer MET1 : 0.00025 0.00019 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET1 : 0.00063 0.00022 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET2 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET2 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET3 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET3 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET4 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET4 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer METTP : 0.00023 0.00017 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer METTP : 0.00018 5.5e-05 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer METTPL : 0.00039 0.00025 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer METTPL : 6.1e-06 1.9e-06 (RCEX-011)(B[m
+[36mInformation: Library Derived Horizontal Cap : 0.00025 0.00019 (RCEX-011)(B[m
+[36mInformation: Library Derived Horizontal Res : 0.00045 0.00015 (RCEX-011)(B[m
+[36mInformation: Library Derived Vertical Cap : 0.00032 0.00022 (RCEX-011)(B[m
+[36mInformation: Library Derived Vertical Res : 0.00037 0.00012 (RCEX-011)(B[m
+[36mInformation: Using derived R and C coefficients. (RCEX-008)(B[m
+[36mInformation: Using region-based R and C coefficients. (RCEX-013)(B[m
+[36mInformation: Library Derived Via Res : 0.0056 0.0021 (RCEX-011)(B[m
+
+
+  Loading design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1'
+
+
+
+
+[36mInformation: Library Manufacturing Grid(GridResolution) : 5(B[m
+[36mInformation: Time Unit from Milkyway design library: 'ns' (B[m
+[36mInformation: Design Library and main library timing units are matched - 1.000 ns. (B[m
+[36mInformation: Resistance Unit from Milkyway design library: 'kohm' (B[m
+[36mInformation: Design Library and main library resistance units are matched - 1.000 kohm. (B[m
+[36mInformation: Capacitance Unit from Milkyway design library: 'pf' (B[m
+[36mInformation: Design Library and main library capacitance units are matched - 1.000 pf. (B[m
+
+2197 nets processed. 
+Router succeeded.
+1
+
+Press Y to continue or N to abort
+y
+[36mOptimising registers(B[m
+[36mInformation: linking reference library : /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/synopsys_ICC/v3_0_1/xh018-D_CELLS_HD-synopsys_ICCompiler-v3_0_1/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HD. (PSYN-878)(B[m
+[36mInformation: linking reference library : /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/synopsys_ICC/v2_1_0/xh018-D_CELLS_HDLL-synopsys_ICCompiler-v2_1_0/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HDLL. (PSYN-878)(B[m
+[36mInformation: linking reference library : /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/synopsys_ICC/v1_1_0/xh018-IO_CELLS_C1V8-synopsys_ICCompiler-v1_1_0/xh018_xx43_MET4_METMID_METTHK_IO_CELLS_C1V8. (PSYN-878)(B[m
+****************************************************************
+[36mInformation: TLUPlus based RC computation is enabled. (RCEX-141)(B[m
+****************************************************************
+[36mInformation: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)(B[m
+[36mInformation: The RC model used is TLU+. (RCEX-015)(B[m
+[36mInformation: Library Derived Cap for layer MET1 : 0.00025 0.00019 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET1 : 0.00063 0.00022 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET2 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET2 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET3 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET3 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET4 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET4 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer METTP : 0.00023 0.00017 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer METTP : 0.00018 5.5e-05 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer METTPL : 0.00039 0.00025 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer METTPL : 6.1e-06 1.9e-06 (RCEX-011)(B[m
+[36mInformation: Library Derived Horizontal Cap : 0.00025 0.00019 (RCEX-011)(B[m
+[36mInformation: Library Derived Horizontal Res : 0.00045 0.00015 (RCEX-011)(B[m
+[36mInformation: Library Derived Vertical Cap : 0.00032 0.00022 (RCEX-011)(B[m
+[36mInformation: Library Derived Vertical Res : 0.00037 0.00012 (RCEX-011)(B[m
+[36mInformation: Using derived R and C coefficients. (RCEX-008)(B[m
+[36mInformation: Using region-based R and C coefficients. (RCEX-013)(B[m
+[36mInformation: Library Derived Via Res : 0.0056 0.0021 (RCEX-011)(B[m
+
+  Loading design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1'
+
+  Beginning retiming
+  ------------------
+  Retiming radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1 (top)
+[33mWarning: There are buffer or inverter cells in the(B[m
+        clock tree. The clock tree has to be recreated after
+        retiming. (RTDC-47)
+  Preferred flip-flop is DFRHDX4 with setup = 0.45
+
+[33mWarning: The following cells only drive(B[m
+        asynchronous pins of sequential cells which have no
+        timing constraint. Therefore retiming will not optimize
+        delay through them:
+        U1844 (BUHDLLX1)
+        U1838 (INHDLLX1)
+        U1843 (BUHDLLX1)
+        U1840 (INHDLLX1)
+
+ (RTDC-115)
+
+  Retiming base-clock clk, rising edge.
+[33mWarning: Using high justification effort could lead to very long runtime. (RTDC-134)(B[m
+  Beginning minimum period retiming ...
+  ... minimum period retiming done.
+  Beginning minimum area retiming step 1 ...
+  ... minimum area retiming step 1 done.
+  Beginning minimum area retiming step 2 ...
+  
+  ... minimum area retiming step 2 done.
+  Beginning minimum area retiming step 3 ...
+  
+  ... minimum area retiming step 3 done.
+  Beginning final register move ...
+  ... final register move done.
+  Lower bound estimate = 38.29
+  Critical path length = 38.29
+  Clock correction = 16.59 (clock-to-Q delay = 1.40, setup = 0.45, uncertainty = 14.75)
+[33mWarning: Design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)(B[m
+
+  Retiming complete
+  -----------------
+[36mInformation: Starting from 2013.12 release, constant propagation is enabled even when boundary optimization is disabled. (OPT-1318)(B[m
+[36mInformation: Performing power optimization. (PWR-850)(B[m
+Alib files are up-to-date.
+[36mInformation: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)(B[m
+
+  Loading target library 'IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C'
+Loaded alib file './alib-52/D_CELLS_HD_LPMOS_slow_1_62V_125C.db.alib' (placeholder)
+Loaded alib file './alib-52/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db.alib'
+Loaded alib file './alib-52/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db.alib' (placeholder)
+[36mInformation: State dependent leakage is now switched from on to off.(B[m
+[36mInformation: Updating design information... (UID-85)(B[m
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_fast_1_98V_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db'
+  Loading design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1'
+****************************************************************
+[36mInformation: TLUPlus based RC computation is enabled. (RCEX-141)(B[m
+****************************************************************
+[36mInformation: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)(B[m
+[36mInformation: The RC model used is TLU+. (RCEX-015)(B[m
+[36mInformation: Library Derived Cap for layer MET1 : 0.00025 0.00019 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET1 : 0.00063 0.00022 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET2 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET2 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET3 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET3 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET4 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET4 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer METTP : 0.00023 0.00017 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer METTP : 0.00018 5.5e-05 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer METTPL : 0.00039 0.00025 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer METTPL : 6.1e-06 1.9e-06 (RCEX-011)(B[m
+[36mInformation: Library Derived Horizontal Cap : 0.00025 0.00019 (RCEX-011)(B[m
+[36mInformation: Library Derived Horizontal Res : 0.00045 0.00015 (RCEX-011)(B[m
+[36mInformation: Library Derived Vertical Cap : 0.00032 0.00022 (RCEX-011)(B[m
+[36mInformation: Library Derived Vertical Res : 0.00037 0.00012 (RCEX-011)(B[m
+[36mInformation: Using derived R and C coefficients. (RCEX-008)(B[m
+[36mInformation: Using region-based R and C coefficients. (RCEX-013)(B[m
+[36mInformation: Library Derived Via Res : 0.0056 0.0021 (RCEX-011)(B[m
+
+Info: skipped to derive cell locations.
+
+[33mWarning: Found 0 percent of cells (2) without DC Topographical data. Generating data for those cells... (OPT-1404)(B[m
+43%...57%...71%...86%...100% done.
+
+
+ Collecting Buffer Trees ... Found 8
+
+ Processing Buffer Trees ... 
+
+    [1]  10% ...
+    [2]  20% ...
+    [3]  30% ...
+    [4]  40% ...
+    [5]  50% ...
+    [6]  60% ...
+    [7]  70% ...
+    [8]  80% ...
+    [8] 100% Done ...
+
+
+[36mInformation: Automatic high-fanout synthesis deletes 0 cells. (HFS-802)(B[m
+[36mInformation: Automatic high-fanout synthesis adds 9 new cells. (PSYN-864)(B[m
+
+
+
+  Beginning Timing Optimizations
+  ------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:13   49148.5      0.00       0.0       0.0                           587376.1875
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+    0:00:16   52074.5      0.00       0.0       0.0                           413469.2500
+    0:00:16   52069.7      0.00       0.0       0.0                           412678.7812
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:19   52069.7      0.00       0.0       0.0                           412678.7812
+    0:00:19   52069.7      0.00       0.0       0.0                           412678.7812
+    0:00:19   52069.7      0.00       0.0       0.0                           412678.7812
+    0:00:19   52069.7      0.00       0.0       0.0                           412678.7812
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:20   52071.3      0.00       0.0       0.0                           408329.0000
+    0:00:21   52020.6      0.00       0.0       0.0                           407853.1250
+    0:00:21   52015.2      0.00       0.0       0.0                           407735.7812
+
+
+  Beginning High Effort Optimization Phase
+  ----------------------------------------
+
+
+  Beginning Timing Optimization
+  -----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:21   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:21   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:21   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:21   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:21   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:21   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:21   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:22   52015.2      0.00       0.0       0.0                           407735.7812
+
+
+  High Effort Optimization Phase Complete
+  ---------------------------------------
+
+Skipping remaining steps due to timing met. Go to finish
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+
+  Beginning Buftree Cleanup
+  -------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:23   52015.2      0.00       0.0       0.0                           407735.7812
+    0:00:23   52015.2      0.00       0.0       0.0                           407735.7812
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_fast_1_98V_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db'
+  Loading target library 'IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C'
+[36mInformation: State dependent leakage is now switched from off to on.(B[m
+[36mInformation: Propagating switching activity (low effort zero delay simulation). (PWR-6)(B[m
+1
+
+[36mInformation: Starting from 2013.12 release, constant propagation is enabled even when boundary optimization is disabled. (OPT-1318)(B[m
+[36mInformation: Performing power optimization. (PWR-850)(B[m
+Alib files are up-to-date.
+[36mInformation: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)(B[m
+
+  Loading target library 'IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C'
+Loaded alib file './alib-52/D_CELLS_HD_LPMOS_slow_1_62V_125C.db.alib' (placeholder)
+Loaded alib file './alib-52/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db.alib'
+Loaded alib file './alib-52/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db.alib' (placeholder)
+[36mInformation: State dependent leakage is now switched from on to off.(B[m
+[36mInformation: Updating design information... (UID-85)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_43, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_0, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_1, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_2, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_3, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_4, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_5, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_6, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_7, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_8, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_9, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_10, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_11, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_12, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_13, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_14, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_15, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_16, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_17, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_18, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_19, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_20, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_21, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_22, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_23, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_24, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_25, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_26, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_27, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_28, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_29, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_30, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_31, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_32, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_33, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_34, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_35, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_36, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_37, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_38, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_40, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_41, since there are no registers. (PWR-806)(B[m
+[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1_42, since there are no registers. (PWR-806)(B[m
+[36mInformation: Performing clock-gating on design radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1. (PWR-730)(B[m
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_fast_1_98V_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db'
+  Loading design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1'
+****************************************************************
+[36mInformation: TLUPlus based RC computation is enabled. (RCEX-141)(B[m
+****************************************************************
+[36mInformation: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)(B[m
+[36mInformation: The RC model used is TLU+. (RCEX-015)(B[m
+[36mInformation: Library Derived Cap for layer MET1 : 0.00025 0.00019 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET1 : 0.00063 0.00022 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET2 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET2 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET3 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET3 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer MET4 : 0.00028 0.0002 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer MET4 : 0.00055 0.00018 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer METTP : 0.00023 0.00017 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer METTP : 0.00018 5.5e-05 (RCEX-011)(B[m
+[36mInformation: Library Derived Cap for layer METTPL : 0.00039 0.00025 (RCEX-011)(B[m
+[36mInformation: Library Derived Res for layer METTPL : 6.1e-06 1.9e-06 (RCEX-011)(B[m
+[36mInformation: Library Derived Horizontal Cap : 0.00025 0.00019 (RCEX-011)(B[m
+[36mInformation: Library Derived Horizontal Res : 0.00045 0.00015 (RCEX-011)(B[m
+[36mInformation: Library Derived Vertical Cap : 0.00032 0.00022 (RCEX-011)(B[m
+[36mInformation: Library Derived Vertical Res : 0.00037 0.00012 (RCEX-011)(B[m
+[36mInformation: Using derived R and C coefficients. (RCEX-008)(B[m
+[36mInformation: Using region-based R and C coefficients. (RCEX-013)(B[m
+[36mInformation: Library Derived Via Res : 0.0056 0.0021 (RCEX-011)(B[m
+
+
+
+
+ Collecting Buffer Trees ... Found 15
+
+ Processing Buffer Trees ... 
+
+    [2]  10% ...
+    [4]  20% ...
+    [6]  30% ...
+    [8]  40% ...
+    [10]  50% ...
+    [12]  60% ...
+    [14]  70% ...
+    [15] 100% Done ...
+
+
+[36mInformation: Automatic high-fanout synthesis deletes 0 cells. (HFS-802)(B[m
+[36mInformation: Automatic high-fanout synthesis adds 0 new cells. (PSYN-864)(B[m
+
+
+
+  Beginning Timing Optimizations
+  ------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:14   52050.3      0.00       0.0       0.0                           408335.6562
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+    0:00:17   52060.0      0.00       0.0       0.0                           407075.3750
+    0:00:17   52097.9      0.00       0.0       0.0                           407243.0938
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:20   52097.9      0.00       0.0       0.0                           407243.0938
+    0:00:20   52097.9      0.00       0.0       0.0                           407243.0938
+    0:00:20   52097.9      0.00       0.0       0.0                           407243.0938
+    0:00:20   52097.9      0.00       0.0       0.0                           407243.0938
+    0:00:20   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:20   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:20   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:20   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:21   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:21   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:21   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:21   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:21   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:21   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:21   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:21   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:21   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:21   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:21   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:21   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:21   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:21   52090.4      0.00       0.0       0.0                           405747.2500
+    0:00:21   52040.0      0.00       0.0       0.0                           405295.9688
+    0:00:22   52034.5      0.00       0.0       0.0                           405178.6250
+
+
+  Beginning High Effort Optimization Phase
+  ----------------------------------------
+
+
+  Beginning Timing Optimization
+  -----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:22   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:22   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:22   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:22   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:22   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:22   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:22   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:22   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:22   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:22   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:22   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:22   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:22   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:23   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:23   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:23   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:23   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:23   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:23   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:23   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:23   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:23   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:23   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:23   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:23   52034.5      0.00       0.0       0.0                           405178.6250
+
+
+  High Effort Optimization Phase Complete
+  ---------------------------------------
+
+Skipping remaining steps due to timing met. Go to finish
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+
+  Beginning Buftree Cleanup
+  -------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:23   52034.5      0.00       0.0       0.0                           405178.6250
+    0:00:23   52034.5      0.00       0.0       0.0                           405178.6250
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_fast_1_98V_1_98V_m40C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db'
+Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db'
+  Loading target library 'IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C'
+[36mInformation: State dependent leakage is now switched from off to on.(B[m
+[36mInformation: Propagating switching activity (low effort zero delay simulation). (PWR-6)(B[m
+1
+
+Press Y to continue or N to abort
+y
+[36mGenerating reports(B[m
+[36mInformation: Updating design information... (UID-85)(B[m
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
+Version: P-2019.03
+Date   : Wed Nov 25 11:53:15 2020
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+Operating Conditions: slow_1_62V_125C   Library: D_CELLS_HD_LPMOS_slow_1_62V_125C
+Wire Load Model Mode: Inactive.
+
+  Startpoint: clk_r_REG153_S17
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sens_enable
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clk_r_REG153_S17/C (DFRRQHDLLX1)         0.00       0.00 r
+  clk_r_REG153_S17/Q (DFRRQHDLLX1)         4.24       4.24 r
+  sens_enable (out)                        0.01 *     4.25 r
+  data arrival time                                   4.25
+
+  clock clk (rise edge)                   73.75      73.75
+  clock network delay (ideal)              0.00      73.75
+  clock uncertainty                      -14.75      59.00
+  output external delay                  -36.87      22.12
+  data required time                                 22.12
+  -----------------------------------------------------------
+  data required time                                 22.12
+  data arrival time                                  -4.25
+  -----------------------------------------------------------
+[32m  slack (MET)                                        17.88(B[m
+
+
+1
+
+Press Y to continue or N to abort
+y
+[36mWriting output files(B[m
+Writing ddc file 'work/final_netlist.ddc'.
+1
+
+Writing verilog file '/home/aparlane/fiuba_thesis/hdl/synth_pnr/synth/work/final_netlist.v'.
+[33mWarning: Verilog 'assign' or 'tran' statements are written out. (VO-4)(B[m
+1
+
 [32mScript finished successfully(B[m
-exit
+dc_shell-topo> 
 
 Thank you...
-

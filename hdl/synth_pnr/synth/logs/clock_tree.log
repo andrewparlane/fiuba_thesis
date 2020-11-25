@@ -1,0 +1,58 @@
+ 
+****************************************
+Report : clock tree
+Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
+Version: P-2019.03
+Date   : Wed Nov 25 11:53:21 2020
+****************************************
+
+
+============ Global Skew Report ================
+
+Clock Tree Name                : "clk"
+Clock Period                   : 73.74632       
+Clock Tree root pin            : "clk"
+Number of Levels               : 2
+Number of Sinks                : 592
+Number of CT Buffers           : 0
+Number of CTS added gates      : 0
+Number of Preexisting Gates    : 43
+Number of Preexisting Buf/Inv  : 0
+Total Number of Clock Cells    : 43
+Total Area of CT Buffers       : 0.00000        
+Total Area of CT cells         : 1833.93384     
+Max Global Skew                : 6.89830   
+Number of MaxTran Violators    : 679
+Number of MaxCap Violators     : 1
+Number of MaxFanout Violators  : 0
+
+
+Operating Condition               worst
+Clock global Skew                 6.898
+Longest path delay                12.816
+Shortest path delay               5.918
+
+The longest path delay end pin: clk_r_REG404_S1/C
+The shortest path delay end pin: clk_r_REG286_S1/C
+
+The longest Path:
+Pin                                         Cap       Fanout    Trans     Incr      Arri
+----------------------------------------------------------------------------------------------------
+clk                                         0.000            1  0.000     0.000     0.000     r
+clk                                         0.758          139  8.092     5.806     5.806     r
+clk_gate_adapter_inst/signal_control_inst/cached_sync_timing_reg/latch/CLK 0.758        1 8.092 0.112 5.918 r
+clk_gate_adapter_inst/signal_control_inst/cached_sync_timing_reg/latch/GCLK 0.317       74 8.923 6.866 12.784 r
+clk_r_REG404_S1/C                           0.317            0  8.923     0.032     12.816    r
+[clock delay]                                                                       12.816
+----------------------------------------------------------------------------------------------------
+
+The Shortest Path:
+Pin                                         Cap       Fanout    Trans     Incr      Arri
+----------------------------------------------------------------------------------------------------
+clk                                         0.000            1  0.000     0.000     0.000     r
+clk                                         0.758          139  8.092     5.806     5.806     r
+clk_r_REG286_S1/C                           0.758            0  8.092     0.112     5.918     r
+[clock delay]                                                                       5.918
+----------------------------------------------------------------------------------------------------
+
+1

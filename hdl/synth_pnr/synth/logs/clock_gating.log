@@ -1,0 +1,24 @@
+ 
+****************************************
+Report : clock_gating
+Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
+Version: P-2019.03
+Date   : Wed Nov 25 11:53:21 2020
+****************************************
+
+
+
+                             Clock Gating Summary
+          ------------------------------------------------------------
+          |    Number of Clock gating elements    |       43         |
+          |                                       |                  |
+          |    Number of Gated registers          |   496 (83.78%)   |
+          |                                       |                  |
+          |    Number of Ungated registers        |    96 (16.22%)   |
+          |                                       |                  |
+          |    Total number of registers          |      592         |
+          ------------------------------------------------------------
+
+
+
+1

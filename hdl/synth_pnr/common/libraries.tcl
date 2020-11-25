@@ -94,6 +94,9 @@ set PDK_IO_CELLS_MIN_LIB            "$PDK_IO_CELLS_LIBERTY_DIR/IO_CELLS_C1V8_LPM
 set TARGET_MAX_LIBS                 "$PDK_D_CELLS_HD_MAX_LIB $PDK_D_CELLS_HDLL_MAX_LIB $PDK_IO_CELLS_MAX_LIB"
 set TARGET_MIN_LIBS                 "$PDK_D_CELLS_HD_MIN_LIB $PDK_D_CELLS_HDLL_MIN_LIB $PDK_IO_CELLS_MIN_LIB"
 
+set OPERATING_CONDITION_MAX         slow_1_62V_125C
+set OPERATING_CONDITION_MIN         fast_1_98V_m40C
+
 # =============================================================================
 # Milkyway Reference Library
 # =============================================================================

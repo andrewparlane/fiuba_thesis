@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
+Version: P-2019.03
+Date   : Wed Nov 25 11:53:21 2020
+****************************************
+
+Library(s) Used:
+
+    D_CELLS_HDLL_LPMOS_slow_1_62V_125C (File: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db)
+    D_CELLS_HD_LPMOS_slow_1_62V_125C (File: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db)
+
+Number of ports:                          205
+Number of nets:                          2344
+Number of cells:                         2190
+Number of combinational cells:           1512
+Number of sequential cells:               635
+Number of macros/black boxes:               0
+Number of buf/inv:                        473
+Number of references:                     109
+
+Combinational area:              18297.296029
+Buf/Inv area:                     3602.636843
+Noncombinational area:           33737.245255
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 52034.541284
+Total area:                 undefined
+1
