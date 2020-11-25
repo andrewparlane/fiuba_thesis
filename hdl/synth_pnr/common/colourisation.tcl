@@ -55,6 +55,12 @@ proc colourise {buffer} {
     regsub -line -all {^Presto compilation completed successfully.*$} \
                                             $buffer "[colour $COLOUR_GREEN]\\0[clear_colour]"   buffer
 
+    # Highlight lines that contain "(MET)" in green
+    regsub -line -all {^.*\(MET\).*$}       $buffer "[colour $COLOUR_GREEN]\\0[clear_colour]"   buffer
+
+    # Highlight lines that end with "(VIOLATED)" in red
+    regsub -line -all {^.*\(VIOLATED\).*$}  $buffer "[colour $COLOUR_RED]\\0[clear_colour]"   buffer
+
     return $buffer
 }
 
