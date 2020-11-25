@@ -24,8 +24,6 @@
 
 `timescale 1ps/1ps
 
-// SDC: create_clock - 13.56MHz +/- 7KHz + extra jitter?
-
 module radiation_sensor_digital_top
 #(
     // see iso14443a.sv for more info on how to set this
@@ -65,7 +63,7 @@ module radiation_sensor_digital_top
     //      2'b01: Insufficient power for full functionality
     //      2'b10: Sufficient power for full functionality
     //      2'b11: More than sufficient power for full functionality
-    input           [1:0]      power_async,
+    input           [1:0]       power_async,
 
     // pause_n_async is an asynchronous input from the analogue block.
     // It is essentially the digitized envelope of the carrier wave.
@@ -83,19 +81,19 @@ module radiation_sensor_digital_top
 
     // The variable part of the UID, this should go to pads with weak pull ups/downs
     // that we can set with wire bonding.
-    input           [2:0]   uid_variable,
+    input           [2:0]       uid_variable,
 
     // --------------------------------------------------------------
     // Signals to / from the ADC / Sensor
     // --------------------------------------------------------------
 
-    output logic    [2:0]   sens_config,
-    output logic            sens_enable,
-    output logic            sens_read,
-    output logic            adc_enable,
-    output logic            adc_read,
-    input                   adc_conversion_complete,
-    input           [15:0]  adc_value
+    output logic    [2:0]       sens_config,
+    output logic                sens_enable,
+    output logic                sens_read,
+    output logic                adc_enable,
+    output logic                adc_read,
+    input                       adc_conversion_complete,
+    input           [15:0]      adc_value
 );
 
     // --------------------------------------------------------------
