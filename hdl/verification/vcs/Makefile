@@ -115,7 +115,7 @@ REMOTE_PATH		= ~/desired/destination
 ROOT_DIR		= ../../..
 
 # relative to ROOT_DIR
-ISO_IEC_14443A_ROOT_DIR	= hdl/components/iso_iec_14443a
+ISO_IEC_14443A_ROOT_DIR	= hdl/components/iso_iec_14443A
 ISO_IEC_14443A_RTL_DIR	= $(ISO_IEC_14443A_ROOT_DIR)/rtl
 ISO_IEC_14443A_BFM_DIR	= $(ISO_IEC_14443A_ROOT_DIR)/verification/bfms
 
