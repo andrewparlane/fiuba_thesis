@@ -87,14 +87,19 @@ SYNTH_PNR_DIR			= hdl/synth_pnr
 
 # We push (overwriting all files) the src files and this synth_pnr dir
 # We delete any file on the server that doesn't exist locally
-# except for: synth/work, synth/log and custom_compiler_project/
+# except for: **/work, **/logs, and custom_compiler_project/
 # We also pull the logs so we always have the latest logs saved locally
 sync_with_remote:
 	-rm -rf synth/logs
-	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/logs/	synth/
+	-rm -rf lib_prep/logs
+	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/logs/ synth/
+	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/lib_prep/logs/ lib_prep/
 	cd $(ROOT_DIR) && rsync -rRv --delete 						\
 		--exclude $(SYNTH_PNR_DIR)/synth/work/					\
 		--exclude $(SYNTH_PNR_DIR)/synth/logs/					\
+		--exclude $(SYNTH_PNR_DIR)/lib_prep/logs/				\
+		--exclude $(SYNTH_PNR_DIR)/lib_prep/lef_hd/				\
+		--exclude $(SYNTH_PNR_DIR)/lib_prep/lef_hdll/			\
 		--exclude $(SYNTH_PNR_DIR)/custom_compiler_project/		\
 		$(SRC_DIR) $(ISO_IEC_14443A_RTL_DIR) $(SYNTH_PNR_DIR)	\
 		$(REMOTE_SERVER):$(REMOTE_PATH)

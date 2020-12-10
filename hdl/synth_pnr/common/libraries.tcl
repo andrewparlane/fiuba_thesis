@@ -38,7 +38,6 @@ set PDK_PROCESS_CODE                "1143"
 set SYNOPSYS_LIBS_DIR               "$::env(SYNOPSYS_SYN_ROOT)/libraries/syn"
 
 set PDK_DIR                         "/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018"
-set PDK_TECH_FILE_DIR               "$PDK_DIR/synopsys/v8_0/techMW/v8_0_1/xh018-synopsys-techMW-v8_0_1"
 set PDK_TLUP_DIR                    "$PDK_DIR/synopsys/v8_0/TLUplus/v8_0_1"
 set PDK_DIGLIBS_DIR                 "$PDK_DIR/diglibs"
 
@@ -59,7 +58,12 @@ set PDK_IO_CELLS_DIR                "$PDK_DIGLIBS_DIR/IO_CELLS_C1V8/v1_1"
 # =============================================================================
 
 # The tech file contains technology specific information required to route a design
-set MW_TECHFILE                     "$PDK_TECH_FILE_DIR/xh018_xx43_HD_MET4_METMID_METTHK.tf"
+set PDK_MW_TECH_FILE_DIR            "$PDK_DIR/synopsys/v8_0/techMW/v8_0_1/xh018-synopsys-techMW-v8_0_1"
+set PDK_NDM_TECH_FILE_DIR           "$PDK_DIR/synopsys/v8_0/techNDM/v8_0_1/xh018-synopsys-techNDM-v8_0_1"
+
+set TECHFILE_NAME                   "xh018_xx43_HD_MET4_METMID_METTHK.tf"
+set MW_TECHFILE                     "$PDK_MW_TECH_FILE_DIR/$TECHFILE_NAME"
+set NDM_TECHFILE                    "$PDK_NDM_TECH_FILE_DIR/$TECHFILE_NAME"
 
 # =============================================================================
 # Logic Libraries

@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Variables:
+#   INTERACTIVE - don't run do.tcl, just start the shell "INTERACTIVE=1 ./run_lm"
+#   PAUSE       - set the pause_between_commands variable, which prompts you to continue or abort
+#                 after every group of commands, this makes it easier to view the output
+#                 "PAUSE=1 ./run_lm"
+#   NO_COLOURS  - set the no_colours variable, which disables the colourisation scripts
+
+# delete and re-create logs dir
+rm -rf work
+mkdir work
+rm -rf logs
+mkdir logs
+
+export icc_lm_args="-no_log -output_log_file logs/log.txt -f tmp.tcl"
+export additional_vars=""
+
+rm tmp.tcl
+touch tmp.tcl
+
+if [[ "$NO_COLOURS" != "" ]]; then
+    echo "set no_colours 1" >> tmp.tcl
+fi
+
+if [[ "$PAUSE" != "" ]]; then
+    echo "set pause_between_commands 1" >> tmp.tcl
+fi
+
+# if we are not interactive then run do.tcl, otherwise just open the shell
+if [[ "$INTERACTIVE" = "" ]]; then
+    echo "source do.tcl" >> tmp.tcl
+fi
+
+icc2_lm_shell $icc_lm_args
