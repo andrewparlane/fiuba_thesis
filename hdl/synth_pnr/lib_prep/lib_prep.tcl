@@ -55,6 +55,43 @@ set voltages        {1.62 1.8 1.98}
 set temperatures    {-40 0 25 85 125 150 175}
 set_pvt_configuration -clear_filter all -add -name all -process_labels {""} -process_numbers {1} -voltages $voltages -temperatures $temperatures
 
+# Create our technology only NDM lib, see:
+# https://solvnet.synopsys.com/dow_retrieve/latest/kb/dg/icc2/videos/Library_Preparation_NDM_Demystified.mp4
+# At timestamp 11:30
+
+puts "[colour $COLOUR_BLUE]Creating Technology only library[clear_colour]"
+create_workspace -technology $NDM_TECHFILE tech_only_ws
+
+# Read the TLUP files
+read_parasitic_tech -tlup $TLUP_MAX -layermap $TLUP_MAP -name maxTLU
+read_parasitic_tech -tlup $TLUP_MIN -layermap $TLUP_MAP -name minTLU
+
+# The .lef files set the default symmetry to Y for these sites
+# Although the sites are called core_hd, core_hd_dh, core_hdll and core_hdll_dh
+# And every cell actually specifies symmetry as X Y.
+# We apply this attribute to the sites though, so we should be good with just Y
+set_attribute [get_site_defs {hd hdll dblh1}] symmetry Y
+
+# Use the HD site as the default, all the sites present in the .tf are the same
+# except the dblh1 site, which is double the height of the others. Almost all cells
+# in the .lefs use the hd / hdll ones
+set_attribute [get_site_defs hd] is_default true
+
+# Set the routing direction - more info on this in the synthesis script
+set_attribute [get_layers {MET1 MET3 METTP}] routing_direction horizontal
+set_attribute [get_layers {MET2 MET4 METTPL}] routing_direction vertical
+
+# Set the track offset ???
+puts "[colour $COLOUR_YELLOW]WARNING: TODO Track offset?[clear_colour]"
+#set_attribute [get_layers {??}] track_offset ???
+
+# Write it out
+colourise_cmd "commit_workspace -output work/tech_only.ndm"
+
+if {($pause_between_commands == 1) && ([do_continue] == 0)} {
+    return
+}
+
 # Create the D_CELLS_HD lib
 puts "[colour $COLOUR_BLUE]Creating D_CELLS_HD CLIB[clear_colour]"
 set res         [convert_lib "d_cells_hd" $NDM_TECHFILE $PDK_D_CELLS_HD_LEFS $PDK_D_CELLS_HD_LIBERTY_DIR]
