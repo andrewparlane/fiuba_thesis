@@ -14,7 +14,6 @@ rm -rf logs
 mkdir logs
 
 export icc_lm_args="-no_log -output_log_file logs/log.txt -f tmp.tcl"
-export additional_vars=""
 
 rm tmp.tcl
 touch tmp.tcl
