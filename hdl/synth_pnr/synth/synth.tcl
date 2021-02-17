@@ -487,4 +487,8 @@ write_milkyway -overwrite -output post_synth
 # SDC
 write_sdc work/constraints.sdc
 
+# Output a summary of message types
+redirect -variable message_info { print_message_info }
+puts "[colour $COLOUR_BLUE]$message_info[clear_colour]"
+
 puts "[colour $COLOUR_GREEN]Script finished successfully[clear_colour]"
