@@ -9,13 +9,22 @@ Current PVT Configuration:
   Voltages       :  1.62, 1.8, 1.98
   Temperatures   :  -40, 0, 25, 85, 125, 150, 175
 
+[36mCreating Technology only library(B[m
+Information: Loading technology file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/techNDM/v8_0_1/xh018-synopsys-techNDM-v8_0_1/xh018_xx43_HD_MET4_METMID_METTHK.tf' (FILE-007)
+... created workspace tech_only_ws
+[33mWARNING: TODO Track offset?(B[m
+Writing tech-only library...
+... wrote work/tech_only.ndm
+... lib workspace removed!
+
+[36mCreating D_CELLS_HD CLIB(B[m
 [36mCreating workspace(B[m
 Information: Loading technology file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/techNDM/v8_0_1/xh018-synopsys-techNDM-v8_0_1/xh018_xx43_HD_MET4_METMID_METTHK.tf' (FILE-007)
 ... created workspace d_cells_hd_ws
 [36mLoading .lefs(B[m
-read_lef lef_hd/xh018_D_CELLS_HD.lef -library d_cells_hd
+read_lef /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/LEF/v3_0_0/xh018_D_CELLS_HD.lef -library d_cells_hd
 [36mInformation: The default value of lib.workspace.library_developer_mode will be 'true' in future release. (LMUI-054)(B[m
-[36mInformation: Loading LEF file '/home/aparlane/fiuba_thesis/hdl/synth_pnr/lib_prep/lef_hd/xh018_D_CELLS_HD.lef' (FILE-007)(B[m
+[36mInformation: Loading LEF file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/LEF/v3_0_0/xh018_D_CELLS_HD.lef' (FILE-007)(B[m
 [36mInformation: Read LEF into a new library 'd_cells_hd'. (LEFR-022)(B[m
 [36mInformation: Changed the site definition for the AN211HDX0 library cell to hd from core_hd. (LEFR-064)(B[m
 [36mInformation: Changed the site definition for the AN211HDX1 library cell to hd from core_hd. (LEFR-064)(B[m
@@ -788,9 +797,9 @@ read_lef lef_hd/xh018_D_CELLS_HD.lef -library d_cells_hd
 [36mInformation: Changed the site definition for the STEHDX4 library cell to hd from core_hd. (LEFR-064)(B[m
 {d_cells_hd}
 
-read_lef lef_hd/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HD_mprobe.lef -library d_cells_hd
+read_lef /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/LEF/v3_0_0/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HD_mprobe.lef -library d_cells_hd
 [36mInformation: The default value of lib.workspace.library_developer_mode will be 'true' in future release. (LMUI-054)(B[m
-[36mInformation: Loading LEF file '/home/aparlane/fiuba_thesis/hdl/synth_pnr/lib_prep/lef_hd/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HD_mprobe.lef' (FILE-007)(B[m
+[36mInformation: Loading LEF file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/LEF/v3_0_0/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HD_mprobe.lef' (FILE-007)(B[m
 [36mInformation: Read LEF into an existing library 'd_cells_hd'. (LEFR-022)(B[m
 [36mInformation: Changed the site definition for the MPROBEBUHDX8 library cell to hd from core_hd. (LEFR-064)(B[m
 [33mWarning: Line 77, OBS (15.565, 3.85),(9.76, 3.85),(9.76, 3.49),(9.665, 3.49),(9.665, 3.11) ...... on layer MET1 does not have a "SPACING 0" attribute but overlaps or touches pin MPROBEBUHDX8/vdd. (LEFR-067)(B[m
@@ -3665,13 +3674,14 @@ Workspace check succeeded!
 ... removing library 'D_CELLS_HD_LPMOS_slow_1_62V_m40C'
 ... removing library 'd_cells_hd'
 ... lib workspace removed!
+[36mCreating D_CELLS_HDLL CLIB(B[m
 [36mCreating workspace(B[m
 Information: Loading technology file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/techNDM/v8_0_1/xh018-synopsys-techNDM-v8_0_1/xh018_xx43_HD_MET4_METMID_METTHK.tf' (FILE-007)
 ... created workspace d_cells_hdll_ws
 [36mLoading .lefs(B[m
-read_lef lef_hdll/xh018_D_CELLS_HDLL.lef -library d_cells_hdll
+read_lef /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/LEF/v2_1_0/xh018_D_CELLS_HDLL.lef -library d_cells_hdll
 [36mInformation: The default value of lib.workspace.library_developer_mode will be 'true' in future release. (LMUI-054)(B[m
-[36mInformation: Loading LEF file '/home/aparlane/fiuba_thesis/hdl/synth_pnr/lib_prep/lef_hdll/xh018_D_CELLS_HDLL.lef' (FILE-007)(B[m
+[36mInformation: Loading LEF file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/LEF/v2_1_0/xh018_D_CELLS_HDLL.lef' (FILE-007)(B[m
 [36mInformation: Read LEF into a new library 'd_cells_hdll'. (LEFR-022)(B[m
 [36mInformation: Changed the site definition for the AN211HDLLX0 library cell to hd from core_hdll. (LEFR-064)(B[m
 [36mInformation: Changed the site definition for the AN211HDLLX1 library cell to hd from core_hdll. (LEFR-064)(B[m
@@ -4450,9 +4460,9 @@ read_lef lef_hdll/xh018_D_CELLS_HDLL.lef -library d_cells_hdll
 [36mInformation: Changed the site definition for the STEHDLLX4 library cell to hd from core_hdll. (LEFR-064)(B[m
 {d_cells_hdll}
 
-read_lef lef_hdll/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HDLL_mprobe.lef -library d_cells_hdll
+read_lef /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/LEF/v2_1_0/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HDLL_mprobe.lef -library d_cells_hdll
 [36mInformation: The default value of lib.workspace.library_developer_mode will be 'true' in future release. (LMUI-054)(B[m
-[36mInformation: Loading LEF file '/home/aparlane/fiuba_thesis/hdl/synth_pnr/lib_prep/lef_hdll/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HDLL_mprobe.lef' (FILE-007)(B[m
+[36mInformation: Loading LEF file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/LEF/v2_1_0/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HDLL_mprobe.lef' (FILE-007)(B[m
 [36mInformation: Read LEF into an existing library 'd_cells_hdll'. (LEFR-022)(B[m
 [36mInformation: Changed the site definition for the MPROBEBUHDLLX8 library cell to hd from core_hdll. (LEFR-064)(B[m
 [33mWarning: Line 77, OBS (16.125, 3.85),(10.46, 3.85),(10.46, 3.49),(10.225, 3.49),(10.225, 3.11) ...... on layer MET1 does not have a "SPACING 0" attribute but overlaps or touches pin MPROBEBUHDLLX8/gnd. (LEFR-067)(B[m
@@ -7557,7 +7567,35 @@ Workspace check succeeded!
 ... removing library 'D_CELLS_HDLL_LPMOS_slow_1_62V_125C'
 ... removing library 'd_cells_hdll'
 ... lib workspace removed!
-Maximum memory usage for this session: 974.59 MB
+[36m
+Id             Severity         Limit    Occurrences   Suppressed
+--------------------------------------------------------------------
+EMS-040         Warning             0              1            0
+FILE-007    Information             0             23            0
+FRAM-065        Warning             0              4            0
+FRAM-066        Warning             0            380            0
+FRAM-069        Warning             0            146            0
+LEFR-008        Warning             0              6            0
+LEFR-022    Information             0              4            0
+LEFR-064    Information             0           1542            0
+LEFR-067        Warning             0              2            0
+LEFR-070    Information             0              2            0
+LEFR-072        Warning             0              2            0
+LIB-071     Information             0              1            0
+LM-001          Warning             0              2            0
+LM-034      Information             0              2            0
+LM-037      Information             0           1542            0
+LM-092      Information             0              2            0
+LM-125          Warning             0              2            0
+LM-135          Warning             0              2            0
+LM-175      Information             0             16            0
+LMUI-012        Warning             0              2            0
+LMUI-013    Information             0             16            0
+LMUI-054    Information             0              4            0
+
+Diagnostics summary: 549 warnings, 3154 informationals
+(B[m
+Maximum memory usage for this session: 975.15 MB
 CPU usage for this session:     43 seconds (  0.01 hours)
 Elapsed time for this session:     44 seconds (  0.01 hours)
 Thank you for using IC Compiler II Library Manager.

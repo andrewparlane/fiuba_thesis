@@ -109,3 +109,7 @@ set res         [convert_lib "d_cells_hdll" $NDM_TECHFILE $PDK_D_CELLS_HDLL_LEFS
 if {$res == 0} {
     return
 }
+
+# Output a summary of message types
+redirect -variable message_info { print_message_info }
+puts "[colour $COLOUR_BLUE]$message_info[clear_colour]"
