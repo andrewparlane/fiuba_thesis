@@ -35,9 +35,9 @@ source ../common/libraries.tcl
 # =============================================================================
 # RTL source files
 # =============================================================================
-set ROOT_DIR		        "../../.."
-set ISO_IEC_14443A_RTL_DIR	"$ROOT_DIR/hdl/components/iso_iec_14443A/rtl"
-set SRC_DIR					"$ROOT_DIR/hdl/rtl"
+set ROOT_DIR                "../../.."
+set ISO_IEC_14443A_RTL_DIR  "$ROOT_DIR/hdl/components/iso_iec_14443A/rtl"
+set SRC_DIR                 "$ROOT_DIR/hdl/rtl"
 
 # Files - make sure the packages are before the modules that use them
 set SRC_FILES {}
