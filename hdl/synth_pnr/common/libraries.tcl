@@ -105,6 +105,16 @@ set PDK_D_CELLS_HDLL_MW_REF_DIR     "$PDK_D_CELLS_HDLL_DIR/synopsys_ICC/v2_1_0/x
 set MILKYWAY_REF_LIB                "$PDK_D_CELLS_HD_MW_REF_DIR $PDK_D_CELLS_HDLL_MW_REF_DIR"
 
 # =============================================================================
+# LEFs (used for libp_prep)
+# =============================================================================
+
+set PDK_D_CELLS_HD_LEF_DIR          "$PDK_D_CELLS_HD_DIR/LEF/v3_0_0"
+set PDK_D_CELLS_HDLL_LEF_DIR        "$PDK_D_CELLS_HDLL_DIR/LEF/v2_1_0"
+
+set PDK_D_CELLS_HD_LEFS             "$PDK_D_CELLS_HD_LEF_DIR/xh018_D_CELLS_HD.lef $PDK_D_CELLS_HD_LEF_DIR/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HD_mprobe.lef"
+set PDK_D_CELLS_HDLL_LEFS           "$PDK_D_CELLS_HDLL_LEF_DIR/xh018_D_CELLS_HDLL.lef $PDK_D_CELLS_HDLL_LEF_DIR/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HDLL_mprobe.lef"
+
+# =============================================================================
 # TLUPlus files
 # =============================================================================
 

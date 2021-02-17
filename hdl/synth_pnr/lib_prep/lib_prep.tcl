@@ -56,8 +56,8 @@ set temperatures    {-40 0 25 85 125 150 175}
 set_pvt_configuration -clear_filter all -add -name all -process_labels {""} -process_numbers {1} -voltages $voltages -temperatures $temperatures
 
 # Create the D_CELLS_HD lib
-set lefs_hd     { "lef_hd/xh018_D_CELLS_HD.lef" "lef_hd/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HD_mprobe.lef" }
-set res         [convert_lib "d_cells_hd" $NDM_TECHFILE $lefs_hd $PDK_D_CELLS_HD_LIBERTY_DIR]
+puts "[colour $COLOUR_BLUE]Creating D_CELLS_HD CLIB[clear_colour]"
+set res         [convert_lib "d_cells_hd" $NDM_TECHFILE $PDK_D_CELLS_HD_LEFS $PDK_D_CELLS_HD_LIBERTY_DIR]
 if {$res == 0} {
     return
 }
@@ -67,8 +67,8 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
 }
 
 # Create the D_CELLS_HDLL lib
-set lefs_hdll   { "lef_hdll/xh018_D_CELLS_HDLL.lef" "lef_hdll/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HDLL_mprobe.lef" }
-set res         [convert_lib "d_cells_hdll" $NDM_TECHFILE $lefs_hdll $PDK_D_CELLS_HDLL_LIBERTY_DIR]
+puts "[colour $COLOUR_BLUE]Creating D_CELLS_HDLL CLIB[clear_colour]"
+set res         [convert_lib "d_cells_hdll" $NDM_TECHFILE $PDK_D_CELLS_HDLL_LEFS $PDK_D_CELLS_HDLL_LIBERTY_DIR]
 if {$res == 0} {
     return
 }

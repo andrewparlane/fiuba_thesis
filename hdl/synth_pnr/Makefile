@@ -97,9 +97,8 @@ sync_with_remote:
 	cd $(ROOT_DIR) && rsync -rRv --delete 						\
 		--exclude $(SYNTH_PNR_DIR)/synth/work/					\
 		--exclude $(SYNTH_PNR_DIR)/synth/logs/					\
+		--exclude $(SYNTH_PNR_DIR)/lib_prep/work/				\
 		--exclude $(SYNTH_PNR_DIR)/lib_prep/logs/				\
-		--exclude $(SYNTH_PNR_DIR)/lib_prep/lef_hd/				\
-		--exclude $(SYNTH_PNR_DIR)/lib_prep/lef_hdll/			\
 		--exclude $(SYNTH_PNR_DIR)/custom_compiler_project/		\
 		$(SRC_DIR) $(ISO_IEC_14443A_RTL_DIR) $(SYNTH_PNR_DIR)	\
 		$(REMOTE_SERVER):$(REMOTE_PATH)
