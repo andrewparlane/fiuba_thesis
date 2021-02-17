@@ -48,10 +48,8 @@ set PDK_DIGLIBS_DIR                 "$PDK_DIR/diglibs"
 # We use the following Standard Cells:
 #   D_CELLS_HD      - "1.8V, 1.2V Standard Speed & Low Power, High Density routing pitch"
 #   D_CELLS_HDLL    - "1.8V, 1.2V Low Leakage & Low Power, High Density routing pitch"
-#   IO_CELLS_C1V8   - "Vcore=Vio=1.8V, 1.2V range, pad limited, 4kV HBM, narrow layout with large cell height"
 set PDK_D_CELLS_HD_DIR              "$PDK_DIGLIBS_DIR/D_CELLS_HD/v3_0"
 set PDK_D_CELLS_HDLL_DIR            "$PDK_DIGLIBS_DIR/D_CELLS_HDLL/v2_1"
-set PDK_IO_CELLS_DIR                "$PDK_DIGLIBS_DIR/IO_CELLS_C1V8/v1_1"
 
 # =============================================================================
 # Technology file
@@ -73,30 +71,25 @@ set NDM_TECHFILE                    "$PDK_NDM_TECH_FILE_DIR/$TECHFILE_NAME"
 # There are a variety of files representing different corners of the PVT.
 set PDK_D_CELLS_HD_LIBERTY_DIR      "$PDK_D_CELLS_HD_DIR/liberty_LPMOS/v3_0_1/PVT_1_80V_range"
 set PDK_D_CELLS_HDLL_LIBERTY_DIR    "$PDK_D_CELLS_HDLL_DIR/liberty_LPMOS/v2_1_1/PVT_1_80V_range"
-set PDK_IO_CELLS_LIBERTY_DIR        "$PDK_IO_CELLS_DIR/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range"
 
 # Max lib is for max delays analysis, which means the slow, hot, low voltage corner
 # The only choice we have here is for max temperature:
 #   (D_CELLS_HD)    -        85C, 125C, 150C, 175C
 #   (D_CELLS_HDLL)  - -40C,  85C, 125C, 150C, 175C
-#   (IO_CELLS)      -             125C, 150C, 175C
 # Using 125C for all of them
 set PDK_D_CELLS_HD_MAX_LIB          "$PDK_D_CELLS_HD_LIBERTY_DIR/D_CELLS_HD_LPMOS_slow_1_62V_125C.db"
 set PDK_D_CELLS_HDLL_MAX_LIB        "$PDK_D_CELLS_HDLL_LIBERTY_DIR/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db"
-set PDK_IO_CELLS_MAX_LIB            "$PDK_IO_CELLS_LIBERTY_DIR/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db"
 
 # Min lib is for min delay analysis, which means the fast, cold, high voltage corner
 #   (D_CELLS_HD)    - -40C, 0C
 #   (D_CELLS_HDLL)  - -40C, 0C
-#   (IO_CELLS)      - -40C, 125C, 150C, 175C - I'm not sure why we have so many hot options here and only one cold?
 # Using -40C for all of them
 set PDK_D_CELLS_HD_MIN_LIB          "$PDK_D_CELLS_HD_LIBERTY_DIR/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db"
 set PDK_D_CELLS_HDLL_MIN_LIB        "$PDK_D_CELLS_HDLL_LIBERTY_DIR/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db"
-set PDK_IO_CELLS_MIN_LIB            "$PDK_IO_CELLS_LIBERTY_DIR/IO_CELLS_C1V8_LPMOS_fast_1_98V_1_98V_m40C.db"
 
-# These must be in the same order (D_CELLS_HD, D_CELLS_HDLL, IO_CELLS)
-set TARGET_MAX_LIBS                 "$PDK_D_CELLS_HD_MAX_LIB $PDK_D_CELLS_HDLL_MAX_LIB $PDK_IO_CELLS_MAX_LIB"
-set TARGET_MIN_LIBS                 "$PDK_D_CELLS_HD_MIN_LIB $PDK_D_CELLS_HDLL_MIN_LIB $PDK_IO_CELLS_MIN_LIB"
+# These must be in the same order (D_CELLS_HD, D_CELLS_HDLL)
+set TARGET_MAX_LIBS                 "$PDK_D_CELLS_HD_MAX_LIB $PDK_D_CELLS_HDLL_MAX_LIB"
+set TARGET_MIN_LIBS                 "$PDK_D_CELLS_HD_MIN_LIB $PDK_D_CELLS_HDLL_MIN_LIB"
 
 set OPERATING_CONDITION_MAX         slow_1_62V_125C
 set OPERATING_CONDITION_MIN         fast_1_98V_m40C
@@ -108,9 +101,8 @@ set OPERATING_CONDITION_MIN         fast_1_98V_m40C
 # The milkyway ref lib contains physical representation of the standard cells
 set PDK_D_CELLS_HD_MW_REF_DIR       "$PDK_D_CELLS_HD_DIR/synopsys_ICC/v3_0_1/xh018-D_CELLS_HD-synopsys_ICCompiler-v3_0_1/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HD"
 set PDK_D_CELLS_HDLL_MW_REF_DIR     "$PDK_D_CELLS_HDLL_DIR/synopsys_ICC/v2_1_0/xh018-D_CELLS_HDLL-synopsys_ICCompiler-v2_1_0/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HDLL"
-set PDK_IO_CELLS_MW_REF_DIR         "$PDK_IO_CELLS_DIR/synopsys_ICC/v1_1_0/xh018-IO_CELLS_C1V8-synopsys_ICCompiler-v1_1_0/xh018_xx43_MET4_METMID_METTHK_IO_CELLS_C1V8"
 
-set MILKYWAY_REF_LIB                "$PDK_D_CELLS_HD_MW_REF_DIR $PDK_D_CELLS_HDLL_MW_REF_DIR $PDK_IO_CELLS_MW_REF_DIR"
+set MILKYWAY_REF_LIB                "$PDK_D_CELLS_HD_MW_REF_DIR $PDK_D_CELLS_HDLL_MW_REF_DIR"
 
 # =============================================================================
 # TLUPlus files
@@ -136,7 +128,7 @@ set SYNTHETIC_LIBRARY               "$SYNOPSYS_LIBS_DIR/dw_foundation.sldb"
 # The symbol library is used to display a schematic of the design
 # We include one per Standard Cell Library that we use
 # And the default synopsys one at the end
-set SYMBOL_LIBRARY                  "$PDK_D_CELLS_HD_DIR/dc_shell_symb/v3_0_0/D_CELLS_HD.sdb $PDK_D_CELLS_HDLL_DIR/dc_shell_symb/v2_1_0/D_CELLS_HDLL.sdb $PDK_IO_CELLS_DIR/dc_shell_symb/v1_1_0/IO_CELLS_C1V8.sdb $SYNOPSYS_LIBS_DIR/generic.sdb"
+set SYMBOL_LIBRARY                  "$PDK_D_CELLS_HD_DIR/dc_shell_symb/v3_0_0/D_CELLS_HD.sdb $PDK_D_CELLS_HDLL_DIR/dc_shell_symb/v2_1_0/D_CELLS_HDLL.sdb $SYNOPSYS_LIBS_DIR/generic.sdb"
 
 # The * means search loaded libraries in memory for references
 set LINK_LIBRARY                    "* $TARGET_MAX_LIBS $SYNTHETIC_LIBRARY"
