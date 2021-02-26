@@ -484,8 +484,9 @@ colourise_cmd "write -hierarchy -format verilog -output \"work/final_netlist.v\"
 # milkyway
 write_milkyway -overwrite -output post_synth
 
-# SDC
+# SDC/constraints
 write_sdc work/constraints.sdc
+write_timing_contex -format icc2 -output work/constraints
 
 # Output a summary of message types
 redirect -variable message_info { print_message_info }
