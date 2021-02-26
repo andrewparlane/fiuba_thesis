@@ -374,29 +374,6 @@ foreach_in_collection sce [get_scenarios] {
 save_lib -all
 close_lib
 
-
-# TODO
-# Design Setup - 27:30 - done (I think)
-# design planning (floorplan) - 31:25, and the ICC2 design planning user guide
-#   read_verilog_outline
-#   initialize_floorplan
-#   place_io
-#   commit_block
-#   create_abstract
-#   load_upf
-#   shape_blocks
-#   create_placement
-#   plan power network
-#   plan busses and repeaters
-#   place_pins
-#   create_abstract - again?
-#   estimate_timing
-#   write design data
-# placement
-# CTS
-# Routing
-# finishing
-
 # Output a summary of message types
 redirect -variable message_info { print_message_info }
 puts "[colour $COLOUR_BLUE]$message_info[clear_colour]"
