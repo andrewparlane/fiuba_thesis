@@ -92,13 +92,17 @@ SYNTH_PNR_DIR			= hdl/synth_pnr
 sync_with_remote:
 	-rm -rf synth/logs
 	-rm -rf lib_prep/logs
+	-rm -rf dp/logs
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/logs/ synth/
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/lib_prep/logs/ lib_prep/
+	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/dp/logs/ dp/
 	cd $(ROOT_DIR) && rsync -rRv --delete 						\
 		--exclude $(SYNTH_PNR_DIR)/synth/work/					\
 		--exclude $(SYNTH_PNR_DIR)/synth/logs/					\
 		--exclude $(SYNTH_PNR_DIR)/lib_prep/work/				\
 		--exclude $(SYNTH_PNR_DIR)/lib_prep/logs/				\
+		--exclude $(SYNTH_PNR_DIR)/dp/work/						\
+		--exclude $(SYNTH_PNR_DIR)/dp/logs/						\
 		--exclude $(SYNTH_PNR_DIR)/custom_compiler_project/		\
 		$(SRC_DIR) $(ISO_IEC_14443A_RTL_DIR) $(SYNTH_PNR_DIR)	\
 		$(REMOTE_SERVER):$(REMOTE_PATH)

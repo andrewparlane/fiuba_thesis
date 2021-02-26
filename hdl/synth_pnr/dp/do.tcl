@@ -1,0 +1,2 @@
+source dp.tcl
+exit
