@@ -93,9 +93,11 @@ sync_with_remote:
 	-rm -rf synth/logs
 	-rm -rf lib_prep/logs
 	-rm -rf dp/logs
+	-rm -rf pnr/logs
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/logs/ synth/
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/lib_prep/logs/ lib_prep/
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/dp/logs/ dp/
+	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/pnr/logs/ pnr/
 	cd $(ROOT_DIR) && rsync -rRv --delete 						\
 		--exclude $(SYNTH_PNR_DIR)/synth/work/					\
 		--exclude $(SYNTH_PNR_DIR)/synth/logs/					\
@@ -103,6 +105,8 @@ sync_with_remote:
 		--exclude $(SYNTH_PNR_DIR)/lib_prep/logs/				\
 		--exclude $(SYNTH_PNR_DIR)/dp/work/						\
 		--exclude $(SYNTH_PNR_DIR)/dp/logs/						\
+		--exclude $(SYNTH_PNR_DIR)/pnr/work/					\
+		--exclude $(SYNTH_PNR_DIR)/pnr/logs/					\
 		--exclude $(SYNTH_PNR_DIR)/custom_compiler_project/		\
 		$(SRC_DIR) $(ISO_IEC_14443A_RTL_DIR) $(SYNTH_PNR_DIR)	\
 		$(REMOTE_SERVER):$(REMOTE_PATH)

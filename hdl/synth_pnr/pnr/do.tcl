@@ -1,0 +1,2 @@
+source pnr.tcl
+exit
