@@ -92,16 +92,19 @@ do_check_design "dp_pre_floorplan"
 #   control_type:     die       - this defines the maximum size of my design, but since there are no IO cells the
 #                                 core and the die have the same size.
 #   core_utilisation: 0.7       - This is the default (70% cells, 30% routing)
-#   core_offset:      0         - There are no IO cells so no need for difference between the core and the boundary
+#   core_offset:      0.1       - There are no IO cells so no need for difference between the core and the boundary
+#                                 However I get warnings during PnR when using 0 about tracks not crossing the core
+#                                 area. Using 0.1 here fixes that, and doesn't really affect our overall area
 #   shape:            R         - Rectangular
-#   side_length:      280,280   - Synthesis reports cell area as ~52,000 um^2, if that counts for 70% of the area
+#   side_length:      260,260   - Synthesis reports cell area as ~52,000 um^2, if that counts for 70% of the area
 #                                 then 100% is 74,286 um^2, so for a square the side lengths would be 272.6 um.
-#                                 using 280um x 280um should be big enough, we can try to make this smaller later
+#                                 I've since determined that 260x260 works pretty well. Giving decent cell density
+#                                 and congestion statistics.
 initialize_floorplan    -control_type die       \
                         -core_utilization 0.7   \
-                        -core_offset 0          \
+                        -core_offset 0.1        \
                         -shape R                \
-                        -side_length {280 280}
+                        -side_length {260 260}
 
 # Load timing constraints from synthesis
 colourise_cmd "source ../synth/work/constraints/top.tcl"
@@ -228,7 +231,7 @@ create_pg_ring_pattern pg_ring  -horizontal_layer METTP     \
                                 -corner_bridge false
 
 set_pg_strategy s_core_ring -core -pattern {{pattern: pg_ring}{nets: {VDD VSS}}} \
-                                  -extension {{stop: design_boundary}}
+                                  -extension {{stop: core_boundary}}
 
 compile_pg -strategies s_core_ring
 
@@ -237,18 +240,28 @@ compile_pg -strategies s_core_ring
 #   Version November 2008, section 7.1,
 #     The distance between stripes should be 250 … 350 um
 #
-# NOTE: Our floorplan is only 280um * 280um ATM so not sure if there's a need for the mesh.
+# NOTE: Our floorplan is only 260um * 260um ATM so not sure if there's a need for the mesh.
 #       However I can't get the rails (below) to connect directly to the rings, so I'm adding
-#       the mesh in.
+#       the mesh in, as a single horizontal and vertical stripe for each of ground and power
+#       about the center of the design
 create_pg_mesh_pattern pg_mesh -layers {{{vertical_layer: METTPL} {spacing: 2.5}    \
-                                          {width: 5} {pitch: 140} {trim: false}}    \
+                                          {width: 5} {pitch: 130} {trim: false}}    \
                                         {{horizontal_layer: METTP} {spacing: 2.5}   \
-                                          {width: 5} {pitch: 140} {trim: false}}}
+                                          {width: 5} {pitch: 130} {trim: false}}}
 
-set_pg_strategy s_mesh -pattern {{pattern: pg_mesh} {nets: {VDD, VSS}} {offset_start: 140 140}} \
+set_pg_strategy s_mesh -pattern {{pattern: pg_mesh} {nets: {VDD, VSS}} {offset_start: 130 130}} \
                        -core -extension {{stop: outermost_ring}}
 
 compile_pg -strategies s_mesh
+
+# TODO: do we need to do these? Might help, but probably not essential
+puts "[colour $COLOUR_YELLOW]Warning: TODO - do we need wrong direction routing and routing blockages under power rings/stripes[clear_colour]"
+# Comments from XFab's 0.18um-ApplicationNote-Digital_Implementation_Guidelines-v1_1_0.pdf
+#   -   Make the horizontal stripes first, then the vertical ones (allow “wrong direction”
+#       routing for the metal layer under the thick metal for the crossings). This allows
+#       easy access for the via stacks to the cell rows
+#   -   Having routing blockages in the metal layer below METTHK/METTPL in all places where you
+#       need to access the “inner ring” of the supply system
 
 # RAILS:
 create_pg_std_cell_conn_pattern pg_std_cell_rail  -layers {MET1} -rail_width 0.23
@@ -331,6 +344,8 @@ colourise_cmd "report_timing -corner estimated_corner -mode [all_modes]"
 colourise_cmd "report_qor    -corner estimated_corner"
 colourise_cmd "report_qor    -summary"
 
+# Remove that estimated_corner now
+remove_corners estimated_corner
 
 # save the lib
 save_lib -all
@@ -373,6 +388,9 @@ write_floorplan -output work/design.floorplan -force -nosplit -format icc2
 foreach_in_collection sce [get_scenarios] {
     write_sdc -output work/${sce}.sdc -scenario $sce -nosplit
 }
+
+# create a new final block for importing into the PnR script
+create_new_block "dp_out"
 
 save_lib -all
 close_lib
