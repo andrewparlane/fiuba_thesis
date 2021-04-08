@@ -263,7 +263,10 @@ connect_pg_net -automatic
 colourise_cmd "check_pg_connectivity -check_std_cell_pins none"
 
 # Create error report for PG ignoring std cells because they are not legalized
-colourise_cmd "check_pg_drc -ignore_std_cells"
+if {[colourise_check_pg_drc -ignore_std_cells] == 0} {
+    puts "[colour $COLOUR_RED]Aborting due to PG DRC errors[clear_colour]"
+    return
+}
 
 # check_mv_design -erc_mode and -power_connectivity
 colourise_cmd "check_mv_design -erc_mode"

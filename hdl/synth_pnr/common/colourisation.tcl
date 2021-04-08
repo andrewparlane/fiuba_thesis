@@ -93,3 +93,35 @@ proc colourise_cmd {cmd} {
     # return the result
     return $res
 }
+
+# check_pg_drc needs can't be colourised normaly
+proc colourise_check_pg_drc {args} {
+    variable no_colours
+    variable COLOUR_RED
+    variable COLOUR_GREEN
+    set cmd "check_pg_drc $args"
+
+    # redirect the output of the command to a variable (buffer) so we can later apply our colourisation to it
+    redirect -variable buffer {
+        eval $cmd
+    }
+
+    # check_pg_drc doen't return a status code so fake it
+    set res 1
+
+    # Detect errors
+    # Make it all red if errors were found, otherwise green
+    set col [colour $COLOUR_GREEN]
+    if {[string first "Total number of errors found" $buffer] != -1} {
+        set col [colour $COLOUR_RED]
+        set res 0
+    }
+
+    if {$no_colours == 1} {
+        puts $buffer
+    } else {
+        puts "$col$buffer[clear_colour]"
+    }
+
+    return $res
+}
