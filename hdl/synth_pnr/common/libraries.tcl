@@ -38,7 +38,9 @@ set PDK_PROCESS_CODE                "1143"
 set SYNOPSYS_LIBS_DIR               "$::env(SYNOPSYS_SYN_ROOT)/libraries/syn"
 
 set PDK_DIR                         "/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018"
-set PDK_TLUP_DIR                    "$PDK_DIR/synopsys/v8_0/TLUplus/v8_0_1"
+set PDK_SYNOPSYS_DIR                "$PDK_DIR/synopsys/v8_0"
+set PDK_TLUP_DIR                    "$PDK_SYNOPSYS_DIR/TLUplus/v8_0_1"
+set PDK_ICV_DIR                     "$PDK_SYNOPSYS_DIR/ICValidator/v8_0_2"
 set PDK_DIGLIBS_DIR                 "$PDK_DIR/diglibs"
 
 # =============================================================================
