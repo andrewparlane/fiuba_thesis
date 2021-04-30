@@ -153,14 +153,11 @@ connect_pg_net
 # checks / reports
 # ---------------------------
 
-# At this point we've placed all the std_cells so we could do check_pg_drc
+# At this point we've placed all the std_cells so we check_pg_drc
 # without the -ignore_std_cells option.
-# But we get DRC errors, which I'm not actually sure if they are valid or not
-# They appear to be inside the cells.
-# TODO: figure out DRC errors
 if {[colourise_check_pg_drc] == 0} {
     puts "[colour $COLOUR_RED]Aborting due to PG DRC errors[clear_colour]"
-#    return
+    return
 }
 
 route_global -floorplan true -congestion_map_only true
