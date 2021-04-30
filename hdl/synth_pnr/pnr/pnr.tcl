@@ -427,10 +427,7 @@ write_verilog -exclude {scalar_wire_declarations leaf_module_declarations empty_
 write_def -version 5.8 work/design.def
 
 # write the GDS
-# The default lib_cell_view is layout, but we don't seem to have layout views for our lib cells.
-# from what I understand 'design' is the complete view and layout is the physical data only
-# so using the design view includes the layout information, and that should be fine.
-write_gds -hierarchy all -long_names -keep_data_type -lib_cell_view design work/design.gds
+write_gds -hierarchy all -long_names -keep_data_type -layer_map $NDM_OUT_LAYER_MAP -layer_map_format icc_default work/design.gds
 
 # Finished - create the final output library block
 create_new_block "pnr_out"
