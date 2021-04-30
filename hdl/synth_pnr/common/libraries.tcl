@@ -65,6 +65,9 @@ set TECHFILE_NAME                   "xh018_xx43_HD_MET4_METMID_METTHK.tf"
 set MW_TECHFILE                     "$PDK_MW_TECH_FILE_DIR/$TECHFILE_NAME"
 set NDM_TECHFILE                    "$PDK_NDM_TECH_FILE_DIR/$TECHFILE_NAME"
 
+set NDM_IN_LAYER_MAP                "$PDK_NDM_TECH_FILE_DIR/xh018_in.map"
+set NDM_OUT_LAYER_MAP               "$PDK_NDM_TECH_FILE_DIR/xh018_out.map"
+
 # =============================================================================
 # Logic Libraries
 # =============================================================================

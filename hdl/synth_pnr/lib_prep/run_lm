@@ -32,13 +32,3 @@ if [[ "$INTERACTIVE" = "" ]]; then
 fi
 
 icc2_lm_shell $icc_lm_args
-
-# run a final verification step to check the bounding boxes of
-# our cells have been adjusted correctly.
-echo "Verifying widths of d_cells_hd (look for errors or non 0 result)"
-diff <(cat logs/d_cells_hd_lef_boundaries.log | sort)   \
-     <(cat logs/d_cells_hd_final_boundaries.log | sort) | wc -l
-
-echo "Verifying widths of d_cells_hdll (look for errors or non 0 result)"
-diff <(cat logs/d_cells_hdll_lef_boundaries.log | sort)   \
-     <(cat logs/d_cells_hdll_final_boundaries.log | sort) | wc -l

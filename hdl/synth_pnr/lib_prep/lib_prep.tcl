@@ -72,52 +72,23 @@ proc convert_lib { libname suffix lef gds db_dir convert_sites} {
     variable pause_between_commands
 
     # from common/libraries.tcl
-    variable NDM_LAYER_MAP
+    variable NDM_IN_LAYER_MAP
     variable NDM_TECHFILE
 
-    # ---------------------------------------------------------------
-    # LEF only workspace
-    # ---------------------------------------------------------------
-
-    # First we create the basic frame view using the .lef for reference later.
-    # The bounding boxes auto derived from reading the .gds are not correct, so we manually tweak
-    # them as part of the later edit flow. We then compare the fixed bounding boxes with those
-    # generated from the .lef only, which are correct.
-    puts "[colour $COLOUR_BLUE]Creating LEF only workspace[clear_colour]"
-    create_workspace -technology $NDM_TECHFILE ${libname}_lef_only_ws
-
-    # Read the LEF
-    set cmd "read_lef $lef -library $libname -convert_sites \"$convert_sites\""
-    puts $cmd
-    colourise_cmd $cmd
-
-    # Output bounding box info for every cell
-    foreach_in_collection lib_cell [get_lib_cells ${libname}/*] {
-        set name        [get_attribute $lib_cell -name name]
-        set bbox        [get_attribute $lib_cell -name bbox]
-        set boundary    [get_attribute $lib_cell -name boundary]
-        set width       [get_attribute $lib_cell -name width]
-        set height      [get_attribute $lib_cell -name height]
-
-        puts "$name, $width, $height, $bbox, $boundary"
-    } > logs/${libname}_lef_boundaries.log
-
-    # OK so we're done with this workspace, clean it up and remove it
-    remove_workspace
-
-    # ---------------------------------------------------------------
-    # Main workspace
-    # ---------------------------------------------------------------
-
-    if {($pause_between_commands == 1) && ([do_continue] == 0)} {
-        return 0
-    }
-
-    puts "[colour $COLOUR_BLUE]Creating main workspace[clear_colour]"
+    puts "[colour $COLOUR_BLUE]Creating workspace[clear_colour]"
     create_workspace -technology $NDM_TECHFILE ${libname}_ws
 
     puts "[colour $COLOUR_BLUE]Reading GDS[clear_colour]"
-    set cmd "read_gds -library $libname $gds -centerline_boundary -layer_map $NDM_LAYER_MAP"
+    # This produces warnings:
+    # Warning: Layer mapping rule for "190:-32768" is defined multiple times.
+    #               Only the last instance will be effective. (GDS-010)
+    #          Not sure where this comes from, but layer 190 in the .gds is a boundary layer
+    #
+    # Warning: Multiple Boundary definition found for Module FCNE*, (all FCNE and FCNED cells)
+    #               keeping the last definition. (GDS-008)
+    #          I can't see multiple boundries in the .gds file, and the cells are read with
+    #          the correct boundaries. So I'm inclined to ignore this.
+    set cmd "read_gds -library $libname $gds -layer_map $NDM_IN_LAYER_MAP -layer_map_format icc_default"
     puts $cmd
     colourise_cmd $cmd
 
@@ -159,64 +130,11 @@ proc convert_lib { libname suffix lef gds db_dir convert_sites} {
     colourise_cmd "check_workspace -details all -allow_missing"
 
     puts "[colour $COLOUR_BLUE]Committing the workspace[clear_colour]"
-    commit_workspace -output work/${libname}_tmp.ndm
+    commit_workspace -output work/${libname}.ndm
 
     if {($pause_between_commands == 1) && ([do_continue] == 0)} {
         return 0
     }
-
-    # ---------------------------------------------------------------
-    # Edit workspace
-    # ---------------------------------------------------------------
-
-    # There are a couple of problems with our library at this point:
-    #   1) Incorrect bounding boxes and widths
-    #   2) Missing via regions / pins off track
-    # I can't find a way to fix these in the above flow, it appears that you have to
-    # commit the workspace and then create a new one in the edit flow.
-
-    puts "[colour $COLOUR_BLUE]Creating edit workspace[clear_colour]"
-    create_workspace -flow edit work/${libname}_tmp.ndm
-
-    puts "[colour $COLOUR_BLUE]Fixing widths[clear_colour]"
-    foreach_in_collection lib_cell [get_lib_cells ${libname}_tmp/*] {
-        set name [get_attribute $lib_cell -name name]
-        # has the correct horizontal points
-        set bbox [get_attribute $lib_cell -name bbox]
-        # has the correct vertical points (-centerline_boundary)
-        set boundary [get_attribute $lib_cell -name boundary_bbox]
-        set old_width [get_attribute $lib_cell -name width]
-
-        # get x limits
-        lassign $bbox bbox_bl bbox_tr
-        lassign $bbox_bl x1 dummy
-        lassign $bbox_tr x2 dummy
-
-        # get y limits
-        lassign $boundary boundary_bl boundary_tr
-        lassign $boundary_bl dummy y1
-        lassign $boundary_tr dummy y2
-
-        set new_boundary "{$x1 $y1} {$x1 $y2} {$x2 $y2} {$x2 $y1}"
-        set_attribute $lib_cell boundary $new_boundary
-    }
-
-    # FEED1HD doesn't have any vias (it's just the rails), so -centerline_boundary doesn't work
-    # also the width and bbox stuff is all off. Manually fix based on width defined in the .lef
-    # The width is also the site's width, so we could use that too.
-    set lib_cell [get_lib_cell ${libname}_tmp/FEED1${suffix}]
-    set x1 0.00
-    set y1 0.00
-    set x2 0.56
-    set y2 [get_attribute [get_site_def hd] -name height]
-    set new_boundary "{$x1 $y1} {$x1 $y2} {$x2 $y2} {$x2 $y1}"
-    set_attribute $lib_cell boundary $new_boundary
-
-    # remove and recreate via regions
-    derive_via_regions
-
-    colourise_cmd "check_workspace -details all"
-    commit_workspace -output work/${libname}.ndm
 
     # ---------------------------------------------------------------
     # Generate reports
@@ -225,22 +143,7 @@ proc convert_lib { libname suffix lef gds db_dir convert_sites} {
     # For some reason some data only gets updated in the reports after you commit the workspace
     # and then open the resulting lib.
     open_lib work/${libname}.ndm
-
     report_lib ${libname} -timing_arcs -parasitic_tech -physical -antenna -routability -placement_constraints -wire_tracks -wire_track_colors -nosplit > logs/report_${libname}.log
-
-    # Output bounding box info for every cell
-    # This gets compared with the lef only data in the ./run_lm script
-    # as a final sanity check.
-    foreach_in_collection lib_cell [get_lib_cells ${libname}/*] {
-        set name        [get_attribute $lib_cell -name name]
-        set bbox        [get_attribute $lib_cell -name bbox]
-        set boundary    [get_attribute $lib_cell -name boundary]
-        set width       [get_attribute $lib_cell -name width]
-        set height      [get_attribute $lib_cell -name height]
-
-        puts "$name, $width, $height, $bbox, $boundary"
-    } > logs/${libname}_final_boundaries.log
-
     close_lib
 
     return 1
@@ -253,25 +156,23 @@ proc convert_lib { libname suffix lef gds db_dir convert_sites} {
 # There are a lot of infos/warnings output by check_workspace, limit a couple of them
 # for readability:
 #   FRAM-069    - warning       - There is no via region created in block '%s.frame'.
-#   LM-055      - warning       - Direction for port %s on %s is changed from unknown to %s
-#                                   This is because the physical lib (gds) doesn't have port
-#                                   directions but the logical libs (db) do.
-#   LM-045      - information   - Fixed PG mismatch: %s name %s overrides %s.
-#                                   This is because the PG names in the GDS are not the same
-#                                   as in the DBs. GDS: vdd!/gnd!, DB: vdd/gnd
-#                                   The tools use the GDS ones.
 #   LM-037      - information   - Combined  physical  block  %s/%s  (with  %s port reordering)
 #                                   This is just a verbose info message
+#   LM-045      - information   - Fixed PG mismatch: %s name %s overrides %s
+#                                   The .gds and (modified) .lef use vdd! and gnd!
+#                                   The .db files use vdd and gnd
 #   LEFR-025    - information   - '%s' already exists in %s (will %s)
 #                                   This comes up when reading data from the LEF file that was
 #                                   already read from the gds (such as pin names)
 #   GDS-050     - information   - Translating structure '%s' as cell '%s/%s'
 #                                   This is just a verbose info message
+#   GDS-008     - warning       - Multiple Boundary definition found for Module %s, keeping the last definition.
+#                                   The boundary is read correctly on all cells, so ignoring this
 set_message_info -id FRAM-069 -limit 5
-set_message_info -id LM-055 -limit 5
-set_message_info -id LM-045 -limit 5
 set_message_info -id LM-037 -limit 5
+set_message_info -id LM-045 -limit 5
 set_message_info -id LEFR-025 -limit 5
+set_message_info -id GDS-008 -limit 5
 set_message_info -id GDS-050 -limit 5
 
 # Keep the design, layout views and physical cells
