@@ -92,12 +92,18 @@ proc convert_lib { libname suffix lef gds db_dir convert_sites} {
     puts $cmd
     colourise_cmd $cmd
 
-    # The gds has pg names as vdd! and gnd!, rename them to vdd and gnd
-    set_attribute [get_lib_pins ${libname}/*/vdd!] -name name -value vdd
-    set_attribute [get_lib_pins ${libname}/*/gnd!] -name name -value gnd
-
     puts "[colour $COLOUR_BLUE]Reading LEF[clear_colour]"
-    set cmd "read_lef $lef -library $libname -merge_action attribute_only -convert_sites \"$convert_sites\""
+
+    # The LEF has PG names of vdd and gnd, but the GDS has pin names of vdd! and gnd!
+    # We can rename the pins already read in from the .gds now (to vdd/gnd), but that
+    # causes issues with LVS later, since the .cdl also uses vdd! and gnd! and expects
+    # our standard cells to use the same.
+    # Instead we do a quick text substitution on the .lef and read in the modified version.
+    # we still get some infos about PG pin naming on check_workspace because the .db files
+    # also use vdd/gnd, but those are just infos. We want the LEF and the GDS to match so
+    # that the -merge_action attribute_only can update any relevant attributes.
+    exec sed "s/^  \\(PIN\\|END\\) \\(vdd\\|gnd\\)/  \\1 \\2!/" $lef > work/${libname}_modified.lef
+    set cmd "read_lef work/${libname}_modified.lef -library $libname -merge_action attribute_only -convert_sites \"$convert_sites\""
     puts $cmd
     colourise_cmd $cmd
 
