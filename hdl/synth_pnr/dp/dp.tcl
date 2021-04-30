@@ -89,22 +89,25 @@ set_ignored_layers -max_routing_layer METTP
 do_check_design "dp_pre_floorplan"
 
 # Create the floorplan
-#   control_type:     die       - this defines the maximum size of my design, but since there are no IO cells the
+#   control_type:       die     - this defines the maximum size of my design, but since there are no IO cells the
 #                                 core and the die have the same size.
-#   core_utilisation: 0.7       - This is the default (70% cells, 30% routing)
-#   core_offset:      0.1       - There are no IO cells so no need for difference between the core and the boundary
+#   core_utilisation:   0.7     - This is the default (70% cells, 30% routing)
+#   core_offset:        0.1     - There are no IO cells so no need for difference between the core and the boundary
 #                                 However I get warnings during PnR when using 0 about tracks not crossing the core
 #                                 area. Using 0.1 here fixes that, and doesn't really affect our overall area
-#   shape:            R         - Rectangular
-#   side_length:      260,260   - Synthesis reports cell area as ~52,000 um^2, if that counts for 70% of the area
+#   shape:              R       - Rectangular
+#   side_length:        260,260 - Synthesis reports cell area as ~52,000 um^2, if that counts for 70% of the area
 #                                 then 100% is 74,286 um^2, so for a square the side lengths would be 272.6 um.
 #                                 I've since determined that 260x260 works pretty well. Giving decent cell density
 #                                 and congestion statistics.
+#   site_def:           hd      - Site def to use in the floorplan (Note: the lib_prep script converts
+#                                 the HDLL lib to use the hd site too)
 initialize_floorplan    -control_type die       \
                         -core_utilization 0.7   \
                         -core_offset 0.1        \
                         -shape R                \
-                        -side_length {260 260}
+                        -side_length {260 260}  \
+                        -site_def hd
 
 # Load timing constraints from synthesis
 colourise_cmd "source ../synth/work/constraints/top.tcl"
