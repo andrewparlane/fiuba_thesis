@@ -247,9 +247,9 @@ compile_pg -strategies s_core_ring
 #       However I can't get the rails (below) to connect directly to the rings, so I'm adding
 #       the mesh in, as a single horizontal and vertical stripe for each of ground and power
 #       about the center of the design
-create_pg_mesh_pattern pg_mesh -layers {{{vertical_layer: METTPL} {spacing: 2.5}    \
+create_pg_mesh_pattern pg_mesh -layers {{{vertical_layer: METTPL} {spacing: 5}      \
                                           {width: 5} {pitch: 130} {trim: false}}    \
-                                        {{horizontal_layer: METTP} {spacing: 2.5}   \
+                                        {{horizontal_layer: METTP} {spacing: 4}     \
                                           {width: 5} {pitch: 130} {trim: false}}}
 
 set_pg_strategy s_mesh -pattern {{pattern: pg_mesh} {nets: {VDD, VSS}} {offset_start: 130 130}} \
@@ -268,7 +268,7 @@ puts "[colour $COLOUR_YELLOW]Warning: TODO - do we need wrong direction routing 
 
 # RAILS:
 create_pg_std_cell_conn_pattern pg_std_cell_rail  -layers {MET1} -rail_width 0.23
-set_pg_strategy s_std_cell_rail -core -pattern {{name: pg_std_cell_rail} {nets: VDD VSS}}
+set_pg_strategy s_std_cell_rail -core -pattern {{name: pg_std_cell_rail} {nets: VDD VSS}} -extension {{{stop : outermost_ring}}}
 compile_pg -strategies s_std_cell_rail
 
 # Make sure everything is connected
@@ -312,6 +312,16 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
 }
 
 do_check_design "dp_pre_pin_placement"
+
+# create PG terminals
+# These boundries are the bounding boxes of the VIAs that connect the
+# top edge of the rings to the vertical stripes.
+# They will need to be adjusted if the boundry / stripes or rings are adjusted.
+set shape [create_shape -shape_type rect -boundary {{{127.5500 255.5100} {132.4500 260.4100}}} -layer METTP]
+create_terminal -port VDD -name VDD -object [get_shape $shape]
+
+set shape [create_shape -shape_type rect -boundary {{137.5500 263.0100} {142.4500 267.9100}} -layer METTP]
+create_terminal -port VSS -name VSS -object [get_shape $shape]
 
 colourise_cmd "place_pins -self"
 write_pin_constraints -self -file_name preferred_port_locations.tcl     \

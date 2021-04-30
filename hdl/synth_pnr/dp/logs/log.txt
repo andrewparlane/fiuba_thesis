@@ -1,16 +1,5 @@
 
-icc2_shell> source  run_icc2
-Error: unknown command 'rm' (CMD-005)
-Information: script '/home/aparlane/fiuba_thesis/hdl/synth_pnr/dp/run_icc2'
-                stopped at line 11 due to error. (CMD-081)
-Extended error info:
-
-    while executing
-"rm -rf work"
- -- End Extended Error Info
-icc2_shell> source d
-Error: could not open script file "d" (CMD-015)
-icc2_shell> source dp.tcl
+source do.tcl
 [36mDesign Init(B[m
 [36mInformation: Reading Verilog into new design 'design/dp_init' in library 'dlib'. (VR-012)(B[m
 Loading verilog file '/home/aparlane/fiuba_thesis/hdl/synth_pnr/synth/work/final_netlist.v'
@@ -34,7 +23,7 @@ check_design -ems_database check_design.dp_pre_floorplan -checks dp_pre_floorpla
  Options: { dp_pre_floorplan }
  Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
  Version: P-2019.03
- Date   : Thu Feb 18 12:40:04 2021
+ Date   : Fri Apr 30 18:10:52 2021
 ****************************************
 
 Running atomic-check 'dp_pre_floorplan'
@@ -55,7 +44,7 @@ Removing existing floorplan objects
 Creating core...
 Begin building search trees for block dlib:design/dp_init.design
 Done building search trees for block dlib:design/dp_init.design (time 0s)
-Core utilization ratio = 66.99%
+Core utilization ratio = 78.69%
 Unplacing all cells...
 Creating site array...
 Creating routing tracks...
@@ -100,7 +89,7 @@ Design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERS
 Report : Power/Ground Connection Summary
 Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
 Version: P-2019.03
-Date   : Thu Feb 18 12:40:05 2021
+Date   : Fri Apr 30 18:10:53 2021
 ****************************************
 P/G net name               P/G pin count(previous/current)
 --------------------------------------------------------------------------------
@@ -113,7 +102,7 @@ Report : check_mv_design
         -voltage_threshold 0
 Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
 Version: P-2019.03
-Date   : Thu Feb 18 12:40:05 2021
+Date   : Fri Apr 30 18:10:53 2021
 ****************************************
 
 ---------- Power domain rule ----------
@@ -197,7 +186,7 @@ Report : check_mv_design
         -power_connectivity
 Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
 Version: P-2019.03
-Date   : Thu Feb 18 12:40:05 2021
+Date   : Fri Apr 30 18:10:53 2021
 ****************************************
 
 ---------- Power domain rule ----------
@@ -296,7 +285,7 @@ check_design -ems_database check_design.dp_pre_block_shaping -checks dp_pre_bloc
  Options: { dp_pre_block_shaping }
  Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
  Version: P-2019.03
- Date   : Thu Feb 18 12:40:06 2021
+ Date   : Fri Apr 30 18:10:54 2021
 ****************************************
 
 Running atomic-check 'dp_pre_block_shaping'
@@ -314,7 +303,7 @@ Running atomic-check 'dp_pre_block_shaping'
   ----------------------------------------------------------------------------------------------------
   Total 1 non-EMS messages : 0 errors, 1 warnings, 0 info.
   ----------------------------------------------------------------------------------------------------
-[36mInformation: Non-EMS messages are saved into file 'check_design2021Feb18124006.log'.(B[m
+[36mInformation: Non-EMS messages are saved into file 'check_design2021Apr30181054.log'.(B[m
 1
 
 Creating appropriate block views (if needed)...
@@ -326,7 +315,7 @@ Info: There is no shaping object. Nothing can be done for shaping.
 
 [36mInformation: Elapsed time for shape_block excluding pending time: 00:00:00.01. (DPUI-902)(B[m
 [36mInformation: CPU time for shape_block : 00:00:00.01. (DPUI-903)(B[m
-[36mInformation: Peak memory usage for shape_block : 262 MB. (DPUI-904)(B[m
+[36mInformation: Peak memory usage for shape_block : 266 MB. (DPUI-904)(B[m
 Shaping done
 1
 
@@ -344,7 +333,7 @@ check_design -ems_database check_design.dp_pre_macro_placement -checks dp_pre_ma
  Options: { dp_pre_macro_placement }
  Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
  Version: P-2019.03
- Date   : Thu Feb 18 12:40:07 2021
+ Date   : Fri Apr 30 18:10:55 2021
 ****************************************
 
 Running atomic-check 'dp_pre_macro_placement'
@@ -383,16 +372,16 @@ Floorplan placement done.
 Report : report_placement
 Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
 Version: P-2019.03
-Date   : Thu Feb 18 12:40:08 2021
+Date   : Fri Apr 30 18:10:56 2021
 ****************************************
 
   Wire length report (all)
   ==================
-  wire length in design design/dp_placement: 62014.025 microns.
+  wire length in design design/dp_placement: 56875.016 microns.
     number of nets with unassigned pins: 33
-  wire length in design design/dp_placement (see through blk pins): 62014.025 microns.
+  wire length in design design/dp_placement (see through blk pins): 56875.016 microns.
   ------------------
-  Total wire length: 62014.025 microns.
+  Total wire length: 56875.016 microns.
 
   Physical hierarchy violations report
   ====================================
@@ -417,21 +406,21 @@ Date   : Thu Feb 18 12:40:08 2021
 [36mInformation: Default error view design_dpplace.err is created in GUI error browser. (DPP-054)(B[m
 [36mInformation: Elapsed time for create_placement excluding pending time: 00:00:01.08. (DPUI-902)(B[m
 [36mInformation: CPU time for create_placement : 00:00:01.09. (DPUI-903)(B[m
-[36mInformation: Peak memory usage for create_placement : 404 MB. (DPUI-904)(B[m
+[36mInformation: Peak memory usage for create_placement : 407 MB. (DPUI-904)(B[m
 1
 
 ****************************************
 Report : report_placement
 Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
 Version: P-2019.03
-Date   : Thu Feb 18 12:40:08 2021
+Date   : Fri Apr 30 18:10:56 2021
 ****************************************
 
   Wire length report (all)
   ==================
-  wire length in design design/dp_placement: 62014.025 microns.
+  wire length in design design/dp_placement: 56875.016 microns.
     number of nets with unassigned pins: 33
-  wire length in design design/dp_placement (see through blk pins): 62014.025 microns.
+  wire length in design design/dp_placement (see through blk pins): 56875.016 microns.
 
   Physical hierarchy violations report
   ====================================
@@ -464,7 +453,7 @@ check_design -ems_database check_design.dp_pre_power_insertion -checks dp_pre_po
  Options: { dp_pre_power_insertion }
  Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
  Version: P-2019.03
- Date   : Thu Feb 18 12:40:08 2021
+ Date   : Fri Apr 30 18:10:57 2021
 ****************************************
 
 Running atomic-check 'dp_pre_power_insertion'
@@ -509,9 +498,9 @@ Committing wires takes 0.00 seconds.
 Committed 8 vias.
 Committed 0 wires for via creation.
 Committing vias takes 0.00 seconds.
-Overall PG creation runtime: 1 seconds.
+Overall PG creation runtime: 0 seconds.
 Successfully compiled PG.
-Overall runtime: 1 seconds.
+Overall runtime: 0 seconds.
 Successfully create mesh pattern pg_mesh.
 Successfully set PG strategy s_mesh.
 Sanity check for inputs.
@@ -562,6 +551,7 @@ Committing vias takes 0.00 seconds.
 Overall PG creation runtime: 0 seconds.
 Successfully compiled PG.
 Overall runtime: 0 seconds.
+[33mWarning: TODO - do we need wrong direction routing and routing blockages under power rings/stripes(B[m
 Successfully create standard cell rail pattern pg_std_cell_rail.
 Successfully set PG strategy s_std_cell_rail.
 Sanity check for inputs.
@@ -576,28 +566,28 @@ Number of Pads: 0
 Creating standard cell rails.
 Creating standard cell rails for strategy s_std_cell_rail.
 DRC checking and fixing for standard cell rail strategy s_std_cell_rail.
-Checking DRC for 63 wires:0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
-Creating 63 wires after DRC fixing.
+Checking DRC for 58 wires:0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Creating 58 wires after DRC fixing.
 Wire DRC checking runtime 0.00 seconds.
 Creating via connection between strategies and existing shapes.
-Check and fix DRCs for 63 stacked vias.
-Checking DRC for 63 stacked vias:0% 5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100%
+Check and fix DRCs for 174 stacked vias.
+Checking DRC for 174 stacked vias:0% 5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100%
 Via DRC checking runtime 0.00 seconds.
 via connection runtime: 0 seconds.
 Removing dangling/floating wire/vias after DRC check.
 Start iteration 1:
 Checking potential dangling/floating power plan wires.
 Checking dangling/floating vias between strategies and existing shapes.
-Checking 63 stacked vias:0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Checking 174 stacked vias:0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
 Start iteration 2:
 Checking potential dangling/floating power plan wires.
 Checking dangling/floating vias between strategies and existing shapes.
-Checking 61 stacked vias:0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Checking 172 stacked vias:0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
 Finish removing all dangling or floating wires and vias.
 Commiting wires and vias.
-Committed 63 wires.
+Committed 58 wires.
 Committing wires takes 0.00 seconds.
-Committed 304 vias.
+Committed 857 vias.
 Committed 0 wires for via creation.
 Committing vias takes 0.00 seconds.
 Overall PG creation runtime: 0 seconds.
@@ -607,7 +597,7 @@ Overall runtime: 0 seconds.
 Report : Power/Ground Connection Summary
 Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
 Version: P-2019.03
-Date   : Thu Feb 18 12:40:09 2021
+Date   : Fri Apr 30 18:10:57 2021
 ****************************************
 P/G net name                  P/G pin count(previous/current)
 --------------------------------------------------------------------------------
@@ -621,14 +611,14 @@ Number of Macro Cells: 0
 Number of IO Pad Cells: 0
 Number of Blocks: 0
 Loading P/G wires and vias...
-Number of VDD Wires: 38
-Number of VDD Vias: 164
+Number of VDD Wires: 35
+Number of VDD Vias: 444
 Number of VDD Terminals: 0
-Number of VSS Wires: 37
-Number of VSS Vias: 158
+Number of VSS Wires: 35
+Number of VSS Vias: 431
 Number of VSS Terminals: 0
 **************Verify net VDD connectivity*****************
-  Number of floating wires: 1
+  Number of floating wires: 0
   Number of floating vias: 0
   Number of floating std cells: 0
   Number of floating hard macros: 0
@@ -637,7 +627,7 @@ Number of VSS Terminals: 0
   Number of floating hierarchical blocks: 0
 ************************************************************
 **************Verify net VSS connectivity*****************
-  Number of floating wires: 1
+  Number of floating wires: 0
   Number of floating vias: 0
   Number of floating std cells: 0
   Number of floating hard macros: 0
@@ -646,23 +636,22 @@ Number of VSS Terminals: 0
   Number of floating hierarchical blocks: 0
 ************************************************************
 Overall runtime: 0 seconds.
-{PATH_16_16 PATH_16_47}
 
-Begin building search trees for block dlib:design/dp_create_power.design
+[32mBegin building search trees for block dlib:design/dp_create_power.design
 Done building search trees for block dlib:design/dp_create_power.design (time 0s)
-Command check_pg_drc started  at Thu Feb 18 12:40:09 2021
-Command check_pg_drc finished at Thu Feb 18 12:40:09 2021
-CPU usage for check_pg_drc: 0.01 seconds ( 0.00 hours)
-Elapsed time for check_pg_drc: 0.01 seconds ( 0.00 hours)
+Command check_pg_drc started  at Fri Apr 30 18:10:57 2021
+Command check_pg_drc finished at Fri Apr 30 18:10:57 2021
+CPU usage for check_pg_drc: 0.02 seconds ( 0.00 hours)
+Elapsed time for check_pg_drc: 0.02 seconds ( 0.00 hours)
 No errors found.
-
+(B[m
 ****************************************
 Report : check_mv_design
         -erc_mode
         -voltage_threshold 0
 Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
 Version: P-2019.03
-Date   : Thu Feb 18 12:40:09 2021
+Date   : Fri Apr 30 18:10:57 2021
 ****************************************
 
 ---------- Power domain rule ----------
@@ -746,7 +735,7 @@ Report : check_mv_design
         -power_connectivity
 Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
 Version: P-2019.03
-Date   : Thu Feb 18 12:40:09 2021
+Date   : Fri Apr 30 18:10:57 2021
 ****************************************
 
 ---------- Power domain rule ----------
@@ -842,67 +831,67 @@ Percentage of routing tracks used by P/G nets
 =============================================
        layer |    Shape |  Spacing |    Total
 =============================================
-        MET1 |  12.875% |   0.000% |  12.875% 
-        MET2 |   0.125% |   0.276% |   0.401% 
-        MET3 |   0.199% |   0.000% |   0.199% 
-        MET4 |   0.179% |   0.313% |   0.492% 
-       METTP |   4.740% |   1.390% |   6.130% 
-      METTPL |   7.843% |   5.882% |  13.725% 
-Number of VDD Wires: 38
-Number of VDD Vias: 164
-Number of VSS Wires: 37
-Number of VSS Vias: 158
+        MET1 |   0.000% |  24.929% |  24.929% 
+        MET2 |   0.144% |   0.318% |   0.461% 
+        MET3 |   0.000% |   0.421% |   0.421% 
+        MET4 |   0.181% |   0.318% |   0.499% 
+       METTP |   4.279% |   1.948% |   6.227% 
+      METTPL |   2.128% |   6.383% |   8.511% 
+Number of VDD Wires: 35
+Number of VDD Vias: 444
+Number of VSS Wires: 35
+Number of VSS Vias: 431
 Loading RC extraction...
 Power Supply Voltage : 1.500V
 PNA: begin analyzing net VDD...
 PNA: calculating cell instance power...
 Total Power Consumption of Net VDD : 1000.000mW
 PNA: connecting instances...
-Total std cells port current : 76.279 mA
+Total std cells port current : 72.683 mA
 Total hard macro port current : 0.000 mA
 PNA: loading power taps...
 Use virtual power tap at (140.000 0.000) on layer METTP.
 PNA: constructing virtual grid...
-Total virtual grid current : 590.388 mA
+Total virtual grid current : 593.984 mA
 Total current: 666.667 mA
 PNA: extracting wires...
 PNA: retrieving RC values...
 PNA: simulating power network...
-Total assigned port current : 73.325 mA
-Total assigned virtual grid current : 590.388 mA
+Total assigned port current : 72.683 mA
+Total assigned virtual grid current : 593.984 mA
 Network information of net: VDD 
-Number of extracted resistors: 532 
-Number of all nodes: 522 
+Number of extracted resistors: 921 
+Number of all nodes: 851 
 Number of pad nodes: 1 
-Number of current sink nodes: 253 
-Number of internal nodes: 521 
-Pad (140.000 0.000) on Layer METTP Supplies 663.713 mA Current
-Maximum IR Drop for Net VDD: 167.830 mV at (273.538 268.800) on layer MET1
+Number of current sink nodes: 248 
+Number of internal nodes: 850 
+Pad (140.000 0.000) on Layer METTP Supplies 666.667 mA Current
+Maximum IR Drop for Net VDD: 130.008 mV at (50.705 233.060) on layer MET1
 Power Supply Voltage : 1.500V
 PNA: begin analyzing net VSS...
 PNA: calculating cell instance power...
 Total Power Consumption of Net VSS : 1000.000mW
 PNA: connecting instances...
-Total std cells port current : 76.279 mA
+Total std cells port current : 72.683 mA
 Total hard macro port current : 0.000 mA
 PNA: loading power taps...
-Use virtual power tap at (140.000 0.000) on layer METTP.
+Use virtual power tap at (140.000 0.000) on layer METTPL.
 PNA: constructing virtual grid...
-Total virtual grid current : 590.388 mA
+Total virtual grid current : 593.984 mA
 Total current: 666.667 mA
 PNA: extracting wires...
 PNA: retrieving RC values...
 PNA: simulating power network...
-Total assigned port current : 73.325 mA
-Total assigned virtual grid current : 590.388 mA
+Total assigned port current : 72.683 mA
+Total assigned virtual grid current : 593.984 mA
 Network information of net: VSS 
-Number of extracted resistors: 519 
-Number of all nodes: 516 
+Number of extracted resistors: 894 
+Number of all nodes: 835 
 Number of pad nodes: 1 
-Number of current sink nodes: 253 
-Number of internal nodes: 515 
-Pad (140.000 0.000) on Layer METTP Supplies 663.713 mA Current
-Maximum IR Drop for Net VSS: 194.593 mV at (273.538 264.320) on layer MET1
+Number of current sink nodes: 248 
+Number of internal nodes: 834 
+Pad (140.000 0.000) on Layer METTPL Supplies 666.667 mA Current
+Maximum IR Drop for Net VSS: 126.320 mV at (148.428 130.020) on layer MET1
 
 Saving all libraries...
 Information: Saving 'dlib:design/dp_create_power.design' to 'dlib:design/dp_place_pins.design'. (DES-028)
@@ -920,7 +909,7 @@ check_design -ems_database check_design.dp_pre_pin_placement -checks dp_pre_pin_
  Options: { dp_pre_pin_placement }
  Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
  Version: P-2019.03
- Date   : Thu Feb 18 12:40:10 2021
+ Date   : Fri Apr 30 18:10:58 2021
 ****************************************
 
 Running atomic-check 'dp_pre_pin_placement'
@@ -939,7 +928,7 @@ Running atomic-check 'dp_pre_pin_placement'
   ----------------------------------------------------------------------------------------------------
   Total 4 non-EMS messages : 0 errors, 4 warnings, 0 info.
   ----------------------------------------------------------------------------------------------------
-[36mInformation: Non-EMS messages are saved into file 'check_design2021Feb18124010.log'.(B[m
+[36mInformation: Non-EMS messages are saved into file 'check_design2021Apr30181058.log'.(B[m
 1
 
 
@@ -951,7 +940,7 @@ CPU Time for Top Level Pre-Route Processing: 00:00:00.00u 00:00:00.00s 00:00:00.
 Turn off antenna since no rule is specified
 Cell Min-Routing-Layer = MET1
 Cell Max-Routing-Layer = METTP
-[33mWarning: Ignore 35 top cell ports with no pins. (ZRT-027)(B[m
+[33mWarning: Ignore 33 top cell ports with no pins. (ZRT-027)(B[m
 
 Block Pin Constraint                                                           Min Pin Max Pin Reserve
                                                                                Layer   Layer   Layer    Feedthroughs
@@ -963,22 +952,22 @@ Via on layer (VIATP) needs more than one tracks
 Via on layer (VIATPL) needs more than one tracks
 [33mWarning: Layer METTP pitch 1.120 may be too small: wire/via-down 0.950, wire/via-up 1.430. (ZRT-026)(B[m
 Transition layer name: MET4(3)
-[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 -3.920} {279.995 -3.360} on layer MET2. (ZRT-625)(B[m
-[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 -3.920} {279.995 -3.360} on layer MET2. (ZRT-625)(B[m
-[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 -3.920} {279.995 -3.360} on layer MET2. (ZRT-625)(B[m
-[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 281.120} {279.995 281.680} on layer MET2. (ZRT-625)(B[m
-[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 281.120} {279.995 281.680} on layer MET2. (ZRT-625)(B[m
-[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 281.120} {279.995 281.680} on layer MET2. (ZRT-625)(B[m
-[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 281.120} {279.995 281.680} on layer MET2. (ZRT-625)(B[m
-[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 281.120} {279.995 281.680} on layer MET2. (ZRT-625)(B[m
-[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 281.120} {279.995 281.680} on layer MET2. (ZRT-625)(B[m
-[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 281.120} {279.995 281.680} on layer MET2. (ZRT-625)(B[m
+[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 -3.920} {259.475 -3.360} on layer MET2. (ZRT-625)(B[m
+[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 -3.920} {259.475 -3.360} on layer MET2. (ZRT-625)(B[m
+[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 -3.920} {259.475 -3.360} on layer MET2. (ZRT-625)(B[m
+[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 258.920} {259.475 259.480} on layer MET2. (ZRT-625)(B[m
+[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 258.920} {259.475 259.480} on layer MET2. (ZRT-625)(B[m
+[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 258.920} {259.475 259.480} on layer MET2. (ZRT-625)(B[m
+[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 258.920} {259.475 259.480} on layer MET2. (ZRT-625)(B[m
+[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 258.920} {259.475 259.480} on layer MET2. (ZRT-625)(B[m
+[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 258.920} {259.475 259.480} on layer MET2. (ZRT-625)(B[m
+[33mWarning: Master cell design has duplicated redundant library pin shapes at {0.005 258.920} {259.475 259.480} on layer MET2. (ZRT-625)(B[m
 Note - message 'ZRT-625' limit (10) exceeded. Remainder will be suppressed.
 Start Global Route ... 
 [Init] Elapsed real time: 0:00:00 
 [Init] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[Init] Total (MB): Used   86  Alloctr   87  Proc 1506 
+[Init] Total (MB): Used   86  Alloctr   87  Proc 1510 
 Printing options for 'route.common.*'
 
 Printing options for 'route.global.*'
@@ -986,7 +975,7 @@ Printing options for 'route.global.*'
 Begin global routing.
 Constructing data structure ...
 Design statistics:
-Design Bounding Box (-4.48,-4.48,284.48,282.24)
+Design Bounding Box (-4.48,-4.48,263.96,260.04)
 Number of routing layers = 6
 layer MET1, dir Hor, min width = 0.23, min space = 0.23 pitch = 0.56
 layer MET2, dir Ver, min width = 0.28, min space = 0.28 pitch = 0.56
@@ -998,44 +987,43 @@ Current Stage stats:
 [End of Build Tech Data] Elapsed real time: 0:00:00 
 [End of Build Tech Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Build Tech Data] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[End of Build Tech Data] Total (MB): Used   87  Alloctr   87  Proc 1506 
+[End of Build Tech Data] Total (MB): Used   87  Alloctr   87  Proc 1510 
 Net statistics:
 Total number of nets to route for block pin placement     = 35
 Number of interface nets to route for block pin placement = 35
-Number of single or zero port nets = 2
 Current Stage stats:
 [End of Build All Nets] Elapsed real time: 0:00:00 
 [End of Build All Nets] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Build All Nets] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[End of Build All Nets] Total (MB): Used   87  Alloctr   87  Proc 1506 
-Average gCell capacity  13.20    on layer (1)    MET1
-Average gCell capacity  14.62    on layer (2)    MET2
-Average gCell capacity  14.89    on layer (3)    MET3
-Average gCell capacity  14.62    on layer (4)    MET4
-Average gCell capacity  6.64     on layer (5)    METTP
-Average gCell capacity  1.32     on layer (6)    METTPL
-Average number of tracks per gCell 15.06         on layer (1)    MET1
-Average number of tracks per gCell 15.18         on layer (2)    MET2
-Average number of tracks per gCell 15.06         on layer (3)    MET3
-Average number of tracks per gCell 15.18         on layer (4)    MET4
-Average number of tracks per gCell 7.56  on layer (5)    METTP
+[End of Build All Nets] Total (MB): Used   87  Alloctr   87  Proc 1510 
+Average gCell capacity  11.45    on layer (1)    MET1
+Average gCell capacity  13.95    on layer (2)    MET2
+Average gCell capacity  14.85    on layer (3)    MET3
+Average gCell capacity  13.95    on layer (4)    MET4
+Average gCell capacity  6.34     on layer (5)    METTP
+Average gCell capacity  1.28     on layer (6)    METTPL
+Average number of tracks per gCell 15.26         on layer (1)    MET1
+Average number of tracks per gCell 15.00         on layer (2)    MET2
+Average number of tracks per gCell 15.26         on layer (3)    MET3
+Average number of tracks per gCell 15.00         on layer (4)    MET4
+Average number of tracks per gCell 7.65  on layer (5)    METTP
 Average number of tracks per gCell 1.53  on layer (6)    METTPL
-Number of gCells = 6936
+Number of gCells = 5952
 Current Stage stats:
 [End of Build Congestion map] Elapsed real time: 0:00:00 
 [End of Build Congestion map] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Build Congestion map] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[End of Build Congestion map] Total (MB): Used   87  Alloctr   87  Proc 1506 
+[End of Build Congestion map] Total (MB): Used   87  Alloctr   87  Proc 1510 
 Total stats:
 [End of Build Data] Elapsed real time: 0:00:00 
 [End of Build Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Build Data] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[End of Build Data] Total (MB): Used   87  Alloctr   87  Proc 1506 
+[End of Build Data] Total (MB): Used   87  Alloctr   87  Proc 1510 
 Current Stage stats:
 [End of Blocked Pin Detection] Elapsed real time: 0:00:00 
 [End of Blocked Pin Detection] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Blocked Pin Detection] Stage (MB): Used    8  Alloctr    8  Proc    0 
-[End of Blocked Pin Detection] Total (MB): Used   95  Alloctr   95  Proc 1506 
+[End of Blocked Pin Detection] Total (MB): Used   95  Alloctr   95  Proc 1510 
 [36mInformation: Using 1 threads for routing. (ZRT-444)(B[m
 
 Start GR phase 0
@@ -1043,7 +1031,7 @@ Current Stage stats:
 [End of Initial Routing] Elapsed real time: 0:00:00 
 [End of Initial Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Initial Routing] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[End of Initial Routing] Total (MB): Used   95  Alloctr   95  Proc 1506 
+[End of Initial Routing] Total (MB): Used   95  Alloctr   95  Proc 1510 
 Initial. Routing result:
 Initial. Both Dirs: Overflow =     0 Max = 0 GRCs =     0 (0.00%)
 Initial. H routing: Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
@@ -1055,52 +1043,52 @@ Initial. MET4       Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
 Initial. METTP      Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
 Initial. METTPL     Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
 
-Initial. Total Wire Length = 891.12
+Initial. Total Wire Length = 1037.34
 Initial. Layer MET1 wire length = 0.00
-Initial. Layer MET2 wire length = 348.40
-Initial. Layer MET3 wire length = 174.76
-Initial. Layer MET4 wire length = 367.96
+Initial. Layer MET2 wire length = 249.83
+Initial. Layer MET3 wire length = 442.40
+Initial. Layer MET4 wire length = 345.11
 Initial. Layer METTP wire length = 0.00
 Initial. Layer METTPL wire length = 0.00
-Initial. Total Number of Contacts = 68
+Initial. Total Number of Contacts = 71
 Initial. Via VIA12D_R count = 33
-Initial. Via VIA23D_R count = 22
-Initial. Via VIA34D_R count = 13
+Initial. Via VIA23D_R count = 26
+Initial. Via VIA34D_R count = 12
 Initial. Via VIA4TD_R count = 0
 Initial. Via VIAT6L_R count = 0
 Initial. completed.
 [End of Whole Chip Routing] Elapsed real time: 0:00:00 
 [End of Whole Chip Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Whole Chip Routing] Stage (MB): Used    8  Alloctr    8  Proc    0 
-[End of Whole Chip Routing] Total (MB): Used   95  Alloctr   95  Proc 1506 
+[End of Whole Chip Routing] Total (MB): Used   95  Alloctr   95  Proc 1510 
 Current Stage stats:
 [GR: Done] Elapsed real time: 0:00:00 
 [GR: Done] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [GR: Done] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[GR: Done] Total (MB): Used   95  Alloctr   95  Proc 1506 
+[GR: Done] Total (MB): Used   95  Alloctr   95  Proc 1510 
 GR Total stats:
 [GR: Done] Elapsed real time: 0:00:00 
 [GR: Done] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [GR: Done] Stage (MB): Used    8  Alloctr    8  Proc    0 
-[GR: Done] Total (MB): Used   95  Alloctr   95  Proc 1506 
+[GR: Done] Total (MB): Used   95  Alloctr   95  Proc 1510 
 Final total stats:
 [End of Global Routing] Elapsed real time: 0:00:00 
 [End of Global Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Global Routing] Stage (MB): Used    8  Alloctr    8  Proc    0 
-[End of Global Routing] Total (MB): Used   94  Alloctr   95  Proc 1506 
-CPU Time for Global Route: 00:00:00.12u 00:00:00.00s 00:00:00.12e: 
+[End of Global Routing] Total (MB): Used   94  Alloctr   95  Proc 1510 
+CPU Time for Global Route: 00:00:00.11u 00:00:00.00s 00:00:00.11e: 
 Number of block ports: 33
 Number of block pin locations assigned from router: 33
 CPU Time for Pin Preparation: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
 Number of PG ports on blocks: 0
 Number of pins created: 33
 CPU Time for Pin Creation: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
-Total Pin Placement CPU Time: 00:00:00.12u 00:00:00.00s 00:00:00.12e: 
+Total Pin Placement CPU Time: 00:00:00.11u 00:00:00.00s 00:00:00.12e: 
 1
 
 Writing out physical pin constraints based on existing pins ... done
-71 total number of pre-routes loaded
-26 total number of vias loaded
+66 total number of pre-routes loaded
+329 total number of vias loaded
 4 total number of edges loaded
 ------------------------ Start Of Pin Layer Check -------------------------
 ------------------------- End Of Pin Layer Check --------------------------
@@ -1158,7 +1146,7 @@ check_design -ems_database check_design.dp_pre_timing_estimation -checks dp_pre_
  Options: { dp_pre_timing_estimation }
  Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
  Version: P-2019.03
- Date   : Thu Feb 18 12:40:10 2021
+ Date   : Fri Apr 30 18:10:59 2021
 ****************************************
 
 Running atomic-check 'dp_pre_timing_estimation'
@@ -1180,11 +1168,11 @@ Created estimated_corner
 [36mInformation: Corner virtual_scenario: no PVT mismatches. (PVT-032)(B[m
 [36mInformation: The stitching and editing of coupling caps is turned OFF for design 'dlib:design/dp_estimate_timing.design'. (TIM-125)(B[m
 [36mInformation: Design Average RC for design design  (NEX-011)(B[m
-[36mInformation: r = 0.313301 ohm/um, via_r = 4.825253 ohm/cut, c = 0.141292 ff/um, cc = 0.000000 ff/um (X dir) (NEX-017)(B[m
-[36mInformation: r = 0.364315 ohm/um, via_r = 4.351588 ohm/cut, c = 0.143331 ff/um, cc = 0.000000 ff/um (Y dir) (NEX-017)(B[m
+[36mInformation: r = 0.315129 ohm/um, via_r = 4.837485 ohm/cut, c = 0.141465 ff/um, cc = 0.000000 ff/um (X dir) (NEX-017)(B[m
+[36mInformation: r = 0.364315 ohm/um, via_r = 4.351588 ohm/cut, c = 0.142352 ff/um, cc = 0.000000 ff/um (Y dir) (NEX-017)(B[m
 [36mInformation: The RC mode used is VR for design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1'. (NEX-022)(B[m
 [36mInformation: Update timing completed net estimation for all the timing graph nets (TIM-111)(B[m
-[36mInformation: Net estimation statistics: timing graph nets = 2172, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 97, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)(B[m
+[36mInformation: Net estimation statistics: timing graph nets = 2172, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 89, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)(B[m
 ************************************************************
 Timer Settings:
 Delay Calculation Style:                   auto
@@ -1197,7 +1185,7 @@ Advanced Receiver Model:                   disabled
 ************************************************************
 Number of Site types in the design = 1
 Setting up Chip Core
-Chip Core shape: (0 0) (2800000 2777600)
+Chip Core shape: (1000 1000) (2593800 2554600)
 Number of VARs = 1
 Number of unique PDs = 1
 Number of Power Domains = 1
@@ -1207,11 +1195,11 @@ Number of used supplies = 0
 [36mInformation: Initializing classic cellmap without advanced rules enabled(B[m
 Begin building search trees for block dlib:design/dp_estimate_timing.design
 Done building search trees for block dlib:design/dp_estimate_timing.design (time 0s)
-[36mInformation: Current block utilization is '0.66990', effective utilization is '0.66987'. (OPT-055)(B[m
+[36mInformation: Current block utilization is '0.78690', effective utilization is '0.78686'. (OPT-055)(B[m
 APSINFO: No multi-Vth libcells found, turning off percentage LVT optimization flow
 Drc Mode Option: auto
-ABF: Best buffer=BUHDX12: best inverter=INHDX12: useInverter=true: effort=low: 5.611: virtual_scenario: 0
-ABF: Core Area = 13 X 13 ()
+ABF: Best buffer=BUHDX12: best inverter=INHDX12: useInverter=true: effort=low: 5.262: virtual_scenario: 0
+ABF: Core Area = 12 X 12 ()
 APS-VIPO:Using MET3 layer for chain buffer model creation
 [31mError: Library cells with inverter/buffer types are useless due to zero input capacitance. For example, Library cell d_cells_hd/LSOGCNHDX0 has zero input capacitance. (APS-204)(B[m
 [31mError: Library cells with inverter/buffer types are useless due to zero input capacitance. For example, Library cell d_cells_hd/LSOGCPHDX0 has zero input capacitance. (APS-204)(B[m
@@ -1241,13 +1229,13 @@ No estimate_timing rule detected on nets.
 Virtually optimized 464 out of 2180 cells
 Virtually buffered 464 cell outputs
 Back-annotation statistics for mode 'virtual_scenario'
-  1869 back-annotations generated.
-  492 have been transition time back annotations.
+  1865 back-annotations generated.
+  495 have been transition time back annotations.
   0 have been skipped.
   Back-annotation succeeded on all arcs
-[36mInformation: Elapsed time for estimate_timing excluding pending time: 00:00:07.39. (DPUI-902)(B[m
-[36mInformation: CPU time for estimate_timing : 00:00:07.38. (DPUI-903)(B[m
-[36mInformation: Peak memory usage for estimate_timing : 560 MB. (DPUI-904)(B[m
+[36mInformation: Elapsed time for estimate_timing excluding pending time: 00:00:07.38. (DPUI-902)(B[m
+[36mInformation: CPU time for estimate_timing : 00:00:07.37. (DPUI-903)(B[m
+[36mInformation: Peak memory usage for estimate_timing : 564 MB. (DPUI-904)(B[m
 1
 
 ****************************************
@@ -1258,7 +1246,7 @@ Report : timing
         -report_by design
 Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
 Version: P-2019.03
-Date   : Thu Feb 18 12:40:18 2021
+Date   : Fri Apr 30 18:11:06 2021
 ****************************************
 
   Startpoint: adc_conversion_complete (input port clocked by clk)
@@ -1276,14 +1264,14 @@ Date   : Thu Feb 18 12:40:18 2021
   input external delay                            36.87     36.87
 
   adc_conversion_complete (in)                     0.09     36.96 f      0.00
-  U2338/Q (ON21HDLLX1)                             0.45     37.41 r      0.02
-  U2339/Q (NA3HDLLX1)                              0.47     37.89 f      0.01
-  U2340/Q (AN31HDLLX1)                             0.51     38.40 r     -0.00
-  U2341/Q (ON31HDLLX1)                             0.37 e   38.77 f     -0.22        Size: ON31HDX1
-  U2349/Q (NA4HDLLX1)                              0.45     39.22 r     -0.13
-  U2350/Q (ON21HDLLX1)                             0.27     39.49 f      0.00
-  clk_r_REG143_S17/D (DFRRQHDLLX0)                 0.00     39.49 f      0.00
-  data arrival time                                         39.49       -0.32        Delta arrival
+  U2338/Q (ON21HDLLX1)                             0.44     37.41 r      0.03
+  U2339/Q (NA3HDLLX1)                              0.46     37.87 f      0.01
+  U2340/Q (AN31HDLLX1)                             0.51     38.38 r     -0.00
+  U2341/Q (ON31HDLLX1)                             0.37 e   38.75 f     -0.22        Size: ON31HDX1
+  U2349/Q (NA4HDLLX1)                              0.46     39.21 r     -0.12
+  U2350/Q (ON21HDLLX1)                             0.27     39.48 f      0.00
+  clk_r_REG143_S17/D (DFRRQHDLLX0)                 0.00     39.48 f      0.00
+  data arrival time                                         39.48       -0.31        Delta arrival
 
   clock clk (rise edge)                           73.75     73.75
   clock network delay (ideal)                      0.00     73.75
@@ -1293,9 +1281,9 @@ Date   : Thu Feb 18 12:40:18 2021
   data required time                                        58.20
   ----------------------------------------------------------------------------------------------------
   data required time                                        58.20
-  data arrival time                                        -39.49
+  data arrival time                                        -39.48
   ----------------------------------------------------------------------------------------------------
-[32m  slack (MET)                                               18.71(B[m
+[32m  slack (MET)                                               18.72(B[m
 
 
 1
@@ -1304,7 +1292,7 @@ Date   : Thu Feb 18 12:40:18 2021
 Report : qor
 Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
 Version: P-2019.03
-Date   : Thu Feb 18 12:40:18 2021
+Date   : Fri Apr 30 18:11:06 2021
 ****************************************
 
 
@@ -1312,8 +1300,8 @@ Scenario           'virtual_scenario::estimated_corner'
 Timing Path Group  'clk'
 ----------------------------------------
 Levels of Logic:                      6
-Critical Path Length:             39.49
-Critical Path Slack:              18.71
+Critical Path Length:             39.48
+Critical Path Slack:              18.72
 Critical Path Clk Period:         73.75
 Total Negative Slack:              0.00
 No. of Violating Paths:               0
@@ -1367,7 +1355,7 @@ Report : qor
         -summary
 Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
 Version: P-2019.03
-Date   : Thu Feb 18 12:40:18 2021
+Date   : Fri Apr 30 18:11:06 2021
 ****************************************
 
 Timing
@@ -1375,13 +1363,13 @@ Timing
 Context                                 WNS            TNS            NVE
 ---------------------------------------------------------------------------
 virtual_scenario::estimated_corner
-                   (Setup)            18.71           0.00              0
-virtual_scenario   (Setup)            17.74           0.00              0
-Design             (Setup)            17.74           0.00              0
+                   (Setup)            18.72           0.00              0
+virtual_scenario   (Setup)            17.73           0.00              0
+Design             (Setup)            17.73           0.00              0
 
 virtual_scenario_bc
-                   (Hold)             -0.28         -28.99            257
-Design             (Hold)             -0.28         -28.99            257
+                   (Hold)             -0.29         -29.57            260
+Design             (Hold)             -0.29         -29.57            260
 ---------------------------------------------------------------------------
 
 Miscellaneous
@@ -1391,10 +1379,10 @@ Cell Area (netlist and physical only):        52097.74
 Nets with DRC Violations:        0
 1
 
+Information: The net parasitics of block radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1 are cleared. (TIM-123)
 Saving all libraries...
 Information: Saving 'dlib:design/dp_estimate_timing.design' to 'dlib:design/dp_write_data.design'. (DES-028)
 Closing all libraries...
-Information: The net parasitics of block radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1 are cleared. (TIM-123)
 Opening block 'dlib:design/dp_write_data.design' in edit mode
 Information: loading PG routing via master rules, patterns, strategies and strategy via rules.
 
@@ -1412,16 +1400,18 @@ Warning: Use defaultWidth 0.28 as the WRONGDIRECTION width for layer 'MET4'. (LE
 Warning: Use defaultWidth 0.44 as the WRONGDIRECTION width for layer 'METTP'. (LEFW-007)
 Warning: Use defaultWidth 3 as the WRONGDIRECTION width for layer 'METTPL'. (LEFW-007)
 Writing floorplan for design.design
+Information: Saving 'dlib:design/dp_write_data.design' to 'dlib:design/dp_out.design'. (DES-028)
+Closing all libraries...
+Opening block 'dlib:design/dp_out.design' in edit mode
+Information: loading PG routing via master rules, patterns, strategies and strategy via rules.
 Saving all libraries...
 Closing library 'dlib'
 [36m
 Id             Severity         Limit    Occurrences   Suppressed
 --------------------------------------------------------------------
 APS-204           Error             0              2            0
-CMD-005           Error             0              4            0
-CMD-015           Error             0              1            0
-CMD-081     Information             0              1            0
-DES-028     Information             0              7            0
+CMD-005           Error             0              3            0
+DES-028     Information             0              8            0
 DPI-503         Warning             0              1            0
 DPP-054     Information             0              2            0
 DPP-416     Information             0              1            0
@@ -1453,115 +1443,11 @@ ZRT-027         Warning             0              1            0
 ZRT-444     Information             0              1            0
 ZRT-625         Warning             0             10            1
 
-Diagnostics summary: 7 errors, 33 warnings, 41 informationals
+Diagnostics summary: 5 errors, 33 warnings, 41 informationals
 (B[m
 [32mScript finished successfully(B[m
-icc2_shell> 
-icc2_shell> open_block dp_write_data
-Error: Current library is not defined. (LIB-001)
-icc2_shell> open_lib work/dlib/
-Information: Loading library file '/home/aparlane/fiuba_thesis/hdl/synth_pnr/dp/work/dlib/' (FILE-007)
-Information: Loading library file '/home/aparlane/fiuba_thesis/hdl/synth_pnr/lib_prep/work/tech_only.ndm' (FILE-007)
-Information: Loading library file '/home/aparlane/fiuba_thesis/hdl/synth_pnr/lib_prep/work/d_cells_hd.ndm' (FILE-007)
-Information: Loading library file '/home/aparlane/fiuba_thesis/hdl/synth_pnr/lib_prep/work/d_cells_hdll.ndm' (FILE-007)
-{dlib}
-icc2_shell> open_block dp_write_data
-Error: Cannot find block 'dp_write_data'. (DES-004)
-icc2_shell> all_blocks
-Error: unknown command 'all_blocks' (CMD-005)
-icc2_shell> blocks
-Error: unknown command 'blocks' (CMD-005)
-icc2_shell> get_blocks
-Warning: No block objects matched '*' (SEL-004)
-icc2_shell> close_lib
-Closing library 'dlib'
-1
-icc2_shell> open_block work/dlib/:design/dp_write_data
-Opening block 'dlib:design/dp_write_data.design' in edit mode
-Information: loading PG routing via master rules, patterns, strategies and strategy via rules.
-{dlib:design/dp_write_data.design}
-icc2_shell> colourise_cmd "estimate_timing"
-Using libraries: dlib tech_only d_cells_hd d_cells_hdll
-Visiting block dlib:design/dp_write_data.design
-Design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1' was successfully linked.
-Begin building search trees for block dlib:design/dp_write_data.design
-Done building search trees for block dlib:design/dp_write_data.design (time 0s)
-[36mInformation: Corner estimated_corner: no PVT mismatches. (PVT-032)(B[m
-[36mInformation: Corner virtual_scenario_bc: no PVT mismatches. (PVT-032)(B[m
-[36mInformation: Corner virtual_scenario: no PVT mismatches. (PVT-032)(B[m
-[36mInformation: The stitching and editing of coupling caps is turned OFF for design 'dlib:design/dp_write_data.design'. (TIM-125)(B[m
-[36mInformation: Design Average RC for design design  (NEX-011)(B[m
-[36mInformation: r = 0.313301 ohm/um, via_r = 4.825253 ohm/cut, c = 0.141292 ff/um, cc = 0.000000 ff/um (X dir) (NEX-017)(B[m
-[36mInformation: r = 0.364315 ohm/um, via_r = 4.351588 ohm/cut, c = 0.143331 ff/um, cc = 0.000000 ff/um (Y dir) (NEX-017)(B[m
-[36mInformation: The RC mode used is VR for design 'radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1'. (NEX-022)(B[m
-[36mInformation: Update timing completed net estimation for all the timing graph nets (TIM-111)(B[m
-[36mInformation: Net estimation statistics: timing graph nets = 2172, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 97, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)(B[m
-************************************************************
-Timer Settings:
-Delay Calculation Style:                   auto
-Signal Integrity Analysis:                 disabled
-Timing Window Analysis:                    disabled
-Advanced Waveform Propagation:             disabled
-Variation Type:                            fixed_derate
-Clock Reconvergence Pessimism Removal:     disabled
-Advanced Receiver Model:                   disabled
-************************************************************
-Number of Site types in the design = 1
-Setting up Chip Core
-Chip Core shape: (0 0) (2800000 2777600)
-Number of VARs = 1
-Number of unique PDs = 1
-Number of Power Domains = 1
-Number of Voltage Areas = 1
-Number of supply Nets = 2
-Number of used supplies = 0
-[36mInformation: Initializing classic cellmap without advanced rules enabled(B[m
-[36mInformation: Current block utilization is '0.66990', effective utilization is '0.66987'. (OPT-055)(B[m
-APSINFO: No multi-Vth libcells found, turning off percentage LVT optimization flow
-Drc Mode Option: auto
-ABF: Best buffer=BUHDX12: best inverter=INHDX12: useInverter=true: effort=low: 5.611: virtual_scenario: 0
-ABF: Core Area = 13 X 13 ()
-APS-VIPO:Using MET3 layer for chain buffer model creation
-[31mError: Library cells with inverter/buffer types are useless due to zero input capacitance. For example, Library cell d_cells_hd/LSOGCNHDX0 has zero input capacitance. (APS-204)(B[m
-[31mError: Library cells with inverter/buffer types are useless due to zero input capacitance. For example, Library cell d_cells_hd/LSOGCPHDX0 has zero input capacitance. (APS-204)(B[m
-APS-VIPO:Levelization of the netlist is started 
-APS-VIPO:Levelization of netlist is finished 
-estimate timing (5%) done
-estimate timing (10%) done
-estimate timing (15%) done
-estimate timing (20%) done
-estimate timing (25%) done
-estimate timing (30%) done
-estimate timing (35%) done
-estimate timing (40%) done
-estimate timing (45%) done
-estimate timing (50%) done
-estimate timing (55%) done
-estimate timing (60%) done
-estimate timing (65%) done
-estimate timing (70%) done
-estimate timing (75%) done
-estimate timing (80%) done
-estimate timing (85%) done
-estimate timing (90%) done
-estimate timing (95%) done
-estimate timing (100%) done
-No estimate_timing rule detected on nets.
-Virtually optimized 464 out of 2180 cells
-Virtually buffered 464 cell outputs
-Back-annotation statistics for mode 'virtual_scenario'
-  1869 back-annotations generated.
-  492 have been transition time back annotations.
-  0 have been skipped.
-  Back-annotation succeeded on all arcs
-[36mInformation: Elapsed time for estimate_timing excluding pending time: 00:00:07.17. (DPUI-902)(B[m
-[36mInformation: CPU time for estimate_timing : 00:00:07.16. (DPUI-903)(B[m
-[36mInformation: Peak memory usage for estimate_timing : 561 MB. (DPUI-904)(B[m
-1
-
-1
-icc2_shell> 
-Maximum memory usage for this session: 561.21 MB
-CPU usage for this session:     28 seconds (  0.01 hours)
-Elapsed time for this session:    327 seconds (  0.09 hours)
+Maximum memory usage for this session: 564.02 MB
+CPU usage for this session:     21 seconds (  0.01 hours)
+Elapsed time for this session:     22 seconds (  0.01 hours)
 Thank you for using IC Compiler II.
+
