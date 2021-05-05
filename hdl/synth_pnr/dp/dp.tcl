@@ -130,11 +130,6 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
     return
 }
 
-# Load the UPF file (produced by the synthesis tools)
-# TODO: support upf in synthesis
-# load_upf ....
-# commit_upf
-
 # Connect all the std_cells to the power and ground nets (VDD/VSS)
 colourise_cmd "connect_pg_net -automatic -all_blocks"
 
