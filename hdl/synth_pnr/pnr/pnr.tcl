@@ -427,7 +427,9 @@ write_verilog -exclude {scalar_wire_declarations leaf_module_declarations empty_
 write_def -version 5.8 work/design.def
 
 # write the GDS
-write_gds -hierarchy all -long_names -keep_data_type -layer_map $NDM_OUT_LAYER_MAP -layer_map_format icc_default work/design.gds
+# XFAB expects different layer numbers to what ICC2 uses.
+write_gds -hierarchy all -long_names -keep_data_type work/design_icc2_layers.gds
+write_gds -hierarchy all -long_names -keep_data_type -layer_map $NDM_OUT_LAYER_MAP -layer_map_format icc_default work/design_xfab_layers.gds
 
 # Finished - create the final output library block
 create_new_block "pnr_out"
