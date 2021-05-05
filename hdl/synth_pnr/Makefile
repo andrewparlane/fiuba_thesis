@@ -108,6 +108,8 @@ sync_with_remote:
 		--exclude $(SYNTH_PNR_DIR)/dp/logs/						\
 		--exclude $(SYNTH_PNR_DIR)/pnr/work/					\
 		--exclude $(SYNTH_PNR_DIR)/pnr/logs/					\
+		--exclude $(SYNTH_PNR_DIR)/drc_lvs/lvs_work/			\
+		--exclude $(SYNTH_PNR_DIR)/drc_lvs/drc_work/			\
 		--exclude $(SYNTH_PNR_DIR)/custom_compiler_project/		\
 		$(SRC_DIR) $(ISO_IEC_14443A_RTL_DIR) $(SYNTH_PNR_DIR)	\
 		$(REMOTE_SERVER):$(REMOTE_PATH)
