@@ -278,7 +278,7 @@ check_lvs -checks all -open_reporting detailed
 
 if {[colourise_check_pg_drc] == 0} {
     puts "[colour $COLOUR_RED]Aborting due to PG DRC errors[clear_colour]"
-#   return
+    return
 }
 
 # save the lib
