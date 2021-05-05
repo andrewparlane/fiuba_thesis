@@ -177,9 +177,85 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
     return
 }
 
-# TODO: Read pin constraints (once I've decided on them) with one of
-#read_pin_constraints -file_name $CUSTOM_PIN_CONSTRAINT_FILE
-#set_*_pin_constraints ...
+# Set the pin constraints so that the placement engine can do a better job with coarse cell placement
+# We can either read the preferred_port_locations.tcl file, which contains the exact pin locations
+# from a previous run of this DP script. Or we can manually set the constraints. Either way a new
+# preferred_port_locations.tcl script will be created with the pin locations used by this run.
+if {[file exists preferred_port_locations.tcl]} {
+    puts "[colour $COLOUR_BLUE]Loading pin constraints from preferred_port_locations.tcl[clear_colour]"
+    read_pin_constraints -file_name preferred_port_locations.tcl
+} else {
+    puts "[colour $COLOUR_BLUE]Setting pin constraints manually[clear_colour]"
+
+    # NOTE: If you modify these constraints, you must delete preferred_port_locations.tcl
+    #       and then re-run this script.
+
+    # Ports:
+    #   from/to the iso14443a_analogue block    - top edge
+    #       clk             - should we treat this separately?
+    #       rst_n_async
+    #       pause_n_async
+    #       lm_out
+    #       power_async[1:0]
+    #
+    #   wire bonded constants                   - anywhere
+    #       uid_variable[2:0]
+    #
+    #   to the sensor block                     - right edge, top half
+    #       sens_config[2:0]
+    #       sens_enable
+    #       sens_read
+    #
+    #   from/to the adc block                   - right edge bottom half
+    #       adc_enable
+    #       adc_read
+    #       adc_conversion_complete
+    #       adc_value[15:0]
+
+    set analog_nets [get_nets -expect 6  "clk rst_n_async pause_n_async lm_out power_async"]
+    set uid_nets    [get_nets -expect 3  "uid_variable"]
+    set sens_nets   [get_nets -expect 5  "sens_*"]
+    set adc_nets    [get_nets -expect 19 "adc_*"]
+
+    set analog_nets [sort_collection $analog_nets full_name]
+    set uid_nets    [sort_collection $uid_nets    full_name]
+    set sens_nets   [sort_collection $sens_nets   full_name]
+    set adc_nets    [sort_collection $adc_nets    full_name]
+
+    create_bundle -name bundle_iso14443a_analog $analog_nets
+    create_bundle -name bundle_uid              $uid_nets
+    create_bundle -name bundle_sensor           $sens_nets
+    create_bundle -name bundle_adc              $adc_nets
+
+    # The ISO14443A Analogue block goes on top (side 2)
+    # no limits as of yet as to where
+    # no need to order the ports
+    set_bundle_pin_constraints  -bundles bundle_iso14443a_analog    \
+                                -self                               \
+                                -keep_pins_together true            \
+                                -sides 2
+
+    # The UID signals can go anywhere
+    set_bundle_pin_constraints  -bundles bundle_uid                 \
+                                -self                               \
+                                -keep_pins_together true
+
+    # The sensor signals should go on the right hand edge (side 3) in the top half
+    set_bundle_pin_constraints  -bundles bundle_sensor              \
+                                -self                               \
+                                -keep_pins_together true            \
+                                -bundle_order ordered               \
+                                -sides 3                            \
+                                -range {30 100}
+
+    # The ADC signals should go on the right hand edge (side 3) in the bottom half
+    set_bundle_pin_constraints  -bundles bundle_adc                 \
+                                -self                               \
+                                -keep_pins_together true            \
+                                -bundle_order ordered               \
+                                -sides 3                            \
+                                -range {160 230}
+}
 
 do_check_design "dp_pre_macro_placement"
 

@@ -97,6 +97,7 @@ sync_with_remote:
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/logs/ synth/
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/lib_prep/logs/ lib_prep/
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/dp/logs/ dp/
+	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/dp/preferred_port_locations.tcl dp/
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/pnr/logs/ pnr/
 	cd $(ROOT_DIR) && rsync -rRv --delete 						\
 		--exclude $(SYNTH_PNR_DIR)/synth/work/					\
