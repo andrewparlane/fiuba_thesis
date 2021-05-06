@@ -89,24 +89,22 @@ set_ignored_layers -max_routing_layer METTP
 do_check_design "dp_pre_floorplan"
 
 # Create the floorplan
-#   control_type:       die     - this defines the maximum size of my design, but since there are no IO cells the
-#                                 core and the die have the same size.
-#   core_utilisation:   0.7     - This is the default (70% cells, 30% routing)
-#   core_offset:        0.1     - There are no IO cells so no need for difference between the core and the boundary
-#                                 However I get warnings during PnR when using 0 about tracks not crossing the core
-#                                 area. Using 0.1 here fixes that, and doesn't really affect our overall area
+#   control_type:       core    - We specify the size of the core, the boundary is offset from the core
+#                                 by the core_offset, and contains the PG rings
+#   core_utilisation:   0.8     - Size our core so that the std_cells take up 80% of the space
+#   core_offset:        12.6    - The PG rings are 5um wide each with 2.5um spacing, so in total they
+#                                 take up 12.5um of space, I give them 0.1um extra.
 #   shape:              R       - Rectangular
-#   side_length:        260,260 - Synthesis reports cell area as ~52,000 um^2, if that counts for 70% of the area
-#                                 then 100% is 74,286 um^2, so for a square the side lengths would be 272.6 um.
-#                                 I've since determined that 260x260 works pretty well. Giving decent cell density
-#                                 and congestion statistics.
+#   side_ratio:         1       - Aim to make the design square. It may not quite be since
+#                                 the height has to be a multiple of the pitch, but the width
+#                                 can be anything.
 #   site_def:           hd      - Site def to use in the floorplan (Note: the lib_prep script converts
 #                                 the HDLL lib to use the hd site too)
-initialize_floorplan    -control_type die       \
-                        -core_utilization 0.7   \
-                        -core_offset 0.1        \
-                        -shape R                \
-                        -side_length {260 260}  \
+initialize_floorplan    -control_type core          \
+                        -core_utilization 0.8       \
+                        -core_offset {12.6 12.6}    \
+                        -shape R                    \
+                        -side_ratio 1               \
                         -site_def hd
 
 # Load timing constraints from synthesis
@@ -246,7 +244,7 @@ if {[file exists preferred_port_locations.tcl]} {
                                 -keep_pins_together true            \
                                 -bundle_order ordered               \
                                 -sides 3                            \
-                                -range {30 100}
+                                -range {40 100}
 
     # The ADC signals should go on the right hand edge (side 3) in the bottom half
     set_bundle_pin_constraints  -bundles bundle_adc                 \
@@ -254,7 +252,7 @@ if {[file exists preferred_port_locations.tcl]} {
                                 -keep_pins_together true            \
                                 -bundle_order ordered               \
                                 -sides 3                            \
-                                -range {160 230}
+                                -range {180 240}
 }
 
 do_check_design "dp_pre_macro_placement"
@@ -314,16 +312,18 @@ compile_pg -strategies s_core_ring
 #   Version November 2008, section 7.1,
 #     The distance between stripes should be 250 … 350 um
 #
-# NOTE: Our floorplan is only 260um * 260um ATM so not sure if there's a need for the mesh.
-#       However I can't get the rails (below) to connect directly to the rings, so I'm adding
-#       the mesh in, as a single horizontal and vertical stripe for each of ground and power
-#       about the center of the design
+# NOTE: Our boundary is only 280um * 275um ATM so not sure if there's a need for the mesh.
+#       I'm adding it because we're not short on space on the top metals.
+# NOTE: I picked the Y offset_start and the horizontal layer spacing to line the VDD mesh up
+#       with a VDD rail, and the VSS mesh to line up with a VSS rail. This allows us to via down
+#       to the rails. If the VDD mesh is too close to a VSS rail or vice versa, the VIAs can't fit
+#       due to DRC issues.
 create_pg_mesh_pattern pg_mesh -layers {{{vertical_layer: METTPL} {spacing: 5}      \
-                                          {width: 5} {pitch: 130} {trim: false}}    \
-                                        {{horizontal_layer: METTP} {spacing: 4}     \
-                                          {width: 5} {pitch: 130} {trim: false}}}
+                                          {width: 5} {pitch: 140} {trim: false}}    \
+                                        {{horizontal_layer: METTP} {spacing: 7.4}     \
+                                          {width: 5} {pitch: 140} {trim: false}}}
 
-set_pg_strategy s_mesh -pattern {{pattern: pg_mesh} {nets: {VDD, VSS}} {offset_start: 130 130}} \
+set_pg_strategy s_mesh -pattern {{pattern: pg_mesh} {nets: {VDD, VSS}} {offset_start: 135 129.6}} \
                        -core -extension {{stop: outermost_ring}}
 
 compile_pg -strategies s_mesh
@@ -388,10 +388,10 @@ do_check_design "dp_pre_pin_placement"
 # These boundries are the bounding boxes of the VIAs that connect the
 # top edge of the rings to the vertical stripes.
 # They will need to be adjusted if the boundry / stripes or rings are adjusted.
-set shape [create_shape -shape_type rect -boundary {{{127.5500 255.5100} {132.4500 260.4100}}} -layer METTP]
+set shape [create_shape -shape_type rect -boundary {{132.5500 263.5300} {137.4500 268.4300}} -layer METTP]
 create_terminal -port VDD -name VDD -object [get_shape $shape]
 
-set shape [create_shape -shape_type rect -boundary {{137.5500 263.0100} {142.4500 267.9100}} -layer METTP]
+set shape [create_shape -shape_type rect -boundary {{142.5500 271.0300} {147.4500 275.9300}} -layer METTP]
 create_terminal -port VSS -name VSS -object [get_shape $shape]
 
 colourise_cmd "place_pins -self"
