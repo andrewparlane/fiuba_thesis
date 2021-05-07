@@ -361,49 +361,70 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
     return
 }
 
+# setup
+# ---------------------------
+
 # The foundry runset for ICV used by signoff_check_drc
 set ICV_IN_DESIGN_DRC_CHECK_RUNSET 	"$PDK_ICV_DIR/xh018_1143_DRC_MET4_METMID_METTHK.rs"
 set_app_options -name signoff.check_drc.runset -value $ICV_IN_DESIGN_DRC_CHECK_RUNSET
 
-# TODO: Refer to 0.18um-UserGuide-Synopsys_ICValidator_StarRC-1.0.0 and look at the extra checks
-#       do we need any of those?
-
 # Add $PDK_ICV_DIR to the include path so that the #includes in our runset can be used
 set_app_options -name signoff.check_drc.user_defined_options -value "-I $PDK_ICV_DIR"
+
 # save the results in signoff_check_drc/
 set signoff_check_drc_run_dir signoff_check_drc
 set_app_options -name signoff.check_drc.run_dir -value $signoff_check_drc_run_dir
 
-# Save to disk is required as ICV reads from disk file instead of memory
-save_block
+# Use the layout view not the frame view
+set_app_options -name signoff.check_drc.read_layout_views -value {*}
 
-# do it
+# signoff_check_drc - initial
+# ---------------------------
+
+# We need to save to disk as ICV reads from disk file instead of memory
+save_block
 signoff_check_drc -error_data $signoff_check_drc_run_dir
 
+# signoff_fix_drc
+# ---------------------------
+
+# Leaving this commented out for now as we don't currently have any DRC issues
 # Attempt to automatically fix any DRC errors
-set_app_options -name signoff.fix_drc.init_drc_error_db -value $signoff_check_drc_run_dir
-set_app_options -name signoff.fix_drc.run_dir -value signoff_fix_drc_rundir
-signoff_fix_drc
+#set_app_options -name signoff.fix_drc.init_drc_error_db -value $signoff_check_drc_run_dir
+#set_app_options -name signoff.fix_drc.run_dir -value signoff_fix_drc_rundir
+#save_block
+#signoff_fix_drc
 
 # Post-fix recheck
-# TODO: It would be nice to get the result of this.
-set_app_options -name signoff.check_drc.run_dir -value signoff_check_drc_postfix
-signoff_check_drc
+#set_app_options -name signoff.check_drc.run_dir -value signoff_check_drc_postfix
+#signoff_check_drc
 
-# Save to disk is required as ICV reads from disk file instead of memory
-save_block
+# signoff_create_metal_fill
+# ---------------------------
 
 # Create metal fills to meet density requirements
+save_block
 signoff_create_metal_fill -track_fill generic -select_layers [get_layers MET*] -fill_all_tracks true
 
-# Save to disk is required as ICV reads from disk file instead of memory
-save_block
+# signoff_check_drc - final
+# ---------------------------
 
-# Enable the DENSITY_LAY DRC check and rerun signoff_check_drc
+# Enable the DENSITY_LAY DRC to check that we have a high enough metal density
 set_app_options -name signoff.check_drc.user_defined_options -value "-I $PDK_ICV_DIR -D DENSITY_LAY"
-set_app_options -name signoff.check_drc.run_dir -value signoff_check_drc_postfill
+set_app_options -name signoff.check_drc.run_dir -value signoff_check_drc_post_metal_fill
+save_block
 signoff_check_drc
+
+# TODO: Presrumably this doesn't actually do any extraction?
+#       what do I have to do to run full timing analysis with metal fill parasitics?
 set_extraction_options -real_metalfill_extraction floating
+
+# Final reports
+# ---------------------------
+
+check_pg_connectivity -check_std_cell_pins all
+check_pg_drc -ignore_clock_nets false -check_metal_on_track true -load_routing_of_all_nets
+check_lvs -check_child_cells true -check_zero_spacing_blockages true -report_floating_pins true -open_reporting detailed
 
 # =============================================================================
 # Write Data
