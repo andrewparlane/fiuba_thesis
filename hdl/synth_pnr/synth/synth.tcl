@@ -33,6 +33,28 @@ source ../common/debug.tcl
 source ../common/libraries.tcl
 
 # =============================================================================
+# Helpers
+# =============================================================================
+
+proc set_and_report_false_path {arg} {
+    # set the false path
+    set set_cmd "set_false_path $arg"
+    eval $set_cmd
+
+    set get_cmd "get_timing_paths -max_paths 10 $arg"
+    set paths [eval $get_cmd]
+
+    # report which paths were set, reporting max of 10
+    puts "running $set_cmd"
+    puts "Affected paths (reporting max of 10):"
+    foreach_in_collection path $paths {
+       set startpoint   [get_attribute [get_attribute $path startpoint] full_name]
+       set endpoint     [get_attribute [get_attribute $path endpoint]   full_name]
+       puts [format "  from: %-20s to: %-20s" $startpoint $endpoint]
+    }
+}
+
+# =============================================================================
 # RTL source files
 # =============================================================================
 set ROOT_DIR                "../../.."
@@ -288,17 +310,25 @@ redirect -variable buffer {
 
     # We have a few async inputs that we pass through synchronisers
     # So we need to cut those paths
-    # I'm cutting paths using -to / -through, so that if the input is accidentally used
-    # instead of the output of the synchroniser, there'll be a warning.
+    #
+    # I wanted to cut paths using -to / -through, so that if the input is accidentally used
+    # instead of the output of the synchroniser, there'll be a warning, and while that works
+    # fine here, when we use write_timing_contex to turn the constraints into ICC2 format constraints
+    # these -to / -throughs get translated into -to [get_port ...], and then ICC2 complains that you
+    # can't use a -to with an input port.
+    # Therefore I'm just cutting the paths from these ports. To help catch errors I've created
+    # a helper function set_and_report_false_path which runs the command and then uses the same
+    # arguments to get a list of timing paths that will be affected, outputing the start and endpoints
+    #
     # pause_n_async goes through a reset synchroniser instead of a normal synchroniser
     # this is because the clock will stop during pauses, and it's unclear if we'll ever
     # see the signal low on a clock edge.
-    set_false_path -to reset_synchroniser/rst_n_in
-    set_false_path -to pause_n_synchroniser/rst_n_in
-    set_false_path -through [get_pins power_synch_inst/d*]
+    set_and_report_false_path {-from [get_ports rst_n_async]}
+    set_and_report_false_path {-from [get_ports pause_n_async]}
+    set_and_report_false_path {-from [get_ports power_async]}
 
     # uid_variable is a constant set using wire bonding
-    set_false_path -from [get_ports uid_variable]
+    set_and_report_false_path {-from [get_ports uid_variable]}
 
     # The lm_out output goes to the load modulator analogue circuit.
     # I think this is async, but it's possible that the ISO/IEC standard requires it to be driven in
