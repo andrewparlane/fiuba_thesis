@@ -59,7 +59,7 @@ set PDK_D_CELLS_HDLL_DIR            "$PDK_DIGLIBS_DIR/D_CELLS_HDLL/v2_1"
 
 # The tech file contains technology specific information required to route a design
 set PDK_MW_TECH_FILE_DIR            "$PDK_DIR/synopsys/v8_0/techMW/v8_0_1/xh018-synopsys-techMW-v8_0_1"
-set PDK_NDM_TECH_FILE_DIR           "$PDK_DIR/synopsys/v8_0/techNDM/v8_0_1/xh018-synopsys-techNDM-v8_0_1"
+set PDK_NDM_TECH_FILE_DIR           "$PDK_DIR/synopsys/v8_1/techNDM/v8_1_1/xh018-synopsys-techNDM-v8_1_1"
 
 set TECHFILE_NAME                   "xh018_xx43_HD_MET4_METMID_METTHK.tf"
 set MW_TECHFILE                     "$PDK_MW_TECH_FILE_DIR/$TECHFILE_NAME"
@@ -67,6 +67,7 @@ set NDM_TECHFILE                    "$PDK_NDM_TECH_FILE_DIR/$TECHFILE_NAME"
 
 set NDM_IN_LAYER_MAP                "$PDK_NDM_TECH_FILE_DIR/xh018_in.map"
 set NDM_OUT_LAYER_MAP               "$PDK_NDM_TECH_FILE_DIR/xh018_out.map"
+set NDM_REDUNDANT_VIA_SCRIPT        "$PDK_NDM_TECH_FILE_DIR/xh018_redundant_via.tcl"
 
 # =============================================================================
 # Logic Libraries

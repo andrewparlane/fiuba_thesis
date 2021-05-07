@@ -304,6 +304,18 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
     return
 }
 
+# Insert redundant vias
+# There's a script to do this in the techNDM dir, specifically $NDM_REDUNDANT_VIA_SCRIPT
+# Unfortunately it doesn't work. It appears to be written for a process with more metal layers.
+# We can fix this by tweaking the list of VIA names it uses.
+set pattern     "^set souVList \"VIA12D_R VIA23D_R VIA34D_R VIA45D_R VIA5TD_R\""
+set replacement "set souVList \"VIA12D_R VIA23D_R VIA34D_R VIA4TD_R\""
+exec sed "s/$pattern/$replacement/" $NDM_REDUNDANT_VIA_SCRIPT > work/redundant_vias.tcl
+# Additionally it expects MetToRoute to be defined before it's run. From what I understand
+# we can just set it to "".
+set MetToRoute ""
+source work/redundant_vias.tcl
+
 # Insert filler cells
 # Types:
 #   DECAP*  - Filler cell with buffering capacitance, ESD optimized
@@ -338,6 +350,9 @@ connect_pg_net
 
 # Check the legality of the currently placed cells
 check_legality
+
+# Fix any DRCs caused by redundant via and filler cell insertion
+colourise_cmd route_auto
 
 # ... TODO ...
 # Fix EM problems - requires EM constraints
