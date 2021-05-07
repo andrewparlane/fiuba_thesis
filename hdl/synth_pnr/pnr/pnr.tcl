@@ -52,6 +52,8 @@ proc create_new_block {new_name} {
     variable lib_name
     variable design_name
 
+    # save the old block
+    save_block
     # Create a new block
     save_block -force -label $new_name
     # close the old lib
