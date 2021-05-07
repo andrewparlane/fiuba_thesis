@@ -59,14 +59,14 @@ foreach fileName $SRC_FILES {
 puts ""
 puts ""
 
-if {($pause_between_commands == 1) && ([do_continue] == 0)} {
-    return
-}
-
 # =============================================================================
 # Set up libraries
 # =============================================================================
 puts "[colour $COLOUR_BLUE]Setting up libraries[clear_colour]"
+
+if {($pause_between_commands == 1) && ([do_continue] == 0)} {
+    return
+}
 
 # Max libs
 set_app_var target_library  "$TARGET_MAX_LIBS"
@@ -107,15 +107,16 @@ if {[expr [colourise_cmd "check_library"] == 0]} {
 puts ""
 puts ""
 
-if {($pause_between_commands == 1) && ([do_continue] == 0)} {
-    return
-}
-
 # =============================================================================
 # Analyze source files
 # =============================================================================
 
 puts "[colour $COLOUR_BLUE]Analysing source files[clear_colour]"
+
+if {($pause_between_commands == 1) && ([do_continue] == 0)} {
+    return
+}
+
 foreach file_name $SRC_FILES {
     puts "[colour $COLOUR_BLUE]Analysing $file_name[clear_colour]"
     if {[expr [colourise_cmd "analyze -library WORK -format sverilog $file_name"] == 0]} {
@@ -125,37 +126,39 @@ foreach file_name $SRC_FILES {
     }
 }
 
-if {($pause_between_commands == 1) && ([do_continue] == 0)} {
-    return
-}
-
 # =============================================================================
 # Elaborate design
 # =============================================================================
 
 puts "[colour $COLOUR_BLUE]Elaborating design[clear_colour]"
 
+if {($pause_between_commands == 1) && ([do_continue] == 0)} {
+    return
+}
+
 set elab_args ""
 # these parameters are necessary to synthesise the design
 # however their values depend on the analogue parts (AFE, ADC and the sensor)
 # don't check the uncommented version of this in until we have the final values
-#set FDT_TIMING_ADJUST   0
-#set SENSOR_VERSION      1
-#set ADC_VERSION         1
-#set elab_args "-param FDT_TIMING_ADJUST=>$FDT_TIMING_ADJUST,SENSOR_VERSION=>$SENSOR_VERSION,ADC_VERSION=>$ADC_VERSION"
+set FDT_TIMING_ADJUST   0
+set SENSOR_VERSION      1
+set ADC_VERSION         1
+set elab_args "-param FDT_TIMING_ADJUST=>$FDT_TIMING_ADJUST,SENSOR_VERSION=>$SENSOR_VERSION,ADC_VERSION=>$ADC_VERSION"
 
 if {[expr [colourise_cmd "elaborate radiation_sensor_digital_top -work WORK $elab_args"] == 0]} {
     puts "[colour $COLOUR_RED]Aborting due to error elaborating design[clear_colour]"
     return
 }
 
-if {($pause_between_commands == 1) && ([do_continue] == 0)} {
-    return
-}
-
 # =============================================================================
 # Set synthesis variables
 # =============================================================================
+
+puts "[colour $COLOUR_BLUE]Setting synthesis variables[clear_colour]"
+
+if {($pause_between_commands == 1) && ([do_continue] == 0)} {
+    return
+}
 
 # See "Fixing Nets Connected to Multiple Ports" in the Design Compiler User Guide for more information.
 # A feedthrough path is one where an output of a module is directly connected to an input.
@@ -203,15 +206,15 @@ if {[expr [colourise_cmd "link"] == 0]} {
     return
 }
 
-if {($pause_between_commands == 1) && ([do_continue] == 0)} {
-    return
-}
-
 # =============================================================================
 # Checking design
 # =============================================================================
 
 puts "[colour $COLOUR_BLUE]Checking design[clear_colour]"
+
+if {($pause_between_commands == 1) && ([do_continue] == 0)} {
+    return
+}
 
 if {[expr [colourise_cmd "check_design -summary"] == 0]} {
     puts "[colour $COLOUR_RED]Aborting due to error checking design[clear_colour]"
@@ -221,24 +224,20 @@ if {[expr [colourise_cmd "check_design -summary"] == 0]} {
 # Save the full check_design output (not just the sumarry)
 check_design > logs/check_design.log
 
-if {($pause_between_commands == 1) && ([do_continue] == 0)} {
-    return
-}
-
 # =============================================================================
 # Uniquify
 # =============================================================================
 
 puts "[colour $COLOUR_BLUE]Uniquifying design[clear_colour]"
 
+if {($pause_between_commands == 1) && ([do_continue] == 0)} {
+    return
+}
+
 # Uniquify duplicates modules that have been instantiated more than once
 # thus allowing the tools to optimise each separately. AFAICT this is done automatically in
 # compile_ultra, so we can maybe remove this.
 uniquify
-
-if {($pause_between_commands == 1) && ([do_continue] == 0)} {
-    return
-}
 
 # =============================================================================
 # Constraints
@@ -246,6 +245,10 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
 
 puts "[colour $COLOUR_BLUE]Setting design constraints[clear_colour]"
 puts "[colour $COLOUR_YELLOW]Warning: Revisit these constraints when we have the analogue parts of the design (14443, sensor, ADC).[clear_colour]"
+
+if {($pause_between_commands == 1) && ([do_continue] == 0)} {
+    return
+}
 
 # redirect all of this into $buffer, so we can colourise it
 redirect -variable buffer {
@@ -341,13 +344,15 @@ colourise_cmd "report_constraint -verbose"
 
 report_constraint -verbose -all_violators > logs/constraint_violations.log
 
-if {($pause_between_commands == 1) && ([do_continue] == 0)} {
-    return
-}
-
 # =============================================================================
 # Operating conditions
 # =============================================================================
+
+puts "[colour $COLOUR_BLUE]Setting up Operating conditions[clear_colour]"
+
+if {($pause_between_commands == 1) && ([do_continue] == 0)} {
+    return
+}
 
 # Enable dynamic power optimisations
 set_dynamic_optimization true
@@ -375,13 +380,17 @@ if {[colourise_cmd "compile_ultra"] == 0} {
     return
 }
 
-if {($pause_between_commands == 1) && ([do_continue] == 0)} {
-    return
-}
 
 # =============================================================================
 # Clock Gating
 # =============================================================================
+
+puts "[colour $COLOUR_BLUE]Inserting Clock Gating[clear_colour]"
+puts "[colour $COLOUR_YELLOW]TODO: revisit this when we have a .saif for accurate power estimation[clear_colour]"
+
+if {($pause_between_commands == 1) && ([do_continue] == 0)} {
+    return
+}
 
 # Initial results at this point:
 # Without clock gating:
@@ -414,13 +423,7 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
 # -minimum_bitwidth and -control_point arguments, maybe others
 # for now just use the defaults.
 
-puts "[colour $COLOUR_BLUE]Inserting Clock Gating[clear_colour]"
-
 colourise_cmd "compile_ultra -incremental -gate_clock"
-
-if {($pause_between_commands == 1) && ([do_continue] == 0)} {
-    return
-}
 
 # =============================================================================
 # Parasitics extraction
@@ -428,12 +431,12 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
 
 puts "[colour $COLOUR_BLUE]Extracting RC estimates[clear_colour]"
 
-# Estimates the RC values for nets, so that report_timing will be more accurate
-colourise_cmd "extract_rc -estimate"
-
 if {($pause_between_commands == 1) && ([do_continue] == 0)} {
     return
 }
+
+# Estimates the RC values for nets, so that report_timing will be more accurate
+colourise_cmd "extract_rc -estimate"
 
 # =============================================================================
 # Optimise registers
@@ -441,14 +444,14 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
 
 puts "[colour $COLOUR_BLUE]Optimising registers[clear_colour]"
 
+if {($pause_between_commands == 1) && ([do_continue] == 0)} {
+    return
+}
+
 colourise_cmd "optimize_registers -justification_effort high"
 
 # Not entirely sure if this is necessary
 colourise_cmd "compile_ultra -incremental -gate_clock"
-
-if {($pause_between_commands == 1) && ([do_continue] == 0)} {
-    return
-}
 
 # =============================================================================
 # Reports
@@ -456,12 +459,12 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
 
 puts "[colour $COLOUR_BLUE]Generating reports[clear_colour]"
 
-# Actually output this so we can see if timing has failed
-colourise_cmd report_timing
-
 if {($pause_between_commands == 1) && ([do_continue] == 0)} {
     return
 }
+
+# Actually output this so we can see if timing has failed
+colourise_cmd report_timing
 
 report_timing -nosplit -delay_type max -max_paths 10 > logs/timing.log
 report_area -nosplit > logs/area.log
@@ -476,6 +479,10 @@ report_qor > logs/qor.log
 # =============================================================================
 
 puts "[colour $COLOUR_BLUE]Writing output files[clear_colour]"
+
+if {($pause_between_commands == 1) && ([do_continue] == 0)} {
+    return
+}
 
 # netlist
 colourise_cmd "write -hierarchy -format ddc -output \"work/final_netlist.ddc\""
