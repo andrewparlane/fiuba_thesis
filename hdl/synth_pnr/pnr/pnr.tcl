@@ -193,7 +193,7 @@ route_global -floorplan true -congestion_map_only true
 report_qor -summary
 report_timing
 report_power
-report_constraint -all
+report_constraint -all -scenarios [all_scenarios]
 
 # save the lib
 save_lib -all
