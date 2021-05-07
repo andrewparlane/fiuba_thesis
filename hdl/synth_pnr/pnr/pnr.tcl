@@ -68,6 +68,33 @@ proc open_block_name {name} {
     open_block $lib_name:$design_name/${name} -ref_libs_for_edit
 }
 
+proc load_antenna_rules {} {
+    # These commands are ported from $PDK_NDM_TECH_FILE_DIR/xx018.ante.rules
+    # we can't just source that file directly for either techNDM v8.0.1 nor v8.1.1:
+    #   v8.0.1 uses commands designed for ICC nto ICC2
+    #   v8.1.1 defines antenna rules for MET5 and VIA4, which we don't have
+    remove_antenna_rules
+
+    # metal rules
+    define_antenna_rule -mode 4 -diode_mode 4 -metal_ratio 400 -cut_ratio 0
+    define_antenna_layer_rule -mode 4 -layer "MET1"   -ratio 400 -diode_ratio {0 0 0 1e+07}
+    define_antenna_layer_rule -mode 4 -layer "MET2"   -ratio 400 -diode_ratio {0 0 0 1e+07}
+    define_antenna_layer_rule -mode 4 -layer "MET3"   -ratio 400 -diode_ratio {0 0 0 1e+07}
+    define_antenna_layer_rule -mode 4 -layer "MET4"   -ratio 400 -diode_ratio {0 0 0 1e+07}
+    define_antenna_layer_rule -mode 4 -layer "METTP"  -ratio 400 -diode_ratio {0 0 0 1e+07}
+    define_antenna_layer_rule -mode 4 -layer "METTPL" -ratio 200 -diode_ratio {0 0 0 1e+07}
+
+    # cut rules
+    define_antenna_rule -mode 1 -diode_mode 4 -metal_ratio 0 -cut_ratio 20
+    define_antenna_layer_rule -mode 1 -layer "VIA1"   -ratio 20  -diode_ratio {0 0 0 1e+07}
+    define_antenna_layer_rule -mode 1 -layer "VIA2"   -ratio 20  -diode_ratio {0 0 0 1e+07}
+    define_antenna_layer_rule -mode 1 -layer "VIA3"   -ratio 20  -diode_ratio {0 0 0 1e+07}
+    define_antenna_layer_rule -mode 1 -layer "VIATP"  -ratio 20  -diode_ratio {0 0 0 1e+07}
+    define_antenna_layer_rule -mode 1 -layer "VIATPL" -ratio 20  -diode_ratio {0 0 0 1e+07}
+
+    report_antenna_rules
+}
+
 # =============================================================================
 # Design Init
 # =============================================================================
@@ -229,29 +256,7 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
 set_scenario_status -active true [all_scenarios]
 
 # Antenna rules
-# These commands are ported from $PDK_NDM_TECH_FILE_DIR/xx018.ante.rules
-# we can't just source that file directly, since it uses commands designed for ICC (not ICC2)
-# My analysis suggests these modified commands will still work correctly in ICC2
-remove_antenna_rules
-
-# metal rules
-define_antenna_rule -mode 4 -diode_mode 4 -metal_ratio 400 -cut_ratio 0
-define_antenna_layer_rule -mode 4 -layer "MET1"   -ratio 400 -diode_ratio {0 0 0 1e+07}
-define_antenna_layer_rule -mode 4 -layer "MET2"   -ratio 400 -diode_ratio {0 0 0 1e+07}
-define_antenna_layer_rule -mode 4 -layer "MET3"   -ratio 400 -diode_ratio {0 0 0 1e+07}
-define_antenna_layer_rule -mode 4 -layer "MET4"   -ratio 400 -diode_ratio {0 0 0 1e+07}
-define_antenna_layer_rule -mode 4 -layer "METTP"  -ratio 400 -diode_ratio {0 0 0 1e+07}
-define_antenna_layer_rule -mode 4 -layer "METTPL" -ratio 200 -diode_ratio {0 0 0 1e+07}
-
-# cut rules
-define_antenna_rule -mode 1 -diode_mode 4 -metal_ratio 0 -cut_ratio 20
-define_antenna_layer_rule -mode 1 -layer "VIA1"   -ratio 20  -diode_ratio {0 0 0 1e+07}
-define_antenna_layer_rule -mode 1 -layer "VIA2"   -ratio 20  -diode_ratio {0 0 0 1e+07}
-define_antenna_layer_rule -mode 1 -layer "VIA3"   -ratio 20  -diode_ratio {0 0 0 1e+07}
-define_antenna_layer_rule -mode 1 -layer "VIATP"  -ratio 20  -diode_ratio {0 0 0 1e+07}
-define_antenna_layer_rule -mode 1 -layer "VIATPL" -ratio 20  -diode_ratio {0 0 0 1e+07}
-
-report_antenna_rules
+load_antenna_rules
 
 # checks
 # ---------------------------
@@ -338,8 +343,7 @@ check_legality
 # Fix EM problems - requires EM constraints
 
 # check for more DRC violations
-# Our antenna rules don't get carried over from the pnr_route block
-# not sure if we should reload them here before running check_routes?
+load_antenna_rules
 check_routes
 
 # =============================================================================
