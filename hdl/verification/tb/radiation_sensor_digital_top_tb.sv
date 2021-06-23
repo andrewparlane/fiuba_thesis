@@ -32,12 +32,6 @@ module radiation_sensor_digital_top_tb;
     // Timing
     // --------------------------------------------------------------
 
-    // TODO: Change these values to be more representative of the AFE
-    localparam int CLOCK_STOPS_AFTER_PS         =      500 * 1000;  // 500 ns
-    localparam int CLOCK_STARTS_AFTER_PS        =      100 * 1000;  // 100 ns
-    localparam int PAUSE_N_ASSERTS_AFTER_PS     = 1 * 1000 * 1000;  //   1 us
-    localparam int PAUSE_N_DEASSERTS_AFTER_PS   =      150 * 1000;  // 150 ns
-
     // We don't know what the actual clock frequency the PCD will use. To be in spec
     // it has to be 13.56 MHz +/- 7KHz. For the FDT timing adjust we must use the MAX
     // possible period, and so the min possible frequency
@@ -48,7 +42,7 @@ module radiation_sensor_digital_top_tb;
     // Since the PICC clock can be in phase or 180 degrees out of phase from the PCD clock
     // I picked the minimum value here, as laid out in the comments in iso14443a.sv and fdt.sv
     // in reguards to the FDT_TIMING_ADJUST parameter
-    localparam real PCD_PAUSE_N_TO_SYNCHRONISED_PS  = 258111;
+    localparam real PCD_PAUSE_N_TO_SYNCHRONISED_PS  = 405603.0;
     localparam real LM_OUT_TO_MODULATION_EDGE_PS    = 0.0;  // we don't yet simulate any delays on the output
     localparam int  FDT_TIMING_ADJUST               = $rtoi((PCD_PAUSE_N_TO_SYNCHRONISED_PS +
                                                              LM_OUT_TO_MODULATION_EDGE_PS) /
@@ -138,6 +132,7 @@ module radiation_sensor_digital_top_tb;
     )
     analogue_sim_inst
     (
+        .rst_n                  (rst_n),
         .picc_clk               (clk),
         .pcd_pause_n            (pcd_pause_n),          // used for FDT validation
         .pause_n_async          (pause_n_async),        // goes to the DUT
@@ -637,8 +632,6 @@ module radiation_sensor_digital_top_tb;
         //      ...?
 
         analogue_sim_inst.init(512);    // inits the RxDriver
-        analogue_sim_inst.set_delays(CLOCK_STOPS_AFTER_PS,      CLOCK_STARTS_AFTER_PS,
-                                     PAUSE_N_ASSERTS_AFTER_PS,  PAUSE_N_DEASSERTS_AFTER_PS);
 
         tx_monitor          = new(lm_iface);
 
