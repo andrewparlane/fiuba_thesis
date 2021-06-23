@@ -68,7 +68,7 @@ module radiation_sensor_digital_top
     // pause_n_async is an asynchronous input from the analogue block.
     // It is essentially the digitized envelope of the carrier wave.
     // When idle pause_n_async is a 1, when a pause is detected it's a 0.
-    // This signal is synchronised before use
+    // This signal is latched and synchronised before use
     input                       pause_n_async,
 
     // lm_out is the manchester encoded data AND'ed with the subcarrier
@@ -123,17 +123,15 @@ module radiation_sensor_digital_top
     // a pause frame, and so pause_n_async <may> both assert and deassert between rising
     // clock edges.
 
-    // To handle this we pass it through an active low reset synchroniser.
-    // When pause_n_async goes low, both FFDs in the synchroniser are reset to 0.
-    // Once pause_n_async goes high, a 1 is shifted through both FFDs. So two clock ticks
-    // later we detect the rising edge, indicating the end of the pause frame.
-
+    // To handle this we first latch the signal, and then pass that through a synchroniser.
+    // see pause_n_latch_and_synchroniser.sv for more details
     logic pause_n_synchronised;
-    active_low_reset_synchroniser pause_n_synchroniser
+    pause_n_latch_and_synchroniser pause_n_latch_sync
     (
-        .clk        (clk),
-        .rst_n_in   (pause_n_async),
-        .rst_n_out  (pause_n_synchronised)
+        .clk                    (clk),
+        .rst_n                  (rst_n),
+        .pause_n_async          (pause_n_async),
+        .pause_n_synchronised   (pause_n_synchronised)
     );
 
     logic [1:0] power;
