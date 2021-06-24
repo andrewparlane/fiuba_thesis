@@ -58,11 +58,7 @@ module radiation_sensor_digital_top_tb;
     // to fail after an IP core version change, to remind me / whoever else is working on this to check
     // the changes and see if this testbench requires any changes.
     localparam logic [7:0]  ADAPTER_VERSION         = 8'h01;
-    localparam logic [7:0]  ISO_IEC_14443A_VERSION  = 8'h01;
-
-    // these two are passed in, randomise them.
-    localparam logic [7:0]  SENSOR_VERSION          = 8'hF4;
-    localparam logic [7:0]  ADC_VERSION             = 8'h2E;
+    localparam logic [3:0]  ISO_IEC_14443A_VERSION  = 4'h01;    // digital
 
     logic           clk;
     logic           rst_n_async;
@@ -71,16 +67,19 @@ module radiation_sensor_digital_top_tb;
     logic           pause_n_async;
     logic           lm_out;
 
+    logic [3:0]     afe_version;
+
     logic [2:0]     uid_variable;
 
+    logic [3:0]     sens_version;
     logic [2:0]     sens_config;
     logic           sens_enable;
     logic           sens_read;
+    logic [3:0]     adc_version;
     logic           adc_enable;
     logic           adc_read;
     logic           adc_conversion_complete;
     logic [15:0]    adc_value;
-
 
     logic rst_n; // alias
     assign rst_n_async = rst_n;
@@ -90,9 +89,7 @@ module radiation_sensor_digital_top_tb;
 
     radiation_sensor_digital_top
     #(
-        .FDT_TIMING_ADJUST  (FDT_TIMING_ADJUST),
-        .SENSOR_VERSION     (SENSOR_VERSION),
-        .ADC_VERSION        (ADC_VERSION)
+        .FDT_TIMING_ADJUST  (FDT_TIMING_ADJUST)
     )
     dut (.*);
 
@@ -410,11 +407,6 @@ module radiation_sensor_digital_top_tb;
         .RxDriverType       (RxDriverType),
         .TxMonitorType      (TxMonitorType),
 
-        .ADAPTER_VERSION            (ADAPTER_VERSION),
-        .ISO_IEC_14443A_VERSION     (ISO_IEC_14443A_VERSION),
-        .SENSOR_VERSION             (SENSOR_VERSION),
-        .ADC_VERSION                (ADC_VERSION),
-
         .ADC_SIM_MIN_CYCLES         (ADC_SIM_MIN_CYCLES),
         .ADC_SIM_MAX_CYCLES         (ADC_SIM_MAX_CYCLES)
     );
@@ -518,6 +510,20 @@ module radiation_sensor_digital_top_tb;
             return expected_adc_value;
         endfunction
 
+        // pure virtual, must be overwritten
+        virtual function IdentifyReplyArgs get_identify_reply_args;
+            automatic IdentifyReplyArgs identify_reply_args;
+
+            identify_reply_args.protocol_version        = PROTOCOL_VERSION;
+            identify_reply_args.adapter_version         = ADAPTER_VERSION;
+            identify_reply_args.iso_iec_14443a_version  = {ISO_IEC_14443A_VERSION,
+                                                           afe_version};
+            identify_reply_args.sensor_adc_version      = {sens_version,
+                                                           adc_version};
+
+            return identify_reply_args;
+        endfunction
+
         // ====================================================================
         // send message verify reply tasks
         // ====================================================================
@@ -605,6 +611,17 @@ module radiation_sensor_digital_top_tb;
             cmd_valid   = 1'b1;
             super.send_app_abort_request_verify_reply(addr, reply_args);
             cmd_valid   = 1'b0;
+        endtask
+
+        // override this to first randomise the version inputs to the DUT
+        // they are meant to be constants, but varying them here lets us check they are
+        // correctly connected
+        virtual task send_app_identify_request_verify_reply(StdBlockAddress addr);
+            afe_version     = 4'($urandom);
+            sens_version    = 4'($urandom);
+            adc_version     = 4'($urandom);
+
+            super.send_app_identify_request_verify_reply(addr);
         endtask
     endclass
 

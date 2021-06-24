@@ -33,12 +33,6 @@ module adapter_tb;
     // all named the same as in the DUT, so I can use .*
     // --------------------------------------------------------------
 
-    localparam logic [7:0]  ADAPTER_VERSION         = 8'h01;    // not actually passed in to the DUT, but must match the DUT's own version
-    localparam logic [7:0]  ISO_IEC_14443A_VERSION  = 8'h81;
-    localparam logic [7:0]  SENSOR_VERSION          = 8'h12;
-    localparam logic [7:0]  ADC_VERSION             = 8'hFF;
-
-
     logic           clk;
     logic           rst_n;
 
@@ -56,17 +50,16 @@ module adapter_tb;
     logic           adc_conversion_complete;
     logic [15:0]    adc_value;
 
+    logic [3:0]     const_iso_iec_14443a_digital_version;
+    logic [3:0]     const_iso_iec_14443a_AFE_version;
+    logic [3:0]     const_sensor_version;
+    logic [3:0]     const_adc_version;
+
     // --------------------------------------------------------------
     // DUT
     // --------------------------------------------------------------
 
-    adapter
-    #(
-        .ISO_IEC_14443A_VERSION (ISO_IEC_14443A_VERSION),
-        .SENSOR_VERSION         (SENSOR_VERSION),
-        .ADC_VERSION            (ADC_VERSION)
-    )
-    dut (.*);
+    adapter dut (.*);
 
     // --------------------------------------------------------------
     // The driver / queue for the rx_iface
@@ -337,11 +330,6 @@ module adapter_tb;
         .RxDriverType       (RxDriverType),
         .TxMonitorType      (TxMonitorType),
 
-        .ADAPTER_VERSION            (ADAPTER_VERSION),
-        .ISO_IEC_14443A_VERSION     (ISO_IEC_14443A_VERSION),
-        .SENSOR_VERSION             (SENSOR_VERSION),
-        .ADC_VERSION                (ADC_VERSION),
-
         .ADC_SIM_MIN_CYCLES         (ADC_SIM_MIN_CYCLES),
         .ADC_SIM_MAX_CYCLES         (ADC_SIM_MAX_CYCLES)
     );
@@ -476,6 +464,20 @@ module adapter_tb;
         // pure virtual, must be overwritten
         virtual function logic [15:0] get_last_read_adc_value;
             return expected_adc_value;
+        endfunction
+
+        // pure virtual, must be overwritten
+        virtual function IdentifyReplyArgs get_identify_reply_args;
+            automatic IdentifyReplyArgs identify_reply_args;
+
+            identify_reply_args.protocol_version        = PROTOCOL_VERSION;
+            identify_reply_args.adapter_version         = dut.ADAPTER_VERSION;
+            identify_reply_args.iso_iec_14443a_version  = {const_iso_iec_14443a_digital_version,
+                                                           const_iso_iec_14443a_AFE_version};
+            identify_reply_args.sensor_adc_version      = {const_sensor_version,
+                                                           const_adc_version};
+
+            return identify_reply_args;
         endfunction
 
         // ====================================================================
@@ -732,6 +734,18 @@ module adapter_tb;
             send_std_r_ack(addr, block_num);
         endtask
 
+        // override this to first randomise the version inputs to the DUT
+        // they are meant to be constants, but varying them here lets us check they are
+        // correctly connected
+        virtual task send_app_identify_request_verify_reply(StdBlockAddress addr);
+            const_iso_iec_14443a_digital_version    = 4'($urandom);
+            const_iso_iec_14443a_AFE_version        = 4'($urandom);
+            const_sensor_version                    = 4'($urandom);
+            const_adc_version                       = 4'($urandom);
+
+            super.send_app_identify_request_verify_reply(addr);
+        endtask
+
     endclass
 
     AdapterTbSequence seq;
@@ -763,7 +777,7 @@ module adapter_tb;
         // and 2 bytes of CRC. So 17 bytes.
         max_rx_msg_ticks    = rx_driver.calculate_send_time(rx_trans_gen.generate_random_non_valid(17)) + 32;
 
-        // longest valid reply is the IDENTIFY reply with a 5 byte header and a 5 byte argument.
+        // longest valid reply is the IDENTIFY reply with a 5 byte header and a 4 byte argument.
         // The tx_sink_driver reqs every 16 ticks
         reply_timeout   = 256;
         seq             = new(rx_trans_gen,

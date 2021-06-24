@@ -58,12 +58,6 @@ package app_comms_tests_sequence_pkg;
         // This must extend TxMonitor
         type TxMonitorType,
 
-        // For the identify reply
-        parameter logic [7:0] ADAPTER_VERSION,
-        parameter logic [7:0] ISO_IEC_14443A_VERSION,
-        parameter logic [7:0] SENSOR_VERSION,
-        parameter logic [7:0] ADC_VERSION,
-
         // For timing purposes
         parameter int ADC_SIM_MIN_CYCLES,
         parameter int ADC_SIM_MAX_CYCLES
@@ -181,6 +175,9 @@ package app_comms_tests_sequence_pkg;
         // returns the last value the ADC returned
         pure virtual function logic [15:0] get_last_read_adc_value;
 
+        // returns the expected IdentifyReplyArgs based on current DUT signals
+        pure virtual function IdentifyReplyArgs get_identify_reply_args;
+
         // ====================================================================
         // checks
         // ====================================================================
@@ -248,17 +245,13 @@ package app_comms_tests_sequence_pkg;
         // ====================================================================
 
         virtual task send_app_identify_request_verify_reply(StdBlockAddress addr);
-            automatic logic [7:0]       send_inf  [$]   = protocol_generator_pkg::generate_identify_request();
+            automatic logic [7:0]       send_inf  [$];
             automatic logic [7:0]       reply_inf [$];
             automatic IdentifyReplyArgs identify_reply_args;
 
-            identify_reply_args.protocol_version        = PROTOCOL_VERSION;
-            identify_reply_args.adapter_version         = ADAPTER_VERSION;
-            identify_reply_args.iso_iec_14443a_version  = ISO_IEC_14443A_VERSION;
-            identify_reply_args.sensor_version          = SENSOR_VERSION;
-            identify_reply_args.adc_version             = ADC_VERSION;
-
-            reply_inf = protocol_generator_pkg::generate_identify_reply(identify_reply_args);
+            send_inf            = protocol_generator_pkg::generate_identify_request();
+            identify_reply_args = get_identify_reply_args();
+            reply_inf           = protocol_generator_pkg::generate_identify_reply(identify_reply_args);
 
             send_std_i_block_verify_reply(addr, send_inf, reply_inf);
         endtask

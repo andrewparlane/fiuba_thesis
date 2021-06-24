@@ -150,14 +150,13 @@ package protocol_generator_pkg;
     // ====================================================================
 
     function ByteQueue generate_identify_reply (IdentifyReplyArgs identify_reply_args);
-        automatic logic [7:0] args [5];
+        automatic logic [7:0] args [4];
 
         // we use parameters here because this reply is static in the DUT too.
         args[0] = identify_reply_args.protocol_version;
         args[1] = identify_reply_args.adapter_version;
         args[2] = identify_reply_args.iso_iec_14443a_version;
-        args[3] = identify_reply_args.sensor_version;
-        args[4] = identify_reply_args.adc_version;
+        args[3] = identify_reply_args.sensor_adc_version;
 
         return generate_message(Command_IDENTIFY, args);
     endfunction
