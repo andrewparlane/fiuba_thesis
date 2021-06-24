@@ -25,14 +25,6 @@
 `timescale 1ps/1ps
 
 module radiation_sensor_digital_top
-#(
-    // see iso14443a.sv for more info on how to set this
-    // using a parameter rather than hard coding it, so we can have different
-    // values for synthesis and simulation (at least until we update the simulation model
-    // to match what the actual hardware will do)
-    // The default value of -1 causes an error on build
-    parameter int signed FDT_TIMING_ADJUST = -1,
-)
 (
     // --------------------------------------------------------------
     // Signals from / to the RFID analogue front end
@@ -164,7 +156,28 @@ module radiation_sensor_digital_top
         .UID_SIZE           (ISO14443A_pkg::UIDSize_SINGLE),
         .UID_INPUT_BITS     (3),
         .UID_FIXED          (UID_FIXED[31:3]),
-        .FDT_TIMING_ADJUST  (FDT_TIMING_ADJUST)
+
+        // ISO/IEC 14443-3A requires a specific number of ticks between the end of the last pause
+        // of a PCD->PICC message and the first edge of lm_out of the reply. The margin of error
+        // is +400ns. The iso14443a IP core compensates for all internal (to that IP core) delays
+        // so here we just have to compensate for delays external to that block:
+        //      pcd_pause_n -> pause_n_async:
+        //          This is defined by the behaviour of the AFE. I require it to be < 300ns
+        //      pause_n_async internal (to this design) propagation delay:
+        //          This is constrained in synthesis to 5ns.
+        //      delays in the pause_n_latch_and_synchroniser:
+        //          This is 2 - 3 clock periods, depending on when the pause_n_async's deasserting
+        //          edge occurs in relation to the rising edge of the clock.
+        //      lm_out internal (to this design) propagation delay.
+        //          This is constrained in synthesis to 5ns.
+        //      lm_out external (to this design) propagation delay.
+        //          This should be as low as possible
+        //      clock uncertainty
+        //          This also should be as low as possible.
+        // In total this is a minimum of 2 ticks, and a maximum of 3 ticks + 310ns + a bit for the last
+        // two parts. We can compensate for the 2 ticks, but since we can't send the reply early
+        // we can't compensate for any more.
+        .FDT_TIMING_ADJUST  (2) // compensate for 2 clock periods of delay in pause_n_latch_and_synchroniser
     )
     iso14443a_inst
     (
