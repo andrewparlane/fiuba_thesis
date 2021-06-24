@@ -32,10 +32,6 @@ module radiation_sensor_digital_top
     // to match what the actual hardware will do)
     // The default value of -1 causes an error on build
     parameter int signed FDT_TIMING_ADJUST = -1,
-
-    // Version info for the sensor / ADC IP cores
-    parameter int SENSOR_VERSION            = -1,
-    parameter int ADC_VERSION               = -1
 )
 (
     // --------------------------------------------------------------
@@ -75,6 +71,9 @@ module radiation_sensor_digital_top
     // this should be connected to the load modulator
     output logic                lm_out,
 
+    // the version of the AFE, must be constant
+    input           [3:0]       afe_version,
+
     // --------------------------------------------------------------
     // UID signals
     // --------------------------------------------------------------
@@ -87,9 +86,12 @@ module radiation_sensor_digital_top
     // Signals to / from the ADC / Sensor
     // --------------------------------------------------------------
 
+    input           [3:0]       sens_version,           // the version of the sensor, must be constant
     output logic    [2:0]       sens_config,
     output logic                sens_enable,
     output logic                sens_read,
+
+    input           [3:0]       adc_version,            // the version of the ADC, must be constant
     output logic                adc_enable,
     output logic                adc_read,
     input                       adc_conversion_complete,
@@ -186,30 +188,29 @@ module radiation_sensor_digital_top
     // and generates the correct responses
     // ========================================================================
 
-    adapter
-    #(
-        .ISO_IEC_14443A_VERSION (iso14443a_inst.ISO_IEC_14443A_VERSION),
-        .SENSOR_VERSION         (SENSOR_VERSION),
-        .ADC_VERSION            (ADC_VERSION)
-    )
-    adapter_inst
+    adapter adapter_inst
     (
-        .clk                        (clk),
-        .rst_n                      (rst_n),
+        .clk                                    (clk),
+        .rst_n                                  (rst_n),
 
-        .pause_n_synchronised       (pause_n_synchronised),
+        .pause_n_synchronised                   (pause_n_synchronised),
 
-        .rx_iface                   (app_rx_iface),
-        .tx_iface                   (app_tx_iface),
-        .app_resend_last            (app_resend_last),
+        .rx_iface                               (app_rx_iface),
+        .tx_iface                               (app_tx_iface),
+        .app_resend_last                        (app_resend_last),
 
-        .sens_config                (sens_config),
-        .sens_enable                (sens_enable),
-        .sens_read                  (sens_read),
-        .adc_enable                 (adc_enable),
-        .adc_read                   (adc_read),
-        .adc_conversion_complete    (adc_conversion_complete),
-        .adc_value                  (adc_value)
+        .sens_config                            (sens_config),
+        .sens_enable                            (sens_enable),
+        .sens_read                              (sens_read),
+        .adc_enable                             (adc_enable),
+        .adc_read                               (adc_read),
+        .adc_conversion_complete                (adc_conversion_complete),
+        .adc_value                              (adc_value),
+
+        .const_iso_iec_14443a_digital_version   (4'(iso14443a_inst.ISO_IEC_14443A_VERSION)),
+        .const_iso_iec_14443a_AFE_version       (afe_version),
+        .const_sensor_version                   (sens_version),
+        .const_adc_version                      (adc_version)
     );
 
 endmodule

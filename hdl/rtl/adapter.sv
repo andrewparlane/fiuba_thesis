@@ -25,11 +25,6 @@
 `timescale 1ps/1ps
 
 module adapter
-#(
-    parameter int ISO_IEC_14443A_VERSION    = -1,
-    parameter int SENSOR_VERSION            = -1,
-    parameter int ADC_VERSION               = -1
-)
 (
     // clk is our 13.56MHz input clock.
     input                   clk,
@@ -56,17 +51,14 @@ module adapter
     output logic            adc_enable,
     output logic            adc_read,
     input                   adc_conversion_complete,
-    input           [15:0]  adc_value
-);
+    input           [15:0]  adc_value,
 
-    // check the X_VERSION parameters have been overriden
-    generate
-        if ((ISO_IEC_14443A_VERSION < 0)    ||
-            (SENSOR_VERSION < 0)            ||
-            (ADC_VERSION < 0)) begin: versionCheck
-            synth_time_error version_parameters_must_be_set(.*);
-        end
-    endgenerate
+    // Version info, passed from the relevant blocks
+    logic [3:0]             const_iso_iec_14443a_digital_version,
+    logic [3:0]             const_iso_iec_14443a_AFE_version,
+    logic [3:0]             const_sensor_version,
+    logic [3:0]             const_adc_version
+);
 
     import protocol_pkg::*;
 
@@ -150,12 +142,13 @@ module adapter
     assign tx_msg.magic                                 = {<<byte{PROTOCOL_MAGIC}};
     assign tx_msg.cmd                                   = {<<byte{reply_cmd}};
 
-    // the identify reply is constant based off parameters
-    assign identify_reply_args.protocol_version         = {<<byte{PROTOCOL_VERSION}};
-    assign identify_reply_args.adapter_version          = {<<byte{ADAPTER_VERSION}};
-    assign identify_reply_args.iso_iec_14443a_version   = {<<byte{8'(ISO_IEC_14443A_VERSION)}};
-    assign identify_reply_args.sensor_version           = {<<byte{8'(SENSOR_VERSION)}};
-    assign identify_reply_args.adc_version              = {<<byte{8'(ADC_VERSION)}};
+    // the identify reply is based off parameters and inputs that should be constant
+    assign identify_reply_args.protocol_version         = PROTOCOL_VERSION;
+    assign identify_reply_args.adapter_version          = ADAPTER_VERSION;
+    assign identify_reply_args.iso_iec_14443a_version   = {const_iso_iec_14443a_digital_version,
+                                                           const_iso_iec_14443a_AFE_version};
+    assign identify_reply_args.sensor_adc_version       = {const_sensor_version,
+                                                           const_adc_version};
 
     // GetResultReplyArgs and StatusReplyArgs both contain StatusFlags
     assign status_reply_args.flags                      = {<<byte{status_flags}};

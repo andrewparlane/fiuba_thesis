@@ -130,10 +130,9 @@ package protocol_pkg;
     {
         logic [7:0]     protocol_version;       // 1 byte - should be first
         logic [7:0]     adapter_version;        // 1 byte
-        logic [7:0]     iso_iec_14443a_version; // 1 byte
-        logic [7:0]     sensor_version;         // 1 byte
-        logic [7:0]     adc_version;            // 1 byte
-    } IdentifyReplyArgs;                        // total: 5 bytes
+        logic [7:0]     iso_iec_14443a_version; // 1 byte - top 4 bits digital, bottom 4 bits AFE version
+        logic [7:0]     sensor_adc_version;     // 1 byte - top 4 bits sensor, bottom 4 bits ADC
+    } IdentifyReplyArgs;                        // total: 4 bytes
 
     // Arguments for the reply to the GET_RESULT command
     typedef struct packed
@@ -177,7 +176,7 @@ package protocol_pkg;
 
     // Tx message lengths include the magic and command (5 bytes) but not the CRC, which is
     // auto-inserted in the ISO/IEC 14443A IP core.
-    localparam logic [3:0] COMMAND_IDENTIFY_REPLY_LEN       = 4'd10;
+    localparam logic [3:0] COMMAND_IDENTIFY_REPLY_LEN       = 4'd9;
     localparam logic [3:0] COMMAND_GET_RESULT_REPLY_LEN     = 4'd8;
     localparam logic [3:0] COMMAND_OTHERS_REPLY_LEN         = 4'd6;
 
