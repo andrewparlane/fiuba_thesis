@@ -38,16 +38,6 @@ module radiation_sensor_digital_top_tb;
     localparam real MIN_CLOCK_FREQ_HZ   = 13560000.0 - 7000.0;
     localparam real MAX_CLOCK_PERIOD_PS = 1000000000000.0 / MIN_CLOCK_FREQ_HZ;
 
-    // this was measured in simulation using the above values.
-    // Since the PICC clock can be in phase or 180 degrees out of phase from the PCD clock
-    // I picked the minimum value here, as laid out in the comments in iso14443a.sv and fdt.sv
-    // in reguards to the FDT_TIMING_ADJUST parameter
-    localparam real PCD_PAUSE_N_TO_SYNCHRONISED_PS  = 405603.0;
-    localparam real LM_OUT_TO_MODULATION_EDGE_PS    = 0.0;  // we don't yet simulate any delays on the output
-    localparam int  FDT_TIMING_ADJUST               = $rtoi((PCD_PAUSE_N_TO_SYNCHRONISED_PS +
-                                                             LM_OUT_TO_MODULATION_EDGE_PS) /
-                                                            MAX_CLOCK_PERIOD_PS);
-
     // --------------------------------------------------------------
     // Ports to DUT
     // all named the same as in the DUT, so I can use .*
@@ -58,7 +48,7 @@ module radiation_sensor_digital_top_tb;
     // to fail after an IP core version change, to remind me / whoever else is working on this to check
     // the changes and see if this testbench requires any changes.
     localparam logic [7:0]  ADAPTER_VERSION         = 8'h01;
-    localparam logic [3:0]  ISO_IEC_14443A_VERSION  = 4'h01;    // digital
+    localparam logic [3:0]  ISO_IEC_14443A_VERSION  = 4'h1;     // digital
 
     logic           clk;
     logic           rst_n_async;
@@ -87,11 +77,7 @@ module radiation_sensor_digital_top_tb;
     // DUT
     // --------------------------------------------------------------
 
-    radiation_sensor_digital_top
-    #(
-        .FDT_TIMING_ADJUST  (FDT_TIMING_ADJUST)
-    )
-    dut (.*);
+    radiation_sensor_digital_top dut (.*);
 
     // --------------------------------------------------------------
     // UID
@@ -122,6 +108,8 @@ module radiation_sensor_digital_top_tb;
 
     localparam real CLOCK_FREQ_HZ       = 13560000.0;    // 13.56MHz
     localparam real CLOCK_PERIOD_PS     = 1000000000000.0 / CLOCK_FREQ_HZ;
+    localparam int  CLOCK_PERIOD_PS_INT = int'(CLOCK_PERIOD_PS);
+
     logic pcd_pause_n;
     analogue_sim
     #(
@@ -381,13 +369,15 @@ module radiation_sensor_digital_top_tb;
 
             // ISO/IEC 14443-3:2016 section 6.2.1.1 requires that the PICC ensures a FDT of
             // the between the value calculated above (expected) and that value + 0.4us.
-            // We test here that it is between the expected value and that value + 0.1us.
-            // This testbench finds that the actual value is between half a tick and a full tick
-            // after the calculated expected value. Which is as expected given that the picc's clock
-            // and the pcd clock can be 180 degrees out of phase.
+            // There are several delays that eat into that 400ns margin, in this testbench
+            // we only vary two of them (pause_n_deasserts_after_ps, and the delay in the
+            // pause_n_latch_and_synchroniser which varies between 2 and 3 periods depending
+            // on when pause_n_async deasserts in relation to the clock). These two delays
+            // should total a max of 373.78ns. So we check here that the FDT time is between
+            // the expected value and that value + 374ns.
 
             fdtTime: assert ((diff > expected) &&
-                             (diff < (expected + (100 * 1000))))
+                             (diff < (expected + (374 * 1000))))
                 else $error("Tx started at %d ps, lastPCDPauseRiseTime %d ps, diff %d, expected %d",
                             $time, lastPCDPauseRiseTime, diff, expected);
         end
@@ -523,6 +513,71 @@ module radiation_sensor_digital_top_tb;
 
             return identify_reply_args;
         endfunction
+
+        // ====================================================================
+        // sending tasks
+        // ====================================================================
+
+        // override this so we can randomise the AFE behaviour for FDT verification
+        virtual task send_transaction (rx_byte_transaction_pkg::RxByteTransaction byte_trans,
+                                       EventMessageID mid);
+            int pcd_pause_len;
+            int pause_n_asserts_after_ps;
+            int pause_n_deasserts_after_ps;
+            int clock_stops_after_ps;
+            int clock_starts_after_ps;
+
+            std::randomize(pcd_pause_len,
+                           pause_n_asserts_after_ps, pause_n_deasserts_after_ps,
+                           clock_stops_after_ps, clock_starts_after_ps)
+            with
+            {
+                // ISO/IEC 14443-2A:2016 section 8.1.2.1
+                // figure 3 and table 4. PCD pause length is T1. The time from when it starts
+                // transmitting a pause until it starts stopping to transmit a pause.
+                // My DUT shouldn't care about this length though, so I've increased the tested
+                // range. This gives more flexibility to the other parameters, ensuring we test
+                // larger ranges of those.
+                pcd_pause_len >= 10;
+                pcd_pause_len <= 50;
+
+                // Pause Detector Requirements
+                pause_n_asserts_after_ps >= 0;
+                pause_n_asserts_after_ps < (pcd_pause_len*CLOCK_PERIOD_PS_INT);
+                pause_n_deasserts_after_ps >= 0;
+                pause_n_deasserts_after_ps < 300*1000;  // 300ns
+
+                // Clock recovery requirements
+                clock_stops_after_ps >= 0;
+                clock_stops_after_ps < (pcd_pause_len*CLOCK_PERIOD_PS_INT);
+                clock_starts_after_ps >= 0;
+                clock_starts_after_ps < pause_n_deasserts_after_ps;
+
+                // there's some simulation errors where we get the wrong number of ticks
+                // if the clock/pause starts/stops exactly on an edge. So make sure that doesn't happen
+                (clock_stops_after_ps*2 % CLOCK_PERIOD_PS_INT) != 0;
+                (clock_starts_after_ps*2 % CLOCK_PERIOD_PS_INT) != 0;
+                (pause_n_asserts_after_ps*2 % CLOCK_PERIOD_PS_INT) != 0;
+                (pause_n_deasserts_after_ps*2 % CLOCK_PERIOD_PS_INT) != 0;
+            };
+/*
+            $display("\nUsing:");
+            $display("  PCD pause length     %d ticks", pcd_pause_len);
+            $display("  pause_n_asserts_after   %d ps", pause_n_asserts_after_ps);
+            $display("  pause_n_deasserts_after %d ps", pause_n_deasserts_after_ps);
+            $display("  clock_stops_after       %d ps", clock_stops_after_ps);
+            $display("  clock_starts_after      %d ps", clock_starts_after_ps);
+            $display("========================================"); */
+
+            analogue_sim_inst.set_pause_ticks(pcd_pause_len);
+            analogue_sim_inst.set_params(.clock_stops                   (1'b1),
+                                         .clock_stops_after_ps          (clock_stops_after_ps),
+                                         .clock_starts_after_ps         (clock_starts_after_ps),
+                                         .pause_n_asserts_after_ps      (pause_n_asserts_after_ps),
+                                         .pause_n_deasserts_after_ps    (pause_n_deasserts_after_ps));
+
+            super.send_transaction(byte_trans, mid);
+        endtask
 
         // ====================================================================
         // send message verify reply tasks
