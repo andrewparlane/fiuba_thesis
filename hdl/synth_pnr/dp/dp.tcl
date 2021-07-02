@@ -388,10 +388,40 @@ if {[colourise_check_pg_drc -ignore_std_cells] == 0} {
 colourise_cmd "check_mv_design -erc_mode"
 colourise_cmd "check_mv_design -power_connectivity"
 
-# TODO: Analyse power network correctly (need a sensible power_budget)
-set_virtual_pad -net VDD -coordinate {140 0}
-set_virtual_pad -net VSS -coordinate {140 0}
-colourise_cmd "analyze_power_plan -nets {VDD VSS} -power_budget 1000"
+# create PG terminals
+# These boundries are the bounding boxes of the VIAs that connect the
+# top edge of the rings to the vertical stripes.
+# First build a bounding box that we know should contain these vias
+set height [get_attribute [current_design] -name height]
+set width [get_attribute [current_design] -name width]
+set llx [expr ($width/2)-20]
+set lly [expr $height - 13]
+set urx [expr ($width/2)+20]
+set ury $height
+set bbox "{$llx $lly} {$urx $ury}"
+# Then get all VIAS within that BBOX that go from METTP to METTPL for nets VDD and VSS
+set layerFilter "lower_layer_name==METTP && upper_layer_name==METTPL"
+set vddVIA [index_collection [get_vias -filter "$layerFilter && net.full_name==VDD" \
+                                       -within $bbox -expect 1] 0]
+set vssVIA [index_collection [get_vias -filter "$layerFilter && net.full_name==VSS" \
+                                       -within $bbox -expect 1] 0]
+# Then create new shapes from the boundary of those VIAS
+set vddShape [create_shape -shape_type rect -boundary [get_attribute $vddVIA bounding_box] -layer METTP]
+set vssShape [create_shape -shape_type rect -boundary [get_attribute $vssVIA bounding_box] -layer METTP]
+# Finally create the terminal using that shape
+create_terminal -port VDD -name VDD -object $vddShape
+create_terminal -port VSS -name VSS -object $vssShape
+
+# Check the expected IR drop over our PG rails.
+# Current power usage estimation at the output of PnR is 251uW Let's use 400uW to be sure.
+# analyze_power_plan seems to take -power_budget in mW, so 0.4mW
+# The current result of this is:
+#   VDD - max IR drop = 0.036mV
+#   VSS - max IR drop = 0.039mV
+# XFab's 0.18um-ApplicationNote-Digital_Implementation_Guidelines-v1_1_0.pdf says that the PG rings
+# and stripes so that the max IR drop is no more than 100mV. So we are fine. We'd have to use >1W
+# of power to reach 100mV IR drop.
+colourise_cmd "analyze_power_plan -use_terminals_as_pads -voltage 1.8 -nets {VDD VSS} -power_budget 0.4"
 
 # save the lib
 save_lib -all
@@ -412,16 +442,6 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
 }
 
 do_check_design "dp_pre_pin_placement"
-
-# create PG terminals
-# These boundries are the bounding boxes of the VIAs that connect the
-# top edge of the rings to the vertical stripes.
-# They will need to be adjusted if the boundry / stripes or rings are adjusted.
-set shape [create_shape -shape_type rect -boundary {{132.5500 263.5300} {137.4500 268.4300}} -layer METTP]
-create_terminal -port VDD -name VDD -object [get_shape $shape]
-
-set shape [create_shape -shape_type rect -boundary {{142.5500 271.0300} {147.4500 275.9300}} -layer METTP]
-create_terminal -port VSS -name VSS -object [get_shape $shape]
 
 colourise_cmd "place_pins -self"
 write_pin_constraints -self -file_name preferred_port_locations.tcl     \
