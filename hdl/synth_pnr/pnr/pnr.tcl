@@ -293,6 +293,7 @@ connect_pg_net
 # ---------------------------
 check_routes
 check_lvs -checks all -open_reporting detailed
+report_timing
 
 if {[colourise_check_pg_drc] == 0} {
     puts "[colour $COLOUR_RED]Aborting due to PG DRC errors[clear_colour]"
@@ -453,6 +454,7 @@ set_extraction_options -real_metalfill_extraction floating
 check_pg_connectivity -check_std_cell_pins all
 check_pg_drc -ignore_clock_nets false -check_metal_on_track true -load_routing_of_all_nets
 check_lvs -check_child_cells true -check_zero_spacing_blockages true -report_floating_pins true -open_reporting detailed
+report_timing
 
 # =============================================================================
 # Write Data
