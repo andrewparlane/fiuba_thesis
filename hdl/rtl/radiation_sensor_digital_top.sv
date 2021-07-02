@@ -129,7 +129,18 @@ module radiation_sensor_digital_top
         .pause_n_synchronised   (pause_n_synchronised)
     );
 
+    // ========================================================================
+    // Register synchronous inputs (for timing purposes)
+    // ========================================================================
 
+    logic [1:0]     power_reg;
+    logic           adc_conversion_complete_reg;
+    logic [15:0]    adc_value_reg;
+    always @(posedge clk) begin
+        power_reg                   <= power;
+        adc_value_reg               <= adc_value;
+        adc_conversion_complete_reg <= adc_conversion_complete;
+    end
 
     // ========================================================================
     // The ISO/IEC 14443A IP core
@@ -174,7 +185,7 @@ module radiation_sensor_digital_top
 
         .uid_variable           (uid_variable),
 
-        .power                  (power),
+        .power                  (power_reg),
         .pause_n_synchronised   (pause_n_synchronised),
 
         .lm_out                 (lm_out),
@@ -205,8 +216,8 @@ module radiation_sensor_digital_top
         .sens_read                              (sens_read),
         .adc_enable                             (adc_enable),
         .adc_read                               (adc_read),
-        .adc_conversion_complete                (adc_conversion_complete),
-        .adc_value                              (adc_value),
+        .adc_conversion_complete                (adc_conversion_complete_reg),
+        .adc_value                              (adc_value_reg),
 
         .const_iso_iec_14443a_digital_version   (4'(iso14443a_inst.ISO_IEC_14443A_VERSION)),
         .const_iso_iec_14443a_AFE_version       (afe_version),
