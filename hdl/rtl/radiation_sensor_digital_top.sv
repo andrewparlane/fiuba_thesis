@@ -44,14 +44,15 @@ module radiation_sensor_digital_top
     // it's power output as needed.
     //
     // The analogue block should pass the correct value in. It can change over time.
-    // and is synchronised in the ISO/IEC 14443A IP core
+    // The value used is the one present when we start transmitting the CID field of the PCB.
+    // So the AFE should prepare this value before the start of the response.
     //
     // ISO/IEC 14443-4:2016 section 7.4 states:
     //      2'b00: PICC does not support the power level indiction
     //      2'b01: Insufficient power for full functionality
     //      2'b10: Sufficient power for full functionality
     //      2'b11: More than sufficient power for full functionality
-    input           [1:0]       power_async,
+    input           [1:0]       power,
 
     // pause_n_async is an asynchronous input from the analogue block.
     // It is essentially the digitized envelope of the carrier wave.
@@ -128,19 +129,6 @@ module radiation_sensor_digital_top
         .pause_n_synchronised   (pause_n_synchronised)
     );
 
-    logic [1:0] power;
-    synchroniser
-    #(
-        .WIDTH      (2),
-        .RESET_VAL  (2'b00)
-    )
-    power_synch_inst
-    (
-        .clk        (clk),
-        .rst_n      (rst_n),
-        .d          (power_async),
-        .q          (power)
-    );
 
 
     // ========================================================================
