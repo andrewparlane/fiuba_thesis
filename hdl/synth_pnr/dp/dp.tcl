@@ -366,7 +366,8 @@ compile_pg -strategies s_mesh
 # or routing problems.
 
 # RAILS:
-create_pg_std_cell_conn_pattern pg_std_cell_rail  -layers {MET1} -rail_width 0.23
+# using a width of 0.8um as that's what the std cells use.
+create_pg_std_cell_conn_pattern pg_std_cell_rail  -layers {MET1} -rail_width 0.8
 set_pg_strategy s_std_cell_rail -core -pattern {{name: pg_std_cell_rail} {nets: VDD VSS}} -extension {{{stop : outermost_ring}}}
 compile_pg -strategies s_std_cell_rail
 
