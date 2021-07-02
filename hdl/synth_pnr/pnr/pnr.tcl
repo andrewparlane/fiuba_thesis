@@ -94,6 +94,17 @@ proc load_antenna_rules {} {
     define_antenna_layer_rule -mode 1 -layer "VIATP"  -ratio 20  -diode_ratio {0 0 0 1e+07}
     define_antenna_layer_rule -mode 1 -layer "VIATPL" -ratio 20  -diode_ratio {0 0 0 1e+07}
 
+    # Assume that all top-level ports are connect to a huge antenna.
+    # The antenna is broken by jumping to the top metal layer:
+    set_app_options -name route.detail.port_antenna_mode -value jump
+
+    # Without this input nets are not checked for antenna violations by ICC2,
+    # but ICV checks them and generates an error.
+    # I think this means that ICC2 assumes there's no gates connected to these
+    # nets outside of this block. Which is fair enough. The other blocks can add their
+    # own antenna protections and the final run of ICV should detect any remaining issues.
+    set_app_options -name route.detail.default_port_external_gate_size -value 0
+
     report_antenna_rules
 }
 
