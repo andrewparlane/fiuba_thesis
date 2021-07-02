@@ -219,26 +219,29 @@ if {[file exists preferred_port_locations.tcl]} {
     #       rst_n_async
     #       pause_n_async
     #       lm_out
-    #       power_async[1:0]
+    #       power[1:0]
+    #       afe_version[3:0]
     #
     #   wire bonded constants                   - anywhere
     #       uid_variable[2:0]
     #
-    #   to the sensor block                     - right edge, top half
+    #   from/to the sensor block                - right edge, bottom half
+    #       sens_version[3:0]
     #       sens_config[2:0]
     #       sens_enable
     #       sens_read
     #
-    #   from/to the adc block                   - right edge bottom half
+    #   from/to the adc block                   - right edge top half
+    #       adc_version[3:0]
     #       adc_enable
     #       adc_read
     #       adc_conversion_complete
     #       adc_value[15:0]
 
-    set analog_nets [get_nets -expect 6  "clk rst_n_async pause_n_async lm_out power_async"]
+    set analog_nets [get_nets -expect 10  "clk rst_n_async pause_n_async lm_out power afe_version"]
     set uid_nets    [get_nets -expect 3  "uid_variable"]
-    set sens_nets   [get_nets -expect 5  "sens_*"]
-    set adc_nets    [get_nets -expect 19 "adc_*"]
+    set sens_nets   [get_nets -expect 9  "sens_*"]
+    set adc_nets    [get_nets -expect 23 "adc_*"]
 
     set analog_nets [sort_collection $analog_nets full_name]
     set uid_nets    [sort_collection $uid_nets    full_name]
@@ -263,21 +266,21 @@ if {[file exists preferred_port_locations.tcl]} {
                                 -self                               \
                                 -keep_pins_together true
 
-    # The sensor signals should go on the right hand edge (side 3) in the top half
+    # The sensor signals should go on the right hand edge (side 3) in the bottom half
     set_bundle_pin_constraints  -bundles bundle_sensor              \
                                 -self                               \
                                 -keep_pins_together true            \
                                 -bundle_order ordered               \
                                 -sides 3                            \
-                                -range {40 100}
+                                -range {180 240}
 
-    # The ADC signals should go on the right hand edge (side 3) in the bottom half
+    # The ADC signals should go on the right hand edge (side 3) in the top half
     set_bundle_pin_constraints  -bundles bundle_adc                 \
                                 -self                               \
                                 -keep_pins_together true            \
                                 -bundle_order ordered               \
                                 -sides 3                            \
-                                -range {180 240}
+                                -range {40 100}
 }
 
 do_check_design "dp_pre_macro_placement"
