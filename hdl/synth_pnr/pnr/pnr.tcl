@@ -185,8 +185,8 @@ remove_ideal_network -all
 
 # Placement
 # ---------------------------
-place_opt
-refine_opt
+colourise_cmd place_opt
+colourise_cmd refine_opt
 
 connect_pg_net
 
