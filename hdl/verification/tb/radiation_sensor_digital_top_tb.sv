@@ -53,7 +53,7 @@ module radiation_sensor_digital_top_tb;
     logic           clk;
     logic           rst_n_async;
 
-    logic [1:0]     power_async;
+    logic [1:0]     power;
     logic           pause_n_async;
     logic           lm_out;
 
@@ -462,7 +462,7 @@ module radiation_sensor_digital_top_tb;
         endfunction
 
         virtual protected function void set_power_input(logic [1:0] _power);
-            power_async = _power;
+            power = _power;
         endfunction
 
         // pure virtual, must be overwritten
@@ -694,7 +694,7 @@ module radiation_sensor_digital_top_tb;
         automatic int                                               reply_timeout;
         automatic int                                               max_rx_msg_ticks;
 
-        power_async             = 2'b00;
+        power = 2'b00;
 
         // TODO: randomise some settings:
         //      CLOCK_STARTS/STOPS_AFTER_PS
