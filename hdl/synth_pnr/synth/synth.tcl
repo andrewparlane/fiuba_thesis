@@ -158,16 +158,14 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
     return
 }
 
-set elab_args ""
-# these parameters are necessary to synthesise the design
-# however their values depend on the analogue parts (AFE, ADC and the sensor)
-# don't check the uncommented version of this in until we have the final values
-set FDT_TIMING_ADJUST   0
-set SENSOR_VERSION      1
-set ADC_VERSION         1
-set elab_args "-param FDT_TIMING_ADJUST=>$FDT_TIMING_ADJUST,SENSOR_VERSION=>$SENSOR_VERSION,ADC_VERSION=>$ADC_VERSION"
+# We get a lot of VER-735 infos, so limit it to just 5. This makes it easier to read the log
+# VER-735 (information) %s Variables crossing hierarchy: %s%s%s
+# From what I understand this is when I instantiate an interface without using a modport
+# AKA not as the port to a module. Therefore it doesn't know what direction each signal
+# is defined as. This should be fine.
+set_message_info -id VER-735 -limit 5
 
-if {[expr [colourise_cmd "elaborate radiation_sensor_digital_top -work WORK $elab_args"] == 0]} {
+if {[expr [colourise_cmd "elaborate radiation_sensor_digital_top -work WORK"] == 0]} {
     puts "[colour $COLOUR_RED]Aborting due to error elaborating design[clear_colour]"
     return
 }
