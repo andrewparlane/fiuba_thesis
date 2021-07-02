@@ -1,0 +1,23 @@
+ 
+****************************************
+Report : timing_requirements
+        -attributes
+Design : radiation_sensor_digital_top
+Version: P-2019.03
+Date   : Tue Jun 29 17:22:25 2021
+****************************************
+
+Description                            Setup               Hold
+--------------------------------------------------------------------------------
+TIMING EXCEPTION                       FALSE               FALSE                -from { afe_version[0] afe_version[1] afe_version[2] afe_version[3] }
+TIMING EXCEPTION                       FALSE               FALSE                -from { adc_version[0] adc_version[1] adc_version[2] adc_version[3] }
+TIMING EXCEPTION                       FALSE               FALSE                -from { sens_version[0] sens_version[1] sens_version[2] sens_version[3] }
+TIMING EXCEPTION                       FALSE               FALSE                -from { uid_variable[0] uid_variable[1] uid_variable[2] }
+TIMING EXCEPTION                       FALSE               FALSE                -from rst_n_async
+TIMING EXCEPTION                       FALSE               FALSE                -to { sens_config[0] sens_config[1] sens_config[2] }
+TIMING EXCEPTION                       FALSE               FALSE                -to sens_enable
+TIMING EXCEPTION                       FALSE               FALSE                -to sens_read
+TIMING EXCEPTION                       max=5               -                    -from pause_n_async
+TIMING EXCEPTION                       max=5               -                    -to lm_out
+
+1

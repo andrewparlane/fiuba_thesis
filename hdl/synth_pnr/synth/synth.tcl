@@ -277,6 +277,38 @@ redirect -variable buffer {
     set_max_area 0
 
     # ---------------------------
+    # Ports
+    # ---------------------------
+
+    # ISO 14443A Analogue block (AFE)
+    #   clk                         - input clock, 13.56MHz +/- 7KHz
+    #   rst_n_async                 - input asynchronous reset
+    #
+    #   power[1:0]                  - input synchronous
+    #
+    #   pause_n_async               - input asynchronous (from envelope detector)
+    #
+    #   lm_out                      - output asynchronous (to load modulator)
+    #
+    #   afe_version                 - input must be constant, set to the version of the AFE
+    #
+    # Chip configuration
+    #   uid_variable[2:0]           - constant at least while this design is out of reset
+    #
+    # Sensor
+    #   sens_version                - input must be constant, set to the version of the sensor
+    #   sens_config[2:0]            - output asynchronous
+    #   sens_enable                 - output asynchronous
+    #   sens_read                   - output asynchronous
+    #
+    # ADC
+    #   adc_version                 - input must be constant, set to the version of the ADC
+    #   adc_enable                  - output synchronous
+    #   adc_read                    - output synchronous
+    #   adc_conversion_complete     - input synchronous
+    #   adc_value[15:0]             - input synchronous
+
+    # ---------------------------
     # Clock
     # ---------------------------
 
@@ -285,11 +317,6 @@ redirect -variable buffer {
     set clk_freq_hz     13560000.0
     set clk_period_ns   [expr 1000000000.0 / $clk_freq_hz]
     create_clock -name clk -period $clk_period_ns [get_ports clk]
-
-    # set the rise and fall times of the clock, can also set the min time with -min
-    # we need to have models of the analogue block before it makes sense to set these
-    # set_clock_transition <transition_time_ns> -rise [get_clocks clk]
-    # set_clock_transition <transition_time_ns> -fall [get_clocks clk]
 
     # 0.18um-ApplicationNote-Digital_Implementation_Guidelines-v1_1_0.pdf says
     # use 10% or higher for setup clock uncertainty. I'm using 20%
@@ -306,43 +333,45 @@ redirect -variable buffer {
     # I/O
     # ---------------------------
 
-    # We have a few async inputs that we pass through synchronisers
-    # So we need to cut those paths
-    #
-    # I wanted to cut paths using -to / -through, so that if the input is accidentally used
-    # instead of the output of the synchroniser, there'll be a warning, and while that works
-    # fine here, when we use write_timing_contex to turn the constraints into ICC2 format constraints
-    # these -to / -throughs get translated into -to [get_port ...], and then ICC2 complains that you
-    # can't use a -to with an input port.
-    # Therefore I'm just cutting the paths from these ports. To help catch errors I've created
-    # a helper function set_and_report_false_path which runs the command and then uses the same
-    # arguments to get a list of timing paths that will be affected, outputing the start and endpoints
-    #
-    # pause_n_async goes through a reset synchroniser instead of a normal synchroniser
-    # this is because the clock will stop during pauses, and it's unclear if we'll ever
-    # see the signal low on a clock edge.
-    set_and_report_false_path {-from [get_ports rst_n_async]}
-    set_and_report_false_path {-from [get_ports pause_n_async]}
-    set_and_report_false_path {-from [get_ports power_async]}
-
-    # uid_variable is a constant set using wire bonding
+    # Constants, some of our input signals are constants, they should never change.
+    # at least while this block is out of reset.
+    set_and_report_false_path {-from [get_ports afe_version]}
+    set_and_report_false_path {-from [get_ports adc_version]}
+    set_and_report_false_path {-from [get_ports sens_version]}
     set_and_report_false_path {-from [get_ports uid_variable]}
+    set_switching_activity -static_probability 0.5 -toggle_rate 0 [get_ports afe_version]
+    set_switching_activity -static_probability 0.5 -toggle_rate 0 [get_ports adc_version]
+    set_switching_activity -static_probability 0.5 -toggle_rate 0 [get_ports sens_version]
+    set_switching_activity -static_probability 0.5 -toggle_rate 0 [get_ports uid_variable]
 
-    # The lm_out output goes to the load modulator analogue circuit.
-    # I think this is async, but it's possible that the ISO/IEC standard requires it to be driven in
-    # phase with the carrier signal. Additionally it can't take "forever" for this signal to reach the
-    # load_modulator, the FDT timing of the spec limits how long this can take. As such I'm constraining
-    # it to take at most 1/2 a clock cycle to get out of my block. We should refine this later when we
-    # have more information about the analogue part of the design.
-    set_output_delay [expr $clk_period_ns/2.0] -clock [get_clocks clk] [get_ports lm_out]
+    # We cut async inputs and outputs.
+    set_and_report_false_path {-from [get_ports rst_n_async]}
+    set_and_report_false_path {-to [get_ports sens_config]}
+    set_and_report_false_path {-to [get_ports sens_enable]}
+    set_and_report_false_path {-to [get_ports sens_read]}
 
-    # TODO: Are the sensor and ADC signal asynch or synch? How to constrain them when we don't have
-    #       the designs yet (or at least we don't have the ADC design)
-    # Using the example from 0.18um-ApplicationNote-Digital_Implementation_Guidelines-v1_1_0.pdf for now
-    set_output_delay [expr $clk_period_ns/2.0] -clock [get_clocks clk] [get_ports sens_*]
+    # The FDT timings require a fixed number of cycles from the end of the PCD's pause
+    # to the start of the reply. There's a margin of error of +400ns. I compensate for full cycles
+    # of delay inside my block. That 500ns has to be split into:
+    #   pcd_pause_n deasserting -> pause_n_async deasserting        - max 300ns
+    #   pause_n_async internal input delay                          - max 5ns
+    #   pause_n_latch_and_synchroniser max delay - min delay        - 1 tick at min frequency = 73.78ns
+    #   lm_out internal output delay                                - max 5ns
+    #   clock latency / uncertainty                                 - remainder ~12ns
+    # To enforce the internal input and output delays of pause_n_async and lm_out
+    # We use the set_max_delay constraint. Ignoring clock latency, so we can specify the absolute
+    # delay as 5ns each.
+    set_max_delay 5.0 -from [get_ports pause_n_async] -ignore_clock_latency
+    set_max_delay 5.0 -to [get_ports lm_out] -ignore_clock_latency
+
+    # The ADC inputs/outputs and the AFE's power output are synchronous.
+    # TODO: Constrain these correctly
+    # we want mins and maxes for the input/output delays, and we should take clock latency into account
+    # the ADC may be source synchronous
+    set_input_delay [expr $clk_period_ns/2.0] -clock [get_clocks clk] [get_ports power]
     set_output_delay [expr $clk_period_ns/2.0] -clock [get_clocks clk] [get_ports adc_enable]
     set_output_delay [expr $clk_period_ns/2.0] -clock [get_clocks clk] [get_ports adc_read]
-    set_input_delay [expr $clk_period_ns/2.0] -clock [get_clocks clk] [get_ports adc_value*]
+    set_input_delay [expr $clk_period_ns/2.0] -clock [get_clocks clk] [get_ports adc_value]
     set_input_delay [expr $clk_period_ns/2.0] -clock [get_clocks clk] [get_ports adc_conversion_complete]
 
     # environment of the IO signals from 0.18um-ApplicationNote-Digital_Implementation_Guidelines-v1_1_0.pdf:
@@ -367,10 +396,13 @@ ungroup -flatten -all -all_instances
 # Check constraints
 # =============================================================================
 
+report_timing_requirements
+report_timing_requirements -nosplit > logs/timing_requirements.log
 colourise_cmd "check_timing"
-colourise_cmd "report_constraint -verbose"
-
-report_constraint -verbose -all_violators > logs/constraint_violations.log
+# This is the same as report_constraint -verbose, but without the min path delay (hold analysis)
+# Hold analysis doesn't make sense to do during synthesis
+colourise_cmd "report_constraint -verbose -max_delay -max_transition -max_fanout -max_capacitance -max_area"
+report_constraint -verbose -max_delay -max_transition -max_fanout -max_capacitance -max_area -all_violators > logs/constraint_violations.log
 
 # =============================================================================
 # Operating conditions
