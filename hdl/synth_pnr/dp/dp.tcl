@@ -91,9 +91,16 @@ set_ignored_layers -max_routing_layer METTP
 do_check_design "dp_pre_floorplan"
 
 # Create the floorplan
+
+# I initially created the floorplan using the following options. The problem with this is that
+# a small change in the output of the synthesis script could lead to a slightly different sized
+# floorplan, causing issues with some of the hard coded numbers in this script. Such as the offsets
+# for the PG mesh that mean all our site rows are correctly connected to the PG nets, and the PG
+# terminales for connecting to the outside world.
+
 #   control_type:       core    - We specify the size of the core, the boundary is offset from the core
 #                                 by the core_offset, and contains the PG rings
-#   core_utilisation:   0.8     - Size our core so that the std_cells take up 80% of the space
+#   core_utilisation:   0.75    - Size our core so that the std_cells take up 75% of the space
 #   core_offset:        12.6    - The PG rings are 5um wide each with 2.5um spacing, so in total they
 #                                 take up 12.5um of space, I give them 0.1um extra.
 #   shape:              R       - Rectangular
@@ -102,11 +109,27 @@ do_check_design "dp_pre_floorplan"
 #                                 can be anything.
 #   site_def:           hd      - Site def to use in the floorplan (Note: the lib_prep script converts
 #                                 the HDLL lib to use the hd site too)
-initialize_floorplan    -control_type core          \
-                        -core_utilization 0.8       \
-                        -core_offset {12.6 12.6}    \
-                        -shape R                    \
-                        -side_ratio 1               \
+#initialize_floorplan    -control_type core          \
+#                        -core_utilization 0.75      \
+#                        -core_offset {12.6 12.6}    \
+#                        -shape R                    \
+#                        -side_ratio 1               \
+#                        -site_def hd
+
+# Now that I have the basic shape that works I create the floorplan using specific sizes.
+# If the output of synthesis changes now, the size of our design will not change unless we
+# decide to resize it
+
+#   control_type:       die             - We specify the size of the die
+#   core_offset:        12.6            - core is offset from the boundary of the die by 12.6um
+#   shape:              R               - Rectangular
+#   side_length:        {x y}           - size
+#   site_def:           hd              - Site def to use in the floorplan (Note: the lib_prep
+#                                         script converts the HDLL lib to use the hd site too)
+initialize_floorplan    -control_type die               \
+                        -core_offset {12.6 12.6}        \
+                        -shape R                        \
+                        -side_length {292.32 289.52}    \
                         -site_def hd
 
 # Load timing constraints from synthesis
@@ -314,30 +337,30 @@ compile_pg -strategies s_core_ring
 #   Version November 2008, section 7.1,
 #     The distance between stripes should be 250 … 350 um
 #
-# NOTE: Our boundary is only 280um * 275um ATM so not sure if there's a need for the mesh.
+# NOTE: Our boundary is only ~290um * ~290um ATM so not sure if there's a need for the mesh.
 #       I'm adding it because we're not short on space on the top metals.
 # NOTE: I picked the Y offset_start and the horizontal layer spacing to line the VDD mesh up
 #       with a VDD rail, and the VSS mesh to line up with a VSS rail. This allows us to via down
 #       to the rails. If the VDD mesh is too close to a VSS rail or vice versa, the VIAs can't fit
 #       due to DRC issues.
 create_pg_mesh_pattern pg_mesh -layers {{{vertical_layer: METTPL} {spacing: 5}      \
-                                          {width: 5} {pitch: 140} {trim: false}}    \
-                                        {{horizontal_layer: METTP} {spacing: 7.4}     \
-                                          {width: 5} {pitch: 140} {trim: false}}}
+                                          {width: 5} {pitch: 145} {trim: false}}    \
+                                        {{horizontal_layer: METTP} {spacing: 7.4}    \
+                                          {width: 5} {pitch: 145} {trim: false}}}
 
-set_pg_strategy s_mesh -pattern {{pattern: pg_mesh} {nets: {VDD, VSS}} {offset_start: 135 129.6}} \
+set_pg_strategy s_mesh -pattern {{pattern: pg_mesh} {nets: {VDD, VSS}} {offset_start: 141.16 138.56}} \
                        -core -extension {{stop: outermost_ring}}
 
 compile_pg -strategies s_mesh
 
-# TODO: do we need to do these? Might help, but probably not essential
-puts "[colour $COLOUR_YELLOW]Warning: TODO - do we need wrong direction routing and routing blockages under power rings/stripes[clear_colour]"
 # Comments from XFab's 0.18um-ApplicationNote-Digital_Implementation_Guidelines-v1_1_0.pdf
 #   -   Make the horizontal stripes first, then the vertical ones (allow “wrong direction”
 #       routing for the metal layer under the thick metal for the crossings). This allows
 #       easy access for the via stacks to the cell rows
 #   -   Having routing blockages in the metal layer below METTHK/METTPL in all places where you
 #       need to access the “inner ring” of the supply system
+# I don't think either of these are necessary. The setup I've got works fine with no DRC issues
+# or routing problems.
 
 # RAILS:
 create_pg_std_cell_conn_pattern pg_std_cell_rail  -layers {MET1} -rail_width 0.23
