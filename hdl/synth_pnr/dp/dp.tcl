@@ -498,21 +498,11 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
     return
 }
 
-# TODO: UPF stuff
-# Write full UPF
-#save_upf $path_dir/${block_refname_no_label}.icc2.out.upf
-# Write supplimental UPF
-#set_app_options -name mv.upf.enable_golden_upf -value true
-#save_upf -format supplemental $path_dir/${block_refname_no_label}.sup.icc2.out.upf
-
 # write_verilog for LVS (with pg, and with physical only cells)
 write_verilog -exclude {scalar_wire_declarations leaf_module_declarations empty_modules} -hierarchy all work/netlist_lvs.v
 
 # write_verilog for PrimeTime (no pg, no physical only cells, and no supply statments)
 write_verilog -exclude {scalar_wire_declarations leaf_module_declarations end_cap_cells well_tap_cells filler_cells pad_spacer_cells physical_only_cells cover_cells supply_statements pg_netlist} -hierarchy all work/netlist_pt.v
-
-# Write out the LEF - not sure what this is for
-write_lef work/design_plan_out.lef
 
 # Write out the floorplan (maybe not needed)
 write_floorplan -output work/design.floorplan -force -nosplit -format icc2
