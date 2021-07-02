@@ -41,7 +41,7 @@
 #
 
 PNR_WORK_DIR		= ../pnr/work
-TOP					= radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
+TOP					= radiation_sensor_digital_top
 NETLIST_V			= $(PNR_WORK_DIR)/netlist_lvs.v
 GDS					= $(PNR_WORK_DIR)/design_xfab_layers.gds
 
