@@ -433,21 +433,26 @@ module adapter
     end
     assign tx_iface.data_bits   = 3'd0;         // all transfers are 8 bits wide
 
+    // VCS doesn't generate a valid SAIF file, if I assign to interface members directly
+    // in a sequential block.
+    logic tx_iface_data_valid;
+    assign tx_iface.data_valid = tx_iface_data_valid;
+
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) begin
-            tx_iface.data_valid <= 1'b0;
+            tx_iface_data_valid <= 1'b0;
             tx_idx              <= 4'b0;
         end
         else begin
             if (send_reply) begin
-                tx_iface.data_valid <= 1'b1;
+                tx_iface_data_valid <= 1'b1;
                 tx_idx              <= 4'b0;
             end
 
             if (tx_iface.req) begin
                 if ((tx_idx + 1'd1) == tx_len) begin
                     // done
-                    tx_iface.data_valid <= 1'b0;
+                    tx_iface_data_valid <= 1'b0;
                 end
                 else begin
                     tx_idx <= tx_idx + 1'd1;
