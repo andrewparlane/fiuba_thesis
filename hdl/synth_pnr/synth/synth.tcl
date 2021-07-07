@@ -139,6 +139,10 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
     return
 }
 
+# Initialise the name mapping database for SAIF files
+# This has to be done before reading the source files
+saif_map -start
+
 foreach file_name $SRC_FILES {
     puts "[colour $COLOUR_BLUE]Analysing $file_name[clear_colour]"
     if {[expr [colourise_cmd "analyze -library WORK -format sverilog $file_name"] == 0]} {
@@ -421,10 +425,35 @@ set_dynamic_optimization true
 set_operating_conditions -analysis_type bc_wc -max $OPERATING_CONDITION_MAX -min $OPERATING_CONDITION_MIN
 
 # =============================================================================
+# Read SAIF
+# =============================================================================
+
+puts "[colour $COLOUR_BLUE]Reading .saif[clear_colour]"
+
+if {($pause_between_commands == 1) && ([do_continue] == 0)} {
+    return
+}
+
+# PWR-12:   Warning: The derived static probability value (0.500000) for the clock net 'clk'
+#           conflicts with the annotated value (0.555463). Using the annotated value.
+#               This is expected, since the clock stops during pauses, and so the .saif shows it
+#               at one value more than at the other. With the configuration of the AFE model in
+#               my simulation, this turns out that the clock pauses while high.
+suppress_message PWR-12
+
+read_saif -input radiation_sensor_digital_top.saif -auto_map_names -instance_name generate_top_saif_tb/dut -verbose
+report_saif -missing -rtl_saif -hier
+report_saif -missing -rtl_saif -hier > logs/report_saif.log
+
+# =============================================================================
 # Compile design
 # =============================================================================
 
 puts "[colour $COLOUR_BLUE]Compiling design[clear_colour]"
+
+if {($pause_between_commands == 1) && ([do_continue] == 0)} {
+    return
+}
 
 # My colourise_cmd proc buffers the output and then outputs all of it at once
 # Meaning we don't get any output until compile_ultra finishes. It would be nice to
@@ -434,19 +463,16 @@ puts "[colour $COLOUR_BLUE]Compiling design[clear_colour]"
 # in the custom channel gets redirected to the custom channel and we get infinite recursion.
 puts "[colour $COLOUR_BLUE]This may take awhile with no output[clear_colour]"
 
-# TODO: compile or compile_ultra?
 if {[colourise_cmd "compile_ultra"] == 0} {
     puts "[colour $COLOUR_RED]Aborting due to error checking design[clear_colour]"
     return
 }
-
 
 # =============================================================================
 # Clock Gating
 # =============================================================================
 
 puts "[colour $COLOUR_BLUE]Inserting Clock Gating[clear_colour]"
-puts "[colour $COLOUR_YELLOW]TODO: revisit this when we have a .saif for accurate power estimation[clear_colour]"
 
 if {($pause_between_commands == 1) && ([do_continue] == 0)} {
     return
@@ -455,33 +481,29 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
 # Initial results at this point:
 # Without clock gating:
 #   Power
-#       Internal:   0.5049 mW
-#       Switching:  8.6456 uW
-#       Leakage:    407.25e nW
-#       Total:      0.5140 mW
+#       Internal:   0.4752 mW
+#       Switching:  8.8977 uW
+#       Leakage:    432.92 nW
+#       Total:      0.4845 mW
 #   Area
-#       Total cell area:    56101.515282 - this seems rather large?
+#       Total cell area:    57,166 um^2
 # With compile_ultra -incremental -gate_clock
 #   Power
-#       Internal:   0.1756 mW
-#       Switching:  21.326 uW
-#       Leakage:    384.87 nW
-#       Total:      0.1973 mW
+#       Internal:   0.1976 mW
+#       Switching:  27.535 uW
+#       Leakage:    412.05 nW
+#       Total:      0.2255 mW
 #   Area
-#       Total cell area:    52699.991055 - huh, that's actuall smaller
+#       Total cell area:    54,539 um^2
 # With compile_ultra -incremental -gate_clock -self_gating
 #   Less total power but higher leakage and larger area
 #   Power
-#       Internal:   0.1161 mW
-#       Switching:  22.761 uW
-#       Leakage:    418.33 nW
-#       Total:      0.1393 mw
+#       Internal:   0.1463 mW
+#       Switching:  28.321 uW
+#       Leakage:    441.28 nW
+#       Total:      0.1751 mw
 #   Area
-#       Total cell area:    55390.833464
-
-# There's probably other arguments to look at too, such as: set_clock_gating_style
-# -minimum_bitwidth and -control_point arguments, maybe others
-# for now just use the defaults.
+#       Total cell area:    57,082 um^2
 
 colourise_cmd "compile_ultra -incremental -gate_clock"
 
@@ -554,6 +576,10 @@ write_milkyway -overwrite -output post_synth
 # SDC/constraints
 write_sdc work/constraints.sdc
 write_timing_contex -format icc2 -output work/constraints
+
+# saif
+write_saif -rtl -output work/out.saif
+write_saif -rtl -propagated -output work/out_prop.saif
 
 # Output a summary of message types
 redirect -variable message_info { print_message_info }
