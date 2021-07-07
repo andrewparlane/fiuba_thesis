@@ -2,7 +2,7 @@
 Report : library
 Library: d_cells_hd
 Version: P-2019.03
-Date   : Fri Apr 30 17:37:45 2021
+Date   : Wed Jul  7 15:59:11 2021
 ****************************************
 
 Full name: /home/aparlane/fiuba_thesis/hdl/synth_pnr/lib_prep/work/d_cells_hd.ndm:d_cells_hd
@@ -6480,11 +6480,13 @@ hd               0.56u        4.48u              Y                  true
 hdll             0.56u        4.48u              Y                  false
 hdmt             0.56u        4.48u              --                 false
 hdmv             0.56u        4.48u              --                 false
+hdsvt            0.56u        4.48u              --                 false
 ji3v             0.56u        4.48u              --                 false
 jihd             0.56u        4.48u              --                 false
 jihdll           0.56u        4.48u              --                 false
 jihdmt           0.56u        4.48u              --                 false
 jihdmv           0.56u        4.48u              --                 false
+jihdsvt          0.56u        4.48u              --                 false
 jim3v            0.56u        4.48u              --                 false
 m3v              0.56u        4.48u              --                 false
 
@@ -6500,7 +6502,7 @@ METTPL            metal6           Vertical           5.6u          2.8u
 Source        File Name
 ------------------------------------------------------------------------------------------
 NDM           /home/aparlane/fiuba_thesis/hdl/synth_pnr/lib_prep/work/d_cells_hd.ndm
-TF            /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/techNDM/v8_0_1/xh018-synopsys-techNDM-v8_0_1/xh018_xx43_HD_MET4_METMID_METTHK.tf
+TF            /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_1/techNDM/v8_1_1/xh018-synopsys-techNDM-v8_1_1/xh018_xx43_HD_MET4_METMID_METTHK.tf
 
 Summary of Library Views
 --------------------------------------------------------------------------------

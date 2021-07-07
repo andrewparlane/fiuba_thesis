@@ -10,7 +10,7 @@ Current PVT Configuration:
   Temperatures   :  -40, 0, 25, 85, 125, 150, 175
 
 [36mCreating Technology only library(B[m
-Information: Loading technology file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/techNDM/v8_0_1/xh018-synopsys-techNDM-v8_0_1/xh018_xx43_HD_MET4_METMID_METTHK.tf' (FILE-007)
+Information: Loading technology file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_1/techNDM/v8_1_1/xh018-synopsys-techNDM-v8_1_1/xh018_xx43_HD_MET4_METMID_METTHK.tf' (FILE-007)
 ... created workspace tech_only_ws
 Writing tech-only library...
 ... wrote work/tech_only.ndm
@@ -18,14 +18,14 @@ Writing tech-only library...
 
 [36mCreating D_CELLS_HD CLIB(B[m
 [36mCreating workspace(B[m
-Information: Loading technology file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/techNDM/v8_0_1/xh018-synopsys-techNDM-v8_0_1/xh018_xx43_HD_MET4_METMID_METTHK.tf' (FILE-007)
+Information: Loading technology file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_1/techNDM/v8_1_1/xh018-synopsys-techNDM-v8_1_1/xh018_xx43_HD_MET4_METMID_METTHK.tf' (FILE-007)
 ... created workspace d_cells_hd_ws
 [36mReading GDS(B[m
-read_gds -library d_cells_hd /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/gds/xh018_D_CELLS_HD.gds -layer_map /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/techNDM/v8_0_1/xh018-synopsys-techNDM-v8_0_1/xh018_in.map -layer_map_format icc_default
+read_gds -library d_cells_hd /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/gds/xh018_D_CELLS_HD.gds -layer_map /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_1/techNDM/v8_1_1/xh018-synopsys-techNDM-v8_1_1/xh018_in.map -layer_map_format icc_default
 Running read_gds
         Command Options:
                 Library Name                            d_cells_hd
-                Layer Map                               /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/techNDM/v8_0_1/xh018-synopsys-techNDM-v8_0_1/xh018_in.map
+                Layer Map                               /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_1/techNDM/v8_1_1/xh018-synopsys-techNDM-v8_1_1/xh018_in.map
                 Block Map                               None
                 Merge Action                            add
                 Keep Text Boxes                         No
@@ -3552,14 +3552,14 @@ Information: Library is effectively read-only. (LMUI-027)
 Closing library 'd_cells_hd'
 [36mCreating D_CELLS_HDLL CLIB(B[m
 [36mCreating workspace(B[m
-Information: Loading technology file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/techNDM/v8_0_1/xh018-synopsys-techNDM-v8_0_1/xh018_xx43_HD_MET4_METMID_METTHK.tf' (FILE-007)
+Information: Loading technology file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_1/techNDM/v8_1_1/xh018-synopsys-techNDM-v8_1_1/xh018_xx43_HD_MET4_METMID_METTHK.tf' (FILE-007)
 ... created workspace d_cells_hdll_ws
 [36mReading GDS(B[m
-read_gds -library d_cells_hdll /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/gds/xh018_D_CELLS_HDLL.gds -layer_map /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/techNDM/v8_0_1/xh018-synopsys-techNDM-v8_0_1/xh018_in.map -layer_map_format icc_default
+read_gds -library d_cells_hdll /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/gds/xh018_D_CELLS_HDLL.gds -layer_map /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_1/techNDM/v8_1_1/xh018-synopsys-techNDM-v8_1_1/xh018_in.map -layer_map_format icc_default
 Running read_gds
         Command Options:
                 Library Name                            d_cells_hdll
-                Layer Map                               /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/techNDM/v8_0_1/xh018-synopsys-techNDM-v8_0_1/xh018_in.map
+                Layer Map                               /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_1/techNDM/v8_1_1/xh018-synopsys-techNDM-v8_1_1/xh018_in.map
                 Block Map                               None
                 Merge Action                            add
                 Keep Text Boxes                         No
@@ -7283,7 +7283,7 @@ NDMUI-389       Warning             0              2            0
 
 Diagnostics summary: 36 warnings, 80 informationals
 (B[m
-Maximum memory usage for this session: 1397.37 MB
+Maximum memory usage for this session: 1397.11 MB
 CPU usage for this session:     54 seconds (  0.01 hours)
 Elapsed time for this session:     56 seconds (  0.02 hours)
 Thank you for using IC Compiler II Library Manager.
