@@ -400,13 +400,16 @@ ungroup -flatten -all -all_instances
 # Check constraints
 # =============================================================================
 
-report_timing_requirements
-report_timing_requirements -nosplit > logs/timing_requirements.log
+colourise_cmd "report_timing_requirements"
 colourise_cmd "check_timing"
 # This is the same as report_constraint -verbose, but without the min path delay (hold analysis)
 # Hold analysis doesn't make sense to do during synthesis
 colourise_cmd "report_constraint -verbose -max_delay -max_transition -max_fanout -max_capacitance -max_area"
-report_constraint -verbose -max_delay -max_transition -max_fanout -max_capacitance -max_area -all_violators > logs/constraint_violations.log
+
+report_timing_requirements -nosplit > logs/timing_requirements.log
+report_constraint -verbose -max_delay -max_transition \
+                  -max_fanout -max_capacitance -max_area \
+                  -all_violators > logs/constraint_violations.log
 
 # =============================================================================
 # Operating conditions
