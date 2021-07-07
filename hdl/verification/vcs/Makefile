@@ -190,8 +190,8 @@ SRCS = 	$(ISO_IEC_14443A_SYNTH_SRCS) 	\
 # This is used to generate the rules
 TBS	= 	signal_control_tb				\
 		adapter_tb						\
-		radiation_sensor_digital_top_tb
-
+		radiation_sensor_digital_top_tb	\
+		generate_top_saif_tb
 
 # This is for TBs that need to do something custom, it's only used for list_tbs and all_tbs
 CUSTOM_TBS	=
@@ -298,8 +298,9 @@ define ELABORATE
 endef
 
 # The RUN_SIM macro runs the simv binary produced by vcs.
-# Takes one argument:
+# Takes two argument:
 #		1) The directory containing the simv to run
+#		2) Additional arguments for simv
 # Has different behaviour depending on if we set INTERACTIVE=1 or not
 # In interactive mode we don't colourise the output.
 # In batch mode we run the do.tcl script
@@ -308,14 +309,14 @@ ifndef INTERACTIVE
 define RUN_SIM
 	$(eval DIR_NAME = $(call strip, $(1)))
 	echo -e "$(COLOUR_BLUE)Simulating $(DIR_NAME)$(COLOUR_NONE)\n"
-	$(call COLOURISE, ./$(DIR_NAME)/simv $(SIMV_ARGS) -do do.tcl)
+	$(call COLOURISE, ./$(DIR_NAME)/simv $(SIMV_ARGS) $(2) -do do.tcl)
 endef
 else
 # interactive mode
 define RUN_SIM
 	$(eval DIR_NAME = $(call strip, $(1)))
 	echo -e "$(COLOUR_BLUE)Simulating $(DIR_NAME)$(COLOUR_NONE)\n"
-	./$(DIR_NAME)/simv $(SIMV_ARGS)
+	./$(DIR_NAME)/simv $(SIMV_ARGS) $(2)
 endef
 endif
 
@@ -362,6 +363,13 @@ elaborate: $(patsubst %,%_sim/simv,$(TBS))
 # Rule to always force making a target
 .FORCE:
 .PHONY: .FORCE
+
+# TBs that override command line parameters
+
+# generate_top_saif_tb needs to pass the -lca argument to the simv
+generate_top_saif_tb: generate_top_saif_tb_sim/simv
+	@$(call RUN_SIM, $@_sim, "-lca")
+	@urg -dir $@_sim/simv.vdb -report $@_sim/report
 
 # output TBS each on it's own line
 list_tbs:
