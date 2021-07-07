@@ -1,61 +1,74 @@
  
 ****************************************
 Report : qor
-Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
+Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Wed Nov 25 11:53:21 2020
+Date   : Tue Jul 13 15:21:10 2021
 ****************************************
 
 
   Timing Path Group 'clk'
   -----------------------------------
   Levels of Logic:               0.00
-  Critical Path Length:          4.25
+  Critical Path Length:          4.24
   Critical Path Slack:          17.88
   Critical Path Clk Period:     73.75
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
-  Worst Hold Violation:         -0.29
-  Total Hold Violation:        -31.83
-  No. of Hold Violations:      275.00
+  Worst Hold Violation:         -0.25
+  Total Hold Violation:        -34.14
+  No. of Hold Violations:      290.00
+  -----------------------------------
+
+  Timing Path Group 'default'
+  -----------------------------------
+  Levels of Logic:               0.00
+  Critical Path Length:          3.19
+  Critical Path Slack:           1.81
+  Critical Path Clk Period:       n/a
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
   -----------------------------------
 
 
   Cell Count
   -----------------------------------
-  Hierarchical Cell Count:         43
-  Hierarchical Port Count:        172
-  Leaf Cell Count:               2147
-  Buf/Inv Cell Count:             473
-  Buf Cell Count:                  17
-  Inv Cell Count:                 456
+  Hierarchical Cell Count:         44
+  Hierarchical Port Count:        176
+  Leaf Cell Count:               2224
+  Buf/Inv Cell Count:             480
+  Buf Cell Count:                  15
+  Inv Cell Count:                 465
   CT Buf/Inv Cell Count:            0
-  Combinational Cell Count:      1512
-  Sequential Cell Count:          635
+  Combinational Cell Count:      1575
+  Sequential Cell Count:          649
   Macro Count:                      0
   -----------------------------------
 
 
   Area
   -----------------------------------
-  Combinational Area:    18297.296029
-  Noncombinational Area: 33737.245255
-  Buf/Inv Area:           3602.636843
-  Total Buffer Area:           170.60
-  Total Inverter Area:        3432.04
+  Combinational Area:    19205.181645
+  Noncombinational Area: 34432.791660
+  Buf/Inv Area:           3650.304043
+  Total Buffer Area:           150.53
+  Total Inverter Area:        3499.78
   Macro/Black Box Area:      0.000000
   Net Area:                  0.000000
-  Net XLength        :       27306.85
-  Net YLength        :       33968.82
+  Net XLength        :       28223.69
+  Net YLength        :       31736.27
   -----------------------------------
-  Cell Area:             52034.541284
-  Design Area:           52034.541284
-  Net Length        :        61275.67
+  Cell Area:             53637.973305
+  Design Area:           53637.973305
+  Net Length        :        59959.96
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:          2172
+  Total Number of Nets:          2261
   Nets With Violations:             0
   Max Trans Violations:             0
   Max Cap Violations:               0
@@ -68,17 +81,17 @@ Date   : Wed Nov 25 11:53:21 2020
   -----------------------------------------
   Resource Sharing:                    0.00
   Logic Optimization:                  0.00
-  Mapping Optimization:                8.74
+  Mapping Optimization:                8.60
   -----------------------------------------
-  Overall Compile Time:               28.09
-  Overall Compile Wall Clock Time:    29.25
+  Overall Compile Time:               26.04
+  Overall Compile Wall Clock Time:    26.88
 
   --------------------------------------------------------------------
 
   Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
 
 
-  Design (Hold)  WNS: 0.29  TNS: 31.83  Number of Violating Paths: 275
+  Design (Hold)  WNS: 0.25  TNS: 34.14  Number of Violating Paths: 290
 
   --------------------------------------------------------------------
 

@@ -1,14 +1,13 @@
 Information: Propagating switching activity (high effort zero delay simulation). (PWR-6)
-Warning: Design has unannotated primary inputs. (PWR-414)
 Warning: Design has unannotated sequential cell outputs. (PWR-415)
  
 ****************************************
 Report : power
         -analysis_effort high
         -verbose
-Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
+Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Wed Nov 25 11:53:21 2020
+Date   : Tue Jul 13 15:21:10 2021
 ****************************************
 
 
@@ -38,7 +37,7 @@ Power Breakdown
                              Internal    Switching   Power (mW)       Leakage
 Cell                         Power (mW)  Power (mW)  (% Cell/Tot)     Power (pW)
 --------------------------------------------------------------------------------
-Netlist Power                   0.1684      0.0198   1.882e-01 (89%)  3.984e+05
+Netlist Power                   0.1896      0.0268   2.165e-01 (88%)  4.316e+05
 Estimated Clock Tree Power   N/A         N/A          (N/A)           N/A
 --------------------------------------------------------------------------------
                  Internal         Switching           Leakage            Total                         Cell
@@ -47,10 +46,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
-clock_network  2.7148e-02        1.3077e-02        2.0677e+04        4.0246e-02  (  21.34%)            43
-register           0.1396        9.2477e-04        2.5084e+05            0.1408  (  74.63%)            592
+clock_network  2.5593e-02        1.8112e-02        2.1039e+04        4.3726e-02  (  20.16%)            44
+register           0.1595        3.5869e-03        2.7726e+05            0.1634  (  75.32%)            605
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
-combinational  1.6303e-03        5.8443e-03        1.2691e+05        7.6015e-03  (   4.03%)            1510
+combinational  4.5246e-03        5.1362e-03        1.3328e+05        9.7941e-03  (   4.52%)            1573
 ---------------------------------------------------------------------------------------------------------
-Total              0.1684 mW     1.9846e-02 mW     3.9842e+05 pW         0.1886 mW
+Total              0.1896 mW     2.6835e-02 mW     4.3159e+05 pW         0.2169 mW
 1

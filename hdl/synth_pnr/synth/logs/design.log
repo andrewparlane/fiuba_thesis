@@ -1,9 +1,9 @@
  
 ****************************************
 Report : design
-Design : radiation_sensor_digital_top_FDT_TIMING_ADJUST0_SENSOR_VERSION1_ADC_VERSION1
+Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Wed Nov 25 11:53:21 2020
+Date   : Tue Jul 13 15:21:10 2021
 ****************************************
 
 Design allows ideal nets on clock nets.
@@ -15,7 +15,7 @@ Library(s) Used:
 
 Local Link Library:
 
-    {/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db, /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db, /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/IO_CELLS_C1V8/v1_1/liberty_LPMOS/v1_1_0/PVT_1_80V_1_80V_range/IO_CELLS_C1V8_LPMOS_slow_1_62V_1_62V_125C.db}
+    {/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db, /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db}
 
 Flip-Flop Types:
 
@@ -71,7 +71,5 @@ Required Licenses:
 
 Design Parameters:
 
-    FDT_TIMING_ADJUST => 0
-    SENSOR_VERSION => 1
-    ADC_VERSION => 1
+    None specified.
 1
