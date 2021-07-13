@@ -119,6 +119,10 @@ save_lib -as work/dlib
 close_lib -purge -force -all
 open_block work/dlib:design/dp_out
 
+# Initialise the name mapping database for SAIF files
+# This has to be done before reading the source files
+saif_map -start
+
 # and create a new block
 create_new_block "pnr_design_init"
 
@@ -182,6 +186,9 @@ set_app_options -name place.coarse.continue_on_missing_scandef -value true
 
 # Remove any ideal networks now
 remove_ideal_network -all
+
+# Read the saif output from the synthesis script
+read_saif ../synth/work/out_prop.saif -scenarios [all_scenarios] -report
 
 # Placement
 # ---------------------------
@@ -455,6 +462,10 @@ check_pg_connectivity -check_std_cell_pins all
 check_pg_drc -ignore_clock_nets false -check_metal_on_track true -load_routing_of_all_nets
 check_lvs -check_child_cells true -check_zero_spacing_blockages true -report_floating_pins true -open_reporting detailed
 report_timing
+report_power
+
+report_timing > logs/report_timing.log
+report_power > logs/report_power.log
 
 # =============================================================================
 # Write Data
