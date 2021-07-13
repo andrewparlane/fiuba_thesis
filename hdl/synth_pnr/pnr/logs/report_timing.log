@@ -1,0 +1,38 @@
+Warning: Scenario virtual_scenario_bc is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : radiation_sensor_digital_top
+Version: P-2019.03
+Date   : Tue Jul 13 15:35:31 2021
+****************************************
+
+  Startpoint: clk_r_REG28_S14 (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: lm_out (output port)
+  Mode: virtual_scenario
+  Corner: virtual_scenario
+  Scenario: virtual_scenario
+  Path Group: default
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clk_r_REG28_S14/C (DFRRQHDX2)                    0.00      0.00 r
+  clk_r_REG28_S14/Q (DFRRQHDX2)                    2.34      2.34 r
+  lm_out (out)                                     0.01      2.35 r
+  data arrival time                                          2.35
+
+  max_delay to non-endpoint                        5.00      5.00
+  data required time                                         5.00
+  ------------------------------------------------------------------------
+  data required time                                         5.00
+  data arrival time                                         -2.35
+  ------------------------------------------------------------------------
+  slack (MET)                                                2.65
+
+
+1
