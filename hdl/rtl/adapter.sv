@@ -51,6 +51,9 @@ module adapter
     output logic            adc_enable,
     output logic            adc_read,
     input                   adc_conversion_complete,
+    // adc_value should only be read when adc_conversion_complete asserts
+    // it is treated as asynchronous, but I require it to be stable when adc_conversion_complete
+    // asserts until the start of a new read or the adc is disabled.
     input           [15:0]  adc_value,
 
     // Version info, passed from the relevant blocks

@@ -47,6 +47,9 @@ module radiation_sensor_digital_top
     // The value used is the one present when we start transmitting the CID field of the PCB.
     // So the AFE should prepare this value before the start of the response.
     //
+    // I treat this as asynchronous but don't synchronise it. The analogue block should ensure
+    // this is stable during the response.
+    //
     // ISO/IEC 14443-4:2016 section 7.4 states:
     //      2'b00: PICC does not support the power level indiction
     //      2'b01: Insufficient power for full functionality
@@ -84,10 +87,14 @@ module radiation_sensor_digital_top
     output logic                sens_enable,
     output logic                sens_read,
 
+    // All these are asynchronous (except adc_version which is constant). adc_conversion_complete_async
+    // is synchronised, and adc_value is not read until that asserts. The ADC should ensure
+    // that adc_value is stable from when adc_conversion_complete_async asserts until a new read
+    // is started or the adc is disabled.
     input           [3:0]       adc_version,            // the version of the ADC, must be constant
     output logic                adc_enable,
     output logic                adc_read,
-    input                       adc_conversion_complete,
+    input                       adc_conversion_complete_async,
     input           [15:0]      adc_value
 );
 
@@ -129,18 +136,14 @@ module radiation_sensor_digital_top
         .pause_n_synchronised   (pause_n_synchronised)
     );
 
-    // ========================================================================
-    // Register synchronous inputs (for timing purposes)
-    // ========================================================================
-
-    logic [1:0]     power_reg;
-    logic           adc_conversion_complete_reg;
-    logic [15:0]    adc_value_reg;
-    always @(posedge clk) begin
-        power_reg                   <= power;
-        adc_value_reg               <= adc_value;
-        adc_conversion_complete_reg <= adc_conversion_complete;
-    end
+    logic adc_conversion_complete_sync;
+    synchroniser adc_sync
+    (
+        .clk    (clk),
+        .rst_n  (rst_n),
+        .d      (adc_conversion_complete_async),
+        .q      (adc_conversion_complete_sync)
+    );
 
     // ========================================================================
     // The ISO/IEC 14443A IP core
@@ -185,7 +188,7 @@ module radiation_sensor_digital_top
 
         .uid_variable           (uid_variable),
 
-        .power                  (power_reg),
+        .power                  (power),
         .pause_n_synchronised   (pause_n_synchronised),
 
         .lm_out                 (lm_out),
@@ -216,8 +219,8 @@ module radiation_sensor_digital_top
         .sens_read                              (sens_read),
         .adc_enable                             (adc_enable),
         .adc_read                               (adc_read),
-        .adc_conversion_complete                (adc_conversion_complete_reg),
-        .adc_value                              (adc_value_reg),
+        .adc_conversion_complete                (adc_conversion_complete_sync),
+        .adc_value                              (adc_value),
 
         .const_iso_iec_14443a_digital_version   (4'(iso14443a_inst.ISO_IEC_14443A_VERSION)),
         .const_iso_iec_14443a_AFE_version       (afe_version),

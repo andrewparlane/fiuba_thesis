@@ -60,6 +60,9 @@ module signal_control
     // Interface with the radiation sensor / ADC
     output protocol_pkg::Signals    signals,
     input                           adc_conversion_complete,
+    // adc_value should only be read when adc_conversion_complete asserts
+    // it is treated as asynchronous, but I require it to be stable when adc_conversion_complete
+    // asserts until the start of a new read or the adc is disabled.
     input           [15:0]          adc_value,
 
     // status
