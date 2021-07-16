@@ -6,7 +6,7 @@ Report : timing
         -max_paths 10
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Tue Jul 13 15:21:09 2021
+Date   : Fri Jul 16 17:47:56 2021
 ****************************************
 
  * Some/all delay information is back-annotated.
@@ -14,9 +14,10 @@ Date   : Tue Jul 13 15:21:09 2021
 Operating Conditions: slow_1_62V_125C   Library: D_CELLS_HD_LPMOS_slow_1_62V_125C
 Wire Load Model Mode: Inactive.
 
-  Startpoint: clk_r_REG145_S17
+  Startpoint: clk_r_REG162_S16
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: adc_enable (output port clocked by clk)
+  Endpoint: clk_r_REG183_S16
+            (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
 
@@ -24,53 +25,50 @@ Wire Load Model Mode: Inactive.
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  clk_r_REG145_S17/C (DFRRQHDLLX1)         0.00       0.00 r
-  clk_r_REG145_S17/Q (DFRRQHDLLX1)         4.24       4.24 r
-  adc_enable (out)                         0.00 *     4.24 r
-  data arrival time                                   4.24
+  clk_r_REG162_S16/C (DFRRQHDLLX0)         0.00       0.00 r
+  clk_r_REG162_S16/Q (DFRRQHDLLX0)         1.50       1.50 f
+  U1967/Q (INHDLLX1)                       0.70 *     2.20 r
+  U1968/Q (ON21HDLLX1)                     0.28 *     2.48 f
+  U1969/Q (ON22HDLLX0)                     0.92 *     3.40 r
+  U1972/Q (NA22HDLLX1)                     0.50 *     3.90 r
+  U1973/Q (ON211HDLLX0)                    0.48 *     4.38 f
+  U1974/Q (AN22HDLLX1)                     0.63 *     5.01 r
+  U1976/CO (CAGHDLLX0)                     0.65 *     5.67 r
+  U1977/Q (AN211HDLLX1)                    0.16 *     5.82 f
+  U1978/Q (AN321HDLLX0)                    1.73 *     7.55 r
+  U1979/Q (AN211HDLLX1)                    0.33 *     7.88 f
+  U1986/Q (ON31HDLLX1)                     0.83 *     8.71 r
+  U1991/Q (AN22HDLLX1)                     0.46 *     9.18 f
+  U1993/Q (NA22HDLLX1)                     0.43 *     9.61 f
+  U1994/Q (ON211HDLLX0)                    0.54 *    10.15 r
+  U1997/Q (NA4HDLLX1)                      0.49 *    10.64 f
+  U1998/Q (ON31HDLLX1)                     1.06 *    11.70 r
+  U1999/Q (INHDLLX1)                       0.35 *    12.05 f
+  U2000/Q (AND2HDLLX0)                     0.77 *    12.82 f
+  U3107/Q (AN32HDLLX1)                     0.63 *    13.45 r
+  U3108/Q (NA4HDLLX1)                      1.84 *    15.29 f
+  U3162/Q (ON21HDLLX1)                     0.95 *    16.24 r
+  U3163/Q (ON21HDLLX1)                     0.33 *    16.58 f
+  U3164/Q (ON31HDLLX1)                     0.32 *    16.89 r
+  clk_r_REG183_S16/D (DFRRQHDLLX0)         0.00 *    16.89 r
+  data arrival time                                  16.89
 
   clock clk (rise edge)                   73.75      73.75
   clock network delay (ideal)              0.00      73.75
   clock uncertainty                      -14.75      59.00
-  output external delay                  -36.87      22.12
-  data required time                                 22.12
+  clk_r_REG183_S16/C (DFRRQHDLLX0)         0.00      59.00 r
+  library setup time                      -0.43      58.57
+  data required time                                 58.57
   -----------------------------------------------------------
-  data required time                                 22.12
-  data arrival time                                  -4.24
+  data required time                                 58.57
+  data arrival time                                 -16.89
   -----------------------------------------------------------
-  slack (MET)                                        17.88
+  slack (MET)                                        41.67
 
 
-  Startpoint: clk_r_REG152_S17
+  Startpoint: clk_r_REG162_S16
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: adc_read (output port clocked by clk)
-  Path Group: clk
-  Path Type: max
-
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock clk (rise edge)                    0.00       0.00
-  clock network delay (ideal)              0.00       0.00
-  clk_r_REG152_S17/C (DFRRQHDLLX1)         0.00       0.00 r
-  clk_r_REG152_S17/Q (DFRRQHDLLX1)         4.20       4.20 r
-  adc_read (out)                           0.00 *     4.20 r
-  data arrival time                                   4.20
-
-  clock clk (rise edge)                   73.75      73.75
-  clock network delay (ideal)              0.00      73.75
-  clock uncertainty                      -14.75      59.00
-  output external delay                  -36.87      22.12
-  data required time                                 22.12
-  -----------------------------------------------------------
-  data required time                                 22.12
-  data arrival time                                  -4.20
-  -----------------------------------------------------------
-  slack (MET)                                        17.92
-
-
-  Startpoint: adc_value[3]
-              (input port clocked by clk)
-  Endpoint: clk_r_REG287_S1
+  Endpoint: clk_r_REG175_S16
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -79,27 +77,50 @@ Wire Load Model Mode: Inactive.
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  input external delay                    36.87      36.87 f
-  adc_value[3] (in)                        0.03      36.90 f
-  clk_r_REG287_S1/D (DFRQHDLLX0)           0.00 *    36.90 f
-  data arrival time                                  36.90
+  clk_r_REG162_S16/C (DFRRQHDLLX0)         0.00       0.00 r
+  clk_r_REG162_S16/Q (DFRRQHDLLX0)         1.50       1.50 f
+  U1967/Q (INHDLLX1)                       0.70 *     2.20 r
+  U1968/Q (ON21HDLLX1)                     0.28 *     2.48 f
+  U1969/Q (ON22HDLLX0)                     0.92 *     3.40 r
+  U1972/Q (NA22HDLLX1)                     0.50 *     3.90 r
+  U1973/Q (ON211HDLLX0)                    0.48 *     4.38 f
+  U1974/Q (AN22HDLLX1)                     0.63 *     5.01 r
+  U1976/CO (CAGHDLLX0)                     0.65 *     5.67 r
+  U1977/Q (AN211HDLLX1)                    0.16 *     5.82 f
+  U1978/Q (AN321HDLLX0)                    1.73 *     7.55 r
+  U1979/Q (AN211HDLLX1)                    0.33 *     7.88 f
+  U1986/Q (ON31HDLLX1)                     0.83 *     8.71 r
+  U1991/Q (AN22HDLLX1)                     0.46 *     9.18 f
+  U1993/Q (NA22HDLLX1)                     0.43 *     9.61 f
+  U1994/Q (ON211HDLLX0)                    0.54 *    10.15 r
+  U1997/Q (NA4HDLLX1)                      0.49 *    10.64 f
+  U1998/Q (ON31HDLLX1)                     1.06 *    11.70 r
+  U1999/Q (INHDLLX1)                       0.35 *    12.05 f
+  U2000/Q (AND2HDLLX0)                     0.77 *    12.82 f
+  U3107/Q (AN32HDLLX1)                     0.63 *    13.45 r
+  U3108/Q (NA4HDLLX1)                      1.84 *    15.29 f
+  U3139/Q (ON21HDLLX1)                     0.97 *    16.26 r
+  U3140/Q (ON21HDLLX1)                     0.34 *    16.60 f
+  U3141/Q (ON31HDLLX1)                     0.29 *    16.89 r
+  clk_r_REG175_S16/D (DFRRQHDLLX0)         0.00 *    16.89 r
+  data arrival time                                  16.89
 
   clock clk (rise edge)                   73.75      73.75
   clock network delay (ideal)              0.00      73.75
   clock uncertainty                      -14.75      59.00
-  clk_r_REG287_S1/C (DFRQHDLLX0)           0.00      59.00 r
-  library setup time                      -0.62      58.38
-  data required time                                 58.38
+  clk_r_REG175_S16/C (DFRRQHDLLX0)         0.00      59.00 r
+  library setup time                      -0.43      58.57
+  data required time                                 58.57
   -----------------------------------------------------------
-  data required time                                 58.38
-  data arrival time                                 -36.90
+  data required time                                 58.57
+  data arrival time                                 -16.89
   -----------------------------------------------------------
-  slack (MET)                                        21.47
+  slack (MET)                                        41.68
 
 
-  Startpoint: adc_conversion_complete
-              (input port clocked by clk)
-  Endpoint: clk_r_REG250_S1
+  Startpoint: clk_r_REG162_S16
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: clk_r_REG177_S16
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -108,27 +129,50 @@ Wire Load Model Mode: Inactive.
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  input external delay                    36.87      36.87 f
-  adc_conversion_complete (in)             0.03      36.90 f
-  clk_r_REG250_S1/D (DFRQHDLLX0)           0.00 *    36.90 f
-  data arrival time                                  36.90
+  clk_r_REG162_S16/C (DFRRQHDLLX0)         0.00       0.00 r
+  clk_r_REG162_S16/Q (DFRRQHDLLX0)         1.50       1.50 f
+  U1967/Q (INHDLLX1)                       0.70 *     2.20 r
+  U1968/Q (ON21HDLLX1)                     0.28 *     2.48 f
+  U1969/Q (ON22HDLLX0)                     0.92 *     3.40 r
+  U1972/Q (NA22HDLLX1)                     0.50 *     3.90 r
+  U1973/Q (ON211HDLLX0)                    0.48 *     4.38 f
+  U1974/Q (AN22HDLLX1)                     0.63 *     5.01 r
+  U1976/CO (CAGHDLLX0)                     0.65 *     5.67 r
+  U1977/Q (AN211HDLLX1)                    0.16 *     5.82 f
+  U1978/Q (AN321HDLLX0)                    1.73 *     7.55 r
+  U1979/Q (AN211HDLLX1)                    0.33 *     7.88 f
+  U1986/Q (ON31HDLLX1)                     0.83 *     8.71 r
+  U1991/Q (AN22HDLLX1)                     0.46 *     9.18 f
+  U1993/Q (NA22HDLLX1)                     0.43 *     9.61 f
+  U1994/Q (ON211HDLLX0)                    0.54 *    10.15 r
+  U1997/Q (NA4HDLLX1)                      0.49 *    10.64 f
+  U1998/Q (ON31HDLLX1)                     1.06 *    11.70 r
+  U1999/Q (INHDLLX1)                       0.35 *    12.05 f
+  U2000/Q (AND2HDLLX0)                     0.77 *    12.82 f
+  U3107/Q (AN32HDLLX1)                     0.63 *    13.45 r
+  U3108/Q (NA4HDLLX1)                      1.84 *    15.29 f
+  U3147/Q (ON21HDLLX1)                     0.97 *    16.26 r
+  U3148/Q (ON21HDLLX1)                     0.33 *    16.59 f
+  U3149/Q (ON31HDLLX1)                     0.30 *    16.89 r
+  clk_r_REG177_S16/D (DFRRQHDLLX0)         0.00 *    16.89 r
+  data arrival time                                  16.89
 
   clock clk (rise edge)                   73.75      73.75
   clock network delay (ideal)              0.00      73.75
   clock uncertainty                      -14.75      59.00
-  clk_r_REG250_S1/C (DFRQHDLLX0)           0.00      59.00 r
-  library setup time                      -0.62      58.38
-  data required time                                 58.38
+  clk_r_REG177_S16/C (DFRRQHDLLX0)         0.00      59.00 r
+  library setup time                      -0.42      58.57
+  data required time                                 58.57
   -----------------------------------------------------------
-  data required time                                 58.38
-  data arrival time                                 -36.90
+  data required time                                 58.57
+  data arrival time                                 -16.89
   -----------------------------------------------------------
-  slack (MET)                                        21.48
+  slack (MET)                                        41.68
 
 
-  Startpoint: adc_value[9]
-              (input port clocked by clk)
-  Endpoint: clk_r_REG269_S1
+  Startpoint: clk_r_REG162_S16
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: clk_r_REG185_S16
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -137,27 +181,50 @@ Wire Load Model Mode: Inactive.
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  input external delay                    36.87      36.87 f
-  adc_value[9] (in)                        0.03      36.90 f
-  clk_r_REG269_S1/D (DFRQHDLLX0)           0.00 *    36.90 f
-  data arrival time                                  36.90
+  clk_r_REG162_S16/C (DFRRQHDLLX0)         0.00       0.00 r
+  clk_r_REG162_S16/Q (DFRRQHDLLX0)         1.50       1.50 f
+  U1967/Q (INHDLLX1)                       0.70 *     2.20 r
+  U1968/Q (ON21HDLLX1)                     0.28 *     2.48 f
+  U1969/Q (ON22HDLLX0)                     0.92 *     3.40 r
+  U1972/Q (NA22HDLLX1)                     0.50 *     3.90 r
+  U1973/Q (ON211HDLLX0)                    0.48 *     4.38 f
+  U1974/Q (AN22HDLLX1)                     0.63 *     5.01 r
+  U1976/CO (CAGHDLLX0)                     0.65 *     5.67 r
+  U1977/Q (AN211HDLLX1)                    0.16 *     5.82 f
+  U1978/Q (AN321HDLLX0)                    1.73 *     7.55 r
+  U1979/Q (AN211HDLLX1)                    0.33 *     7.88 f
+  U1986/Q (ON31HDLLX1)                     0.83 *     8.71 r
+  U1991/Q (AN22HDLLX1)                     0.46 *     9.18 f
+  U1993/Q (NA22HDLLX1)                     0.43 *     9.61 f
+  U1994/Q (ON211HDLLX0)                    0.54 *    10.15 r
+  U1997/Q (NA4HDLLX1)                      0.49 *    10.64 f
+  U1998/Q (ON31HDLLX1)                     1.06 *    11.70 r
+  U1999/Q (INHDLLX1)                       0.35 *    12.05 f
+  U2000/Q (AND2HDLLX0)                     0.77 *    12.82 f
+  U3107/Q (AN32HDLLX1)                     0.63 *    13.45 r
+  U3108/Q (NA4HDLLX1)                      1.84 *    15.29 f
+  U3113/Q (INHDLLX1)                       0.76 *    16.05 r
+  U3166/Q (AN21HDLLX1)                     0.27 *    16.32 f
+  U3169/Q (AN32HDLLX1)                     0.61 *    16.93 r
+  clk_r_REG185_S16/D (DFRRQHDLLX0)         0.00 *    16.93 r
+  data arrival time                                  16.93
 
   clock clk (rise edge)                   73.75      73.75
   clock network delay (ideal)              0.00      73.75
   clock uncertainty                      -14.75      59.00
-  clk_r_REG269_S1/C (DFRQHDLLX0)           0.00      59.00 r
-  library setup time                      -0.62      58.38
-  data required time                                 58.38
+  clk_r_REG185_S16/C (DFRRQHDLLX0)         0.00      59.00 r
+  library setup time                      -0.38      58.62
+  data required time                                 58.62
   -----------------------------------------------------------
-  data required time                                 58.38
-  data arrival time                                 -36.90
+  data required time                                 58.62
+  data arrival time                                 -16.93
   -----------------------------------------------------------
-  slack (MET)                                        21.48
+  slack (MET)                                        41.69
 
 
-  Startpoint: adc_value[11]
-              (input port clocked by clk)
-  Endpoint: clk_r_REG263_S1
+  Startpoint: clk_r_REG162_S16
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: clk_r_REG165_S16
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -166,27 +233,50 @@ Wire Load Model Mode: Inactive.
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  input external delay                    36.87      36.87 f
-  adc_value[11] (in)                       0.03      36.90 f
-  clk_r_REG263_S1/D (DFRQHDLLX0)           0.00 *    36.90 f
-  data arrival time                                  36.90
+  clk_r_REG162_S16/C (DFRRQHDLLX0)         0.00       0.00 r
+  clk_r_REG162_S16/Q (DFRRQHDLLX0)         1.50       1.50 f
+  U1967/Q (INHDLLX1)                       0.70 *     2.20 r
+  U1968/Q (ON21HDLLX1)                     0.28 *     2.48 f
+  U1969/Q (ON22HDLLX0)                     0.92 *     3.40 r
+  U1972/Q (NA22HDLLX1)                     0.50 *     3.90 r
+  U1973/Q (ON211HDLLX0)                    0.48 *     4.38 f
+  U1974/Q (AN22HDLLX1)                     0.63 *     5.01 r
+  U1976/CO (CAGHDLLX0)                     0.65 *     5.67 r
+  U1977/Q (AN211HDLLX1)                    0.16 *     5.82 f
+  U1978/Q (AN321HDLLX0)                    1.73 *     7.55 r
+  U1979/Q (AN211HDLLX1)                    0.33 *     7.88 f
+  U1986/Q (ON31HDLLX1)                     0.83 *     8.71 r
+  U1991/Q (AN22HDLLX1)                     0.46 *     9.18 f
+  U1993/Q (NA22HDLLX1)                     0.43 *     9.61 f
+  U1994/Q (ON211HDLLX0)                    0.54 *    10.15 r
+  U1997/Q (NA4HDLLX1)                      0.49 *    10.64 f
+  U1998/Q (ON31HDLLX1)                     1.06 *    11.70 r
+  U1999/Q (INHDLLX1)                       0.35 *    12.05 f
+  U2000/Q (AND2HDLLX0)                     0.77 *    12.82 f
+  U3107/Q (AN32HDLLX1)                     0.63 *    13.45 r
+  U3108/Q (NA4HDLLX1)                      1.84 *    15.29 f
+  U3119/Q (ON21HDLLX1)                     0.95 *    16.24 r
+  U3120/Q (ON21HDLLX1)                     0.33 *    16.58 f
+  U3121/Q (ON31HDLLX1)                     0.31 *    16.88 r
+  clk_r_REG165_S16/D (DFRRQHDLLX0)         0.00 *    16.88 r
+  data arrival time                                  16.88
 
   clock clk (rise edge)                   73.75      73.75
   clock network delay (ideal)              0.00      73.75
   clock uncertainty                      -14.75      59.00
-  clk_r_REG263_S1/C (DFRQHDLLX0)           0.00      59.00 r
-  library setup time                      -0.62      58.38
-  data required time                                 58.38
+  clk_r_REG165_S16/C (DFRRQHDLLX0)         0.00      59.00 r
+  library setup time                      -0.42      58.57
+  data required time                                 58.57
   -----------------------------------------------------------
-  data required time                                 58.38
-  data arrival time                                 -36.90
+  data required time                                 58.57
+  data arrival time                                 -16.88
   -----------------------------------------------------------
-  slack (MET)                                        21.48
+  slack (MET)                                        41.69
 
 
-  Startpoint: adc_value[4]
-              (input port clocked by clk)
-  Endpoint: clk_r_REG284_S1
+  Startpoint: clk_r_REG162_S16
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: clk_r_REG169_S16
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -195,27 +285,50 @@ Wire Load Model Mode: Inactive.
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  input external delay                    36.87      36.87 f
-  adc_value[4] (in)                        0.03      36.90 f
-  clk_r_REG284_S1/D (DFRQHDLLX0)           0.00 *    36.90 f
-  data arrival time                                  36.90
+  clk_r_REG162_S16/C (DFRRQHDLLX0)         0.00       0.00 r
+  clk_r_REG162_S16/Q (DFRRQHDLLX0)         1.50       1.50 f
+  U1967/Q (INHDLLX1)                       0.70 *     2.20 r
+  U1968/Q (ON21HDLLX1)                     0.28 *     2.48 f
+  U1969/Q (ON22HDLLX0)                     0.92 *     3.40 r
+  U1972/Q (NA22HDLLX1)                     0.50 *     3.90 r
+  U1973/Q (ON211HDLLX0)                    0.48 *     4.38 f
+  U1974/Q (AN22HDLLX1)                     0.63 *     5.01 r
+  U1976/CO (CAGHDLLX0)                     0.65 *     5.67 r
+  U1977/Q (AN211HDLLX1)                    0.16 *     5.82 f
+  U1978/Q (AN321HDLLX0)                    1.73 *     7.55 r
+  U1979/Q (AN211HDLLX1)                    0.33 *     7.88 f
+  U1986/Q (ON31HDLLX1)                     0.83 *     8.71 r
+  U1991/Q (AN22HDLLX1)                     0.46 *     9.18 f
+  U1993/Q (NA22HDLLX1)                     0.43 *     9.61 f
+  U1994/Q (ON211HDLLX0)                    0.54 *    10.15 r
+  U1997/Q (NA4HDLLX1)                      0.49 *    10.64 f
+  U1998/Q (ON31HDLLX1)                     1.06 *    11.70 r
+  U1999/Q (INHDLLX1)                       0.35 *    12.05 f
+  U2000/Q (AND2HDLLX0)                     0.77 *    12.82 f
+  U3107/Q (AN32HDLLX1)                     0.63 *    13.45 r
+  U3108/Q (NA4HDLLX1)                      1.84 *    15.29 f
+  U3124/Q (ON21HDLLX1)                     0.96 *    16.25 r
+  U3125/Q (ON21HDLLX1)                     0.33 *    16.58 f
+  U3126/Q (ON31HDLLX1)                     0.30 *    16.88 r
+  clk_r_REG169_S16/D (DFRRQHDLLX0)         0.00 *    16.88 r
+  data arrival time                                  16.88
 
   clock clk (rise edge)                   73.75      73.75
   clock network delay (ideal)              0.00      73.75
   clock uncertainty                      -14.75      59.00
-  clk_r_REG284_S1/C (DFRQHDLLX0)           0.00      59.00 r
-  library setup time                      -0.62      58.38
-  data required time                                 58.38
+  clk_r_REG169_S16/C (DFRRQHDLLX0)         0.00      59.00 r
+  library setup time                      -0.42      58.57
+  data required time                                 58.57
   -----------------------------------------------------------
-  data required time                                 58.38
-  data arrival time                                 -36.90
+  data required time                                 58.57
+  data arrival time                                 -16.88
   -----------------------------------------------------------
-  slack (MET)                                        21.48
+  slack (MET)                                        41.69
 
 
-  Startpoint: adc_value[6]
-              (input port clocked by clk)
-  Endpoint: clk_r_REG278_S1
+  Startpoint: clk_r_REG162_S16
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: clk_r_REG178_S16
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -224,27 +337,50 @@ Wire Load Model Mode: Inactive.
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  input external delay                    36.87      36.87 f
-  adc_value[6] (in)                        0.03      36.90 f
-  clk_r_REG278_S1/D (DFRQHDLLX0)           0.00 *    36.90 f
-  data arrival time                                  36.90
+  clk_r_REG162_S16/C (DFRRQHDLLX0)         0.00       0.00 r
+  clk_r_REG162_S16/Q (DFRRQHDLLX0)         1.50       1.50 f
+  U1967/Q (INHDLLX1)                       0.70 *     2.20 r
+  U1968/Q (ON21HDLLX1)                     0.28 *     2.48 f
+  U1969/Q (ON22HDLLX0)                     0.92 *     3.40 r
+  U1972/Q (NA22HDLLX1)                     0.50 *     3.90 r
+  U1973/Q (ON211HDLLX0)                    0.48 *     4.38 f
+  U1974/Q (AN22HDLLX1)                     0.63 *     5.01 r
+  U1976/CO (CAGHDLLX0)                     0.65 *     5.67 r
+  U1977/Q (AN211HDLLX1)                    0.16 *     5.82 f
+  U1978/Q (AN321HDLLX0)                    1.73 *     7.55 r
+  U1979/Q (AN211HDLLX1)                    0.33 *     7.88 f
+  U1986/Q (ON31HDLLX1)                     0.83 *     8.71 r
+  U1991/Q (AN22HDLLX1)                     0.46 *     9.18 f
+  U1993/Q (NA22HDLLX1)                     0.43 *     9.61 f
+  U1994/Q (ON211HDLLX0)                    0.54 *    10.15 r
+  U1997/Q (NA4HDLLX1)                      0.49 *    10.64 f
+  U1998/Q (ON31HDLLX1)                     1.06 *    11.70 r
+  U1999/Q (INHDLLX1)                       0.35 *    12.05 f
+  U2000/Q (AND2HDLLX0)                     0.77 *    12.82 f
+  U3107/Q (AN32HDLLX1)                     0.63 *    13.45 r
+  U3108/Q (NA4HDLLX1)                      1.84 *    15.29 f
+  U3152/Q (ON21HDLLX1)                     0.95 *    16.24 r
+  U3153/Q (ON21HDLLX1)                     0.34 *    16.58 f
+  U3154/Q (ON31HDLLX1)                     0.29 *    16.87 r
+  clk_r_REG178_S16/D (DFRRQHDLLX0)         0.00 *    16.87 r
+  data arrival time                                  16.87
 
   clock clk (rise edge)                   73.75      73.75
   clock network delay (ideal)              0.00      73.75
   clock uncertainty                      -14.75      59.00
-  clk_r_REG278_S1/C (DFRQHDLLX0)           0.00      59.00 r
-  library setup time                      -0.62      58.38
-  data required time                                 58.38
+  clk_r_REG178_S16/C (DFRRQHDLLX0)         0.00      59.00 r
+  library setup time                      -0.43      58.57
+  data required time                                 58.57
   -----------------------------------------------------------
-  data required time                                 58.38
-  data arrival time                                 -36.90
+  data required time                                 58.57
+  data arrival time                                 -16.87
   -----------------------------------------------------------
-  slack (MET)                                        21.48
+  slack (MET)                                        41.70
 
 
-  Startpoint: adc_value[14]
-              (input port clocked by clk)
-  Endpoint: clk_r_REG254_S1
+  Startpoint: clk_r_REG162_S16
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: clk_r_REG184_S16
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -253,27 +389,50 @@ Wire Load Model Mode: Inactive.
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  input external delay                    36.87      36.87 f
-  adc_value[14] (in)                       0.03      36.90 f
-  clk_r_REG254_S1/D (DFRQHDLLX0)           0.00 *    36.90 f
-  data arrival time                                  36.90
+  clk_r_REG162_S16/C (DFRRQHDLLX0)         0.00       0.00 r
+  clk_r_REG162_S16/Q (DFRRQHDLLX0)         1.50       1.50 f
+  U1967/Q (INHDLLX1)                       0.70 *     2.20 r
+  U1968/Q (ON21HDLLX1)                     0.28 *     2.48 f
+  U1969/Q (ON22HDLLX0)                     0.92 *     3.40 r
+  U1972/Q (NA22HDLLX1)                     0.50 *     3.90 r
+  U1973/Q (ON211HDLLX0)                    0.48 *     4.38 f
+  U1974/Q (AN22HDLLX1)                     0.63 *     5.01 r
+  U1976/CO (CAGHDLLX0)                     0.65 *     5.67 r
+  U1977/Q (AN211HDLLX1)                    0.16 *     5.82 f
+  U1978/Q (AN321HDLLX0)                    1.73 *     7.55 r
+  U1979/Q (AN211HDLLX1)                    0.33 *     7.88 f
+  U1986/Q (ON31HDLLX1)                     0.83 *     8.71 r
+  U1991/Q (AN22HDLLX1)                     0.46 *     9.18 f
+  U1993/Q (NA22HDLLX1)                     0.43 *     9.61 f
+  U1994/Q (ON211HDLLX0)                    0.54 *    10.15 r
+  U1997/Q (NA4HDLLX1)                      0.49 *    10.64 f
+  U1998/Q (ON31HDLLX1)                     1.06 *    11.70 r
+  U1999/Q (INHDLLX1)                       0.35 *    12.05 f
+  U2000/Q (AND2HDLLX0)                     0.77 *    12.82 f
+  U3107/Q (AN32HDLLX1)                     0.63 *    13.45 r
+  U3108/Q (NA4HDLLX1)                      1.84 *    15.29 f
+  U3113/Q (INHDLLX1)                       0.76 *    16.05 r
+  U3166/Q (AN21HDLLX1)                     0.27 *    16.32 f
+  U3170/Q (ON22HDLLX0)                     0.54 *    16.86 r
+  clk_r_REG184_S16/D (DFRRQHDLLX0)         0.00 *    16.86 r
+  data arrival time                                  16.86
 
   clock clk (rise edge)                   73.75      73.75
   clock network delay (ideal)              0.00      73.75
   clock uncertainty                      -14.75      59.00
-  clk_r_REG254_S1/C (DFRQHDLLX0)           0.00      59.00 r
-  library setup time                      -0.62      58.38
-  data required time                                 58.38
+  clk_r_REG184_S16/C (DFRRQHDLLX0)         0.00      59.00 r
+  library setup time                      -0.43      58.57
+  data required time                                 58.57
   -----------------------------------------------------------
-  data required time                                 58.38
-  data arrival time                                 -36.90
+  data required time                                 58.57
+  data arrival time                                 -16.86
   -----------------------------------------------------------
-  slack (MET)                                        21.48
+  slack (MET)                                        41.71
 
 
-  Startpoint: adc_value[13]
-              (input port clocked by clk)
-  Endpoint: clk_r_REG257_S1
+  Startpoint: clk_r_REG162_S16
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: clk_r_REG181_S16
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -282,25 +441,100 @@ Wire Load Model Mode: Inactive.
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  input external delay                    36.87      36.87 f
-  adc_value[13] (in)                       0.03      36.90 f
-  clk_r_REG257_S1/D (DFRQHDLLX0)           0.00 *    36.90 f
-  data arrival time                                  36.90
+  clk_r_REG162_S16/C (DFRRQHDLLX0)         0.00       0.00 r
+  clk_r_REG162_S16/Q (DFRRQHDLLX0)         1.50       1.50 f
+  U1967/Q (INHDLLX1)                       0.70 *     2.20 r
+  U1968/Q (ON21HDLLX1)                     0.28 *     2.48 f
+  U1969/Q (ON22HDLLX0)                     0.92 *     3.40 r
+  U1972/Q (NA22HDLLX1)                     0.50 *     3.90 r
+  U1973/Q (ON211HDLLX0)                    0.48 *     4.38 f
+  U1974/Q (AN22HDLLX1)                     0.63 *     5.01 r
+  U1976/CO (CAGHDLLX0)                     0.65 *     5.67 r
+  U1977/Q (AN211HDLLX1)                    0.16 *     5.82 f
+  U1978/Q (AN321HDLLX0)                    1.73 *     7.55 r
+  U1979/Q (AN211HDLLX1)                    0.33 *     7.88 f
+  U1986/Q (ON31HDLLX1)                     0.83 *     8.71 r
+  U1991/Q (AN22HDLLX1)                     0.46 *     9.18 f
+  U1993/Q (NA22HDLLX1)                     0.43 *     9.61 f
+  U1994/Q (ON211HDLLX0)                    0.54 *    10.15 r
+  U1997/Q (NA4HDLLX1)                      0.49 *    10.64 f
+  U1998/Q (ON31HDLLX1)                     1.06 *    11.70 r
+  U1999/Q (INHDLLX1)                       0.35 *    12.05 f
+  U2000/Q (AND2HDLLX0)                     0.77 *    12.82 f
+  U3107/Q (AN32HDLLX1)                     0.63 *    13.45 r
+  U3108/Q (NA4HDLLX1)                      1.84 *    15.29 f
+  U3157/Q (ON21HDLLX1)                     0.95 *    16.24 r
+  U3158/Q (ON21HDLLX1)                     0.34 *    16.58 f
+  U3159/Q (ON31HDLLX1)                     0.28 *    16.86 r
+  clk_r_REG181_S16/D (DFRRQHDLLX0)         0.00 *    16.86 r
+  data arrival time                                  16.86
 
   clock clk (rise edge)                   73.75      73.75
   clock network delay (ideal)              0.00      73.75
   clock uncertainty                      -14.75      59.00
-  clk_r_REG257_S1/C (DFRQHDLLX0)           0.00      59.00 r
-  library setup time                      -0.62      58.38
-  data required time                                 58.38
+  clk_r_REG181_S16/C (DFRRQHDLLX0)         0.00      59.00 r
+  library setup time                      -0.42      58.57
+  data required time                                 58.57
   -----------------------------------------------------------
-  data required time                                 58.38
-  data arrival time                                 -36.90
+  data required time                                 58.57
+  data arrival time                                 -16.86
   -----------------------------------------------------------
-  slack (MET)                                        21.48
+  slack (MET)                                        41.71
 
 
-  Startpoint: clk_r_REG28_S14
+  Startpoint: clk_r_REG162_S16
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: clk_r_REG173_S16
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clk_r_REG162_S16/C (DFRRQHDLLX0)         0.00       0.00 r
+  clk_r_REG162_S16/Q (DFRRQHDLLX0)         1.50       1.50 f
+  U1967/Q (INHDLLX1)                       0.70 *     2.20 r
+  U1968/Q (ON21HDLLX1)                     0.28 *     2.48 f
+  U1969/Q (ON22HDLLX0)                     0.92 *     3.40 r
+  U1972/Q (NA22HDLLX1)                     0.50 *     3.90 r
+  U1973/Q (ON211HDLLX0)                    0.48 *     4.38 f
+  U1974/Q (AN22HDLLX1)                     0.63 *     5.01 r
+  U1976/CO (CAGHDLLX0)                     0.65 *     5.67 r
+  U1977/Q (AN211HDLLX1)                    0.16 *     5.82 f
+  U1978/Q (AN321HDLLX0)                    1.73 *     7.55 r
+  U1979/Q (AN211HDLLX1)                    0.33 *     7.88 f
+  U1986/Q (ON31HDLLX1)                     0.83 *     8.71 r
+  U1991/Q (AN22HDLLX1)                     0.46 *     9.18 f
+  U1993/Q (NA22HDLLX1)                     0.43 *     9.61 f
+  U1994/Q (ON211HDLLX0)                    0.54 *    10.15 r
+  U1997/Q (NA4HDLLX1)                      0.49 *    10.64 f
+  U1998/Q (ON31HDLLX1)                     1.06 *    11.70 r
+  U1999/Q (INHDLLX1)                       0.35 *    12.05 f
+  U2000/Q (AND2HDLLX0)                     0.77 *    12.82 f
+  U3107/Q (AN32HDLLX1)                     0.63 *    13.45 r
+  U3108/Q (NA4HDLLX1)                      1.84 *    15.29 f
+  U3134/Q (ON21HDLLX1)                     0.96 *    16.25 r
+  U3135/Q (ON21HDLLX1)                     0.33 *    16.59 f
+  U3136/Q (ON31HDLLX1)                     0.27 *    16.86 r
+  clk_r_REG173_S16/D (DFRRQHDLLX0)         0.00 *    16.86 r
+  data arrival time                                  16.86
+
+  clock clk (rise edge)                   73.75      73.75
+  clock network delay (ideal)              0.00      73.75
+  clock uncertainty                      -14.75      59.00
+  clk_r_REG173_S16/C (DFRRQHDLLX0)         0.00      59.00 r
+  library setup time                      -0.42      58.58
+  data required time                                 58.58
+  -----------------------------------------------------------
+  data required time                                 58.58
+  data arrival time                                 -16.86
+  -----------------------------------------------------------
+  slack (MET)                                        41.72
+
+
+  Startpoint: clk_r_REG27_S13
               (rising edge-triggered flip-flop clocked by clk)
   Endpoint: lm_out (output port)
   Path Group: default
@@ -308,19 +542,19 @@ Wire Load Model Mode: Inactive.
 
   Point                                    Incr       Path
   -----------------------------------------------------------
-  clk_r_REG28_S14/C (DFRRQHDX1)            0.00       0.00 r
-  clk_r_REG28_S14/Q (DFRRQHDX1)            3.19       3.19 r
-  lm_out (out)                             0.00 *     3.19 r
-  data arrival time                                   3.19
+  clk_r_REG27_S13/C (DFRRQHDX1)            0.00       0.00 r
+  clk_r_REG27_S13/Q (DFRRQHDX1)            3.20       3.20 r
+  lm_out (out)                             0.00 *     3.20 r
+  data arrival time                                   3.20
 
   max_delay                                5.00       5.00
   output external delay                    0.00       5.00
   data required time                                  5.00
   -----------------------------------------------------------
   data required time                                  5.00
-  data arrival time                                  -3.19
+  data arrival time                                  -3.20
   -----------------------------------------------------------
-  slack (MET)                                         1.81
+  slack (MET)                                         1.80
 
 
   Startpoint: pause_n_async

@@ -1,0 +1,556 @@
+(SAIFILE
+(SAIFVERSION "2.0")
+(DIRECTION "backward")
+(DESIGN "radiation_sensor_digital_top")
+(DATE "Fri Jul 16 17:47:57 2021")
+(VENDOR "Synopsys, Inc")
+(PROGRAM_NAME "Power Compiler write_saif")
+(PROGRAM_VERSION "P-2019.03")
+(DIVIDER / )
+(TIMESCALE 1 ns)
+(DURATION 1000.00)
+(INSTANCE radiation_sensor_digital_top
+   (PORT
+      (clk  
+         (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+      )
+      (rst_n_async  
+         (T0 0) (T1 1000) (TC 0) 
+      )
+      (power\[1\]  
+         (T0 438.49884) (T1 561.50116) (TC 0.00023902669) 
+      )
+      (power\[0\]  
+         (T0 398.7973) (T1 601.2027) (TC 0.00021246816) 
+      )
+      (pause_n_async  
+         (T0 92.04071) (T1 907.95929) (TC 0.09083014) 
+      )
+      (lm_out  
+         (T0 895.01135) (T1 104.98868) (TC 0.35609663) 
+      )
+      (afe_version\[3\]  
+         (T0 1000) (T1 0) (TC 0) 
+      )
+      (afe_version\[2\]  
+         (T0 1000) (T1 0) (TC 0) 
+      )
+      (afe_version\[1\]  
+         (T0 0) (T1 1000) (TC 0) 
+      )
+      (afe_version\[0\]  
+         (T0 0) (T1 1000) (TC 0) 
+      )
+      (uid_variable\[2\]  
+         (T0 1000) (T1 0) (TC 0) 
+      )
+      (uid_variable\[1\]  
+         (T0 0) (T1 1000) (TC 0) 
+      )
+      (uid_variable\[0\]  
+         (T0 0) (T1 1000) (TC 0) 
+      )
+      (sens_version\[3\]  
+         (T0 1000) (T1 0) (TC 0) 
+      )
+      (sens_version\[2\]  
+         (T0 0) (T1 1000) (TC 0) 
+      )
+      (sens_version\[1\]  
+         (T0 0) (T1 1000) (TC 0) 
+      )
+      (sens_version\[0\]  
+         (T0 1000) (T1 0) (TC 0) 
+      )
+      (sens_config\[2\]  
+         (T0 1000) (T1 0) (TC 0) 
+      )
+      (sens_config\[1\]  
+         (T0 1000) (T1 0) (TC 0) 
+      )
+      (sens_config\[0\]  
+         (T0 1000) (T1 0) (TC 0) 
+      )
+      (sens_enable  
+         (T0 472.68793) (T1 527.31207) (TC 0.0002655852) 
+      )
+      (sens_read  
+         (T0 472.79559) (T1 527.20441) (TC 0.0002655852) 
+      )
+      (adc_version\[3\]  
+         (T0 1000) (T1 0) (TC 0) 
+      )
+      (adc_version\[2\]  
+         (T0 0) (T1 1000) (TC 0) 
+      )
+      (adc_version\[1\]  
+         (T0 0) (T1 1000) (TC 0) 
+      )
+      (adc_version\[0\]  
+         (T0 1000) (T1 0) (TC 0) 
+      )
+      (adc_enable  
+         (T0 472.68793) (T1 527.31207) (TC 0.0002655852) 
+      )
+      (adc_read  
+         (T0 472.90326) (T1 527.09674) (TC 0.0002655852) 
+      )
+      (adc_conversion_complete_async  
+         (T0 999.99017) (T1 0.0098000942) (TC 0.0002655852) 
+      )
+      (adc_value\[15\]  
+         (T0 741.57458) (T1 258.42538) (TC 7.9675556e-05) 
+      )
+      (adc_value\[14\]  
+         (T0 652.04095) (T1 347.95905) (TC 5.3117041e-05) 
+      )
+      (adc_value\[13\]  
+         (T0 567.59509) (T1 432.40494) (TC 7.9675556e-05) 
+      )
+      (adc_value\[12\]  
+         (T0 478.06146) (T1 521.93854) (TC 5.3117041e-05) 
+      )
+      (adc_value\[11\]  
+         (T0 826.02045) (T1 173.97954) (TC 5.3117041e-05) 
+      )
+      (adc_value\[10\]  
+         (T0 652.04095) (T1 347.95905) (TC 5.3117041e-05) 
+      )
+      (adc_value\[9\]  
+         (T0 652.04095) (T1 347.95905) (TC 0.00010623408) 
+      )
+      (adc_value\[8\]  
+         (T0 567.59509) (T1 432.40494) (TC 7.9675556e-05) 
+      )
+      (adc_value\[7\]  
+         (T0 826.02045) (T1 173.97954) (TC 5.3117041e-05) 
+      )
+      (adc_value\[6\]  
+         (T0 826.02045) (T1 173.97954) (TC 5.3117041e-05) 
+      )
+      (adc_value\[5\]  
+         (T0 567.59509) (T1 432.40494) (TC 7.9675556e-05) 
+      )
+      (adc_value\[4\]  
+         (T0 567.59509) (T1 432.40494) (TC 7.9675556e-05) 
+      )
+      (adc_value\[3\]  
+         (T0 393.61554) (T1 606.38446) (TC 7.9675556e-05) 
+      )
+      (adc_value\[2\]  
+         (T0 567.59509) (T1 432.40494) (TC 7.9675556e-05) 
+      )
+      (adc_value\[1\]  
+         (T0 652.04095) (T1 347.95905) (TC 0.00010623408) 
+      )
+      (adc_value\[0\]  
+         (T0 567.59509) (T1 432.40494) (TC 2.655852e-05) 
+      )
+   )
+   (INSTANCE clk_r_REG154_S15
+      (PORT
+         (Q  
+            (T0 472.79559) (T1 527.20441) (TC 0.0002655852) 
+         )
+      )
+   )
+   (INSTANCE clk_r_REG187_S15
+      (PORT
+         (Q  
+            (T0 472.68793) (T1 527.31207) (TC 0.0002655852) 
+         )
+      )
+   )
+   (INSTANCE clk_r_REG189_S15
+      (PORT
+         (Q  
+            (T0 472.68793) (T1 527.31207) (TC 0.0002655852) 
+         )
+      )
+   )
+   (INSTANCE clk_r_REG159_S16
+      (PORT
+         (Q  
+            (T0 472.90326) (T1 527.09674) (TC 0.0002655852) 
+         )
+      )
+   )
+   (INSTANCE clk_r_REG399_S1
+      (PORT
+         (Q  
+            (T0 1000) (T1 0) (TC 0) 
+         )
+      )
+   )
+   (INSTANCE clk_r_REG395_S1
+      (PORT
+         (Q  
+            (T0 1000) (T1 0) (TC 0) 
+         )
+      )
+   )
+   (INSTANCE clk_r_REG397_S1
+      (PORT
+         (Q  
+            (T0 1000) (T1 0) (TC 0) 
+         )
+      )
+   )
+   (INSTANCE clk_r_REG27_S13
+      (PORT
+         (Q  
+            (T0 895.01135) (T1 104.98868) (TC 0.35609663) 
+         )
+      )
+   )
+   (INSTANCE pause_n_latch_sync
+      (INSTANCE pause_n_latched_reg
+         (PORT
+            (Q  
+               (T0 906.2345) (T1 93.765495) (TC 0.09083014) 
+            )
+         )
+      )
+   )
+   (INSTANCE clk_gate_iso14443a_inst
+      (INSTANCE part2
+         (INSTANCE tx_inst
+            (INSTANCE bc_inst
+               (INSTANCE count_reg
+                  (PORT
+                     (CLK  
+                        (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+                     )
+                  )
+               )
+            )
+         )
+         (INSTANCE sd_inst
+            (INSTANCE prev_reg
+               (PORT
+                  (CLK  
+                     (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+                  )
+               )
+            )
+         )
+      )
+      (INSTANCE part3
+         (INSTANCE framing_inst
+            (INSTANCE fdt_inst
+               (INSTANCE seen_pause_reg
+                  (PORT
+                     (CLK  
+                        (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+                     )
+                  )
+               )
+            )
+            (INSTANCE s_inst
+               (INSTANCE cached_data_reg
+                  (PORT
+                     (CLK  
+                        (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+                     )
+                  )
+               )
+            )
+            (INSTANCE fe_inst
+               (INSTANCE cached_crc_reg
+                  (PORT
+                     (CLK  
+                        (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+                     )
+                  )
+               )
+            )
+            (INSTANCE crc_inst
+               (INSTANCE crc_a_inst
+                  (INSTANCE lfsr_reg
+                     (PORT
+                        (CLK  
+                           (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+                        )
+                     )
+                  )
+               )
+            )
+         )
+         (INSTANCE initialisation_inst
+            (INSTANCE ac_reply_buffer_reg\[4\]
+               (PORT
+                  (CLK  
+                     (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[4\]
+               (PORT
+                  (CLK  
+                     (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[0\]_0
+               (PORT
+                  (CLK  
+                     (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[0\]
+               (PORT
+                  (CLK  
+                     (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[1\]
+               (PORT
+                  (CLK  
+                     (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[1\]
+               (PORT
+                  (CLK  
+                     (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+                  )
+               )
+            )
+            (INSTANCE tx_iface_data_bits_reg
+               (PORT
+                  (CLK  
+                     (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[3\]
+               (PORT
+                  (CLK  
+                     (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[0\]
+               (PORT
+                  (CLK  
+                     (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+                  )
+               )
+            )
+         )
+      )
+      (INSTANCE part4
+         (INSTANCE reply_reg
+            (PORT
+               (CLK  
+                  (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+               )
+            )
+         )
+         (INSTANCE app_rx_iface_data_reg
+            (PORT
+               (CLK  
+                  (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+               )
+            )
+         )
+         (INSTANCE our_cid_reg
+            (PORT
+               (CLK  
+                  (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+               )
+            )
+         )
+         (INSTANCE tx_buffer_reg\[1\]
+            (PORT
+               (CLK  
+                  (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+               )
+            )
+         )
+         (INSTANCE tx_buffer_reg\[0\]
+            (PORT
+               (CLK  
+                  (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[0\]
+            (PORT
+               (CLK  
+                  (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[1\]
+            (PORT
+               (CLK  
+                  (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[2\]
+            (PORT
+               (CLK  
+                  (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+               )
+            )
+         )
+      )
+   )
+   (INSTANCE clk_gate_adapter_inst
+      (INSTANCE signal_control_inst
+         (INSTANCE signals_reg\[sens_enable\]
+            (PORT
+               (CLK  
+                  (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+               )
+            )
+         )
+         (INSTANCE counter_reg
+            (PORT
+               (CLK  
+                  (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+               )
+            )
+         )
+         (INSTANCE signals_reg\[sens_config\]
+            (PORT
+               (CLK  
+                  (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg
+            (PORT
+               (CLK  
+                  (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg
+            (PORT
+               (CLK  
+                  (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+               )
+            )
+         )
+      )
+      (INSTANCE signal_control_abort_reg
+         (PORT
+            (CLK  
+               (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[0\]
+         (PORT
+            (CLK  
+               (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[11\]
+         (PORT
+            (CLK  
+               (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[12\]
+         (PORT
+            (CLK  
+               (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[13\]
+         (PORT
+            (CLK  
+               (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[1\]
+         (PORT
+            (CLK  
+               (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[2\]
+         (PORT
+            (CLK  
+               (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[3\]
+         (PORT
+            (CLK  
+               (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[4\]
+         (PORT
+            (CLK  
+               (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[5\]
+         (PORT
+            (CLK  
+               (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[6\]
+         (PORT
+            (CLK  
+               (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[7\]
+         (PORT
+            (CLK  
+               (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[8\]
+         (PORT
+            (CLK  
+               (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[9\]
+         (PORT
+            (CLK  
+               (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+            )
+         )
+      )
+      (INSTANCE status_flags_reg\[error\]
+         (PORT
+            (CLK  
+               (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg
+         (PORT
+            (CLK  
+               (T0 444.76697) (T1 555.23303) (TC 24.136675) 
+            )
+         )
+      )
+   )
+)
+)

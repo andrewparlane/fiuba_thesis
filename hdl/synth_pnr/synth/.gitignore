@@ -1,0 +1,5 @@
+work/*.pvl
+work/*.syn
+work/*.mr
+work/*.pvk
+work/mw_lib

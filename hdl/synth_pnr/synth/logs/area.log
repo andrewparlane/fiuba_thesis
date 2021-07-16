@@ -3,7 +3,7 @@
 Report : area
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Tue Jul 13 15:21:09 2021
+Date   : Fri Jul 16 17:47:56 2021
 ****************************************
 
 Library(s) Used:
@@ -12,20 +12,20 @@ Library(s) Used:
     D_CELLS_HD_LPMOS_slow_1_62V_125C (File: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db)
 
 Number of ports:                          221
-Number of nets:                          2437
-Number of cells:                         2268
-Number of combinational cells:           1575
-Number of sequential cells:               649
+Number of nets:                          2424
+Number of cells:                         2255
+Number of combinational cells:           1579
+Number of sequential cells:               632
 Number of macros/black boxes:               0
-Number of buf/inv:                        480
-Number of references:                     111
+Number of buf/inv:                        485
+Number of references:                     110
 
-Combinational area:              19205.181645
-Buf/Inv area:                     3650.304043
-Noncombinational area:           34432.791660
+Combinational area:              19259.875247
+Buf/Inv area:                     3687.936044
+Noncombinational area:           33529.014843
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:                 53637.973305
+Total cell area:                 52788.890090
 Total area:                 undefined
 1
