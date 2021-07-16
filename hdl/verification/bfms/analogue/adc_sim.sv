@@ -40,9 +40,7 @@ module adc_sim
     // a second read before the first has finished
     output logic            busy,
 
-    // we change adc_value after conversion_complete asserts, so that the correct value is
-    // only set for 1 tick. This can be used to ensure the DUT samples the value on the correct
-    // tick. I provide last_valid_adc_value here so that the testbench knows what result to expect
+    // I provide last_valid_adc_value here so that the testbench knows what result to expect
     output logic    [15:0]  last_valid_adc_value
 );
 
@@ -68,9 +66,8 @@ module adc_sim
     //
     // And two outputs:
     //  logic adc_conversion_complete   - the read operation is complete, the data in adc_value is
-    //                                    valid. It is unclear if this value will remain constant
-    //                                    for any period of time after adc_conversion_complete
-    //                                    asserts.
+    //                                    valid, and must remain stable until a new read starts
+    //                                    or the ADC is disabled.
     //  logic [15:0] adc_value          - the result of the read operation.
 
     initial begin
@@ -86,6 +83,11 @@ module adc_sim
             @(posedge adc_read) begin end
             @(posedge clk) begin end
             busy <= 1'b1;
+
+            // Now that a new read has started adc_value could change
+            // I don't care about the actual value, because it shouldn't be sampled
+            // until adc_conversion_complete asserts
+            adc_value               <= 16'($urandom);
 
             repeat (operation_ticks) begin
                 @(posedge clk) begin end
@@ -103,11 +105,6 @@ module adc_sim
 
                 @(posedge clk) begin end
                 adc_conversion_complete <= 1'b0;
-
-                // randomise the adc_value signal again. I don't actually expect this to happen
-                // in the actual hardware, but best to be certain that my design only samples the ADC value
-                // at the correct time
-                adc_value               <= 16'($urandom);
             end
 
             busy <= 1'b0;

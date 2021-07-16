@@ -55,7 +55,7 @@ module generate_top_saif_tb;
     logic [3:0]     adc_version;
     logic           adc_enable;
     logic           adc_read;
-    logic           adc_conversion_complete;
+    logic           adc_conversion_complete_async;
     logic [15:0]    adc_value;
 
     logic rst_n; // alias
@@ -135,7 +135,7 @@ module generate_top_saif_tb;
         .clk                        (clk),
 
         .adc_read                   (adc_read),
-        .adc_conversion_complete    (adc_conversion_complete),
+        .adc_conversion_complete    (adc_conversion_complete_async),
         .adc_value                  (adc_value),
 
         .busy                       (adc_sim_busy),
