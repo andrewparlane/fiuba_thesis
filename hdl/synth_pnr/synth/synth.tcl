@@ -268,7 +268,6 @@ uniquify
 # =============================================================================
 
 puts "[colour $COLOUR_BLUE]Setting design constraints[clear_colour]"
-puts "[colour $COLOUR_YELLOW]Warning: Revisit these constraints when we have the analogue parts of the design (14443, sensor, ADC).[clear_colour]"
 
 if {($pause_between_commands == 1) && ([do_continue] == 0)} {
     return
@@ -285,32 +284,35 @@ redirect -variable buffer {
     # ---------------------------
 
     # ISO 14443A Analogue block (AFE)
-    #   clk                         - input clock, 13.56MHz +/- 7KHz
-    #   rst_n_async                 - input asynchronous reset
+    #   clk                             - input clock, 13.56MHz +/- 7KHz
+    #   rst_n_async                     - input asynchronous reset
     #
-    #   power[1:0]                  - input synchronous
+    #   power[1:0]                      - input, should be stable during the PICC's reply
+    #                                     so I cut this path.
     #
-    #   pause_n_async               - input asynchronous (from envelope detector)
+    #   pause_n_async                   - input asynchronous (from envelope detector)
     #
-    #   lm_out                      - output asynchronous (to load modulator)
+    #   lm_out                          - output asynchronous (to load modulator)
     #
-    #   afe_version                 - input must be constant, set to the version of the AFE
+    #   afe_version                     - input must be constant, set to the version of the AFE
     #
     # Chip configuration
-    #   uid_variable[2:0]           - constant at least while this design is out of reset
+    #   uid_variable[2:0]               - constant at least while this design is out of reset
     #
     # Sensor
-    #   sens_version                - input must be constant, set to the version of the sensor
-    #   sens_config[2:0]            - output asynchronous
-    #   sens_enable                 - output asynchronous
-    #   sens_read                   - output asynchronous
+    #   sens_version                    - input must be constant, set to the version of the sensor
+    #   sens_config[2:0]                - output asynchronous
+    #   sens_enable                     - output asynchronous
+    #   sens_read                       - output asynchronous
     #
     # ADC
-    #   adc_version                 - input must be constant, set to the version of the ADC
-    #   adc_enable                  - output synchronous
-    #   adc_read                    - output synchronous
-    #   adc_conversion_complete     - input synchronous
-    #   adc_value[15:0]             - input synchronous
+    #   adc_version                     - input must be constant, set to the version of the ADC
+    #   adc_enable                      - output asynchronous
+    #   adc_read                        - output asynchronous
+    #   adc_conversion_complete_async   - input asynchronous
+    #   adc_value[15:0]                 - input asynchronous, should be stable from when
+    #                                     adc_conversion_complete_async asserts until a new read
+    #                                     is started or the adc is disabled.
 
     # ---------------------------
     # Clock
@@ -349,10 +351,18 @@ redirect -variable buffer {
     set_switching_activity -static_probability 0.5 -toggle_rate 0 [get_ports uid_variable]
 
     # We cut async inputs and outputs.
+    #   AFE
     set_and_report_false_path {-from [get_ports rst_n_async]}
+    set_and_report_false_path {-from [get_ports power]}
+    #   Sensor
     set_and_report_false_path {-to [get_ports sens_config]}
     set_and_report_false_path {-to [get_ports sens_enable]}
     set_and_report_false_path {-to [get_ports sens_read]}
+    #   ADC
+    set_and_report_false_path {-to [get_ports adc_enable]}
+    set_and_report_false_path {-to [get_ports adc_read]}
+    set_and_report_false_path {-from [get_ports adc_value]}
+    set_and_report_false_path {-from [get_ports adc_conversion_complete_async]}
 
     # The FDT timings require a fixed number of cycles from the end of the PCD's pause
     # to the start of the reply. There's a margin of error of +400ns. I compensate for full cycles
@@ -367,16 +377,6 @@ redirect -variable buffer {
     # delay as 5ns each.
     set_max_delay 5.0 -from [get_ports pause_n_async] -ignore_clock_latency
     set_max_delay 5.0 -to [get_ports lm_out] -ignore_clock_latency
-
-    # The ADC inputs/outputs and the AFE's power output are synchronous.
-    # TODO: Constrain these correctly
-    # we want mins and maxes for the input/output delays, and we should take clock latency into account
-    # the ADC may be source synchronous
-    set_input_delay [expr $clk_period_ns/2.0] -clock [get_clocks clk] [get_ports power]
-    set_output_delay [expr $clk_period_ns/2.0] -clock [get_clocks clk] [get_ports adc_enable]
-    set_output_delay [expr $clk_period_ns/2.0] -clock [get_clocks clk] [get_ports adc_read]
-    set_input_delay [expr $clk_period_ns/2.0] -clock [get_clocks clk] [get_ports adc_value]
-    set_input_delay [expr $clk_period_ns/2.0] -clock [get_clocks clk] [get_ports adc_conversion_complete]
 
     # environment of the IO signals from 0.18um-ApplicationNote-Digital_Implementation_Guidelines-v1_1_0.pdf:
     # assuming a weak driver from outside and a reasonable load (0.4 pf is approx.. 2 mm of wiring in 180nm).
