@@ -1,0 +1,133 @@
+The radiation sensor project consists of 4 blocks:
+    radiation_sensor_digital_top
+        This project.
+    AFE - The ISO/IEC 14443A Analogue Front End.
+        This deals with wireless power, recovering the clock and detecting pauses.
+        Signals that connect to my block:
+            out clk             - 13.56 MHz +/- 7KHz, recovered from the carrier wave
+            out rst_n_async     - Reset
+            out pause_n_async   - From the pause detector, indicates if we are currently in a pause
+            in  lm_out          - To the load modulator, for sending replies
+            out power[2]        - Indicates if the PCD is transmitting sufficient power or not:
+                                    2'b00: PICC does not support the power level indiction
+                                    2'b01: Insufficient power for full functionality
+                                    2'b10: Sufficient power for full functionality
+                                    2'b11: More than sufficient power for full functionality
+            out afe_version[4]  - Version code for the AFE.
+            out uid_variable[3] - Maybe not strictly an AFE signal. Sets the 3 LSbs of the UID.
+                                  The initial plan is to have these wire bonded to set the UID.
+                                    Potentially there should be pull downs added to provide a
+                                    default value.
+                                  However an alternative schemet would also work (efuses, EEPROM, ...)
+                                  The requirement is that it should be constant while the
+                                  radiation_sensor_digital_top is out of reset.
+                                  The PICC's UID will be 0xEFFEC700 | (uid_variable & 0x7)
+        Signals that connect to other blocks:
+            out clk             - To the ADC
+            out rst_n_async     - To the ADC
+    Sensor - The radiation sensor
+        Signals that connect to my block:
+            in sens_config[3]   - asynchronous
+            in sens_enable      - asynchronous
+            in sens_read        - asynchronous
+            in sens_verssion[4] - Version code for the sensor. Should be hard wired and only changed
+                                  when the sensor is modified. This value is passed in the IDENTIFY
+                                  command, so the user/PCD can detect what sensor a particular tag has
+        Signals that connect to other blocks:
+            out sensor_value    - To the ADC
+    ADC
+        Signals that connect to my block:
+            in  adc_enable                      - Enables the ADC
+            in  adc_read                        - Starts a read of the ADC
+            out adc_value[16]                   - The digital value of the analogue signal
+            out adc_conversion_complete_async   - Indicates adc_value is valid
+            in  adc_version[4]                  - Version code for the ADC. Should be hard wired and
+                                                  only changed when the ADC is modified. This value
+                                                  is passed in the IDENTIFY command, so the user/PCD
+                                                  can detect what sensor a particular tag has
+        signals that connect to other blocks:
+            in  clk             - from the AFE
+            in  rst_n_async     - from the AFE
+            in  sensor_value    - From the sensor
+
+Requirements for the AFE:
+    The AFE must be compliant with ISO/IEC 14443-2A:2016 "Radio frequency power and signal interface"
+        We use only a bit rate of fc/128 for both receive and transmit.
+    IOs:
+        clk:
+            see components/iso_iec_14443A/verification/bfms/analogue/clk_recovery.sv for more notes
+            1) Should be recovered from the carrier wave (13.56MHz +/- 7KHz)
+            2) I constrain my block to be 13.56MHz with a setup uncertainty of 20%
+                and a hold uncertainty of 500ps.
+            3) The clock must be monotonic, and have an even duty cycle.
+            4) The clock may stop running, but doesn't have to, during pausses,
+                It must stop for a max of 110 edges (55 ticks)
+                This is made up of two parameters:
+                    1) when the clock stops after the start of the PCD pause
+                    2) when the clock starts again after the end of the PCD pause
+                The consequence for not meeting this requirement is fatal, the sequence_decode
+                    module will detect errors or decode the data incorrectly.
+            5) The clock must start again before pause_n_async deasserts.
+                The consequence for not meeting this requirement is the FDT timing will be incorrect
+                potentially causing issues in the initialisation and anti-collision loops, especially
+                when the PCD is in range of both our PICCs and other PICCs.
+            The AFE must meet these requirement for all valid pauses as defined in
+                ISO/IEC 14443-2A:2016 section 8.1.2.1
+        rst_n_async:
+            This should be asserted for at least one tick after the following have stabalised:
+                VDD
+                clk
+                pause_n_async (deasserted)
+                uid_variable
+        pause_n_async:
+            see components/iso_iec_14443A/verification/bfms/analogue/pause_detect.sv for more notes
+            There are two propertioes of the pause_n_async signal:
+                1) When it asserts after the start of the PCD pause.
+                2) When it deasserts after the end of the PCD pause.
+            1) The pause should be detected before the end of the PCD pause.
+            2) For a given PCD pause, the time it takes for pause_n_async to deassert after the PCD
+                pause deasserts should have minimal jitter (max 3 clock periods).
+                The consequence for not meeting this requirement is fatal, the sequence_decode
+                module will detect errors or decode the data incorrectly.
+            3) pause_n_async must deassert at most 300ns after the PCD pause_n deasserts
+                The consequence for not meeting this requirement is the FDT timing will be incorrect
+                potentially causing issues in the initialisation and anti-collision loops, especially
+                when the PCD is in range of both our PICCs and other PICCs.
+            The AFE must meet these requirement for all valid pauses as defined in
+                ISO/IEC 14443-2A:2016 section 8.1.2.1
+        lm_out:
+            1) Should connect directly to the load modulator.
+            2) There should be minimal propagation delay between the output pin of my block and the
+                load modulator. Ideally < 1ns.
+                If this delay gets too high there may be problems with FDT timing, as described above.
+        power[2]:
+            1) This should be registered.
+            2) This should be stable during the PICC's reply.
+            I cut this path, since I don't know what the external delays will be.
+            However it's only sampled once during the PICC's reply, and so we won't see metastability
+            issues
+        afe_version[4]:
+            1) This should be a hard wired constant.
+        uid_variable[3]:
+            1) This should remain constant while the PICC is out of reset.
+            2) A single PICC should always have the same UID.
+            3) No two PICCs should have the same UID.
+                We currently support 3 bits of variable UID, so up to 8 tags.
+                To support more we would need to change the radiation_sensor_digital_top module
+                    and fabricate the new design.
+                Our UIDs come from the "Fixed number, non-unique" range as defined in AN10927 Table 1.
+                    This means other tags could have been fabricated with this same UID. However
+                    that seems unlikely given the size of the range.
+
+Requirements for the sensor:
+    All outputs from my block to the sensor are treated asynchronous.
+
+Requirements for the ADC:
+    All outptus from my block to the ADC are treated as asynchronous.
+    adc_conversion_complete_async is cut and synchronised
+    adc_value is sampled once the synchronised adc_conversion_complete asserts
+    1) adc_read is held high until the read is aborted via the ABORT message or
+       until the read has completed and the value sampled. Therefore a read should be started
+       on seeing the rising edge of adc_read.
+    2) adc_value should be stable from when adc_conversion_complete_async asserts
+       until the next adc_read starts, or the ADC is disabled
