@@ -43,7 +43,7 @@ set design_name                 design
 # =============================================================================
 
 proc do_check_design {check} {
-    set cmd "check_design -ems_database check_design.$check -checks $check"
+    set cmd "check_design -ems_database logs/check_design.$check -checks $check"
     puts $cmd
     return [colourise_cmd $cmd]
 }
