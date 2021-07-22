@@ -3,7 +3,7 @@ Report : power
         -significant_digits 2
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Tue Jul 13 15:35:31 2021
+Date   : Fri Jul 23 11:36:32 2021
 ****************************************
 Information: Activity for scenario virtual_scenario was cached, no propagation required. (POW-005)
 Mode: virtual_scenario
@@ -26,11 +26,11 @@ Supply nets:
 VDD (power) probability 1.00 (default)
 VSS (ground) probability 1.00 (default)
 
-  Cell Internal Power    = 1.86e+08 pW ( 66.9%)
-  Net Switching Power    = 9.17e+07 pW ( 33.1%)
-Total Dynamic Power      = 2.77e+08 pW (100.0%)
+  Cell Internal Power    = 1.74e+08 pW ( 65.5%)
+  Net Switching Power    = 9.17e+07 pW ( 34.5%)
+Total Dynamic Power      = 2.66e+08 pW (100.0%)
 
-Cell Leakage Power       = 6.00e+05 pW
+Cell Leakage Power       = 5.72e+05 pW
 
 
   Attributes
@@ -41,11 +41,11 @@ Power Group         Internal Power        Switching Power          Leakage Power
 -----------------------------------------------------------------------------------------------------------------------------
 io_pad                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)      
 memory                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)      
-black_box                 0.00e+00               0.00e+00               6.76e+01               6.76e+01    (  0.0%)      
-clock_network             1.75e+08               8.18e+07               4.31e+04               2.57e+08    ( 92.3%)      
-register                  3.46e+06               2.02e+06               3.32e+05               5.81e+06    (  2.1%)      
+black_box                 0.00e+00               0.00e+00               8.26e+01               8.26e+01    (  0.0%)      
+clock_network             1.63e+08               8.20e+07               4.25e+04               2.45e+08    ( 92.1%)      
+register                  3.50e+06               2.64e+06               3.21e+05               6.46e+06    (  2.4%)      
 sequential                0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)      
-combinational             7.31e+06               7.94e+06               2.25e+05               1.55e+07    (  5.6%)      
+combinational             7.19e+06               7.12e+06               2.09e+05               1.45e+07    (  5.5%)      
 -----------------------------------------------------------------------------------------------------------------------------
-Total                     1.86e+08 pW            9.17e+07 pW            6.00e+05 pW            2.78e+08 pW
+Total                     1.74e+08 pW            9.17e+07 pW            5.72e+05 pW            2.66e+08 pW
 1

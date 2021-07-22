@@ -1,0 +1,46 @@
+Warning: Scenario virtual_scenario is not configured for hold analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type min
+        -max_paths 1
+        -report_by design
+Design : radiation_sensor_digital_top
+Version: P-2019.03
+Date   : Fri Jul 23 11:36:32 2021
+****************************************
+
+  Startpoint: clk_r_REG161_S16 (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: clk_r_REG159_S16 (rising edge-triggered flip-flop clocked by clk)
+  Mode: virtual_scenario_bc
+  Corner: virtual_scenario_bc
+  Scenario: virtual_scenario_bc
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.53      0.53
+
+  clk_r_REG161_S16/C (DFRRQHDX0)                   0.00      0.53 r
+  clk_r_REG161_S16/Q (DFRRQHDX0)                   0.47      1.00 f
+  U3264/Q (ON211HDLLX0)                            0.32      1.32 r
+  U3265/Q (MU2IHDX4)                               0.05      1.37 f
+  clk_r_REG159_S16/D (DFRRQHDX1)                   0.00      1.37 f
+  data arrival time                                          1.37
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.88      0.88
+  clk_r_REG159_S16/C (DFRRQHDX1)                   0.00      0.88 r
+  clock uncertainty                                0.50      1.38
+  library hold time                               -0.01      1.36
+  data required time                                         1.36
+  ------------------------------------------------------------------------
+  data required time                                         1.36
+  data arrival time                                         -1.37
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.01
+
+
+1

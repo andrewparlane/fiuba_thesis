@@ -7,10 +7,10 @@ Report : timing
         -report_by design
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Tue Jul 13 15:35:31 2021
+Date   : Fri Jul 23 11:36:32 2021
 ****************************************
 
-  Startpoint: clk_r_REG28_S14 (rising edge-triggered flip-flop clocked by clk)
+  Startpoint: clk_r_REG27_S13 (rising edge-triggered flip-flop clocked by clk)
   Endpoint: lm_out (output port)
   Mode: virtual_scenario
   Corner: virtual_scenario
@@ -21,18 +21,18 @@ Date   : Tue Jul 13 15:35:31 2021
   Point                                            Incr      Path  
   ------------------------------------------------------------------------
   clock clk (rise edge)                            0.00      0.00
-  clk_r_REG28_S14/C (DFRRQHDX2)                    0.00      0.00 r
-  clk_r_REG28_S14/Q (DFRRQHDX2)                    2.34      2.34 r
-  lm_out (out)                                     0.01      2.35 r
-  data arrival time                                          2.35
+  clk_r_REG27_S13/C (DFRRQHDX1)                    0.00      0.00 r
+  clk_r_REG27_S13/Q (DFRRQHDX1)                    3.39      3.39 r
+  lm_out (out)                                     0.01      3.39 r
+  data arrival time                                          3.39
 
   max_delay to non-endpoint                        5.00      5.00
   data required time                                         5.00
   ------------------------------------------------------------------------
   data required time                                         5.00
-  data arrival time                                         -2.35
+  data arrival time                                         -3.39
   ------------------------------------------------------------------------
-  slack (MET)                                                2.65
+  slack (MET)                                                1.61
 
 
 1
