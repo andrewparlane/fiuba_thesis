@@ -113,6 +113,15 @@ proc load_antenna_rules {} {
 # =============================================================================
 puts "[colour $COLOUR_BLUE]Design Init[clear_colour]"
 
+# There are > 11,000 ZRT-042 warnings, it makes the log much harder to read
+# and I don't think they are actually a problem.
+# ZRT-042: The router depends on correct construction of contacts to avoid the end
+#          of  line  enclosure  rule.  In this case, the contact's metal enclosure
+#          does not satisfy the requirement and there may be end of line enclosure
+#          design rule violation at the end of routing stage.
+# We don't have any DRC issues, so I think it's safe to ignore these.
+set_message_info -id ZRT-042 -limit 5
+
 # Copy (open and save as) the lib from the DP stage
 open_block ../dp/work/dlib:design/dp_out
 save_lib -as work/dlib
@@ -156,9 +165,6 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
 
 # Checks
 # ---------------------------
-# Note: there are some constraint issues we need to revisit here when we go back to look at
-#       MCMM again
-puts "[colour $COLOUR_YELLOW]Warning: TODO - make sure we fix the constraint issues below[clear_colour]"
 do_check_design pre_placement_stage
 
 # Note: There are two sets of warnings here:
@@ -280,9 +286,7 @@ load_antenna_rules
 
 # checks
 # ---------------------------
-# There's a few errors/warnings to look at here
 do_check_design pre_route_stage
-puts "[colour $COLOUR_YELLOW]Warning: TODO - Out of bound ports??[clear_colour]"
 check_routability
 
 # Route
