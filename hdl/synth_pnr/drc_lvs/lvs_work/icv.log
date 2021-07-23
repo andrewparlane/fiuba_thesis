@@ -1,0 +1,174 @@
+
+
+                                 IC Validator 
+
+         Version O-2018.12-SP2-2 for linux64 - Apr 09, 2019 cl#4752006
+
+                    Copyright (c) 1996 - 2019 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+Called as: icv -c radiation_sensor_digital_top -f GDSII -i ../../pnr/work/design_xfab_layers.gds -stc radiation_sensor_digital_top -s netlist_lvs.sp -sf spice -I /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2 -D FloatingGate -D FloatingWell /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2/xh018_1143_LVS_MET4_METMID_METTHK.rs
+
+
+
+
+
+
+
+Parsing runset "/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2/xh018_1143_LVS_MET4_METMID_METTHK.rs"
+
+/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2/xh018_1143_LVS_MET4_METMID_METTHK.rs:13: warning: "d_DRC" wasn't defined
+    #undef d_DRC
+/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2/xh018_1143_LVS_MET4_METMID_METTHK.rs:19: warning: "METAL5" wasn't defined
+      #undef METAL5
+xh018.rs:422: warning: "THINTOPMETAL" wasn't defined
+         #undef THINTOPMETAL
+    from /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2/xh018_1143_LVS_MET4_METMID_METTHK.rs: 25:     #include <xh018.rs>
+
+/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2/xh018.rs:9692: warning: ICV device extraction settings for write_property_to, processing_layer_hash_map, and pin_map has been automated. As of the 2016.06 release this behavior is the default and can be disabled with "-D ICV_REVERT_DEVICE_PROPERTY_DEPENDENCY_ANALYSIS". 
+/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2/xh018.rs:9741: warning: ICV LVS device settings currently use overwrite mode. Use command line option '-D ICV_ENABLE_DEVICE_SETTING_APPEND_MODE' or runset instruction '#define ICV_ENABLE_DEVICE_SETTING_APPEND_MODE' to enable LVS device setting append mode in this release.
+/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2/xh018.rs:9741: warning: Some LVS reports will be changed in future release. Set environment variable 'ICV_ENABLE_LVS_REPORT_IN_IDENTICAL_STRING' to see new LVS reports.
+Loaded runset from cache: /home/aparlane/.icvrscache/2ad12e3236f4c242a6701c58d2ae1e48-947ECA89-4113-410E-B6B0-EE2EF98E4DC1-micro0.fi.uba.ar-27491.rscache
+Cached Runset Compile Time=0:00:04 User=3.71 Sys=0.04 Mem=468.891
+
+
+
+                                  ICV_Master 
+
+         Version O-2018.12-SP2-2 for linux64 - Apr 09, 2019 cl#4752006
+
+                    Copyright (c) 1996 - 2019 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+
+Called as: icv -c radiation_sensor_digital_top -f GDSII -i ../../pnr/work/design_xfab_layers.gds -stc radiation_sensor_digital_top -s netlist_lvs.sp -sf spice -I /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2 -D FloatingGate -D FloatingWell /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2/xh018_1143_LVS_MET4_METMID_METTHK.rs
+ 
+Virtual Machine Init Time=0:00:00 User=0.08 Sys=0.01 Mem=468.891
+
+/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2/xh018.rs:160: warning: ICV SPICE setting "slash_is_space" is not needed and is being ignored.  Slash '/' characters in SPICE netlists are handled automatically by default.
+
+Checked out necessary DP licenses.
+Host startup done: 2 successes, 0 failures.
+	micro0.fi.uba.ar: 2 total cores, maximum 2 commands in parallel.
+Selecting "micro0.fi.uba.ar" as Primary host
+
+System Startup Time=0:00:00 User=0.00 Sys=0.03 Mem=468.891
+
+
+Command execution begins.  Details recorded in the summary and log files:
+    /home/aparlane/fiuba_thesis/hdl/synth_pnr/drc_lvs/lvs_work/run_details/radiation_sensor_digital_top.sum
+    /home/aparlane/fiuba_thesis/hdl/synth_pnr/drc_lvs/lvs_work/run_details/xh018_1143_LVS_MET4_METMID_METTHK.dp.log
+
+Running ...
+  ICV_Engine run is   1% complete.    Elapsed Time=0:00:02
+  ICV_Engine run is   2% complete.    Elapsed Time=0:00:02
+  ICV_Engine run is   3% complete.    Elapsed Time=0:00:02
+  ICV_Engine run is   4% complete.    Elapsed Time=0:00:02
+  ICV_Engine run is   5% complete.    Elapsed Time=0:00:03
+  ICV_Engine run is  10% complete.    Elapsed Time=0:00:03
+  ICV_Engine run is  15% complete.    Elapsed Time=0:00:03
+  ICV_Engine run is  20% complete.    Elapsed Time=0:00:03
+  ICV_Engine run is  25% complete.    Elapsed Time=0:00:03
+  ICV_Engine run is  30% complete.    Elapsed Time=0:00:03
+  ICV_Engine run is  35% complete.    Elapsed Time=0:00:03
+  ICV_Engine run is  40% complete.    Elapsed Time=0:00:03
+  ICV_Engine run is  45% complete.    Elapsed Time=0:00:03
+  ICV_Engine run is  50% complete.    Elapsed Time=0:00:03
+  ICV_Engine run is  55% complete.    Elapsed Time=0:00:03
+  ICV_Engine run is  60% complete.    Elapsed Time=0:00:03
+  ICV_Engine run is  65% complete.    Elapsed Time=0:00:04
+  ICV_Engine run is  70% complete.    Elapsed Time=0:00:04
+  ICV_Engine run is  75% complete.    Elapsed Time=0:00:04
+  ICV_Engine run is  80% complete.    Elapsed Time=0:00:05
+  ICV_Engine run is  85% complete.    Elapsed Time=0:00:06
+  ICV_Engine run is  90% complete.    Elapsed Time=0:00:06
+  ICV_Engine run is  95% complete.    Elapsed Time=0:00:07
+
+Generating micron-based ICV netlist...
+
+
+
+                                  ICV_Netlist 
+
+         Version O-2018.12-SP2-2 for linux64 - Apr 09, 2019 cl#4752006
+
+                    Copyright (c) 1996 - 2019 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+ Generating NETLIST file "radiation_sensor_digital_top.net".
+
+ Netlisting Time=0:00:00  User=0.06 Sys=0.03 Mem=1.904
+
+   Check Time=0:00:00  User=0.00 Sys=0.00 Mem=44.190
+
+
+Generating micron-based NDB ...
+
+
+
+                                  ICV_Netlist 
+
+         Version O-2018.12-SP2-2 for linux64 - Apr 09, 2019 cl#4752006
+
+                    Copyright (c) 1996 - 2019 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+ Netlisting Time=0:00:00  User=0.06 Sys=0.02 Mem=11.860
+
+   Check Time=0:00:00  User=0.00 Sys=0.00 Mem=26.743
+
+Comparing schematic and layout netlists.
+LVS compare start time    : 2021-07-23 11:46:07
+  ICV_Compare run is   0% complete.    Elapsed Time=0:00:00
+  ICV_Compare run is   5% complete.    Elapsed Time=0:00:00
+  ICV_Compare run is  10% complete.    Elapsed Time=0:00:00
+  ICV_Compare run is  15% complete.    Elapsed Time=0:00:00
+  ICV_Compare run is  20% complete.    Elapsed Time=0:00:00
+  ICV_Compare run is  25% complete.    Elapsed Time=0:00:00
+  ICV_Compare run is  30% complete.    Elapsed Time=0:00:00
+  ICV_Compare run is  35% complete.    Elapsed Time=0:00:00
+  ICV_Compare run is  40% complete.    Elapsed Time=0:00:01
+  ICV_Compare run is  45% complete.    Elapsed Time=0:00:01
+  ICV_Compare run is  50% complete.    Elapsed Time=0:00:01
+  ICV_Compare run is  55% complete.    Elapsed Time=0:00:01
+  ICV_Compare run is  60% complete.    Elapsed Time=0:00:01
+  ICV_Compare run is  65% complete.    Elapsed Time=0:00:01
+  ICV_Compare run is 100% complete.    Elapsed Time=0:00:01
+LVS compare end time      : 2021-07-23 11:46:08
+Total runtime for LVS compare Time=0:00:01  User=0.40 Sys=0.18 Mem=34.592
+   Check Time=0:00:00  User=0.00 Sys=0.01 Mem=26.843
+
+  ICV_Engine run is 100% complete.    Elapsed Time=0:00:09
+
+Completing error storage...
+  Overall error storage time: User=0.02 Sys=0.03 Mem=2.564
+
+Generating radiation_sensor_digital_top.TOP_LAYOUT_ERRORS...
+  Generation Time=0:00:00  User=0.00 Sys=0.00 Mem=0.971
+
+   Check Time=0:00:00  User=0.00 Sys=0.00 Mem=8.172
+
+-------------
+
+IC Validator Run: Time=0:00:13
+
+IC Validator Machine Memory Report
+micro0.fi.uba.ar : Average = 4.10(Mb), Peak = 83(Mb)
+
+Overall Disk Usage Disk=27.594
+Overall engine Time=0:00:13 Highest command Mem=83.317 
+
+Overall Master Mem=858.613
+IC Validator is done.

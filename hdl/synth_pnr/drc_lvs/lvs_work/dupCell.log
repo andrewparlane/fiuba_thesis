@@ -1,0 +1,336 @@
+CELL "o32na3" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 18527  (master cell) 
+
+			portCount = 9
+			instCount = 12
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 17792
+ Same as Master Cell. !!
+
+CELL "o3na3" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 18375  (master cell) 
+
+			portCount = 8
+			instCount = 10
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 17532
+ Same as Master Cell. !!
+
+CELL "o22na3" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 18164  (master cell) 
+
+			portCount = 8
+			instCount = 10
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 17197
+ Same as Master Cell. !!
+
+CELL "o2na3" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 18016  (master cell) 
+
+			portCount = 7
+			instCount = 8
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 17015
+ Same as Master Cell. !!
+
+CELL "o33na2" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 17910  (master cell) 
+
+			portCount = 9
+			instCount = 12
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 18083
+ Same as Master Cell. !!
+
+CELL "o32na2_0" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 17825  (master cell) 
+
+			portCount = 8
+			instCount = 10
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 17998
+ Same as Master Cell. !!
+
+CELL "o32na2" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 17771  (master cell) 
+
+			portCount = 8
+			instCount = 10
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 17944
+ Same as Master Cell. !!
+
+CELL "o32na3_0" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 17665  (master cell) 
+
+			portCount = 9
+			instCount = 12
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 17853
+ Same as Master Cell. !!
+
+CELL "o3na2_0" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 17589  (master cell) 
+
+			portCount = 7
+			instCount = 8
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 17716
+ Same as Master Cell. !!
+
+CELL "o3na2" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 17541  (master cell) 
+
+			portCount = 7
+			instCount = 8
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 17668
+ Same as Master Cell. !!
+
+CELL "o3na3_0" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 17445  (master cell) 
+
+			portCount = 8
+			instCount = 10
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 17586
+ Same as Master Cell. !!
+
+CELL "o22na2" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 17355  (master cell) 
+
+			portCount = 7
+			instCount = 8
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 17442
+ Same as Master Cell. !!
+
+CELL "o222na3" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 17249  (master cell) 
+
+			portCount = 9
+			instCount = 12
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 17336
+ Same as Master Cell. !!
+
+CELL "o22na3_0" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 17149  (master cell) 
+
+			portCount = 8
+			instCount = 10
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 17251
+ Same as Master Cell. !!
+
+CELL "o2na2" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 17065  (master cell) 
+
+			portCount = 6
+			instCount = 6
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 10667
+ Same as Master Cell. !!
+
+CELL "o2na3_0" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 16975  (master cell) 
+
+			portCount = 7
+			instCount = 8
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 17065
+ Same as Master Cell. !!
+
+CELL "nor3" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 14344  (master cell) 
+
+			portCount = 6
+			instCount = 6
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 14385
+ Same as Master Cell. !!
+
+CELL "clinvr" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 12574  (master cell) 
+
+			portCount = 6
+			instCount = 4
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 12615
+ Same as Master Cell. !!
+
+CELL "o2na2_0" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 10561  (master cell) 
+
+			portCount = 6
+			instCount = 6
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 10570
+ Same as Master Cell. !!
+
+CELL "tgate" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 2315  (master cell) 
+
+			portCount = 6
+			instCount = 2
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 2317
+ Same as Master Cell. !!
+
+CELL "nor2" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 1535  (master cell) 
+
+			portCount = 5
+			instCount = 4
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 1537
+ Same as Master Cell. !!
+
+CELL "nand4" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 1445  (master cell) 
+
+			portCount = 7
+			instCount = 8
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 1447
+ Same as Master Cell. !!
+
+CELL "nand3" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 1355  (master cell) 
+
+			portCount = 6
+			instCount = 6
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 1355
+ Same as Master Cell. !!
+
+CELL "nand2" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 1269  (master cell) 
+
+			portCount = 5
+			instCount = 4
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 1269
+ Same as Master Cell. !!
+
+CELL "a33no2" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 1165  (master cell) 
+
+			portCount = 9
+			instCount = 12
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 1165
+ Same as Master Cell. !!
+
+CELL "a32no2" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 1079  (master cell) 
+
+			portCount = 8
+			instCount = 10
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 1079
+ Same as Master Cell. !!
+
+CELL "a32no2_0" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 1027  (master cell) 
+
+			portCount = 8
+			instCount = 10
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 1027
+ Same as Master Cell. !!
+
+CELL "a32no3" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 935  (master cell) 
+
+			portCount = 9
+			instCount = 12
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 935
+ Same as Master Cell. !!
+
+CELL "a32no3_0" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 876  (master cell) 
+
+			portCount = 9
+			instCount = 12
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 876
+ Same as Master Cell. !!
+
+CELL "a3no2" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 798  (master cell) 
+
+			portCount = 7
+			instCount = 8
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 798
+ Same as Master Cell. !!
+
+CELL "a3no2_0" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 752  (master cell) 
+
+			portCount = 7
+			instCount = 8
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 752
+ Same as Master Cell. !!
+
+CELL "a3no3" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 668  (master cell) 
+
+			portCount = 8
+			instCount = 10
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 668
+ Same as Master Cell. !!
+
+CELL "a3no3_0" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 616  (master cell) 
+
+			portCount = 8
+			instCount = 10
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 616
+ Same as Master Cell. !!
+
+CELL "a22no2" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 526  (master cell) 
+
+			portCount = 7
+			instCount = 8
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 526
+ Same as Master Cell. !!
+
+CELL "a222no3" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 422  (master cell) 
+
+			portCount = 9
+			instCount = 12
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 422
+ Same as Master Cell. !!
+
+CELL "a22no3" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 338  (master cell) 
+
+			portCount = 8
+			instCount = 10
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 338
+ Same as Master Cell. !!
+
+CELL "a22no3_0" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 286  (master cell) 
+
+			portCount = 8
+			instCount = 10
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 286
+ Same as Master Cell. !!
+
+CELL "a2no2" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 213  (master cell) 
+
+			portCount = 6
+			instCount = 6
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 213
+ Same as Master Cell. !!
+
+CELL "a2no2_0" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 173  (master cell) 
+
+			portCount = 6
+			instCount = 6
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 173
+ Same as Master Cell. !!
+
+CELL "a2no3" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 123  (master cell) 
+
+			portCount = 7
+			instCount = 8
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 79
+ Same as Master Cell. !!
+
+CELL "invr" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 91  (master cell) 
+
+			portCount = 4
+			instCount = 2
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 125
+ Same as Master Cell. !!
+
+CELL "a2no3_0" :
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/gds_cdl/v2_1_0/cdl/xh018_D_CELLS_HDLL.cdl : Line 33  (master cell) 
+
+			portCount = 7
+			instCount = 8
+	/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/gds_cdl/v3_0_0/cdl/xh018_D_CELLS_HD.cdl : Line 33
+ Same as Master Cell. !!
+
