@@ -297,8 +297,31 @@ check_routability
 colourise_cmd route_auto
 # incremental routing to fix DRC issues - maybe not needed?
 colourise_cmd "route_detail -incremental true"
+
 # Optimise routing
-colourise_cmd route_opt
+set min_setup_slack -10
+set min_hold_slack -10
+set num_loops 5
+for {set i 1} {$i <= $num_loops} {incr i} {
+    colourise_cmd route_opt
+
+    set min_setup_slack [get_attribute [get_timing_paths -delay_type max] -name slack]
+    set min_hold_slack [get_attribute [get_timing_paths -delay_type min] -name slack]
+
+    puts "[colour $COLOUR_BLUE]route_opt $i/5 - min setup slack $min_setup_slack, min hold slack $min_hold_slack[clear_colour]"
+    if {($min_setup_slack >= 0.0) && ($min_hold_slack >= 0.0)} {
+        puts "[colour $COLOUR_BLUE]route_opt - positive slack, routing done[clear_colour]"
+        break
+    }
+    if {$i != $num_loops} {
+        puts "[colour $COLOUR_BLUE]route_opt - negative slack, re-running route_opt[clear_colour]"
+    }
+}
+
+if {($min_setup_slack < 0.0) || ($min_hold_slack < 0.0)} {
+    puts "[colour $COLOUR_RED]route_opt - negative slack, terminating[clear_colour]"
+    return
+}
 
 connect_pg_net
 
