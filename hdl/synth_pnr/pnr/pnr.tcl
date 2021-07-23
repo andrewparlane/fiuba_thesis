@@ -217,7 +217,8 @@ route_global -floorplan true -congestion_map_only true
 report_qor -summary
 report_timing
 report_power
-report_constraint -all -scenarios [all_scenarios]
+# don't bother with virtual_sceranio_bc yet, no point looking at that until after CTS
+report_constraint -all -scenarios [get_scenarios virtual_scenario]
 
 # save the lib
 save_lib -all
@@ -257,6 +258,7 @@ connect_pg_net
 check_routes -open_net false
 report_clock_qor
 report_clock_timing -type summary
+report_constraint -all -scenarios [all_scenarios]
 
 # save the lib
 save_lib -all
@@ -308,6 +310,7 @@ check_lvs -checks all -open_reporting detailed
 report_timing -delay_type max
 # hold analysis
 report_timing -delay_type min
+report_constraint -all -scenarios [all_scenarios]
 
 if {[colourise_check_pg_drc] == 0} {
     puts "[colour $COLOUR_RED]Aborting due to PG DRC errors[clear_colour]"
