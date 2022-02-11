@@ -61,16 +61,20 @@ Requirements for the AFE:
                 and a hold uncertainty of 500ps.
             3) The clock must be monotonic, and have an even duty cycle.
             4) The clock may stop running, but doesn't have to, during pausses,
-                It must stop for a max of 110 edges (55 ticks)
+                It must stop for a max of 118 edges (59 ticks)
                 This is made up of two parameters:
                     1) when the clock stops after the start of the PCD pause
                     2) when the clock starts again after the end of the PCD pause
                 The consequence for not meeting this requirement is fatal, the sequence_decode
                     module will detect errors or decode the data incorrectly.
+                I recommend ensuring that the clock stops for at most 112 edges (56 ticks) to allow some
+                    jitter between detecting the pauses.
             5) The clock must start again before pause_n_async deasserts.
                 The consequence for not meeting this requirement is the FDT timing will be incorrect
                 potentially causing issues in the initialisation and anti-collision loops, especially
                 when the PCD is in range of both our PICCs and other PICCs.
+                We may be able to mitigate this once we know more about the properties of the AFE, but
+                it would require a change to the design.
             The AFE must meet these requirement for all valid pauses as defined in
                 ISO/IEC 14443-2A:2016 section 8.1.2.1
         rst_n_async:
