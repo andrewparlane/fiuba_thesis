@@ -729,8 +729,10 @@ module signal_control_tb;
             unexpected_pause_expected = 1'b0;
         end
 
-
         repeat (50) @(posedge clk) begin end
+        // assert reset for toggle coverage
+        rst_n <= 1'b0;
+        repeat (5) @(posedge clk) begin end
         $stop;
     end
 

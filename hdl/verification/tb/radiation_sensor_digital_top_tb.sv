@@ -724,7 +724,11 @@ module radiation_sensor_digital_top_tb;
         rx_trans_conv       = new(1'b1);    // Rx messages must have parity bits
         tx_trans_conv       = new(1'b1);    // Tx messages will have parity bits
 
-        picc_uid            = new('x);
+        // initialise the variable part of the UID to be all ones.
+        // this is so on the first test when we swap to all 0s, we get the 1->0 toggle coverage
+        // we then switch back to 1 to get 0->1.
+        picc_uid        = new('1);
+        full_uid = picc_uid.get_uid;
 
         // longest reply is an app IDENTIFY reply:
         //      PCB + CID + 5 byte app header + 5 bytes data + 2 bytes CRC
@@ -757,15 +761,29 @@ module radiation_sensor_digital_top_tb;
         analogue_sim_inst.start (rx_send_queue.data);
         tx_monitor.start        (tx_recv_queue.data);
 
+        seq.do_reset;
+
         // we don't run a huge amount of tests here, since this already takes a long time to run.
         // All the other testbenches prove that the rest of the design works, so really all this needs
         // to do is show that we haven't missed connecting something at the top level.
         // Still, it'd be worth running a lot more tests as a one off, and leaving it running for a few days.
 
-        // repeat twice with different UIDs
-        repeat (2) begin
-            // randomise the variable part of the UID
-            picc_uid.randomize;
+        // repeat 4 times with different UIDs
+        for (int i = 0; i < 4; i++) begin
+            if (i == 0) begin
+                // set the variable part of the uid to 0
+                // this and the i == 1 case help us get toggle coverage
+                picc_uid.set_uid('0);
+            end
+            else if (i == 1) begin
+                // set the variable part of the uid to all ones
+                picc_uid.set_uid('1);
+            end
+            else begin
+                // randomise the variable part of the UID
+                picc_uid.randomize;
+            end
+
             full_uid = picc_uid.get_uid;
             $display("NOTE: New UID: %s", picc_uid.to_string);
             seq.do_reset;
