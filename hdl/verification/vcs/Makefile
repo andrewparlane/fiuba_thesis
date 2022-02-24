@@ -39,7 +39,7 @@
 #		REMOTE_SERVER is username@server.address
 #		REMOTE_PATH is where you want to push the files either /absolute/path/to/dest
 #		or ~/relative/path/from/home/dir.
-#		If you wish to use the GUI (DVE) on the remote server then you must have the ability
+#		If you wish to use the GUI (DVE or VERDI) on the remote server then you must have the ability
 #		to launch X apps remotely via ssh -X, I'm not sure how this works with linux, but with
 #		cygwin follow: https://codeyarns.com/2018/04/01/how-to-use-cygwin-x-server-for-local-and-remote/
 # 	set all the directory vars correctly
@@ -75,7 +75,7 @@
 # Command line arguments:
 #	INTERACTIVE:		running "make INTERACTIVE=1 X" will cause VCS to start up and wait for
 #						user input in the UCLI. You can add breakpoints / step through, etc..
-#	GUI:				running "make GUI=1 X" will start VCS with the -gui flag, opening DVE
+#	GUI:				running "make GUI=1 X" will start VCS with the -gui flag, opening DVE / VERDI
 #	RANDOM_SEED=X:		set the random number generator's seed to X
 #	DEBUG:				running "make DEBUUG=1 X" will start VCS with the -debug_acc+all argument
 #						this makes it slower to run, but provides more debug information.
@@ -243,11 +243,11 @@ COLOURISE = (set -o pipefail; $(1) | $(COLOURISE_SED_ALL))
 # ----------------------------------------------------------------------------------
 
 # arguments to the various commands
-VLOGAN_ARGS	= -full64 +lint=all +warn=all -sverilog
+VLOGAN_ARGS	= -full64 +lint=all +warn=all -sverilog -kdb
 
 VCS_ARGS	= -full64 +lint=all,noSVA-DIU,noSVA-LDA,noSVA-ADORM,noSVA-NSVU,noSVA-AECASR \
 			  +warn=all -assert enable_diag -ntb_opts check=all							\
-			  -cm line+cond+fsm+tgl+branch+assert
+			  -cm line+cond+fsm+tgl+branch+assert -kdb
 
 ifdef DEBUG
 	# full debug mode
