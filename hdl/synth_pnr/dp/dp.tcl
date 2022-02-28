@@ -129,7 +129,7 @@ do_check_design "dp_pre_floorplan"
 initialize_floorplan    -control_type die               \
                         -core_offset {12.6 12.6}        \
                         -shape R                        \
-                        -side_length {292.32 289.52}    \
+                        -side_length {295.68 294.0}     \
                         -site_def hd
 
 # Load timing constraints from synthesis

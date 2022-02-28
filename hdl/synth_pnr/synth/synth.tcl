@@ -483,32 +483,50 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
 
 # Initial results at this point:
 # Without clock gating:
+#   Commands:
+#       compile_ultra
 #   Power
-#       Internal:   0.4752 mW
-#       Switching:  8.8977 uW
-#       Leakage:    432.92 nW
-#       Total:      0.4845 mW
+#       Internal:           461.0 uW
+#       Switching:          8.9634 uW
+#       Leakage:            424.98 nW
+#       Total:              470.4 uW
 #   Area
-#       Total cell area:    57,166 um^2
+#       Total cell area:    56,307 um^2
+# Without clock gating but running compile_ultra -incremental:
+#   Commands:
+#       compile_ultra
+#       compile_ultra -incremental
+#   Power
+#       Internal:           461.0 uW
+#       Switching:          8.7999e uW
+#       Leakage:            424.56 nW
+#       Total:              470.3 uW
+#   Area
+#       Total cell area:    56,236 um^2
 # With compile_ultra -incremental -gate_clock
+#   Commands:
+#       compile_ultra
+#       compile_ultra -incremental -gate_clock
 #   Power
-#       Internal:   0.1976 mW
-#       Switching:  27.535 uW
-#       Leakage:    412.05 nW
-#       Total:      0.2255 mW
+#       Internal:           183.2 uW
+#       Switching:          27.351 uW
+#       Leakage:            404.02 nW
+#       Total:              210.9 mW
 #   Area
-#       Total cell area:    54,539 um^2
+#       Total cell area:    53,710 um^2
 # With compile_ultra -incremental -gate_clock -self_gating
-#   Less total power but higher leakage and larger area
+#   Commands:
+#       compile_ultra
+#       compile_ultra -incremental -gate_clock -self_gating
 #   Power
-#       Internal:   0.1463 mW
-#       Switching:  28.321 uW
-#       Leakage:    441.28 nW
-#       Total:      0.1751 mw
+#       Internal:           142.4 uW
+#       Switching:          28.131 uW
+#       Leakage:            428.88 nW
+#       Total:              170.9 uW
 #   Area
-#       Total cell area:    57,082 um^2
+#       Total cell area:    55,882 um^2
 
-colourise_cmd "compile_ultra -incremental -gate_clock"
+colourise_cmd "compile_ultra -incremental -gate_clock -self_gating"
 
 # =============================================================================
 # Parasitics extraction
@@ -536,7 +554,7 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
 colourise_cmd "optimize_registers -justification_effort high"
 
 # Not entirely sure if this is necessary
-colourise_cmd "compile_ultra -incremental -gate_clock"
+colourise_cmd "compile_ultra -incremental -gate_clock -self_gating"
 
 # =============================================================================
 # Reports
