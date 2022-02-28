@@ -94,11 +94,27 @@ sync_with_remote:
 	-rm -rf lib_prep/logs
 	-rm -rf dp/logs
 	-rm -rf pnr/logs
+	-rm -rf pnr/work
+	mkdir pnr/work
+	-rm -rf drc_lvs/drc_work
+	mkdir drc_lvs/drc_work
+	-rm -rf drc_lvs/lvs_work
+	mkdir drc_lvs/lvs_work
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/logs/ synth/
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/lib_prep/logs/ lib_prep/
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/dp/logs/ dp/
 	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/dp/preferred_port_locations.tcl dp/
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/pnr/logs/ pnr/
+	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/pnr/work/design_icc2_layers.gds pnr/work/
+	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/pnr/work/design_xfab_layers.gds pnr/work/
+	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/pnr/work/netlist_lvs.v pnr/work/
+	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/drc_lvs/drc_work/*.log drc_lvs/drc_work/
+	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/drc_lvs/drc_work/*.RESULTS drc_lvs/drc_work/
+	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/drc_lvs/drc_work/*.TOP_LAYOUT_ERRORS drc_lvs/drc_work/
+	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/drc_lvs/lvs_work/*.log drc_lvs/lvs_work/
+	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/drc_lvs/lvs_work/*.LVS_ERRORS drc_lvs/lvs_work/
+	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/drc_lvs/lvs_work/*.RESULTS drc_lvs/lvs_work/
+	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/drc_lvs/lvs_work/*.TOP_LAYOUT_ERRORS drc_lvs/lvs_work/
 	cd $(ROOT_DIR) && rsync -rRv --delete 						\
 		--exclude $(SYNTH_PNR_DIR)/synth/work/					\
 		--exclude $(SYNTH_PNR_DIR)/synth/logs/					\
