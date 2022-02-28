@@ -3,21 +3,21 @@
 Report : qor
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Fri Jul 16 17:47:57 2021
+Date   : Mon Feb 28 17:09:11 2022
 ****************************************
 
 
   Timing Path Group 'clk'
   -----------------------------------
   Levels of Logic:              23.00
-  Critical Path Length:         16.89
-  Critical Path Slack:          41.67
+  Critical Path Length:         16.88
+  Critical Path Slack:          41.69
   Critical Path Clk Period:     73.75
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
-  Worst Hold Violation:         -0.27
-  Total Hold Violation:        -31.36
-  No. of Hold Violations:      278.00
+  Worst Hold Violation:         -0.23
+  Total Hold Violation:        -28.36
+  No. of Hold Violations:      242.00
   -----------------------------------
 
   Timing Path Group 'default'
@@ -38,37 +38,37 @@ Date   : Fri Jul 16 17:47:57 2021
   -----------------------------------
   Hierarchical Cell Count:         44
   Hierarchical Port Count:        176
-  Leaf Cell Count:               2211
+  Leaf Cell Count:               2305
   Buf/Inv Cell Count:             485
   Buf Cell Count:                  15
   Inv Cell Count:                 470
   CT Buf/Inv Cell Count:            0
-  Combinational Cell Count:      1579
-  Sequential Cell Count:          632
+  Combinational Cell Count:      1663
+  Sequential Cell Count:          642
   Macro Count:                      0
   -----------------------------------
 
 
   Area
   -----------------------------------
-  Combinational Area:    19259.875247
-  Noncombinational Area: 33529.014843
+  Combinational Area:    20930.736071
+  Noncombinational Area: 34079.859695
   Buf/Inv Area:           3687.936044
   Total Buffer Area:           150.53
   Total Inverter Area:        3537.41
   Macro/Black Box Area:      0.000000
   Net Area:                  0.000000
-  Net XLength        :       26695.50
-  Net YLength        :       30521.50
+  Net XLength        :       27475.91
+  Net YLength        :       31249.81
   -----------------------------------
-  Cell Area:             52788.890090
-  Design Area:           52788.890090
-  Net Length        :        57217.00
+  Cell Area:             55010.595766
+  Design Area:           55010.595766
+  Net Length        :        58725.71
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:          2248
+  Total Number of Nets:          2342
   Nets With Violations:             0
   Max Trans Violations:             0
   Max Cap Violations:               0
@@ -81,17 +81,17 @@ Date   : Fri Jul 16 17:47:57 2021
   -----------------------------------------
   Resource Sharing:                    0.00
   Logic Optimization:                  0.00
-  Mapping Optimization:                8.75
+  Mapping Optimization:                8.76
   -----------------------------------------
-  Overall Compile Time:               26.27
-  Overall Compile Wall Clock Time:    27.14
+  Overall Compile Time:               26.33
+  Overall Compile Wall Clock Time:    27.17
 
   --------------------------------------------------------------------
 
   Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
 
 
-  Design (Hold)  WNS: 0.27  TNS: 31.36  Number of Violating Paths: 278
+  Design (Hold)  WNS: 0.23  TNS: 28.36  Number of Violating Paths: 242
 
   --------------------------------------------------------------------
 

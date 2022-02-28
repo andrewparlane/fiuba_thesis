@@ -7,7 +7,7 @@ Report : power
         -verbose
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Fri Jul 16 17:47:57 2021
+Date   : Mon Feb 28 17:09:11 2022
 ****************************************
 
 
@@ -37,7 +37,7 @@ Power Breakdown
                              Internal    Switching   Power (mW)       Leakage
 Cell                         Power (mW)  Power (mW)  (% Cell/Tot)     Power (pW)
 --------------------------------------------------------------------------------
-Netlist Power                   0.1761      0.0269   2.031e-01 (87%)  4.255e+05
+Netlist Power                   0.1326      0.0265   1.591e-01 (83%)  4.356e+05
 Estimated Clock Tree Power   N/A         N/A          (N/A)           N/A
 --------------------------------------------------------------------------------
                  Internal         Switching           Leakage            Total                         Cell
@@ -46,10 +46,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
-clock_network  2.5605e-02        1.8124e-02        2.1039e+04        4.3750e-02  (  21.50%)            44
-register           0.1460        3.5950e-03        2.7178e+05            0.1499  (  73.66%)            588
+clock_network  3.0806e-02        1.8148e-02        2.5951e+04        4.8980e-02  (  30.70%)            54
+register       9.7393e-02        3.4577e-03        2.5553e+05            0.1011  (  63.38%)            588
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
-combinational  4.5227e-03        5.1971e-03        1.3273e+05        9.8525e-03  (   4.84%)            1577
+combinational  4.3901e-03        4.8973e-03        1.5408e+05        9.4414e-03  (   5.92%)            1661
 ---------------------------------------------------------------------------------------------------------
-Total              0.1761 mW     2.6916e-02 mW     4.2555e+05 pW         0.2035 mW
+Total              0.1326 mW     2.6503e-02 mW     4.3556e+05 pW         0.1595 mW
 1

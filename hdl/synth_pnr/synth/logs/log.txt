@@ -91,7 +91,7 @@ Logic Library #1:
     Current unit              1uA
 check_library options         
 Version                       P-2019.03
-Check date and time           Fri Jul 16 17:45:41 2021
+Check date and time           Mon Feb 28 17:04:33 2022
 
 
 #BEGIN_LIBSCREEN_UPF
@@ -143,7 +143,7 @@ Logic Library #1:
     Current unit              1uA
 check_library options         
 Version                       P-2019.03
-Check date and time           Fri Jul 16 17:45:42 2021
+Check date and time           Mon Feb 28 17:04:33 2022
 
 
 #BEGIN_LIBSCREEN_UPF
@@ -195,7 +195,7 @@ Logic Library #1:
     Current unit              1uA
 check_library options         
 Version                       P-2019.03
-Check date and time           Fri Jul 16 17:45:42 2021
+Check date and time           Mon Feb 28 17:04:34 2022
 
 
 #BEGIN_LIBSCREEN_UPF
@@ -247,7 +247,7 @@ Logic Library #1:
     Current unit              1uA
 check_library options         
 Version                       P-2019.03
-Check date and time           Fri Jul 16 17:45:43 2021
+Check date and time           Mon Feb 28 17:04:34 2022
 
 
 #BEGIN_LIBSCREEN_UPF
@@ -296,7 +296,7 @@ Physical Library: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh01
                   /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/synopsys_ICC/v2_1_0/xh018-D_CELLS_HDLL-synopsys_ICCompiler-v2_1_0/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HDLL 
 check_library options:  
 Version:                                P-2019.03
-Check date and time:    Fri Jul 16 17:45:43 2021
+Check date and time:    Mon Feb 28 17:04:35 2022
 
           List of logic library and file names
 ------------------------------------------------------------------------------
@@ -1066,7 +1066,7 @@ Inferred memory devices in process
 [36mInformation: Building the design 'crc_a'. (HDL-193)(B[m
 
 Inferred memory devices in process
-        in routine crc_a line 55 in file
+        in routine crc_a line 67 in file
                 '../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/crc_a.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -1096,7 +1096,7 @@ Warning: Not all metal layers have preferred routing direction. (OPT-1427)
 Report : Layers
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Fri Jul 16 17:45:45 2021
+Date   : Mon Feb 28 17:04:37 2022
 ****************************************
 
 Layer Name                   Library             Design              Tool understands
@@ -1126,7 +1126,7 @@ METTPL                       Unknown             Vertical            Vertical
 ****************************************
 check_design summary:
 Version:     P-2019.03
-Date:        Fri Jul 16 17:45:45 2021
+Date:        Mon Feb 28 17:04:37 2022
 ****************************************
 
                    Name                                            Total
@@ -1332,7 +1332,7 @@ Report : timing_requirements
         -attributes
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Fri Jul 16 17:45:46 2021
+Date   : Mon Feb 28 17:04:38 2022
 ****************************************
 
 Description                            Setup               Hold
@@ -1462,7 +1462,7 @@ Report : constraint
         -max_transition
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Fri Jul 16 17:45:46 2021
+Date   : Mon Feb 28 17:04:38 2022
 ****************************************
 
 
@@ -1571,7 +1571,7 @@ Report : saif
         -rtl_saif
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Fri Jul 16 17:45:46 2021
+Date   : Mon Feb 28 17:04:38 2022
 ****************************************
 
   
@@ -1602,7 +1602,9 @@ Object type   Annotated (%)     Activity (%)      Activity (%)       Total
 [36mCompiling design(B[m
 [36mThis may take awhile with no output(B[m
 [36mInformation: Performing power optimization. (PWR-850)(B[m
-Alib files are up-to-date.
+Analyzing: "/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db"
+Analyzing: "/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db"
+Library analysis succeeded.
 
 TLU+ File = /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/TLUplus/v8_0_1/xh018_xx43_MET4_METMID_METTHK_max.tlu
 TLU+ File = /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/TLUplus/v8_0_1/xh018_xx43_MET4_METMID_METTHK_min.tlu
@@ -1808,7 +1810,7 @@ Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:27   56408.6      0.00       0.0       3.2                           405899.9062
+    0:00:28   56408.6      0.00       0.0       3.2                           405899.9062
 
 
   Beginning Timing Optimizations
@@ -1817,7 +1819,7 @@ Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018
   Global Optimization (Phase 23)
   Global Optimization (Phase 24)
   Global Optimization (Phase 25)
-    0:00:27   56479.5      0.00       0.0       0.0                           406935.9375
+    0:00:28   56479.5      0.00       0.0       0.0                           406935.9375
     0:00:28   56357.5      0.00       0.0       0.0                           404670.0312
     0:00:28   56357.5      0.00       0.0       0.0                           404670.0312
     0:00:28   56357.5      0.00       0.0       0.0                           404670.0312
@@ -1833,16 +1835,16 @@ Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018
 
   Beginning Delay Optimization
   ----------------------------
-    0:00:33   56357.5      0.00       0.0       0.0                           404670.0312
-    0:00:33   56357.5      0.00       0.0       0.0                           404670.0312
-    0:00:33   56357.5      0.00       0.0       0.0                           404670.0312
-    0:00:33   56357.5      0.00       0.0       0.0                           404670.0312
-    0:00:33   56357.5      0.00       0.0       0.0                           404670.0312
-    0:00:33   56357.5      0.00       0.0       0.0                           404670.0312
-    0:00:33   56357.5      0.00       0.0       0.0                           404670.0312
-    0:00:33   56357.5      0.00       0.0       0.0                           404670.0312
-    0:00:33   56357.5      0.00       0.0       0.0                           404670.0312
-    0:00:33   56357.5      0.00       0.0       0.0                           404670.0312
+    0:00:34   56357.5      0.00       0.0       0.0                           404670.0312
+    0:00:34   56357.5      0.00       0.0       0.0                           404670.0312
+    0:00:34   56357.5      0.00       0.0       0.0                           404670.0312
+    0:00:34   56357.5      0.00       0.0       0.0                           404670.0312
+    0:00:34   56357.5      0.00       0.0       0.0                           404670.0312
+    0:00:34   56357.5      0.00       0.0       0.0                           404670.0312
+    0:00:34   56357.5      0.00       0.0       0.0                           404670.0312
+    0:00:34   56357.5      0.00       0.0       0.0                           404670.0312
+    0:00:34   56357.5      0.00       0.0       0.0                           404670.0312
+    0:00:34   56357.5      0.00       0.0       0.0                           404670.0312
     0:00:34   56357.5      0.00       0.0       0.0                           404670.0312
     0:00:34   56357.5      0.00       0.0       0.0                           404670.0312
     0:00:34   56357.5      0.00       0.0       0.0                           404670.0312
@@ -1863,8 +1865,8 @@ Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018
     0:00:34   56276.9      0.00       0.0       0.0                           403545.5938
     0:00:34   56276.9      0.00       0.0       0.0                           403545.5938
     0:00:34   56276.9      0.00       0.0       0.0                           403545.5938
-    0:00:34   56276.9      0.00       0.0       0.0                           403545.5938
-    0:00:34   56276.9      0.00       0.0       0.0                           403545.5938
+    0:00:35   56276.9      0.00       0.0       0.0                           403545.5938
+    0:00:35   56276.9      0.00       0.0       0.0                           403545.5938
 
 
   High Effort Optimization Phase Complete
@@ -1951,6 +1953,10 @@ Info: skipped to derive cell locations.
 [36mInformation: Automatic high-fanout synthesis deletes 0 cells. (HFS-802)(B[m
 [36mInformation: Automatic high-fanout synthesis adds 0 new cells. (PSYN-864)(B[m
 
+[36mInformation: Performing XOR self gating insertion. (PWR-790)(B[m
+[36mInformation: State dependent leakage is now switched from off to on.(B[m
+[36mInformation: State dependent leakage is now switched from on to off.(B[m
+[36mInformation: Updating design information... (UID-85)(B[m
 
 
   Beginning Timing Optimizations
@@ -1960,40 +1966,40 @@ Info: skipped to derive cell locations.
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:14   56354.4      0.00       0.0       0.0                           442442.7812
+    0:00:15   58450.8      0.00       0.0       0.0                           460610.3438
   Global Optimization (Phase 26)
   Global Optimization (Phase 27)
   Global Optimization (Phase 28)
   Global Optimization (Phase 29)
-    0:00:16   56284.2      0.00       0.0       0.0                           441492.9062
-    0:00:16   53510.5      0.00       0.0       0.0                           388042.7188
+    0:00:17   58380.5      0.00       0.0       0.0                           459660.4688
+    0:00:17   55619.3      0.00       0.0       0.0                           406386.6875
 
   Beginning Delay Optimization
   ----------------------------
-    0:00:19   53510.5      0.00       0.0       0.0                           388042.7188
-    0:00:19   53510.5      0.00       0.0       0.0                           388042.7188
-    0:00:19   53510.5      0.00       0.0       0.0                           388042.7188
-    0:00:19   53510.5      0.00       0.0       0.0                           388042.7188
-    0:00:20   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:20   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:20   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:20   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:20   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:20   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:20   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:20   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:20   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:20   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:20   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:20   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:20   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:20   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:20   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:20   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:21   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:21   53480.2      0.00       0.0       0.0                           387538.7812
-    0:00:21   53392.0      0.00       0.0       0.0                           386325.3750
-    0:00:21   53379.1      0.00       0.0       0.0                           386085.0312
+    0:00:20   55619.3      0.00       0.0       0.0                           406386.6875
+    0:00:20   55619.3      0.00       0.0       0.0                           406386.6875
+    0:00:21   55619.3      0.00       0.0       0.0                           406386.6875
+    0:00:21   55619.3      0.00       0.0       0.0                           406386.6875
+    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:22   55488.5      0.00       0.0       0.0                           404502.8438
+    0:00:22   55475.4      0.00       0.0       0.0                           404252.5938
 
 
   Beginning High Effort Optimization Phase
@@ -2007,38 +2013,38 @@ Info: skipped to derive cell locations.
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:21   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:21   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:21   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:21   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:21   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:22   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:23   53379.1      0.00       0.0       0.0                           386085.0312
-    0:00:23   53379.1      0.00       0.0       0.0                           386085.0312
+    0:00:22   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
 
 
   High Effort Optimization Phase Complete
   ---------------------------------------
 
 Skipping remaining steps due to timing met. Go to finish
-    0:00:23   53710.2      0.00       0.0       0.0                           386088.0000
+    0:00:24   55881.9      0.00       0.0       0.0                           404256.2500
 
 
 Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
@@ -2046,18 +2052,18 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
 
   Optimization Complete
   ---------------------
-[36mInformation: Fail to create cell *cell*10227 in dpi.(B[m
+[36mInformation: Fail to create cell *cell*10359 in dpi.(B[m
 
   Beginning Buftree Cleanup
   -------------------------
-[36mInformation: Fail to create cell *cell*10227 in dpi.(B[m
+[36mInformation: Fail to create cell *cell*10359 in dpi.(B[m
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:23   53710.2      0.00       0.0       0.0                           386088.0000
-    0:00:23   53710.2      0.00       0.0       0.0                           386088.0000
+    0:00:24   55881.9      0.00       0.0       0.0                           404256.2500
+    0:00:24   55881.9      0.00       0.0       0.0                           404256.2500
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
@@ -2106,7 +2112,7 @@ Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018
 [36mInformation: Capacitance Unit from Milkyway design library: 'pf' (B[m
 [36mInformation: Design Library and main library capacitance units are matched - 1.000 pf. (B[m
 
-2290 nets processed. 
+2394 nets processed. 
 Router succeeded.
 1
 
@@ -2161,11 +2167,6 @@ Router succeeded.
 
   Retiming base-clock clk, rising edge.
 [33mWarning: Using high justification effort could lead to very long runtime. (RTDC-134)(B[m
-[33mWarning: The output port 'lm_out' has output rise and fall delay (B[m
-        that is smaller than the estimated average setup time used by the 
-        retiming algorihm. For optimal results make sure to set an output 
-        delay that is realistic. This can be done by using the 
-        'set_output_delay' or 'characterize' commands. (RTDC-44)
 [33mWarning: The output port 'sens_enable' has output rise and fall delay (B[m
         that is smaller than the estimated average setup time used by the 
         retiming algorihm. For optimal results make sure to set an output 
@@ -2176,12 +2177,17 @@ Router succeeded.
         retiming algorihm. For optimal results make sure to set an output 
         delay that is realistic. This can be done by using the 
         'set_output_delay' or 'characterize' commands. (RTDC-44)
+[33mWarning: The output port 'adc_read' has output rise and fall delay (B[m
+        that is smaller than the estimated average setup time used by the 
+        retiming algorihm. For optimal results make sure to set an output 
+        delay that is realistic. This can be done by using the 
+        'set_output_delay' or 'characterize' commands. (RTDC-44)
 [33mWarning: The output port 'sens_read' has output rise and fall delay (B[m
         that is smaller than the estimated average setup time used by the 
         retiming algorihm. For optimal results make sure to set an output 
         delay that is realistic. This can be done by using the 
         'set_output_delay' or 'characterize' commands. (RTDC-44)
-[33mWarning: The output port 'adc_read' has output rise and fall delay (B[m
+[33mWarning: The output port 'lm_out' has output rise and fall delay (B[m
         that is smaller than the estimated average setup time used by the 
         retiming algorihm. For optimal results make sure to set an output 
         delay that is realistic. This can be done by using the 
@@ -2293,40 +2299,40 @@ Info: skipped to derive cell locations.
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:12   49737.6      0.00       0.0       0.0                           580169.8125
+    0:00:12   51841.7      0.00       0.0       0.0                           598288.1250
   Global Optimization (Phase 30)
   Global Optimization (Phase 31)
   Global Optimization (Phase 32)
   Global Optimization (Phase 33)
-    0:00:14   52850.8      0.00       0.0       0.0                           417696.3125
-    0:00:14   52851.5      0.00       0.0       0.0                           417146.9062
+    0:00:14   55094.6      0.00       0.0       0.0                           417009.7500
+    0:00:14   55095.4      0.00       0.0       0.0                           416461.6562
 
   Beginning Delay Optimization
   ----------------------------
-    0:00:18   52851.5      0.00       0.0       0.0                           417146.9062
-    0:00:18   52851.5      0.00       0.0       0.0                           417146.9062
-    0:00:18   52851.5      0.00       0.0       0.0                           417146.9062
-    0:00:18   52851.5      0.00       0.0       0.0                           417146.9062
-    0:00:18   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:18   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:18   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:18   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:18   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:18   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:18   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:18   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:18   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:18   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:18   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:19   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:19   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:19   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:19   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:19   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:19   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:19   52850.6      0.00       0.0       0.0                           413539.7500
-    0:00:19   52787.5      0.00       0.0       0.0                           412712.5938
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
+    0:00:17   55095.4      0.00       0.0       0.0                           416461.6562
+    0:00:17   55095.4      0.00       0.0       0.0                           416461.6562
+    0:00:17   55095.4      0.00       0.0       0.0                           416461.6562
+    0:00:17   55095.4      0.00       0.0       0.0                           416461.6562
+    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:19   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:19   55087.0      0.00       0.0       0.0                           415292.6875
+    0:00:19   55023.9      0.00       0.0       0.0                           414470.0938
+    0:00:19   55008.3      0.00       0.0       0.0                           414275.4375
 
 
   Beginning High Effort Optimization Phase
@@ -2340,31 +2346,31 @@ Info: skipped to derive cell locations.
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:20   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:21   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:21   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:21   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:21   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:21   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:21   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:21   52776.8      0.00       0.0       0.0                           412578.8438
+    0:00:19   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:19   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:19   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:21   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:21   55008.3      0.00       0.0       0.0                           414275.4375
 
 
   High Effort Optimization Phase Complete
@@ -2386,8 +2392,8 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:21   52776.8      0.00       0.0       0.0                           412578.8438
-    0:00:21   52776.8      0.00       0.0       0.0                           412578.8438
+    0:00:21   55008.3      0.00       0.0       0.0                           414275.4375
+    0:00:21   55008.3      0.00       0.0       0.0                           414275.4375
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
@@ -2500,6 +2506,9 @@ Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018
 [36mInformation: Automatic high-fanout synthesis deletes 0 cells. (HFS-802)(B[m
 [36mInformation: Automatic high-fanout synthesis adds 0 new cells. (PSYN-864)(B[m
 
+[36mInformation: Performing XOR self gating insertion. (PWR-790)(B[m
+[36mInformation: State dependent leakage is now switched from off to on.(B[m
+[36mInformation: State dependent leakage is now switched from on to off.(B[m
 
 
   Beginning Timing Optimizations
@@ -2509,40 +2518,40 @@ Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:13   52812.0      0.00       0.0       0.0                           413178.7188
+    0:00:13   55043.4      0.00       0.0       0.0                           414875.3125
   Global Optimization (Phase 34)
   Global Optimization (Phase 35)
   Global Optimization (Phase 36)
   Global Optimization (Phase 37)
-    0:00:15   52811.8      0.00       0.0       0.0                           413154.0938
-    0:00:15   52862.8      0.00       0.0       0.0                           413672.5312
+    0:00:16   55043.3      0.00       0.0       0.0                           414863.0000
+    0:00:16   55099.4      0.00       0.0       0.0                           415447.6875
 
   Beginning Delay Optimization
   ----------------------------
-    0:00:18   52862.8      0.00       0.0       0.0                           413672.5312
-    0:00:18   52862.8      0.00       0.0       0.0                           413672.5312
-    0:00:18   52862.8      0.00       0.0       0.0                           413672.5312
-    0:00:18   52862.8      0.00       0.0       0.0                           413672.5312
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:19   52862.7      0.00       0.0       0.0                           411979.5938
-    0:00:20   52799.5      0.00       0.0       0.0                           411140.1250
-    0:00:20   52788.9      0.00       0.0       0.0                           411006.3750
+    0:00:19   55099.4      0.00       0.0       0.0                           415447.6875
+    0:00:19   55099.4      0.00       0.0       0.0                           415447.6875
+    0:00:19   55099.4      0.00       0.0       0.0                           415447.6875
+    0:00:19   55099.4      0.00       0.0       0.0                           415447.6875
+    0:00:19   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:19   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:19   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:19   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
+    0:00:20   55026.2      0.00       0.0       0.0                           414133.5625
+    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
 
 
   Beginning High Effort Optimization Phase
@@ -2556,31 +2565,31 @@ Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:20   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:20   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:20   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:20   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:20   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:20   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:20   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:21   52788.9      0.00       0.0       0.0                           411006.3750
+    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
 
 
   High Effort Optimization Phase Complete
@@ -2602,8 +2611,8 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:22   52788.9      0.00       0.0       0.0                           411006.3750
-    0:00:22   52788.9      0.00       0.0       0.0                           411006.3750
+    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
@@ -2622,7 +2631,7 @@ Report : timing
         -max_paths 1
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Fri Jul 16 17:47:56 2021
+Date   : Mon Feb 28 17:09:11 2022
 ****************************************
 
  * Some/all delay information is back-annotated.
@@ -2642,32 +2651,32 @@ Wire Load Model Mode: Inactive.
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
   clk_r_REG162_S16/C (DFRRQHDLLX0)         0.00       0.00 r
-  clk_r_REG162_S16/Q (DFRRQHDLLX0)         1.50       1.50 f
-  U1967/Q (INHDLLX1)                       0.70 *     2.20 r
-  U1968/Q (ON21HDLLX1)                     0.28 *     2.48 f
-  U1969/Q (ON22HDLLX0)                     0.92 *     3.40 r
-  U1972/Q (NA22HDLLX1)                     0.50 *     3.90 r
-  U1973/Q (ON211HDLLX0)                    0.48 *     4.38 f
-  U1974/Q (AN22HDLLX1)                     0.63 *     5.01 r
-  U1976/CO (CAGHDLLX0)                     0.65 *     5.67 r
-  U1977/Q (AN211HDLLX1)                    0.16 *     5.82 f
-  U1978/Q (AN321HDLLX0)                    1.73 *     7.55 r
-  U1979/Q (AN211HDLLX1)                    0.33 *     7.88 f
-  U1986/Q (ON31HDLLX1)                     0.83 *     8.71 r
-  U1991/Q (AN22HDLLX1)                     0.46 *     9.18 f
-  U1993/Q (NA22HDLLX1)                     0.43 *     9.61 f
-  U1994/Q (ON211HDLLX0)                    0.54 *    10.15 r
-  U1997/Q (NA4HDLLX1)                      0.49 *    10.64 f
-  U1998/Q (ON31HDLLX1)                     1.06 *    11.70 r
-  U1999/Q (INHDLLX1)                       0.35 *    12.05 f
-  U2000/Q (AND2HDLLX0)                     0.77 *    12.82 f
-  U3107/Q (AN32HDLLX1)                     0.63 *    13.45 r
-  U3108/Q (NA4HDLLX1)                      1.84 *    15.29 f
-  U3162/Q (ON21HDLLX1)                     0.95 *    16.24 r
-  U3163/Q (ON21HDLLX1)                     0.33 *    16.58 f
-  U3164/Q (ON31HDLLX1)                     0.32 *    16.89 r
-  clk_r_REG183_S16/D (DFRRQHDLLX0)         0.00 *    16.89 r
-  data arrival time                                  16.89
+  clk_r_REG162_S16/Q (DFRRQHDLLX0)         1.49       1.49 f
+  U1967/Q (INHDLLX1)                       0.70 *     2.19 r
+  U1968/Q (ON21HDLLX1)                     0.28 *     2.47 f
+  U1969/Q (ON22HDLLX0)                     0.91 *     3.38 r
+  U1972/Q (NA22HDLLX1)                     0.50 *     3.88 r
+  U1973/Q (ON211HDLLX0)                    0.49 *     4.37 f
+  U1974/Q (AN22HDLLX1)                     0.63 *     4.99 r
+  U1976/CO (CAGHDLLX0)                     0.65 *     5.65 r
+  U1977/Q (AN211HDLLX1)                    0.16 *     5.80 f
+  U1978/Q (AN321HDLLX0)                    1.78 *     7.58 r
+  U1979/Q (AN211HDLLX1)                    0.32 *     7.90 f
+  U1986/Q (ON31HDLLX1)                     0.80 *     8.70 r
+  U1991/Q (AN22HDLLX1)                     0.45 *     9.16 f
+  U1993/Q (NA22HDLLX1)                     0.43 *     9.59 f
+  U1994/Q (ON211HDLLX0)                    0.54 *    10.13 r
+  U1997/Q (NA4HDLLX1)                      0.48 *    10.62 f
+  U1998/Q (ON31HDLLX1)                     1.04 *    11.65 r
+  U1999/Q (INHDLLX1)                       0.36 *    12.02 f
+  U2000/Q (AND2HDLLX0)                     0.77 *    12.78 f
+  U3107/Q (AN32HDLLX1)                     0.62 *    13.40 r
+  U3108/Q (NA4HDLLX1)                      1.87 *    15.27 f
+  U3162/Q (ON21HDLLX1)                     0.96 *    16.22 r
+  U3163/Q (ON21HDLLX1)                     0.33 *    16.56 f
+  U3164/Q (ON31HDLLX1)                     0.32 *    16.88 r
+  clk_r_REG183_S16/D (DFRRQHDLLX0)         0.00 *    16.88 r
+  data arrival time                                  16.88
 
   clock clk (rise edge)                   73.75      73.75
   clock network delay (ideal)              0.00      73.75
@@ -2677,9 +2686,9 @@ Wire Load Model Mode: Inactive.
   data required time                                 58.57
   -----------------------------------------------------------
   data required time                                 58.57
-  data arrival time                                 -16.89
+  data arrival time                                 -16.88
   -----------------------------------------------------------
-[32m  slack (MET)                                        41.67(B[m
+[32m  slack (MET)                                        41.69(B[m
 
 
   Startpoint: clk_r_REG27_S13
@@ -2753,15 +2762,16 @@ OPT-1427        Warning             0              1            0
 OPT-775     Information             0              1            0
 PSYN-864    Information             0              4            0
 PSYN-878    Information             0              4            0
-PWR-12          Warning             0             12           12
+PWR-12          Warning             0             18           18
 PWR-18          Warning             0             16           16
 PWR-19          Warning             0              1            0
 PWR-415         Warning             0              2            0
 PWR-458     Information             0              2            0
-PWR-6       Information             0              6            0
+PWR-6       Information             0              9            3
 PWR-602     Information             0              1            0
 PWR-727         Warning             0              1            0
 PWR-730     Information             0              2            0
+PWR-790     Information             0              2            0
 PWR-806     Information             0             44            0
 PWR-850     Information             0              4            0
 RCEX-007    Information             0              7            0
@@ -2782,7 +2792,7 @@ TIM-216         Warning             0              1            0
 UI-30             Error             0              1            0
 UID-401         Warning             0             37            0
 UID-496         Warning             0              0            0
-UID-85      Information             0             19            0
+UID-85      Information             0             20            0
 UISN-27     Information             0              1            0
 UPF-213         Warning             0              0            0
 UPF-213a        Warning             0              0            0
@@ -2795,7 +2805,7 @@ VER-735     Information             5            160          155
 VO-4            Warning             0              1            0
 ZRT-105         Warning            10              0            0
 
-Diagnostics summary: 1 error, 395 warnings, 311 informationals
+Diagnostics summary: 1 error, 395 warnings, 314 informationals
 (B[m
 [32mScript finished successfully(B[m
 exit

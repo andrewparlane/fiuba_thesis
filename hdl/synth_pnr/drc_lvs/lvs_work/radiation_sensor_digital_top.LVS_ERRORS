@@ -15,7 +15,7 @@ Layout netlist     = /home/aparlane/fiuba_thesis/hdl/synth_pnr/drc_lvs/lvs_work/
 Runset file        = /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2/xh018.rs
 Working directory  = /home/aparlane/fiuba_thesis/hdl/synth_pnr/drc_lvs/lvs_work
 Compare directory  = run_details/compare
-Compare start time = 2021-07-23 11:46:07
+Compare start time = 2022-02-28 18:31:35
 
 
 
@@ -34,7 +34,7 @@ TOP equivalence point:
 
 Comparison summary
 
-    73 successful equivalencies
+    74 successful equivalencies
      0 failed equivalencies
 
 Schematic and layout agree at all user-intended equivalent points involved
