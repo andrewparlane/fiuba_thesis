@@ -91,7 +91,7 @@ Logic Library #1:
     Current unit              1uA
 check_library options         
 Version                       P-2019.03
-Check date and time           Mon Feb 28 17:04:33 2022
+Check date and time           Thu Mar 10 15:39:06 2022
 
 
 #BEGIN_LIBSCREEN_UPF
@@ -143,7 +143,7 @@ Logic Library #1:
     Current unit              1uA
 check_library options         
 Version                       P-2019.03
-Check date and time           Mon Feb 28 17:04:33 2022
+Check date and time           Thu Mar 10 15:39:06 2022
 
 
 #BEGIN_LIBSCREEN_UPF
@@ -195,7 +195,7 @@ Logic Library #1:
     Current unit              1uA
 check_library options         
 Version                       P-2019.03
-Check date and time           Mon Feb 28 17:04:34 2022
+Check date and time           Thu Mar 10 15:39:07 2022
 
 
 #BEGIN_LIBSCREEN_UPF
@@ -247,7 +247,7 @@ Logic Library #1:
     Current unit              1uA
 check_library options         
 Version                       P-2019.03
-Check date and time           Mon Feb 28 17:04:34 2022
+Check date and time           Thu Mar 10 15:39:07 2022
 
 
 #BEGIN_LIBSCREEN_UPF
@@ -296,7 +296,7 @@ Physical Library: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh01
                   /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/synopsys_ICC/v2_1_0/xh018-D_CELLS_HDLL-synopsys_ICCompiler-v2_1_0/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HDLL 
 check_library options:  
 Version:                                P-2019.03
-Check date and time:    Mon Feb 28 17:04:35 2022
+Check date and time:    Thu Mar 10 15:39:08 2022
 
           List of logic library and file names
 ------------------------------------------------------------------------------
@@ -541,14 +541,12 @@ Loading db file '/usr/synopsys2/syn/P-2019.03/libraries/syn/standard.sldb'
   Loading link library 'D_CELLS_HDLL_LPMOS_slow_1_62V_125C'
   Loading link library 'gtech'
 Running PRESTO HDLC
-[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:185: Variables crossing hierarchy: interface content 'app_rx_iface.soc' may become connected to an inout port. (VER-735)(B[m
-[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:185: Variables crossing hierarchy: interface content 'app_rx_iface.eoc' may become connected to an inout port. (VER-735)(B[m
-[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:185: Variables crossing hierarchy: interface content 'app_rx_iface.data' may become connected to an inout port. (VER-735)(B[m
-[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:185: Variables crossing hierarchy: interface content 'app_rx_iface.data_valid' may become connected to an inout port. (VER-735)(B[m
-[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:185: Variables crossing hierarchy: interface content 'app_rx_iface.data_bits' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:186: Variables crossing hierarchy: interface content 'app_rx_iface.soc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:186: Variables crossing hierarchy: interface content 'app_rx_iface.eoc' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:186: Variables crossing hierarchy: interface content 'app_rx_iface.data' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:186: Variables crossing hierarchy: interface content 'app_rx_iface.data_valid' may become connected to an inout port. (VER-735)(B[m
+[36mInformation:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:186: Variables crossing hierarchy: interface content 'app_rx_iface.data_bits' may become connected to an inout port. (VER-735)(B[m
 Note - message 'VER-735' limit (5) exceeded.  Remainder will be suppressed.
-[33mWarning:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:185: A symbol named 'rx_interface' is already defined differently in the receiving scope.   (ELAB-106)(B[m
-[33mWarning:  ../../../hdl/rtl/radiation_sensor_digital_top.sv:185: A symbol named 'tx_interface' is already defined differently in the receiving scope.   (ELAB-106)(B[m
 [32mPresto compilation completed successfully. (radiation_sensor_digital_top)(B[m
 Elaborated 1 design.
 Current design is now 'radiation_sensor_digital_top'.
@@ -586,73 +584,9 @@ Inferred memory devices in process
 |       tmp_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 [32mPresto compilation completed successfully. (synchroniser)(B[m
-[36mInformation: Building the design 'iso14443_2a' instantiated from design 'radiation_sensor_digital_top' with(B[m
-        the parameters "|((N%clk%)(N%rst_n%)(N%pause_n_synchronised%)(N%rx_iface%I%WORK/rx_interface%%BY_BYTE=0)(N%tx_iface%I%WORK/tx_interface%%BY_BYTE=0)(N%lm_out%))". (HDL-193)
-[32mPresto compilation completed successfully. (iso14443_2a_I_rx_iface_rx_interface__BY_BYTE_0I_tx_iface_tx_interface__BY_BYTE_0)(B[m
-[36mInformation: Building the design 'iso14443_3a' instantiated from design 'radiation_sensor_digital_top' with(B[m
-        the parameters "UID_SIZE=2'h0,UID_INPUT_BITS=3,UID_FIXED=29'h1dffd8e0,FDT_TIMING_ADJUST=5|((N%clk%)(N%rst_n%)(N%uid_variable%)(N%pause_n_synchronised%)(N%rx_iface_from_14443_2a%I%WORK/rx_interface%%BY_BYTE=0)(N%tx_iface_to_14443_2a%I%WORK/tx_interface%%BY_BYTE=0)(N%rx_iface_to_14443_4a%I%WORK/rx_interface%%BY_BYTE=1)(N%rx_crc_ok%)(N%tx_iface_from_14443_4a%I%WORK/tx_interface%%BY_BYTE=1)(N%tx_append_crc_14443_4a%)(N%iso14443_4a_deselect%)(N%iso14443_4a_rats%)(N%iso14443_4a_tag_active%))". (HDL-193)
-[32mPresto compilation completed successfully. (iso14443_3a_0_3_1dffd8e0_5_I_rx_iface_from_14443_2a_rx_interface__BY_BYTE_0I_tx_iface_to_14443_2a_tx_interface__BY_BYTE_0I_rx_iface_to_14443_4a_rx_interface__BY_BYTE_1I_tx_iface_from_14443_4a_tx_interface__BY_BYTE_1)(B[m
-[36mInformation: Building the design 'iso14443_4a' instantiated from design 'radiation_sensor_digital_top' with(B[m
-        the parameters "|((N%clk%)(N%rst_n%)(N%power%)(N%rx_iface%I%WORK/rx_interface%%BY_BYTE=1)(N%rx_crc_ok%)(N%tx_iface%I%WORK/tx_interface%%BY_BYTE=1)(N%tx_append_crc%)(N%tag_active%)(N%rx_rats%)(N%rx_deselect%)(N%app_rx_iface%I%WORK/rx_interface%out_byte%BY_BYTE=1)(N%app_tx_iface%I%WORK/tx_interface%in_byte%BY_BYTE=1)(N%app_resend_last%))". (HDL-193)
-
-Statistics for case statements in always block at line 526 in file
-        '../../../hdl/components/iso_iec_14443A/rtl/iso14443_4a/iso14443_4a.sv'
-===============================================
-|           Line           |  full/ parallel  |
-===============================================
-|           585            |     no/auto      |
-|           605            |     no/auto      |
-===============================================
-
-Inferred memory devices in process
-        in routine iso14443_4a_I_rx_iface_rx_interface__BY_BYTE_1I_tx_iface_tx_interface__BY_BYTE_1I_app_rx_iface_rx_interface_out_byte_BY_BYTE_1I_app_tx_iface_tx_interface_in_byte_BY_BYTE_1 line 146 in file
-                '../../../hdl/components/iso_iec_14443A/rtl/iso14443_4a/iso14443_4a.sv'.
-============================================================================================================
-|                  Register Name                   |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-============================================================================================================
-|                  rx_buffer_reg                   | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
-|                   rx_count_reg                   | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
-|                rx_error_flag_reg                 | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|                 pkt_received_reg                 | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|                forward_to_app_reg                | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|               app_rx_iface_soc_reg               | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|               app_rx_iface_eoc_reg               | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|           app_rx_iface_data_valid_reg            | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|              app_rx_iface_error_reg              | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|         check_need_to_forward_to_app_reg         | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
-|              app_rx_iface_data_reg               | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
-| check_need_to_forward_to_app_after_next_byte_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
-============================================================================================================
-
-Inferred memory devices in process
-        in routine iso14443_4a_I_rx_iface_rx_interface__BY_BYTE_1I_tx_iface_tx_interface__BY_BYTE_1I_app_rx_iface_rx_interface_out_byte_BY_BYTE_1I_app_tx_iface_tx_interface_in_byte_BY_BYTE_1 line 347 in file
-                '../../../hdl/components/iso_iec_14443A/rtl/iso14443_4a/iso14443_4a.sv'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|     our_cid_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
-|    allow_pps_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-| app_resend_last_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|   send_reply_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
-|      reply_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
-|  replyStdBlock_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
-|  our_block_num_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
-===============================================================================
-
-Inferred memory devices in process
-        in routine iso14443_4a_I_rx_iface_rx_interface__BY_BYTE_1I_tx_iface_tx_interface__BY_BYTE_1I_app_rx_iface_rx_interface_out_byte_BY_BYTE_1I_app_tx_iface_tx_interface_in_byte_BY_BYTE_1 line 526 in file
-                '../../../hdl/components/iso_iec_14443A/rtl/iso14443_4a/iso14443_4a.sv'.
-===================================================================================
-|      Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===================================================================================
-|      tx_buffer_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
-| tx_iface_data_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|  forward_from_app_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|     rx_deselect_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|  app_tx_iface_req_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|  tx_count_minus_1_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
-===================================================================================
-[32mPresto compilation completed successfully. (iso14443_4a_I_rx_iface_rx_interface__BY_BYTE_1I_tx_iface_tx_interface__BY_BYTE_1I_app_rx_iface_rx_interface_out_byte_BY_BYTE_1I_app_tx_iface_tx_interface_in_byte_BY_BYTE_1)(B[m
+[36mInformation: Building the design 'iso14443a' instantiated from design 'radiation_sensor_digital_top' with(B[m
+        the parameters "UID_SIZE=2'h0,UID_INPUT_BITS=3,UID_FIXED=29'h1dffd8e0,FDT_TIMING_ADJUST=2|((N%clk%)(N%rst_n%)(N%uid_variable%)(N%power%)(N%pause_n_synchronised%)(N%lm_out%)(N%app_rx_iface%I%WORK/rx_interface%%BY_BYTE=1)(N%app_tx_iface%I%WORK/tx_interface%%BY_BYTE=1)(N%app_resend_last%)(N%iso14443a_version%))". (HDL-193)
+[32mPresto compilation completed successfully. (iso14443a_0_3_1dffd8e0_2_I_app_rx_iface_rx_interface__BY_BYTE_1I_app_tx_iface_tx_interface__BY_BYTE_1)(B[m
 [36mInformation: Building the design 'adapter' instantiated from design 'radiation_sensor_digital_top' with(B[m
         the parameters "|((N%clk%)(N%rst_n%)(N%pause_n_synchronised%)(N%rx_iface%I%WORK/rx_interface%%BY_BYTE=1)(N%tx_iface%I%WORK/tx_interface%%BY_BYTE=1)(N%app_resend_last%)(N%sens_config%)(N%sens_enable%)(N%sens_read%)(N%adc_enable%)(N%adc_read%)(N%adc_conversion_complete%)(N%adc_value%)(N%const_iso_iec_14443a_digital_version%)(N%const_iso_iec_14443a_AFE_version%)(N%const_sensor_version%)(N%const_adc_version%))". (HDL-193)
 
@@ -723,6 +657,112 @@ Inferred memory devices in process
 |       tmp_reg       | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
 ===============================================================================
 [32mPresto compilation completed successfully. (synchroniser_1_1)(B[m
+[36mInformation: Building the design 'iso14443_2a' instantiated from design 'iso14443a_0_3_1dffd8e0_2_I_app_rx_iface_rx_interface__BY_BYTE_1I_app_tx_iface_tx_interface__BY_BYTE_1' with(B[m
+        the parameters "|((N%clk%)(N%rst_n%)(N%pause_n_synchronised%)(N%rx_iface%I%WORK/rx_interface%%BY_BYTE=0)(N%tx_iface%I%WORK/tx_interface%%BY_BYTE=0)(N%lm_out%))". (HDL-193)
+[32mPresto compilation completed successfully. (iso14443_2a_I_rx_iface_rx_interface__BY_BYTE_0I_tx_iface_tx_interface__BY_BYTE_0)(B[m
+[36mInformation: Building the design 'iso14443_3a' instantiated from design 'iso14443a_0_3_1dffd8e0_2_I_app_rx_iface_rx_interface__BY_BYTE_1I_app_tx_iface_tx_interface__BY_BYTE_1' with(B[m
+        the parameters "UID_SIZE=2'h0,UID_INPUT_BITS=3,UID_FIXED=29'h1dffd8e0,FDT_TIMING_ADJUST=5|((N%clk%)(N%rst_n%)(N%uid_variable%)(N%pause_n_synchronised%)(N%rx_iface_from_14443_2a%I%WORK/rx_interface%%BY_BYTE=0)(N%tx_iface_to_14443_2a%I%WORK/tx_interface%%BY_BYTE=0)(N%rx_iface_to_14443_4a%I%WORK/rx_interface%%BY_BYTE=1)(N%rx_crc_ok%)(N%tx_iface_from_14443_4a%I%WORK/tx_interface%%BY_BYTE=1)(N%tx_append_crc_14443_4a%)(N%iso14443_4a_deselect%)(N%iso14443_4a_rats%)(N%iso14443_4a_tag_active%))". (HDL-193)
+[32mPresto compilation completed successfully. (iso14443_3a_0_3_1dffd8e0_5_I_rx_iface_from_14443_2a_rx_interface__BY_BYTE_0I_tx_iface_to_14443_2a_tx_interface__BY_BYTE_0I_rx_iface_to_14443_4a_rx_interface__BY_BYTE_1I_tx_iface_from_14443_4a_tx_interface__BY_BYTE_1)(B[m
+[36mInformation: Building the design 'iso14443_4a' instantiated from design 'iso14443a_0_3_1dffd8e0_2_I_app_rx_iface_rx_interface__BY_BYTE_1I_app_tx_iface_tx_interface__BY_BYTE_1' with(B[m
+        the parameters "|((N%clk%)(N%rst_n%)(N%power%)(N%rx_iface%I%WORK/rx_interface%%BY_BYTE=1)(N%rx_crc_ok%)(N%tx_iface%I%WORK/tx_interface%%BY_BYTE=1)(N%tx_append_crc%)(N%tag_active%)(N%rx_rats%)(N%rx_deselect%)(N%app_rx_iface%I%WORK/rx_interface%out_byte%BY_BYTE=1)(N%app_tx_iface%I%WORK/tx_interface%in_byte%BY_BYTE=1)(N%app_resend_last%))". (HDL-193)
+
+Statistics for case statements in always block at line 526 in file
+        '../../../hdl/components/iso_iec_14443A/rtl/iso14443_4a/iso14443_4a.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           585            |     no/auto      |
+|           605            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+        in routine iso14443_4a_I_rx_iface_rx_interface__BY_BYTE_1I_tx_iface_tx_interface__BY_BYTE_1I_app_rx_iface_rx_interface_out_byte_BY_BYTE_1I_app_tx_iface_tx_interface_in_byte_BY_BYTE_1 line 146 in file
+                '../../../hdl/components/iso_iec_14443A/rtl/iso14443_4a/iso14443_4a.sv'.
+============================================================================================================
+|                  Register Name                   |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+============================================================================================================
+|                  rx_buffer_reg                   | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|                   rx_count_reg                   | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|                rx_error_flag_reg                 | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|                 pkt_received_reg                 | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|                forward_to_app_reg                | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|               app_rx_iface_soc_reg               | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|               app_rx_iface_eoc_reg               | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|           app_rx_iface_data_valid_reg            | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|              app_rx_iface_error_reg              | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|         check_need_to_forward_to_app_reg         | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|              app_rx_iface_data_reg               | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+| check_need_to_forward_to_app_after_next_byte_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+============================================================================================================
+
+Inferred memory devices in process
+        in routine iso14443_4a_I_rx_iface_rx_interface__BY_BYTE_1I_tx_iface_tx_interface__BY_BYTE_1I_app_rx_iface_rx_interface_out_byte_BY_BYTE_1I_app_tx_iface_tx_interface_in_byte_BY_BYTE_1 line 347 in file
+                '../../../hdl/components/iso_iec_14443A/rtl/iso14443_4a/iso14443_4a.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     our_cid_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|    allow_pps_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| app_resend_last_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   send_reply_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      reply_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|  replyStdBlock_reg  | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|  our_block_num_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine iso14443_4a_I_rx_iface_rx_interface__BY_BYTE_1I_tx_iface_tx_interface__BY_BYTE_1I_app_rx_iface_rx_interface_out_byte_BY_BYTE_1I_app_tx_iface_tx_interface_in_byte_BY_BYTE_1 line 526 in file
+                '../../../hdl/components/iso_iec_14443A/rtl/iso14443_4a/iso14443_4a.sv'.
+===================================================================================
+|      Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================
+|      tx_buffer_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+| tx_iface_data_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  forward_from_app_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     rx_deselect_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  app_tx_iface_req_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  tx_count_minus_1_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===================================================================================
+[32mPresto compilation completed successfully. (iso14443_4a_I_rx_iface_rx_interface__BY_BYTE_1I_tx_iface_tx_interface__BY_BYTE_1I_app_rx_iface_rx_interface_out_byte_BY_BYTE_1I_app_tx_iface_tx_interface_in_byte_BY_BYTE_1)(B[m
+[36mInformation: Building the design 'signal_control'. (HDL-193)(B[m
+
+Statistics for case statements in always block at line 121 in file
+        '../../../hdl/rtl/signal_control.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           203            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine signal_control line 81 in file
+                '../../../hdl/rtl/signal_control.sv'.
+========================================================================================
+|        Register Name         |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+========================================================================================
+| pause_n_synchronised_old_reg | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+========================================================================================
+
+Inferred memory devices in process
+        in routine signal_control line 121 in file
+                '../../../hdl/rtl/signal_control.sv'.
+==============================================================================================
+|           Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==============================================================================================
+|          new_signals_reg           | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|             state_reg              | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|            signals_reg             | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|            counter_reg             | Flip-flop |  25   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        unexpected_pause_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| cached_adc_conversion_complete_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|        cached_adc_value_reg        | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        starts_adc_read_reg         | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       cached_sync_timing_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|    cached_auto_read_timing1_reg    | Flip-flop |  25   |  Y  | N  | N  | N  | N  | N  | N  |
+|    cached_auto_read_timing2_reg    | Flip-flop |  25   |  Y  | N  | N  | N  | N  | N  | N  |
+|           cached_cmd_reg           | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+==============================================================================================
+[32mPresto compilation completed successfully. (signal_control)(B[m
 [36mInformation: Building the design 'sequence_decode' instantiated from design 'iso14443_2a_I_rx_iface_rx_interface__BY_BYTE_0I_tx_iface_tx_interface__BY_BYTE_0' with(B[m
         the parameters "|((N%clk%)(N%rst_n%)(N%pause_n_synchronised%)(N%out_iface%I%WORK/rx_interface%out_bit%BY_BYTE=0))". (HDL-193)
 
@@ -879,45 +919,6 @@ Inferred memory devices in process
 | tx_iface_data_bits_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
 ===================================================================================
 [32mPresto compilation completed successfully. (initialisation_0_3_1dffd8e0_I_rx_iface_rx_interface__BY_BYTE_1I_rx_iface_bits_rx_interface__BY_BYTE_0I_tx_iface_tx_interface__BY_BYTE_1)(B[m
-[36mInformation: Building the design 'signal_control'. (HDL-193)(B[m
-
-Statistics for case statements in always block at line 121 in file
-        '../../../hdl/rtl/signal_control.sv'
-===============================================
-|           Line           |  full/ parallel  |
-===============================================
-|           203            |    auto/auto     |
-===============================================
-
-Inferred memory devices in process
-        in routine signal_control line 81 in file
-                '../../../hdl/rtl/signal_control.sv'.
-========================================================================================
-|        Register Name         |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-========================================================================================
-| pause_n_synchronised_old_reg | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
-========================================================================================
-
-Inferred memory devices in process
-        in routine signal_control line 121 in file
-                '../../../hdl/rtl/signal_control.sv'.
-==============================================================================================
-|           Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-==============================================================================================
-|          new_signals_reg           | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
-|             state_reg              | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
-|            signals_reg             | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
-|            counter_reg             | Flip-flop |  25   |  Y  | N  | Y  | N  | N  | N  | N  |
-|        unexpected_pause_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-| cached_adc_conversion_complete_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|        cached_adc_value_reg        | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
-|        starts_adc_read_reg         | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
-|       cached_sync_timing_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
-|    cached_auto_read_timing1_reg    | Flip-flop |  25   |  Y  | N  | N  | N  | N  | N  | N  |
-|    cached_auto_read_timing2_reg    | Flip-flop |  25   |  Y  | N  | N  | N  | N  | N  | N  |
-|           cached_cmd_reg           | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
-==============================================================================================
-[32mPresto compilation completed successfully. (signal_control)(B[m
 [36mInformation: Building the design 'subcarrier'. (HDL-193)(B[m
 
 Inferred memory devices in process
@@ -1084,7 +1085,7 @@ Information: linking reference library : /usr/pdks/xfab180/PDK/XFAB_snps_CustomD
   Linking design 'radiation_sensor_digital_top'
   Using the following designs and libraries:
   --------------------------------------------------------------------------
-  * (24 designs)              /home/aparlane/fiuba_thesis/hdl/synth_pnr/synth/radiation_sensor_digital_top.db, etc
+  * (25 designs)              /home/aparlane/fiuba_thesis/hdl/synth_pnr/synth/radiation_sensor_digital_top.db, etc
   D_CELLS_HD_LPMOS_slow_1_62V_125C (library) /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db
   D_CELLS_HDLL_LPMOS_slow_1_62V_125C (library) /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db
   dw_foundation.sldb (library) /usr/synopsys2/syn/P-2019.03/libraries/syn/dw_foundation.sldb
@@ -1096,7 +1097,7 @@ Warning: Not all metal layers have preferred routing direction. (OPT-1427)
 Report : Layers
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Mon Feb 28 17:04:37 2022
+Date   : Thu Mar 10 15:39:09 2022
 ****************************************
 
 Layer Name                   Library             Design              Tool understands
@@ -1114,7 +1115,7 @@ METTPL                       Unknown             Vertical            Vertical
   Linking design 'radiation_sensor_digital_top'
   Using the following designs and libraries:
   --------------------------------------------------------------------------
-  * (24 designs)              /home/aparlane/fiuba_thesis/hdl/synth_pnr/synth/radiation_sensor_digital_top.db, etc
+  * (25 designs)              /home/aparlane/fiuba_thesis/hdl/synth_pnr/synth/radiation_sensor_digital_top.db, etc
   D_CELLS_HD_LPMOS_slow_1_62V_125C (library) /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db
   D_CELLS_HDLL_LPMOS_slow_1_62V_125C (library) /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db
   dw_foundation.sldb (library) /usr/synopsys2/syn/P-2019.03/libraries/syn/dw_foundation.sldb
@@ -1126,22 +1127,21 @@ METTPL                       Unknown             Vertical            Vertical
 ****************************************
 check_design summary:
 Version:     P-2019.03
-Date:        Mon Feb 28 17:04:37 2022
+Date:        Thu Mar 10 15:39:09 2022
 ****************************************
 
                    Name                                            Total
 --------------------------------------------------------------------------------
-Inputs/Outputs                                                    169
-    Unconnected ports (LINT-28)                                   117
+Inputs/Outputs                                                    180
+    Unconnected ports (LINT-28)                                   122
     Feedthrough (LINT-29)                                          24
-    Shorted outputs (LINT-31)                                      18
-    Constant outputs (LINT-52)                                     10
+    Shorted outputs (LINT-31)                                      20
+    Constant outputs (LINT-52)                                     14
 
-Cells                                                             117
+Cells                                                             115
     Cells do not drive (LINT-1)                                    24
-    Connected to power or ground (LINT-32)                          4
-    Nets connected to multiple pins on same cell (LINT-33)         43
-    Hier pins without driver and load (LINT-60)                    46
+    Nets connected to multiple pins on same cell (LINT-33)         44
+    Hier pins without driver and load (LINT-60)                    47
 
 Nets                                                               23
     Unloaded nets (LINT-2)                                          1
@@ -1332,7 +1332,7 @@ Report : timing_requirements
         -attributes
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Mon Feb 28 17:04:38 2022
+Date   : Thu Mar 10 15:39:11 2022
 ****************************************
 
 Description                            Setup               Hold
@@ -1462,7 +1462,7 @@ Report : constraint
         -max_transition
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Mon Feb 28 17:04:38 2022
+Date   : Thu Mar 10 15:39:11 2022
 ****************************************
 
 
@@ -1571,7 +1571,7 @@ Report : saif
         -rtl_saif
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Mon Feb 28 17:04:38 2022
+Date   : Thu Mar 10 15:39:11 2022
 ****************************************
 
   
@@ -1828,10 +1828,10 @@ Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018
 
   Beginning Delay Optimization HSVT Pass
   --------------------------------------
-    0:00:31   56357.5      0.00       0.0       0.0                           404670.0312
-    0:00:31   56357.5      0.00       0.0       0.0                           404670.0312
-    0:00:31   56357.5      0.00       0.0       0.0                           404670.0312
-    0:00:31   56357.5      0.00       0.0       0.0                           404670.0312
+    0:00:32   56357.5      0.00       0.0       0.0                           404670.0312
+    0:00:32   56357.5      0.00       0.0       0.0                           404670.0312
+    0:00:32   56357.5      0.00       0.0       0.0                           404670.0312
+    0:00:32   56357.5      0.00       0.0       0.0                           404670.0312
 
   Beginning Delay Optimization
   ----------------------------
@@ -1863,8 +1863,8 @@ Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
     0:00:34   56276.9      0.00       0.0       0.0                           403545.5938
-    0:00:34   56276.9      0.00       0.0       0.0                           403545.5938
-    0:00:34   56276.9      0.00       0.0       0.0                           403545.5938
+    0:00:35   56276.9      0.00       0.0       0.0                           403545.5938
+    0:00:35   56276.9      0.00       0.0       0.0                           403545.5938
     0:00:35   56276.9      0.00       0.0       0.0                           403545.5938
     0:00:35   56276.9      0.00       0.0       0.0                           403545.5938
 
@@ -1880,7 +1880,7 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
 
   Optimization Complete
   ---------------------
-[36mInformation: Fail to create cell *cell*9557 in dpi.(B[m
+[36mInformation: Fail to create cell *cell*9559 in dpi.(B[m
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
@@ -1966,40 +1966,40 @@ Info: skipped to derive cell locations.
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:15   58450.8      0.00       0.0       0.0                           460610.3438
+    0:00:16   58450.8      0.00       0.0       0.0                           460610.3438
   Global Optimization (Phase 26)
   Global Optimization (Phase 27)
   Global Optimization (Phase 28)
   Global Optimization (Phase 29)
-    0:00:17   58380.5      0.00       0.0       0.0                           459660.4688
-    0:00:17   55619.3      0.00       0.0       0.0                           406386.6875
+    0:00:18   58380.5      0.00       0.0       0.0                           459660.4688
+    0:00:18   55619.3      0.00       0.0       0.0                           406386.6875
 
   Beginning Delay Optimization
   ----------------------------
-    0:00:20   55619.3      0.00       0.0       0.0                           406386.6875
-    0:00:20   55619.3      0.00       0.0       0.0                           406386.6875
     0:00:21   55619.3      0.00       0.0       0.0                           406386.6875
     0:00:21   55619.3      0.00       0.0       0.0                           406386.6875
-    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
-    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
-    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
-    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
-    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
-    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
-    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
-    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
-    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
-    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
-    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
-    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
-    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
-    0:00:21   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:21   55619.3      0.00       0.0       0.0                           406386.6875
+    0:00:21   55619.3      0.00       0.0       0.0                           406386.6875
     0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
     0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
     0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
     0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
-    0:00:22   55488.5      0.00       0.0       0.0                           404502.8438
-    0:00:22   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:22   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:23   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:23   55589.1      0.00       0.0       0.0                           405896.4062
+    0:00:23   55488.5      0.00       0.0       0.0                           404502.8438
+    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
 
 
   Beginning High Effort Optimization Phase
@@ -2013,21 +2013,6 @@ Info: skipped to derive cell locations.
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:22   55475.4      0.00       0.0       0.0                           404252.5938
-    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
-    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
-    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
-    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
-    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
-    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
-    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
-    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
-    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
-    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
-    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
-    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
-    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
-    0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
     0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
     0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
     0:00:23   55475.4      0.00       0.0       0.0                           404252.5938
@@ -2038,13 +2023,28 @@ Info: skipped to derive cell locations.
     0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
     0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
     0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:24   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:25   55475.4      0.00       0.0       0.0                           404252.5938
+    0:00:25   55475.4      0.00       0.0       0.0                           404252.5938
 
 
   High Effort Optimization Phase Complete
   ---------------------------------------
 
 Skipping remaining steps due to timing met. Go to finish
-    0:00:24   55881.9      0.00       0.0       0.0                           404256.2500
+    0:00:25   55881.9      0.00       0.0       0.0                           404256.2500
 
 
 Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
@@ -2052,18 +2052,18 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
 
   Optimization Complete
   ---------------------
-[36mInformation: Fail to create cell *cell*10359 in dpi.(B[m
+[36mInformation: Fail to create cell *cell*10361 in dpi.(B[m
 
   Beginning Buftree Cleanup
   -------------------------
-[36mInformation: Fail to create cell *cell*10359 in dpi.(B[m
+[36mInformation: Fail to create cell *cell*10361 in dpi.(B[m
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:24   55881.9      0.00       0.0       0.0                           404256.2500
-    0:00:24   55881.9      0.00       0.0       0.0                           404256.2500
+    0:00:25   55881.9      0.00       0.0       0.0                           404256.2500
+    0:00:25   55881.9      0.00       0.0       0.0                           404256.2500
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
@@ -2117,115 +2117,6 @@ Router succeeded.
 1
 
 [36mOptimising registers(B[m
-[36mInformation: linking reference library : /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/synopsys_ICC/v3_0_1/xh018-D_CELLS_HD-synopsys_ICCompiler-v3_0_1/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HD. (PSYN-878)(B[m
-[36mInformation: linking reference library : /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/synopsys_ICC/v2_1_0/xh018-D_CELLS_HDLL-synopsys_ICCompiler-v2_1_0/xh018_xx43_MET4_METMID_METTHK_D_CELLS_HDLL. (PSYN-878)(B[m
-****************************************************************
-[36mInformation: TLUPlus based RC computation is enabled. (RCEX-141)(B[m
-****************************************************************
-[36mInformation: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)(B[m
-[36mInformation: The RC model used is TLU+. (RCEX-015)(B[m
-[36mInformation: Library Derived Cap for layer MET1 : 0.00025 0.00019 (RCEX-011)(B[m
-[36mInformation: Library Derived Res for layer MET1 : 0.00063 0.00022 (RCEX-011)(B[m
-[36mInformation: Library Derived Cap for layer MET2 : 0.00028 0.0002 (RCEX-011)(B[m
-[36mInformation: Library Derived Res for layer MET2 : 0.00055 0.00018 (RCEX-011)(B[m
-[36mInformation: Library Derived Cap for layer MET3 : 0.00028 0.0002 (RCEX-011)(B[m
-[36mInformation: Library Derived Res for layer MET3 : 0.00055 0.00018 (RCEX-011)(B[m
-[36mInformation: Library Derived Cap for layer MET4 : 0.00028 0.0002 (RCEX-011)(B[m
-[36mInformation: Library Derived Res for layer MET4 : 0.00055 0.00018 (RCEX-011)(B[m
-[36mInformation: Library Derived Cap for layer METTP : 0.00023 0.00017 (RCEX-011)(B[m
-[36mInformation: Library Derived Res for layer METTP : 0.00018 5.5e-05 (RCEX-011)(B[m
-[36mInformation: Library Derived Cap for layer METTPL : 0.00039 0.00025 (RCEX-011)(B[m
-[36mInformation: Library Derived Res for layer METTPL : 6.1e-06 1.9e-06 (RCEX-011)(B[m
-[36mInformation: Library Derived Horizontal Cap : 0.00025 0.00019 (RCEX-011)(B[m
-[36mInformation: Library Derived Horizontal Res : 0.00045 0.00015 (RCEX-011)(B[m
-[36mInformation: Library Derived Vertical Cap : 0.00032 0.00022 (RCEX-011)(B[m
-[36mInformation: Library Derived Vertical Res : 0.00037 0.00012 (RCEX-011)(B[m
-[36mInformation: Using derived R and C coefficients. (RCEX-008)(B[m
-[36mInformation: Using region-based R and C coefficients. (RCEX-013)(B[m
-[36mInformation: Library Derived Via Res : 0.0056 0.0021 (RCEX-011)(B[m
-
-  Loading design 'radiation_sensor_digital_top'
-
-  Beginning retiming
-  ------------------
-  Retiming radiation_sensor_digital_top (top)
-[33mWarning: There are buffer or inverter cells in the(B[m
-        clock tree. The clock tree has to be recreated after
-        retiming. (RTDC-47)
-  Preferred flip-flop is DFRHDX4 with setup = 0.45
-
-[33mWarning: The following cells only drive(B[m
-        asynchronous pins of sequential cells which have no
-        timing constraint. Therefore retiming will not optimize
-        delay through them:
-        U1844 (INHDLLX1)
-        U1847 (INHDLLX1)
-        U1857 (BUHDLLX1)
-        U1846 (INHDLLX1)
-
- (RTDC-115)
-
-  Retiming base-clock clk, rising edge.
-[33mWarning: Using high justification effort could lead to very long runtime. (RTDC-134)(B[m
-[33mWarning: The output port 'sens_enable' has output rise and fall delay (B[m
-        that is smaller than the estimated average setup time used by the 
-        retiming algorihm. For optimal results make sure to set an output 
-        delay that is realistic. This can be done by using the 
-        'set_output_delay' or 'characterize' commands. (RTDC-44)
-[33mWarning: The output port 'adc_enable' has output rise and fall delay (B[m
-        that is smaller than the estimated average setup time used by the 
-        retiming algorihm. For optimal results make sure to set an output 
-        delay that is realistic. This can be done by using the 
-        'set_output_delay' or 'characterize' commands. (RTDC-44)
-[33mWarning: The output port 'adc_read' has output rise and fall delay (B[m
-        that is smaller than the estimated average setup time used by the 
-        retiming algorihm. For optimal results make sure to set an output 
-        delay that is realistic. This can be done by using the 
-        'set_output_delay' or 'characterize' commands. (RTDC-44)
-[33mWarning: The output port 'sens_read' has output rise and fall delay (B[m
-        that is smaller than the estimated average setup time used by the 
-        retiming algorihm. For optimal results make sure to set an output 
-        delay that is realistic. This can be done by using the 
-        'set_output_delay' or 'characterize' commands. (RTDC-44)
-[33mWarning: The output port 'lm_out' has output rise and fall delay (B[m
-        that is smaller than the estimated average setup time used by the 
-        retiming algorihm. For optimal results make sure to set an output 
-        delay that is realistic. This can be done by using the 
-        'set_output_delay' or 'characterize' commands. (RTDC-44)
-[33mWarning: The output port 'sens_config[0]' has output rise and fall delay (B[m
-        that is smaller than the estimated average setup time used by the 
-        retiming algorihm. For optimal results make sure to set an output 
-        delay that is realistic. This can be done by using the 
-        'set_output_delay' or 'characterize' commands. (RTDC-44)
-[33mWarning: The output port 'sens_config[2]' has output rise and fall delay (B[m
-        that is smaller than the estimated average setup time used by the 
-        retiming algorihm. For optimal results make sure to set an output 
-        delay that is realistic. This can be done by using the 
-        'set_output_delay' or 'characterize' commands. (RTDC-44)
-[33mWarning: The output port 'sens_config[1]' has output rise and fall delay (B[m
-        that is smaller than the estimated average setup time used by the 
-        retiming algorihm. For optimal results make sure to set an output 
-        delay that is realistic. This can be done by using the 
-        'set_output_delay' or 'characterize' commands. (RTDC-44)
-  Beginning minimum period retiming ...
-  ... minimum period retiming done.
-  Beginning minimum area retiming step 1 ...
-  ... minimum area retiming step 1 done.
-  Beginning minimum area retiming step 2 ...
-  
-  ... minimum area retiming step 2 done.
-  Beginning minimum area retiming step 3 ...
-  
-  ... minimum area retiming step 3 done.
-  Beginning final register move ...
-  ... final register move done.
-  Lower bound estimate = 15.42
-  Critical path length = 15.42
-  Clock correction = 16.59 (clock-to-Q delay = 1.40, setup = 0.45, uncertainty = 14.75)
-[33mWarning: Design 'radiation_sensor_digital_top' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)(B[m
-
-  Retiming complete
-  -----------------
 [36mInformation: Starting from 2013.12 release, constant propagation is enabled even when boundary optimization is disabled. (OPT-1318)(B[m
 [36mInformation: Performing power optimization. (PWR-850)(B[m
 Alib files are up-to-date.
@@ -2235,182 +2126,7 @@ Loaded alib file './alib-52/D_CELLS_HD_LPMOS_slow_1_62V_125C.db.alib' (placehold
 Loaded alib file './alib-52/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db.alib'
 [36mInformation: State dependent leakage is now switched from on to off.(B[m
 [36mInformation: Updating design information... (UID-85)(B[m
-Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
-Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
-Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
-Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db'
-  Loading design 'radiation_sensor_digital_top'
-****************************************************************
-[36mInformation: TLUPlus based RC computation is enabled. (RCEX-141)(B[m
-****************************************************************
-[36mInformation: The distance unit in Capacitance and Resistance is 1 micron. (RCEX-007)(B[m
-[36mInformation: The RC model used is TLU+. (RCEX-015)(B[m
-[36mInformation: Library Derived Cap for layer MET1 : 0.00025 0.00019 (RCEX-011)(B[m
-[36mInformation: Library Derived Res for layer MET1 : 0.00063 0.00022 (RCEX-011)(B[m
-[36mInformation: Library Derived Cap for layer MET2 : 0.00028 0.0002 (RCEX-011)(B[m
-[36mInformation: Library Derived Res for layer MET2 : 0.00055 0.00018 (RCEX-011)(B[m
-[36mInformation: Library Derived Cap for layer MET3 : 0.00028 0.0002 (RCEX-011)(B[m
-[36mInformation: Library Derived Res for layer MET3 : 0.00055 0.00018 (RCEX-011)(B[m
-[36mInformation: Library Derived Cap for layer MET4 : 0.00028 0.0002 (RCEX-011)(B[m
-[36mInformation: Library Derived Res for layer MET4 : 0.00055 0.00018 (RCEX-011)(B[m
-[36mInformation: Library Derived Cap for layer METTP : 0.00023 0.00017 (RCEX-011)(B[m
-[36mInformation: Library Derived Res for layer METTP : 0.00018 5.5e-05 (RCEX-011)(B[m
-[36mInformation: Library Derived Cap for layer METTPL : 0.00039 0.00025 (RCEX-011)(B[m
-[36mInformation: Library Derived Res for layer METTPL : 6.1e-06 1.9e-06 (RCEX-011)(B[m
-[36mInformation: Library Derived Horizontal Cap : 0.00025 0.00019 (RCEX-011)(B[m
-[36mInformation: Library Derived Horizontal Res : 0.00045 0.00015 (RCEX-011)(B[m
-[36mInformation: Library Derived Vertical Cap : 0.00032 0.00022 (RCEX-011)(B[m
-[36mInformation: Library Derived Vertical Res : 0.00037 0.00012 (RCEX-011)(B[m
-[36mInformation: Using derived R and C coefficients. (RCEX-008)(B[m
-[36mInformation: Using region-based R and C coefficients. (RCEX-013)(B[m
-[36mInformation: Library Derived Via Res : 0.0056 0.0021 (RCEX-011)(B[m
-
-Info: skipped to derive cell locations.
-
-[33mWarning: Found 0 percent of cells (2) without DC Topographical data. Generating data for those cells... (OPT-1404)(B[m
-43%...57%...71%...86%...100% done.
-
-
- Collecting Buffer Trees ... Found 9
-
- Processing Buffer Trees ... 
-
-    [1]  10% ...
-    [2]  20% ...
-    [3]  30% ...
-    [4]  40% ...
-    [5]  50% ...
-    [6]  60% ...
-    [7]  70% ...
-    [8]  80% ...
-    [9]  90% ...
-    [9] 100% Done ...
-
-
-[36mInformation: Automatic high-fanout synthesis deletes 0 cells. (HFS-802)(B[m
-[36mInformation: Automatic high-fanout synthesis adds 7 new cells. (PSYN-864)(B[m
-
-
-
-  Beginning Timing Optimizations
-  ------------------------------
-
-                                  TOTAL                                                
-   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
-    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
-  --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:12   51841.7      0.00       0.0       0.0                           598288.1250
-  Global Optimization (Phase 30)
-  Global Optimization (Phase 31)
-  Global Optimization (Phase 32)
-  Global Optimization (Phase 33)
-    0:00:14   55094.6      0.00       0.0       0.0                           417009.7500
-    0:00:14   55095.4      0.00       0.0       0.0                           416461.6562
-
-  Beginning Delay Optimization
-  ----------------------------
-    0:00:17   55095.4      0.00       0.0       0.0                           416461.6562
-    0:00:17   55095.4      0.00       0.0       0.0                           416461.6562
-    0:00:17   55095.4      0.00       0.0       0.0                           416461.6562
-    0:00:17   55095.4      0.00       0.0       0.0                           416461.6562
-    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:18   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:19   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:19   55087.0      0.00       0.0       0.0                           415292.6875
-    0:00:19   55023.9      0.00       0.0       0.0                           414470.0938
-    0:00:19   55008.3      0.00       0.0       0.0                           414275.4375
-
-
-  Beginning High Effort Optimization Phase
-  ----------------------------------------
-
-
-  Beginning Timing Optimization
-  -----------------------------
-
-                                  TOTAL                                                
-   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
-    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
-  --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:19   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:19   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:19   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:20   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:21   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:21   55008.3      0.00       0.0       0.0                           414275.4375
-
-
-  High Effort Optimization Phase Complete
-  ---------------------------------------
-
-Skipping remaining steps due to timing met. Go to finish
-
-
-Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
-
-
-  Optimization Complete
-  ---------------------
-
-  Beginning Buftree Cleanup
-  -------------------------
-
-                                  TOTAL                                                
-   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
-    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
-  --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:21   55008.3      0.00       0.0       0.0                           414275.4375
-    0:00:21   55008.3      0.00       0.0       0.0                           414275.4375
-Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
-Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
-Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
-Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db'
-[36mInformation: State dependent leakage is now switched from off to on.(B[m
-[36mInformation: Propagating switching activity (low effort zero delay simulation). (PWR-6)(B[m
-1
-
-[36mInformation: Starting from 2013.12 release, constant propagation is enabled even when boundary optimization is disabled. (OPT-1318)(B[m
-[36mInformation: Performing power optimization. (PWR-850)(B[m
-Alib files are up-to-date.
-[36mInformation: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)(B[m
-
-Loaded alib file './alib-52/D_CELLS_HD_LPMOS_slow_1_62V_125C.db.alib' (placeholder)
-Loaded alib file './alib-52/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db.alib'
-[36mInformation: State dependent leakage is now switched from on to off.(B[m
-[36mInformation: Updating design information... (UID-85)(B[m
+[36mInformation: In design 'radiation_sensor_digital_top', the register 'iso14443a_inst/part3/initialisation_inst/ac_reply_buffer_reg[3][5]' is removed because it is merged to 'iso14443a_inst/part3/initialisation_inst/ac_reply_buffer_reg[3][3]'. (OPT-1215)(B[m
 [36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_44, since there are no registers. (PWR-806)(B[m
 [36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_0, since there are no registers. (PWR-806)(B[m
 [36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_1, since there are no registers. (PWR-806)(B[m
@@ -2451,7 +2167,6 @@ Loaded alib file './alib-52/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db.alib'
 [36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_36, since there are no registers. (PWR-806)(B[m
 [36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_37, since there are no registers. (PWR-806)(B[m
 [36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_38, since there are no registers. (PWR-806)(B[m
-[36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_39, since there are no registers. (PWR-806)(B[m
 [36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_41, since there are no registers. (PWR-806)(B[m
 [36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_42, since there are no registers. (PWR-806)(B[m
 [36mInformation: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_radiation_sensor_digital_top_43, since there are no registers. (PWR-806)(B[m
@@ -2486,10 +2201,13 @@ Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018
 [36mInformation: Using region-based R and C coefficients. (RCEX-013)(B[m
 [36mInformation: Library Derived Via Res : 0.0056 0.0021 (RCEX-011)(B[m
 
+Info: skipped to derive cell locations.
+
+[33mWarning: Found 0 percent of cells (1) without DC Topographical data. Generating data for those cells... (OPT-1404)(B[m
+43%...57%...71%...86%...100% done.
 
 
-
- Collecting Buffer Trees ... Found 15
+ Collecting Buffer Trees ... Found 16
 
  Processing Buffer Trees ... 
 
@@ -2500,7 +2218,8 @@ Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018
     [10]  50% ...
     [12]  60% ...
     [14]  70% ...
-    [15] 100% Done ...
+    [16]  80% ...
+    [16] 100% Done ...
 
 
 [36mInformation: Automatic high-fanout synthesis deletes 0 cells. (HFS-802)(B[m
@@ -2509,6 +2228,7 @@ Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018
 [36mInformation: Performing XOR self gating insertion. (PWR-790)(B[m
 [36mInformation: State dependent leakage is now switched from off to on.(B[m
 [36mInformation: State dependent leakage is now switched from on to off.(B[m
+[36mInformation: Updating design information... (UID-85)(B[m
 
 
   Beginning Timing Optimizations
@@ -2518,40 +2238,40 @@ Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:13   55043.4      0.00       0.0       0.0                           414875.3125
-  Global Optimization (Phase 34)
-  Global Optimization (Phase 35)
-  Global Optimization (Phase 36)
-  Global Optimization (Phase 37)
-    0:00:16   55043.3      0.00       0.0       0.0                           414863.0000
-    0:00:16   55099.4      0.00       0.0       0.0                           415447.6875
+    0:00:13   55377.8      0.00       0.0       0.0                           403622.0938
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+    0:00:15   55377.8      0.00       0.0       0.0                           403622.0938
+    0:00:15   55474.1      0.00       0.0       0.0                           404986.1250
 
   Beginning Delay Optimization
   ----------------------------
-    0:00:19   55099.4      0.00       0.0       0.0                           415447.6875
-    0:00:19   55099.4      0.00       0.0       0.0                           415447.6875
-    0:00:19   55099.4      0.00       0.0       0.0                           415447.6875
-    0:00:19   55099.4      0.00       0.0       0.0                           415447.6875
-    0:00:19   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:19   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:19   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:19   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:20   55089.3      0.00       0.0       0.0                           414956.1562
-    0:00:20   55026.2      0.00       0.0       0.0                           414133.5625
-    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:19   55474.1      0.00       0.0       0.0                           404986.1250
+    0:00:19   55474.1      0.00       0.0       0.0                           404986.1250
+    0:00:19   55474.1      0.00       0.0       0.0                           404986.1250
+    0:00:19   55474.1      0.00       0.0       0.0                           404986.1250
+    0:00:19   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:19   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:19   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:19   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:19   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:19   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:19   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:19   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:19   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:19   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:19   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:19   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:20   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:20   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:20   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:20   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:20   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:20   55446.3      0.00       0.0       0.0                           404548.0625
+    0:00:20   55368.3      0.00       0.0       0.0                           403538.4688
+    0:00:20   55347.7      0.00       0.0       0.0                           403158.9375
 
 
   Beginning High Effort Optimization Phase
@@ -2565,31 +2285,31 @@ Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:21   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:21   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:22   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:22   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:22   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:22   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:22   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:22   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:22   55347.7      0.00       0.0       0.0                           403158.9375
 
 
   High Effort Optimization Phase Complete
@@ -2611,8 +2331,8 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
-    0:00:22   55010.6      0.00       0.0       0.0                           413938.9062
+    0:00:22   55347.7      0.00       0.0       0.0                           403158.9375
+    0:00:22   55347.7      0.00       0.0       0.0                           403158.9375
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_fast_1_98V_m40C.db'
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_fast_1_98V_m40C.db'
 Loading db file '/usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db'
@@ -2631,7 +2351,7 @@ Report : timing
         -max_paths 1
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Mon Feb 28 17:09:11 2022
+Date   : Thu Mar 10 15:43:18 2022
 ****************************************
 
  * Some/all delay information is back-annotated.
@@ -2639,79 +2359,85 @@ Date   : Mon Feb 28 17:09:11 2022
 Operating Conditions: slow_1_62V_125C   Library: D_CELLS_HD_LPMOS_slow_1_62V_125C
 Wire Load Model Mode: Inactive.
 
-  Startpoint: clk_r_REG162_S16
+  Startpoint: adapter_inst/signal_control_inst/counter_reg[1]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: clk_r_REG183_S16
+  Endpoint: adapter_inst/signal_control_inst/counter_reg[4]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
 
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock clk (rise edge)                    0.00       0.00
-  clock network delay (ideal)              0.00       0.00
-  clk_r_REG162_S16/C (DFRRQHDLLX0)         0.00       0.00 r
-  clk_r_REG162_S16/Q (DFRRQHDLLX0)         1.49       1.49 f
-  U1967/Q (INHDLLX1)                       0.70 *     2.19 r
-  U1968/Q (ON21HDLLX1)                     0.28 *     2.47 f
-  U1969/Q (ON22HDLLX0)                     0.91 *     3.38 r
-  U1972/Q (NA22HDLLX1)                     0.50 *     3.88 r
-  U1973/Q (ON211HDLLX0)                    0.49 *     4.37 f
-  U1974/Q (AN22HDLLX1)                     0.63 *     4.99 r
-  U1976/CO (CAGHDLLX0)                     0.65 *     5.65 r
-  U1977/Q (AN211HDLLX1)                    0.16 *     5.80 f
-  U1978/Q (AN321HDLLX0)                    1.78 *     7.58 r
-  U1979/Q (AN211HDLLX1)                    0.32 *     7.90 f
-  U1986/Q (ON31HDLLX1)                     0.80 *     8.70 r
-  U1991/Q (AN22HDLLX1)                     0.45 *     9.16 f
-  U1993/Q (NA22HDLLX1)                     0.43 *     9.59 f
-  U1994/Q (ON211HDLLX0)                    0.54 *    10.13 r
-  U1997/Q (NA4HDLLX1)                      0.48 *    10.62 f
-  U1998/Q (ON31HDLLX1)                     1.04 *    11.65 r
-  U1999/Q (INHDLLX1)                       0.36 *    12.02 f
-  U2000/Q (AND2HDLLX0)                     0.77 *    12.78 f
-  U3107/Q (AN32HDLLX1)                     0.62 *    13.40 r
-  U3108/Q (NA4HDLLX1)                      1.87 *    15.27 f
-  U3162/Q (ON21HDLLX1)                     0.96 *    16.22 r
-  U3163/Q (ON21HDLLX1)                     0.33 *    16.56 f
-  U3164/Q (ON31HDLLX1)                     0.32 *    16.88 r
-  clk_r_REG183_S16/D (DFRRQHDLLX0)         0.00 *    16.88 r
-  data arrival time                                  16.88
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  adapter_inst/signal_control_inst/counter_reg[1]/C (DFRRQHDLLX0)
+                                                          0.00       0.00 r
+  adapter_inst/signal_control_inst/counter_reg[1]/Q (DFRRQHDLLX0)
+                                                          1.49       1.49 f
+  U1965/Q (INHDLLX1)                                      0.70 *     2.19 r
+  U1966/Q (ON21HDLLX1)                                    0.28 *     2.47 f
+  U1967/Q (ON22HDLLX0)                                    0.91 *     3.39 r
+  U1970/Q (NA22HDLLX1)                                    0.51 *     3.89 r
+  U1971/Q (ON211HDLLX0)                                   0.48 *     4.38 f
+  U1972/Q (AN22HDLLX1)                                    0.63 *     5.00 r
+  U1974/CO (CAGHDLLX0)                                    0.65 *     5.66 r
+  U1975/Q (AN211HDLLX1)                                   0.16 *     5.81 f
+  U1976/Q (AN321HDLLX0)                                   1.74 *     7.55 r
+  U1977/Q (AN211HDLLX1)                                   0.33 *     7.88 f
+  U1984/Q (ON31HDLLX1)                                    0.82 *     8.70 r
+  U1989/Q (AN22HDLLX1)                                    0.47 *     9.17 f
+  U1991/Q (NA22HDLLX1)                                    0.43 *     9.60 f
+  U1992/Q (ON211HDLLX0)                                   0.54 *    10.15 r
+  U1995/Q (NA4HDLLX1)                                     0.49 *    10.63 f
+  U1996/Q (ON31HDLLX1)                                    1.06 *    11.69 r
+  U1997/Q (INHDLLX1)                                      0.35 *    12.05 f
+  U1998/Q (AND2HDLLX0)                                    0.76 *    12.81 f
+  U3105/Q (AN32HDLLX1)                                    0.63 *    13.44 r
+  U3106/Q (NA4HDLLX1)                                     1.83 *    15.27 f
+  U3111/Q (INHDLLX1)                                      0.76 *    16.04 r
+  U3164/Q (AN21HDLLX1)                                    0.27 *    16.30 f
+  U3167/Q (AN32HDLLX1)                                    0.62 *    16.92 r
+  adapter_inst/signal_control_inst/counter_reg[4]/D (DFRRQHDLLX0)
+                                                          0.00 *    16.92 r
+  data arrival time                                                 16.92
 
-  clock clk (rise edge)                   73.75      73.75
-  clock network delay (ideal)              0.00      73.75
-  clock uncertainty                      -14.75      59.00
-  clk_r_REG183_S16/C (DFRRQHDLLX0)         0.00      59.00 r
-  library setup time                      -0.43      58.57
-  data required time                                 58.57
-  -----------------------------------------------------------
-  data required time                                 58.57
-  data arrival time                                 -16.88
-  -----------------------------------------------------------
-[32m  slack (MET)                                        41.69(B[m
+  clock clk (rise edge)                                  73.75      73.75
+  clock network delay (ideal)                             0.00      73.75
+  clock uncertainty                                     -14.75      59.00
+  adapter_inst/signal_control_inst/counter_reg[4]/C (DFRRQHDLLX0)
+                                                          0.00      59.00 r
+  library setup time                                     -0.38      58.61
+  data required time                                                58.61
+  --------------------------------------------------------------------------
+  data required time                                                58.61
+  data arrival time                                                -16.92
+  --------------------------------------------------------------------------
+[32m  slack (MET)                                                       41.69(B[m
 
 
-  Startpoint: clk_r_REG27_S13
+  Startpoint: iso14443a_inst/part2/tx_inst/lm_out_reg
               (rising edge-triggered flip-flop clocked by clk)
   Endpoint: lm_out (output port)
   Path Group: default
   Path Type: max
 
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clk_r_REG27_S13/C (DFRRQHDX1)            0.00       0.00 r
-  clk_r_REG27_S13/Q (DFRRQHDX1)            3.20       3.20 r
-  lm_out (out)                             0.00 *     3.20 r
-  data arrival time                                   3.20
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  iso14443a_inst/part2/tx_inst/lm_out_reg/C (DFRRQHDLLX1)
+                                                          0.00       0.00 r
+  iso14443a_inst/part2/tx_inst/lm_out_reg/Q (DFRRQHDLLX1)
+                                                          4.11       4.11 r
+  lm_out (out)                                            0.00 *     4.11 r
+  data arrival time                                                  4.11
 
-  max_delay                                5.00       5.00
-  output external delay                    0.00       5.00
-  data required time                                  5.00
-  -----------------------------------------------------------
-  data required time                                  5.00
-  data arrival time                                  -3.20
-  -----------------------------------------------------------
-[32m  slack (MET)                                         1.80(B[m
+  max_delay                                               5.00       5.00
+  output external delay                                   0.00       5.00
+  data required time                                                 5.00
+  --------------------------------------------------------------------------
+  data required time                                                 5.00
+  data arrival time                                                 -4.11
+  --------------------------------------------------------------------------
+[32m  slack (MET)                                                        0.89(B[m
 
 
 1
@@ -2721,7 +2447,6 @@ Writing ddc file 'work/final_netlist.ddc'.
 1
 
 Writing verilog file '/home/aparlane/fiuba_thesis/hdl/synth_pnr/synth/work/final_netlist.v'.
-[33mWarning: Verilog 'assign' or 'tran' statements are written out. (VO-4)(B[m
 1
 
 Information: No Scenarios exist, writing data for one virtual_scenario
@@ -2734,60 +2459,55 @@ Information: Writing backward SAIF information to file 'work/out_prop.saif'. (PW
 Id             Severity         Limit    Occurrences   Suppressed
 --------------------------------------------------------------------
 DCT-033         Warning             0              1            0
-ELAB-106        Warning             0              2            0
 ELAB-311        Warning             0              1            0
-HDL-193     Information             0             23            0
-HFS-802     Information             0              4            0
+HDL-193     Information             0             24            0
+HFS-802     Information             0              3            0
 LIBCHK-217      Warning             0              1            0
 LINT-1          Warning             0             24            0
 LINT-2          Warning             0              1            0
-LINT-28         Warning             0            117            0
+LINT-28         Warning             0            122            0
 LINT-29         Warning             0             24            0
 LINT-3          Warning             0             22            0
-LINT-31         Warning             0             18            0
-LINT-32         Warning             0              4            0
-LINT-33         Warning             0             43            0
-LINT-52         Warning             0             10            0
-LINT-60         Warning             0             46            0
+LINT-31         Warning             0             20            0
+LINT-33         Warning             0             44            0
+LINT-52         Warning             0             14            0
+LINT-60         Warning             0             47            0
 LINT-98     Information             0              1            0
 LINT-99     Information             0              1            0
 MWLIBP-300      Warning             0              2            0
 MWLIBP-319      Warning             0              2            0
 OPT-1206    Information             0             25            0
 OPT-1207    Information             0              3            0
-OPT-1208    Information             0              4            0
-OPT-1318    Information             0              2            0
+OPT-1208    Information             0              3            0
+OPT-1215    Information             0              1            0
+OPT-1318    Information             0              1            0
 OPT-1404        Warning             0              2            0
 OPT-1427        Warning             0              1            0
 OPT-775     Information             0              1            0
-PSYN-864    Information             0              4            0
-PSYN-878    Information             0              4            0
+PSYN-864    Information             0              3            0
+PSYN-878    Information             0              2            0
 PWR-12          Warning             0             18           18
 PWR-18          Warning             0             16           16
 PWR-19          Warning             0              1            0
 PWR-415         Warning             0              2            0
 PWR-458     Information             0              2            0
-PWR-6       Information             0              9            3
+PWR-6       Information             0              9            4
 PWR-602     Information             0              1            0
 PWR-727         Warning             0              1            0
 PWR-730     Information             0              2            0
 PWR-790     Information             0              2            0
-PWR-806     Information             0             44            0
-PWR-850     Information             0              4            0
-RCEX-007    Information             0              7            0
-RCEX-008    Information             0              7            0
-RCEX-011    Information             0            119            0
-RCEX-013    Information             0              7            0
-RCEX-015    Information             0              7            0
-RCEX-141    Information             0              7            0
-RTDC-115        Warning             0              1            0
-RTDC-134        Warning             0              1            0
-RTDC-44         Warning             0              8            0
-RTDC-47         Warning             0              1            0
+PWR-806     Information             0             43            0
+PWR-850     Information             0              3            0
+RCEX-007    Information             0              5            0
+RCEX-008    Information             0              5            0
+RCEX-011    Information             0             85            0
+RCEX-013    Information             0              5            0
+RCEX-015    Information             0              5            0
+RCEX-141    Information             0              5            0
 SEC-104     Information             0              1            0
 TFCHK-049       Warning             0              4            0
 TFCHK-084       Warning             0              1            0
-TIM-134         Warning             0             15            0
+TIM-134         Warning             0             14            0
 TIM-216         Warning             0              1            0
 UI-30             Error             0              1            0
 UID-401         Warning             0             37            0
@@ -2802,10 +2522,9 @@ UPF-213d        Warning             0              0            0
 UPF-213e        Warning             0              0            0
 UPF-213f        Warning             0              0            0
 VER-735     Information             5            160          155
-VO-4            Warning             0              1            0
 ZRT-105         Warning            10              0            0
 
-Diagnostics summary: 1 error, 395 warnings, 314 informationals
+Diagnostics summary: 1 error, 389 warnings, 263 informationals
 (B[m
 [32mScript finished successfully(B[m
 exit

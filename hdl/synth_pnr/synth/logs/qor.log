@@ -3,28 +3,28 @@
 Report : qor
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Mon Feb 28 17:09:11 2022
+Date   : Thu Mar 10 15:43:19 2022
 ****************************************
 
 
   Timing Path Group 'clk'
   -----------------------------------
   Levels of Logic:              23.00
-  Critical Path Length:         16.88
+  Critical Path Length:         16.92
   Critical Path Slack:          41.69
   Critical Path Clk Period:     73.75
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
   Worst Hold Violation:         -0.23
-  Total Hold Violation:        -28.36
-  No. of Hold Violations:      242.00
+  Total Hold Violation:        -26.45
+  No. of Hold Violations:      226.00
   -----------------------------------
 
   Timing Path Group 'default'
   -----------------------------------
   Levels of Logic:               0.00
-  Critical Path Length:          3.20
-  Critical Path Slack:           1.80
+  Critical Path Length:          4.11
+  Critical Path Slack:           0.89
   Critical Path Clk Period:       n/a
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
@@ -36,39 +36,39 @@ Date   : Mon Feb 28 17:09:11 2022
 
   Cell Count
   -----------------------------------
-  Hierarchical Cell Count:         44
-  Hierarchical Port Count:        176
-  Leaf Cell Count:               2305
-  Buf/Inv Cell Count:             485
-  Buf Cell Count:                  15
-  Inv Cell Count:                 470
+  Hierarchical Cell Count:         43
+  Hierarchical Port Count:        172
+  Leaf Cell Count:               2296
+  Buf/Inv Cell Count:             473
+  Buf Cell Count:                   9
+  Inv Cell Count:                 464
   CT Buf/Inv Cell Count:            0
-  Combinational Cell Count:      1663
-  Sequential Cell Count:          642
+  Combinational Cell Count:      1648
+  Sequential Cell Count:          648
   Macro Count:                      0
   -----------------------------------
 
 
   Area
   -----------------------------------
-  Combinational Area:    20930.736071
-  Noncombinational Area: 34079.859695
-  Buf/Inv Area:           3687.936044
-  Total Buffer Area:           150.53
-  Total Inverter Area:        3537.41
+  Combinational Area:    20792.752069
+  Noncombinational Area: 34554.931744
+  Buf/Inv Area:           3582.566442
+  Total Buffer Area:            90.32
+  Total Inverter Area:        3492.25
   Macro/Black Box Area:      0.000000
   Net Area:                  0.000000
-  Net XLength        :       27475.91
-  Net YLength        :       31249.81
+  Net XLength        :       27235.68
+  Net YLength        :       30740.52
   -----------------------------------
-  Cell Area:             55010.595766
-  Design Area:           55010.595766
-  Net Length        :        58725.71
+  Cell Area:             55347.683813
+  Design Area:           55347.683813
+  Net Length        :        57976.20
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:          2342
+  Total Number of Nets:          2335
   Nets With Violations:             0
   Max Trans Violations:             0
   Max Cap Violations:               0
@@ -83,15 +83,15 @@ Date   : Mon Feb 28 17:09:11 2022
   Logic Optimization:                  0.00
   Mapping Optimization:                8.76
   -----------------------------------------
-  Overall Compile Time:               26.33
-  Overall Compile Wall Clock Time:    27.17
+  Overall Compile Time:               26.20
+  Overall Compile Wall Clock Time:    27.06
 
   --------------------------------------------------------------------
 
   Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
 
 
-  Design (Hold)  WNS: 0.23  TNS: 28.36  Number of Violating Paths: 242
+  Design (Hold)  WNS: 0.23  TNS: 26.45  Number of Violating Paths: 226
 
   --------------------------------------------------------------------
 

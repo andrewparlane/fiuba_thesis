@@ -2,7 +2,7 @@
 (SAIFVERSION "2.0")
 (DIRECTION "backward")
 (DESIGN "radiation_sensor_digital_top")
-(DATE "Fri Jul 16 17:47:57 2021")
+(DATE "Thu Mar 10 15:43:19 2022")
 (VENDOR "Synopsys, Inc")
 (PROGRAM_NAME "Power Compiler write_saif")
 (PROGRAM_VERSION "P-2019.03")
@@ -99,115 +99,4261 @@
          (T0 999.99017) (T1 0.0098000942) (TC 0.0002655852) 
       )
       (adc_value\[15\]  
-         (T0 741.57458) (T1 258.42538) (TC 7.9675556e-05) 
+         (T0 683.98663) (T1 316.01337) (TC 0.0001327926) 
       )
       (adc_value\[14\]  
-         (T0 652.04095) (T1 347.95905) (TC 5.3117041e-05) 
+         (T0 643.30042) (T1 356.69958) (TC 0.00015935111) 
       )
       (adc_value\[13\]  
-         (T0 567.59509) (T1 432.40494) (TC 7.9675556e-05) 
+         (T0 524.17017) (T1 475.8298) (TC 7.9675556e-05) 
       )
       (adc_value\[12\]  
-         (T0 478.06146) (T1 521.93854) (TC 5.3117041e-05) 
+         (T0 514.86389) (T1 485.13611) (TC 0.00015935111) 
       )
       (adc_value\[11\]  
-         (T0 826.02045) (T1 173.97954) (TC 5.3117041e-05) 
+         (T0 630.20618) (T1 369.79382) (TC 0.0001327926) 
       )
       (adc_value\[10\]  
-         (T0 652.04095) (T1 347.95905) (TC 5.3117041e-05) 
+         (T0 478.32178) (T1 521.67822) (TC 2.655852e-05) 
       )
       (adc_value\[9\]  
-         (T0 652.04095) (T1 347.95905) (TC 0.00010623408) 
+         (T0 642.59766) (T1 357.40237) (TC 0.00015935111) 
       )
       (adc_value\[8\]  
-         (T0 567.59509) (T1 432.40494) (TC 7.9675556e-05) 
+         (T0 532.80505) (T1 467.19495) (TC 0.00018590964) 
       )
       (adc_value\[7\]  
-         (T0 826.02045) (T1 173.97954) (TC 5.3117041e-05) 
+         (T0 630.20618) (T1 369.79382) (TC 0.0001327926) 
       )
       (adc_value\[6\]  
-         (T0 826.02045) (T1 173.97954) (TC 5.3117041e-05) 
+         (T0 802.13611) (T1 197.86389) (TC 0.00021246816) 
       )
       (adc_value\[5\]  
-         (T0 567.59509) (T1 432.40494) (TC 7.9675556e-05) 
+         (T0 341.16626) (T1 658.83374) (TC 0.00010623408) 
       )
       (adc_value\[4\]  
-         (T0 567.59509) (T1 432.40494) (TC 7.9675556e-05) 
+         (T0 534.15771) (T1 465.84229) (TC 7.9675556e-05) 
       )
       (adc_value\[3\]  
-         (T0 393.61554) (T1 606.38446) (TC 7.9675556e-05) 
+         (T0 195.37195) (T1 804.62805) (TC 0.00015935111) 
       )
       (adc_value\[2\]  
-         (T0 567.59509) (T1 432.40494) (TC 7.9675556e-05) 
+         (T0 517.23645) (T1 482.76355) (TC 0.00018590964) 
       )
       (adc_value\[1\]  
-         (T0 652.04095) (T1 347.95905) (TC 0.00010623408) 
+         (T0 640.63611) (T1 359.36389) (TC 0.00015935111) 
       )
       (adc_value\[0\]  
-         (T0 567.59509) (T1 432.40494) (TC 2.655852e-05) 
+         (T0 529.17371) (T1 470.82626) (TC 0.0001327926) 
       )
    )
-   (INSTANCE clk_r_REG154_S15
-      (PORT
-         (Q  
-            (T0 472.79559) (T1 527.20441) (TC 0.0002655852) 
+   (INSTANCE adapter_inst
+      (INSTANCE signal_control_inst
+         (INSTANCE signals_reg\[adc_read\]
+            (PORT
+               (Q  
+                  (T0 472.90326) (T1 527.09674) (TC 0.0002655852) 
+               )
+            )
+         )
+         (INSTANCE signals_reg\[sens_read\]
+            (PORT
+               (Q  
+                  (T0 472.79559) (T1 527.20441) (TC 0.0002655852) 
+               )
+            )
+         )
+         (INSTANCE signals_reg\[sens_enable\]
+            (PORT
+               (Q  
+                  (T0 472.68793) (T1 527.31207) (TC 0.0002655852) 
+               )
+            )
+         )
+         (INSTANCE signals_reg\[adc_enable\]
+            (PORT
+               (Q  
+                  (T0 472.68793) (T1 527.31207) (TC 0.0002655852) 
+               )
+            )
+         )
+         (INSTANCE signals_reg\[sens_config\]\[0\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE signals_reg\[sens_config\]\[2\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE signals_reg\[sens_config\]\[1\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg\[1\]
+            (PORT
+               (Q  
+                  (T0 0) (T1 1000) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg\[0\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg\[2\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg\[3\]
+            (PORT
+               (Q  
+                  (T0 0) (T1 1000) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg\[4\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg\[5\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg\[7\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg\[9\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg\[6\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg\[8\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg\[10\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg\[12\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg\[11\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg\[15\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg\[14\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[13\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[11\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[10\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[9\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[8\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[24\]
+            (PORT
+               (Q  
+                  (T0 803.97424) (T1 196.02576) (TC 0.0001327926) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[23\]
+            (PORT
+               (Q  
+                  (T0 834.16486) (T1 165.83514) (TC 0.00010623408) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[22\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[17\]
+            (PORT
+               (Q  
+                  (T0 638.1391) (T1 361.8609) (TC 0.00023902669) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[16\]
+            (PORT
+               (Q  
+                  (T0 803.97424) (T1 196.02576) (TC 0.0001327926) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[12\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[21\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[20\]
+            (PORT
+               (Q  
+                  (T0 834.16486) (T1 165.83514) (TC 0.00010623408) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[19\]
+            (PORT
+               (Q  
+                  (T0 638.1391) (T1 361.8609) (TC 0.00023902669) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[18\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[7\]
+            (PORT
+               (Q  
+                  (T0 638.1391) (T1 361.8609) (TC 0.00023902669) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[6\]
+            (PORT
+               (Q  
+                  (T0 638.1391) (T1 361.8609) (TC 0.00023902669) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[5\]
+            (PORT
+               (Q  
+                  (T0 638.1391) (T1 361.8609) (TC 0.00023902669) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[3\]
+            (PORT
+               (Q  
+                  (T0 0) (T1 1000) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[1\]
+            (PORT
+               (Q  
+                  (T0 0) (T1 1000) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_sync_timing_reg\[13\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE pause_n_synchronised_old_reg
+            (PORT
+               (Q  
+                  (T0 6.6948853) (T1 993.30511) (TC 0.09083014) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[15\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[4\]
+            (PORT
+               (Q  
+                  (T0 638.1391) (T1 361.8609) (TC 0.00023902669) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[14\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[2\]
+            (PORT
+               (Q  
+                  (T0 638.1391) (T1 361.8609) (TC 0.00023902669) 
+               )
+            )
+         )
+         (INSTANCE cached_cmd_reg\[1\]
+            (PORT
+               (Q  
+                  (T0 638.1391) (T1 361.8609) (TC 0.00023902669) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[16\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[15\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[14\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[11\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[9\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[6\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[19\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[17\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[13\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[12\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[10\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[7\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing1_reg\[0\]
+            (PORT
+               (Q  
+                  (T0 638.1391) (T1 361.8609) (TC 0.00023902669) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[4\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[1\]
+            (PORT
+               (Q  
+                  (T0 0) (T1 1000) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[0\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[24\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[3\]
+            (PORT
+               (Q  
+                  (T0 0) (T1 1000) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[2\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[22\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_cmd_reg\[0\]
+            (PORT
+               (Q  
+                  (T0 638.1391) (T1 361.8609) (TC 0.00023902669) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[21\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[18\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[8\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[23\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[20\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_auto_read_timing2_reg\[5\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE new_signals_reg\[sens_enable\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE new_signals_reg\[adc_enable\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE new_signals_reg\[adc_read\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE new_signals_reg\[sens_read\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE starts_adc_read_reg
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE new_signals_reg\[sens_config\]\[2\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE new_signals_reg\[sens_config\]\[1\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE new_signals_reg\[sens_config\]\[0\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg\[15\]
+            (PORT
+               (Q  
+                  (T0 702.89294) (T1 297.10709) (TC 7.9675556e-05) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg\[14\]
+            (PORT
+               (Q  
+                  (T0 656.21643) (T1 343.78354) (TC 5.3117041e-05) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg\[13\]
+            (PORT
+               (Q  
+                  (T0 534.16357) (T1 465.8364) (TC 7.9675556e-05) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg\[12\]
+            (PORT
+               (Q  
+                  (T0 479.04218) (T1 520.95782) (TC 5.3117041e-05) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg\[11\]
+            (PORT
+               (Q  
+                  (T0 828.51251) (T1 171.4875) (TC 5.3117041e-05) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg\[10\]
+            (PORT
+               (Q  
+                  (T0 651.3382) (T1 348.6618) (TC 5.3117041e-05) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg\[9\]
+            (PORT
+               (Q  
+                  (T0 650.52972) (T1 349.47028) (TC 0.00010623408) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg\[8\]
+            (PORT
+               (Q  
+                  (T0 536.28369) (T1 463.71634) (TC 7.9675556e-05) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg\[7\]
+            (PORT
+               (Q  
+                  (T0 822.82568) (T1 177.17429) (TC 5.3117041e-05) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg\[6\]
+            (PORT
+               (Q  
+                  (T0 827.70398) (T1 172.29602) (TC 5.3117041e-05) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg\[5\]
+            (PORT
+               (Q  
+                  (T0 536.28369) (T1 463.71634) (TC 7.9675556e-05) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg\[4\]
+            (PORT
+               (Q  
+                  (T0 534.16357) (T1 465.8364) (TC 7.9675556e-05) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg\[3\]
+            (PORT
+               (Q  
+                  (T0 356.18085) (T1 643.81915) (TC 7.9675556e-05) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg\[2\]
+            (PORT
+               (Q  
+                  (T0 528.47681) (T1 471.52316) (TC 7.9675556e-05) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg\[1\]
+            (PORT
+               (Q  
+                  (T0 654.09644) (T1 345.90356) (TC 0.00010623408) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_value_reg\[0\]
+            (PORT
+               (Q  
+                  (T0 533.3551) (T1 466.64487) (TC 2.655852e-05) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[2\]
+            (PORT
+               (Q  
+                  (T0 443.14221) (T1 556.85779) (TC 3.0283086) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[3\]
+            (PORT
+               (Q  
+                  (T0 444.1817) (T1 555.8183) (TC 1.5146856) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[4\]
+            (PORT
+               (Q  
+                  (T0 443.36542) (T1 556.63458) (TC 0.75705063) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[5\]
+            (PORT
+               (Q  
+                  (T0 603.35022) (T1 396.64981) (TC 0.42302412) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[6\]
+            (PORT
+               (Q  
+                  (T0 521.78394) (T1 478.21609) (TC 0.20102143) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[7\]
+            (PORT
+               (Q  
+                  (T0 658.73779) (T1 341.26218) (TC 0.08288914) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[8\]
+            (PORT
+               (Q  
+                  (T0 766.37903) (T1 233.62096) (TC 0.025071243) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[9\]
+            (PORT
+               (Q  
+                  (T0 768.81232) (T1 231.1877) (TC 0.012455947) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[10\]
+            (PORT
+               (Q  
+                  (T0 778.00507) (T1 221.99492) (TC 0.0058959918) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[11\]
+            (PORT
+               (Q  
+                  (T0 778.05402) (T1 221.946) (TC 0.0030807885) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[12\]
+            (PORT
+               (Q  
+                  (T0 816.69458) (T1 183.3054) (TC 0.0018325379) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[13\]
+            (PORT
+               (Q  
+                  (T0 821.55133) (T1 178.44867) (TC 0.00082331413) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[1\]
+            (PORT
+               (Q  
+                  (T0 553.58667) (T1 446.41333) (TC 6.0566173) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[14\]
+            (PORT
+               (Q  
+                  (T0 999.88452) (T1 0.11550301) (TC 5.3117041e-05) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[15\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[16\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[17\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[18\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[19\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[20\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[21\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[22\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[23\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[24\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE counter_reg\[0\]
+            (PORT
+               (Q  
+                  (T0 555.66956) (T1 444.33047) (TC 12.023175) 
+               )
+            )
+         )
+         (INSTANCE state_reg\[1\]
+            (PORT
+               (Q  
+                  (T0 999.87274) (T1 0.12724188) (TC 0.0007967556) 
+               )
+            )
+         )
+         (INSTANCE state_reg\[2\]
+            (PORT
+               (Q  
+                  (T0 999.87274) (T1 0.12724188) (TC 0.0007967556) 
+               )
+            )
+         )
+         (INSTANCE state_reg\[0\]
+            (PORT
+               (Q  
+                  (T0 999.87274) (T1 0.12724188) (TC 0.0007967556) 
+               )
+            )
+         )
+         (INSTANCE unexpected_pause_reg
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE cached_adc_conversion_complete_reg
+            (PORT
+               (Q  
+                  (T0 827.64917) (T1 172.35081) (TC 0.0002655852) 
+               )
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[2\]\[4\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[1\]\[2\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[1\]\[6\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[3\]\[3\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[0\]\[1\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[0\]\[0\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[1\]\[5\]
+         (PORT
+            (Q  
+               (T0 0) (T1 1000) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[1\]\[3\]
+         (PORT
+            (Q  
+               (T0 0) (T1 1000) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[3\]\[5\]
+         (PORT
+            (Q  
+               (T0 0) (T1 1000) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[1\]\[4\]
+         (PORT
+            (Q  
+               (T0 0) (T1 1000) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[1\]\[1\]
+         (PORT
+            (Q  
+               (T0 0) (T1 1000) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[3\]\[4\]
+         (PORT
+            (Q  
+               (T0 0) (T1 1000) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[3\]\[7\]
+         (PORT
+            (Q  
+               (T0 0) (T1 1000) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[1\]\[7\]
+         (PORT
+            (Q  
+               (T0 0) (T1 1000) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[3\]\[6\]
+         (PORT
+            (Q  
+               (T0 0) (T1 1000) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[3\]\[0\]
+         (PORT
+            (Q  
+               (T0 0) (T1 1000) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[2\]\[3\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[0\]\[7\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[0\]\[3\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[2\]\[6\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[2\]\[2\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[2\]\[0\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[3\]\[2\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[3\]\[1\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[0\]\[5\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[2\]\[1\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[0\]\[6\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[2\]\[7\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[0\]\[2\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[1\]\[0\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[0\]\[4\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[2\]\[5\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[4\]\[7\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[4\]\[3\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[4\]\[6\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[4\]\[2\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[4\]\[4\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[4\]\[5\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE signal_control_abort_reg
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[4\]\[0\]
+         (PORT
+            (Q  
+               (T0 436.58069) (T1 563.41931) (TC 0.00023902669) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[4\]\[1\]
+         (PORT
+            (Q  
+               (T0 343.76215) (T1 656.23785) (TC 0.0002655852) 
+            )
+         )
+      )
+      (INSTANCE signal_control_start_reg
+         (PORT
+            (Q  
+               (T0 999.98041) (T1 0.019573631) (TC 0.0005311704) 
+            )
+         )
+      )
+      (INSTANCE status_flags_reg\[unexpected_pause\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[7\]\[7\]
+         (PORT
+            (Q  
+               (T0 702.32721) (T1 297.67279) (TC 0.00023902669) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[7\]\[6\]
+         (PORT
+            (Q  
+               (T0 702.32721) (T1 297.67279) (TC 0.00023902669) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[7\]\[5\]
+         (PORT
+            (Q  
+               (T0 702.32721) (T1 297.67279) (TC 0.00023902669) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[7\]\[4\]
+         (PORT
+            (Q  
+               (T0 702.32721) (T1 297.67279) (TC 0.00023902669) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[7\]\[3\]
+         (PORT
+            (Q  
+               (T0 0) (T1 1000) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[7\]\[2\]
+         (PORT
+            (Q  
+               (T0 702.32721) (T1 297.67279) (TC 0.00023902669) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[7\]\[1\]
+         (PORT
+            (Q  
+               (T0 0) (T1 1000) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[8\]\[7\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[8\]\[6\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[8\]\[5\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[8\]\[4\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[8\]\[3\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[8\]\[2\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[8\]\[1\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[10\]\[0\]
+         (PORT
+            (Q  
+               (T0 838.84204) (T1 161.15793) (TC 0.0001327926) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[12\]\[0\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[14\]\[0\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[8\]\[0\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[6\]\[7\]
+         (PORT
+            (Q  
+               (T0 773.69629) (T1 226.30373) (TC 0.00018590964) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[6\]\[6\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[6\]\[5\]
+         (PORT
+            (Q  
+               (T0 720.23425) (T1 279.76572) (TC 0.0002655852) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[6\]\[2\]
+         (PORT
+            (Q  
+               (T0 888.09369) (T1 111.9063) (TC 0.00010623408) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[6\]\[0\]
+         (PORT
+            (Q  
+               (T0 773.69629) (T1 226.30373) (TC 0.00018590964) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[12\]\[7\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[12\]\[6\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[12\]\[5\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[12\]\[4\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[12\]\[3\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[12\]\[2\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[12\]\[1\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[9\]\[7\]
+         (PORT
+            (Q  
+               (T0 869.48792) (T1 130.51205) (TC 0.00010623408) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[9\]\[6\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[9\]\[5\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[9\]\[4\]
+         (PORT
+            (Q  
+               (T0 869.48792) (T1 130.51205) (TC 0.00010623408) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[9\]\[3\]
+         (PORT
+            (Q  
+               (T0 705.6405) (T1 294.35953) (TC 0.00023902669) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[9\]\[2\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[9\]\[1\]
+         (PORT
+            (Q  
+               (T0 705.6405) (T1 294.35953) (TC 0.00023902669) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[9\]\[0\]
+         (PORT
+            (Q  
+               (T0 836.15253) (T1 163.84747) (TC 0.0001327926) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[11\]\[7\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[11\]\[6\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[11\]\[5\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[11\]\[4\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[11\]\[3\]
+         (PORT
+            (Q  
+               (T0 0) (T1 1000) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[11\]\[2\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[11\]\[1\]
+         (PORT
+            (Q  
+               (T0 0) (T1 1000) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[11\]\[0\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[5\]\[5\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[5\]\[2\]
+         (PORT
+            (Q  
+               (T0 774.27985) (T1 225.72015) (TC 0.00018590964) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[5\]\[0\]
+         (PORT
+            (Q  
+               (T0 830.06702) (T1 169.933) (TC 0.0001327926) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[7\]\[0\]
+         (PORT
+            (Q  
+               (T0 702.32721) (T1 297.67279) (TC 0.00023902669) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[13\]\[1\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[13\]\[2\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[13\]\[3\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[13\]\[4\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[13\]\[5\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[13\]\[0\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[13\]\[7\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[13\]\[6\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[6\]\[4\]
+         (PORT
+            (Q  
+               (T0 832.14056) (T1 167.85942) (TC 0.00015935111) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[6\]\[3\]
+         (PORT
+            (Q  
+               (T0 888.09369) (T1 111.9063) (TC 0.00010623408) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[6\]\[1\]
+         (PORT
+            (Q  
+               (T0 829.64941) (T1 170.35059) (TC 0.0001327926) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[5\]\[7\]
+         (PORT
+            (Q  
+               (T0 832.58655) (T1 167.41344) (TC 0.00015935111) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[5\]\[6\]
+         (PORT
+            (Q  
+               (T0 774.27985) (T1 225.72015) (TC 0.00018590964) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[5\]\[4\]
+         (PORT
+            (Q  
+               (T0 832.58655) (T1 167.41344) (TC 0.00015935111) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[5\]\[3\]
+         (PORT
+            (Q  
+               (T0 279.03967) (T1 720.96033) (TC 0.0002655852) 
+            )
+         )
+      )
+      (INSTANCE rx_buffer_reg\[5\]\[1\]
+         (PORT
+            (Q  
+               (T0 58.306702) (T1 941.6933) (TC 2.655852e-05) 
+            )
+         )
+      )
+      (INSTANCE tx_idx_reg\[1\]
+         (PORT
+            (Q  
+               (T0 712.38715) (T1 287.61285) (TC 0.0011685749) 
+            )
+         )
+      )
+      (INSTANCE tx_idx_reg\[2\]
+         (PORT
+            (Q  
+               (T0 356.6311) (T1 643.3689) (TC 0.00082331413) 
+            )
+         )
+      )
+      (INSTANCE tx_idx_reg\[3\]
+         (PORT
+            (Q  
+               (T0 946.53668) (T1 53.463337) (TC 5.3117041e-05) 
+            )
+         )
+      )
+      (INSTANCE tx_idx_reg\[0\]
+         (PORT
+            (Q  
+               (T0 334.07977) (T1 665.92023) (TC 0.0028417616) 
+            )
+         )
+      )
+      (INSTANCE tx_iface_data_valid_reg
+         (PORT
+            (Q  
+               (T0 693.74121) (T1 306.25876) (TC 0.00084987265) 
+            )
+         )
+      )
+      (INSTANCE send_reply_reg
+         (PORT
+            (Q  
+               (T0 999.96869) (T1 0.031312495) (TC 0.00084987265) 
+            )
+         )
+      )
+      (INSTANCE last_rx_had_invalid_magic_reg
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE rx_error_flag_reg
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE status_flags_reg\[error\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE status_flags_reg\[already_busy\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE status_flags_reg\[conv_complete\]
+         (PORT
+            (Q  
+               (T0 702.51709) (T1 297.48294) (TC 0.0002655852) 
+            )
+         )
+      )
+      (INSTANCE signal_control_result_read_reg
+         (PORT
+            (Q  
+               (T0 999.99017) (T1 0.0098000942) (TC 0.0002655852) 
+            )
+         )
+      )
+      (INSTANCE reply_cmd_reg\[7\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE reply_cmd_reg\[6\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE reply_cmd_reg\[5\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE reply_cmd_reg\[4\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE reply_cmd_reg\[3\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE reply_cmd_reg\[2\]
+         (PORT
+            (Q  
+               (T0 1000) (T1 0) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE reply_cmd_reg\[1\]
+         (PORT
+            (Q  
+               (T0 472.68793) (T1 527.31207) (TC 0.0002655852) 
+            )
+         )
+      )
+      (INSTANCE reply_cmd_reg\[0\]
+         (PORT
+            (Q  
+               (T0 403.49939) (T1 596.50061) (TC 0.00023902669) 
+            )
+         )
+      )
+      (INSTANCE rx_count_reg\[1\]
+         (PORT
+            (Q  
+               (T0 457.13104) (T1 542.86896) (TC 0.0024699424) 
+            )
+         )
+      )
+      (INSTANCE rx_count_reg\[2\]
+         (PORT
+            (Q  
+               (T0 614.56903) (T1 385.43097) (TC 0.0011154579) 
+            )
+         )
+      )
+      (INSTANCE rx_count_reg\[3\]
+         (PORT
+            (Q  
+               (T0 730.28333) (T1 269.71671) (TC 0.00050461187) 
+            )
+         )
+      )
+      (INSTANCE rx_count_reg\[4\]
+         (PORT
+            (Q  
+               (T0 838.44128) (T1 161.55869) (TC 0.0002655852) 
+            )
+         )
+      )
+      (INSTANCE rx_count_reg\[0\]
+         (PORT
+            (Q  
+               (T0 305.44635) (T1 694.55365) (TC 0.0052320282) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg\[15\]
+         (PORT
+            (Q  
+               (T0 741.57458) (T1 258.42538) (TC 7.9675556e-05) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg\[14\]
+         (PORT
+            (Q  
+               (T0 652.04095) (T1 347.95905) (TC 5.3117041e-05) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg\[13\]
+         (PORT
+            (Q  
+               (T0 567.59509) (T1 432.40494) (TC 7.9675556e-05) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg\[12\]
+         (PORT
+            (Q  
+               (T0 478.06146) (T1 521.93854) (TC 5.3117041e-05) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg\[11\]
+         (PORT
+            (Q  
+               (T0 826.02045) (T1 173.97954) (TC 5.3117041e-05) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg\[10\]
+         (PORT
+            (Q  
+               (T0 652.04095) (T1 347.95905) (TC 5.3117041e-05) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg\[9\]
+         (PORT
+            (Q  
+               (T0 652.04095) (T1 347.95905) (TC 0.00010623408) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg\[8\]
+         (PORT
+            (Q  
+               (T0 567.59509) (T1 432.40494) (TC 7.9675556e-05) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg\[7\]
+         (PORT
+            (Q  
+               (T0 826.02045) (T1 173.97954) (TC 5.3117041e-05) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg\[6\]
+         (PORT
+            (Q  
+               (T0 826.02045) (T1 173.97954) (TC 5.3117041e-05) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg\[5\]
+         (PORT
+            (Q  
+               (T0 567.59509) (T1 432.40494) (TC 7.9675556e-05) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg\[4\]
+         (PORT
+            (Q  
+               (T0 567.59509) (T1 432.40494) (TC 7.9675556e-05) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg\[3\]
+         (PORT
+            (Q  
+               (T0 393.61554) (T1 606.38446) (TC 7.9675556e-05) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg\[2\]
+         (PORT
+            (Q  
+               (T0 567.59509) (T1 432.40494) (TC 7.9675556e-05) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg\[1\]
+         (PORT
+            (Q  
+               (T0 652.04095) (T1 347.95905) (TC 0.00010623408) 
+            )
+         )
+      )
+      (INSTANCE cached_adc_value_reg\[0\]
+         (PORT
+            (Q  
+               (T0 567.59509) (T1 432.40494) (TC 2.655852e-05) 
+            )
          )
       )
    )
-   (INSTANCE clk_r_REG187_S15
-      (PORT
-         (Q  
-            (T0 472.68793) (T1 527.31207) (TC 0.0002655852) 
+   (INSTANCE reset_synchroniser
+      (INSTANCE shift_reg_reg\[1\]
+         (PORT
+            (Q  
+               (T0 0) (T1 1000) (TC 0) 
+            )
+         )
+      )
+      (INSTANCE shift_reg_reg\[0\]
+         (PORT
+            (Q  
+               (T0 0) (T1 1000) (TC 0) 
+            )
          )
       )
    )
-   (INSTANCE clk_r_REG189_S15
-      (PORT
-         (Q  
-            (T0 472.68793) (T1 527.31207) (TC 0.0002655852) 
+   (INSTANCE iso14443a_inst
+      (INSTANCE part4
+         (INSTANCE app_rx_iface_data_reg\[7\]
+            (PORT
+               (Q  
+                  (T0 683.82715) (T1 316.17288) (TC 0.0029479959) 
+               )
+            )
+         )
+         (INSTANCE our_cid_reg\[1\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE our_cid_reg\[3\]
+            (PORT
+               (Q  
+                  (T0 0) (T1 1000) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE tx_count_minus_1_reg\[0\]
+            (PORT
+               (Q  
+                  (T0 936.44794) (T1 63.552082) (TC 0.00084987265) 
+               )
+            )
+         )
+         (INSTANCE send_reply_reg
+            (PORT
+               (Q  
+                  (T0 999.96478) (T1 0.035243157) (TC 0.00095610676) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[1\]\[1\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[1\]\[3\]
+            (PORT
+               (Q  
+                  (T0 19.780212) (T1 980.21979) (TC 5.3117041e-05) 
+               )
+            )
+         )
+         (INSTANCE replyStdBlock_reg\[1\]
+            (PORT
+               (Q  
+                  (T0 0) (T1 1000) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE replyStdBlock_reg\[0\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE reply_reg\[0\]
+            (PORT
+               (Q  
+                  (T0 968.25494) (T1 31.745075) (TC 5.3117041e-05) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[0\]\[3\]
+            (PORT
+               (Q  
+                  (T0 19.725647) (T1 980.27435) (TC 2.655852e-05) 
+               )
+            )
+         )
+         (INSTANCE our_cid_reg\[2\]
+            (PORT
+               (Q  
+                  (T0 0) (T1 1000) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE reply_reg\[1\]
+            (PORT
+               (Q  
+                  (T0 51.629761) (T1 948.37024) (TC 2.655852e-05) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[0\]\[0\]
+            (PORT
+               (Q  
+                  (T0 489.64267) (T1 510.35733) (TC 0.00045149485) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[1\]\[0\]
+            (PORT
+               (Q  
+                  (T0 0) (T1 1000) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[0\]\[1\]
+            (PORT
+               (Q  
+                  (T0 39.459473) (T1 960.54053) (TC 2.655852e-05) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[0\]\[6\]
+            (PORT
+               (Q  
+                  (T0 960.54053) (T1 39.45945) (TC 2.655852e-05) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[0\]\[7\]
+            (PORT
+               (Q  
+                  (T0 960.54053) (T1 39.45945) (TC 2.655852e-05) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[1\]\[2\]
+            (PORT
+               (Q  
+                  (T0 19.780212) (T1 980.21979) (TC 5.3117041e-05) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[0\]\[4\]
+            (PORT
+               (Q  
+                  (T0 980.26617) (T1 19.733812) (TC 5.3117041e-05) 
+               )
+            )
+         )
+         (INSTANCE our_cid_reg\[0\]
+            (PORT
+               (Q  
+                  (T0 0) (T1 1000) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[1\]\[4\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[0\]\[2\]
+            (PORT
+               (Q  
+                  (T0 980.26617) (T1 19.733812) (TC 5.3117041e-05) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[2\]\[6\]
+            (PORT
+               (Q  
+                  (T0 960.34601) (T1 39.654003) (TC 2.655852e-05) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[2\]\[2\]
+            (PORT
+               (Q  
+                  (T0 980.17297) (T1 19.827002) (TC 2.655852e-05) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[2\]\[4\]
+            (PORT
+               (Q  
+                  (T0 980.17297) (T1 19.827002) (TC 2.655852e-05) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[2\]\[0\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[2\]\[1\]
+            (PORT
+               (Q  
+                  (T0 960.34601) (T1 39.654003) (TC 2.655852e-05) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[2\]\[7\]
+            (PORT
+               (Q  
+                  (T0 980.17297) (T1 19.827002) (TC 2.655852e-05) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[2\]\[5\]
+            (PORT
+               (Q  
+                  (T0 980.17297) (T1 19.827002) (TC 5.3117041e-05) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[2\]\[3\]
+            (PORT
+               (Q  
+                  (T0 960.34601) (T1 39.654003) (TC 2.655852e-05) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[0\]\[5\]
+            (PORT
+               (Q  
+                  (T0 980.27435) (T1 19.725634) (TC 2.655852e-05) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[1\]\[7\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[1\]\[6\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE rx_buffer_reg\[1\]\[5\]
+            (PORT
+               (Q  
+                  (T0 980.35089) (T1 19.649136) (TC 2.655852e-05) 
+               )
+            )
+         )
+         (INSTANCE our_block_num_reg
+            (PORT
+               (Q  
+                  (T0 507.7731) (T1 492.2269) (TC 0.00042493633) 
+               )
+            )
+         )
+         (INSTANCE tx_buffer_reg\[1\]\[0\]
+            (PORT
+               (Q  
+                  (T0 0) (T1 1000) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE tx_buffer_reg\[1\]\[1\]
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE app_rx_iface_data_reg\[0\]
+            (PORT
+               (Q  
+                  (T0 515.44354) (T1 484.55646) (TC 0.0025761765) 
+               )
+            )
+         )
+         (INSTANCE app_rx_iface_data_reg\[5\]
+            (PORT
+               (Q  
+                  (T0 611.30408) (T1 388.69589) (TC 0.002815203) 
+               )
+            )
+         )
+         (INSTANCE app_rx_iface_data_reg\[2\]
+            (PORT
+               (Q  
+                  (T0 733.29401) (T1 266.70599) (TC 0.0020715646) 
+               )
+            )
+         )
+         (INSTANCE app_rx_iface_data_reg\[6\]
+            (PORT
+               (Q  
+                  (T0 731.3562) (T1 268.64377) (TC 0.0020981231) 
+               )
+            )
+         )
+         (INSTANCE app_rx_iface_data_reg\[1\]
+            (PORT
+               (Q  
+                  (T0 485.17365) (T1 514.82635) (TC 0.0035588415) 
+               )
+            )
+         )
+         (INSTANCE app_rx_iface_data_reg\[3\]
+            (PORT
+               (Q  
+                  (T0 629.66663) (T1 370.3334) (TC 0.0037181929) 
+               )
+            )
+         )
+         (INSTANCE app_rx_iface_data_reg\[4\]
+            (PORT
+               (Q  
+                  (T0 621.35242) (T1 378.64761) (TC 0.0028948786) 
+               )
+            )
+         )
+         (INSTANCE tx_buffer_reg\[0\]\[1\]
+            (PORT
+               (Q  
+                  (T0 734.52429) (T1 265.47568) (TC 0.0023371498) 
+               )
+            )
+         )
+         (INSTANCE tx_buffer_reg\[0\]\[2\]
+            (PORT
+               (Q  
+                  (T0 790.05212) (T1 209.94791) (TC 0.0011685749) 
+               )
+            )
+         )
+         (INSTANCE check_need_to_forward_to_app_reg
+            (PORT
+               (Q  
+                  (T0 999.93347) (T1 0.066555649) (TC 0.0018059794) 
+               )
+            )
+         )
+         (INSTANCE tx_buffer_reg\[0\]\[6\]
+            (PORT
+               (Q  
+                  (T0 773.44751) (T1 226.55252) (TC 0.0015403943) 
+               )
+            )
+         )
+         (INSTANCE tx_buffer_reg\[0\]\[0\]
+            (PORT
+               (Q  
+                  (T0 683.83337) (T1 316.1666) (TC 0.0018856549) 
+               )
+            )
+         )
+         (INSTANCE tx_buffer_reg\[0\]\[3\]
+            (PORT
+               (Q  
+                  (T0 779.67419) (T1 220.32579) (TC 0.0019122135) 
+               )
+            )
+         )
+         (INSTANCE tx_buffer_reg\[1\]\[7\]
+            (PORT
+               (Q  
+                  (T0 469.42841) (T1 530.57159) (TC 0.00018590964) 
+               )
+            )
+         )
+         (INSTANCE tx_buffer_reg\[1\]\[6\]
+            (PORT
+               (Q  
+                  (T0 438.61261) (T1 561.38739) (TC 0.00018590964) 
+               )
+            )
+         )
+         (INSTANCE tx_buffer_reg\[0\]\[5\]
+            (PORT
+               (Q  
+                  (T0 744.21033) (T1 255.7897) (TC 0.0019653304) 
+               )
+            )
+         )
+         (INSTANCE tx_buffer_reg\[1\]\[3\]
+            (PORT
+               (Q  
+                  (T0 0) (T1 1000) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE tx_buffer_reg\[0\]\[4\]
+            (PORT
+               (Q  
+                  (T0 763.95917) (T1 236.04085) (TC 0.0020715646) 
+               )
+            )
+         )
+         (INSTANCE check_need_to_forward_to_app_after_next_byte_reg
+            (PORT
+               (Q  
+                  (T0 963.4953) (T1 36.504726) (TC 0.00084987265) 
+               )
+            )
+         )
+         (INSTANCE tx_buffer_reg\[0\]\[7\]
+            (PORT
+               (Q  
+                  (T0 777.49982) (T1 222.50018) (TC 0.0025496178) 
+               )
+            )
+         )
+         (INSTANCE tx_buffer_reg\[1\]\[2\]
+            (PORT
+               (Q  
+                  (T0 0) (T1 1000) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE allow_pps_reg
+            (PORT
+               (Q  
+                  (T0 981.0957) (T1 18.904303) (TC 5.3117041e-05) 
+               )
+            )
+         )
+         (INSTANCE forward_from_app_reg
+            (PORT
+               (Q  
+                  (T0 657.69055) (T1 342.30948) (TC 0.00084987265) 
+               )
+            )
+         )
+         (INSTANCE tx_iface_data_valid_reg
+            (PORT
+               (Q  
+                  (T0 650.13818) (T1 349.86179) (TC 0.00095610676) 
+               )
+            )
+         )
+         (INSTANCE app_rx_iface_error_reg
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE app_rx_iface_data_valid_reg
+            (PORT
+               (Q  
+                  (T0 999.64374) (T1 0.35628253) (TC 0.0096673016) 
+               )
+            )
+         )
+         (INSTANCE app_rx_iface_eoc_reg
+            (PORT
+               (Q  
+                  (T0 999.96869) (T1 0.031312495) (TC 0.00084987265) 
+               )
+            )
+         )
+         (INSTANCE forward_to_app_reg
+            (PORT
+               (Q  
+                  (T0 579.4502) (T1 420.54984) (TC 0.00084987265) 
+               )
+            )
+         )
+         (INSTANCE app_rx_iface_soc_reg
+            (PORT
+               (Q  
+                  (T0 999.96869) (T1 0.031312495) (TC 0.00084987265) 
+               )
+            )
+         )
+         (INSTANCE rx_deselect_reg
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE app_tx_iface_req_reg
+            (PORT
+               (Q  
+                  (T0 999.78662) (T1 0.21337116) (TC 0.0057897572) 
+               )
+            )
+         )
+         (INSTANCE rx_count_reg\[2\]
+            (PORT
+               (Q  
+                  (T0 198.95819) (T1 801.04181) (TC 0.00092954823) 
+               )
+            )
+         )
+         (INSTANCE rx_count_reg\[1\]
+            (PORT
+               (Q  
+                  (T0 916.67773) (T1 83.322235) (TC 0.00095610676) 
+               )
+            )
+         )
+         (INSTANCE rx_count_reg\[0\]
+            (PORT
+               (Q  
+                  (T0 175.11102) (T1 824.88898) (TC 0.0027355277) 
+               )
+            )
+         )
+         (INSTANCE rx_error_flag_reg
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
+         )
+         (INSTANCE pkt_received_reg
+            (PORT
+               (Q  
+                  (T0 999.96478) (T1 0.035243157) (TC 0.00095610676) 
+               )
+            )
+         )
+         (INSTANCE app_resend_last_reg
+            (PORT
+               (Q  
+                  (T0 1000) (T1 0) (TC 0) 
+               )
+            )
          )
       )
-   )
-   (INSTANCE clk_r_REG159_S16
-      (PORT
-         (Q  
-            (T0 472.90326) (T1 527.09674) (TC 0.0002655852) 
+      (INSTANCE part2
+         (INSTANCE tx_inst
+            (INSTANCE lm_out_reg
+               (PORT
+                  (Q  
+                     (T0 895.01135) (T1 104.98868) (TC 0.35609663) 
+                  )
+               )
+            )
+            (INSTANCE state_reg\[1\]
+               (PORT
+                  (Q  
+                     (T0 582.59009) (T1 417.40991) (TC 0.0010623408) 
+                  )
+               )
+            )
+            (INSTANCE state_reg\[0\]
+               (PORT
+                  (Q  
+                     (T0 997.45514) (T1 2.5448375) (TC 0.0010623408) 
+                  )
+               )
+            )
+            (INSTANCE bc_inst
+               (INSTANCE encoded_data_reg
+                  (PORT
+                     (Q  
+                        (T0 522.91345) (T1 477.08658) (TC 0.071442418) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[6\]
+                  (PORT
+                     (Q  
+                        (T0 790.02264) (T1 209.97737) (TC 0.089024156) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[5\]
+                  (PORT
+                     (Q  
+                        (T0 790.02264) (T1 209.97737) (TC 0.17804831) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[4\]
+                  (PORT
+                     (Q  
+                        (T0 790.02264) (T1 209.97737) (TC 0.35609663) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[3\]
+                  (PORT
+                     (Q  
+                        (T0 790.02264) (T1 209.97737) (TC 0.71219325) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[2\]
+                  (PORT
+                     (Q  
+                        (T0 790.02264) (T1 209.97737) (TC 1.4243865) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[1\]
+                  (PORT
+                     (Q  
+                        (T0 790.02264) (T1 209.97737) (TC 2.848773) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[0\]
+                  (PORT
+                     (Q  
+                        (T0 790.02264) (T1 209.97737) (TC 5.697546) 
+                     )
+                  )
+               )
+            )
+            (INSTANCE sc_inst
+               (INSTANCE subcarrier_reg
+                  (PORT
+                     (Q  
+                        (T0 790.02264) (T1 209.97737) (TC 0.71219325) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[2\]
+                  (PORT
+                     (Q  
+                        (T0 790.02264) (T1 209.97737) (TC 1.4243865) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[1\]
+                  (PORT
+                     (Q  
+                        (T0 790.02264) (T1 209.97737) (TC 2.848773) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[0\]
+                  (PORT
+                     (Q  
+                        (T0 790.02264) (T1 209.97737) (TC 5.697546) 
+                     )
+                  )
+               )
+            )
+            (INSTANCE in_iface_req_reg
+               (PORT
+                  (Q  
+                     (T0 996.75824) (T1 3.2417331) (TC 0.087961815) 
+                  )
+               )
+            )
+         )
+         (INSTANCE sd_inst
+            (INSTANCE counter_reg\[6\]
+               (PORT
+                  (Q  
+                     (T0 756.8349) (T1 243.16508) (TC 0.10299394) 
+                  )
+               )
+            )
+            (INSTANCE seq_reg\[0\]
+               (PORT
+                  (Q  
+                     (T0 540.74908) (T1 459.25092) (TC 0.022388833) 
+                  )
+               )
+            )
+            (INSTANCE counter_reg\[2\]
+               (PORT
+                  (Q  
+                     (T0 760.90698) (T1 239.09303) (TC 1.4624183) 
+                  )
+               )
+            )
+            (INSTANCE counter_reg\[0\]
+               (PORT
+                  (Q  
+                     (T0 212.21344) (T1 787.78656) (TC 5.757781) 
+                  )
+               )
+            )
+            (INSTANCE counter_reg\[8\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE counter_reg\[5\]
+               (PORT
+                  (Q  
+                     (T0 837.49316) (T1 162.50684) (TC 0.13778561) 
+                  )
+               )
+            )
+            (INSTANCE counter_reg\[1\]
+               (PORT
+                  (Q  
+                     (T0 675.29565) (T1 324.70432) (TC 2.9237742) 
+                  )
+               )
+            )
+            (INSTANCE counter_reg\[7\]
+               (PORT
+                  (Q  
+                     (T0 967.97357) (T1 32.026417) (TC 0.03479166) 
+                  )
+               )
+            )
+            (INSTANCE counter_reg\[4\]
+               (PORT
+                  (Q  
+                     (T0 678.52197) (T1 321.478) (TC 0.36533901) 
+                  )
+               )
+            )
+            (INSTANCE counter_reg\[3\]
+               (PORT
+                  (Q  
+                     (T0 704.49316) (T1 295.50681) (TC 0.73067802) 
+                  )
+               )
+            )
+            (INSTANCE seq_reg\[1\]
+               (PORT
+                  (Q  
+                     (T0 183.18042) (T1 816.81958) (TC 0.022096688) 
+                  )
+               )
+            )
+            (INSTANCE idle_reg
+               (PORT
+                  (Q  
+                     (T0 536.87683) (T1 463.1232) (TC 0.0010623408) 
+                  )
+               )
+            )
+            (INSTANCE prev_reg\[1\]
+               (PORT
+                  (Q  
+                     (T0 183.18073) (T1 816.81927) (TC 0.022096688) 
+                  )
+               )
+            )
+            (INSTANCE prev_is_soc_reg
+               (PORT
+                  (Q  
+                     (T0 993.73523) (T1 6.2647424) (TC 0.0010357823) 
+                  )
+               )
+            )
+            (INSTANCE out_iface_data_reg
+               (PORT
+                  (Q  
+                     (T0 483.45856) (T1 516.54144) (TC 0.021645194) 
+                  )
+               )
+            )
+            (INSTANCE prev_reg\[0\]
+               (PORT
+                  (Q  
+                     (T0 540.74817) (T1 459.25183) (TC 0.022388833) 
+                  )
+               )
+            )
+            (INSTANCE out_iface_soc_reg
+               (PORT
+                  (Q  
+                     (T0 999.96088) (T1 0.039147262) (TC 0.0010623408) 
+                  )
+               )
+            )
+            (INSTANCE in_frame_reg
+               (PORT
+                  (Q  
+                     (T0 470.89087) (T1 529.10913) (TC 0.0010623408) 
+                  )
+               )
+            )
+            (INSTANCE out_iface_data_valid_reg
+               (PORT
+                  (Q  
+                     (T0 995.9165) (T1 4.0835052) (TC 0.11080214) 
+                  )
+               )
+            )
+            (INSTANCE out_iface_eoc_reg
+               (PORT
+                  (Q  
+                     (T0 999.96088) (T1 0.039147262) (TC 0.0010623408) 
+                  )
+               )
+            )
+            (INSTANCE out_iface_error_reg
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE seq_valid_reg
+               (PORT
+                  (Q  
+                     (T0 995.78729) (T1 4.2127123) (TC 0.11430787) 
+                  )
+               )
+            )
+            (INSTANCE detected_soc_reg
+               (PORT
+                  (Q  
+                     (T0 999.96088) (T1 0.039147262) (TC 0.0010623408) 
+                  )
+               )
+            )
          )
       )
-   )
-   (INSTANCE clk_r_REG399_S1
-      (PORT
-         (Q  
-            (T0 1000) (T1 0) (TC 0) 
+      (INSTANCE part3
+         (INSTANCE framing_inst
+            (INSTANCE crc_inst
+               (INSTANCE crc_a_inst
+                  (INSTANCE lfsr_reg\[7\]
+                     (PORT
+                        (Q  
+                           (T0 534.33783) (T1 465.66217) (TC 0.037713099) 
+                        )
+                     )
+                  )
+                  (INSTANCE lfsr_reg\[2\]
+                     (PORT
+                        (Q  
+                           (T0 561.6969) (T1 438.30307) (TC 0.033384062) 
+                        )
+                     )
+                  )
+                  (INSTANCE lfsr_reg\[1\]
+                     (PORT
+                        (Q  
+                           (T0 552.39453) (T1 447.6055) (TC 0.033490293) 
+                        )
+                     )
+                  )
+                  (INSTANCE lfsr_reg\[6\]
+                     (PORT
+                        (Q  
+                           (T0 534.68823) (T1 465.31177) (TC 0.037766214) 
+                        )
+                     )
+                  )
+                  (INSTANCE lfsr_reg\[9\]
+                     (PORT
+                        (Q  
+                           (T0 507.73633) (T1 492.26367) (TC 0.039014466) 
+                        )
+                     )
+                  )
+                  (INSTANCE lfsr_reg\[15\]
+                     (PORT
+                        (Q  
+                           (T0 536.75146) (T1 463.2485) (TC 0.039386287) 
+                        )
+                     )
+                  )
+                  (INSTANCE lfsr_reg\[10\]
+                     (PORT
+                        (Q  
+                           (T0 517.88831) (T1 482.11166) (TC 0.038908236) 
+                        )
+                     )
+                  )
+                  (INSTANCE lfsr_reg\[14\]
+                     (PORT
+                        (Q  
+                           (T0 558.14197) (T1 441.85806) (TC 0.039651871) 
+                        )
+                     )
+                  )
+                  (INSTANCE lfsr_reg\[13\]
+                     (PORT
+                        (Q  
+                           (T0 538.67969) (T1 461.32028) (TC 0.038403623) 
+                        )
+                     )
+                  )
+                  (INSTANCE lfsr_reg\[12\]
+                     (PORT
+                        (Q  
+                           (T0 534.40637) (T1 465.59363) (TC 0.038801998) 
+                        )
+                     )
+                  )
+                  (INSTANCE lfsr_reg\[11\]
+                     (PORT
+                        (Q  
+                           (T0 510.53958) (T1 489.46042) (TC 0.039173819) 
+                        )
+                     )
+                  )
+                  (INSTANCE lfsr_reg\[8\]
+                     (PORT
+                        (Q  
+                           (T0 539.39032) (T1 460.60968) (TC 0.037872452) 
+                        )
+                     )
+                  )
+                  (INSTANCE lfsr_reg\[4\]
+                     (PORT
+                        (Q  
+                           (T0 578.52032) (T1 421.47968) (TC 0.033304386) 
+                        )
+                     )
+                  )
+                  (INSTANCE lfsr_reg\[3\]
+                     (PORT
+                        (Q  
+                           (T0 595.73523) (T1 404.26477) (TC 0.033463739) 
+                        )
+                     )
+                  )
+                  (INSTANCE lfsr_reg\[0\]
+                     (PORT
+                        (Q  
+                           (T0 582.39435) (T1 417.60565) (TC 0.032427952) 
+                        )
+                     )
+                  )
+                  (INSTANCE lfsr_reg\[5\]
+                     (PORT
+                        (Q  
+                           (T0 538.7345) (T1 461.26547) (TC 0.036464848) 
+                        )
+                     )
+                  )
+               )
+               (INSTANCE crc_data_reg
+                  (PORT
+                     (Q  
+                        (T0 720.78308) (T1 279.21695) (TC 0.027036574) 
+                     )
+                  )
+               )
+               (INSTANCE crc_start_reg
+                  (PORT
+                     (Q  
+                        (T0 999.92365) (T1 0.076355748) (TC 0.0020715646) 
+                     )
+                  )
+               )
+               (INSTANCE crc_sample_reg
+                  (PORT
+                     (Q  
+                        (T0 994.11359) (T1 5.8864303) (TC 0.15972294) 
+                     )
+                  )
+               )
+               (INSTANCE crc_type_reg
+                  (PORT
+                     (Q  
+                        (T0 572.81396) (T1 427.186) (TC 0.00098266522) 
+                     )
+                  )
+               )
+            )
+            (INSTANCE ds_inst
+               (INSTANCE out_iface_data_bits_reg\[0\]
+                  (PORT
+                     (Q  
+                        (T0 745.25867) (T1 254.74135) (TC 0.049292617) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_data_bits_reg\[1\]
+                  (PORT
+                     (Q  
+                        (T0 746.19861) (T1 253.80138) (TC 0.024646308) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_data_bits_reg\[2\]
+                  (PORT
+                     (Q  
+                        (T0 753.55371) (T1 246.4463) (TC 0.012323154) 
+                     )
+                  )
+               )
+               (INSTANCE seen_error_reg
+                  (PORT
+                     (Q  
+                        (T0 1000) (T1 0) (TC 0) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_data_reg\[4\]
+                  (PORT
+                     (Q  
+                        (T0 621.35315) (T1 378.64688) (TC 0.0028948786) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_data_reg\[5\]
+                  (PORT
+                     (Q  
+                        (T0 611.30481) (T1 388.69516) (TC 0.002815203) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_data_reg\[7\]
+                  (PORT
+                     (Q  
+                        (T0 683.82776) (T1 316.17224) (TC 0.0029479959) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_data_reg\[6\]
+                  (PORT
+                     (Q  
+                        (T0 731.35675) (T1 268.64325) (TC 0.0020981231) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_data_reg\[0\]
+                  (PORT
+                     (Q  
+                        (T0 515.4425) (T1 484.55746) (TC 0.0025761765) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_data_reg\[1\]
+                  (PORT
+                     (Q  
+                        (T0 485.17267) (T1 514.82733) (TC 0.0035588415) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_data_reg\[2\]
+                  (PORT
+                     (Q  
+                        (T0 733.29456) (T1 266.70544) (TC 0.0020715646) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_data_reg\[3\]
+                  (PORT
+                     (Q  
+                        (T0 629.6673) (T1 370.3327) (TC 0.0037181929) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_data_valid_reg
+                  (PORT
+                     (Q  
+                        (T0 999.54584) (T1 0.45415071) (TC 0.012323154) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_error_reg
+                  (PORT
+                     (Q  
+                        (T0 1000) (T1 0) (TC 0) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_eoc_reg
+                  (PORT
+                     (Q  
+                        (T0 999.96088) (T1 0.039147262) (TC 0.0010623408) 
+                     )
+                  )
+               )
+            )
+            (INSTANCE s_inst
+               (INSTANCE idle_reg
+                  (PORT
+                     (Q  
+                        (T0 359.67316) (T1 640.32684) (TC 0.0010623408) 
+                     )
+                  )
+               )
+               (INSTANCE bit_count_reg\[0\]
+                  (PORT
+                     (Q  
+                        (T0 149.32562) (T1 850.67438) (TC 0.031020351) 
+                     )
+                  )
+               )
+               (INSTANCE bit_count_reg\[1\]
+                  (PORT
+                     (Q  
+                        (T0 146.69592) (T1 853.30408) (TC 0.015510175) 
+                     )
+                  )
+               )
+               (INSTANCE bit_count_reg\[2\]
+                  (PORT
+                     (Q  
+                        (T0 146.69592) (T1 853.30408) (TC 0.0077550877) 
+                     )
+                  )
+               )
+               (INSTANCE cache_data_reg
+                  (PORT
+                     (Q  
+                        (T0 297.18726) (T1 702.81274) (TC 0.0077285296) 
+                     )
+                  )
+               )
+               (INSTANCE cached_data_reg\[0\]
+                  (PORT
+                     (Q  
+                        (T0 733.32666) (T1 266.67334) (TC 0.011632632) 
+                     )
+                  )
+               )
+               (INSTANCE cached_data_reg\[1\]
+                  (PORT
+                     (Q  
+                        (T0 760.88123) (T1 239.11879) (TC 0.010198471) 
+                     )
+                  )
+               )
+               (INSTANCE cached_data_reg\[2\]
+                  (PORT
+                     (Q  
+                        (T0 757.4234) (T1 242.5766) (TC 0.0069317739) 
+                     )
+                  )
+               )
+               (INSTANCE cached_data_reg\[3\]
+                  (PORT
+                     (Q  
+                        (T0 809.21008) (T1 190.78989) (TC 0.0066927471) 
+                     )
+                  )
+               )
+               (INSTANCE cached_data_reg\[4\]
+                  (PORT
+                     (Q  
+                        (T0 764.9729) (T1 235.0271) (TC 0.0046742996) 
+                     )
+                  )
+               )
+               (INSTANCE cached_data_reg\[5\]
+                  (PORT
+                     (Q  
+                        (T0 724.68604) (T1 275.31393) (TC 0.0044087144) 
+                     )
+                  )
+               )
+               (INSTANCE cached_data_reg\[6\]
+                  (PORT
+                     (Q  
+                        (T0 748.87695) (T1 251.12302) (TC 0.0033463736) 
+                     )
+                  )
+               )
+               (INSTANCE cached_data_reg\[7\]
+                  (PORT
+                     (Q  
+                        (T0 787.94519) (T1 212.05484) (TC 0.0025496178) 
+                     )
+                  )
+               )
+               (INSTANCE in_iface_req_reg
+                  (PORT
+                     (Q  
+                        (T0 999.71423) (T1 0.28579623) (TC 0.0077550877) 
+                     )
+                  )
+               )
+            )
+            (INSTANCE fe_inst
+               (INSTANCE bits_remaining_reg\[0\]
+                  (PORT
+                     (Q  
+                        (T0 960.5556) (T1 39.444424) (TC 0.00807379) 
+                     )
+                  )
+               )
+               (INSTANCE crc_byte_reg
+                  (PORT
+                     (Q  
+                        (T0 44.375) (T1 955.625) (TC 0.00098266522) 
+                     )
+                  )
+               )
+               (INSTANCE bits_remaining_reg\[2\]
+                  (PORT
+                     (Q  
+                        (T0 960.5556) (T1 39.444424) (TC 0.0020184475) 
+                     )
+                  )
+               )
+               (INSTANCE bits_remaining_reg\[1\]
+                  (PORT
+                     (Q  
+                        (T0 960.5556) (T1 39.444424) (TC 0.004036895) 
+                     )
+                  )
+               )
+               (INSTANCE cached_crc_reg\[0\]
+                  (PORT
+                     (Q  
+                        (T0 389.40015) (T1 610.59985) (TC 0.0040634535) 
+                     )
+                  )
+               )
+               (INSTANCE parity_reg
+                  (PORT
+                     (Q  
+                        (T0 432.4989) (T1 567.5011) (TC 0.015403942) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_data_reg
+                  (PORT
+                     (Q  
+                        (T0 538.45111) (T1 461.54889) (TC 0.017448949) 
+                     )
+                  )
+               )
+               (INSTANCE cached_crc_reg\[15\]
+                  (PORT
+                     (Q  
+                        (T0 383.17206) (T1 616.82794) (TC 0.00018590964) 
+                     )
+                  )
+               )
+               (INSTANCE cached_crc_reg\[1\]
+                  (PORT
+                     (Q  
+                        (T0 388.62164) (T1 611.37836) (TC 0.0039572194) 
+                     )
+                  )
+               )
+               (INSTANCE cached_crc_reg\[2\]
+                  (PORT
+                     (Q  
+                        (T0 388.1026) (T1 611.8974) (TC 0.0037181929) 
+                     )
+                  )
+               )
+               (INSTANCE cached_crc_reg\[3\]
+                  (PORT
+                     (Q  
+                        (T0 388.88116) (T1 611.11884) (TC 0.0031339054) 
+                     )
+                  )
+               )
+               (INSTANCE cached_crc_reg\[4\]
+                  (PORT
+                     (Q  
+                        (T0 390.17865) (T1 609.82135) (TC 0.0030807885) 
+                     )
+                  )
+               )
+               (INSTANCE cached_crc_reg\[5\]
+                  (PORT
+                     (Q  
+                        (T0 389.40015) (T1 610.59985) (TC 0.002815203) 
+                     )
+                  )
+               )
+               (INSTANCE cached_crc_reg\[6\]
+                  (PORT
+                     (Q  
+                        (T0 387.84314) (T1 612.15686) (TC 0.002496501) 
+                     )
+                  )
+               )
+               (INSTANCE cached_crc_reg\[7\]
+                  (PORT
+                     (Q  
+                        (T0 388.62164) (T1 611.37836) (TC 0.0022840328) 
+                     )
+                  )
+               )
+               (INSTANCE cached_crc_reg\[8\]
+                  (PORT
+                     (Q  
+                        (T0 387.58362) (T1 612.41638) (TC 0.0017794208) 
+                     )
+                  )
+               )
+               (INSTANCE cached_crc_reg\[9\]
+                  (PORT
+                     (Q  
+                        (T0 387.06458) (T1 612.93542) (TC 0.0017263038) 
+                     )
+                  )
+               )
+               (INSTANCE cached_crc_reg\[10\]
+                  (PORT
+                     (Q  
+                        (T0 387.06458) (T1 612.93542) (TC 0.0015669527) 
+                     )
+                  )
+               )
+               (INSTANCE cached_crc_reg\[11\]
+                  (PORT
+                     (Q  
+                        (T0 386.80511) (T1 613.19489) (TC 0.0012482505) 
+                     )
+                  )
+               )
+               (INSTANCE cached_crc_reg\[12\]
+                  (PORT
+                     (Q  
+                        (T0 385.76709) (T1 614.23291) (TC 0.0011154579) 
+                     )
+                  )
+               )
+               (INSTANCE cached_crc_reg\[13\]
+                  (PORT
+                     (Q  
+                        (T0 383.95056) (T1 616.04944) (TC 0.00074363855) 
+                     )
+                  )
+               )
+               (INSTANCE cached_crc_reg\[14\]
+                  (PORT
+                     (Q  
+                        (T0 382.9126) (T1 617.0874) (TC 0.00063740445) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_data_valid_reg
+                  (PORT
+                     (Q  
+                        (T0 582.43347) (T1 417.5665) (TC 0.0010623408) 
+                     )
+                  )
+               )
+               (INSTANCE state_reg\[2\]
+                  (PORT
+                     (Q  
+                        (T0 985.46698) (T1 14.533034) (TC 0.0020715646) 
+                     )
+                  )
+               )
+               (INSTANCE state_reg\[1\]
+                  (PORT
+                     (Q  
+                        (T0 887.24365) (T1 112.75635) (TC 0.0087643117) 
+                     )
+                  )
+               )
+               (INSTANCE state_reg\[0\]
+                  (PORT
+                     (Q  
+                        (T0 628.53833) (T1 371.4617) (TC 0.010835877) 
+                     )
+                  )
+               )
+               (INSTANCE in_iface_req_reg
+                  (PORT
+                     (Q  
+                        (T0 997.71356) (T1 2.2864494) (TC 0.062040702) 
+                     )
+                  )
+               )
+            )
+            (INSTANCE fd_inst
+               (INSTANCE error_detected_reg
+                  (PORT
+                     (Q  
+                        (T0 1000) (T1 0) (TC 0) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_data_reg
+                  (PORT
+                     (Q  
+                        (T0 683.11084) (T1 316.88916) (TC 0.016519399) 
+                     )
+                  )
+               )
+               (INSTANCE bit_count_reg\[0\]
+                  (PORT
+                     (Q  
+                        (T0 254.74329) (T1 745.25671) (TC 0.049292617) 
+                     )
+                  )
+               )
+               (INSTANCE expected_parity_reg
+                  (PORT
+                     (Q  
+                        (T0 177.18201) (T1 822.81799) (TC 0.017741092) 
+                     )
+                  )
+               )
+               (INSTANCE data_received_reg
+                  (PORT
+                     (Q  
+                        (T0 6.1488037) (T1 993.8512) (TC 0.0010357823) 
+                     )
+                  )
+               )
+               (INSTANCE bit_count_reg\[1\]
+                  (PORT
+                     (Q  
+                        (T0 771.9375) (T1 228.06253) (TC 0.024646308) 
+                     )
+                  )
+               )
+               (INSTANCE bit_count_reg\[2\]
+                  (PORT
+                     (Q  
+                        (T0 771.66333) (T1 228.33667) (TC 0.012323154) 
+                     )
+                  )
+               )
+               (INSTANCE last_bit_reg
+                  (PORT
+                     (Q  
+                        (T0 483.82452) (T1 516.17548) (TC 0.021645194) 
+                     )
+                  )
+               )
+               (INSTANCE next_bit_is_parity_reg
+                  (PORT
+                     (Q  
+                        (T0 943.59833) (T1 56.401665) (TC 0.012270037) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_data_valid_reg
+                  (PORT
+                     (Q  
+                        (T0 996.36871) (T1 3.6312933) (TC 0.09853211) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_error_reg
+                  (PORT
+                     (Q  
+                        (T0 1000) (T1 0) (TC 0) 
+                     )
+                  )
+               )
+               (INSTANCE out_iface_eoc_reg
+                  (PORT
+                     (Q  
+                        (T0 999.96088) (T1 0.039147262) (TC 0.0010623408) 
+                     )
+                  )
+               )
+            )
+            (INSTANCE fdt_inst
+               (INSTANCE count_reg\[10\]
+                  (PORT
+                     (Q  
+                        (T0 566.03491) (T1 433.96512) (TC 0.0010357823) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[9\]
+                  (PORT
+                     (Q  
+                        (T0 979.95441) (T1 20.045574) (TC 0.0010623408) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[8\]
+                  (PORT
+                     (Q  
+                        (T0 979.95441) (T1 20.045574) (TC 0.0021246816) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[7\]
+                  (PORT
+                     (Q  
+                        (T0 446.10986) (T1 553.89014) (TC 0.037952125) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[6\]
+                  (PORT
+                     (Q  
+                        (T0 406.4964) (T1 593.5036) (TC 0.11082871) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[5\]
+                  (PORT
+                     (Q  
+                        (T0 816.15625) (T1 183.84373) (TC 0.24285111) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[4\]
+                  (PORT
+                     (Q  
+                        (T0 657.35779) (T1 342.64224) (TC 0.3959344) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[3\]
+                  (PORT
+                     (Q  
+                        (T0 230.47125) (T1 769.52875) (TC 0.79290462) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[2\]
+                  (PORT
+                     (Q  
+                        (T0 230.47125) (T1 769.52875) (TC 1.5858358) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[1\]
+                  (PORT
+                     (Q  
+                        (T0 339.6452) (T1 660.3548) (TC 3.1706889) 
+                     )
+                  )
+               )
+               (INSTANCE count_reg\[0\]
+                  (PORT
+                     (Q  
+                        (T0 342.99268) (T1 657.00732) (TC 6.252593) 
+                     )
+                  )
+               )
+               (INSTANCE seen_pause_reg
+                  (PORT
+                     (Q  
+                        (T0 426.68878) (T1 573.31122) (TC 0.0010623408) 
+                     )
+                  )
+               )
+               (INSTANCE trigger_reg
+                  (PORT
+                     (Q  
+                        (T0 999.96088) (T1 0.039147262) (TC 0.0010623408) 
+                     )
+                  )
+               )
+            )
          )
-      )
-   )
-   (INSTANCE clk_r_REG395_S1
-      (PORT
-         (Q  
-            (T0 1000) (T1 0) (TC 0) 
-         )
-      )
-   )
-   (INSTANCE clk_r_REG397_S1
-      (PORT
-         (Q  
-            (T0 1000) (T1 0) (TC 0) 
-         )
-      )
-   )
-   (INSTANCE clk_r_REG27_S13
-      (PORT
-         (Q  
-            (T0 895.01135) (T1 104.98868) (TC 0.35609663) 
+         (INSTANCE initialisation_inst
+            (INSTANCE rx_buffer_reg\[0\]\[2\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[0\]\[5\]
+               (PORT
+                  (Q  
+                     (T0 39.660706) (T1 960.33929) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[0\]\[4\]
+               (PORT
+                  (Q  
+                     (T0 960.33936) (T1 39.660667) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[1\]\[0\]
+               (PORT
+                  (Q  
+                     (T0 30.734863) (T1 969.26514) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[0\]\[6\]
+               (PORT
+                  (Q  
+                     (T0 30.262573) (T1 969.73743) (TC 5.3117041e-05) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[0\]\[1\]
+               (PORT
+                  (Q  
+                     (T0 960.33936) (T1 39.660667) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[0\]\[3\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[0\]\[7\]
+               (PORT
+                  (Q  
+                     (T0 0) (T1 1000) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[1\]\[4\]
+               (PORT
+                  (Q  
+                     (T0 969.2652) (T1 30.734819) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[1\]\[5\]
+               (PORT
+                  (Q  
+                     (T0 0) (T1 1000) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[1\]\[1\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[1\]\[6\]
+               (PORT
+                  (Q  
+                     (T0 969.2652) (T1 30.734819) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[0\]\[0\]
+               (PORT
+                  (Q  
+                     (T0 969.73743) (T1 30.262589) (TC 5.3117041e-05) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[1\]\[2\]
+               (PORT
+                  (Q  
+                     (T0 30.734863) (T1 969.26514) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE is_AC_SELECT_for_us_reg
+               (PORT
+                  (Q  
+                     (T0 0) (T1 1000) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE uid_matching_reg
+               (PORT
+                  (Q  
+                     (T0 988.58746) (T1 11.412519) (TC 5.3117041e-05) 
+                  )
+               )
+            )
+            (INSTANCE tx_count_minus_1_reg\[1\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_count_minus_1_reg\[0\]
+               (PORT
+                  (Q  
+                     (T0 996.21252) (T1 3.7874806) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE tx_count_minus_1_reg\[2\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_append_crc_reg
+               (PORT
+                  (Q  
+                     (T0 27.99408) (T1 972.00592) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[1\]\[3\]
+               (PORT
+                  (Q  
+                     (T0 30.734863) (T1 969.26514) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[0\]\[7\]
+               (PORT
+                  (Q  
+                     (T0 2.4141846) (T1 997.58582) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[0\]\[6\]
+               (PORT
+                  (Q  
+                     (T0 2.4141846) (T1 997.58582) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE tx_iface_data_bits_reg\[0\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_iface_data_bits_reg\[1\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[0\]\[1\]
+               (PORT
+                  (Q  
+                     (T0 992.13812) (T1 7.8618937) (TC 0.00034526075) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[0\]\[0\]
+               (PORT
+                  (Q  
+                     (T0 3.7562256) (T1 996.24377) (TC 0.00037181927) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[0\]\[5\]
+               (PORT
+                  (Q  
+                     (T0 991.8562) (T1 8.143795) (TC 0.00010623408) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[0\]\[3\]
+               (PORT
+                  (Q  
+                     (T0 992.88855) (T1 7.1114306) (TC 0.00021246816) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[3\]\[4\]
+               (PORT
+                  (Q  
+                     (T0 500) (T1 500) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[1\]\[0\]
+               (PORT
+                  (Q  
+                     (T0 2.2950439) (T1 997.70496) (TC 5.3117041e-05) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[1\]\[1\]
+               (PORT
+                  (Q  
+                     (T0 993.00372) (T1 6.996284) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[1\]\[2\]
+               (PORT
+                  (Q  
+                     (T0 0) (T1 1000) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[1\]\[5\]
+               (PORT
+                  (Q  
+                     (T0 995.41785) (T1 4.5821271) (TC 5.3117041e-05) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[1\]\[3\]
+               (PORT
+                  (Q  
+                     (T0 995.41785) (T1 4.5821271) (TC 5.3117041e-05) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[1\]\[4\]
+               (PORT
+                  (Q  
+                     (T0 4.7012329) (T1 995.29877) (TC 7.9675556e-05) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[0\]\[4\]
+               (PORT
+                  (Q  
+                     (T0 3.9190674) (T1 996.08093) (TC 0.0001327926) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[0\]\[5\]
+               (PORT
+                  (Q  
+                     (T0 27.99408) (T1 972.00592) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[0\]\[2\]
+               (PORT
+                  (Q  
+                     (T0 996.21252) (T1 3.7874806) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[0\]\[2\]
+               (PORT
+                  (Q  
+                     (T0 3.7958984) (T1 996.2041) (TC 0.00023902669) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[0\]\[7\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[0\]\[0\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[0\]\[6\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[0\]\[4\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[0\]\[3\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[0\]\[1\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[3\]\[5\]
+               (PORT
+                  (Q  
+                     (T0 500) (T1 500) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[3\]\[3\]
+               (PORT
+                  (Q  
+                     (T0 500) (T1 500) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[4\]\[2\]
+               (PORT
+                  (Q  
+                     (T0 500) (T1 500) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[4\]\[1\]
+               (PORT
+                  (Q  
+                     (T0 500) (T1 500) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[2\]\[5\]
+               (PORT
+                  (Q  
+                     (T0 500) (T1 500) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[2\]\[4\]
+               (PORT
+                  (Q  
+                     (T0 500) (T1 500) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[2\]\[3\]
+               (PORT
+                  (Q  
+                     (T0 500) (T1 500) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[2\]\[2\]
+               (PORT
+                  (Q  
+                     (T0 500) (T1 500) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[2\]\[1\]
+               (PORT
+                  (Q  
+                     (T0 500) (T1 500) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE rx_buffer_reg\[1\]\[7\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[2\]\[0\]
+               (PORT
+                  (Q  
+                     (T0 500) (T1 500) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[3\]\[2\]
+               (PORT
+                  (Q  
+                     (T0 500) (T1 500) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[3\]\[1\]
+               (PORT
+                  (Q  
+                     (T0 500) (T1 500) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[3\]\[0\]
+               (PORT
+                  (Q  
+                     (T0 500) (T1 500) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_iface_data_bits_reg\[2\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[3\]\[4\]
+               (PORT
+                  (Q  
+                     (T0 2.4141846) (T1 997.58582) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[3\]\[3\]
+               (PORT
+                  (Q  
+                     (T0 997.58582) (T1 2.4141564) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[4\]\[2\]
+               (PORT
+                  (Q  
+                     (T0 0) (T1 1000) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[4\]\[1\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[1\]\[7\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[1\]\[6\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[3\]\[0\]
+               (PORT
+                  (Q  
+                     (T0 0) (T1 1000) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[2\]\[5\]
+               (PORT
+                  (Q  
+                     (T0 995.29083) (T1 4.7091794) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[2\]\[3\]
+               (PORT
+                  (Q  
+                     (T0 995.29083) (T1 4.7091794) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[2\]\[4\]
+               (PORT
+                  (Q  
+                     (T0 2.2950439) (T1 997.70496) (TC 5.3117041e-05) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[4\]\[0\]
+               (PORT
+                  (Q  
+                     (T0 0) (T1 1000) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[2\]\[0\]
+               (PORT
+                  (Q  
+                     (T0 2.4141846) (T1 997.58582) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[2\]\[1\]
+               (PORT
+                  (Q  
+                     (T0 995.29083) (T1 4.7091794) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[3\]\[1\]
+               (PORT
+                  (Q  
+                     (T0 997.58582) (T1 2.4141564) (TC 2.655852e-05) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[2\]\[2\]
+               (PORT
+                  (Q  
+                     (T0 0) (T1 1000) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE ac_reply_buffer_reg\[3\]\[2\]
+               (PORT
+                  (Q  
+                     (T0 0) (T1 1000) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[1\]\[5\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[1\]\[2\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[1\]\[0\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[4\]\[0\]
+               (PORT
+                  (Q  
+                     (T0 500) (T1 500) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[1\]\[4\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[1\]\[3\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_buffer_reg\[1\]\[1\]
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE tx_iface_data_valid_reg
+               (PORT
+                  (Q  
+                     (T0 990.18866) (T1 9.8113546) (TC 0.00010623408) 
+                  )
+               )
+            )
+            (INSTANCE state_star_reg
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE rx_error_flag_reg
+               (PORT
+                  (Q  
+                     (T0 1000) (T1 0) (TC 0) 
+                  )
+               )
+            )
+            (INSTANCE rx_count_reg\[1\]
+               (PORT
+                  (Q  
+                     (T0 974.20892) (T1 25.791058) (TC 0.00015935111) 
+                  )
+               )
+            )
+            (INSTANCE rx_count_reg\[0\]
+               (PORT
+                  (Q  
+                     (T0 974.46735) (T1 25.532644) (TC 0.00031870222) 
+                  )
+               )
+            )
+            (INSTANCE rx_count_reg\[2\]
+               (PORT
+                  (Q  
+                     (T0 27.394287) (T1 972.60571) (TC 7.9675556e-05) 
+                  )
+               )
+            )
+            (INSTANCE pkt_received_reg
+               (PORT
+                  (Q  
+                     (T0 999.99414) (T1 0.0058694333) (TC 0.00015935111) 
+                  )
+               )
+            )
+            (INSTANCE state_reg\[0\]
+               (PORT
+                  (Q  
+                     (T0 21.378723) (T1 978.62128) (TC 7.9675556e-05) 
+                  )
+               )
+            )
+            (INSTANCE state_reg\[1\]
+               (PORT
+                  (Q  
+                     (T0 30.399231) (T1 969.60077) (TC 2.655852e-05) 
+                  )
+               )
+            )
          )
       )
    )
    (INSTANCE pause_n_latch_sync
+      (INSTANCE sync_inst
+         (INSTANCE q_reg\[0\]
+            (PORT
+               (Q  
+                  (T0 6.6948853) (T1 993.30511) (TC 0.09083014) 
+               )
+            )
+         )
+         (INSTANCE tmp_reg\[0\]
+            (PORT
+               (Q  
+                  (T0 6.6948853) (T1 993.30511) (TC 0.09083014) 
+               )
+            )
+         )
+      )
       (INSTANCE pause_n_latched_reg
          (PORT
             (Q  
                (T0 906.2345) (T1 93.765495) (TC 0.09083014) 
+            )
+         )
+      )
+   )
+   (INSTANCE adc_sync
+      (INSTANCE q_reg\[0\]
+         (PORT
+            (Q  
+               (T0 999.99017) (T1 0.0098000942) (TC 0.0002655852) 
+            )
+         )
+      )
+      (INSTANCE tmp_reg\[0\]
+         (PORT
+            (Q  
+               (T0 999.99017) (T1 0.0098000942) (TC 0.0002655852) 
             )
          )
       )
@@ -350,13 +4496,6 @@
                )
             )
          )
-         (INSTANCE app_rx_iface_data_reg
-            (PORT
-               (CLK  
-                  (T0 444.76697) (T1 555.23303) (TC 24.136675) 
-               )
-            )
-         )
          (INSTANCE our_cid_reg
             (PORT
                (CLK  
@@ -426,6 +4565,9 @@
          )
          (INSTANCE cached_adc_value_reg
             (PORT
+               (EN  
+                  (T0 999.99017) (T1 0.0098000942) (TC 0.0002655852) 
+               )
                (CLK  
                   (T0 444.76697) (T1 555.23303) (TC 24.136675) 
                )

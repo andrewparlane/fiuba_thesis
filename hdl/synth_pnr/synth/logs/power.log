@@ -7,14 +7,13 @@ Report : power
         -verbose
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Mon Feb 28 17:09:11 2022
+Date   : Thu Mar 10 15:43:19 2022
 ****************************************
 
 
 Library(s) Used:
 
     D_CELLS_HDLL_LPMOS_slow_1_62V_125C (File: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db)
-    D_CELLS_HD_LPMOS_slow_1_62V_125C (File: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db)
 
 
 Operating Conditions: slow_1_62V_125C   Library: D_CELLS_HD_LPMOS_slow_1_62V_125C
@@ -37,7 +36,7 @@ Power Breakdown
                              Internal    Switching   Power (mW)       Leakage
 Cell                         Power (mW)  Power (mW)  (% Cell/Tot)     Power (pW)
 --------------------------------------------------------------------------------
-Netlist Power                   0.1326      0.0265   1.591e-01 (83%)  4.356e+05
+Netlist Power                   0.1411      0.0280   1.690e-01 (83%)  4.278e+05
 Estimated Clock Tree Power   N/A         N/A          (N/A)           N/A
 --------------------------------------------------------------------------------
                  Internal         Switching           Leakage            Total                         Cell
@@ -46,10 +45,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
-clock_network  3.0806e-02        1.8148e-02        2.5951e+04        4.8980e-02  (  30.70%)            54
-register       9.7393e-02        3.4577e-03        2.5553e+05            0.1011  (  63.38%)            588
+clock_network  3.0220e-02        1.8550e-02        2.5438e+04        4.8796e-02  (  28.80%)            53
+register           0.1049        3.5272e-03        2.4926e+05            0.1087  (  64.13%)            595
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
-combinational  4.3901e-03        4.8973e-03        1.5408e+05        9.4414e-03  (   5.92%)            1661
+combinational  5.9467e-03        5.8851e-03        1.5308e+05        1.1985e-02  (   7.07%)            1646
 ---------------------------------------------------------------------------------------------------------
-Total              0.1326 mW     2.6503e-02 mW     4.3556e+05 pW         0.1595 mW
+Total              0.1411 mW     2.7963e-02 mW     4.2778e+05 pW         0.1695 mW
 1

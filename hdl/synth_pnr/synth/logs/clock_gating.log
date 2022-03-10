@@ -3,20 +3,20 @@
 Report : clock_gating
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Mon Feb 28 17:09:11 2022
+Date   : Thu Mar 10 15:43:18 2022
 ****************************************
 
 
 
                              Clock Gating Summary
           ------------------------------------------------------------
-          |    Number of Clock gating elements    |       44         |
+          |    Number of Clock gating elements    |       43         |
           |                                       |                  |
-          |    Number of Gated registers          |   499 (84.86%)   |
+          |    Number of Gated registers          |   506 (85.04%)   |
           |                                       |                  |
-          |    Number of Ungated registers        |    89 (15.14%)   |
+          |    Number of Ungated registers        |    89 (14.96%)   |
           |                                       |                  |
-          |    Total number of registers          |      588         |
+          |    Total number of registers          |      595         |
           ------------------------------------------------------------
 
 

@@ -3,7 +3,7 @@
 Report : design
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Mon Feb 28 17:09:11 2022
+Date   : Thu Mar 10 15:43:18 2022
 ****************************************
 
 Design allows ideal nets on clock nets.
@@ -11,7 +11,6 @@ Design allows ideal nets on clock nets.
 Library(s) Used:
 
     D_CELLS_HDLL_LPMOS_slow_1_62V_125C (File: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HDLL/v2_1/liberty_LPMOS/v2_1_1/PVT_1_80V_range/D_CELLS_HDLL_LPMOS_slow_1_62V_125C.db)
-    D_CELLS_HD_LPMOS_slow_1_62V_125C (File: /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/diglibs/D_CELLS_HD/v3_0/liberty_LPMOS/v3_0_1/PVT_1_80V_range/D_CELLS_HD_LPMOS_slow_1_62V_125C.db)
 
 Local Link Library:
 

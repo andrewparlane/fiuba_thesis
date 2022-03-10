@@ -3,7 +3,7 @@
 Report : clock tree
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Mon Feb 28 17:09:11 2022
+Date   : Thu Mar 10 15:43:18 2022
 ****************************************
 
 
@@ -13,46 +13,46 @@ Clock Tree Name                : "clk"
 Clock Period                   : 73.74632       
 Clock Tree root pin            : "clk"
 Number of Levels               : 2
-Number of Sinks                : 588
+Number of Sinks                : 595
 Number of CT Buffers           : 0
 Number of CTS added gates      : 0
-Number of Preexisting Gates    : 54
+Number of Preexisting Gates    : 53
 Number of Preexisting Buf/Inv  : 0
-Total Number of Clock Cells    : 54
+Total Number of Clock Cells    : 53
 Total Area of CT Buffers       : 0.00000        
-Total Area of CT cells         : 2303.08008     
-Max Global Skew                : 6.93123   
-Number of MaxTran Violators    : 697
+Total Area of CT cells         : 2260.43042     
+Max Global Skew                : 7.09721   
+Number of MaxTran Violators    : 702
 Number of MaxCap Violators     : 0
 Number of MaxFanout Violators  : 0
 
 
 Operating Condition               worst
-Clock global Skew                 6.931
-Longest path delay                11.495
-Shortest path delay               4.564
+Clock global Skew                 7.097
+Longest path delay                11.628
+Shortest path delay               4.531
 
-The longest path delay end pin: clk_r_REG399_S1/C
-The shortest path delay end pin: clk_r_REG286_S1/C
+The longest path delay end pin: adapter_inst/signal_control_inst/cached_sync_timing_reg[1]/C
+The shortest path delay end pin: adc_sync/tmp_reg[0]/C
 
 The longest Path:
 Pin                                         Cap       Fanout    Trans     Incr      Arri
 ----------------------------------------------------------------------------------------------------
 clk                                         0.000            1  0.000     0.000     0.000     r
-clk                                         0.583           81  6.279     4.500     4.500     r
-clk_gate_adapter_inst/signal_control_inst/cached_sync_timing_reg/latch/CLK 0.583        1 6.279 0.064 4.564 r
-clk_gate_adapter_inst/signal_control_inst/cached_sync_timing_reg/latch/GCLK 0.317       74 8.919 6.899 11.463 r
-clk_r_REG399_S1/C                           0.317            0  8.919     0.032     11.495    r
-[clock delay]                                                                       11.495
+clk                                         0.581           80  6.234     4.467     4.467     r
+clk_gate_adapter_inst/signal_control_inst/cached_sync_timing_reg/latch/CLK 0.581        1 6.234 0.063 4.531 r
+clk_gate_adapter_inst/signal_control_inst/cached_sync_timing_reg/latch/GCLK 0.325       76 9.143 7.064 11.595 r
+adapter_inst/signal_control_inst/cached_sync_timing_reg[1]/C 0.325        0 9.143 0.034 11.628 r
+[clock delay]                                                                       11.628
 ----------------------------------------------------------------------------------------------------
 
 The Shortest Path:
 Pin                                         Cap       Fanout    Trans     Incr      Arri
 ----------------------------------------------------------------------------------------------------
 clk                                         0.000            1  0.000     0.000     0.000     r
-clk                                         0.583           81  6.279     4.500     4.500     r
-clk_r_REG286_S1/C                           0.583            0  6.279     0.064     4.564     r
-[clock delay]                                                                       4.564
+clk                                         0.581           80  6.234     4.467     4.467     r
+adc_sync/tmp_reg[0]/C                       0.581            0  6.234     0.063     4.531     r
+[clock delay]                                                                       4.531
 ----------------------------------------------------------------------------------------------------
 
 1
