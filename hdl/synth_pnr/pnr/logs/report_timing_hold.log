@@ -7,11 +7,11 @@ Report : timing
         -report_by design
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Mon Feb 28 17:47:58 2022
+Date   : Thu Mar 10 17:48:55 2022
 ****************************************
 
-  Startpoint: clk_r_REG219_S17 (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: clk_r_REG214_S17 (rising edge-triggered flip-flop clocked by clk)
+  Startpoint: adapter_inst/rx_count_reg[0] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: adapter_inst/rx_buffer_reg[10][0] (rising edge-triggered flip-flop clocked by clk)
   Mode: virtual_scenario_bc
   Corner: virtual_scenario_bc
   Scenario: virtual_scenario_bc
@@ -21,26 +21,27 @@ Date   : Mon Feb 28 17:47:58 2022
   Point                                            Incr      Path  
   ------------------------------------------------------------------------
   clock clk (rise edge)                            0.00      0.00
-  clock network delay (propagated)                 0.63      0.63
+  clock network delay (propagated)                 0.53      0.53
 
-  clk_r_REG219_S17/C (DFRRQHDLLX0)                 0.00      0.63 r
-  clk_r_REG219_S17/Q (DFRRQHDLLX0)                 0.32      0.95 r
-  copt_h_inst_3191/Q (BUHDLLX0)                    0.28      1.23 r
-  U3501/Q (MU2HDLLX4)                              0.24      1.46 r
-  clk_r_REG214_S17/D (DFRRQHDX0)                   0.00      1.46 r
-  data arrival time                                          1.46
+  adapter_inst/rx_count_reg[0]/C (DFRRQHDX0)       0.00      0.53 r
+  adapter_inst/rx_count_reg[0]/Q (DFRRQHDX0)       0.41      0.95 r
+  U2914/Q (OR3HDX0)                                0.21      1.15 r
+  U2915/Q (NO2HDLLX0)                              0.09      1.24 f
+  U2916/Q (MU2HDLLX0)                              0.16      1.41 f
+  adapter_inst/rx_buffer_reg[10][0]/D (DFRQHDX0)   0.00      1.41 f
+  data arrival time                                          1.41
 
   clock clk (rise edge)                            0.00      0.00
-  clock network delay (propagated)                 0.94      0.94
-  clk_r_REG214_S17/C (DFRRQHDX0)                   0.00      0.94 r
-  clock uncertainty                                0.50      1.44
-  library hold time                                0.01      1.46
-  data required time                                         1.46
+  clock network delay (propagated)                 0.89      0.89
+  adapter_inst/rx_buffer_reg[10][0]/C (DFRQHDX0)   0.00      0.89 r
+  clock uncertainty                                0.50      1.39
+  library hold time                               -0.00      1.39
+  data required time                                         1.39
   ------------------------------------------------------------------------
-  data required time                                         1.46
-  data arrival time                                         -1.46
+  data required time                                         1.39
+  data arrival time                                         -1.41
   ------------------------------------------------------------------------
-  slack (MET)                                                0.01
+  slack (MET)                                                0.02
 
 
 1

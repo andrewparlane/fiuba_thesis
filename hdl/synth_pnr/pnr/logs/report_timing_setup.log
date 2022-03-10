@@ -7,10 +7,10 @@ Report : timing
         -report_by design
 Design : radiation_sensor_digital_top
 Version: P-2019.03
-Date   : Mon Feb 28 17:47:58 2022
+Date   : Thu Mar 10 17:48:55 2022
 ****************************************
 
-  Startpoint: clk_r_REG27_S13 (rising edge-triggered flip-flop clocked by clk)
+  Startpoint: iso14443a_inst/part2/tx_inst/lm_out_reg (rising edge-triggered flip-flop clocked by clk)
   Endpoint: lm_out (output port)
   Mode: virtual_scenario
   Corner: virtual_scenario
@@ -21,18 +21,20 @@ Date   : Mon Feb 28 17:47:58 2022
   Point                                            Incr      Path  
   ------------------------------------------------------------------------
   clock clk (rise edge)                            0.00      0.00
-  clk_r_REG27_S13/C (DFRRQHDX2)                    0.00      0.00 r
-  clk_r_REG27_S13/Q (DFRRQHDX2)                    2.43      2.43 r
-  lm_out (out)                                     0.01      2.44 r
-  data arrival time                                          2.44
+  iso14443a_inst/part2/tx_inst/lm_out_reg/C (DFRRQHDX1)
+                                                   0.00      0.00 r
+  iso14443a_inst/part2/tx_inst/lm_out_reg/Q (DFRRQHDX1)
+                                                   3.40      3.40 r
+  lm_out (out)                                     0.01      3.41 r
+  data arrival time                                          3.41
 
   max_delay to non-endpoint                        5.00      5.00
   data required time                                         5.00
   ------------------------------------------------------------------------
   data required time                                         5.00
-  data arrival time                                         -2.44
+  data arrival time                                         -3.41
   ------------------------------------------------------------------------
-  slack (MET)                                                2.56
+  slack (MET)                                                1.59
 
 
 1
