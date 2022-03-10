@@ -91,6 +91,8 @@ SYNTH_PNR_DIR			= hdl/synth_pnr
 # We also pull the logs so we always have the latest logs saved locally
 sync_with_remote:
 	-rm -rf synth/logs
+	-rm -rf synth/work
+	mkdir synth/work
 	-rm -rf lib_prep/logs
 	-rm -rf dp/logs
 	-rm -rf pnr/logs
@@ -101,6 +103,10 @@ sync_with_remote:
 	-rm -rf drc_lvs/lvs_work
 	mkdir drc_lvs/lvs_work
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/logs/ synth/
+	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/work/final_netlist.* synth/work/
+	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/work/default.svf synth/work/
+	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/work/*.saif synth/work/
+	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/work/constraints* synth/work/
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/lib_prep/logs/ lib_prep/
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/dp/logs/ dp/
 	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/dp/preferred_port_locations.tcl dp/
