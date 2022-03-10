@@ -729,6 +729,73 @@ module signal_control_tb;
             unexpected_pause_expected = 1'b0;
         end
 
+        // Test 5a) Command_SET_SIGNAL with long synch times
+        $display("5a) SET_SIGNAL with large synch times");
+        repeat (100) begin
+            // we want full toggle coverage of sync_timing, we've already tested with the MSb = 0, so
+            // test with MSb = 1, and the other bits random
+            // pause_to_start must be <= sync - 3
+            automatic int sync                      = int'({1'b1, 15'($urandom)});
+            automatic int pause_to_start            = $urandom_range(0, sync - 3);
+            automatic int num_extra_pause_timings   = $urandom_range(1, 3);
+            automatic int extra_pause_timings [$]   = '{};
+
+            $display("using sync: %x", sync);
+            // same extra_pause_timings rules apply as in test 1b)
+
+            // first timing following the special first case rule.
+            extra_pause_timings.push_back($urandom_range(0, sync - pause_to_start - 3));
+
+            // add the remaining timings (between 0 and 2 of them) using the normal rule
+            repeat (num_extra_pause_timings-1) begin
+                extra_pause_timings.push_back($urandom_range(1, sync - 2));
+            end
+
+            do_valid_command(Command_SET_SIGNAL,
+                             sync,
+                             $urandom(),    // timing1 - not used
+                             $urandom(),    // timing2 - not used
+                             pause_to_start,
+                             extra_pause_timings);
+        end
+
+        // Test 5b) Command_AUTO_READ with long sync / timing1 / timing2 periods
+        $display("5b) AUTO_READ with long sync / timing1 / timing2 periods");
+        repeat (100) begin
+            // we want full toggle coverage of sync_timing and timing1/2, we've already tested with the MSb = 0, so
+            // test with MSb = 1, and the other bits random.
+            // Unfortunately timing1/timing2 are 25 bits, which would lead to a timing of up to 2.4s which is unrealistic
+            // to do here in simulation. So I'm limiting it to 19 bits (39 ms)
+            // pause_to_start must be <= sync - 3
+            automatic int sync                      = int'({1'b1, 15'($urandom)});
+            automatic int timing1                   = int'({1'b1, 18'($urandom)});
+            automatic int timing2                   = int'({1'b1, 18'($urandom)});
+            automatic int pause_to_start            = $urandom_range(0, sync - 3);
+            automatic int num_extra_pause_timings   = $urandom_range(5, 10);
+            automatic int extra_pause_timings [$]   = '{};
+
+            $display("using sync: %x, timing1: %x, timing2: %x", sync, timing1, timing2);
+            // same extra_pause_timings rules apply as in test 1b)
+
+            // first timing following the special first case rule.
+            extra_pause_timings.push_back($urandom_range(0, sync - pause_to_start - 3));
+
+            // add the remaining timings (between 0 and 10 of them) using the normal rule
+            repeat (num_extra_pause_timings-1) begin
+                extra_pause_timings.push_back($urandom_range(1, sync - 2));
+            end
+
+            // reset the signals to 0s as in test 2a)
+            reset_signals;
+
+            do_valid_command(Command_AUTO_READ,
+                             sync,
+                             timing1,
+                             timing2,
+                             pause_to_start,
+                             extra_pause_timings);
+        end
+
         repeat (50) @(posedge clk) begin end
         // assert reset for toggle coverage
         rst_n <= 1'b0;
