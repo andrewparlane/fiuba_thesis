@@ -556,7 +556,8 @@ if {($pause_between_commands == 1) && ([do_continue] == 0)} {
     return
 }
 
-colourise_cmd "optimize_registers -justification_effort high"
+#colourise_cmd "optimize_registers -justification_effort high"
+set_optimize_registers true -justification_effort high
 
 # Not entirely sure if this is necessary
 colourise_cmd "compile_ultra -incremental -gate_clock -self_gating"
