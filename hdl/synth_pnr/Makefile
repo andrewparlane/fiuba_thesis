@@ -102,6 +102,7 @@ sync_with_remote:
 	mkdir drc_lvs/drc_work
 	-rm -rf drc_lvs/lvs_work
 	mkdir drc_lvs/lvs_work
+	-rm -rf equivalence_checks/post_synth/logs
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/logs/ synth/
 	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/work/final_netlist.* synth/work/
 	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/synth/work/default.svf synth/work/
@@ -121,6 +122,7 @@ sync_with_remote:
 	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/drc_lvs/lvs_work/*.LVS_ERRORS drc_lvs/lvs_work/
 	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/drc_lvs/lvs_work/*.RESULTS drc_lvs/lvs_work/
 	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/drc_lvs/lvs_work/*.TOP_LAYOUT_ERRORS drc_lvs/lvs_work/
+	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/equivalence_checks/post_synth/logs/ equivalence_checks/post_synth
 	cd $(ROOT_DIR) && rsync -rRv --delete 						\
 		--exclude $(SYNTH_PNR_DIR)/synth/work/					\
 		--exclude $(SYNTH_PNR_DIR)/synth/logs/					\
@@ -132,6 +134,7 @@ sync_with_remote:
 		--exclude $(SYNTH_PNR_DIR)/pnr/logs/					\
 		--exclude $(SYNTH_PNR_DIR)/drc_lvs/lvs_work/			\
 		--exclude $(SYNTH_PNR_DIR)/drc_lvs/drc_work/			\
+		--exclude $(SYNTH_PNR_DIR)/equivalence_checks/post_synth/work	\
 		--exclude $(SYNTH_PNR_DIR)/custom_compiler_project/		\
 		$(SRC_DIR) $(ISO_IEC_14443A_RTL_DIR) $(SYNTH_PNR_DIR)	\
 		$(REMOTE_SERVER):$(REMOTE_PATH)

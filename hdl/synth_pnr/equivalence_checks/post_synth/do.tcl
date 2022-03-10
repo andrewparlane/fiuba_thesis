@@ -1,0 +1,2 @@
+source formality.tcl
+exit
