@@ -152,6 +152,7 @@ module radiation_sensor_digital_top
     rx_interface #(.BY_BYTE(1)) app_rx_iface (.*);
     tx_interface #(.BY_BYTE(1)) app_tx_iface (.*);
     logic app_resend_last;
+    logic [3:0] iso14443a_version;
 
     iso14443a
     #(
@@ -195,7 +196,9 @@ module radiation_sensor_digital_top
 
         .app_rx_iface           (app_rx_iface),
         .app_tx_iface           (app_tx_iface),
-        .app_resend_last        (app_resend_last)
+        .app_resend_last        (app_resend_last),
+
+        .iso14443a_version      (iso14443a_version)
     );
 
     // ========================================================================
@@ -222,7 +225,7 @@ module radiation_sensor_digital_top
         .adc_conversion_complete                (adc_conversion_complete_sync),
         .adc_value                              (adc_value),
 
-        .const_iso_iec_14443a_digital_version   (4'(iso14443a_inst.ISO_IEC_14443A_VERSION)),
+        .const_iso_iec_14443a_digital_version   (iso14443a_version),
         .const_iso_iec_14443a_AFE_version       (afe_version),
         .const_sensor_version                   (sens_version),
         .const_adc_version                      (adc_version)
