@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Variables:
+#   INTERACTIVE - don't run do.tcl, just start the shell "INTERACTIVE=1 ./run_dcompiler"
+#   PAUSE       - set the pause_between_commands variable, which prompts you to continue or abort
+#                 after every group of commands, this makes it easier to view the output
+#                 "PAUSE=1 ./run_dcompiler"
+#   NO_COLOURS  - set the no_colours variable, which disables the colourisation scripts
+
+# delete and re-create the logs and work dir
+rm -rf logs
+mkdir logs
+rm -rf work
+mkdir work
+
+export fm_shell_args="-work_path work/"
+export additional_vars=""
+
+# if we are not interactive then run do.tcl, otherwise just open the shell
+if [[ "$INTERACTIVE" = "" ]]; then
+    export fm_shell_args="$fm_shell_args -f do.tcl"
+fi
+
+if [[ "$PAUSE" != "" ]]; then
+    export additional_vars="$additional_vars set pause_between_commands 1;"
+fi
+
+if [[ "$NO_COLOURS" != "" ]]; then
+    export additional_vars="$additional_vars set no_colours 1;"
+fi
+
+if [[ "$additional_vars" != "" ]]; then
+    export fm_shell_args="$fm_shell_args -x \"$additional_vars\""
+fi
+
+fm_shell $fm_shell_args

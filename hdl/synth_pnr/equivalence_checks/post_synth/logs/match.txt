@@ -1,0 +1,53 @@
+Reference design is 'r:/WORK/radiation_sensor_digital_top'
+Implementation design is 'i:/WORK/radiation_sensor_digital_top'
+Status:  Checking designs...
+Status:  Building verification models...
+Status:  Processing Guide Commands...
+
+***************************** Guidance Summary *****************************
+                                         Status
+Command                 Accepted   Rejected  Unsupported  Unprocessed  Total
+----------------------------------------------------------------------------
+architecture_netlist:          1          0          0          0          1
+boundary            :          2          0          0          0          2
+boundary_netlist    :          1          0          0          0          1
+change_names        :         26          0          0          0         26
+constraints         :          1          0          0          0          1
+datapath            :          2          0          0          0          2
+environment         :          6          0          0          0          6
+instance_map        :         24          0          0          0         24
+inv_push            :          1          0          0          0          1
+mark                :         28          0          0          0         28
+merge               :          2          0          0          0          2
+reg_constant        :         28          0          0          0         28
+reg_merging         :          4          0          0          0          4
+replace             :          5          0          0          0          5
+ungroup             :         24          0          0          0         24
+uniquify            :          2          0          0          0          2
+
+SVF files read:
+      ../../synth/work/default.svf
+
+SVF files produced:
+  /home/aparlane/fiuba_thesis/hdl/synth_pnr/equivalence_checks/post_synth/work//formality_svf/
+    svf.txt
+****************************************************************************
+
+Status:  Matching...
+    
+*********************************** Matching Results ***********************************    
+ 232 Compare points matched by name    
+ 0 Compare points matched by signature analysis    
+ 0 Compare points matched by topology    
+ 37 Matched primary inputs, black-box outputs    
+ 0(53) Unmatched reference(implementation) compare points    
+ 0(0) Unmatched reference(implementation) primary inputs, black-box outputs    
+ 73(0) Unmatched reference(implementation) unread points    
+----------------------------------------------------------------------------------------    
+Unmatched Objects                                                        REF        IMPL    
+----------------------------------------------------------------------------------------    
+ Registers                                                                 0          53    
+   Clock-gate LAT                                                          0          53    
+****************************************************************************************
+
+1

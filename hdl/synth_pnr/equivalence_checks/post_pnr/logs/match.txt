@@ -1,0 +1,60 @@
+Reference design is 'r:/WORK/radiation_sensor_digital_top'
+Implementation design is 'i:/WORK/radiation_sensor_digital_top'
+Status:  Checking designs...
+    Warning: 0 (129) undriven nets found in reference (implementation) design; see formality.log for list (FM-399)
+Status:  Building verification models...
+Status:  Processing Guide Commands...
+    Info:  $synopsys_root=/usr/synopsys2/icc2/P-2019.03, $hdlin_dwroot=/usr/synopsys2/syn/P-2019.03, ignoring $synopsys_root.
+    Info:  $synopsys_root=/usr/synopsys2/icc2/P-2019.03, $hdlin_dwroot=/usr/synopsys2/syn/P-2019.03, ignoring $synopsys_root.
+
+***************************** Guidance Summary *****************************
+                                         Status
+Command                 Accepted   Rejected  Unsupported  Unprocessed  Total
+----------------------------------------------------------------------------
+architecture_netlist:          1          0          0          0          1
+boundary            :          2          0          0          0          2
+boundary_netlist    :          1          0          0          0          1
+change_names        :         26          1          0          0         27
+constraints         :          1          0          0          0          1
+datapath            :          2          0          0          0          2
+environment         :         27          0          0          0         27
+instance_map        :         24          0          0          0         24
+inv_push            :          1          0          0          0          1
+mark                :         28          0          0          0         28
+merge               :          2          0          0          0          2
+reg_constant        :         28          0          0          0         28
+reg_merging         :          4          0          0          0          4
+replace             :          5          0          0          0          5
+ungroup             :         24          0          0          0         24
+uniquify            :          2          0          0          0          2
+
+Note: If verification succeeds you can safely ignore unaccepted guidance commands.
+
+SVF files read:
+      ../../synth/work/default.svf
+      ../../dp/work/dp.svf/cmd-1.svf
+      ../../pnr/work/pnr.svf/cmd-1.svf
+
+SVF files produced:
+  /home/aparlane/fiuba_thesis/hdl/synth_pnr/equivalence_checks/post_pnr/work//formality_svf/
+    svf.txt
+****************************************************************************
+
+Status:  Matching...
+    
+*********************************** Matching Results ***********************************    
+ 232 Compare points matched by name    
+ 0 Compare points matched by signature analysis    
+ 0 Compare points matched by topology    
+ 37 Matched primary inputs, black-box outputs    
+ 0(53) Unmatched reference(implementation) compare points    
+ 0(0) Unmatched reference(implementation) primary inputs, black-box outputs    
+ 73(0) Unmatched reference(implementation) unread points    
+----------------------------------------------------------------------------------------    
+Unmatched Objects                                                        REF        IMPL    
+----------------------------------------------------------------------------------------    
+ Registers                                                                 0          53    
+   Clock-gate LAT                                                          0          53    
+****************************************************************************************
+
+1
