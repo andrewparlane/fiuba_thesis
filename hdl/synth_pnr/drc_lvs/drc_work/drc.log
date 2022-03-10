@@ -18,7 +18,7 @@ Called as: icv -c radiation_sensor_digital_top -f GDSII -i ../../pnr/work/design
 
 
 Loaded runset from cache: /home/aparlane/.icvrscache/992cd706920aa9c4713603fe7d688186-452BCAB0-3331-4C7C-87DF-D33F521B5E7C-micro0.fi.uba.ar-25897.rscache
-Cached Runset Compile Time=0:00:03 User=3.75 Sys=0.05 Mem=446.164
+Cached Runset Compile Time=0:00:04 User=3.81 Sys=0.04 Mem=446.160
 
 
 
@@ -35,7 +35,7 @@ Cached Runset Compile Time=0:00:03 User=3.75 Sys=0.05 Mem=446.164
 
 Called as: icv -c radiation_sensor_digital_top -f GDSII -i ../../pnr/work/design_xfab_layers.gds -I /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2 -D DENSITY_LAY /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2/xh018_1143_DRC_MET4_METMID_METTHK.rs
  
-Virtual Machine Init Time=0:00:00 User=0.01 Sys=0.01 Mem=446.164
+Virtual Machine Init Time=0:00:00 User=0.01 Sys=0.01 Mem=446.160
 
 
 Checked out necessary DP licenses.
@@ -43,7 +43,7 @@ Host startup done: 2 successes, 0 failures.
 	micro0.fi.uba.ar: 2 total cores, maximum 2 commands in parallel.
 Selecting "micro0.fi.uba.ar" as Primary host
 
-System Startup Time=0:00:01 User=0.00 Sys=0.03 Mem=446.164
+System Startup Time=0:00:00 User=0.00 Sys=0.02 Mem=446.160
 
 
 Command execution begins.  Details recorded in the summary and log files:
@@ -51,33 +51,33 @@ Command execution begins.  Details recorded in the summary and log files:
     /home/aparlane/fiuba_thesis/hdl/synth_pnr/drc_lvs/drc_work/run_details/xh018_1143_DRC_MET4_METMID_METTHK.dp.log
 
 Running ...
-  ICV_Engine run is   1% complete.    Elapsed Time=0:00:02
-  ICV_Engine run is   2% complete.    Elapsed Time=0:00:02
+  ICV_Engine run is   1% complete.    Elapsed Time=0:00:01
+  ICV_Engine run is   2% complete.    Elapsed Time=0:00:01
   ICV_Engine run is   3% complete.    Elapsed Time=0:00:02
   ICV_Engine run is   4% complete.    Elapsed Time=0:00:02
   ICV_Engine run is   5% complete.    Elapsed Time=0:00:02
-  ICV_Engine run is  10% complete.    Elapsed Time=0:00:04
-  ICV_Engine run is  15% complete.    Elapsed Time=0:00:05
-  ICV_Engine run is  20% complete.    Elapsed Time=0:00:06
-  ICV_Engine run is  25% complete.    Elapsed Time=0:00:07
-  ICV_Engine run is  30% complete.    Elapsed Time=0:00:07
-  ICV_Engine run is  35% complete.    Elapsed Time=0:00:07
-  ICV_Engine run is  40% complete.    Elapsed Time=0:00:07
-  ICV_Engine run is  45% complete.    Elapsed Time=0:00:07
-  ICV_Engine run is  50% complete.    Elapsed Time=0:00:07
-  ICV_Engine run is  55% complete.    Elapsed Time=0:00:07
-  ICV_Engine run is  60% complete.    Elapsed Time=0:00:07
+  ICV_Engine run is  10% complete.    Elapsed Time=0:00:03
+  ICV_Engine run is  15% complete.    Elapsed Time=0:00:04
+  ICV_Engine run is  20% complete.    Elapsed Time=0:00:05
+  ICV_Engine run is  25% complete.    Elapsed Time=0:00:06
+  ICV_Engine run is  30% complete.    Elapsed Time=0:00:06
+  ICV_Engine run is  35% complete.    Elapsed Time=0:00:06
+  ICV_Engine run is  40% complete.    Elapsed Time=0:00:06
+  ICV_Engine run is  45% complete.    Elapsed Time=0:00:06
+  ICV_Engine run is  50% complete.    Elapsed Time=0:00:06
+  ICV_Engine run is  55% complete.    Elapsed Time=0:00:06
+  ICV_Engine run is  60% complete.    Elapsed Time=0:00:06
   ICV_Engine run is  65% complete.    Elapsed Time=0:00:07
   ICV_Engine run is  70% complete.    Elapsed Time=0:00:07
   ICV_Engine run is  75% complete.    Elapsed Time=0:00:07
-  ICV_Engine run is  80% complete.    Elapsed Time=0:00:08
-  ICV_Engine run is  85% complete.    Elapsed Time=0:00:08
-  ICV_Engine run is  90% complete.    Elapsed Time=0:00:09
-  ICV_Engine run is  95% complete.    Elapsed Time=0:00:10
-  ICV_Engine run is 100% complete.    Elapsed Time=0:00:11
+  ICV_Engine run is  80% complete.    Elapsed Time=0:00:07
+  ICV_Engine run is  85% complete.    Elapsed Time=0:00:07
+  ICV_Engine run is  90% complete.    Elapsed Time=0:00:08
+  ICV_Engine run is  95% complete.    Elapsed Time=0:00:08
+  ICV_Engine run is 100% complete.    Elapsed Time=0:00:09
 
 Completing error storage...
-  Overall error storage time: User=0.21 Sys=0.21 Mem=18.220
+  Overall error storage time: User=0.15 Sys=0.21 Mem=17.423
 
 Generating radiation_sensor_digital_top.TOP_LAYOUT_ERRORS...
   Generation Time=0:00:00  User=0.01 Sys=0.00 Mem=3.846
@@ -88,9 +88,9 @@ Generating radiation_sensor_digital_top.TOP_LAYOUT_ERRORS...
 
 
 IC Validator Machine Memory Report
-micro0.fi.uba.ar : Average = 3.08(Mb), Peak = 116(Mb)
+micro0.fi.uba.ar : Average = 3.34(Mb), Peak = 121(Mb)
 
-Overall Disk Usage Disk=12.543
-Overall engine Time=0:00:15 Highest command Mem=74.487 
+Overall Disk Usage Disk=13.074
+Overall engine Time=0:00:13 Highest command Mem=74.271 
 
-Overall Master Mem=446.180
+Overall Master Mem=446.176

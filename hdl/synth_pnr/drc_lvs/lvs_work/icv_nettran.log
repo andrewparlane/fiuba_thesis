@@ -1,5 +1,5 @@
 /* ICV_Nettran: RHEL64 O-2018.12-SP2-2.4752006 2019/04/09 */
-/* Created:  2/28/2022  18:31   */
+/* Created:  3/10/2022  18:23   */
 
                                   ICV_Nettran 
 
@@ -1728,7 +1728,7 @@ Loading cell "STEHDX0" ...
 Loading cell "STEHDX1" ...
 Loading cell "STEHDX2" ...
 Loading cell "STEHDX4" ...
-[Nettran Report] Reading Netlist(s): Check Time=0:00:00  User=0.15 Sys=0.01 Mem=21.156
+[Nettran Report] Reading Netlist(s): Check Time=0:00:00  User=0.15 Sys=0.00 Mem=21.156
 WARNING: Following cell definitions having the same name exist.
     o32na3 o3na3 o22na3 o2na3 o33na2 o32na2_0 o32na2 o32na3_0 o3na2_0 o3na2 o3na3_0 o22na2 
     o222na3 o22na3_0 o2na2 o2na3_0 nor3 clinvr o2na2_0 tgate nor2 nand4 nand3 nand2 a33no2 
@@ -1740,6 +1740,6 @@ WARNING: Multiple cells with the same name are found in input netlist, see file 
 Processing Hierarchy ...
 [Nettran Report] Post Process: Check Time=0:00:00  User=0.03 Sys=0.00 Mem=22.531
 Writing Spice netlist ...
-[Nettran Report] Output Netlist: Check Time=0:00:00  User=0.04 Sys=0.00 Mem=20.875
+[Nettran Report] Output Netlist: Check Time=0:00:00  User=0.05 Sys=0.01 Mem=20.875
 Translation completed.
-[Nettran Report] Nettran Total Runtime: Check Time=0:00:00  User=0.24 Sys=0.03 Mem=22.531
+[Nettran Report] Nettran Total Runtime: Check Time=0:00:00  User=0.24 Sys=0.02 Mem=22.531

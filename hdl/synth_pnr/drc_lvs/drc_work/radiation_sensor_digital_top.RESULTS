@@ -32,8 +32,8 @@ User name:        aparlane
 Layout format:    GDSII
 Input file name:  ../../pnr/work/design_xfab_layers.gds
 Top cell name:    radiation_sensor_digital_top
-Time started:     2022/02/28 06:31:07PM
-Time ended:       2022/02/28 06:31:22PM
+Time started:     2022/03/10 06:23:40PM
+Time ended:       2022/03/10 06:23:53PM
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -90,7 +90,7 @@ Production Environment Variables (BETA report, subject to change)
 HOME = "/home/aparlane"
 ICV_HOME_DIR = "/usr/synopsys2/icvalidator/O-2018.12-SP2-2"
 LM_LICENSE_FILE = "1718@credenciales.fi.uba.ar"
-PATH = "/usr/synopsys2/verdi/R-2020.12-SP2-6/bin/:/usr/synopsys2/prime/Q-2019.12-SP5-3/bin/:/usr/synopsys2/pwr/P-2019.03-SP5-1/bin/:/usr/synopsys2/wv/O-2018.09-SP2/bin/:/usr/synopsys2/vcs/R-2020.12-SP2-6/bin/:/usr/synopsys2/syn/P-2019.03/bin/:/usr/synopsys2/starrc/P-2019.03/bin/:/usr/synopsys2/mw/P-2019.03/bin/linux64/:/usr/synopsys2/lc/P-2019.03/bin:/usr/synopsys2/icvalidator/O-2018.12-SP2-2/bin/linux64:/usr/synopsys2/icc2/P-2019.03/bin:/usr/synopsys2/icc/P-2019.03/bin:/usr/synopsys2/hspice/O-2018.09-SP2-1/hspice/bin/:/usr/synopsys2/customcompiler/O-2018.09-SP1-3/linux64/PyCellStudio/bin:/usr/synopsys2/customcompiler/O-2018.09-SP1-3/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/opt/spiceopus/usr/local/bin:/opt/spiceopus/usr/local/bin"
+PATH = "/usr/synopsys2/fm/P-2019.03-SP5/bin/:/usr/synopsys2/verdi/R-2020.12-SP2-6/bin/:/usr/synopsys2/prime/Q-2019.12-SP5-3/bin/:/usr/synopsys2/pwr/P-2019.03-SP5-1/bin/:/usr/synopsys2/wv/O-2018.09-SP2/bin/:/usr/synopsys2/vcs/R-2020.12-SP2-6/bin/:/usr/synopsys2/syn/P-2019.03/bin/:/usr/synopsys2/starrc/P-2019.03/bin/:/usr/synopsys2/mw/P-2019.03/bin/linux64/:/usr/synopsys2/lc/P-2019.03/bin:/usr/synopsys2/icvalidator/O-2018.12-SP2-2/bin/linux64:/usr/synopsys2/icc2/P-2019.03/bin:/usr/synopsys2/icc/P-2019.03/bin:/usr/synopsys2/hspice/O-2018.09-SP2-1/hspice/bin/:/usr/synopsys2/customcompiler/O-2018.09-SP1-3/linux64/PyCellStudio/bin:/usr/synopsys2/customcompiler/O-2018.09-SP1-3/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/opt/spiceopus/usr/local/bin:/opt/spiceopus/usr/local/bin"
 USER = "aparlane"
 
 5 production environment variables set.
@@ -119,12 +119,12 @@ Distributed Processing
 Performance Statistics
 ---------------------------------------------------------------------------
 
-IC Validator Run Time = 0:00:15
-Peak Single Command Memory = 74.487
-Peak Disk Usage = 12.543
+IC Validator Run Time = 0:00:13
+Peak Single Command Memory = 74.271
+Peak Disk Usage = 13.074
 
 Distributed Host Memory Usage
- micro0.fi.uba.ar (2/8)  ....  Average=3.08 Mb, Peak=116 Mb / 24 Gb
+ micro0.fi.uba.ar (2/8)  ....  Average=3.34 Mb, Peak=121 Mb / 24 Gb
 
 Overall Distributed Utilization: not available
 IC Validator is done.

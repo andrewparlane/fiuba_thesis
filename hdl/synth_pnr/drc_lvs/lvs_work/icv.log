@@ -32,7 +32,7 @@ xh018.rs:422: warning: "THINTOPMETAL" wasn't defined
 /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2/xh018.rs:9741: warning: ICV LVS device settings currently use overwrite mode. Use command line option '-D ICV_ENABLE_DEVICE_SETTING_APPEND_MODE' or runset instruction '#define ICV_ENABLE_DEVICE_SETTING_APPEND_MODE' to enable LVS device setting append mode in this release.
 /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2/xh018.rs:9741: warning: Some LVS reports will be changed in future release. Set environment variable 'ICV_ENABLE_LVS_REPORT_IN_IDENTICAL_STRING' to see new LVS reports.
 Loaded runset from cache: /home/aparlane/.icvrscache/2ad12e3236f4c242a6701c58d2ae1e48-947ECA89-4113-410E-B6B0-EE2EF98E4DC1-micro0.fi.uba.ar-27491.rscache
-Cached Runset Compile Time=0:00:03 User=3.69 Sys=0.05 Mem=469.543
+Cached Runset Compile Time=0:00:04 User=3.75 Sys=0.04 Mem=469.547
 
 
 
@@ -49,7 +49,7 @@ Cached Runset Compile Time=0:00:03 User=3.69 Sys=0.05 Mem=469.543
 
 Called as: icv -c radiation_sensor_digital_top -f GDSII -i ../../pnr/work/design_xfab_layers.gds -stc radiation_sensor_digital_top -s netlist_lvs.sp -sf spice -I /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2 -D FloatingGate -D FloatingWell /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2/xh018_1143_LVS_MET4_METMID_METTHK.rs
  
-Virtual Machine Init Time=0:00:00 User=0.07 Sys=0.01 Mem=469.543
+Virtual Machine Init Time=0:00:00 User=0.08 Sys=0.01 Mem=469.547
 
 /usr/pdks/xfab180/PDK/XFAB_snps_CustomDesigner_kit_v2_2_2/xh018/synopsys/v8_0/ICValidator/v8_0_2/xh018.rs:160: warning: ICV SPICE setting "slash_is_space" is not needed and is being ignored.  Slash '/' characters in SPICE netlists are handled automatically by default.
 
@@ -58,7 +58,7 @@ Host startup done: 2 successes, 0 failures.
 	micro0.fi.uba.ar: 2 total cores, maximum 2 commands in parallel.
 Selecting "micro0.fi.uba.ar" as Primary host
 
-System Startup Time=0:00:00 User=0.00 Sys=0.03 Mem=469.543
+System Startup Time=0:00:00 User=0.00 Sys=0.03 Mem=469.547
 
 
 Command execution begins.  Details recorded in the summary and log files:
@@ -66,7 +66,7 @@ Command execution begins.  Details recorded in the summary and log files:
     /home/aparlane/fiuba_thesis/hdl/synth_pnr/drc_lvs/lvs_work/run_details/xh018_1143_LVS_MET4_METMID_METTHK.dp.log
 
 Running ...
-  ICV_Engine run is   1% complete.    Elapsed Time=0:00:01
+  ICV_Engine run is   1% complete.    Elapsed Time=0:00:02
   ICV_Engine run is   2% complete.    Elapsed Time=0:00:02
   ICV_Engine run is   3% complete.    Elapsed Time=0:00:02
   ICV_Engine run is   4% complete.    Elapsed Time=0:00:02
@@ -83,12 +83,12 @@ Running ...
   ICV_Engine run is  55% complete.    Elapsed Time=0:00:03
   ICV_Engine run is  60% complete.    Elapsed Time=0:00:03
   ICV_Engine run is  65% complete.    Elapsed Time=0:00:03
-  ICV_Engine run is  70% complete.    Elapsed Time=0:00:04
+  ICV_Engine run is  70% complete.    Elapsed Time=0:00:03
   ICV_Engine run is  75% complete.    Elapsed Time=0:00:04
   ICV_Engine run is  80% complete.    Elapsed Time=0:00:04
-  ICV_Engine run is  85% complete.    Elapsed Time=0:00:06
-  ICV_Engine run is  90% complete.    Elapsed Time=0:00:06
-  ICV_Engine run is  95% complete.    Elapsed Time=0:00:07
+  ICV_Engine run is  85% complete.    Elapsed Time=0:00:05
+  ICV_Engine run is  90% complete.    Elapsed Time=0:00:05
+  ICV_Engine run is  95% complete.    Elapsed Time=0:00:06
 
 Generating micron-based ICV netlist...
 
@@ -106,9 +106,9 @@ Generating micron-based ICV netlist...
 
  Generating NETLIST file "radiation_sensor_digital_top.net".
 
- Netlisting Time=0:00:00  User=0.05 Sys=0.03 Mem=1.909
+ Netlisting Time=0:00:00  User=0.04 Sys=0.02 Mem=1.908
 
-   Check Time=0:00:00  User=0.00 Sys=0.00 Mem=45.497
+   Check Time=0:00:00  User=0.00 Sys=0.00 Mem=40.743
 
 
 Generating micron-based NDB ...
@@ -125,12 +125,12 @@ Generating micron-based NDB ...
  of a written license agreement with Synopsys, Inc. All other use, reproduction,
             or distribution of this software is strictly prohibited.
 
- Netlisting Time=0:00:00  User=0.06 Sys=0.02 Mem=11.866
+ Netlisting Time=0:00:00  User=0.05 Sys=0.02 Mem=11.866
 
-   Check Time=0:00:00  User=0.00 Sys=0.00 Mem=25.850
+   Check Time=0:00:00  User=0.00 Sys=0.00 Mem=32.250
 
 Comparing schematic and layout netlists.
-LVS compare start time    : 2022-02-28 18:31:35
+LVS compare start time    : 2022-03-10 18:24:05
   ICV_Compare run is   0% complete.    Elapsed Time=0:00:00
   ICV_Compare run is   5% complete.    Elapsed Time=0:00:00
   ICV_Compare run is  10% complete.    Elapsed Time=0:00:00
@@ -139,21 +139,21 @@ LVS compare start time    : 2022-02-28 18:31:35
   ICV_Compare run is  25% complete.    Elapsed Time=0:00:00
   ICV_Compare run is  30% complete.    Elapsed Time=0:00:00
   ICV_Compare run is  35% complete.    Elapsed Time=0:00:00
-  ICV_Compare run is  40% complete.    Elapsed Time=0:00:01
-  ICV_Compare run is  45% complete.    Elapsed Time=0:00:01
-  ICV_Compare run is  50% complete.    Elapsed Time=0:00:01
-  ICV_Compare run is  55% complete.    Elapsed Time=0:00:01
-  ICV_Compare run is  60% complete.    Elapsed Time=0:00:01
-  ICV_Compare run is  65% complete.    Elapsed Time=0:00:01
+  ICV_Compare run is  40% complete.    Elapsed Time=0:00:00
+  ICV_Compare run is  45% complete.    Elapsed Time=0:00:00
+  ICV_Compare run is  50% complete.    Elapsed Time=0:00:00
+  ICV_Compare run is  55% complete.    Elapsed Time=0:00:00
+  ICV_Compare run is  60% complete.    Elapsed Time=0:00:00
+  ICV_Compare run is  65% complete.    Elapsed Time=0:00:00
   ICV_Compare run is 100% complete.    Elapsed Time=0:00:01
-LVS compare end time      : 2022-02-28 18:31:36
-Total runtime for LVS compare Time=0:00:01  User=0.49 Sys=0.19 Mem=34.894
-   Check Time=0:00:00  User=0.01 Sys=0.00 Mem=25.949
+LVS compare end time      : 2022-03-10 18:24:06
+Total runtime for LVS compare Time=0:00:01  User=0.36 Sys=0.15 Mem=35.169
+   Check Time=0:00:00  User=0.01 Sys=0.00 Mem=32.350
 
-  ICV_Engine run is 100% complete.    Elapsed Time=0:00:09
+  ICV_Engine run is 100% complete.    Elapsed Time=0:00:08
 
 Completing error storage...
-  Overall error storage time: User=0.02 Sys=0.03 Mem=2.470
+  Overall error storage time: User=0.01 Sys=0.03 Mem=2.470
 
 Generating radiation_sensor_digital_top.TOP_LAYOUT_ERRORS...
   Generation Time=0:00:00  User=0.00 Sys=0.00 Mem=0.971
@@ -162,13 +162,13 @@ Generating radiation_sensor_digital_top.TOP_LAYOUT_ERRORS...
 
 -------------
 
-IC Validator Run: Time=0:00:14
+IC Validator Run: Time=0:00:12
 
 IC Validator Machine Memory Report
-micro0.fi.uba.ar : Average = 2.29(Mb), Peak = 84(Mb)
+micro0.fi.uba.ar : Average = 4.53(Mb), Peak = 103(Mb)
 
-Overall Disk Usage Disk=9.957
-Overall engine Time=0:00:14 Highest command Mem=84.355 
+Overall Disk Usage Disk=29.422
+Overall engine Time=0:00:12 Highest command Mem=69.331 
 
-Overall Master Mem=859.152
+Overall Master Mem=859.277
 IC Validator is done.
