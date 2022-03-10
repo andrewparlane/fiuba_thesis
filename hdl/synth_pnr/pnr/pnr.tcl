@@ -109,6 +109,11 @@ proc load_antenna_rules {} {
 }
 
 # =============================================================================
+# SVF for formality guidance
+# =============================================================================
+set_svf work/pnr.svf
+
+# =============================================================================
 # Design Init
 # =============================================================================
 puts "[colour $COLOUR_BLUE]Design Init[clear_colour]"
@@ -523,6 +528,9 @@ change_names -rules verilog -hierarchy
 
 # write out the netlist for LVS (with pg, physical only cells)
 write_verilog -exclude {scalar_wire_declarations leaf_module_declarations empty_modules} -hierarchy all work/netlist_lvs.v
+
+# write out the netlist for Formality (no pg, no physical only cells, and no supply statements)
+write_verilog -exclude {scalar_wire_declarations leaf_module_declarations end_cap_cells well_tap_cells filler_cells pad_spacer_cells physical_only_cells cover_cells supply_statements pg_netlist} -hierarchy all work/netlist_fm.v
 
 # write the DEF
 write_def -version 5.8 work/design.def

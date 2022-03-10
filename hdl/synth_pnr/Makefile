@@ -117,7 +117,8 @@ sync_with_remote:
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/pnr/logs/ pnr/
 	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/pnr/work/design_icc2_layers.gds pnr/work/
 	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/pnr/work/design_xfab_layers.gds pnr/work/
-	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/pnr/work/netlist_lvs.v pnr/work/
+	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/pnr/work/netlist_*.v pnr/work/
+	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/pnr/work/pnr.svf pnr/work/
 	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/drc_lvs/drc_work/*.log drc_lvs/drc_work/
 	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/drc_lvs/drc_work/*.RESULTS drc_lvs/drc_work/
 	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/drc_lvs/drc_work/*.TOP_LAYOUT_ERRORS drc_lvs/drc_work/
