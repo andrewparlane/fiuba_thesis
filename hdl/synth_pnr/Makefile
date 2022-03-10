@@ -95,6 +95,8 @@ sync_with_remote:
 	mkdir synth/work
 	-rm -rf lib_prep/logs
 	-rm -rf dp/logs
+	-rm -rf dp/work
+	mkdir dp/work
 	-rm -rf pnr/logs
 	-rm -rf pnr/work
 	mkdir pnr/work
@@ -111,6 +113,7 @@ sync_with_remote:
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/lib_prep/logs/ lib_prep/
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/dp/logs/ dp/
 	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/dp/preferred_port_locations.tcl dp/
+	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/dp/work/dp.svf dp/work/
 	-scp -r $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/pnr/logs/ pnr/
 	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/pnr/work/design_icc2_layers.gds pnr/work/
 	-scp $(REMOTE_SERVER):$(REMOTE_PATH)/$(SYNTH_PNR_DIR)/pnr/work/design_xfab_layers.gds pnr/work/
