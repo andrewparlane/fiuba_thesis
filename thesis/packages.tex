@@ -1,0 +1,71 @@
+% -----------------------------------------------------------------
+%        File: packages.tex
+% Description: Various packages
+%      Author: Andrew Parlane
+% -----------------------------------------------------------------
+
+% This file is part of https://github.com/andrewparlane/fiuba_thesis
+% Copyright (c) 2022 Andrew Parlane.
+%
+% This is free software: you can redistribute it and/or modify it under
+% the terms of the GNU General Public License as published by the Free
+% Software Foundation, version 3.
+%
+% This program is distributed in the hope that it will be useful, but
+% WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+% General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this code. If not, see <http://www.gnu.org/licenses/>.
+
+% Spanish Localisation
+\usepackage[spanish]{babel}
+
+% UTF8 encoding allows for accents. Must come before biblatex
+\usepackage[utf8]{inputenc}
+
+% Bibliography
+\usepackage[backend=biber, style=numeric]{biblatex}
+
+% For \captionsetup
+\usepackage{caption}
+
+% Required by biblatex and must come after inputenc
+\usepackage{csquotes}
+
+% Better lists, allows setting \parsep
+\usepackage{enumitem}
+
+% A4 + default margins
+\usepackage[a4paper]{geometry}
+
+% Images
+\usepackage{graphicx}
+
+% Multirow
+\usepackage{multirow}
+
+% for \nicefrac
+\usepackage{nicefrac}
+
+% For \onehalfspacing
+\usepackage{setspace}
+
+% For \FloatBarrier
+\usepackage{placeins}
+
+% SI Units
+\usepackage{siunitx}
+
+% Allows for setting space between sections
+\usepackage[compact]{titlesec}
+
+% Links (must be loaded after titlesec)
+\usepackage{hyperref}
+
+% Fix links to images so they actually show the image
+\usepackage[all]{hypcap}
+
+% Change spacing around ToC
+\usepackage{tocloft}

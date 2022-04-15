@@ -1,0 +1,89 @@
+% -----------------------------------------------------------------
+%        File: settings.tex
+% Description: Various configuration settings
+%      Author: Andrew Parlane
+% -----------------------------------------------------------------
+
+% This file is part of https://github.com/andrewparlane/fiuba_thesis
+% Copyright (c) 2022 Andrew Parlane.
+%
+% This is free software: you can redistribute it and/or modify it under
+% the terms of the GNU General Public License as published by the Free
+% Software Foundation, version 3.
+%
+% This program is distributed in the hope that it will be useful, but
+% WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+% General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this code. If not, see <http://www.gnu.org/licenses/>.
+
+
+% Don't indent paragraphs
+\setlength{\parindent}{0cm}
+
+% Space between paragraphs
+\parskip 1.5ex
+
+% Line spacing: 1.5
+\onehalfspacing
+
+% Reduce space between items in \begin{description} and \begin{itemize}
+\setlist[description]{noitemsep, nolistsep, topsep=0pt}
+\setlist[itemize]{noitemsep, nolistsep, topsep=0pt}
+
+% Change Table of Contents name from "Índice General" to "Índice"
+\addto\captionsspanish{
+  \renewcommand{\contentsname}
+    {Índice}
+}
+
+% \Chapter format - Huge, bold, no numbering
+\titleformat{\chapter}{\normalfont\Huge\bfseries}{}{0pt}{}
+
+% Reduce space before and after the \chapter title
+\titlespacing{\chapter}{0pt}{-1em}{1em}
+
+% \Section format - huge, bold
+\titleformat{\section}{\normalfont\huge\bfseries}{\thesection}{0pt}{}
+
+% \Subsection format - LARGE, bold
+\titleformat{\subsection}{\normalfont\LARGE\bfseries}{\thesection}{0pt}{}
+
+% \subsubsection format - Large
+\titleformat{\subsubsection}{\normalfont\Large}{\thesection}{0pt}{}
+
+% Don't number sections
+\setcounter{secnumdepth}{0}
+
+% Sets links to blue
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+% ToC depth to \subsubsection
+\setcounter{tocdepth}{3}
+
+% Remove spacing at top of page before and after the Índice title
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftaftertoctitleskip}{0pt}
+
+% Don't hyphonate over pages
+\brokenpenalty10000\relax
+
+% Captions should "hang" aka align with the start, and not with the label
+\captionsetup{format=hang}
+
+% Create a new command for referencing figures with "Figura ?.?" as the link. Same for tables and sections
+% Call with:
+%  \figref{fig:figure-label} 
+%  \tabref{tab:table-label}
+%  \secref{sec:section-label}{Section Name}
+\newcommand*{\figref}[1]{\hyperref[#1]{Figura~\ref*{#1}}}
+\newcommand*{\tabref}[1]{\hyperref[#1]{Cuadro~\ref*{#1}}}
+\newcommand*{\secref}[2]{\hyperref[#1]{Sección #2}}
