@@ -432,7 +432,7 @@ A su nivel más bajo, un interfaz es un conjunto nombrado de nets o variables. L
 
 Además de esas ventajas, una interfaz puede contener funcionalidad, sea para síntesis o verificación, por ejemplo se puede agregar aserciones que verifican el comportamiento de los nets internos en vez de tener que duplicar esas pruebas en cada sitio que la interfaz es usada. Una interfaz puede tener una o más modports, los que especifican las direcciones de las señales. Esos modports pueden ser usados en la lista de puertas por un módulo en vez de especificar cada señal y su dirección individualmente.
 
-Este trabajo consiste en varios módulos que contienen uno o más sumideros para recibir tramas desde otros módulos, y una o más fuentes para enviar tramas a otros módulos. Por ejemplo el módulo: \textbf{frame\_decode} recibe tramas desde el módulo: 
+Este trabajo consiste en varios módulos que contienen uno o más sumideros para recibir tramas desde otros módulos, y una o más fuentes para enviar tramas a otros módulos. Por ejemplo el módulo: \textbf{frame\_decode} recibe tramas desde el módulo: \textbf{sequence\_decode}, quita los bits de paridad, y reenvía las tramas modificadas al módulo: \textbf{deserialiser}. Por lo tanto muchos de los módulos manejan el mismo conjunto de señales, lo que es el uso principal por interfaces. Hay dos interfaces definidas en este trabajo, uno para la recepción de tramas (\textit{rx\_interface}), y otra para la transmisión de las respuestas (\textit{tx\_interface}). Las dos son parametrizadas para funcionar con series de bits o de bytes. Las interfaces son usadas para conectar una fuente en un módulo a un sumidero en otro módulo.
 
 La \textit{rx\_interface} contiene:
 
@@ -446,7 +446,7 @@ La \textit{rx\_interface} contiene:
 \end{itemize}
 
 
-La \figref{fig:rx_iface} muestra una simulación de la recepción de una trama corta con una \textit{rx\_interface} de bits, y su conversión a una serie de bytes. Arriba están las señales en una \textit{rx\_interface} de bits, \textit{data\_valid} está en ‘1’ siete veces durante la trama, indicando que el dato recibido es: 1,1,1,1,0,1,0. Debido a que el bit menos significativo es enviado primero, este serie representa 7’b0101111. Abajo están las señales en una \textit{rx\_interface} de bytes representando la misma trama. El dato tiene valor 7’b0101111 cuando \textit{data\_valid} tiene valor lógico igual a ‘1’.
+La \figref{fig:rx_iface} muestra una simulación de la recepción de una trama corta con una \textit{rx\_interface} de bits, y su conversión a una serie de bytes. Arriba están las señales en una \textit{rx\_interface} de bits, \textit{data\_valid} está en ‘1’ siete veces durante la trama, indicando que el dato recibido es: 1,1,1,1,0,1,0. Debido a que el bit menos significativo es enviado primero, este serie representa 7’b0101111. Abajo están las señales en una \textit{rx\_interface} de bytes representando la misma trama. El dato tiene valor 8’bX0101111 cuando \textit{data\_valid} tiene valor lógico igual a ‘1’.
 
 La \textit{rx\_interface} incluye varias aserciones para verificar el comportamiento de las señales en la interfaz. Las aserciones consideran: Las señales son correctas en el estado de reset, los indicadores nunca son desconocidos, \textit{soc} y \textit{eoc} no están en ‘1’ en el mismo ciclo, y que solo están en ‘1’ por la duración de un solo ciclo del reloj a la vez.
 
@@ -465,7 +465,7 @@ La \textit{tx\_interface} contiene:
   \item \textit{data}: Un bit / byte de la trama.
   \item \textit{data\_valid}: Un indicador que indica que \textit{data} es válida.
   \item \textit{data\_bits}: La cantidad de bits válidos. Para una interfaz configurada a bytes, esta señal permite la transmisión de tramas de anticolisión orientada a bits, las que pueden comenzar con un byte parcial.
-  \item \textit{last\_bit\_in\_byte}: Esta señal solo existe en interfaces de bits. Indica que el bit actual es el último bit en un byte. Es usado para conocer dónde agregar bits de paridad dentro de una serie de bits.
+  \item \textit{last\_bit\_in\_byte}: Esta señal solo existe en interfaces de bits. Indica que el bit actual es el último bit en un byte. Es usada para conocer dónde agregar bits de paridad dentro de una serie de bits.
   \item \textit{req}: El sumidero usa esta señal para pedir que la fuente envíe el siguiente bit / byte de la trama. La norma ISO/IEC 14443A-2 define la duración de bits como 128 ciclos de la portadora, por lo tanto esta señal es necesaria para limitar la tasa de envío de datos.
 \end{itemize}
 
@@ -490,7 +490,7 @@ Simulación y verificación es una parte muy importante del diseño digital. En 
 
 En esta tesis se utiliza verificación funcional mediante simulaciones con la herramienta VCS de Synopsys. Las simulaciones son completamente automatizadas y son ejecutadas con un comando sencillo utilizando un Makefile, por ejemplo: “make serialiser\_tb”.
 
-UVM (Universal Verification Methodology) es una metodología de verificación funcional mediante un conjunto de clases de SystemVerilog. Casi 80\% de proyectos mundiales son verificados con UVM~\cite{verification_trends_2020}. Una de las ventajas principales de UVM es la modularidad. El código es partido en bloques separados facilitando la reutilización de los componentes en varios bancos de pruebas sin tener que duplicar código. La desventaja principal es la complejidad, requiere mucho código para armar un banco de prueba. UVM no es usada en esta tesis porque su implementación sería más compleja que el propio diseño. Sin embargo el marco de verificación está basado en las técnicas de UVM.
+UVM (Universal Verification Methodology) es una metodología de verificación funcional mediante un conjunto de clases de SystemVerilog. Aproximadamente 75\% de proyectos mundiales son verificados con UVM~\cite{verification_trends_2020}. Una de las ventajas principales de UVM es la modularidad. El código es partido en bloques separados facilitando la reutilización de los componentes en varios bancos de pruebas sin tener que duplicar código. La desventaja principal es la complejidad, requiere mucho código para armar un banco de prueba. UVM no es usada en esta tesis porque su implementación sería más compleja que el propio diseño. Sin embargo el marco de verificación está basado en las técnicas de UVM.
 
 El proceso de verificación es estimular las entradas del DUT (Design Under Test) y verificar que las salidas son las esperadas. Frecuentemente no es posible verificar un diseño para todas las combinaciones y secuencias posibles de las entradas, por lo tanto es común usar estímulo aleatorio. Con estímulo aleatorio siempre hay el riesgo de no verificar parte del diseño, por la posibilidad de no elegir una de las combinaciones o secuencias de entradas necesarias para estimular esa parte del diseño. Una técnica para ayudar a mitigar esto, es: aleatorio restringido (constrained random), esta técnica permite la generación de estímulo aleatorio mediante constraints para restringir el estímulo a un rango interesante en particular. Por ejemplo, en vez de generar tramas completamente aleatorias, pueden ser limitadas: a tramas válidas, una colección de tramas en particular, o tramas con errores.
 
@@ -521,71 +521,552 @@ El marco de verificación es implementado con varios componentes, la mayoría so
 \FloatBarrier
 \subsection{Transacciones}
 
+La \figref{fig:transaction_uml} muestra un diagrama UML (Unified Modelling Language) de las clases de transacciones. La clase base es \textbf{Transaction}, es abstracta y contiene dos métodos abstractos: \textbf{compare()} que evalúa si dos transacciones son iguales, y \textbf{to\_string()} que devuelve un string describiendo la transacción. La clase \textbf{QueueTransaction} extiende \textbf{Transaction}, tiene un parámetro de tipo: \textit{ElemType}, que especifica el tipo de una cola declarada en la clase. La cola es usada para contener el dato de la trama representada por la transacción. Los dos métodos abstractos de \textbf{Transaction} son sustituidos, y hay métodos extras para ayudar con la construcción de transacciones. Hay tres clases que extienden \textbf{QueueTransaction}: \textbf{ByteQueueTransaction}, \textbf{BitQueueTransaction} y \textbf{PCDPauseNTransaction}, que definen el parámetro \textit{ElemType} como: logic[7:0] (byte), logic (bit) y \textbf{PCDBitSequence} respectivamente. \textbf{PCDBitSequence} es una enum definida en un paquete, y consiste en las secuencias X, Y y Z describidas en la sección ? (14443-2A). \textbf{ByteQueueTransaction} tiene métodos para calcular y agregar CRCs a la transacción, y para convertir la transacción a una cola de bits. \textbf{BitQueueTransaction} tiene un método para agregar los bits de paridad.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/transactions_uml.vpd}
+  \caption{Diagrama UML de clases de transacciones.}
+  \label{fig:transaction_uml}
+\end{figure}
+
+Para transacciones de transmisión (PICC a PCD), hay dos clases \textbf{TxByteQueueTransaction} y \textbf{TxBitQueueTransaction}, las dos tienen un atributo especificando cuántos bits hay en el primer byte, eso es porque respuestas a mensajes de ANTICOLISIÓN pueden comenzar con un byte parcial, como se muestra en la \figref{fig:anticollision}.
+
+Para transacciones de recepción (PCD a PICC), hay cuatro clases en adición a \textbf{PCDPauseNTransaction}: \textbf{RxByteQueueTransaction}, que tiene un atributo especificando cuántos bits hay en el último byte para tramas cortas y de anticolisiones que pueden terminar con un byte parcial. \textbf{RxBitQueueTransaction}, que tiene un método para convertir su data a una cola de \textbf{PCDBitSecuences}. Estas dos clases son usadas en los controladores para enviar transacciones a los DUTs. Las otras dos clases son \textbf{RxMonitorByteQueueTransaction} y \textbf{RxMonitorBitQueueTransaction}, las que son son las transacciones construidos por los Monitores de recepción. Los dos tienen un atributo para indicar si el monitor ha detectado un pulso en la señal \textit{error} de las interfaces de recepción.
+
 % Controladores
 \FloatBarrier
 \subsection{Controladores}
+
+La \figref{fig:driver_uml} muestra un diagrama UML de clases para los controladores. La clase base principal es \textbf{Driver}, es abstracta y tiene dos tipos parametrizados: \textit{IfaceType}, que es el tipo de la interfaz que maneja, y \textit{TransType}, que es el tipo de las transacciones que el controlador puede envíar sobre esa interfaz. El método \textbf{start()} lleva una referencia a una cola de elementos de tipo \textbf{TransType} y comienza un nuevo hilo de ejecución. Ese hilo monitoriza la cola, cuándo una transacción es empujada a la cola desde el banco de prueba, la controladora la quita, y la pasa al método \textbf{process()}. En esta clase base \textbf{process()} es abstracto, las clases hijas lo sustituyen para definir cómo envíar la transacción sobre su interfaz.
+
+\textbf{RxIfaceDriver} es la clase base para los controladores de las interfaces de recepción (PCD a PICC). \textbf{RxByteIfaceDriver} y \textbf{RxBitIfaceDriver} la extienden para uso con las interfaces de bytes y de bits respectivamente. Las implementaciones del método \textbf{process()} envían el SOC, los datos y el EOC. Esas clases tienen atributos para controlar el timing de las transmisiones, por ejemplo el tiempo entre el SOC y el primer dato, y entre los datos mismos. También esas clases pueden introducir errores en la transmisión pulsando la señal \textit{error} de la \textit{rx\_interface} en un sitio aleatorio.
+
+El controlador \textbf{PCDPauseNDriver} es parecido al \textbf{RxIfaceDriver}, pero en vez de envíar transacciones sobre una \textit{rx\_interface}, las envía mediante una señal \textit{pause\_n} como haría el detector de pausas en el AFE real.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/drivers_uml.vpd}
+  \caption{Diagrama UML de clases para los controladores.}
+  \label{fig:driver_uml}
+\end{figure}
+
+Los controladores de transmisión (PICC a PCD) están divididos en dos partes: las fuentes y los sumideros. Los sumideros son necesarios porque la señal \textit{req} de la \textit{tx\_interface} es manejada por el sumidero. La clase \textbf{TxIfaceSinkDriver} es la clase base de los sumideros, contiene un método \textbf{start()} que espera por la activación de la señal \textit{data\_valid} de la interfaz, y después comienza a pulsar \textit{req} periódicamente hasta que \textit{data\_valid} baja a ‘0’. Unos atributos controlan los timings de los pulsos. Las clases hijas \textbf{TxByteIfaceSinkDriver} y \textbf{TxBitIfaceSinkDriver} son usadas con una \textit{tx\_interface} de bytes y de bits respectivamente. La clase \textbf{TxIfaceSourceDriver} y sus clases hijas son los controladores de las fuentes, y funcionan de la misma manera de los controladores de recepción.
 
 % Monitores
 \FloatBarrier
 \subsection{Monitores}
 
+La \figref{fig:monitor_uml} muestra el diagrama UML de las clases para los monitores. La clase base es \textbf{Monitor}, es abstracta y tiene dos tipos parametrizados: \textit{IfaceType}, que es el tipo de la interfaz que monitoriza, y \textit{TransType}, que es el tipo de las transacciones que construye. El método \textbf{start()} lleva una referencia a una cola de elementos de tipo \textit{TransType} y comienza un nuevo hilo de ejecución. Ese hilo llama el método \textbf{process()}, si esa tarea devuelve una transacción válida, es empujada a la cola, para que el banco de prueba pueda verificarla, y el método \textbf{process()} es llamado de nuevo. Ese proceso se repite por siempre. En esta clase base \textbf{process()} es abstracto, las clases hijas lo sustituyen para definir cómo armar una transacción desde las señales de la interfaz.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/monitors_uml.vpd}
+  \caption{Diagrama UML de clases para los monitores.}
+  \label{fig:monitor_uml}
+\end{figure}
+
+Para la \textit{rx\_interface}, las clases son \textbf{RxIfaceMonitor} y sus hijas \textbf{RxByteIfaceMonitor} y \textbf{RxBitIfaceMonitor}. El método \textbf{process()} monitoriza la \textit{rx\_interface} para una de las señales: \textit{SOC}, \textit{EOC}, \textit{error} o \textit{data\_valid} tener valor ‘1’. Cuándo \textit{SOC} está en ‘1’ comienza construir una nueva transacción. Cuándo \textit{data\_valid} está en ‘1’ el bit o byte actual en la señal \textit{data} es empujado a la cola de datos en la transacción. Cuándo \textit{error} está en ‘1’ la transacción es actualizada para indicar la detección del error. Finalmente cuándo \textit{EOC} está en ‘1’ indicando el fin de la trama, la transacción es devuelta. Si detecta un error, por ejemplo un SOC dentro de una trama, o un EOC fuera de una trama, un error es indicado al usuario mediante la función de sistema \textbf{\$error()}, la transacción es abandonada, y un error es devuelto.
+
+Los monitores para la \textit{tx\_interface} son parecidos a los monitores de recepción, salvo por el método \textit{process()}. Este método primero espera hasta que la señal \textit{data\_valid} esté en ‘1’, que indica el comienzo de una trama. Cuándo la señal \textit{req} está en ‘1’, significa que el sumidero ha leído el último dato, así el monitor agrega el bit o byte actual en la señal \textit{data} a la transacción. Cuándo \textit{data\_valid} baja a ‘0’, significa que la fuente no tiene más datos a enviar siendo el fin de la trama, y la transacción es devuelta.
+
+Finalmente la clase \textbf{LoadModulatorMonitor} es diseñada para monitorear y decodificar la señal \textit{lm\_out} que es conectada al modulador de carga en el AFE. El método \textbf{process()} primero espera por un flanco ascendente de la señal \textit{lm\_out}, y después toma una muestra de la señal cada ciclo para 128 ciclos, lo que es la duración para enviar un bit. Si las muestras son iguales al patrón definido en la norma para envíar un ‘1’ o ‘0’ lógico, ese valor lógico es agregado a la transacción. Cuándo todas las muestras están ‘0’s indica el fin de la trama y la transacción es devuelta. Las muestras teniendo cualquier otro patrón indican un error, y el monitor llama la función de sistema \textbf{\$error()} para avisar al usuario.
+
 % Generador y Conversores de Transacciones
 \FloatBarrier
 \subsection{Generador y Conversores de Transacciones}
+
+El generador de transacciones es una clase \textbf{TransactionGenerator}, que tiene métodos para generar transacciones para todos las tramas definidas en la norma. Por tramas de recepción (PCD a PICC) las transacciones generadas son de tipo \textbf{RxByteTransactions}. Transacciones de tipo \textbf{TxByteTransactions} son generadas por tramas de transmisión (PICC a PCD). También hay métodos para generar transacciones desde una cola de bytes, y para generar transacciones aleatorias restringidas a no ser las tramas definidas en la norma. Las transacciones pueden tener CRCs agregadas automáticamente si es deseado por el usuario. Además es posible pedir que el CRC agregado sea corrompido para verificar como un módulo maneja tramas con errores de CRC.
+
+Los conversores de transacciones son clases que facilitan la conversión de un tipo de transacción a otro. Un ejemplo del uso de un conversor de transacciones es: convirtiendo una \textbf{RxByteTransaction} generada por el generador de transacciones a una \textbf{RxBitTransaction} que el controlador \textbf{RxBitIfaceDriver} puede enviar sobre una \textit{rx\_interface} de bits. La clase base abstracta es \textbf{TransactionConverter}. Esta clase tiene dos tipos parametrizados: \textit{InputTransType} y \textit{OutputTransType} que especifican los tipos de las transacciones involucradas en la conversión. Las clases son:
+
+\begin{itemize}
+  \item \textbf{RxByteToByteTransactionConverter}: Convertir una \textbf{RxByteTransaction} a una \textbf{RxByteTransaction} (identidad).
+  \item \textbf{RxByteToBitTransactionConverter}: Convertir una \textbf{RxByteTransaction} a una \textbf{RxBitTransaction}, opcionalmente agregando los bits de paridad.
+  \item \textbf{RxBitToPCDPauseNTransactionConverter}: Convertir una \textbf{RxBitTransaction} a una \textbf{PCDPauseNTransaction}.
+  \item \textbf{RxByteToPCDPauseNTransactionConverter}: Convertir una \textbf{RxByteTransaction} a una \textbf{PCDPauseNTransaction}, opcionalmente agregando los bits de paridad.
+  \item \textbf{TxByteToByteTransactionConverter}: Convertir una \textbf{TxByteTransaction} a una \textbf{TxByteTransaction} (identidad).
+  \item \textbf{TxByteToBitTransactionConverter}: convertir una \textbf{TxByteTransaction} a una \textbf{TxBitTransaction}, opcionalmente agregando los bits de paridad.
+\end{itemize}
 
 % Secuencias
 \FloatBarrier
 \subsection{Secuencias}
 
+Las clases de secuencias no deberían ser confundidas con el método que el PCD usa para codificar tramas mediante pausas, estas clases son diseñadas para verificar el comportamiento de módulos que reciben tramas desde el PCD, y responden con las respuestas adecuadas. Contienen una serie de pruebas: ponen el DUT en un estado conocido, envían una o más tramas, verifican que las respuestas son las esperadas, y que el estado del DUT cambia como se espera. Cada banco de prueba que necesita usar una secuencia debería extender una de las secuencias genéricas para proveer el funcionamiento específico para el DUT.
+
+La clase base es \textbf{Sequence}, y contiene atributos:
+
+\begin{itemize}
+  \item \textit{rx\_trans\_gen} y \textit{tx\_trans\_gen}, los generadores de transacciones de recepción y transmisión.
+  \item \textit{rx\_trans\_conv} y \textit{tx\_trans\_conv}, los conversores de transacciones para recepción y transmisión.
+  \item \textit{rx\_driver}, el controlador para enviar tramas sobre la \textit{rx\_interface}.
+  \item \textit{rx\_send\_queue}, una referencia a una cola conectada al \textit{rx\_driver}. Las transacciones empujadas a esa cola son enviadas por el controlador.
+  \item \textit{tx\_monitor}, el monitor para monitorizar la \textit{tx\_interface}.
+  \item \textit{tx\_recv\_queue}, una referencia a una cola conectada al \textit{tx\_monitor}. Tramas detectadas sobre la \textit{tx\_interface} son empujadas a esa cola.
+\end{itemize}
+
+Y estos métodos:
+
+\begin{itemize}
+  \item \textbf{send\_transaction()}: Lleva una \textbf{RxByteTransaction}, la convierte a una transacción del tipo requerido mediante el conversor de transacciones \textit{rx\_trans\_conv}, la empuja a la cola \textit{rx\_send\_queue} y espera para el controlador \textit{rx\_driver} terminar enviarla.
+  \item \textbf{send\_*()}: Hay un método para cada trama definida en la norma: por ejemplo \textbf{send\_reqa()} o \textbf{send\_select()}. Generan una transacción para la trama mediante el generador de transacciones \textit{rx\_trans\_gen}, y la pasa a \textbf{send\_transaction()}.
+  \item \textbf{wait\_for\_reply()}: Espera para el monitor \textit{tx\_monitor} a indicar que ha recibido una transacción, quita la transacción de la cola \textit{tx\_recv\_queue} y la devuelve. Hay una aserción para confirmar que la transacción es recibida dentro de un periodo de tiempo especificado.
+  \item \textbf{verify\_no\_reply()}: Espera un periodo de tiempo especificado para confirmar que el DUT no envía una trama.
+  \item \textbf{verify\_trans()}: Verifica que una transacción recibida es igual a la que es esperada.
+  \item \textbf{sequence\_callback()}: Los bancos de pruebas pueden sustituir ese método para permitir actuar sobre eventos de forma específica al banco de prueba.
+\end{itemize}
+La clase \textbf{SpceficTargetSequence} extiende \textbf{Sequence} con la intención de verificar el comportamiento de una PICC en particular, o parte de su diseño. El UID de la PICC es conocido, permitiendo la predicción de sus acciones y respuestas. Esa clase sustituye unos de los métodos de la clase base para seguir y verificar el estado de la PICC, por ejemplo si la PICC es en estado IDLE y una REQA es enviada, la PICC debería transicionar al estado READY y enviar la respuesta ATQA. También hay unos métodos definidos que envían las tramas necesarias para inducir al DUT a transicionar a un estado especificado.
+
+Siguiente la clase \textbf{CommsTestsSequence} extiende \textbf{SpecificTargetSequence}. Esta clase contiene una serie de pruebas para verificar el comportamiento de una PICC, o parte de su diseño. Las pruebas específicas son descritas más adelante en la sección de implementación cuándo son usados. Un ejemplo de una prueba típica es:
+
+\begin{itemize}
+  \item Transicionar al estado READY o READY* aleatoriamente.
+  \item Enviar la trama SELECT con el UID de la PICC pero con CRC corrompida.
+  \item Verifica que el DUT no responde.
+  \item Verifica que el DUT está en estado IDLE o HLTA dependiendo si el estado original estuvo READY o READY respectivamente*.
+\end{itemize}
+
 % Otros
 \FloatBarrier
 \subsection{Otros}
+
+Los controladores y monitores siendo clases no pueden utilizar señales de forma directa, tienen que usar una interfaz, por lo tanto hay dos interfaces más definidas para uso solo en verificación:
+
+\begin{itemize}
+  \item \textit{pcd\_pause\_n\_iface}: Es usada con el controlador \textbf{PCDPauseNDriver}. Contiene una señal de un bit: \textit{pause\_n}, que representa la entrada desde el detector de pausas del AFE.
+  \item \textbf{load\_modulator\_iface}: Es usada con el monitor \textbf{LoadModulatorMonitor}. También consiste en una señal de un bit: \textit{lm}, que representa la salida hasta el modulador de carga del AFE.
+\end{itemize}
+
+La clase de ayuda \textbf{UID} está diseñada para ayudar con operaciones relacionadas con el UID de una PICC. Puede ser usada para guardar un UID simple, doble o triple. También puede ser usada para comparar los datos en una trama ANTICOLLISION o SELECT con el UID de la PICC, para conocer si es esperado que la PICC respondería a esa trama. La clase \textbf{FixedSizeUID} extiende \textbf{UID}, y tiene un parámetro para definir si el UID es simple, doble o triple. También tiene dos parámetros para especificar cuántos de los bits más significativos son constantes, y el valor de esos bits. Los bits menos significativos pueden ser generados aleatoriamente, considerando unas restricciones para asegurar que el UID generado es válido. Esta clase está diseñada en esta forma, porque la implementación de la norma en este trabajo opera de la misma manera.
+
+La clase \textbf{StdBlockAddress} guarda detalles sobre los campos CID y NAD de los bloques estándares definidos en la parte cuatro de la norma. Esta clase es usada para generar transacciones que representan tramas de bloques estándares.
+
+La clase \textbf{Target} contiene información sobre una PICC, y es usada para ayudar las secuencias seguir el estado de la PICC. La información guardada consiste en: La \textbf{UID}, la \textbf{StdBlockAddress} actual, y el nivel de lazo de anticolisión actual. Además contiene métodos ayudantes para operaciones comunes, por ejemplo para decodificar si una \textbf{StdBlockAddress} es direccionada a esta PICC o no.
 
 % Modelos Analógicos
 \FloatBarrier
 \subsubsection{Modelos Analógicos}
 
+Un PCD genera una señal portadora de \SI{13.56}{\mega\hertz} y la usa para enviar información a PICCs en su campo electromagnético mediante la modulación de la amplitud de esa portadora. El detector de pausas en el AFE de la PICC detecta esas pausas y genera la salida digital \textit{pause\_n} para indicar cuándo las pausas son detectadas. La pausa detectada por el AFE es una distorsión de la pausa ideal enviada del dominio digital del PCD. Los dos flancos de la pausa son retrasados debido a las implementaciones del circuito de modulación de amplitud del PCD y del detector de pausas del AFE. También esa distorsión puede retardar los flancos descendente y ascendente por tiempos diferentes, cambiando la duración de la pausa. Además el AFE de la PICC recupera el reloj desde la portadora, y por lo tanto el reloj se detiene durante las pausas. Debido a las implementaciones del circuito de modulación de amplitud del PCD y de la recuperación del reloj del AFE, el reloj puede sigue andando por unos ciclos después de que el PCD comienza la pausa, y el reloj puede seguir detenido por unos ciclos después de que el PCD termina la pausa. Para simular este comportamiento, un modelo del PCD y del AFE fue implementado. La \figref{fig:analog_model} muestra ese modelo. 
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/analogue_model}
+  \caption{Modelo del PCD y del AFE de la PICC para uso en simulaciones.}
+  \label{fig:analog_model}
+\end{figure}
+
+El modelo consiste en cuatro bloques:
+
+\begin{itemize}
+  \item Generador de Reloj: Genera un reloj continuo de \SI{13.56}{\mega\hertz} que es un modelo del reloj del PCD.
+  \item \textbf{PCDPauseNDriver}: El controlador que envía transacciones mediante pausas. Genera una señal \textit{pcd\_pause\_n} que es la pausa ideal dentro del PCD. La duración de la pausa puede ser elegida por el usuario.
+  \item Detector de Pausas: Un modelo del bloque con el mismo nombre en el AFE de la PICC. Genera una señal: \textit{pause\_n} que es una versión retrasada de la señal \textit{pcd\_pause\_n}. Los retardos del flanco ascendente y el flanco descendente pueden ser elegidos por el usuario individualmente.
+  \item Recuperación del Reloj: Un modelo del bloque con el mismo nombre en el AFE de la PICC. Genera un reloj basado en lo del PCD, que se detiene durante las pausas. Los retardos entre el comienzo de una pausa y el reloj deteniéndose, y entre el fin de una pausa y el reloj comenzando de nuevo, pueden ser elegidos por el usuario individualmente. Además el usuario puede especificar que el reloj no se detiene, por lo tanto este modelo puede simular el comportamiento de un AFE dónde el reloj es continuo.
+\end{itemize}
+
+La \figref{fig:afe_sim} muestra dos simulaciones de una pausa con argumentos de timing diferentes. En el momento de escritura de esta tesis los timings por defectos son basados en simulaciones SPICE del AFE implementado por Alcalde Bessia por otro proceso de fabricación~\cite{fabricio_eamta}. Cuándo exista una implementación del AFE para el proceso de fabricación XFAB XH018 es altamente sugerido que los valores en este modelo sean actualizados para adecuarse la situación real.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/analogue_sim}
+  \caption{Dos ejemplos con timings diferentes del modelo analógico del PCD y el AFE de la PICC.}
+  \label{fig:afe_sim}
+\end{figure}
+
 % Estructura de los Bancos de Pruebas
 \FloatBarrier
 \subsection{Estructura de los Bancos de Pruebas}
+
+La mayoría de los módulos en esta tesis son verificados con un banco de prueba que tiene una de las dos estructuras mostrado en la \figref{fig:tb_structures}.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/verification3}
+  \caption{Dos estructuras comunes de los bancos de pruebas.}
+  \label{fig:tb_structures}
+\end{figure}
+
+Los módulos que simplemente reciben tramas, operan sobre ellas, y las reenvían, son verificados con un banco de prueba sin una secuencia (izquierda). El bloque de control genera una transacción en el formato adecuado y la pasa al controlador mediante un FIFO. El DUT la recibe por su interfaz de sumidero, la procesa, y la reenvía sobre su interfaz de fuente. El monitor detecta la trama reenviada, construye una transacción, y la pasa al bloque de control mediante otro FIFO. Finalmente el bloque de control compara esas transacciones para verificar que la trama fue modificada correctamente.
+
+Los módulos que reciben solicitudes del PCD y envían respuestas, son verificados con un banco de prueba que incluye una secuencia (derecha). El banco de prueba define una nueva clase de secuencia que extiende una de las secuencias genéricas, y sustituye varios métodos para implementar funcionamiento específico a ese banco de prueba. Esos bancos de pruebas funcionan de una manera parecida a los bancos de prueba sin secuencias, pero las tramas enviadas son elegidas por las pruebas en la secuencia, y son generadas por el generador de transacciones. Además las respuestas enviadas por el DUT son comparadas en la secuencia con las respuestas esperadas.
+
 
 % ISO/IEC 14443A núcleo IP
 % --------------------------------
 \FloatBarrier
 \section{ISO/IEC 14443A núcleo IP}
 
+Está parte de la tesis está diseñada para ser una implementación digital genérica de la norma ISO/IEC 14443 para PICCs tipo A. Cuándo se combina con una AFE puede ser usado para cualquier proyecto que requiera funcionar como una PICC tipo A. La implementación  se divide en tres partes principales para las partes dos, tres, y cuatro de la norma.
+
 % ISO/IEC 14443-2A
 \FloatBarrier
 \subsection{ISO/IEC 14443-2A}
+
+Está parte de la implementación consiste en cinco módulos y sus bancos de pruebas correspondientes. Para la ruta de recepción de tramas hay un solo módulo: \textbf{sequence\_decode}, que convierte una serie de pausas a tramas de bits. La ruta de transmisión consiste en tres módulos que convierten tramas de bits a una señal apta para manejar el modulador de carga. Las módulos son:
+
+\begin{itemize}
+  \item \textbf{subcarrier}: Genera la subportadora.
+  \item \textbf{bit\_encoder}: Genera la codificación manchester desde una trama de bits.
+  \item \textbf{tx}: Recibe la trama a transmitir, agrega el SOC, y produce la salida al modulador de carga mediante los módulos: \textbf{subcarrier} y \textbf{bit\_encode}.
+\end{itemize}
+
+Finalmente hay un módulo: \textbf{iso14443\_2a} que es el módulo más alto de esta parte de la norma.
 
 % subcarrier
 \FloatBarrier
 \subsubsection{subcarrier}
 
+Este módulo genera la señal de la subportadora cuándo pedido. Las entradas y salidas son descritas en el \tabref{tab:ports_subcarrier}. La norma dicta que la subportadora debería tener frecuencia igual a fc/16, y que el periodo de bit debería comenzar con el estado cargado de la portadora [ISO/IEC 14443A]. Esto significa que la salida \textit{subcarrier} es una onda cuadrada que comienza con valor ‘1’, y tiene un periodo de 16 ciclos del reloj.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    en&Entrada&Señal de activación. \\
+    subcarrier&Salida&Subportadora. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{subcarrirer}.}
+  \label{tab:ports_subcarrier}
+\end{table}
+
+La implementación consiste en un contador de tres bits, cuándo el módulo no está activado el contador es detenido con valor cero, y la salida \textit{subcarrier} está ‘0’. Cuándo la señal \textit{en} sube a ‘1’, la salida \textit{subcarrier} es asignada a ‘1’ y el contador comienza a contar. Cada ocho ciclos del reloj el contador completa su cuenta, y la salida \textit{subcarrier} invierte su estado lógico.
+
+El banco de prueba consiste en activar el DUT tres veces. La primera vez es activado por 256 ciclos (dos duraciones de bits). La segunda vez es activado por seis ciclos, para que la subportadora es ‘1’ cuando se desactiva el DUT. Finalmente la tercera vez el módulo es activado para trece ciclos, para que la subportadora es ‘0’ cuando se desactiva el DUT. Hay cuatro aserciones que verifican el comportamiento:
+
+\begin{itemize}
+  \item La subportadora está ‘0’ mientras el DUT está en reset.
+  \item La subportadora está ‘0’ mientras el DUT está desactivado.
+  \item Un ciclo después del flanco ascendente de la señal \textit{en} el subcarrier está ‘1’.
+  \item Cuando el DUT está activado la subportadora tiene un periodo de 16 ciclos del reloj con un ciclo de trabajo de 50\%.
+\end{itemize}
+
+El informe de cobertura da un resultado de 100\% cobertura.
+
 % bit_encoder
 \FloatBarrier
 \subsubsection{bit\_encoder}
 
+Este módulo es un sumidero por la \textit{tx\_interface}, recibe tramas de bits y las convierte a su codificación Manchester con duración de bit de 128 ciclos del reloj. Las entradas y salidas son descritas en el \tabref{tab:ports_bit_encoder}.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    en&Entrada&Señal de activación. \\
+    in\_iface&Entrada&Sumidero de la, \textit{tx\_interface}. Las tramas a transmitir. \\
+    encoded\_data&Salida&Codificación Manchester de cada bit. \\
+    last\_tick&Salida&Indica el último ciclo de cada periodo de bit. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{bit\_encoder}.}
+  \label{tab:ports_bit_encoder}
+\end{table}
+
+La implementación de este módulo consiste en un contador de siete bits para contar la duración de bit de 128 ciclos. Cuando el módulo no está activado el contador tiene valor cero, y cuando está activado cuenta repetitivamente. Al principio de cada duración de bit, eso es decir cuándo el contador tiene valor cero y el módulo está activado, la salida \textit{encoded\_data} es asignada al valor del bit actual presente en la \textit{in\_iface}. En el medio del periodo del bit, cuando el contador tiene valor 64, la salida \textit{encoded\_data} se invierte. Esto significa que para envíar el bit 0, \textit{encoded\_data} está ‘0’ por 64 ciclos y después ‘1’ por 64 ciclos más. La señal \textit{tx\_interface.req} está pulsada por un ciclo del reloj en el medio del periodo de bit, para pedir que la fuente prepare el siguiente bit. Finalmente la salida \textit{last\_tick} está pulsada cuándo el contador tiene valor 127, esta salida es usada para determinar cuándo desactivar este módulo después del último bit de la trama.
+
+El banco de prueba tiene un \textbf{TxBitIfaceSourceDriver} para envíar tramas al DUT. No utiliza un monitor, ya que es el único módulo que genera una salida en este formato. Antes de envíar cada trama, la transacción es convertida a una cola que consiste en los valores esperados por cada ciclo de la trama. Una aserción verifica que la salida \textit{encoded\_data} del DUT corresponde con esa cola. Las pruebas consisten en:
+
+\begin{itemize}
+  \item Enviar dos transacciones de un solo bit cada una, con valores ‘0’ y ‘1’.
+  \item Enviar dos transacciones de dos bit cada una, con valores “00” y “10”.
+  \item Enviar mil transacciones de data y tamaño aleatorios.
+\end{itemize}
+
+Las aserciones son:
+
+\begin{itemize}
+  \item Cuándo el DUT está en reset o no está activado, las salidas: \textit{in\_iface.req} y \textit{last\_tick} están ‘0’s.
+  \item La salida \textit{last\_tick} solo está ‘1’ para un ciclo del reloj a la vez.
+  \item Mientras el DUT está activado, las salidas \textit{in\_iface.req} y \textit{last\_tick} pulsan por un ciclo del reloj, cada 128 ciclos.
+  \item Después del flanco ascendente de la entrada \textit{en}, la salida \textit{last\_tick} está ‘0’ por 127 ciclos del reloj y ‘1’ en el siguiente ciclo.
+\end{itemize}
+
+El informe de cobertura da un resultado de 100\% por el DUT.
+
 % tx
 \FloatBarrier
 \subsubsection{tx}
+
+El módulo \textbf{tx} instancia los módulos: \textbf{subcarrier} y \textbf{bit\_encoder}, e incluye una máquina de estados sencilla que: agrega el SOC a las tramas, activa los submódulos, y manejar la señal \textit{tx\_interface.req} para pedir que la fuente prepare el siguiente bit. Finalmente la señal \textit{lm\_out} es el AND lógico de la subportadora y la señal \textit{encoded\_data}, esta salida es registrada para prevenir glitches llegando al modulador de carga. Las entradas y salidas son descritas en el \tabref{tab:ports_tx}.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    in\_iface&Entrada&Sumidero de la \textit{tx\_interface}. \\
+    lm\_out&Salida&Señal hacia el modulador de carga. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{tx}.}
+  \label{tab:ports_tx}
+\end{table}
+
+
+El banco de prueba tiene un controlador \textbf{TxBitIfaceSourceDriver} y un monitor \textbf{LoadModulatorMonitor}. Las pruebas son:
+
+\begin{itemize}
+  \item El SOC es agregado correctamente. Esto es hecho en el monitor, que verifica que todas las tramas comienzan con un SOC.
+  \item La salida \textit{lm\_out} está en ‘0’ cuándo la fuente no está enviando una trama.
+  \item Tramas son enviadas correctamente. Cien transacciones aleatorias son enviadas y las transacciones detectadas por el monitor son comparadas a las enviadas dentro de una aserción.
+\end{itemize}
+
+El informe de cobertura da un resultado de 92\% por el DUT. Las partes que faltan cobertura no son relevantes, por ejemplo no hay una transición desde el estado State\_SOC al estado State\_IDLE, ya que no está permitido transmitir una trama SOC aislada.
 
 % sequence_decode
 \FloatBarrier
 \subsubsection{sequence\_decode}
 \label{sec:sequence_decode}
 
+El módulo \textbf{sequence\_decode} convierte series de pausas a tramas de bits, y las envía al siguiente módulo mediante una fuente de la \textit{rx\_interface}. La norma ISO/IEC 14443-2 [iso/iec 14443-2] especifica que la duración de bit por recepción es 128 ciclos de la portadora. La existencia de una pausa dentro de una duración de bit y su ubicación determina qué tipo de secuencia es: X, Y o Z. Una pausa al principio de la duración de bit es una secuencia Z, una pausa en el medio de la duración de bit es una secuencia X, y una duración de bit sin pausas es una secuencia Y.  La \figref{fig:sequences} muestra estas secuencias. Cada trama comienza con una secuencia Z (SOC). Un ‘1’ es transmitido con una secuencia X. La secuencia usada para transmitir un ‘0’ depende en la última secuencia. Una secuencia Y es usada cuando la última secuencia fue una X, y una secuencia Z es usada en otros casos. Cada trama termina con un EOC, que es transmitido con un ‘0’ lógico seguido por la secuencia Y. Finalmente una secuencia X seguida por una secuencia Z no es permitido y debería estar contado como un error.
+
+En teoría el proceso de convertir una serie de pausas a secuencias es: contar el número de ciclos del reloj en cada duración de bit para determinar dónde comienza la pausa. En la práctica es más complicado debido a que el reloj puede detenerse durante las pausas. Además el tiempo que el reloj está detenido depende de la implementación del bloque de la recuperación del reloj del AFE, y las propiedades del PCD. Debido a que este núcleo IP está diseñado para ser genérico, tiene que funcionar con diferentes AFEs y diferentes PCDs, por lo tanto este módulo fue implementado para funcionar con un amplio rango de comportamientos de relojes. La estrategia propuesta para el módulo \textbf{sequence\_decode} consiste en contar ciclos de clock entre flancos ascendentes de la señal \textit{pause\_n}. Luego a partir del valor de la cuenta se infiere la secuencia recibida. A continuación se analizan las condiciones para aplicar este método de decodificación.
+
+La \figref{fig:rx_timings_tz2z} muestra dos secuencias Z consecutivas. \textit{PCD CLK} y \textit{PICC CLK} son los relojes en el PCD y la PICC respectivamente, \textit{pcd\_pause\_n} es la pausa digital que el PCD transmite, \textit{picc\_pause\_n} es la pausa detectada en el AFE, \textit{PICC CLK ACTIVE} indica cuándo el reloj de la PICC está activo. El tiempo entre los dos flancos ascendentes de las pausas medido en ciclos del reloj del PCD es $T_b = 128$. Si el reloj de la PICC se detiene por $T_{nc}$ ciclos durante las pausas, la PICC mediría $T_{z2z} = T_b - T_{nc}$ ciclos entre los flancos ascendentes de las pausas.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/rx_timings_tz2z}
+  \caption{Diagrama de timing de dos pausas y el comportamiento del reloj de la PICC.}
+  \label{fig:rx_timings_tz2z}
+\end{figure}
+
+La \figref{fig:rx_timings} muestra el número de ciclos entre dos pausas para todas las combinaciones de secuencias posibles. Usa la misma convención de la \figref{fig:rx_timings_tz2z}, $T_{z2x}$ por ejemplo representa la cantidad de ciclos que la PICC mide entre los flancos ascendentes de las pausas cuándo el PCD transmite una secuencia Z seguida por una secuencia X. Esta convención sigue válida aun cuándo el AFE produce un reloj continuo, y por lo tanto $T_{nc}$ = 0.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/rx_timings}
+  \caption{Números de ciclos posibles entre dos pausas.}
+  \label{fig:rx_timings}
+\end{figure}
+\message{TODO: Update this image}
+
+Se define $T_{nc\_min}$ y $T_{nc\_max}$ como el número de ciclos mínimos y máximos que el reloj puede estar detenido para que las secuencias puedan ser decodificadas correctamente. Este análisis es necesario para considerar variaciones en el comportamiento de los PCDs y los AFEs. Considerando las combinación de secuencias: Z~$\rightarrow$~Z, y Z~$\rightarrow$~X y observando la \figref{fig:rx_timings}, se puede calcular:
+
+\begin{align*}
+    T_{z2z\_max} &= 128 - T_{nc\_min} \\
+    T_{z2x\_min} &= 192 - T_{nc\_max} \\
+\end{align*}
+
+Conociendo que $T_{z2x\_min} > T_{z2z\_max}$, para que se pueda distinguir entre una Z~$\rightarrow$~X y una Z~$\rightarrow$~Z, se puede derivar:
+
+\begin{align*}
+    192 - T_{nc\_max} &> 128 - T_{nc\_min} \\
+    T_{nc\_max} &< T_{nc\_min} + 64 \\
+\end{align*}
+
+Para soportar AFEs que usan un PLL para proveer un reloj continuo, debería aceptarse $T_{nc\_min}$ igual a 0. Además es posible que haya jitter en la detección de los flancos ascendentes de las las pausas en el AFE. Ese jitter puede causar que una PICC cuente un número de ciclos ligeramente diferente entre dos secuencias cada vez que ocurren. Ese comportamiento es igual a si el jitter fue en el número de ciclos que el reloj está detenido. En esta implementación es requerido que ese jitter es a lo máximo tres ciclos, por lo tanto se usa un $T_{nc\_min} = -3$, lo que da un $T_{nc\_max} < 61$.
+
+Considerando el caso de una secuencia X seguido por una secuencia Y se requiere que: $T_{x2y\_min} > T_{x2x\_max}$, es decir que después de una secuencia X, el momento que este módulo emite una secuencia Y tiene que ser después del último momento que puede llegar una pausa que indicaría otra secuencia X. Por lo tanto:
+
+\begin{align*}
+    T_{x2y\_min} &> 128 - T_{nc\_min} \\
+    T_{x2y\_min} &> 131 \\
+\end{align*}
+
+Eligiendo $T_{x2y\_min} = 132$, significa que si no hay una pausa detectada por más de 131 ciclos después de una secuencia X, se asume el arribo de una secuencia Y. Finalmente considerando el serie de secuencias: X~$\rightarrow$~Y~$\rightarrow$~Z:
+
+\begin{align*}
+    T_{x2y2z\_min} &= 192 - T_{nc\_max} \\
+               &= T_{x2y\_min} + T_{y2z\_min} \\
+               &= 132 + T_{y2z\_min} \\
+    \\
+    192 - T_{nc\_max} &= 132 + T_{y2z\_min} \\
+    T_{y2z\_min} &= 60 - T_{nc\_max} \\
+\end{align*}
+
+Una $T_{y2z\_min} = 0$, implica que la secuencia Y puede ser detectada en el mismo ciclo de un flanco ascendente de una pausa por una secuencia Z. Para simplificar el diseño esto no se permite, así:
+
+\begin{align*}
+    T_{y2z\_min} &> 0 \\
+    60 - T_{nc\_max} &> 0 \\
+    T_{nc\_max} &< 60 \\
+\end{align*}
+
+En resumen es posible diseñar un sistema que decodifica una serie de pausas a secuencias, siempre que el AFE pueda garantizar que el reloj nunca se detiene por más de 59 ciclos. Para soportar hasta tres ciclos de jitter en la detección de las pausas como especificado arriba es recomendado que el reloj no se detenga por más de 56 ciclos. El mismo diseño va a funcionar con un AFE que produce un reloj continuo. Estos requisitos por el AFE son razonables, debido a que la duración de pausa máxima determinada con la \figref{fig:pause} y el \tabref{tab:pause_values} es 56,5 ciclos del reloj, medido entre los puntos 1 y 2, dónde él amplitud de la portadora es a 90\% de su original.
+
+Usando $T_{nc\_min} = -3$, y $T_{nc\_max = 59}$, es posible diseñar un sistema que decodifica pausas a secuencias, dependiendo de la última secuencia detectada y el número de ciclos contados entre los flancos ascendentes de las pausas. La decodificación usada es mostrada en la\tabref{tab:sequence_decode_timings}. Valores fuera de estos rangos son considerados errores.
+
+\begin{table}[htb]
+  \centering
+  \begin{tabular}{c|r|r|c}
+    \rowcolor{lightgray!35}
+    \textbf{Última Secuencia} & \textbf{Mín Ciclos} & \textbf{Máx Ciclos} & \textbf{Proxima Secuencia} \\
+    \hline
+                        & 69             & 131   & X \\
+    \multirow{-2}{*}{X} & 132 (timeout)  & -     & Y \\
+    \rowcolor{lightgray!35}
+                        & 69             & 131   & Z \\
+    \rowcolor{lightgray!35}
+                        & 132            & 195   & X \\
+    \rowcolor{lightgray!35}
+    \multirow{-3}{*}{Z} & 196 (timeout)  & -     & Y \\
+                        & 1              & 64    & Z \\
+                        & 65             & 127   & X \\
+    \multirow{-3}{*}{Y} & 128 (timeout)  & -     & Y \\
+  \end{tabular}
+  \caption{Decodificación de pausas basado en la última secuencia y el tiempo entre pausas.}
+  \label{tab:sequence_decode_timings}
+\end{table}
+
+La \tabref{tab:ports_sequence_decode} muestra las entradas y salidas de este módulo. La implementación consiste en dos partes. La primera parte determina la secuencia desde las pausas detectadas. El diseño comienza en un estado inactivo, cuándo detecta la primera pausa emite una secuencia Z debido a que el SOC de la trama es una secuencia Z. Después emite secuencias cuándo pausas están detectadas o cuándo timeouts ocurren usando el método descrito arriba. Después de detectar dos secuencias Y consecutivas, eso es dos duraciones de bits sin pausas, se vuelve al estado inactivo, y espera por la próxima trama. En el caso de detectar un error, no emite más secuencias y después de haber detectado tres duraciones de bits sin pausas vuelve al estado inactivo. La segunda parte de este módulo decodifica las secuencias a una trama de bits y lo envía sobre la \textit{out\_iface} para el posterior procesamiento en otros módulos.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    pause\_n\_synchronised &Entrada&Pausa, activa baja, sincronizada.\\
+    out\_iface&Salida&Fuente de la \textit{rx\_interface}.\\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{sequence\_decode}.}
+  \label{tab:ports_sequence_decode}
+\end{table}
+
+Para verificar este módulo el banco de prueba envía varias transacciones mediante el controlador \textbf{PCDPauseNDriver} en el modelo del AFE, que maneja la entrada del DUT \textit{pause\_n\_synchronised}. El monitor \textbf{RxBitIfaceMonitor}, monitoriza la salida \textit{out\_iface} y emite transacciones por las tramas detectadas. Esas transacciones son comparadas con las enviadas para verificar que el DUT decodifica correctamente las pausas. Las transacciones enviadas son:
+
+\begin{itemize}
+  \item La transacción ZZXXYZXYXYY, y la transacción ZXYZY. Estas dos transacciones verifican todas las filas en el \tabref{tab:sequence_decode_timings}.
+  \item Cincuenta transacciones aleatorias sin errores.
+  \item La transacción: ZXZZXYXYY para verificar que la transición Z -> X es detectada como un error, y que secuencias después del error son ignoradas.
+\end{itemize}
+
+Estas pruebas son repetidas varias veces con diferentes timings configurados en el modelo del AFE. Los parámetros de timings son:
+
+\begin{itemize}
+  \item La duración de la pausa.
+  \item Si el reloj se detiene durante las pausas o no.
+  \item El retardo entre el principio de una pausa enviada por el PCD y el reloj deteniéndose.
+  \item El retardo entre el final de una pausa enviada por el PCD y el reloj activándose de nuevo.
+  \item El retardo entre el principio de una pausa enviada por el PCD y el AFE detectándolo.
+  \item El retardo entre el final de una pausa enviada por el PCD y el AFE detectándolo.
+\end{itemize}
+
+Para asegurar que un amplio rango de las condiciones posibles son verificadas estos tiempos son elegidos aleatoriamente con restricciones sobre cuántos flancos el reloj de la PICC pueden faltar comparado al reloj del PCD. El código que elige esos valores toma un argumento \textit{missing\_edges} que define el número de flancos que faltan al reloj de la PICC. Este argumento es usado con la sintaxis de SystemVerilog “std::randomize() with {}” que permite especificar una lista de variables a randomizar y una lista de condiciones que los resultados deben cumplir. Antes fue especificado que este diseño funciona si el reloj se detiene cómo mínimo 0 ciclos, y cómo máximo 59 ciclos. Esos valores corresponden con un \textit{missing\_edges} entre 0 y 118. Las pruebas son repetidos cien veces para cada uno de \textit{missing\_edge} igual a  0 a 3 y 115 a 118, y después mil veces con \textit{missing\_edges} elegido aleatoriamente entre 4 y 114.
+
+El informe de cobertura da un resultado de 95\% por el DUT. Los tres sitios en los que falta cobertura son condiciones imposibles de ocurrir, por ejemplo emitiendo una secuencia Z después de una secuencia X. La norma define una Z~$\rightarrow$~X como un error, por lo tanto cuando el DUT detecta la Z emite un error mediante \textit{out\_iface.error}, en vez de tratarla como una secuencia Z normal.
+
 % iso14443_2a
 \FloatBarrier
 \subsubsection{iso14443\_2a}
+
+Este módulo simplemente instancia los módulos: \textbf{tx} y \textbf{sequence\_decode} como se muestra la \figref{fig:iso14443_2a}. Las entradas y salidas son descritas en el \tabref{tab:ports_iso14443_2a}.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    pause\_n\_synchronised &Entrada&Pausa, activa baja, sincronizada. \\
+    rx\_iface&Salida&Fuente de la \textit{rx\_interface}. \\
+    tx\_iface&Entrada&Sumidero de la \textit{tx\_interface}. \\
+    lm\_out&Salida&Señal hacia el modulador de carga. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{iso14443\_2a}.}
+  \label{tab:ports_iso14443_2a}
+\end{table}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./img/iso14443_2a.drawio}
+  \caption{Diagrama en bloque del módulo \textbf{iso14443\_2a}.}
+  \label{fig:iso14443_2a}
+\end{figure}
+
+El banco de prueba funciona de forma loopback, genera mil transacciones aleatoriamente, que son transmitidos mediante el controlador \textbf{PCDPauseNDriver} en el modelo del AFE. El monitor \textbf{RxBitIfaceMonitor} recibe las tramas procesadas por el DUT sobre la \textit{rx\_iface}. Cada transacción recibida por el monitor es convertida a una \textbf{TxBitTransaction} y es reenviado sobre la \textit{tx\_iface} con un controlador \textbf{TxBitIfaceSourceDriver}. Finalmente un monitor \textbf{LoadModulatorMonitor} detecta las tramas transmitidas por el DUT sobre su salida \textit{lm\_out}. Cada transacción recibida por ese monitor es comparada con las transacciones enviadas en una aserción. La \figref{fig:iso14443_2a_tb} muestra un diagrama en bloques del banco de prueba.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.9\textwidth]{./img/iso14443_2a_tb.drawio}
+  \caption{Diagrama en bloques del banco de prueba para el módulo \textbf{iso14443\_2a}}
+  \label{fig:iso14443_2a_tb}
+\end{figure}
+
+Debido a que este módulo solo consiste en la instanciación de dos módulos, la única métrica de cobertura generada por el DUT, no incluyendo los submódulos auxiliares, es de cambio de estado de las señales y compuertas (toggle), que tiene 100\% cobertura.
 
 % ISO/IEC 14443-3A
 \FloatBarrier
 \subsection{ISO/IEC 14443-3A}
 
+Esta parte de la implementación consiste en once módulos y sus bancos de pruebas correspondientes. 
+
+\begin{itemize}
+  \item \textbf{frame\_decode}: Verifica y quita los bits de paridad de tramas recibidas desde el PCD.
+  \item \textbf{desreialiser}: Convierte una trama de bits a una trama de bytes. Usado en la ruta de recepción.
+  \item \textbf{FDT}: Genera una señal para activar la transmisión de una respuesta, para que se cumpla con el FDT definido en la norma.
+  \item \textbf{CRC\_A}: Calcula el CRC16 de una serie de bits.
+  \item \textbf{crc\_control}: Verifica el CRC16 de tramas recibidas, y genera el CRC16 de tramas a transmitir.
+  \item \textbf{serialiser}: Convierte una trama de bytes a una trama de bits. Usado en la ruta de transmisión.
+  \item \textbf{frame\_encode}: Comienza la transmisión de una trama al PCD cuándo recibe la señal de activación del módulo FDT, y agrega los bits de paridad y el CRC16 a la trama.
+  \item \textbf{framing}: Instancia los módulos de arriba.
+  \item \textbf{initialisation}: Recibe tramas de inicialización y anticolisión desde el PCD, actúa sobre ellas, y responde con la respuesta adecuada.
+  \item \textbf{routing}: Rutea tramas recibidas desde el PCD al módulo apto para procesarlas, y rutea las respuestas desde ese módulo para transmitir al PCD. El ruteo es controlado basado en el estado actual de la PICC.
+  \item \textbf{iso14443\_3a}: El módulo más alto para esta parte de la norma, instancia los módulos: \textbf{framing}, \textbf{initialisation} y \textbf{routing}.
+\end{itemize}
+
 % frame_decode
 \FloatBarrier
 \subsubsection{frame\_decode}
+
+Este módulo tiene un sumidero de la \textit{rx\_interface} que está conectado a la fuente del módulo \textbf{iso14443\_2a}, y una fuente, también de la \textit{rx\_interface} que está conectado al próximo módulo. Las Tramas son recibidas en una serie de bits, después de cada 8 bits hay un bit de paridad. Esos bits de paridad son verificados y quitados antes de reenviar la trama por la fuente. Las entradas y salidas son descritas en el \tabref{tab:ports_frame_decode}.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    in\_iface&Entrada&Sumidero de la \textit{rx\_interface}. \\
+    out\_iface&Salida&Fuente de la \textit{rx\_interface}. \\
+    last\_bit&Salida&Último bit recibido. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{frame\_decode}.}
+  \label{tab:ports_frame_decode}
+\end{table}
+
+El tipo de paridad definido por la norma es impar, eso es a decir que el número de unos en el byte más el bit de paridad debería ser impar. Por ejemplo el byte: 8’b0101\_1100, tiene cuatro ‘1’s, cuatro es par, así el bit de paridad debe ser ‘1’, para que el total de los ‘1’s sea impar.
+
+Los bits de paridad son verificados y quitados mediante el siguiente proceso. Al principio de cada trama, un indicador \textit{expected\_parity} es inicializado a ‘1’. Después cuándo cada uno de los primeros ochos bits son recibidos, son reenviados, y ese indicador es actualizado con el resultado de: \textit{expecetd\_parity} XOR \textit{in\_iface.data}. Ese cálculo invierte el valor de \textit{expected\_parity} cada vez que un ‘1’ es recibido. El noveno bit es el bit de paridad, así es comparado con \textit{expected\_parity} para verificar que es correcto. Este proceso se repite hasta el fin de la trama, o hasta un error es detectado. 
+
+Hay tres errores que pueden ser detectados en este módulo: Un error indicado en la \textit{in\_iface}, Un error en un bit de paridad, y una trama que le falta su último bit de paridad. Para soportar tramas cortas y de anticolisiones que pueden terminar con un byte parcial sin un bit de paridad, ese último error solo es emitido si una trama termina con un byte entero.
+
+Finalmente la salida \textit{last\_bit} indica el último bit recibido, incluyendo bits de paridad. Esta señal es usada en el módulo \textbf{FDT} para determinar cuándo comenzar a enviar la respuesta.
+
+El banco de prueba para este módulo consiste en un controlador \textbf{RxBitIfaceDriver} y un monitor \textbf{RxBitIfaceMonitor}. Por cada prueba una transacción es generada aleatoriamente, los bits de paridad son agregados, es enviada por el controlador, el resultado es recibido por el monitor y es comparado con la transacción enviada. Las pruebas son:
+
+\begin{itemize}
+  \item Enviar una transacción de 8 bits más el bit de paridad correcto.
+  \item Enviar una transacción de 8 bits más el bit de paridad equivocado.
+  \item Enviar una transacción de 8 bits que falta el bit de paridad.
+  \item Enviar mil transacciones de 8 bits cada uno, con un error enviado por el controlador.
+  \item Enviar ocho transacciones con cero a siete bits en orden.
+  \item Envíar mil transacciones cada uno con un número de bits aleatorio entre uno y ochenta, más los bits de paridad correctos.
+  \item Envíar mil transacciones cada uno con un número de bits aleatorio entre ocho y ochenta, con un bit de paridad equivocado y los demás correctos.
+  \item Enviar mil transacciones con un número de bytes entero entre 1 y diez, más los bits de paridad por cada byte menos el último.
+\end{itemize}
+
+Hay dos aserciones concurrentes para verificar que la señal \textit{last\_bit} es correcta. La primera confirma que la señal corresponde con la última bit enviada. La segunda verifica que esa señal no cambia entre tramas.
+
+El informe de cobertura da el DUT un resultado de 100\%.
 
 % deserialiser
 \FloatBarrier
