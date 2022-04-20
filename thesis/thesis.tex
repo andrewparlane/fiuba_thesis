@@ -239,6 +239,7 @@ Para responder las PICCs tipo A usan modulación de carga para generar una subpo
 
 \FloatBarrier
 \subsection{ISO/IEC 14443-3: \large{Inicialización y Anticolisión}}
+\label{sec:introduction_iso14443-3}
 
 La información presentada en esta sección es válida considerando una tasa de bit de fc/128 en cada dirección y PICCs tipo A.
 
@@ -718,7 +719,7 @@ Finalmente hay un módulo: \textbf{iso14443\_2a} que es el módulo más alto de 
 \FloatBarrier
 \subsubsection{subcarrier}
 
-Este módulo genera la señal de la subportadora cuándo pedido. Las entradas y salidas son descritas en el \tabref{tab:ports_subcarrier}. La norma dicta que la subportadora debería tener frecuencia igual a fc/16, y que el periodo de bit debería comenzar con el estado cargado de la portadora [ISO/IEC 14443A]. Esto significa que la salida \textit{subcarrier} es una onda cuadrada que comienza con valor ‘1’, y tiene un periodo de 16 ciclos del reloj.
+Este módulo genera la señal de la subportadora cuándo pedido. Las entradas y salidas son descritas en el \tabref{tab:ports_subcarrier}. La norma dicta que la subportadora debería tener frecuencia igual a fc/16, y que el periodo de bit debería comenzar con el estado cargado de la portadora~\cite{iso14443-2}. Esto significa que la salida \textit{subcarrier} es una onda cuadrada que comienza con valor ‘1’, y tiene un periodo de 16 ciclos del reloj.
 
 \begin{table}[htb]
   \centering
@@ -829,7 +830,7 @@ El informe de cobertura da un resultado de 92\% por el DUT. Las partes que falta
 \subsubsection{sequence\_decode}
 \label{sec:sequence_decode}
 
-El módulo \textbf{sequence\_decode} convierte series de pausas a tramas de bits, y las envía al siguiente módulo mediante una fuente de la \textit{rx\_interface}. La norma ISO/IEC 14443-2 [iso/iec 14443-2] especifica que la duración de bit por recepción es 128 ciclos de la portadora. La existencia de una pausa dentro de una duración de bit y su ubicación determina qué tipo de secuencia es: X, Y o Z. Una pausa al principio de la duración de bit es una secuencia Z, una pausa en el medio de la duración de bit es una secuencia X, y una duración de bit sin pausas es una secuencia Y.  La \figref{fig:sequences} muestra estas secuencias. Cada trama comienza con una secuencia Z (SOC). Un ‘1’ es transmitido con una secuencia X. La secuencia usada para transmitir un ‘0’ depende en la última secuencia. Una secuencia Y es usada cuando la última secuencia fue una X, y una secuencia Z es usada en otros casos. Cada trama termina con un EOC, que es transmitido con un ‘0’ lógico seguido por la secuencia Y. Finalmente una secuencia X seguida por una secuencia Z no es permitido y debería estar contado como un error.
+El módulo \textbf{sequence\_decode} convierte series de pausas a tramas de bits, y las envía al siguiente módulo mediante una fuente de la \textit{rx\_interface}. La norma ISO/IEC 14443-2~\cite{iso14443-2} especifica que la duración de bit por recepción es 128 ciclos de la portadora. La existencia de una pausa dentro de una duración de bit y su ubicación determina qué tipo de secuencia es: X, Y o Z. Una pausa al principio de la duración de bit es una secuencia Z, una pausa en el medio de la duración de bit es una secuencia X, y una duración de bit sin pausas es una secuencia Y.  La \figref{fig:sequences} muestra estas secuencias. Cada trama comienza con una secuencia Z (SOC). Un ‘1’ es transmitido con una secuencia X. La secuencia usada para transmitir un ‘0’ depende en la última secuencia. Una secuencia Y es usada cuando la última secuencia fue una X, y una secuencia Z es usada en otros casos. Cada trama termina con un EOC, que es transmitido con un ‘0’ lógico seguido por la secuencia Y. Finalmente una secuencia X seguida por una secuencia Z no es permitido y debería estar contado como un error.
 
 En teoría el proceso de convertir una serie de pausas a secuencias es: contar el número de ciclos del reloj en cada duración de bit para determinar dónde comienza la pausa. En la práctica es más complicado debido a que el reloj puede detenerse durante las pausas. Además el tiempo que el reloj está detenido depende de la implementación del bloque de la recuperación del reloj del AFE, y las propiedades del PCD. Debido a que este núcleo IP está diseñado para ser genérico, tiene que funcionar con diferentes AFEs y diferentes PCDs, por lo tanto este módulo fue implementado para funcionar con un amplio rango de comportamientos de relojes. La estrategia propuesta para el módulo \textbf{sequence\_decode} consiste en contar ciclos de clock entre flancos ascendentes de la señal \textit{pause\_n}. Luego a partir del valor de la cuenta se infiere la secuencia recibida. A continuación se analizan las condiciones para aplicar este método de decodificación.
 
@@ -1072,41 +1073,511 @@ El informe de cobertura da el DUT un resultado de 100\%.
 \FloatBarrier
 \subsubsection{deserialiser}
 
+Este módulo recibe tramas de bits por un sumidero de la \textit{rx\_interface} desde el módulo \textbf{frame\_decode}. Esas tramas son convertidas a tramas de bytes y reenviadas por un fuente de la \textit{rx\_interface}. La norma define que el bit menos significativo en cada byte es transmitido primero~\cite{iso14443-3}. Las entradas y salidas son descritas en el \tabref{tab:ports_deserialiser}.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    in\_iface&Entrada&Sumidero de la \textit{rx\_interface}. \\
+    out\_iface&Salida&Fuente de la \textit{rx\_interface}. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{deserialiser}.}
+  \label{tab:ports_deserialiser}
+\end{table}
+
+El banco de prueba para este módulo consiste en un controlador \textbf{RxBitIfaceDriver} y un monitor \textbf{RxByteIfaceMonitor}. Por cada prueba una transacción es generada aleatoriamente, es enviada por el controlador, el resultado es recibido por el monitor y es comparado con la transacción enviada. Las pruebas son:
+
+\begin{itemize}
+  \item Enviar 17 transacciones con número de bits entre cero y 16 en orden.
+  \item Enviar mil transacciones con número de bits elegido aleatoriamente entre cero y ochenta.
+  \item Enviar mil transacciones con errores insertados por el controlador.
+\end{itemize}
+
+El informe de cobertura da un resultado de 100\% por el DUT.
+
 % FDT
 \FloatBarrier
 \subsubsection{FDT}
+\label{sec:fdt}
+
+La norma define el FDT (Frame Delay Time) como el tiempo entre la última pausa transmitida por el PCD y el primer flanco de modulación de la respuesta enviada por la PICC~\cite{iso14443-3}. El valor del FDT requerido depende en la última bit enviada por el PCD.
+
+\begin{tabular}{r | l}
+    \textbf{Último} Bit & \textbf{FDT (en ciclos del reloj)} \\
+    \hline
+    '0' & $128 \cdot n + 20$ \\
+    '1' & $128 \cdot n + 84$ \\
+\end{tabular}
+
+El valor de ‘n’ depende del tipo de trama enviada. Las tramas: REQA, WUPA, ANTICOLLISION y SELECT requieren un $n = 9$, dando FDTs de 1172 ciclos y 1236 ciclos. Cualquier otra trama requiere un $n \ge 9$. Sin embargo para simplicidad esta implementación siempre usa un $n = 9$. La norma requiere que una PICC envíe su respuesta entre este tiempo y este tiempo más \SI{0.4}{\micro\second}, lo que da aproximadamente 5,4 ciclos de flexibilidad.
+
+Este mecanismo es usado para que si más de una PICC responde a la misma solicitud, las respuestas estén sincronizadas, y si responden con respuestas diferentes el PCD puede detectar una colisión y en qué bit ocurre.
+
+El FDT puede ser dividido en tres partes:
+
+\begin{enumerate}
+  \item El tiempo entre el instante cuando el PCD termina la pausa y cuando este módulo detecta el flanco ascendente de la pausa. Este incluye el retardo en el detector de pausas en el AFE y el número de ciclos necesarios para que la señal se propague por el diseño digital hasta llegar a este módulo.
+  \item El tiempo propio de este módulo. Demora entre el instante en cual el flanco ascendente de la pausa es detectado y la activación de la salida \textit{trigger} que dispara la transmisión de la respuesta.
+  \item El tiempo entre la activación de la salida \textit{trigger} y el primer flanco de la respuesta llegando al modulador de carga.
+\end{enumerate}
+
+Si los puntos 1, y 3 son conocidos, es posible elegir un valor por el punto 2, para obtener el FDT total deseado. Este núcleo IP está diseñado para ser genérico así que puede ser usado en varios sistemas con propiedades diferentes. Con este fin, este módulo es parametrizado con un parámetro \textit{TIMING\_ADJUST}, lo que es el retardo externo, punto 1 + punto 3, en números de ciclos. Debido a que está permitido comenzar la respuesta hasta \SI{0,4}{\micro\second} tarde pero no está permitido comenzar antes, es importante elegir el valor mínimo para  \textit{TIMING\_ADJUST} del rango de valores posibles. También la conversión entre un tiempo y el número de ciclos debería usar la frecuencia de la portadora mínima: $f_{c\_min} = \SI{13.56}{\mega\hertz} - \SI{7}{\kilo\hertz}$, para usar el período máximo, y el número de ciclos debería ser redondeado por abajo.
+
+Las entradas y salidas son descritas en el \tabref{tab:ports_fdt}.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    pause\_n\_synchronised&Entrada&Pausa sincronizada. \\
+    last\_rx\_bit&Entrada&Último bit transmitido por el PCD. \\
+    trigger&Salida&Señal de activación para comenzar la transmisión de la respuesta. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{FDT}.}
+  \label{tab:ports_fdt}
+\end{table}
+
+La implementación de este módulo consiste en un detector de flancos ascendentes y un contador. El contador es reseteado a cero cada vez que un flanco ascendente es detectado en la entrada \textit{pause\_n\_synchronised}. Cuándo el contador llega al valor adecuado, calculado con la entrada \textit{last\_rx\_bit} y el parámetro \textit{TIMING\_ADJUST}, la salida \textit{trigger} es pulsada para un ciclo del reloj, y el contador es desactivado hasta que la próxima pausa es detectada.
+
+Para verificar este módulo el banco de prueba instancia el DUT con el parámetro \textit{TIMING\_ADJUST} = 6. Este valor es arbitrario, ya que en este banco de prueba no es necesario compensar por retrasos externos. El valor 6 fue elegido porque es el valor usado en la síntesis de este trabajo. Después hay un bloque de código que mide el tiempo entre el último flanco ascendente de la entrada \textit{pause\_n\_synchronised} y la activación de la salida \textit{trigger}, verificando que es precisamente el número de picosegundos esperados. Las pruebas son:
+
+\begin{itemize}
+  \item Verifica que si no hay pausas la señal \textit{trigger} no se activa.
+  \item Verifica el FDT cuando la entrada \textit{last\_bit} es ‘0’, mediante una sola pausa.
+  \item Verifica que si no hay más pausas la señal \textit{trigger} no se activa una segunda vez.
+  \item Verifica el FDT cuando la entrada textit{last\_bit} es ‘1’, mediante una sóla pausa.
+  \item Envía un número aleatorio de pausas con un tiempo aleatorio entre cada una, y verifica que la señal \textit{trigger} sólo se activa después de la última pausa, y que el FDT es correcto.
+\end{itemize}
+
+El informe de cobertura da un resultado de 98\% por el DUT. La única parte que falta cobertura es una condición imposible de ocurrir.
 
 % CRC_A
 \FloatBarrier
 \subsubsection{CRC\_A}
 
+Este módulo calcula el CRC16 definido por el polinomio x16 + x12 + x5 + 1 y el valor inicial 0x6363, por una serie de bits. Esta implementación está diseñada para ser utilizado por tramas de recepción y de transmisión, por lo tanto no usa una interfaz. Las salidas y entradas son descritas en el \tabref{tab:ports_crc_a}.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    start&Entrada&Comenzar un nuevo cálculo. \\
+    data&Entrada&Próximo bit. \\
+    sample&Entrada&El dato es válida. \\
+    crc[15:0]&Salida&Resultado. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{CRC\_A}.}
+  \label{tab:ports_crc_a}
+\end{table}
+
+La implementación usa un Registro de Desplazamiento con Realimentación Lineal (LFSR, por sus siglas en Inglés) y es basada en el código generado mediante un generador de LFSRs por CRCs~\cite{crcgen}. Un LFSR es un registro de desplazamiento pero unos de los bits son realimentados con el XOR de otros bits y la entrada. Para calcular el CRC16 con el polinomio definido en la norma, los bits con realimentación son los de índices: 0, 5 y 12. La \figref{fig:crc_lfsr} muestra el LFSR. Las operaciones para calcular esos bits son:
+
+\begin{align*}
+  lfsr[12] &= lfsr[15] XOR lfsr[11] XOR data \\
+  lfsr[5]  &= lfsr[15] XOR lfsr[4] XOR data \\
+  lfsr[0]  &= lfsr[15] XOR data \\
+\end{align*}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/crc_a_lfsr}
+  \caption{El LFSR del módulo \textbf{CRC\_A}.}
+  \label{fig:crc_lfsr}
+\end{figure}
+
+Cuándo la entrada \textit{start} es ‘1’, el registro \textit{lfsr} es asignado el valor 0x6363. Cuándo la entrada \textit{sample} es ‘1’ el valor del registro es actualizado con el algoritmo descrito arriba. La salida \textit{crc} es asignado el valor del registro \textit{lfsr}.
+
+El banco de prueba para este módulo calcula el CRC de varias series de bytes, mediante dos métodos: con otra implementación del LFSR, y mediante un algoritmo que opera sobre bytes en vez de bits. La implementación de este algoritmo de bytes es provisto en el apéndice B de la parte tres de la norma~\cite{iso14443-3}. Estos dos resultados son comparados con la salida del DUT en dos aserciones. Además el apéndice B de la norma específica los CRCs por dos series de bits. Estas series de bits son verificadas como descrita arriba, y también los resultados son comparados con los especificados en la norma. Las series de bytes probados son:
+
+\begin{itemize}
+  \item Sin data: El CRC es el valor inicial 0x6363.
+  \item \{0x00, 0x00\}: Especificado en la norma con CRC 0x1EA0.
+  \item \{0x12, 0x34\}: Especificado en la norma con CRC 0xCF26.
+  \item Mil transacciones aleatorias entre 0 y 10 bytes enteros.
+\end{itemize}
+
+El informe de cobertura da un resultado de 100\% por este banco de prueba.
+
 % crc_control
 \FloatBarrier
 \subsubsection{crc\_control}
+
+Este módulo instancia el módulo \textbf{CRC\_A} y lo usa para verificar los CRCs de tramas recibidas y para calcular los CRCs de tramas a transmitir. Las entradas y salidas son descritas en el \tabref{tab:ports_crc_control}. Este módulo contiene un monitor por la \textit{rx\_interface} y uno por la \textit{tx\_interface}. En este caso el término “monitor” se refiere a que el mismo lee las señales de la interfaz para poder extraer los bits de las tramas. No se debe confundir con los monitores usados en los bancos de pruebas, aunque tienen una función parecida.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    rx\_iface&Entrada&Monitor por la \textit{rx\_interface}. \\
+    rx\_crc\_ok&Salida&Indica si el CRC de la última trama tiene un CRC válido. \\
+    tx\_iface&Entrada&Monitor por la \textit{tx\_interface}. \\
+    tx\_append\_crc&Entrada&Calcular el CRC para esta trama de transmisión \\
+    fdt\_trigger&Entrada&La señal de activación de la transmisión de una trama, desde el módulo FDT. \\
+    crc[15:0]&Salida&El resultado \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{crc\_control}.}
+  \label{tab:ports_crc_control}
+\end{table}
+
+Una propiedad de este algoritmo de CRC es: si se agrega el CRC de una serie de bits al final de esa serie, el CRC de la nueva serie de bits es cero. Por lo tanto para verificar la integridad de una trama recibida, es suficiente comprobar que el CRC calculado en este módulo es cero.
+
+La entrada \textit{start} del módulo \textbf{CRC\_A} es pulsado al detectar el principio de una trama en una de las interfaces. Esto causa que el módulo \textbf{CRC\_A} reinicie su LFSR. En el caso de tramas recibidas desde el PCD el principio de una trama es indicado con la señal \textit{rx\_iface.soc}. En el caso de tramas a transmitir el principio de una trama es indicado cuando las entradas \textit{fdt\_trigger}, y \textit{tx\_iface.data\_valid} están en ‘1’s, también en este caso solo se calcula el CRC cuándo la entrada \textit{tx\_append\_crc} está en ‘1’. La entrada \textit{sample} del módulo \textbf{CRC\_A} es pulsado por cada bit de la trama, lo que ocurre cuándo una de las señales \textit{rx\_iface.data\_valid} o \textit{tx\_iface.req} están en ‘1’. Este módulo no es responsable de agregar CRCs a las respuestas, eso ocurre en el módulo \textbf{frame\_encode}. La salida \textit{rx\_crc\_ok} es ‘1’ cuando el resultado del módulo \textbf{CRC\_A} es cero.
+
+El banco de prueba por este módulo consiste en tres controladores: \textbf{RxBitIfaceDriver}, \textbf{TxBitIfaceSourceDriver} y \textbf{TxBitIfaceSinkDriver}. El controlador  \textbf{TxBitIfaceSinkDriver} es necesario para manejar la señal \textit{tx\_iface.req} porque el DUT no contiene un sumidero. Varias tramas son enviadas sobre ambos interfaces, y las salidas del DUT \textit{crc} y \textit{rx\_crc\_ok} son verificadas mediante aserciones:
+
+\begin{itemize}
+  \item Verifica que la salida \textit{rx\_crc\_ok} es como esperado al final de una trama de recepción.
+  \item Verifica que la salida \textit{rx\_crc\_ok} no cambia después del fin de una trama.
+  \item Verifica que la salida \textit{crc} es igual al CRC esperado al final de una trama de transmisión.
+  \item Verifica que la salida \textit{crc} no cambia después del fin de una trama.
+  \item Verifica que la salida \textit{crc} no cambia mientras el indicador \textit{check\_crc\_stable} está ‘1’.
+  \item Verifica que \textit{rx\_crc\_ok} es ‘1’ cuando y sólo cuando la salida \textit{crc} es cero.
+\end{itemize}
+
+Las pruebas ejecutados son:
+
+\begin{itemize}
+  \item Enviar tres tramas sobre la \textit{rx\_iface}: {0x00, 0x00, 0xA0, 0x1E}, {0x12, 0x34, 0x26, 0xCF} y {0x63, 0x63}. Estas tramas son las series de bits con sus CRCs especificados en el apéndice B de la norma.
+  \item Enviar mil tramas sobre la \textit{rx\_iface} con sus CRC agregados.
+  \item Enviar mil tramas sobre la \textit{rx\_iface} con sus CRC agregados y un bit de la trama corrompido.
+  \item Enviar dos tramas sobre la \textit{tx\_iface}: {0x00, 0x00}, y {0x12, 0x34}, para verificar la salida \textit{crc} es 0x1EA0 y 0xCF26 respectivamente, como especificado en el apéndice B de la norma.
+  \item Enviar mil tramas sobre la \textit{tx\_iface} y verificar que la salida \textit{crc} es como se espera en cada caso.
+\end{itemize}
+
+El informe de cobertura da un resultado de 100\% por el DUT.
 
 % serialiser
 \FloatBarrier
 \subsubsection{serialiser}
 
+Este módulo es parecido al módulo \textbf{deserialiser} pero al revés, convierte tramas de bytes a tramas de bits para transmisión. Las salidas y entradas son descritas en el \tabref{tab:ports_serialiser}.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    in\_iface&Entrada&Sumidero para la \textit{tx\_interface}. \\
+    out\_iface&Salida&Fuente para la \textit{tx\_interface}. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{serialiser}.}
+  \label{tab:ports_serialiser}
+\end{table}
+
+Este módulo espera por el principio de una trama, lo que pasa cuándo la entrada \textit{in\_iface.data\_valid} está en ‘1’ y después fija la salida \textit{out\_iface.data\_valid} en ‘1’ y la salida \textit{out\_iface.data} en el valor del primer bit de la entrada \textit{in\_iface.data}. Cuando el módulo conectado a la fuente \textit{out\_iface} pide el siguiente bit mediante la señal \textit{out\_iface.req}, la salida \textit{out\_iface.data} se actualiza. Después de haber enviado el último bit del byte, la salida \textit{out\_iface.last\_bit\_in\_byte} pasa a ‘1’, y otro byte es pedido mediante la salida \textit{in\_iface.req}. Ese proceso continúa hasta el final de la trama. Debido a que las respuestas pueden comenzar con un byte parcial en el caso de tramas de anticolisión, la entrada \textit{in\_iface.data\_bits} se usa para determinar el número de bits en el primer byte.
+
+El banco de prueba para este módulo consiste en dos controladores y un monitor: un \textbf{TxByteIfaceSourceDriver} por la entrada \textit{in\_iface}, un \textbf{TxBitIfaceSinkDriver} por la salida \textit{out\_iface}, y un \textbf{TxBitIfaceMonitor} por la salida \textit{out\_iface}. Para verificar el comportamiento del DUT, transacciones de bytes son generadas y enviadas. Después las transacciones enviadas son convertidas a transacciones de bits, y comparadas con las recibidas por el monitor. Hay dos pruebas: Enviar 16 transacciones de tamaños 1 a 16 bits en orden, y envíar mil transacciones de tamaños aleatorios.
+
+El informe de cobertura da un resultado de 100\% por el DUT.
+
 % frame_encode
 \FloatBarrier
 \subsubsection{frame\_encode}
+
+Este módulo es responsable de agregar el CRC16 y los bits de paridad a las respuestas. Además solo comienza envíar la trama cuando está activado mediante una entrada \textit{fdt\_trigger} que viene del módulo \textbf{FDT}. Las salidas y entradas son descritas en el \tabref{tab:ports_frame_encode}.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    fdt\_trigger&Entrada&Señal para activar el envío de la respuesta. \\
+    in\_iface&Entrada&Sumidero de la \textit{tx\_interface}. \\
+    append\_crc&Entrada&Indica que la respuesta tiene CRC. \\
+    crc[15:0]&Entrada&CRC. \\
+    out\_iface&Salida&Fuente de la \textit{tx\_interface}. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{frame\_encode}.}
+  \label{tab:ports_frame_encode}
+\end{table}
+
+La implementación espera la señal de activación desde el módulo \textbf{FDT}. En ese momento si hay una trama lista para enviar, indicado con la entrada \textit{in\_iface.data\_valid}, comienza reenviar la trama sobre la \textit{out\_iface}. El bit de paridad por cada byte es calculado en la misma manera del módulo \textbf{frame\_decode}. Cuándo la entrada \textit{in\_iface.last\_bit\_in\_byte} está en ‘1’, indicando el último bit en el byte actual, el bit de paridad calculado es enviado. Después del fin de la trama, si la entrada \textit{append\_crc} está en ‘1’, el CRC y su bits de paridad son enviados.
+
+El banco de prueba consiste en: el controlador de fuente \textbf{TxBitIfaceSourceDriver} por la \textit{in\_iface}, el controlador de sumidero \textbf{TxBitIfaceSinkDriver} y el monitor \textbf{TxBitIfaceMonitor} por la \textit{out\_iface}. Para verificar el comportamiento del DUT, transacciones son generadas y enviadas. Por cada prueba, si la trama tiene un CRC, está agregado a la transacción. Los bits de paridad siempre son agregados. Esta nueva transacción es comparada con la trama detectada por el monitor. Debido a que el DUT solo comienza enviar una trama cuándo su entrada \textit{fdt\_trigger} está ‘1’, esa señal es pulsada un número de ciclos aleatorios después de que la transacción fue enviada al controlador. Las pruebas son:
+
+\begin{itemize}
+  \item Envía cien tramas, pero no pulsa la señal \textit{fdt\_trigger}, y verifica que el monitor no recibe ninguna transacción.
+  \item Pulsa \textit{fdt\_trigger} sin envíar una transacción y verifica que el monitor no recibe ninguna transacción.
+  \item Envía tramas de tamaño entre uno y ocho bits, sin CRCs.
+  \item Envía mil tramas de tamaño aleatorio, sin CRC.
+  \item Envía mil tramas cada una con un número de bytes entero, con CRC.
+\end{itemize}
+
+El informe de cobertura por el DUT da un resultado de 98\%. La única parte que falta cobertura es una condición imposible de ocurrir.
 
 % framing
 \FloatBarrier
 \subsubsection{framing}
 
+\message{TODO}
+
 % routing
 \FloatBarrier
 \subsubsection{routing}
+
+La norma ISO/IEC 14443 divide las definiciones de las tramas entre las partes tres y cuatro de la norma, y el diseño de este núcleo IP siguiendo esta división, procesa esas tramas en módulos distintos. La norma específica cuáles tramas son aceptadas en cada estado de la PICC, la \figref{fig:14443-3-state-machine} muestra esto. En los estados: IDLE, READY, HALT y READY*, la PICC solo soporta las tramas de inicialización y anticolisión. En el estado PROTOCOL, la PICC solo soporta las tramas definidas en la parte cuatro de la norma. En los estados: ACTIVE y ACTIVE*, la PICC puede recibir la trama de inicialización HLTA o la trama RATS definida en la parte cuatro de la norma. Este módulo es diseñado para dirigir tramas recibidas desde el PCD a los módulos que correspondan: \textbf{initialisation} y \textbf{iso14443\_4a} dependiendo en el estado actual de la PICC, y además dirige las respuestas generadas desde cada módulo. Las entradas y salidas están descritas en el \tabref{tab:ports_routing}.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    route\_rx\_to\_initialisation&Entrada&Dirigir tramas recibidas al módulo \textbf{initialisation}. \\
+    route\_rx\_to\_14443\_4&Entrada&Dirigir tramas recibidas al módulo \textbf{iso14443\_4a}. \\
+    route\_tx\_from\_14443\_4&Entrada&Aceptar respuestas desde el módulo \textbf{iso14443\_4a} (valor ‘1’), o desde el módulo \textbf{initialisation} (valor ‘’0’). \\
+    in\_rx\_iface&Entrada&Sumidero por la \textit{rx\_interface}. \\
+    out\_rx\_iface\_init&Salida&Fuente por la \textit{rx\_interface}, conectado al módulo \textbf{initialisation}. \\
+    out\_rx\_iface\_14443\_4&Salida&Fuente por la \textit{rx\_interface}, conectado al módulo \textbf{iso14443\_4a}. \\
+    in\_tx\_iface\_init&Entrada&Sumidero por la \textit{tx\_interface}, desde el módulo \textbf{initialisation}. \\
+    in\_tx\_append\_crc\_init&Entrada&La respuesta desde el módulo \textbf{initialisation} debe tener CRC agregado. \\
+    in\_tx\_iface\_14443\_4&Entrada&Sumidero por la \textit{tx\_interface}, desde el módulo \textbf{iso14443\_4a}. \\
+    in\_tx\_append\_crc\_14443\_4&Entrada&La respuesta desde el módulo \textbf{iso14443\_4a} debe tener CRC agregado. \\
+    out\_tx\_iface&Salida&Fuente por la \textit{tx\_interface}. \\
+    out\_tx\_append\_crc&Salida&La respuesta enviada debe tener CRC agregado. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{routing}.}
+  \label{tab:ports_routing}
+\end{table}
+
+La implementación es un circuito combinatorio para evitar el uso de registros y reducir el área del diseño. La ruta de recepción consiste en una entrada: \textit{in\_rx\_iface}, dos salidas: \textit{out\_rx\_iface\_init} y \textit{out\_rx\_iface\_14443\_4}, y dos señales de control: \textit{route\_rx\_to\_initialisation} y \textit{route\_rx\_to\_14443\_4}. Las señales \textit{in\_rx\_iface.data} y \textit{in\_rx\_iface.data\_bits} simplemente son conectadas a las señales correspondientes de las dos salidas. Las demás de las señales: \textit{error}, \textit{soc}, \textit{eoc}, y \textit{data\_valid} pasan por compuertas ANDs con la señal de control correspondiente, como se muestra la \figref{fig:routing_rx}. De esta forma, si una salida no está activada los indicadores en la interfaz de esa salida serían ‘0’.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/routing_rx.drawio}
+  \caption{La ruta de recepción para las señales en el módulo \textbf{routing}.}
+  \label{fig:routing_rx}
+\end{figure}
+
+La ruta de transmisión tiene dos entradas: \textit{in\_tx\_iface\_init} y \textit{in\_tx\_iface\_14443\_4}, una salida: \textit{out\_tx\_iface}, y una señal de control: \textit{route\_tx\_from\_14443\_4}. Cuando \textit{route\_tx\_from\_14443\_4} está ‘0’, respuestas son dirigidas desde la entrada \textit{in\_tx\_iface\_init}, y cuándo está ‘1’ las respuestas son dirigidas desde la entrada \textit{in\_tx\_iface\_14443\_4}. Las señales \textit{in\_tx\_iface\_init.req} y \textit{in\_tx\_iface\_14443\_4.req} deben ser ‘0’ cuando su entrada está desactivada. Por lo tanto un par de compuertas AND son usadas. Las otras señales son conectadas mediante un multiplexor. La \figref{fig:routing_tx} muestra está implementación. 
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/routing_tx.drawio}
+  \caption{La ruta de transmisión en el módulo \textbf{routing}.}
+  \label{fig:routing_tx}
+\end{figure}
+
+El banco de prueba por este módulo simplemente fija las señales de control en los modos definidos abajo, cambia todas las entradas aleatoriamente y verifica que todas las salidas son como esperadas. Este proceso es repetido diez mil veces por cada uno de estos modos:
+
+\begin{itemize}
+  \item Rx solo a \textbf{initialisation}, Tx desde \textbf{initialisation}.
+  \item Rx solo a \textbf{iso14443\_4a}, Tx desde \textbf{iso14443\_4a}.
+  \item Rx a \textbf{initialisation} y \textbf{iso14443\_4a}, Tx desde \textbf{initialisation}.
+  \item Rx a \textbf{initialisation} y \textbf{iso14443\_4a}, Tx desde \textbf{iso14443\_4a}.
+\end{itemize}
+
+El informe de cobertura da el DUT un resultado de 100\%.
 
 % initialisation
 \FloatBarrier
 \subsubsection{initialisation}
 
+Este módulo es el primero que actúa sobre las tramas recibidas y genera las respuestas requeridas por la norma. Las tramas soportadas son las de inicialización y anticolisión: REQA, WUPA, AC, SELECT, y HLTA. Las salidas y entradas son descritas en el \tabref{tab:ports_initialisation}. Este es un módulo parametrizado, cuyos parámetros son descritos en el \tabref{tab:params_initialisation}.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    uid\_variable&Entrada&Bits menos significativos del UID. \\
+    rx\_iface&Entrada&Sumidero de bytes por la \textit{rx\_interface}. \\
+    rx\_iface\_bits&Entrada&Sumidero de bits por la \textit{rx\_interface}. \\
+    rx\_crc\_ok&Entrada&Los últimos dos bytes de la trama recibida son un CRC válido. \\
+    tx\_iface&Salida&Fuente de bytes por la \textit{tx\_interface}. \\
+    tx\_append\_crc&Salida&La respuesta debe tener CRC agregado. \\
+    iso14443\_4a\_deselect&Entrada&El bloque ISO/IEC 14443-4A recibió el bloque estándar S(DESELECT). \\
+    iso14443\_4a\_rats&Entrada&El bloque ISO/IEC 14443-4A recibió el mensaje RATS. \\
+    iso14443\_4a\_tag\_active&Salida&La PICC está en el estado ACTIVE. \\
+    route\_rx\_to\_initialisation&Salida&Tramas de recepción deberían estar dirigidas a este módulo. \\
+    route\_rx\_to\_14443\_4a&Salida&Tramas de recepción deberían estar dirigidas al módulo \textbf{iso14443\_4a}. \\
+    route\_tx\_from\_14443\_4a&Salida&El módulo \textbf{iso14443\_4a} es la fuente de las respuestas (valor ‘1’), o este módulo es la fuente (valor ‘0’). \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{initialisation}.}
+  \label{tab:ports_initialisation}
+\end{table}
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Tipo}&\textbf{Descripción} \\
+    \hline
+    UID\_SIZE&ISO14443A\_pkg::UIDSize (enum)&La PICC tiene un UID simple, doble o triple. \\
+    UID\_INPUT\_BITS&int&El ancho de la entrada \textit{uid\_variable}. \\
+    UID\_FIXED&logic [] (un vector)&Bits más significativos del UID. \\
+  \end{tabulary}
+  \caption{Parámetros del módulo \textbf{initialisation}.}
+  \label{tab:params_initialisation}
+\end{table}
+
+Cómo descrito en la \secref{sec:introduction_iso14443-3}, durante el proceso de inicialización hay un lazo de anticolisión, dónde el UID es dividido en hasta tres partes y el PCD tiene que realizar el proceso de anticolisión y enviar una trama SELECT para cada parte del UID en turno para que la PICC transiciona al estado READY o READY*. Esto es conocido como los niveles cascadas.
+
+El UID de la PICC es la concatenación del parámetro \textit{UID\_FIXED} y la entrada \textit{uid\_variable}, el número de bits total y el número de niveles cascadas dependen en el parámetro \textit{UID\_SIZE}:
+
+\begin{description}
+    \item [UIDSize\_SINGLE:] 32 bits, 1 nivel de cascada.
+    \item [UIDSize\_DOUBLE:] 56 bits, 2 niveles cascadas.
+    \item [UIDSize\_TRIPLE:] 80 bits, 3 niveles cascadas.
+\end{description}
+
+Un bloque “generate” es usado para partir el UID y agregar las tags cascadas al tiempo de elaboración, de la forma que muestra la \figref{fig:cascade_levels}. Hay una señal \textit{current\_cascade\_level} que indica en qué lazo de anticolisión la PICC está actualmente. Usando esa señal y un mux, una señal \textit{current\_cascade\_uid\_data} está asignada con los datos correspondientes para el nivel de cascada actual. Finalmente cada nivel de cascada termina con un byte BCC (Block Check Character), lo que es el XOR de los últimos cuatros bytes, este valor es calculado y incluido en la señal \textit{current\_cascade\_uid\_data}. Esta señal es usada con las tramas: ANTICOLLISION y SELECT para comparar el UID enviado en la trama con lo de esta PICC. En el caso de la trama ANTICOLLISION, esta señal también es usada para armar la respuesta. La \figref{fig:init_cascade_levels} muestra el circuito implementado para una PICC con UID doble.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/initialisation_uid.drawio}
+  \caption{La implementación de los niveles cascadas por una PICC con UID doble en el módulo \textbf{initialisation}.}
+  \label{fig:init_cascade_levels}
+\end{figure}
+
+Las tramas recibidas desde el PCD son guardadas en un buffer. La trama más larga es la SELECT lo que tiene siete bytes más dos bytes de CRC. Debido a que el CRC es verificado en el módulo \textbf{framing}, no es necesario guardar el CRC en el buffer, así el tamaño del buffer implementado es siete bytes. Si la señal \textit{in\_rx\_iface\_bytes.error} indica un error los demás datos de la trama son ignorados.
+
+La implementación de este módulo incluye una máquina de estados basada en la especificación de la parte tres de la norma. Esta máquina de estados se muestra en la \figref{fig:14443-3-state-machine}. Debido a que las tramas: RATS, y S(DESELECT) son procesadas en el módulo \textbf{iso14443\_4a}, las transiciones correspondientes son realizadas cuando ese módulo indica la recepción de esas tramas mediante las entradas: \textit{iso14443\_4a\_rats} y \textit{iso14443\_4a\_deselect}. En el estado ACTIVE si la PICC recibe cualquier trama menos una RATS, esa trama es tratada como un error, y se transiciona al estado IDLE o HALT.
+
+Las respuestas son construidas en un buffer de cinco bytes. Cuando la máquina de estados determina que una respuesta es necesaria, el buffer es llenado con los datos de la respuesta,  y la salida \textit{tx\_iface.data\_valid} se fija en ‘1’ para indicar al sumidero que una respuesta está lista para transmitir. Después, cada vez que la señal \textit{tx\_iface.req} está pulsada, el buffer es desplazado un byte, para transmitir el próximo byte. Cuando no hay más bytes a enviar, la señal \textit{tx\_iface.data\_valid} vuelve a ‘0’ para indicar el fin de la trama. Hay tres respuestas posibles:
+
+\begin{itemize}
+  \item ATQA: respuesta a REQA / WUPA. Tiene dos bytes que solo dependen del parámetro: \textit{UID\_SIZE}.
+  \item SAK: respuesta a SELECT. Tiene un byte, que depende de si el nivel de cascada actual es la última.
+  \item ANTICOLLISION: respuesta a ANTICOLLISION. Tiene entre un bit y cinco bytes del UID, que corresponden a la parte no enviada en la solicitud.
+\end{itemize}
+
+La \figref{fig:anticollision} muestra la solicitud y la respuesta por la trama ANTICOLLISION. El PCD envía parte de un UID y todas las PICCs quienes UIDs corresponden, responden con los de más de sus UIDs. La trama SELECT es igual a una ANTICOLLISION pero el PCD envía el UID entero y un CRC es agregado. Para determinar si el UID en la solicitud corresponde con el UID de esta PICC es necesario implementar un circuito digital que puede comparar entre cero y cinco bytes y en el caso de que el último byte es un byte parcial, entre 1 y 7 bits de ese byte. El circuito necesario para hacer esa comparación de forma combinatoria es un circuito grande. Una opción mejor y que es usada en esta implementación es comparar cada bit del UID en turno en el momento que es recibido. La entrada \textit{rx\_iface\_bits} existe por esta razón. Después de haber recibido dos bytes de una trama mediante la entrada \textit{rx\_iface\_bytes} como normal, si la data indica que la trama es una ANTICOLLISION o una SELECT, el diseño comienza comparando cada bit recibida sobre la \textit{rx\_iface\_bits} con su UID. Otra ventaja de este método es que se puede construir la respuesta usando un registro de desplazamiento iniciado con el UID completo para el nivel de cascada actual, y desplazando lo con cada bit recibido.
+
+El banco de prueba para este módulo consiste en: 
+
+\begin{itemize}
+  \item El controlador \textbf{RxBitIfaceDriver} para simular tramas desde el PCD
+  \item El módulo \textbf{deserialiser} para convertir la trama de bits a una trama de bytes, esto permite el envío de la misma transacción sobre las dos \textit{rx\_interfaces}.
+  \item El monitor \textbf{TxByteIfaceMonitor} para recibir las respuestas.
+  \item El controlador de sumidero \textbf{TxByteIfaceSinkDriver} por la \textit{tx\_iface}.
+  \item Una secuencia \textbf{InitCommsTbSequence}. Esta es una clase que extiende la secuencia \textbf{CommsTestsSequence}. Esta clase provee habilidades específicas (customisations) a este banco de prueba. Las habilidades incluyen:
+  \begin{itemize}[label=$\circ$]
+    \item Una tarea textbf{do\_reset()}. Esta tarea resetea el DUT a un estado conocido.
+    \item Antes de enviar una trama de recepción, actualiza la entrada \textit{rx\_crc\_ok} del DUT para indicar si el CRC de la trama es válido.
+    \item Maneja las entradas \textit{iso14443\_4a\_rats} y \textit{iso14443\_4a\_deselect} para simular el módulo \textbf{iso14443\_4a} recibiendo una RATS y una S(DESELCT).
+    \item Verifica que la salida \textit{tx\_append\_crc} del DUT es correcta durante el envío de una respuesta.
+    \item Verifica el estado actual del DUT después del envío de cada trama.
+  \end{itemize}
+\end{itemize}
+
+El banco de prueba ejecuta todas las pruebas diez veces, con UIDs diferentes. Dentro de este lazo cada prueba es repetida cien veces. Las pruebas ejecutadas son las pruebas de inicialización definidas en la secuencia \textbf{CommsTestSequence}, y se parten en cuatro grupos:
+
+\begin{itemize}
+  \item Pruebas de transiciones de estados. Estas pruebas verifican la implementación de la máquina de estados mostrado en la \figref{fig:14443-3-state-machine}. Cada prueba consiste en los pasos:
+  \begin{itemize}
+    \item Entra el estado inicial querido.
+    \item Envía una trama.
+    \item Verifica la respuesta o que no hay respuesta.
+    \item Verifica que el DUT está en el estado esperado.
+  \end{itemize}
+  \item Pruebas con tramas de ANTICOLLISION y SELECT.
+  \begin{itemize}
+    \item Verifica que las tramas de ANTICOLLISION son procesadas correctamente cuando el UID enviado corresponde a la del DUT.
+    \item Verifica que las tramas de ANTICOLLISION y SELECT son procesadas correctamente cuando el UID enviado no corresponde a la del DUT.
+  \end{itemize}
+  \item Pruebas con tramas que contienen errores de CRC. Verifica que el DUT no responde a tramas que contienen CRCs inválidos, y transiciona al estado IDLE o HALT como es esperado.
+  \item Pruebas que verifican que las tramas definidas en la parte cuatro de la norma no son aceptadas cuando la PICC no está en el estado correspondiente. En los estados: IDLE, READY, HALT y READY*, la PICC no debería responder a ninguna de esas tramas, y deberían ser tratadas como errores. En los estados ACTIVE y ACTIVE*, se aplica lo mismo, salvo por la trama RATS.
+\end{itemize}
+
+No es posible verificar el comportamiento del diseño entero con una sola simulación. Esto se debe a que el DUT está parametrizado en el tamaño del UID y el valor de este parámetro determina qué circuito es implementado mediante un bloque “generate”. Por lo tanto el banco de prueba también es parametrizado en el tamaño del UID, y una simulación es ejecutada por cada tamaño de UID.
+
+El informe de cobertura por estas tres simulaciones dan resultados por el DUT de: 94\%, 96\% y 97\% por UIDs simples, dobles y triples respectivamente. La diferencia es debido a que algunas partes del circuito no son usadas si solo hay uno o dos niveles cascadas. En el caso del UID triple las partes que faltan cobertura son mayormente casos imposibles de ocurrir (por ejemplo la parte fija del UID falta cobertura de toggle).
+
 % ISO/IEC 14443-3A
 \FloatBarrier
 \subsubsection{ISO/IEC 14443-3A}
+
+Este módulo instancia los módulos: \textbf{framing}, \textbf{routing} y \textbf{initialisation}, como se muestra en la \figref{fig:iso14443_3a}. Las entradas y salidas son descritas en el \tabref{tab:ports_iso14443_3a}.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.95\textwidth]{./img/iso14443_3a.drawio}
+  \caption{Diagrama en bloques del módulo \textbf{iso14443\_3a}.}
+  \label{fig:iso14443_3a}
+\end{figure}
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    uid\_variable&Entrada&Bits menos significativos del UID. \\
+    pause\_n\_synchronised&Entrada&Pausa, activa baja, sincronizada. \\
+    rx\_iface\_from\_14443\_2a&Entrada&Sumidero de bits de la \textit{rx\_interface}, conectado al módulo \textbf{ios14443\_2a} \\
+    tx\_iface\_to\_14443\_2a&Salida&Fuente de bits de la \textit{tx\_interface}, conectado al módulo \textbf{ios14443\_2a}. \\
+    rx\_iface\_to\_14443\_4a&Salida&Sumidero de bytes de la \textit{rx\_interface}, conectado al módulo \textbf{ios14443\_4a}. \\
+    rx\_crc\_ok&Salida&Indica que la última trama recibida tiene CRC válido, conectado al módulo \textbf{ios14443\_4a}. \\
+    tx\_iface\_from\_14443\_4a&Entrada&Fuente de bytes de la \textit{tx\_interface}, conectado al módulo \textbf{ios14443\_4a}. \\
+    tx\_append\_crc\_14443\_4a&Entrada&La respuesta enviada del módulo \textbf{ios14443\_4a} debe tener CRC agregado. \\
+    iso14443\_4a\_deselect&Entrada&El módulo \textbf{ios14443\_4a} recibió un S(DESELECT). \\
+    iso14443\_4a\_rats&Entrada&El módulo \textbf{ios14443\_4a} recibió una trama RATS. \\
+    iso14443\_4a\_tag\_active&Salida&La PICC está en estado ACTIVE o ACTIVE*. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{iso14443\_3a}.}
+  \label{tab:ports_iso14443_3a}
+\end{table}
+
+\FloatBarrier
+
+Este módulo es parametrizado y los parámetros son descritos en el \tabref{tab:params_iso14443_3a}. Los parámetros del UID son pasados sin modificaciones al módulo \textbf{initialisation} y el parámetro \textit{FDT\_TIMING\_ADJUST} es pasado al módulo \textbf{framing}, también sin modificación.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Tipo}&\textbf{Descripción} \\
+    \hline
+    UID\_SIZE&ISO14443A\_pkg::UIDSize (enum)&La PICC tiene un UID simple, doble o triple. \\
+    UID\_INPUT\_BITS&int&El ancho de la señal \textit{uid\_variable}. \\
+    UID\_FIXED&logic [] (un vector)&Bits más significativos del UID. \\
+    FDT\_TIMING\_ADJUST&int&Específica retardos en la ruta de recepción y transmisión externa a este módulo. \\
+  \end{tabulary}
+  \caption{Parámetros del módulo \textbf{iso14443\_3a}.}
+  \label{tab:params_iso14443_3a}
+\end{table}
+
+El banco de prueba para este módulo es muy parecido a lo del módulo \textbf{initialisation}. Las diferencias son:
+
+\begin{itemize}
+  \item No usa una deserialiser, ya que eso está incluido en el DUT.
+  \item Usa un monitor \textbf{TxBitIfaceMonitor} en vez de \textbf{TxByteIfaceMonitor}, porque el DUT incluye el módulo \textbf{serialiser} que convierte las respuestas desde bytes a bits.
+  \item Tiene un monitor \textbf{RxByteIfaceMonitor} para la salida \textit{rx\_iface\_to\_14443\_4a}.
+  \item Tiene un controlador \textbf{TxByteIfaceSourceDriver} para la entrada \textit{tx\_iface\_from\_14443\_4a}.
+  \item El FDT es verificado de la misma manera que en el banco de prueba del módulo: \textbf{framing}.
+  \item La clase \textbf{CommsTestsSequence} es extendida por \textbf{ISO14443\_3aTbSequence}, que incluye habilidades específicas por este banco de prueba. Mayormente las diferencias entre esta clase y la usada por el módulo \textbf{initialisation} son relacionadas con la verificación de las señales al módulo \textbf{iso14443\_4a}.
+\end{itemize}
+
+Como por el banco de prueba del módulo \textbf{initialisation}, este banco de prueba es ejecutado tres veces, una vez para cada tamaño de UID. El informe de cobertura por estas tres simulaciones dan resultados por el DUT de: 91\%, 92\% y 92\% por UIDs simples, dobles y triples respectivamente. Esos valores son para el DUT y sus submódulos. El DUT solo tiene 100\% cobertura en cada caso. Aunque unos de los submódulos faltan cobertura acá, todos tienen un porcentaje de cobertura alta en sus propios bancos de pruebas.
 
 % ISO/IEC 14443-4A
 \FloatBarrier
