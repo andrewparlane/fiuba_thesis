@@ -164,7 +164,7 @@ Un sistema tiene un PCD que es el maestro y una o más PICCs que son los esclava
 \FloatBarrier
 \subsection{ISO/IEC 14443-1: \large{Características Físicas}}
 
-\message{TODO}
+Esta parte de la norma define las condiciones de operación en cuáles la PICC debe poder operar correctamente. Estos requisitos son: la exposición a rayos X, el límite dinámico de flexión y de torsión, la exposición a campos magnéticos y eléctricos alternos, la exposición a electricidad estática, y la temperatura ambiente\cite{iso14443-1}.
 
 \FloatBarrier
 \subsection{ISO/IEC 14443-2: \large{Radiofrecuencia Potencia y Señal Interfaz}}
@@ -1122,11 +1122,20 @@ El FDT puede ser dividido en tres partes:
 
 \begin{enumerate}
   \item El tiempo entre el instante cuando el PCD termina la pausa y cuando este módulo detecta el flanco ascendente de la pausa. Este incluye el retardo en el detector de pausas en el AFE y el número de ciclos necesarios para que la señal se propague por el diseño digital hasta llegar a este módulo.
-  \item El tiempo propio de este módulo. Demora entre el instante en cual el flanco ascendente de la pausa es detectado y la activación de la salida \textit{trigger} que dispara la transmisión de la respuesta.
+  \item La demora entre el instante en cual el flanco ascendente de la pausa es detectado y la activación de la salida \textit{trigger} que dispara la transmisión de la respuesta.
   \item El tiempo entre la activación de la salida \textit{trigger} y el primer flanco de la respuesta llegando al modulador de carga.
 \end{enumerate}
 
 Si los puntos 1, y 3 son conocidos, es posible elegir un valor por el punto 2, para obtener el FDT total deseado. Este núcleo IP está diseñado para ser genérico así que puede ser usado en varios sistemas con propiedades diferentes. Con este fin, este módulo es parametrizado con un parámetro \textit{TIMING\_ADJUST}, lo que es el retardo externo, punto 1 + punto 3, en números de ciclos. Debido a que está permitido comenzar la respuesta hasta \SI{0,4}{\micro\second} tarde pero no está permitido comenzar antes, es importante elegir el valor mínimo para  \textit{TIMING\_ADJUST} del rango de valores posibles. También la conversión entre un tiempo y el número de ciclos debería usar la frecuencia de la portadora mínima: $f_{c\_min} = \SI{13.56}{\mega\hertz} - \SI{7}{\kilo\hertz}$, para usar el período máximo, y el número de ciclos debería ser redondeado por abajo.
+
+La \figref{fig:fdt_path} muestra la ruta del FDT en este trabajo. El parámetro \textit{TIMING\_ADJUST} es calculado de forma jerárquica. Este módulo es instanciado en el módulo \textbf{framing}, que es instanciado en el módulo \textbf{iso14443\_3a}, que es en turno instanciado en el módulo más alto de este núcleo IP: \textbf{iso14443a}. Cada uno de estos módulos lleva un parámetro \textit{FDT\_TIMING\_ADJUST}, el cual es pasado a la próxima módulo en la jerarquía después de sumar el retardo introducido en ese módulo. Por ejemplo el módulo \textbf{framing} instancia el módulo \textbf{frame\_encode} que tiene un ciclo de retardo entre el flanco ascendente de la señal \textit{trigger} y el principio de la respuesta. Por lo tanto el módulo \textbf{framing} suma uno a su parámetro \textit{FDT\_TIMING\_ADJUST} y pasa ese valor al parámetro del módulo \textbf{FDT}.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/fdt_path3.drawio}
+  \caption{La ruta del FDT en este trabajo.}
+  \label{fig:fdt_path}
+\end{figure}
 
 Las entradas y salidas son descritas en el \tabref{tab:ports_fdt}.
 
@@ -1332,7 +1341,92 @@ El informe de cobertura por el DUT da un resultado de 98\%. La única parte que 
 \FloatBarrier
 \subsubsection{framing}
 
-\message{TODO}
+Este módulo simplemente instancia los siguientes módulos: \textbf{frame\_decode}, \textbf{deserialiser}, \textbf{FDT}, \textbf{crc\_control}, \textbf{deserialiser} y \textbf{frame\_encode}, como se muestra la \figref{fig:framing}. Las entradas y salidas están descritas en el \tabref{tab:ports_framing}.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/framing.drawio}
+  \caption{Diagrama en bloques del módulo \textbf{framing}.}
+  \label{fig:framing}
+\end{figure}
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    pause\_n\_synchronised&Entrada&Pausa, activa bajo, sincronizada. \\
+    in\_rx\_iface&Entrada&Sumidero de bits por la \textit{rx\_interface}. \\
+    out\_rx\_iface\_bytes&Salida&Fuente de bytes por la \textit{rx\_interface}. \\
+    out\_rx\_iface\_bits&Salida&Fuente de bits por la \textit{rx\_interface}. \\
+    rx\_crc\_ok&Salida&Indica que la última trama recibida tiene CRC válido. \\
+    in\_tx\_iface&Entrada&Sumidero de bytes por la \textit{tx\_interface}. \\
+    tx\_append\_crc&Entrada&Indica que la respuesta debe tener CRC. \\
+    out\_tx\_iface&Salida&Fuente de bits por la \textit{tx\_interface}. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{framing}.}
+  \label{tab:ports_framing}
+\end{table}
+
+\FloatBarrier
+
+Para la ruta de recepción el flujo de datos es:
+
+\begin{itemize}
+  \item Los bits de paridad están verificados y quitados.
+  \item El CRC es verificado.
+  \item La trama de bits es convertida a una trama de bytes.
+  \item El temporizador del FDT comienza a contar después del último flanco ascendente de la pausa.
+\end{itemize}
+
+Hay dos salidas por las tramas recibidas desde el PCD, \textit{out\_rx\_iface\_bytes} y \textit{out\_rx\_iface\_bits}. La fuente de bits es para facilitar la comparación del UID en tramas de anticolisión en el módulo \textbf{initialisation}. Este tema es descrito más en la \secref{sec:initialisation}{initialisation}.
+
+Para la ruta de transmisión el flujo de datos es:
+
+\begin{itemize}
+  \item La transmisión comienza cuando el temporizador del FDT vence.
+  \item Las tramas de bytes son convertidas a tramas de bits.
+  \item Los bits de paridad son insertados.
+  \item El CRC es calculado y agregado, incluyendo sus bits de paridad, si es pedido con la entrada \textit{tx\_append\_crc}.
+\end{itemize}
+
+Este módulo tiene un parámetro \textit{FDT\_TIMING\_ADJUST} que especifica el retardo en la ruta del FDT externo a este módulo. El módulo \textbf{frame\_decode} introduce un ciclo de retardo en la transmisión de la respuesta, por lo tanto el valor pasado al parámetro \textit{TIMING\_ADJUST} del módulo \textbf{FDT} es \textit{FDT\_TIMING\_ADJUST} + 1.
+
+El banco de prueba para este módulo consiste en:
+
+\begin{itemize}
+  \item Un controlador \textbf{RxBitIfaceDriver} por la \textit{in\_rx\_iface}.
+  \item Un monitor \textbf{RxBitIfaceMonitor} por la \textit{out\_rx\_iface\_bits}.
+  \item Un monitor \textbf{RxByteIfaceMonitor} por la \textit{out\_rx\_iface\_bytes}.
+  \item Un controlador de fuente \textbf{TxByteIfaceSourceDriver} por la \textit{in\_tx\_iface}.
+  \item Un controlador de sumidero \textbf{TxBitIfaceSinkDriver} por la \textit{out\_tx\_iface}.
+  \item Un monitor \textbf{TxBitIfaceMonitor} por la \textit{out\_tx\_iface}.
+\end{itemize}
+
+Para simular la recepción de una trama desde el PCD hay una tarea \textbf{send\_rx\_frame()} que construye una transacción aleatoriamente con el número de bits especificado en un argumento. Si tiene un número de bytes entero, el CRC es calculado y agregado. Después los bits de paridad son insertados. Otro argumento especifica si la trama debería contener un error, y que tipo de error. Los tipos de errores son: bit de paridad equivocado, falta el último bit de paridad, CRC equivocado, y un error en la trama enviada mediante la señal \textit{in\_rx\_iface.error}. Las transacciones recibidas por los dos monitores son comparadas con las esperadas. Hay una aserción concurrente que verifica que la salida \textit{rx\_crc\_ok} es como esperado por cada trama.
+
+La ruta de transmisión es parecida. La tarea \textbf{send\_tx\_frame()} arma una transacción de bytes con el número de bits especificado en un argumento. La transacción recibida por el monitor es comparada con la enviada. El DUT sólo comienza transmitir una trama cuando el temporizador del módulo \textbf{FDT} vence. Para comenzar este temporizador se requiere al menos un flanco ascendente en la entrada \textit{pause\_n\_synchronised}. Por lo tanto esta tarea pulsa esa señal, después de haber pasado cada transacción al controlador.
+
+Como en el banco de prueba para el módulo \textbf{FDT}, el tiempo entre el último flanco ascendente de la pausa y el principio de la transmisión de la respuesta es medido y verificado.
+
+Las pruebas son listadas acá, cada uno es repetida mil veces:
+
+\begin{itemize}
+  \item Envía una trama sobre la \textit{in\_rx\_iface} de número de bytes entero, con CRC.
+  \item Envía una trama sobre la \textit{in\_rx\_iface} terminando con un byte parcial, sin CRC.
+  \item Envía una trama sobre la \textit{in\_rx\_iface} de número de bytes entero, con CRC equivocado.
+  \item Envía una trama sobre la \textit{in\_rx\_iface} con un bit de paridad equivocado.
+  \item Envía una trama sobre la \textit{in\_rx\_iface} que falta su último bit de paridad.
+  \item Envía una trama sobre la \textit{in\_rx\_iface} con un error mediante la señal \textit{in\_rx\_iface.error}.
+  \item Envía una trama sobre la \textit{in\_tx\_iface} sin CRC.
+  \item Envía una trama sobre la \textit{in\_tx\_iface} de número de bytes enteros con CRC.
+  \item Envía una trama sobre la \textit{in\_rx\_iface} y después una trama sobre la \textit{in\_tx\_iface} como una respuesta.
+\end{itemize}
+
+El informe de cobertura por el DUT da un resultado de 100\%.
 
 % routing
 \FloatBarrier
@@ -1395,6 +1489,7 @@ El informe de cobertura da el DUT un resultado de 100\%.
 % initialisation
 \FloatBarrier
 \subsubsection{initialisation}
+\label{sec:initialisation}
 
 Este módulo es el primero que actúa sobre las tramas recibidas y genera las respuestas requeridas por la norma. Las tramas soportadas son las de inicialización y anticolisión: REQA, WUPA, AC, SELECT, y HLTA. Las salidas y entradas son descritas en el \tabref{tab:ports_initialisation}. Este es un módulo parametrizado, cuyos parámetros son descritos en el \tabref{tab:params_initialisation}.
 
@@ -1437,7 +1532,7 @@ Este módulo es el primero que actúa sobre las tramas recibidas y genera las re
   \label{tab:params_initialisation}
 \end{table}
 
-Cómo descrito en la \secref{sec:introduction_iso14443-3}, durante el proceso de inicialización hay un lazo de anticolisión, dónde el UID es dividido en hasta tres partes y el PCD tiene que realizar el proceso de anticolisión y enviar una trama SELECT para cada parte del UID en turno para que la PICC transiciona al estado READY o READY*. Esto es conocido como los niveles cascadas.
+Cómo descrito en la \secref{sec:introduction_iso14443-3}{ISO/IEC 14443-3}, durante el proceso de inicialización hay un lazo de anticolisión, dónde el UID es dividido en hasta tres partes y el PCD tiene que realizar el proceso de anticolisión y enviar una trama SELECT para cada parte del UID en turno para que la PICC transiciona al estado READY o READY*. Esto es conocido como los niveles cascadas.
 
 El UID de la PICC es la concatenación del parámetro \textit{UID\_FIXED} y la entrada \textit{uid\_variable}, el número de bits total y el número de niveles cascadas dependen en el parámetro \textit{UID\_SIZE}:
 
@@ -1583,25 +1678,288 @@ Como por el banco de prueba del módulo \textbf{initialisation}, este banco de p
 \FloatBarrier
 \subsection{ISO/IEC 14443-4A}
 
+En este bloque de la implementación, solo hay un módulo \textbf{iso14443\_4a}, que es responsable para recibir, actuar sobre, y responder a las tramas definidas en la parte cuatro de la norma. Esas tramas son: RATS, PPS, y bloques estándares. El protocolo de nivel aplicación es encapsulado un campo de información en bloques estándares de tipo I. Ese campo es reenviado a la aplicación, y las respuestas de la aplicación son empaquetadas y enviadas hacia el PCD. Las salidas y entradas son descritas en el \tabref{tab:ports_iso14443_4a}.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    power&Entrada&Señal desde el AFE para indicar si la potencia recibida es apta. \\
+    rx\_iface&Entrada&Sumidero por la \textit{rx\_interface}, conectado al módulo \textbf{iso14443\_3a}. \\
+    rx\_crc\_ok&Entrada&La última trama recibida tiene CRC válido. \\
+    tx\_iface&Salida&Fuente por la \textit{tx\_interface}, conectada al módulo \textbf{iso14443\_3a}. \\
+    tx\_append\_crc&Salida&Indica que la respuesta debe tener CRC agregado. \\
+    tag\_active&Entrada&La PICC está en el estado ACTIVE. \\
+    rx\_rats&Salida&Indica que la trama RATS fue recibida. \\
+    rx\_deselect&Salida&Indica que la trama S(DESELECT) fue recibida y la respuesta fue enviada. \\
+    app\_rx\_iface&Salida&Fuente por la \textit{rx\_interface}, conectada a la aplicación. \\
+    app\_tx\_iface&Entrada&Sumidero por la \textit{tx\_interface}, conectado a la aplicación. \\
+    app\_resend\_last&Salida&La aplicación debe enviar su última respuesta de nuevo. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{iso14443\_4a}.}
+  \label{tab:ports_iso14443_4a}
+\end{table}
+
+Cuándo una PICC recibe la trama SELECT con su UID, se transiciona al estado ACTIVE o ACTIVE*. En estos estados para terminar el proceso de inicialización el PCD envía una RATS. Cuando este módulo recibe esa trama mientras la entrada \textit{tag\_active} está en ‘1’, pulsa su salida \textit{rx\_rats}. El módulo \textbf{initialisation} usa esa señal para transicionar al estado PROTOCOL. La trama RATS contiene dos campos:
+
+\begin{itemize}
+  \item CID (Card Identifier): El PCD asigna un CID a la PICC para poder direccionar tramas a esta PICC si hay más de una inicializada. Este campo es cuatro bits, con el valor 15 reservado para uso futuro. El CID asignado es válido hasta que la PICC es desactivada.
+  \item FSDI: Una codificación de 4 bits que representa el tamaño máximo de tramas que el PCD puede recibir. Este campo es ignorado porque todas las tramas usadas en este trabajo tienen tamaños menores que lo mínimo que los PCDs tienen que soportar.
+\end{itemize}
+
+La respuesta a RATS es ATS que consiste en al menos un byte, pero hay algunos campos de bytes opcionales. Estos bytes opcionales no son implementados en este trabajo, los argumentos presentes en estos bytes tienen valores por defectos adecuados para este trabajo.
+
+Después de la RATS y ATS, el PCD opcionalmente puede enviar la trama PPS para cambiar las tasas de transmisión y recepción. El PCD solo es permitido enviar la PPS inmediatamente después de la recepción de la respuesta ATS, por lo tanto la PICC ignora tramas PPS en cualquier otro momento. Debido a que este trabajo no soporta otras tasas de bits, este módulo solo responde a la PPS si las tasas de bits especificadas son: fc/128 en cada dirección.
+
+Un bloque estándar comienza con una cabecera de entre uno y tres bytes: 
+
+\begin{description}
+  \item[PCB:] \hfill \\ Contiene: el tipo del bloque (I, R, o S), unos campos específicos del tipo de bloque, y dos indicadores que especifican si los campos de CID y NAD están presentes.
+  \item[CID:] \hfill \\ Usado para direccionar una trama a una PICC en particular. Este campo en las tramas enviadas desde la PICC también contiene dos bits que indican si la PICC está recibiendo suficiente potencia desde el campo electromagnético. Estos bits son asignados al valor de la entrada \textit{power}, que es controlado por el AFE.
+  \item[NAD (Node Address):] \hfill \\ Una PICC puede contener más de una aplicación y este campo permite el PCD direccionar tramas a una en particular. Este trabajo no soporta este campo, bloques estándares con una NAD son ignorados, como especificado en la norma.
+\end{description}
+
+Un objetivo de este trabajo es tomar muestras de múltiples de sensores discretos, así que es necesario tener más de una PICC activada a la vez, por lo tanto este diseño soporta CIDs. Una PICC que soporta el campo CID debe aceptar un bloque estándar que contiene su CID, y si su CID está 0, debe también aceptar bloques estándares que no contienen un CID. Otras tramas deben ser ignoradas~\cite{iso14443-4}. Este módulo incluye lógica combinatoria que determina si una trama es direccionada a esta PICC o no.
+
+Bloques estándares de tipo I pueden contener un campo de información después de la cabecera. Esta información es un mensaje de nivel de aplicación. Cuándo este módulo recibe un bloque estándar tipo I, el campo de información es reenviado a la aplicación sobre la \textit{app\_rx\_iface}. La respuesta de la aplicación es recibida sobre la \textit{app\_tx\_iface}. Este módulo empaqueta la respuesta en un bloque estándar tipo I con los campos adecuados y envía la trama completa al PCD. Bloques estándares de tipo I pueden ser encadenados, esto permite el envío de tramas más grandes que el receptor soporta. La norma requiere que todos los PCDs y PICCs soporten tramas de al menos 16 bytes, y debido a que el protocolo de nivel aplicación de este trabajo solo usa tramas con tamaños menores que eso, bloques estándares encadenados no son soportados en esta implementación. Si este módulo recibe un bloque estándar tipo I encadenado, es ignorado.
+
+Hay tres bloques estándares de tipo S definidos en la norma:
+
+\begin{description}
+  \item[S(DESELECT):] \hfill \\ La PICC debe transicionar al estado HALT. Este módulo pulsa la salida \textit{rx\_deselect} después de haber enviado la respuesta, que causa el módulo \textbf{initialisation} transicionar al estado HALT.
+  \item[S(WTX):] \hfill \\ La PICC puede enviar esta respuesta a un bloque estándar tipo I si necesita más tiempo para procesar la solicitud. Este mensaje no es soportado en este trabajo debido a que todas las respuestas de nivel aplicación puede ser calculado de forma inmediata.
+  \item[S(PARAMETERS):] \hfill \\ El PCD puede usar este mensaje para cambiar la configuración de la PICC, por ejemplo para cambiar la tasa de bits. Este mensaje es opcional y no es soportado en esta implementación.
+\end{description}
+
+Bloques estándares de tipos I y R tienen un bit en el campo PCB que se llama el número de bloque. La PICC también tiene un registro de un bit que guarda un número de bloque. Cuándo la PICC envía un bloque estándar de tipo I o R, el número de bloque en la cabecera debe ser igual al valor en su registro. Las reglas de cómo manipular este registro en la PICC son:
+
+\begin{displaycquote}[traducción mía]{iso14443-4}
+  \begin{itemize}
+    \item La PICC debe iniciar su número de bloque a ‘1’ cuando está activada.
+    \item Cuando la PICC recibe un bloque estándar de tipo I, debe invertir el valor en su registro antes de enviar la respuesta.
+    \item Cuando la PICC recibe un R(ACK) con número de bloque no igual a lo actual de la PICC, debe invertir el valor en su registro, antes de enviar la respuesta.
+  \end{itemize}
+\end{displaycquote}
+
+Hay dos mensajes que usan bloques estándares de tipo R: R(ACK), y R(NAK). Las reglas de cómo la PICC debe responder a esos mensajes son:
+
+\begin{displaycquote}[traducción mía]{iso14443-4}
+  \begin{itemize}
+    \item Cuando un R(ACK) o un R(NAK) es recibido, si el número de bloque [en la cabecera] es igual al número de bloque actual de la PICC, la PICC debe reenviar su última respuesta.
+    \item Cuándo un R(NAK) es recibido, si el número de bloque [en la cabecera] no es igual al número de bloque actual de la PICC, la PICC debe responder con un R(ACK).
+    \item Cuándo un R(ACK) es recibido, si el número de bloque [en la cabecera] no es igual al número de bloque actual de la PICC, y la última respuesta de la PICC fue encadenada, la PICC debe seguir con el siguiente bloque en la cadena.
+  \end{itemize}
+\end{displaycquote}
+
+Este mecanismo es diseñado para facilitar el PCD recuperar después de la pérdida de una trama. Debido a que esta implementación no soporta bloques encadenados, solo las primeras dos reglas son implementadas, y los bloques R(ACK) son ignorados cuándo su número de bloque no es igual al valor guardado en la PICC. En el caso de recibir un R(ACK) o R(NAK) con el número de bloque igual al valor guardado en la PICC, la última respuesta es reenviada, y si la última respuesta fue un bloque estándar de tipo I, la salida \textit{app\_resend\_last} es pulsada para pedir la aplicación repetir su última respuesta también.
+
+La ruta de recepción de tramas es parecida a la del módulo \textbf{initialisation}, la trama es guardada en un buffer. Después de la recepción de la cabecera, si este módulo determina que la trama es un bloque estándar tipo I direccionada a esta PICC, los bytes del campo de información son reenviados a la aplicación. El buffer de recepción tiene cinco bytes para poder guardar la trama de tamaño máximo: PPS. Aunque bloques estándares de tipo I pueden ser más largos este módulo solo guarda los primeros dos bytes de la cabecera: PCB y CID.
+
+La ruta de transmisión también es parecida a la del módulo \textbf{initialisation}. Un buffer de dos bytes es usado para construir las respuestas. Cuando una respuesta está lista para enviar, la salida \textit{tx\_iface.data\_valid} es fijada en ‘1’, y el primer byte de la respuesta es asignado a la salida \textit{tx\_iface.data}. Cuando el sumidero pide el próximo byte mediante la señal \textit{tx\_iface.req}, la salida \textit{tx\_iface.data} es actualizada con el próximo byte. En el caso de que la respuesta sea un bloque estándar tipo I, el buffer es llenado con la cabecera correspondiente. Después del envío de la cabecera este módulo actúa como un pass-through por la respuesta de la aplicación. Debido a que las respuestas: ATS, PPS y todos los bloques estándares tienen un CRC, la salida \textit{tx\_append\_crc} es un ‘1’ constante.
+
+El banco de prueba para este módulo es parecido a los bancos de pruebas de los módulos \textbf{initialisation} y \textbf{iso14443\_3a}, pero ejecuta pruebas distintas que son diseñadas para verificar la parte cuatro de la norma. El banco de prueba incluye la clase \textbf{ISO14443\_4aTbSequence} que extiende \textbf{CommsTestSequence} para proveer habilidades específicas a este banco de prueba:
+
+\begin{itemize}
+  \item Verifica que el campo información de bloques estándares de tipos I son reenviados a la aplicación cuando son adecuados, y que otras tramas no son reenviadas a la aplicación.
+  \item Maneja las entradas \textit{rx\_crc\_ok}, \textit{power} y \textit{tag\_active} del DUT y verifica el comportamiento de sus salidas: \textit{rx\_rats}, \textit{rx\_deselect}, y \textit{rx\_app\_resend\_last}. 
+  \item Simula respuestas desde la aplicación.
+  \item Sustituye las tareas \textbf{go\_to\_state\_…()}. La secuencia usa estas tareas para poner el DUT en el estado apto para cada prueba, pero en este caso el DUT no contiene la máquina de estados de la parte tres de la norma, por lo tanto las transiciones entre estos estados tienen que ser simuladas.
+\end{itemize}
+
+La parte cuatro de la norma especifica algunas reglas sobre el comportamiento de una PICC, las pruebas en este banco de prueba verifican que esas reglas se cumplen, entre otras cuestiones. Las pruebas ejecutadas son en la tarea \textbf{run\_all\_part4\_tests()} de la clase \textbf{CommsTestSequence}. Unos ejemplos de las pruebas son:
+
+\begin{itemize}
+  \item Verifica que cuando una PICC en el estado ACTIVE o ACTIVE* recibe una trama RATS con CID válido, envía la respuesta ATS esperada, y si la PICC es en otro estado o el CID asignado no es válido, la PICC no envía una respuesta.
+  \item Verifica que el DUT solo responde a la trama PPS cuándo es la primera trama después del envío de la respuesta ATS.
+  \item Verifica que cuando la PICC está en el estado PROTOCOL, los campos de información en los bloques estándares de tipo I, son enviados a la aplicación. 
+  \item Verifica que el DUT cumple con las reglas descritas arriba sobre los números de bloques.
+\end{itemize}
+
+El informe de cobertura da el DUT un resultado de 98\%. Las partes que faltan cobertura son situaciones imposibles de ocurrir, por ejemplo: la salida \textit{tx\_append\_crc} es un ‘1’ constante, por lo tanto falta cobertura de toggle.
+
 % ISO/IEC 14443A
 \FloatBarrier
 \subsection{ISO/IEC 14443A}
+
+Este módulo es el módulo más alto del núcleo IP. Debería ser instanciado en la aplicación y conectado a un AFE conforme con parte dos de la norma. El módulo simplemente instancia los módulos: \textbf{iso14443\_2a}, \textbf{iso14443\_3a}, \textbf{iso14443\_4a}, y los conecta de forma adecuada. Este módulo es parametrizado y los parámetros son descritos en el \tabref{tab:params_iso14443a}. 
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Tipo}&\textbf{Descripción} \\
+    \hline
+    UID\_SIZE&ISO14443A\_pkg::UIDSize (enum)&La PICC tiene un UID simple, doble o triple. \\
+    UID\_INPUT\_BITS&int&El ancho de la señal \textit{uid\_variable}. \\
+    UID\_FIXED&logic [] (un vector)&Bits más significativos del UID. \\
+    FDT\_TIMING\_ADJUST&int&Específica retardos en la ruta de recepción y transmisión externa a este módulo. \\
+  \end{tabulary}
+  \caption{Parámetros del módulo \textbf{iso14443a}.}
+  \label{tab:params_iso14443a}
+\end{table}
+
+Los parámetros del UID son igual a los definidos en el módulo \textbf{iso14443\_3a}, y son pasados a ese módulo sin modificaciones. El parámetro \textit{FDT\_TIMING\_ADJUST} es usado para ajustar el comportamiento del módulo \textbf{FDT} para que cumpla con el FDT especificado en la norma. El módulo \textbf{iso14443\_2a} contiene tres ciclos de retardo en el envío de las respuestas. Por lo tanto, el módulo \textbf{iso14443\_3a} es instanciado con su parámetro \textit{FDT\_TIMING\_ADJUST} igual al valor del parámetro en este módulo más tres.
+
+Las salidas y entradas son descritas en el \tabref{tab:ports_iso14443a}.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset, activo bajo. El flanco ascendente debe ser sincronizado al reloj. \\
+    uid\_variable&Entrada&Bits menos significativos del UID. \\
+    power&Entrada&Señal desde el AFE que indica si la potencia recibida es apta. \\
+    pause\_n\_synchronised&Entrada&Pausa, activa baja, sincronizada. \\
+    lm\_out&Salida&Salida al modulador de carga para enviar respuestas. \\
+    app\_rx\_iface&Salida&Fuente por la \textit{rx\_interface}, conectada a la aplicación. \\
+    app\_tx\_iface&Entrada&Sumidero por la \textit{tx\_interface}, conectada a la aplicación. \\
+    app\_resend\_last&Salida&Un indicador para pedir la aplicación reenviar su última respuesta. \\
+    iso14443a\_version&Salida&La versión de este núcleo IP, debe ser constante. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{iso14443a}.}
+  \label{tab:ports_iso14443a}
+\end{table}
+
+El banco de prueba para este módulo está basado en una mezcla de los bancos de pruebas de los módulos \textbf{iso14443\_3a} y \textbf{iso14443\_4a}. Este banco de prueba usa el modelo del AFE para generar el reloj y las pausas. El FDT es verificado, midiendo el tiempo entre el último flanco ascendente de la señal \textit{pause\_n\_synchronised} y el primer flanco ascendente de la señal \textit{lm\_out}. Las pruebas ejecutadas son las pruebas de inicialización y las de la parte cuatro de la norma. Esas pruebas son repetidas diez veces con la parte variable del UID diferente cada vez.
+
+Como por el banco de prueba del módulo \textbf{initialisation}, este banco de prueba es ejecutado tres veces, una vez para cada tamaño del UID. El informe de cobertura por estas tres simulaciones dan resultados por el DUT de: 92\%, 93\% y 93\% por UIDs simples, dobles y triples respectivamente. Esos resultados son por el DUT y sus submódulos. El DUT solo, tiene 89\%, 93\% y 95\% cobertura en cada caso. Las partes que faltan cobertura son porque la salida \textit{iso14443a\_version} y la señal interna \textit{part4\_tx\_append\_crc} son constantes. Aunque algunos de los submódulos no poseen alta cobertura en esta prueba, todos tienen un alto porcentaje de cobertura en sus propios bancos de pruebas.
 
 % Otros
 \FloatBarrier
 \subsection{Otros}
 
+Hay algunos módulos extras que no son usados en este núcleo IP, son incluidos para uso en la aplicación si son necesarios.
+
 % synchroniser
 \FloatBarrier
 \subsubsection{synchroniser}
+
+Este módulo sincroniza una señal al dominio del reloj para prevenir metaestabilidad~\cite{synch_arb_in_digital_systems}. Este módulo es parametrizado y sus parámetros se describen en el \tabref{tab:params_synchroniser}. Las salidas y entradas son descritas en el \tabref{tab:ports_synchroniser}.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Tipo}&\textbf{Descripción} \\
+    \hline
+    WIDTH&int&Ancho de la señal a sincronizar. \\
+    RESET\_VAL&logic [WIDTH-1:0]&Valor de la salida cuándo el módulo está en un estado de reset. \\
+  \end{tabulary}
+  \caption{Parámetros del módulo \textbf{synchroniser}.}
+  \label{tab:params_synchroniser}
+\end{table}
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    D&Entrada&Señal a sincronizar. \\
+    Q&Salida&Señal sincronizada. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{synchroniser}.}
+  \label{tab:ports_synchroniser}
+\end{table}
+
+La implementación es dos registros conectados como se muestra la \figref{fig:synchroniser}.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.6\textwidth]{./img/synchroniser.drawio}
+  \caption{El circuito implementado en el módulo \textbf{synchroniser}.}
+  \label{fig:synchroniser}
+\end{figure}
+
+Debido a la simplicidad de este módulo no hay un banco de prueba, el comportamiento debería ser verificado en los bancos de prueba de los módulos que lo usan.
 
 % active_low_reset_synchroniser
 \FloatBarrier
 \subsubsection{active\_low\_reset\_synchroniser}
 
+Este módulo es un sincronizador de reset para sincronizar el flanco ascendente de resets asíncronos, activos bajos, para prevenir metaestabilidad cuándo el diseño sale del estado de reset. Las salidas y entradas se describe en el \tabref{tab:ports_active_low_reset_synchroniser}. La implementación simplemente es dos registros como se muestra la \figref{fig:active_low_reset_synchroniser}.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n\_in&Entrada&Reset a sincronizar, activo bajo. \\
+    rst\_n\_out&Salida&Reset con su flanco ascendente sincronizado, activo bajo. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{active\_low\_reset\_synchroniser}.}
+  \label{tab:ports_active_low_reset_synchroniser}
+\end{table}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./img/active_low_reset_synchroniser.drawio}
+  \caption{El circuito implementado en el módulo \textbf{active\_low\_reset\_synchroniser}.}
+  \label{fig:active_low_reset_synchroniser}
+\end{figure}
+
+Como en el caso del módulo synchroniser, no hay banco de prueba para este módulo.
+
 % pause_n_latch_and_synchroniser
 \FloatBarrier
 \subsubsection{pause\_n\_latch\_and\_synchroniser}
+
+Debido a que el reloj puede detenerse durante las pausas, no está garantizado que haría un flanco ascendente del reloj mientras que la pausa está activa, por lo tanto es necesario usar un circuito asíncrono para retener las pausas hasta que el reloj comience de nuevo. El circuito usado es un FFD (Flip Flop D) con un reset y un set asíncronos, conectado como se muestra en la \figref{fig:pause_n_latch}. La entrada \textit{pause\_n\_async} es conectada a la reset asíncrona, así durante la pausa, la salida \textit{pause\_n\_latched} es ‘0’. La entrada D del FFD es un ‘1’ constante, así en el primer flanco ascendente del reloj después de la pausa, la salida \textit{pause\_n\_latched} vuelve a ‘1’. La entrada \textit{rst\_n} está conectada a la set asíncrona, así durante un reset la salida es ‘1’. Debido a que se usa un reset asíncrono el flanco descendente de la  \textit{pause\_n\_latched} es asíncrona al reloj, por lo tanto es necesario usar un sincronizador para prevenir metaestabilidad. La \figref{fig:pause_n_synch_and_latch} muestra el diseño final.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/pause_latch_and_synch1_latching.drawio}
+  \caption{Circuito asíncrono por la retención de pausas.}
+  \label{fig:pause_n_latch}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/pause_latch_and_synch1_ffd.drawio}
+  \caption{\small{El circuito implementado en el módulo \textbf{pause\_n\_latch\_and\_synchroniser}.}}
+  \label{fig:pause_n_synch_and_latch}
+\end{figure}
+
+Las salidas y entradas son descritas en el \tabref{tab:ports_pause_n_synch_and_latch}.
+
+\begin{table}[htb]
+  \centering
+  \rowcolors{2}{white}{lightgray!35}
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    pause\_n\_async&Entrada&Pausa, asíncrona, desde el AFE. \\
+    pause\_n\_sync&Salida &Pausa retenida y sincronizada. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{pause\_n\_synch\_and\_latch}.}
+  \label{tab:ports_pause_n_synch_and_latch}
+\end{table}
+
+La \figref{fig:pause_n_synch_and_latch_timing} muestra un diagrama de timing de este diseño cuándo el reloj está detenido durante la pausa entera.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/pause_latch_sync_dff_timing_1}
+  \caption{Diagrama de timing de una pausa sin reloj.}
+  \label{fig:pause_n_synch_and_latch_timing}
+\end{figure}
+
+Para cumplir con el FDT definida en la parte tres de la norma es necesario compensar por el retardo entre los flancos ascendentes de las señales \textit{pause\_n\_async} y \textit{pause\_n\_sync}. Este retardo es dos ciclos del reloj más $t_{p2c}$. En este trabajo el mecanismo para compensar por este retardo es con el parámetro \textit{FDT\_TIMING\_ADJUST} del módulo más alto del núcleo IP. Cualquier diseño que instancia este núcleo IP y usa este módulo para retener y sincronizar las pausas debe incluir estos retardos en la calculación del parámetro \textit{FDT\_TIMING\_ADJUST}.
+
+Para verificar este módulo el modelo analógico: \textbf{analogue\_sim} es usado para enviar miles de pausas con la relación entre la señal \textit{pause\_n\_async} y el reloj elegido aleatoriamente por cada pausa. Unas aserciones son usadas para verificar los retardos entre la entrada y la salida. El informe de cobertura da un resultado de 100\% por el DUT.
 
 % Aplicación - Interfaz con el sensor MOSFET de radiación y el ADC
 % --------------------------------
