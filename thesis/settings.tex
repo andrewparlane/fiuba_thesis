@@ -29,9 +29,10 @@
 % Line spacing: 1.5
 \onehalfspacing
 
-% Reduce space between items in \begin{description} and \begin{itemize}
+% Reduce space between items in \begin{description}, \begin{itemize} and \begin{enumerate}
 \setlist[description]{noitemsep, nolistsep, topsep=0pt}
 \setlist[itemize]{noitemsep, nolistsep, topsep=0pt}
+\setlist[enumerate]{noitemsep, nolistsep, topsep=0pt}
 
 % Change Table of Contents name from "Índice General" to "Índice"
 \addto\captionsspanish{
@@ -88,3 +89,10 @@
 \newcommand*{\tabref}[1]{\hyperref[#1]{Cuadro~\ref*{#1}}}
 \newcommand*{\secref}[2]{\hyperref[#1]{Sección #2}}
 
+% Zebra pattern in tables
+\newcommand*{\tablezebra}{\rowcolors{2}{white}{lightgray!35}}
+
+% Let's us restart the row num to reset the zebra pattern using \setcounter{rownum}{0}
+\makeatletter
+\@ifundefined{c@rownum}{\let\c@rownum\rownum}{}
+\makeatother

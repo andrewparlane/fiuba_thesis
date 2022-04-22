@@ -169,7 +169,7 @@ Esta parte de la norma define las condiciones de operación en cuáles la PICC d
 \FloatBarrier
 \subsection{ISO/IEC 14443-2: \large{Radiofrecuencia Potencia y Señal Interfaz}}
 
-El PCD emite un campo electromagnético con frecuencia $f_c = \SI{13.56}{\mega\hertz}$. Las PICCs dentro de este campo se acoplan inductivamente al campo para la transferencia de potencia. El campo es modulado para la comunicación entre los dispositivos. El PCD usa modulación de amplitud para enviar información a las PICCs, y las PICC envían sus respuestas con modulación de carga mediante un subcarrier. La norma define varias tasas de bits, pero las comunicaciones siempre comienzan con tasa de bits $\nicefrac{f_c}{128} \approx \SI{106}{Kbps}$ en las dos direcciones. La codificación de los bits y los parámetros de modulación dependen de: la dirección de la comunicación, si las PICCs son tipo A o B, y la tasa de bits. La \figref{fig:mod-encode} muestra una representación de las dos direcciones de comunicación para PICCs de tipo A y de tipo B.
+El PCD emite un campo electromagnético con frecuencia $f_c = \SI{13.56}{\mega\hertz} \pm \SI{7}{\kilo\hertz}$. Las PICCs dentro de este campo se acoplan inductivamente al campo para la transferencia de potencia. El campo es modulado para la comunicación entre los dispositivos. El PCD usa modulación de amplitud para enviar información a las PICCs, y las PICC envían sus respuestas con modulación de carga mediante un subcarrier. La norma define varias tasas de bits, pero las comunicaciones siempre comienzan con tasa de bits $\nicefrac{f_c}{128} \approx \SI{106}{Kbps}$ en las dos direcciones. La codificación de los bits y los parámetros de modulación dependen de: la dirección de la comunicación, si las PICCs son tipo A o B, y la tasa de bits. La \figref{fig:mod-encode} muestra una representación de las dos direcciones de comunicación para PICCs de tipo A y de tipo B.
 
 \begin{figure}[htb]
 \centering
@@ -723,7 +723,7 @@ Este módulo genera la señal de la subportadora cuándo pedido. Las entradas y 
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
@@ -757,7 +757,7 @@ Este módulo es un sumidero por la \textit{tx\_interface}, recibe tramas de bits
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
@@ -801,7 +801,7 @@ El módulo \textbf{tx} instancia los módulos: \textbf{subcarrier} y \textbf{bit
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
@@ -925,7 +925,7 @@ La \tabref{tab:ports_sequence_decode} muestra las entradas y salidas de este mó
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
@@ -969,7 +969,7 @@ Este módulo simplemente instancia los módulos: \textbf{tx} y \textbf{sequence\
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
@@ -1030,8 +1030,12 @@ Este módulo tiene un sumidero de la \textit{rx\_interface} que está conectado 
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
+    % row colouring reverses here for some reason
+    % This fixes it, but putting this in "non-broken"
+    % tables breaks them
+    \setcounter{rownum}{0}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
     clk&Entrada&Reloj. \\
@@ -1077,7 +1081,7 @@ Este módulo recibe tramas de bits por un sumidero de la \textit{rx\_interface} 
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
@@ -1141,8 +1145,9 @@ Las entradas y salidas son descritas en el \tabref{tab:ports_fdt}.
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
+    \setcounter{rownum}{0}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
     clk&Entrada&Reloj. \\
@@ -1177,7 +1182,7 @@ Este módulo calcula el CRC16 definido por el polinomio x16 + x12 + x5 + 1 y el 
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
@@ -1228,7 +1233,7 @@ Este módulo instancia el módulo \textbf{CRC\_A} y lo usa para verificar los CR
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
@@ -1280,7 +1285,7 @@ Este módulo es parecido al módulo \textbf{deserialiser} pero al revés, convie
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
@@ -1307,8 +1312,9 @@ Este módulo es responsable de agregar el CRC16 y los bits de paridad a las resp
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
+    \setcounter{rownum}{0}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
     clk&Entrada&Reloj. \\
@@ -1352,7 +1358,7 @@ Este módulo simplemente instancia los siguientes módulos: \textbf{frame\_decod
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
@@ -1436,7 +1442,7 @@ La norma ISO/IEC 14443 divide las definiciones de las tramas entre las partes tr
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
@@ -1495,7 +1501,7 @@ Este módulo es el primero que actúa sobre las tramas recibidas y genera las re
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
@@ -1520,8 +1526,9 @@ Este módulo es el primero que actúa sobre las tramas recibidas y genera las re
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
+    \setcounter{rownum}{0}
     \textbf{Nombre}&\textbf{Tipo}&\textbf{Descripción} \\
     \hline
     UID\_SIZE&ISO14443A\_pkg::UIDSize (enum)&La PICC tiene un UID simple, doble o triple. \\
@@ -1620,8 +1627,9 @@ Este módulo instancia los módulos: \textbf{framing}, \textbf{routing} y \textb
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
+    \setcounter{rownum}{0}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
     clk&Entrada&Reloj. \\
@@ -1648,7 +1656,7 @@ Este módulo es parametrizado y los parámetros son descritos en el \tabref{tab:
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Tipo}&\textbf{Descripción} \\
     \hline
@@ -1682,8 +1690,9 @@ En este bloque de la implementación, solo hay un módulo \textbf{iso14443\_4a},
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
+    \setcounter{rownum}{0}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
     clk&Entrada&Reloj. \\
@@ -1789,7 +1798,7 @@ Este módulo es el módulo más alto del núcleo IP. Debería ser instanciado en
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Tipo}&\textbf{Descripción} \\
     \hline
@@ -1808,7 +1817,7 @@ Las salidas y entradas son descritas en el \tabref{tab:ports_iso14443a}.
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
@@ -1845,7 +1854,7 @@ Este módulo sincroniza una señal al dominio del reloj para prevenir metaestabi
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Tipo}&\textbf{Descripción} \\
     \hline
@@ -1858,7 +1867,7 @@ Este módulo sincroniza una señal al dominio del reloj para prevenir metaestabi
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
@@ -1886,12 +1895,13 @@ Debido a la simplicidad de este módulo no hay un banco de prueba, el comportami
 \FloatBarrier
 \subsubsection{active\_low\_reset\_synchroniser}
 
-Este módulo es un sincronizador de reset para sincronizar el flanco ascendente de resets asíncronos, activos bajos, para prevenir metaestabilidad cuándo el diseño sale del estado de reset. Las salidas y entradas se describe en el \tabref{tab:ports_active_low_reset_synchroniser}. La implementación simplemente es dos registros como se muestra la \figref{fig:active_low_reset_synchroniser}.
+Este módulo es un sincronizador de reset para sincronizar el flanco ascendente de resets asincrónicos, activos bajos, para prevenir metaestabilidad cuándo el diseño sale del estado de reset. Las salidas y entradas se describe en el \tabref{tab:ports_active_low_reset_synchroniser}. La implementación simplemente es dos registros como se muestra la \figref{fig:active_low_reset_synchroniser}.
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
+    \setcounter{rownum}{0}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
     clk&Entrada&Reloj. \\
@@ -1915,12 +1925,12 @@ Como en el caso del módulo synchroniser, no hay banco de prueba para este módu
 \FloatBarrier
 \subsubsection{pause\_n\_latch\_and\_synchroniser}
 
-Debido a que el reloj puede detenerse durante las pausas, no está garantizado que haría un flanco ascendente del reloj mientras que la pausa está activa, por lo tanto es necesario usar un circuito asíncrono para retener las pausas hasta que el reloj comience de nuevo. El circuito usado es un FFD (Flip Flop D) con un reset y un set asíncronos, conectado como se muestra en la \figref{fig:pause_n_latch}. La entrada \textit{pause\_n\_async} es conectada a la reset asíncrona, así durante la pausa, la salida \textit{pause\_n\_latched} es ‘0’. La entrada D del FFD es un ‘1’ constante, así en el primer flanco ascendente del reloj después de la pausa, la salida \textit{pause\_n\_latched} vuelve a ‘1’. La entrada \textit{rst\_n} está conectada a la set asíncrona, así durante un reset la salida es ‘1’. Debido a que se usa un reset asíncrono el flanco descendente de la  \textit{pause\_n\_latched} es asíncrona al reloj, por lo tanto es necesario usar un sincronizador para prevenir metaestabilidad. La \figref{fig:pause_n_synch_and_latch} muestra el diseño final.
+Debido a que el reloj puede detenerse durante las pausas, no está garantizado que haría un flanco ascendente del reloj mientras que la pausa está activa, por lo tanto es necesario usar un circuito asincrónico para retener las pausas hasta que el reloj comience de nuevo. El circuito usado es un FFD (Flip Flop D) con un reset y un set asincrónicos, conectado como se muestra en la \figref{fig:pause_n_latch}. La entrada \textit{pause\_n\_async} es conectada a la reset asincrónica, así durante la pausa, la salida \textit{pause\_n\_latched} es ‘0’. La entrada D del FFD es un ‘1’ constante, así en el primer flanco ascendente del reloj después de la pausa, la salida \textit{pause\_n\_latched} vuelve a ‘1’. La entrada \textit{rst\_n} está conectada a la set asincrónica, así durante un reset la salida es ‘1’. Debido a que se usa un reset asincrónico el flanco descendente de la  \textit{pause\_n\_latched} es asincrónica al reloj, por lo tanto es necesario usar un sincronizador para prevenir metaestabilidad. La \figref{fig:pause_n_synch_and_latch} muestra el diseño final.
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=1.0\textwidth]{./img/pause_latch_and_synch1_latching.drawio}
-  \caption{Circuito asíncrono por la retención de pausas.}
+  \includegraphics[width=0.6\textwidth]{./img/pause_latch_and_synch1_latching.drawio}
+  \caption{Circuito asincrónico por la retención de pausas.}
   \label{fig:pause_n_latch}
 \end{figure}
 
@@ -1935,13 +1945,13 @@ Las salidas y entradas son descritas en el \tabref{tab:ports_pause_n_synch_and_l
 
 \begin{table}[htb]
   \centering
-  \rowcolors{2}{white}{lightgray!35}
+  \tablezebra
   \begin{tabulary}{\linewidth}{l|l|L}
     \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
     \hline
     clk&Entrada&Reloj. \\
     rst\_n&Entrada&Reset activo bajo. \\
-    pause\_n\_async&Entrada&Pausa, asíncrona, desde el AFE. \\
+    pause\_n\_async&Entrada&Pausa, asincrónica, desde el AFE. \\
     pause\_n\_sync&Salida &Pausa retenida y sincronizada. \\
   \end{tabulary}
   \caption{Entradas y Salidas del módulo \textbf{pause\_n\_synch\_and\_latch}.}
@@ -1964,39 +1974,391 @@ Para verificar este módulo el modelo analógico: \textbf{analogue\_sim} es usad
 % Aplicación - Interfaz con el sensor MOSFET de radiación y el ADC
 % --------------------------------
 \FloatBarrier
-\section{Aplicación - Interfaz con el sensor MOSFET de radiación y el ADC}
+\section{Aplicación - \LARGE{La interfaz con el sensor y el ADC}}
 
-% Sincronización
-\FloatBarrier
-\subsection{Sincronización}
+La aplicación es el bloque principal de este trabajo, instancia el núcleo IP ISO/IEC 14443A, recibe, actúa sobre, y responde a los mensajes de nivel aplicación contenidos en bloques estándares de tipo I. El propósito de este bloque es proveer un método para manipular las salidas al sensor y al ADC, y para devolver la muestra al PCD. El \tabref{tab:sens_adc_signals} muestra las señales conectadas al sensor y al ADC:
 
-% Protocolo
+\begin{table}[htb]
+  \centering
+  \tablezebra
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \setcounter{rownum}{0}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    sens\_config[2:0]&Salida&Configuración del sensor. \\
+    sens\_enable&Salida&Activa el sensor. \\
+    sens\_read&Salida&Lee el sensor. \\
+    sens\_version[3:0]&Entrada&Versión del sensor. \\
+    adc\_enable&Salida&Activa el ADC. \\
+    adc\_read&Salida&Lee el ADC. \\
+    adc\_conversion\_complete&Entrada&Indica que el ADC ha tomado la muestra. \\
+    adc\_value[15:0]&Entrada&Dato muestreado. \\
+    adc\_version[3:0]&Entrada&Versión del ADC. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{Señales en la interfaz con el sensor y el ADC.}.}
+  \label{tab:sens_adc_signals}
+\end{table}
+
+La \figref{fig:sens_adc} muestra el proceso para tomar una muestra del sensor. Primero se fija \textit{sens\_config} con el valor deseado para elegir la configuración del sensor. Después las señales \textit{sens\_enable} y \textit{adc\_enable} son asignadas el valor ‘1’ para activar los dos componentes. Después de un tiempo ($t_1$) la señal \textit{sens\_read} debe ser asignado el valor ‘1’ para pedir que el sensor comienza una lectura. Siguiente, después de un tiempo ($t_2$) la señal \textit{adc\_read} debe ser asignado el valor ‘1’ para pedir que el ADC comience a tomar una muestra. Cuándo el ADC termina la lectura debe pulsar la señal \textit{adc\_conversion\_complete} por un ciclo del reloj para indicar que la señal \textit{adc\_value} es válida y estable. La interpretación de estas señales está a cargo del diseñador del sensor y del ADC, siendo ésta fuera del alcance de este trabajo. El valor de \textit{sens\_config} y los valores de $t_1$ y $t_2$ pueden ser controlados por el PCD al tiempo de la lectura.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/sens_adc}
+  \caption{Diagrama de timing de una lectura del sensor.}
+  \label{fig:sens_adc}
+\end{figure}
+
+% Sincronización del muestreo
 \FloatBarrier
-\subsection{Protocolo}
+\subsection{Sincronización del muestreo}
+
+Para cumplir con las metas del proyecto marco es requerido poder tomar muestras de múltiples de TAGs de forma sincronizada. Un método para sincronizar las muestras sería usar una trama broadcast para iniciar el proceso en cada PICC a la vez. Desafortunadamente la norma ISO/IEC 14443-4 no permite al PCD envíar tramas broadcast. Sería posible modificar el diseño del núcleo IP para permitir esto, por ejemplo con el CID 15 que es reservado para uso futuro en la norma. La desventaja de esto es que no conforme con la norma y significaría que el núcleo IP no sería una implementación genérica. 
+
+El método usado para sincronizar las muestras en este trabajo es parecido a como el FDT funciona para sincronizar las respuestas de las tramas de ANTICOLLISION. Todas las PICCs reciben las pausas mediante el mismo circuito, por lo tanto el flanco ascendente de la pausa debe ser recibido en todas las PICCs a aproximadamente el mismo momento. Además las PICCs recuperan sus relojes de la portadora, así todas las PICCs en el campo electromagnético de un PCD tienen relojes con exactamente la misma frecuencia. Estos hechos significan que si las PICCs tienen un contador que es reseteado a cero en cada flanco ascendente de la pausa, y en los otros ciclos del reloj incrementa su valor, los contadores serían sincronizados dentro de un margen de error de unos ciclos del reloj. El margen de error exacto depende en la implementación del AFE. 
+
+Unos de los mensajes en el protocolo propietario diseñado por este trabajo tienen un campo de sincronización. Una PICC que recibe uno de esos mensajes no realiza la acción especificada hasta que su contador de sincronización ha llegado al valor especificado en ese campo. El PCD puede enviar el mismo mensaje a cada PICC activa en turno. Con un tiempo de sincronización suficientemente grande el PCD puede enviar la siguiente trama antes de que la acción sea realizada, reseteando los contadores en todas las PICCs. De esta manera se logra que todas las PICCs realizan la misma acción de forma sincronizada.
+
+El tiempo de sincronización tiene que ser más grande que el tiempo entre el flanco ascendente de la última pausa de una trama enviada por el PCD y el flanco ascendente de la primera pausa en la próxima trama: $t_{synch} > t_{fdt1} + t_{respuesta} + t_{fdt2} + t_p$ como se muestra la \figref{fig:app_synch}. Los valores en ciclos del reloj son:
+
+\begin{description}
+  \item[$t_{fdt1} = 1236$ ciclos:] \hfill \\ El FDT entre el último flanco ascendente de una trama desde el PCD y el primer flanco de modulación de la respuesta, como definida en la norma~\cite{iso14443-3}.
+  \item[$t_{respuesta} = 128 * \left(B + 1\right)$ ciclos:] \hfill \\ El tiempo necesario para enviar la respuesta, dónde B es el número de bits máxima en la respuesta incluyendo la cabecera, el CRC y los bits de paridad. En el protocolo la respuesta más grande a un comando con sincronización es diez bytes, por lo tanto $B = 90 bits$, y $t_{respuesta} = 11.648 ciclos$.
+  \item[$t_{fdt2} = 1272$ ciclos:] \hfill \\ El FDT entre el último flanco de modulación en una respuesta y el primer flanco de la pausa de la próxima trama del PCD, como definida en la norma~\cite{iso14443-3}. Este valor es el mínimo requerido por la norma, el valor actual depende en la implementación del PCD.
+  \item[$t_p \approx 32$ ciclos:] \hfill \\ La duración de una pausa.
+\end{description}
+
+Estos valores dan un resultado de $t_{sync} > 14.188$ ciclos ($t_{sync} > \SI{1}{\milli\second}$).
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/app_synch3.drawio}
+  \caption{Timings para sincronizar acciones en más de una PICC.}
+  \label{fig:app_synch}
+\end{figure}
+
+% Protocolo Propietario
+\FloatBarrier
+\subsection{Protocolo Propietario}
+
+El protocolo de nivel aplicación es un protocolo propietario diseñado para este trabajo. Cada mensaje y respuesta comienzan con una cabecera de cinco bytes que consiste en un valor mágico de cuatro bytes, y un byte para indicar el tipo de comando. El valor mágico está presente porque la norma ISO/IEC 14443 no define un método para determinar qué protocolo de aplicación usa una PICC. Al comenzar cada mensaje y respuesta con un valor mágico provee un método para verificar que un PCD y una PICC son compatibles. Los comandos definidos son:
+
+\begin{description}
+  \item[IDENTIFY:] \hfill \\ Solicitud por información sobre las versiones de los bloques. El PCD puede usar la respuesta para determinar qué revisión de silicio usa una PICC. Este comando no lleva argumentos.
+  \item[SET\_SIGNAL:] \hfill \\ Solicitud para cambiar las señales al sensor y al ADC. Esta acción puede ser sincronizada con otras PICCs. Este comando lleva tres argumentos:
+  \begin{itemize}
+    \item \textit{sync[15:0]}: Tiempo de sincronización.
+    \item \textit{mask[7:0]}: Máscara de bits para especificar qué señales cambiar. Los bits son:
+    
+    \begin{tabular}{r l}
+      7-5: & \textit{sens\_config[2:0]} \\
+      4: & \textit{sens\_enable} \\
+      3: & \textit{sens\_read} \\
+      2: & \textit{adc\_enable} \\
+      1: & \textit{adc\_read} \\
+      0: & reservado \\
+    \end{tabular}
+    \item \textit{value}: Valores nuevos de esas señales.
+  \end{itemize}
+  \item[AUTO\_READ:] \hfill \\ Solicitud para tomar una muestra del sensor automáticamente. Esta acción puede ser sincronizada con otras PICCs. Este comando lleva tres argumentos, los argumentos \textit{timing1} y \textit{timing2} corresponden con el $t_1$ y $t_2$ mostrados en la \figref{fig:sens_adc}:
+  \begin{itemize}
+    \item \textit{sync[15:0]}: Tiempo de sincronización.
+    \item \textit{timing1[31:0]}: Tiempo entre los flancos ascendentes de las señales \textit{sens\_enable} y \textit{adc\_enable}, y el flanco ascendente de la señal \textit{sens\_read}. El protocolo usa 32 bits para este argumento, pero solo los 25 bits menos significativos son usados.
+    \item \textit{timing2[31:0]}: Tiempo entre el flanco ascendente de la señal \textit{sens\_read} y el flanco ascendente de la señal \textit{adc\_read}. El protocolo usa 32 bits para este argumento, pero solo los 25 bits menos significativos son usados.
+  \end{itemize}
+  \item[GET\_RESULT:] \hfill \\ Solicitud por el valor de la última muestra. Este comando no lleva argumentos.
+  \item[ABORT:] \hfill \\ Solicitud para abandonar la acción concurrente, sea una AUTO\_READ o una SET\_SIGNAL. Este comando no lleva argumentos.
+\end{description}
+
+Las respuestas son:
+
+\begin{description}
+  \item [IDENTIFY\_REPLY:] \hfill \\ Respuesta al IDENTIFY, contiene:
+  \begin{itemize}
+    \item Versión de este protocolo.
+    \item Versión de esta aplicación.
+    \item Versión del núcleo IP ISO/IEC 14443A.
+    \item Versión del sensor MOSFET de radiación.
+    \item Versión del ADC.
+  \end{itemize}
+  \item [GET\_RESULT\_REPLY:] \hfill \\ Respuesta al GET\_RESULT, contiene el valor de la última muestra del sensor, y unas flags de estado:
+  \begin{itemize}
+    \item \textit{conv\_complete}: Indica que el ADC ha terminado una muestra después de la última vez que este flag fue enviado.
+    \item \textit{already\_busy}: Indica que la PICC sigue ocupada, y no puede procesar esta solicitud.
+    \item \textit{unexpected\_pause}: Indica que una pausa fue recibida durante los periodos de $t_1$, $t_2$, o $t_{adc}$ del proceso AUTO\_READ. Durante esos periodos el PCD debe quedarse quieto para que la PICC pueda tener un reloj continuo para medir los timings de forma precisa.
+    \item \textit{error}: Indica que el último mensaje contuvo un error del protocolo, por ejemplo el comando no fue conocido, o el mágico fue inválido.
+  \end{itemize}
+  \item [STATUS\_REPLY:] \hfill \\ Respuesta a SET\_SIGNAL, AUTO\_READ y ABORT, contiene los mismos flags de estado de la respuesta GET\_RESULT\_REPLY.
+\end{description}
 
 % Ejemplos
 \FloatBarrier
 \subsection{Ejemplos}
 
+Un ejemplo de la lectura de un único sensor mediante el comando SET\_SIGNAL. En este proceso los timings entre las etapas son controlados completamente por cuándo el PCD envía las tramas. El argumento \textit{sync} en todos casos debería ser cero.
+
+\begin{enumerate}
+  \item El PCD activa la PICC.
+  \item El PCD envía el comando IDENTIFY y verifica la respuesta.
+  \item El PCD envía el comando SET\_SIGNAL para fijar la señal \textit{sens\_config} como desea y las otras señales en ‘0’.
+  \item El PCD envía el comando SET\_SIGNAL para fijar las señales \textit{sens\_enable} y \textit{adc\_enable} en ‘1’.
+  \item El PCD espera por el $t_1$ deseado.
+  \item El PCD envía el comando SET\_SIGNAL para fijar la señal \textit{sens\_read} en ‘1’.
+  \item El PCD espera por el $t_2$ deseado.
+  \item El PCD envía el comando SET\_SIGNAL para fijar la señal \textit{adc\_read} en ‘1’.
+  \item El PCD espera por el $t_{adc}$, que depende en la implementación del ADC.
+  \item El PCD envía el comando GET\_RESULT, verifica que la respuesta no indica un error, y guarda la muestra.
+\end{enumerate}
+
+Un ejemplo de la lectura de un único sensor mediante el comando AUTO\_READ. El argumento \textit{sync} en todos casos debería ser cero.
+
+\begin{enumerate}
+  \item El PCD activa la PICC.
+  \item El PCD envía el comando IDENTIFY y verifica la respuesta.
+  \item El PCD envía el comando SET\_SIGNAL para fijar la señal \textit{sens\_config} como desea y las otras señales en ‘0’.
+  \item El PCD envía el comando AUTO\_READ, con los tiempos $t_1$ y $t_2$ deseados, y verifica la respuesta.
+  \item El PCD espera por más que $t_1 + t_2 + t_{adc}$ para que el proceso se termine.
+  \item El PCD envía el comando GET\_RESULT, verifica que la respuesta no indica un error, y guarda la muestra. 
+\end{enumerate}
+
+Un ejemplo de la lectura de dos sensores de forma sincronizada mediante el comando AUTO\_READ. La \figref{fig:app_flow} muestra el mismo flujo de forma gráfica.
+
+\begin{enumerate}
+  \item El PCD activa las dos PICCs.
+  \item El PCD envía el comando IDENTIFY a PICC 1 y PICC 2 en turno, y verifica las respuestas.
+  \item El PCD envía el comando SET\_SIGNAL a PICC 1 y PICC 2 en turno, para fijar las señales \textit{sens\_config} como desea, y las otras señales en ‘0’. El argumento \textit{sync} debería ser cero, siendo que este comando no necesita ser sincronizado.
+  \item El PCD envía el comando AUTO\_READ a PICC 1 y PICC 2 en turno, especificando los mismos  $t_{sync}$, $t_1$ y $t_2$, en los dos mensajes.
+  \item El PCD espera más que $t_{sync} + t_1 + t_2 + t_{adc}$ para que los procesos terminen.
+  \item El PCD envía el comando GET\_RESULT a PICC 1 y PICC 2 en turno, verifica las respuestas no indicas errores, y guarda las muestras.
+\end{enumerate}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/app_flow2.drawio}
+  \caption{Ejemplo de la lectura de dos TAGs de forma sincronizada.}
+  \label{fig:app_flow}
+\end{figure}
+
+
 % Marco de Verificación Extendido
 \FloatBarrier
 \subsection{Marco de Verificación Extendido}
+
+El Marco de Verificación usado en el núcleo IP ISO/IEC 14443A es extendido para permitir la verificación de esta aplicación. Tres componentes extras son agregados. 
+
+\begin{itemize}
+  \item Un paquete de SystemVerilog \textbf{ProtocolGenerator} que tienen funciones para generar colas de bytes por los mensajes de nivel aplicación.
+  \item Una secuencia \textbf{AppCommsTestSequence} que extiende \textbf{CommsTestSequence}. Esta secuencia contiene unas pruebas adicionales para verificar el comportamiento de la aplicación. Estas pruebas son descritas dónde son usadas primero.
+  \item Un modelo del ADC. Este modelo monitoriza la señal \textit{adc\_read} por flancos ascendentes. Un número de ciclos después de la activación de esa señal, fija la señal \textit{adc\_value} en un valor aleatorio, y pulsa la señal \textit{adc\_conversion\_complete} por un ciclo. El retardo es elegido aleatoriamente entre un mínimo y un máximo que son parámetros del modelo.
+\end{itemize}
 
 % Implementación
 \FloatBarrier
 \subsection{Implementación}
 
+Esta parte del diseño consiste en tres módulos:
+
+\begin{itemize}
+  \item \textbf{signal\_control}: Control de la interfaz con el sensor y el ADC.
+  \item \textbf{adapter}: Procesa el protocolo propietario, realiza la acción pedido mediante el módulo \textbf{signal\_control}, y devuelve la respuesta.
+  \item \textbf{radiation\_sensor\_digital\_top}: El módulo más alto de este trabajo.
+\end{itemize}
+
 % signal_control
 \FloatBarrier
 \subsubsection{signal\_control}
+
+Este módulo es responsable por la interfaz con el sensor y el ADC. Actúa sobre los comandos SET\_SIGNAL y AUTO\_READ para realizar el muestreo del sensor. \tabref{tab:ports_signal_control} muestra las entradas y salidas del módulo.
+
+\begin{table}[htb]
+  \centering
+  \tablezebra
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \setcounter{rownum}{0}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset activo bajo. \\
+    pause\_n\_synchronised&Entrada&Pausa, activa baja, sincronizada. \\
+    sync\_timing&Entrada&Número de ciclos de sincronización. \\
+    auto\_read\_timing1&Entrada&Número de ciclos por $t_1$. \\
+    auto\_read\_timing2&Entrada&Número de ciclos por $t_2$. \\
+    cmd&Entrada&Comando recibido \\
+    set\_signals\_mask&Entrada&Máscara de bits en el comando SET\_SIGNAL \\
+    set\_signals\_value&Entrada&Valor nuevo de las señales en el comando SET\_SIGNAL \\
+    start&Entrada&Señal de activación. \\
+    abort&Entrada&Abandona el proceso concurrente. \\
+    result\_read&Entrada&Indica que la última muestra fue enviada al PCD. \\
+    signals&Salida&Estructura conteniendo las salidas que conectan al sensor y al ADC. \\
+    adc\_conversion\_complete&Entrada&Indica que la entrada \textit{adc\_value} contiene una muestra válida, desde el ADC \\
+    adc\_value&Entrada&Dato muestreado. \\
+    busy&Salida&Indica este módulo está ocupado. \\
+    unexpected\_pause&Salida&Indica que una pausa fue recibida durante $t_1$, $t_2$ o $t_{adc}$. \\
+    cached\_adc\_conversion\_complete&Salida&Indica que la salida \textit{cached\_adc\_value} es válida. \\
+    cached\_adc\_value&Salida&Último dato muestreado. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{signal\_control}.}
+  \label{tab:ports_signal_control}
+\end{table}
+
+La implementación consiste en un contador y una máquina de estados con cinco estados: IDLE, SYNC, TIMING1, TIMING2 y WAIT\_FOR\_ADC. En los estados IDLE y SYNC, el contador es reseteado a cero cuándo se detecta un flanco ascendente en la entrada \textit{pause\_n\_synchronised}, e incrementa su valor en los otros ciclos. Si una pausa es detectada en cualquier otro estado la salida \textit{unexpected\_pause} es asignada ‘1’, para avisar el PCD que una pausa fue recibida durante el proceso del muestreo. Debido a que el reloj se detiene durante las pausas, una pausa en estos estados tiene dos implicaciones no deseadas:  por un lado que los timings no son precisos; y por otro que puede existir variaciones en la tensión VDD que impacten negativamente en  la precisión del muestreo.
+
+En el estado IDLE, el módulo se transiciona al estado SYNC cuando \textit{start} está ‘1’. En el estado SYNC el módulo espera por el contador a tener un valor mayor o igual que la entrada \textit{sync\_timing}. En este momento la acción realizada depende en el tipo del comando:
+
+\begin{description}
+  \item[SET\_SIGNAL:] \hfill \\ Las salidas al sensor y al ADC son asignado al resultado de: 
+  \begin{align*}
+      \left(\textit{signals}~\&~\sim\textit{set\_signals\_mask}\right)~|~\left(\textit{set\_signals\_value}~\&~\textit{set\_signals\_mask}\right)
+  \end{align*}
+  Eso es decir que las señales especificadas en la máscara de bits se cambian a los valores nuevos, y las otras señales se quedan en su estado original. Si esta operación causa un flanco ascendente en la señal \textit{adc\_read}, se transiciona al estado WAIT\_FOR\_ADC, y si no, se vuelve al estado IDLE.
+  \item[AUTO\_READ:] \hfill \\ Las señales \textit{sens\_enable} y \textit{adc\_enable} son asignados el valor ‘1’, el contador es reseteado a cero, y se transiciona al estado TIMING1.
+\end{description}
+
+En el estado TIMING1 el módulo espera por el contador a tener un valor igual que la entrada \textit{auto\_read\_timing1}, y entonces fija la señal \textit{sens\_read} a ‘1’, el contador es reseteado a cero, y se transiciona al estado TIMING2. En el estado TIMING2 el módulo espera por el contador a tener un valor igual que la entrada \textit{auto\_read\_timing2}, y entonces fija la señal \textit{adc\_read} a ‘1’, y se transiciona al estado WAIT\_FOR\_ADC. Finalmente, en el estado WAIT\_FOR\_ADC el módulo espera por la entrada \textit{adc\_conversion\_complete} estar ‘1’. Cuando esto ocurre, fija la salida \textit{cached\_adc\_conversion\_complete} a ‘1’ y asigna la entrada \textit{adc\_value} a la salida \textit{cached\_adc\_value}. Finalmente se vuelve al estado IDLE.
+
+En cualquier momento si la entrada \textit{abort} es ‘1’, la máquina de estados vuelve al estado IDLE y las salidas son reseteadas a ‘0’. Cuándo la entrada \textit{result\_read} es ‘1’ para indicar que la última muestra fue enviada al PCD, la salida \textit{cached\_adc\_conversion\_complete} es asignada el valor ‘0’.
+
+Para verificar este módulo, el banco de prueba contiene un bloque que monitorea las señales: \textit{pause\_n\_synchronised}, \textit{sens\_enable}, \textit{sens\_read}, \textit{adc\_enable} y \textit{adc\_read}. Los tiempos entre flancos de esas señales son medidos y comparados con los tiempos esperados calculados desde las entradas \textit{sync\_timing}, \textit{auto\_read\_timing1} y \textit{auto\_read\_timing2}. Además verifica que las señales cambian a los valores esperados. El modelo del ADC es usado para controlar las entradas al DUT \textit{adc\_value} y \textit{adc\_conversion\_complete}. Cada prueba es repetida mil veces con valores aleatorios. Las pruebas ejecutadas son:
+
+\begin{itemize}
+  \item Simula el comando SET\_SIGNAL, sin tiempo de sincronización.
+  \item Simula el comando SET\_SIGNAL, con tiempo de sincronización, sin pausas durante ese periodo.
+  \item Simula el comando SET\_SIGNAL, con tiempo de sincronización, con pausas durante ese periodo.
+  \item Las últimas tres pruebas son repetidas por el comando AUTO\_READ.
+  \item Simula el comando AUTO\_READ, con pausas durante los periodos $t_1$, $t_2$ y $t_{adc}$. Esta prueba verifica la salida: \textit{unexpected\_pause}.
+  \item Simula los comandos SET\_SIGNAL y AUTO\_READ, pulsando la entrada \textit{abort} en el medio del proceso para abandonar la muestra.
+\end{itemize}
+
+Finalmente hay algunas aserciones:
+
+\begin{itemize}
+  \item Verifica las salidas cuándo el DUT está en reset.
+  \item Verifica que la salida \textit{busy} está en ‘1’ el ciclo después de un pulso en la entrada \textit{start}, cuando la entrada \textit{cmd} es SET\_SIGNAL o AUTO\_READ.
+  \item Verifica que las salidas son correctas después de un pulso en la entrada \textit{abort}.
+  \item Verifica que un pulso en la entrada \textit{adc\_conversion\_complete} produce que la salida \textit{cached\_adc\_conversion\_complete} suba a ‘1’, y que la salida \textit{cached\_adc\_value} sea igual al resultado devuelto del modelo del ADC.
+\end{itemize}
+
+El informe de cobertura da un resultado de 96\% por el DUT. La mayoría de casos que faltan cobertura son situaciones imposibles de ocurrir. La única parte del DUT que falta cobertura es las entradas \textit{auto\_read\_timing1} y \textit{auto\_read\_timing2} son limitados a 19 bits en el banco de prueba en vez de los 25 bits en el DUT, por lo tanto esas entradas y los bits más significativos del contador faltan cobertura de toggle. Esto es para reducir la duración de la simulación.
 
 % adapter
 \FloatBarrier
 \subsubsection{adapter}
 
+Este módulo es un adaptador entre el núcleo IP y el módulo \textbf{signal\_control}. Recibe los mensajes del protocolo de nivel aplicación desde el núcleo IP, instancia el módulo \textbf{signal\_control}, manipula sus entradas, y envía las respuestas al núcleo IP por transmisión al PCD. \tabref{tab:ports_adapter} muestra las entradas y salidas del módulo.
+
+\begin{table}[htb]
+  \centering
+  \tablezebra
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \setcounter{rownum}{0}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n&Entrada&Reset, activo bajo. \\
+    pause\_n\_synchronised&Entrada&Pausa, activa baja, sincronizada. \\
+    rx\_iface&Entrada&Sumidero de la \textit{rx\_interface} \\
+    tx\_iface&Salida&Fuente de la \textit{tx\_interface}. \\
+    app\_resend\_last&Entrada&Pedido para reenviar la última respuesta. \\
+    sens\_config&Salida&Configuración del sensor. \\
+    sens\_enable&Salida&Activa el sensor. \\
+    sens\_read&Salida&Lee el sensor. \\
+    adc\_enable&Salida&Activa el ADC. \\
+    adc\_read&Salida&Lee el ADC. \\
+    adc\_conversion\_complete&Entrada&El ADC ha tomado la muestra. \\
+    adc\_value&Entrada&Dato muestreado. \\
+    const\_iso\_iec\_14443a\_digital\_version&Entrada&Versión del núcleo IP. \\
+    const\_iso\_iec\_14443a\_AFE\_version&Entrada&Versión del AFE. \\
+    const\_sensor\_version&Entrada&Versión del sensor. \\
+    const\_adc\_version&Entrada&Versión del ADC. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{adapter}.}
+  \label{tab:ports_adapter}
+\end{table}
+
+Cuando el núcleo IP recibe un bloque estándar de tipo I direccionada a esta PICC, envía el mensaje contenido en el campo de información a la aplicación. Este módulo recibe esas tramas en un buffer de quince bytes, lo que es el tamaño del mensaje más largo (AUTO\_READ). Después de haber recibido una trama entera, el valor mágico de la cabecera es verificado. En el caso que no sea válido, este módulo no envía una respuesta. Si el mágico es correcto, se arma la respuesta y si es un comando AUTO\_READ o SET\_SIGNAL, comienza la operación mediante el módulo signal\_control.
+
+La parte cuatro de la norma especifica que si la PICC recibe un bloque estándar R(ACK) o R(NAK), con número de bloque igual al de la PICC, la última respuesta debe ser reenviada. En este caso el núcleo IP pulsa su salida \textit{app\_resend\_last}, que está conectada a la entrada de este módulo. La respuesta es construida en un buffer de diez bytes que quedan constantes hasta que el próximo comando es recibido. Cuándo la entrada \textit{app\_resend\_last} es ‘1’, la respuesta en el buffer de transmisión es reenviado.
+
+Para verificar este módulo el banco de prueba consiste en el controlador \textbf{RxByteIfaceDriver} por la \textit{rx\_iface}, y el monitor \textbf{TxByteIfaceMonitor} y el controlador \textbf{TxByteIfaceSinkDriver} por la \textit{tx\_iface}. Como en el banco de prueba delmódulo: \textbf{signal\_control}, el modelo del ADC es instanciado, y hay lógica para verificar las salidas al sensor y al ADC funcionan correctamente. Finalmente hay una clase \textbf{AdapterTbSequence} que extiende la secuencia \textbf{AppCommsTestsSequence}, para proveer habilidades específicas (customisations) a este banco de prueba. Unos ejemplos de estas habilidades son:
+
+\begin{itemize}
+  \item Sustituya las tareas \textbf{go\_to\_state\_…()}. La secuencia usa estas tareas para poner el DUT en el estado de inicialización apto por cada prueba, pero en este caso el DUT solo soporta el protocolo de nivel aplicación, por lo tanto estas transiciones de estados tienen que ser simuladas.
+  \item Sustituya la función \textbf{get\_identify\_reply\_args()} para devolver las versiones simuladas de los bloques para verificar la respuesta al IDENTIFY.
+  \item Sustituya las tareas \textbf{send\_transaction()} y \textbf{verify\_trans()} para quitar la cabecera de los bloques estándares. Esto es necesario porque la secuencia usa tramas enteras pero el DUT solo soporta el protocolo de nivel aplicación contenido en el campo de información de los bloques estándares tipo I.
+  \item Sustituya la tarea \textbf{send\_std\_i\_block()} para falsificar una pausa cuándo una transacción es enviada. Esto es necesario para verificar que el DUT detecta pausas durante los periodos $t_{sync}$, $t_1$, $t_2$, y $t_{adc}$.
+\end{itemize}
+
+Las pruebas ejecutadas son en la secuencia \textbf{AppCommsTestsSequence}. Unos ejemplos son:
+
+\begin{itemize}
+  \item Envía el comando IDENTIFY y verifica la respuesta.
+  \item Envía los comando SET\_SIGNAL y AUTO\_READ con pausas en los periodos $t_{sync}$, $t_1$, $t_2$, y $t_{adc}$.
+  \item Envía los comando SET\_SIGNAL y AUTO\_READ, y después abandonar el proceso con el comando ABORT.
+  \item Realiza una lectura manualmente mediante los comandos SET\_SIGNAL y GET\_RESULT.
+  \item Envía un comando con un mágico inválido, o un error de CRC.
+  \item Envía un comando y después un R(ACK) / R(NAK) con número de bloque igual a lo de la PICC para verificar que la PICC retransmite su última respuesta.
+\end{itemize}
+
+El informe de cobertura da un resultado de 96\% por el DUT. El módulo \textbf{adapter} solo, sin su submódulo \textbf{signal\_control}, tiene un resultado de 97\%. Los casos que faltan cobertura son imposibles de ocurrir, por ejemplo el valor mágico de las respuestas es constante, así falta cobertura de toggle.
+
 % radiation_sensor_digital_top
 \FloatBarrier
 \subsubsection{radiation\_sensor\_digital\_top}
+
+Este módulo es el módulo más alto en el trabajo. Instancia el núcleo IP ISO/IEC 14443A, el módulo \textbf{adapter}, y unos sincronizadores. \tabref{tab:ports_radiation_sensor_digital_top} muestra las entradas y salidas del módulo.
+
+\begin{table}[htb]
+  \centering
+  \tablezebra
+  \begin{tabulary}{\linewidth}{l|l|L}
+    \rowcolor{lightgray!35}
+    \textbf{Nombre}&\textbf{Dirección}&\textbf{Descripción} \setcounter{rownum}{0} \\
+    \hline
+    \multicolumn{3}{c}{\textbf{AFE}} \\
+    \hline
+    clk&Entrada&Reloj. \\
+    rst\_n\_async&Entrada&Reset, activo bajo, asincrónica. \\
+    power&Entrada&Especifica si la potencia recibida del campo electromagnético es suficiente. \\
+    pause\_n\_async&Entrada&Pausa, activa baja, asincrónica. \\
+    lm\_out&Salida&Salida al modulador de carga. \\
+    afe\_version&Entrada&Versión del AFE. \setcounter{rownum}{0} \\
+    \hline
+    \multicolumn{3}{c}{\textbf{UID Control}} \\
+    \hline
+    uid\_variable&Entrada&Bits menos significativos del UID. \setcounter{rownum}{0} \\
+    \hline
+    \multicolumn{3}{c}{\textbf{Sensor MOSFET de Radiación}} \\
+    \hline
+    sens\_config&Salida&Configuración del sensor. \\
+    sens\_enable&Salida&Activa el sensor. \\
+    sens\_read&Salida&Lee el sensor. \\
+    sens\_version&Entrada&Versión del sensor. \setcounter{rownum}{0} \\
+    \hline
+    \multicolumn{3}{c}{\textbf{ADC}} \\
+    \hline
+    adc\_enable&Salida&Activa el ADC. \\
+    adc\_read&Salida&Lee el ADC. \\
+    adc\_conversion\_complete\_async&Entrada&Indicador asincrónico que el ADC ha terminado la muestra. \\
+    adc\_value&Entrada&Dato muestreado. \\
+    adc\_version&Entrada&Versión del ADC. \\
+  \end{tabulary}
+  \caption{Entradas y Salidas del módulo \textbf{radiation\_sensor\_digital\_top}.}
+  \label{tab:ports_radiation_sensor_digital_top}
+\end{table}
+
+Debido a que las entradas \textit{rst\_n\_async} y \textit{adc\_conversion\_complete\_async} son asincrónicas, los módulo \textbf{active\_low\_reset\_synchroniser} y \textbf{synchronise} son instanciado para sincronizar el flanco ascendente del reset, y ambos flancos de la señal \textit{adc\_conversion\_complete\_async} al dominio del reloj. Además debido a que la entrada \textit{pause\_n\_async} también es asincrónica y que el reloj se detiene durante la pausa, el módulo \textbf{pause\_latch\_and\_synchrhoniser} es instanciado para retener la pausa, y sincronizarla al dominio del reloj.
+
+El UID elegido por este proyecto es un UID simple de: 0xEFFEC70x, dónde los tres bits menos significativos son únicos por cada PICC. Estos bits son especificados con la entrada \textit{uid\_variable}. El núcleo IP es instanciado con parámetros que especifican el tamaño del UID, el número de bits variables y la parte constante del UID. El parámetro: \textit{FDT\_TIMING\_ADJUST} del DUT, es asignado el valor dos, para compensar por los dos circos de retardo de la pausa en el módulo \textbf{pause\_n\_latch\_and\_synchroniser}.
+
+Para verificar este módulo el banco de prueba es una mezcla de los bancos de pruebas por los módulos \textbf{iso14443a} y \textbf{adapter}. Los modelos del AFE y del ADC son instanciados para generar el reloj, simular las pausas desde el PCD, y simular el comportamiento del ADC. Las salidas al sensor y al ADC son verificadas en la misma manera de en el banco de prueba del módulo \textbf{adapter}. El FDT es verificado en la misma manera de en el banco de prueba del módulo \textbf{iso14443a}. Finalmente la clase \textbf{RadSensDigTop\_TbSequence} extiende la secuencia \textbf{AppCommsTestSequence}, para proveer habilidades específicas (customisations) a este banco de prueba:
+
+\begin{itemize}
+  \item Sustituya la tarea: \textbf{send\_transaction()} para configurar aleatoriamente los timings en el modelo del AFE antes de enviar cada trama.
+  \item Sustituya las tareas de transmisión de los comandos SET\_SIGNAL, AUTO\_READ y ABORT para determinar el comportamiento esperado de las salidas al sensor y al ADC.
+\end{itemize}
+
+Todas las pruebas son ejecutadas cuatro veces con un UID distinto cada vez. Dentro de este lazo, cada prueba es ejecutada cien veces. Las pruebas ejecutadas son la combinación de las en los bancos de pruebas de los módulos \textbf{iso14443a} y \textbf{adapter}. Estas son las pruebas de inicialización, las de parte cuatro de la norma, y las del protocolo propietario de nivel aplicación.
+
+El informe de cobertura da un resultado de 92\% por el DUT. El DUT mismo, sin considerar sus submódulos también tiene 92\% cobertura debido a que la salida \textit{iso14443a\_version} del núcleo IP ISO14443A es constante.
 
 % ---------------------------------------------
 % Síntesis y Place & Route
@@ -2005,30 +2367,195 @@ Para verificar este módulo el modelo analógico: \textbf{analogue\_sim} es usad
 \FloatBarrier
 \chapter{Síntesis y Place \& Route}
 
+Síntesis y Place \& Route (PnR) es el proceso de convertir el diseño digital implementado en HDL a un conjunto de máscaras (layout) que el fabricante puede usar para fabricar el ASIC. Síntesis es el proceso de convertir el HDL a una netlist de nivel compuertas, la herramienta usada para síntesis en este trabajo es Synopsys Design Compiler. PnR es el proceso de convertir esa netlist a un conjunto de máscaras, la herramienta usada para PnR es Synopsys IC Compiler 2. Estas herramientas son controladas con scripts TCL diseñados para este proyecto.
+
+El proceso de fabricación utilizado en este trabajo es XFAB XH018, que es una tecnología CMOS de 180 nm. El fabricante (XFAB) provee un PDK (Process Design Kit) que contiene bibliotecas de celdas estándares compuestas por compuertas, registros y otros componentes necesarios para implementar un circuito integrado digital. Existen diferentes bibliotecas optimizadas para usos específicos. Las usadas en este proyecto son: D\_CELLS\_HD y D\_CELLS\_HDLL, las dos son celdas estándares de alta densidad de ruteo (HD). La biblioteca D\_CELLS\_HDLL es optimizada para bajo corriente de fuga (Low Leakage). Las herramientas eligen una celda HD o HDLL dependiendo en las optimizaciones elegidas y los constraints del diseño.
+
+Minimizar el consumo de potencia estática es muy importante en este proyecto, porque la potencia es recibida inalámbricamente mediante el campo electromagnético, y durante las pausas el campo es reducido a menos de 5\% de su valor original. Por eso es necesario tener un capacitor en el AFE para mantener la tensión en el rail VDD, y el tamaño de ese capacitor depende en el consumo del ASIC durante las pausas. Debido a que el reloj es recuperado de la portadora del campo electromagnético, no hay reloj durante las pausas, lo que significa que no hay consumo de potencia dinámica tampoco. Así a minimizar el consumo de potencia estática implica que el capacitor en el AFE pueda ser más pequeño, reduciendo el área total del proyecto.
+
+Estas celdas estándares HD y HDLL pueden funcionar con un rail de alimentación de \SI{1.2}{\volt} o \SI{1.8}{\volt}~\cite{xfab_dig_libs_overview}, este proyecto usa \SI{1.8}{\volt}. Las celdas estándares incluyen el layout de cada celda y caracterizaciones de timing y potencia. El PDK también contiene las reglas del diseño para el proceso, por ejemplo el ancho y pitch mínimo por cada capa. El proceso XFAB XH018 se permite elegir la cantidad de capas de metal a usar, en este trabajo la variación usada se llama “43” y tiene 6 capas de metal: MET1, MET2, MET3, MET4, METTP, METTPL.
+
 % Síntesis
 % --------------------------------
 \FloatBarrier
 \section{Síntesis}
+
+El primer paso en síntesis con Design Compiler es construir una biblioteca milkyway, esto es un base de datos que Design Compiler usa para guardar el proyecto incluyendo información física de las celdas estándares, información de la tecnología, e información del diseño~\cite{milkyway_database_app_note}. Además Design Compiler toma datos de otras bibliotecas que no están guardadas en la biblioteca milkyway: información de timing y potencia para cada celda, e información de capacitancia y resistencia para la extracción RC de las rutas. Después los archivos RTL del diseño son leídos, analizados y convertidos a un formato intermedio independiente de la tecnología.
+
+Los constraints (restricciones) de timing son una parte muy importante del diseño digital, especifican detalles del timing de los relojes, las entradas y las salidas en el diseño. Esta información es necesaria para que las herramientas puedan realizar análisis de timing sobre todas las rutas y asegurar que el diseño va a funcionar con el reloj especificado. Debido a que no hay una implementación del AFE ni del ADC todavía para este proyecto, es necesario asumir algunas características sobre sus comportamientos, cuándo la implementación del proyecto entero esté finalizada estos constraints deberían ser revisados. Los constraints son:
+
+\begin{itemize}
+  \item El reloj tiene una frecuencia de \SI{13.5}{\mega\hertz}, con incertidumbre de 20\% para el análisis de Setup y \SI{50}{\pico\second} por análisis de Hold. Estos valores son basados en las recomendaciones de XFAB~\cite{dig_imp_guidelines}. La norma ISO/IEC 14443-2 define la frecuencia de la portadora~\cite{iso14443-2}: $f_c = \SI{13.56}{\mega\hertz} \pm \SI{7}{\kilo\hertz}$. Una incertidumbre de 20\% es más que suficiente para cobrar la \SI{7}{\kilo\hertz} (0,05\%) de variación.
+  \item Las entradas: \textit{afe\_version}, \textit{adc\_version}, y \textit{sens\_version} son constantes, por lo tanto no es necesario realizar análisis de timing sobre estas rutas. Para especificar esto las rutas son cortadas mediante el constraint set\_false\_path.
+  \item La entrada: \textit{uid\_variable} también es constante, y las rutas son cortadas. El nombre indica que es la parte del UID que es única para cada PICC. Esta señal debería ser fija mientras el diseño está fuera de reset.
+  \item La entrada: \textit{rst\_n\_async} es asincrónica, el diseño contiene un sincronizador de reset para sincronizar el flanco ascendente, por lo tanto no es necesario realizar análisis de timing sobre esta ruta.
+  \item Las salidas al sensor y al ADC: \textit{sens\_config}, \textit{sens\_enable}, \textit{sens\_read}, \textit{adc\_enable} y \textit{adc\_read}, son asincrónicas también. Si el sensor o el ADC necesita recibir esas señales de forma sincrónica estos bloques deben sincronizar esas señales al dominio del reloj internamente.
+  \item Las entradas desde el ADC: \textit{adc\_value} y \textit{adc\_conversion\_complete}, son asíncronas y no es necesario realizar análisis de timing sobre estas rutas. En el RTL \textit{adc\_conversion\_complete} pasa por un sincronizador para prevenir metaestabilidad. Además un requisito del ADC es que \textit{adc\_value} es estable antes del pulso en \textit{adc\_conversion\_complete}. Esto significa que cuándo el pulso ocurre en la versión sincronizada de \textit{adc\_conversion\_complete}, es seguro usar \textit{adc\_value} sin arriesgar metaestabilidad. En realidad estas señales van a ser sincrónicas, pero sin conocer como son ruteados y la relación de latencia entre el reloj llegando a este bloque y al ADC, es imposible escribir constraints más precisos.
+  \item La entrada \textit{power} desde el AFE es asincrónica. Un requisito del diseño del AFE es que esa señal debe ser constante durante el envío de una respuesta al PCD, el único momento en que esa entrada es usada, así que no es necesario sincronizar esta señal.
+  \item La entrada \textit{pause\_n\_async} y la salida \textit{lm\_out} son asincrónicas también, \textit{pause\_n\_async} pasa por un sincronizador en el RTL. A diferencia de las otras señales asincrónicas, estas rutas no son cortadas. Al cortar una ruta significa que las herramientas no intentan optimizar el tiempo de propagación interno de la ruta. Debido a que el requisito del FDT es estricto, es deseado minimizar el retardo de propagación en estas rutas. Para cumplir esto el constraint set\_max\_delay es usado, especificando un retardo de propagación máximo de \SI{5}{\nano\second}.
+  \item Debe ser asumido que todas las entradas son manejadas por un inversor de tamaño mínimo, y que todas las salidas tienen carga de \SI{0.4}{\pico\farad} lo que es equivalente de aproximadamente \SI{2}{\milli\meter} de ruteo en la tecnología XH018. Estos valores son especificados en la documentación del PDK~\cite{dig_imp_guidelines}.
+\end{itemize}
+
+En un circuito digital el tiempo de propagación de una compuerta depende principalmente en tres factores conocido como el PVT~\cite{sta_for_nm_designs}:
+
+\begin{itemize}
+  \item Proceso: Cada chip CMOS fabricado posee diferencias debido a la variabilidad del proceso de fabricación.
+  \item Voltaje: La tensión de alimentación $V_{DD}$.
+  \item Temperatura: La temperatura del chip.
+\end{itemize}
+
+En análisis de timing, un corner se refiere a ciertas condiciones PVT de operación. El PDK provee bibliotecas con caracterizaciones de timing para varios corners del PVT, que pueden ser usados para verificar el timing de un diseño. En este trabajo se utiliza el análisis BCWC (best case, worst case). El worst case corner genera las condiciones que causan el retardo máximo, lo cual ocurre con el proceso más lento, la tensión más baja y la temperatura más alta. El best case corner genera las condiciones que causan el retardo mínimo, lo cual ocurre con el proceso más rápido, la tensión más alta y la temperatura más baja. Las herramientas usan el worst case corner por análisis de Setup, y el best case corner por análisis de Hold. Los corners usados son:
+
+\begin{description}[labelindent=1cm]
+  \item [Best Case:] Rápido, 1,98V, -40°C.
+  \item [Worst Case:] Lento, 1,62V, 125°C.
+\end{description}
+
+El diseñador del AFE debe asegurarse que su diseño siempre puede proveer un $V_{DD}$ entre esos extremos. La temperatura del chip debería mantenerse siempre dentro de los límites especificados, ya que este ASIC está diseñado para uso en contacto directo con humanos.
+
+El consumo de potencia de un circuito digital puede ser dividido en tres categorías: estático, interno y dinámico. La potencia interna es consumida dentro de la celda cada vez que una entrada de la celda cambia, y la potencia dinámica es consumida dentro de la celda cada vez que la salida cambia. Para realizar análisis y optimización de potencia es necesario conocer a qué frecuencia cambian las señales. Esta información puede ser especificada mediante un archivo SAIF, lo que es producido mediante una simulación del diseño. El archivo SAIF contiene la duración de la simulación y tres parámetros principales por cada señal:
+
+\begin{description}[labelindent=1cm]
+  \item [T0:] Duración de la señal en ‘0’
+  \item [T1:] Duración de la señal en ‘1’
+  \item [TC:] Cantidad de veces que la señal cambió su estado.
+\end{description}
+
+Debido a que el archivo SAIF no contiene información sobre cuándo ocurren los cambios, las herramientas solo pueden obtener una frecuencia promedio por cada señal, lo que implica que la anàlisis de potencia produce una estimación de potencia promedio, y no incluye información sobre el consumo pico. En este trabajo el archivo SAIF fue generado con una simulación de nivel RTL, lo que significa que solo contiene información sobre las señales nombradas en el RTL, y no señales intermedias ni las señales dentro de las celdas. El otro problema con archivos SAIF es que su precisión depende del banco de prueba. Si el banco de prueba no es representativo del uso real la estimación de potencia no sería precisa. El banco de prueba que genera el SAIF para este proyecto es: \textbf{generate\_top\_saif\_tb}, es una copia modificada del banco de prueba del módulo \textbf{radiation\_sensor\_digital\_top}. Este banco de prueba simplemente realiza el proceso de inicialización definida en la norma ISO/IEC 14443 y después toma cinco muestras del sensor mediante los comandos AUTO\_READ y GET\_RESULT, lo que debería ser representativa del uso real. Este archivo SAIF es leído en Design Compiler antes de la compilación del diseño.
+
+Compilación es el proceso que convierte el diseño a un netlist de nivel de compuertas. Design Compiler puede realizar este proceso controlado por requerimientos de área, timing y potencia, que significa que intenta producir un netlist con área mínima, potencia mínima y que cumple con timing adecuado. Una optimización que se usa para reducir el consumo de potencia es Clock Gating, una técnica dónde el reloj de un registro es desactivado cuándo el valor del registro no cambia de estado. Esta optimización reduce la potencia interna del registro porqué evita el cambio de estado del reloj dentro de la celda. La \figref{fig:clock_gating} muestra esta técnica. Esta optimización puede impactar el timing de las rutas involucradas, y el área del diseño. Sin embargo puede reducir el área del diseño, porque puede reemplazar un multiplexor en la entrada de cada registro en un banco, con un solo Clock Gate compartido entre todo el banco. La estimación de consumo de potencia reportado al final de síntesis es reducido 63\% desde \SI{454.0}{\micro\watt} a \SI{169.5}{\micro\watt}, y el área total de las celdas es reducido 2\% desde \SI{56307}{\micro\meter\squared} a \SI{55348}{\micro\meter\squared} al aplicar el método de Clock Gating. 
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/clock_gating}
+  \caption{Optimización de potencia interna mediante la técnica de Clock Gating~\cite[modificaciones mías]{power_compiler_ug}.}
+  \label{fig:clock_gating}
+\end{figure}
+
+Al final de la síntesis se obtiene el netlist de nivel compuertas el cual es procesado con IC Compiler 2 para realizar el PnR. A partir de los reportes de síntesis se obtienen los siguientes resultados: el área total de las celdas es \SI{55348}{\micro\meter\squared}, y la estimación de consumo de potencia es \SI{169.5}{\micro\watt}.
+
+Después del script de síntesis se usa la herramienta Formality de Synopsys para verificar formalmente la equivalencia entre la lógica representada en el RTL y en el netlist de post síntesis. Este proceso es realizado mediante métodos formales y no requiere vectores de simulación~\cite[traducción mía]{formality_ug}. Design Compiler produce un archivo SVF que contiene información de orientación sobre los cambios realizados en el proceso de síntesis, por ejemplo: el renombramiento de registros, o el agregado de celdas de Clock Gating. En el proceso conocido como Matching, Formality usa este archivo para encontrar puntos de comparación comunes entre los dos diseños. Un punto de comparación puede ser una salida del diseño o un registro. Desde un punto de comparación Formality determina un cono lógico moviendo atrás que incluye toda la lógica que conecta a ese punto, hasta llegar a otro punto de comparación o una entrada del diseño. La \figref{fig:logic_cones} muestra un cono lógico. Después en el proceso de verificación Formality compara formalmente los conos de los dos diseños por cada punto de comparación.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/logic_cones}
+  \caption{Un cono lógico~\cite[modificaciones mías]{formality_ug}.}
+  \label{fig:logic_cones}
+\end{figure}
 
 % Preparación de librerías
 % --------------------------------
 \FloatBarrier
 \section{Preparación de librerías}
 
+IC Compiler 2 requiere las CLIBs (Cell Libraries) en el formato NDM (New Data Model). Al tiempo de realizar este trabajo XFAB no tenía disponible bibliotecas en el formato NDM por el proceso XH018. Por lo tanto es necesario convertir las bibliotecas provistas al formato NDM. Este proceso es realizado mediante la herramienta Library Manager de Synopsys. Cada celda en un NDM contiene información de timing, potencia, lógica, el layout físico y las reglas de la tecnología. En las CLIBs provistas por XFAB, esa información es contenido en bibliotecas de varios formatos:
+
+\begin{itemize}
+  \item TF: Las reglas de la tecnología.
+  \item TLU: Información sobre parásitos.
+  \item GDS: El layout de las celdas.
+  \item LEF: Información sobre el layout de las pines y obstrucciones, e información sobre los propiedades antena de las celdas.
+  \item DB: Información sobre timing, potencia y la lógica de las celdas.
+\end{itemize}
+
+Un script TCL fue diseñado para cargar todas esas bibliotecas y combinar la información a tres CLIBs en el formato NDM para uso con IC Compiler 2. Las tres CLIBs son:
+
+\begin{itemize}
+  \item tech\_only.ndm: Contiene información sobre la tecnología, esta incluye: las reglas de la tecnología, los parasíticos y las direcciones del ruteo en cada capa de metal (Horizontal o Vertical).
+  \item d\_cells\_hd.ndm: Contiene información sobre las celdas estándares de D\_CELLS\_HD.
+  \item d\_cells\_hdll.ndm: Contiene información sobre las celdas estándares de D\_CELLS\_HDLL.
+\end{itemize}
+
+El proceso para producir las CLIBs por las celdas estándares es: leer los archivos: TF, GDS, LEF y DB, y arreglar las discrepancias entre las descripciones de las celdas en cada formato. Por ejemplo: Los archivos GDS usan los nombres: vdd! y gnd! para los rails de alimentación, pero los archivos LEF usan los nombres: vdd y gnd.
+
 % Design Planning
 % --------------------------------
 \FloatBarrier
 \section{Design Planning}
+
+Design Planning (DP) es un paso inicial de la implementación de un IC. En este trabajo el script de DP es principalmente usado para construir un floorplan (la forma y las dimensiones físicas del bloque), elegir ubicaciones por los pines que conectan a las otros bloques (el AFE, el Sensor MOSFET de radiación, y el ADC), y armar los anillos, mallas y rails de alimentación.
+
+El floorplan posee las dimensiones físicas del diseño, en este caso del circuito digital. Luego los diferentes bloques del proyecto serán instanciados en un top cell el cual requerirá el ruteo manual entre los mismos, los pines de entrada/salida y los pads de prueba. El área del floorplan por el circuito digital debe ser al menos suficiente para contener las celdas, y los anillos de potencia, pero frecuentemente es necesario dejar más espacio en el núcleo para evitar congestión de ruteo. El área de las celdas es calculada desde el netlist producido en síntesis, para este proyecto esto es: \SI{55347}{\micro\meter\squared}. El núcleo del floorplan es el área que contiene las celdas, y la tasa de utilización del núcleo es la proporción del núcleo que contiene celdas útiles. Usando un proceso iterativo se determinó que la tasa de utilización del núcleo máxima para que el diseño cumple con timing es 75\%. Así el núcleo debería tener un área de \SI{73796}{\micro\meter\squared}, lo que se corresponde con una región cuadrada de lado \SI{272}{\micro\meter}. La documentación del PDK especifica que los anillos de alimentación deben tener un ancho de \SI{5}{\micro\meter}, con separación de \SI{2.5}{\micro\meter}~\cite{dig_imp_guidelines}. Hay un anillo de VDD y uno de GND, así se necesita \SI{12.5}{\micro\meter} alrededor del núcleo. Esto significa que el floorplan tiene dimensiones de \SI{297}{\micro\meter} por \SI{297}{\micro\meter}, y un área total de \SI{88209}{\micro\meter\squared}. Debido a la forma de las celdas, la herramienta eligió las dimensiones: \SI{295.68}{\micro\meter} por \SI{294.0}{\micro\meter} dando un área de \SI{86930}{\micro\meter\squared}.
+
+Este bloque está diseñado para ser conectado con los otros bloques del diseño internamente al IC, por eso es necesario agregar un pin por cada entrada y salida alrededor del núcleo. Esas pines son agregadas en las capas de metal: MET3 y MET4. Se ha considerado los siguientes criterios por los pines de interfaz con los bloques circuitales periféricos:
+
+\begin{itemize}
+  \item Señales desde / hacia el AFE están en el borde superior, en MET4.
+  \item Señales hacia el Sensor MOSFET de Radiación están en la mitad inferior del borde derecho, en MET3.
+  \item Señales desde / hacia el ADC están en la mitad superior del borde derecho, en MET3.
+  \item Las entradas del UID están juntas pero no son constrained a un borde en particular. La herramienta eligió el borde izquierdo en MET3.
+\end{itemize}
+
+Las celdas estándares provistas en el PDK son diseñadas para tener la misma altura, con un rail de alimentación en el borde superior y un rail de tierra en el borde inferior, los dos en la primera capa de metal: MET1. La \figref{fig:xor_cell} muestra un ejemplo de una celda XOR con los rails de alimentación nombrados. Las celdas son fijadas en filas cruzando el núcleo del diseño, cada fila adicional se instancia de forma espejada para que compartan los rails. Es necesario conectar estos rails a los anillos y mallas de VDD y GND, mientras minimizando la caída de tensión debido a la resistencia parásita de las metalizaciones (caída IR). Los anillos rodean el núcleo, las mallas consisten en stripes (tiras) que cruzan el núcleo y los rails conectan las celdas con las mallas y anillos. La documentación del PDK~\cite{dig_imp_guidelines} específica que los anillos y mallas deben colocarse en las capas de metal superiores: METTP y METTPL, con ancho mínimo de 5 um, y separación máximo entre mallas de 350 um. METTP debe ser usado por las rutas horizontales y METTPL por las rutas verticales. Debido a que este bloque tiene dimensiones menores que 350 um por 350 um, las mallas de VDD y GND solo consisten en un stripe vertical y uno horizontal cruzando el centro del núcleo por las dos mallas. La \figref{fig:floorplan_pg} muestra el floorplan generado con las rutas de potencia y los pines de las entradas y salidas.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./img/xor_cell}
+  \caption{Una celda XOR de la biblioteca D\_CELLS\_HD.}
+  \label{fig:xor_cell}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./img/floorplan}
+  \caption{El floorplan del diseño con las rutas de potencia y los pines IO.}
+  \label{fig:floorplan_pg}
+\end{figure}
+
+\FloatBarrier
+
+Para poder conectar VDD y GND a la fuente de potencia en el AFE, es necesario agregar terminales. Debido a que los otros pines que conectan al AFE están en el borde superior, los terminales son colocados en el medio del borde superior de los anillos. La documentación del PDK~\cite{dig_imp_guidelines} específica que la caída de tensión máxima entre los anillos y los stripes debe ser menor que \SI{100}{\milli\volt}. Esto es verificado con las herramientas realizando un análisis de caída IR. Asumiendo un consumo de potencia máxima de \SI{400}{\micro\watt} lo que es casi doble la estimación de potencia final, los resultados de este análisis son: por VDD la caída IR máximo es \SI{34}{\micro\volt}, y por GND es \SI{38}{\micro\volt}. Estos resultados son aproximadamente 0,036\% de la máxima especificada en el PDK. La \figref{fig:ir_drop} muestra un mapa de calor por el análisis de VDD.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/dp_create_power_ir_drop}
+  \caption{Mapa de calor del análisis de caída IR sobre la ruta de alimentación VDD.}
+  \label{fig:ir_drop}
+\end{figure}
+
 
 % Place & Route
 % --------------------------------
 \FloatBarrier
 \section{Place \& Route}
 
+El script de PnR comienza con la importación de los resultados de los script de Design Planning y de síntesis. Después las celdas son colocadas en el núcleo, este proceso es iterativo con múltiples de pasos para optimizar la ubicación de las celdas. Primero las celdas son colocadas de forma aproximada. Después las ubicaciones son ajustadas para optimizar por timing, área, consumo de potencia, y congestión. Después de cada paso los errores DRC son arreglados.
+
+La próxima operación es CTS (Clock Tree Synthesis), el proceso de construir y rutear árboles de relojes balanceados mediante buffers. Es necesario usar un árbol porqué el fanout del net del reloj es grande, ya que tiene que conectar a cada registro en el dominio del reloj. Tiene que ser balanceado para minimizar el skew en el reloj entre cada registro. Los reportes especifican que el skew máximo después de CTS es \SI{1.59}{\nano\second} en el análisis de Setup, y \SI{1.77}{\nano\second} en el análisis de Hold, los que son respectivamente 2,1\% y 2,4\% del periodo del reloj.
+
+Durante el ruteo de los nets en el diseño es necesario tener cuidado sobre el largo de cada segmento de metal en la ruta, para evitar efectos de antenas. Synopsys define el problema de antenas como:
+
+\begin{displaycquote}[traducción mía]{icc2_imp_ug}
+  En la fabricación de circuitos integrados, el óxido de gate puede ser dañado fácilmente por descargas electrostáticas. La carga estática que es acumulada en las rutas de metal durante el proceso de metalización puede dañar el dispositivo o terminar con un fallo del chip entero.
+\end{displaycquote}
+
+El PDK contiene reglas de antenas que especifican los ratios máximos entre las áreas de los segmentos de metal y de los gates de los transistores de que se conectan. Si un diseño cumple con esas reglas, no debería tener problemas de antena. Una forma de arreglar estos problemas es cortar segmentos de metal grandes con un segmento en una capa de metal superior cercana al gate. Otra forma es colocar diodos cercana a los gates. Cuándo las reglas de antena son agregadas, IC Compiler 2 intenta rutear el diseño evitando problemas de antenas, si siguen violaciones de antenas las celdas de diodos presentes en el PDK pueden ser agregadas.
+
+La operación de ruteo también es un proceso iterativo, con cada paso intentando arreglar violaciones DRC o de timing del paso anterior. Al final de este proceso el slack de Setup es \SI{2.6}{\nano\second}, y el slack de Hold es \SI{0.0}{\nano\second}. Los reportes indican que no hay violaciones DRC, ni problemas de antena, tampoco hay rutas abiertas o cortocircuitos.
+
+Después del ruteo vienen dos acciones conocidas juntas como Finishing. La primera acción es agregar vías redundantes dónde hay espacio, para mejorar las conexiones entre las capas, esto se hace con un script del PDK. Después se agregan celdas de relleno (filler cells) en los espacios vacíos, esto es para asegurar que los rails de alimentación están conectados a lo largo de la fila. Hay dos tipos de celdas de relleno: con capacitores de desacople, y sin capacitores de desacople. Las celdas con capacitores son usadas para ayudar a mantener las rails de alimentación de forma local durante periodos de alto consumo de corriente. Esas celdas son agregadas primero, y las que generan errores DRC son quitadas. Después, los sitios que se quedan vacíos son llenados con las celdas sin capacitores. Finalmente el proceso de ruteo es ejecutado de nuevo en caso que haya que arreglar violaciones DRC. La \figref{fig:pnr_out} muestra el layout después del finishing.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/pnr_out}
+  \caption{El layout del diseño después del finishing.}
+  \label{fig:pnr_out}
+\end{figure}
+
+La próxima etapa es ICV In Design, esa etapa ejecuta unas acciones mediante la herramienta Synopsys IC Validator. La primera acción es verificar que no hay ninguna violación DRC en el diseño mediante un script provisto en el PDK, y si hay violaciones, intenta corregirlas. El próximo paso es el proceso de Metal Fill. Para reducir errores en el proceso de fabricación es necesario asegurar que la densidad de metal de cada capa está dentro de unos límites definidos en las reglas de diseño. Si la densidad de metal en una capa es demasiado baja, IC Validator puede agregar metal extra en los espacios libres. Después del metal fill, las pruebas DRC son ejecutadas de nuevo, pero esta vez activando una prueba opcional para verificar la densidad de metal.
+
+El siguiente paso es escribir los resultados del PnR. El netlist final es exportado en dos formatos, uno para uso en LVS (Layout Vs Schematic) y uno para uso en el script de verificación de equivalencia con Formality. El diseño final es guardado en el formato GDS II. La estimación de consumo de potencia final es \SI{256.0}{\micro\watt}. Análisis de timing indica que el diseño tiene \SI{1,59}{\nano\second} de Setup slack y \SI{0.02}{\nano\second} de Hold slack.
+
+Finalmente la herramienta Formality es usada de nuevo para verificar formalmente la equivalencia de la lógica entre el RTL y el netlist de post implementación. Este proceso es equivalente del proceso hecho después de síntesis, salvo por que se usa los archivos SVF de coordinación generados en Design Planning y en Place \& Route, en adición a lo de síntesis.
+
 % LVS / DRC
 % --------------------------------
 \FloatBarrier
 \section{LVS / DRC}
+
+En el script de Place \& Route el diseño fue analizado para verificar violaciones DRC, este paso es repetido en este punto pero usando el archivo GDS II e instanciando en IC Validator directamente. La ventaja de esto es que verifica que no haya errores DRC introducidos en el proceso de escribir el GDS II.
+
+LVS (Layout Vs Schematic) es un análisis que compara la netlist final del diseño con el GDS II. La primera parte de esta operación es convertir el netlist de nivel compuertas escrito al final del script de PnR a un netlist de nivel SPICE mediante la herramienta nettran. Después IC Validator es ejecutado con un script provisto en el PDK para extraer los dispositivos y nets del layout en el archivo GDS II. Ese resultado es comparado con el netlist de nivel SPICE para confirmar que se corresponden.
 
 % ---------------------------------------------
 % Resultados y Conclusiones
@@ -2052,5 +2579,67 @@ Para verificar este módulo el modelo analógico: \textbf{analogue\_sim} es usad
 % Prevent overful hbox warning due to long titles
 \emergencystretch=1em
 \printbibliography
+\emergencystretch=0em
+
+% ---------------------------------------------
+% Appendices
+% ---------------------------------------------
+
+\appendix
+
+% Change the \chapter rules to use numbersr for the appendices
+\titleformat{\chapter}[display] 
+{\normalfont\Huge\bfseries}{\chaptertitlename\ \thechapter:}{0.2em}{\huge} 
+
+% Repositorio de código fuente
+% ----------------------------
+\newpage
+\chapter{Repositorio de Código Fuente}
+
+Todo el código RTL y los scripts usados en este trabajo están disponibles en un repositorio de GitHUB: \url{https://github.com/andrewparlane/fiuba_thesis}. Todo el código y los scripts son disponible de forma abierto bajo la licencia GNU v3.0. Se puede clonar este repositorio con los comandos:
+
+\begin{lstlisting}[language=bash,basicstyle=\small]
+  git clone https://github.com/andrewparlane/fiuba_thesis.git
+  git submodule init
+  git submodule update
+\end{lstlisting}
+
+La estructura del repositorio es:
+
+\vspace{1em}
+
+\dirtree{%
+.1 fiuba\_thesis.
+.2 hdl.
+.3 components.
+.4 iso\_iec\_14443A\DTcomment{Git Submodule del núcleo IP ISO/IEC 14443A}.
+.3 rtl\DTcomment{RTL de la aplicación}.
+.3 synth\_pnr\DTcomment{Scripts de síntesis y PnR}.
+.3 verification.
+.4 bfms\DTcomment{Clases y paquetes de verificación de la aplicación}.
+.4 tb\DTcomment{Los bancos de pruebas por los módulos de la aplicación}.
+.4 vcs\DTcomment{Contiene un Makefile para ejecutar las simulaciones}.
+.2 thesis\DTcomment{Fuente de este documento}.
+}
+
+La carpeta \textit{fiuba\_thesis/hdl/components} contiene un Git Submodule por el repositorio del núcleo IP ISO/IEC 14443A: \url{https://github.com/andrewparlane/iso_iec_14443A}. También todo el código y los scripts son disponible de forma abierto bajo la licencia GNU v3.0. La estructura de este repositorio es:
+
+\vspace{1em}
+
+\dirtree{%
+.1 iso\_iec\_14443A.
+.2 rtl\DTcomment{RTL del núcleo IP}.
+.2 verification.
+.3 bfms\DTcomment{Clases y paquetes de verificación del núcleo IP}.
+.3 tb\DTcomment{Los bancos de pruebas por los módulos del núcleo IP}.
+.3 vcs\DTcomment{Contiene un Makefile para ejecutar las simulaciones}.
+}
+
+% Repositorio de código fuente
+% ----------------------------
+\newpage
+\chapter{Definiciones del protocolo propietario}
+
+
 
 \end{document}

@@ -35,6 +35,7 @@
 #			latexrecommended
 #			mathscience
 #			pictures
+#			plaingeneric
 
 SOURCES = 	thesis.tex 			\
 			packages.tex 		\
