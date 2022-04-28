@@ -19,8 +19,9 @@
 % You should have received a copy of the GNU General Public License
 % along with this code. If not, see <http://www.gnu.org/licenses/>.
 
-% Note: This thesis was written and compiled using overleaf
-%       Building it via pdflatex has been tested, but not extensively
+% Note: This thesis should be compiled from the version in the repository
+%       via the Makefile and not by overleaf. Overleaf should work
+%       but the formatting has been checked with the version compiled from the Makefile.
 
 \documentclass[a4paper, twoside, 11pt]{report}
 
@@ -168,6 +169,7 @@ Esta parte de la norma define las condiciones de operación en cuáles la PICC d
 
 \FloatBarrier
 \subsection{ISO/IEC 14443-2: \large{Radiofrecuencia Potencia y Señal Interfaz}}
+\label{sec:introduction_iso14443-2}
 
 El PCD emite un campo electromagnético con frecuencia $f_c = \SI{13.56}{\mega\hertz} \pm \SI{7}{\kilo\hertz}$. Las PICCs dentro de este campo se acoplan inductivamente al campo para la transferencia de potencia. El campo es modulado para la comunicación entre los dispositivos. El PCD usa modulación de amplitud para enviar información a las PICCs, y las PICC envían sus respuestas con modulación de carga mediante un subcarrier. La norma define varias tasas de bits, pero las comunicaciones siempre comienzan con tasa de bits $\nicefrac{f_c}{128} \approx \SI{106}{Kbps}$ en las dos direcciones. La codificación de los bits y los parámetros de modulación dependen de: la dirección de la comunicación, si las PICCs son tipo A o B, y la tasa de bits. La \figref{fig:mod-encode} muestra una representación de las dos direcciones de comunicación para PICCs de tipo A y de tipo B.
 
@@ -221,7 +223,7 @@ Para PICCs de tipo A la modulación por comunicaciones desde el PCD hasta la PIC
 % There's a lot of images around here, make sure we keep them separated correctly
 \FloatBarrier
 
-Para responder las PICCs tipo A usan modulación de carga para generar una subportadora.  La frecuencia de la subportadora ($f_s$) depende de la tasa de bit. Para una tasa de bit de $\nicefrac{f_c}{128}$ la frecuencia es $\nicefrac{f_c}{16} \approx \SI{848}{\kilo\hertz}$. Como en el caso de comunicaciones del PCD a la PICC la duración de un bit es $\nicefrac{128}{f_c} = \nicefrac{8}{f_s}$. La portadora debe ser solo modulada con la subportadora cuando la PICC está enviando datos. Los bits a transmitir tienen codificación Manchester, para representar un ‘1’ lógico la señal es en ‘1’ por la primera mitad de la duración de bit, y en ‘0’ por la segunda mitad, para representar un ‘0’ lógico es al revés. La señal que maneja el modulador de carga es la operación lógica AND entre la señal de codificación Manchester y la subportadora como se muestra en la \figref{fig:picc_to_pcd}. Una trama comienza con un SOC lo que es un ‘1’ lógico, y termina con un EOC lo que es una duración de bit sin modulación, eso es a decir que la señal al modulador de carga es en ‘0’ por toda la duración de bit. La \figref{fig:tx_frame_example} muestra un ejemplo de una trama que ingresa a la compuerta AND con la subportadora.
+Para responder las PICCs tipo A usan modulación de carga para generar una subportadora.  La frecuencia de la subportadora ($f_s$) depende de la tasa de bit. Para una tasa de bit de $\nicefrac{f_c}{128}$ la frecuencia de la subportadora es $f_s = \nicefrac{f_c}{16} \approx \SI{848}{\kilo\hertz}$. Como en el caso de comunicaciones del PCD a la PICC la duración de un bit es $\nicefrac{128}{f_c} = \nicefrac{8}{f_s}$. La portadora debe ser solo modulada con la subportadora cuando la PICC está enviando datos. Los bits a transmitir tienen codificación Manchester, para representar un ‘1’ lógico la señal es en ‘1’ por la primera mitad de la duración de bit, y en ‘0’ por la segunda mitad, para representar un ‘0’ lógico es al revés. La señal que maneja el modulador de carga es la operación lógica AND entre la señal de codificación Manchester y la subportadora como se muestra en la \figref{fig:picc_to_pcd}. Una trama comienza con un SOC lo que es un ‘1’ lógico, y termina con un EOC lo que es una duración de bit sin modulación, eso es a decir que la señal al modulador de carga es en ‘0’ por toda la duración de bit. La \figref{fig:tx_frame_example} muestra un ejemplo de una trama que ingresa a la compuerta AND con la subportadora.
 
 \begin{figure}[htb]
   \centering
@@ -241,7 +243,7 @@ Para responder las PICCs tipo A usan modulación de carga para generar una subpo
 \subsection{ISO/IEC 14443-3: \large{Inicialización y Anticolisión}}
 \label{sec:introduction_iso14443-3}
 
-La información presentada en esta sección es válida considerando una tasa de bit de fc/128 en cada dirección y PICCs tipo A.
+La información presentada en esta sección es válida considerando una tasa de bit de $\nicefrac{f_c}{128}$ en cada dirección y PICCs tipo A.
 
 La parte 3 de la norma define un FDT (Frame Delay Time), lo que es el tiempo entre dos tramas transmitidas en direcciones opuestas. Los tiempos del FDT definidos en la norma son especificados en números de ciclos de la portadora, y son medidos entre el último flanco de modulación de la primera trama y el primer flanco de modulación de la segunda trama. El \tabref{tab:fdt} muestra los FDTs especificados en la norma. En el caso del FDT entre una trama del PCD y una de la PICC, el FDT usado depende en el último bit lógico de la trama, y los valores especificados son absolutos para tramas de inicialización y tiempos mínimos para otras tramas.
 
@@ -270,16 +272,16 @@ Una trama comienza con un SOC, después se envían los datos empezando por el bi
   \item[Tramas Anticolisión orientada a bits] \hfill \\ Tienen siete bytes cada uno con un bit de paridad, y están divididas en dos: la primera parte es enviada desde el PCD y la segunda parte desde la PICC. La partición puede ser después de un byte entero, incluyendo su bit de paridad (\figref{fig:anticollision} arriba), o en medio de un byte (\figref{fig:anticollision} abajo). Estas tramas son usadas durante el proceso de inicialización para que el PCD pueda detectar todas las PICCs en su campo electromagnético.
 \end{description}
 
+Unas de las tramas definidas en la norma terminan con un CRC16 (Cyclic Redundancy Check de 16 bits). El CRC16 permite el receptor de la trama determinar si el contenido fue corrompido. El polinomio del CRC es $P\left(x\right) = x^{16} + x^{12} + x^{5} + 1$, y el valor inicial es 0x6363~\cite{iso14443-3}\cite{iso13239}.
+
+Cada PICC tiene un UID (Unique Identifier) que el PCD puede utilizar para enumerar todas las PICCs en su campo electromagnético y elegir cuáles activar. A pesar de que el nombre indique que el ID es único, no tiene que ser así. Está permitido usar un ID aleatorio (RID), o un ID no único (NUID). Los UIDs pueden ser: simples (4 bytes), dobles (7 bytes), o triples (10 bytes). Es requerido que todas las PICCs presentes en el campo de un PCD tienen UIDs únicos. Cuando se usan PICCs con NUIDs o RIDs es posible que haya conflictos. Debido a la gran cantidad de NUIDs posibles, la probabilidad de conflictos es mínima en un sistema bien diseñado.
+
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.5]{./img/anticollision_frames}
   \caption{Trama Anticolisión orientada a bits~\cite[Modificaciones Mías]{iso14443-3}}
   \label{fig:anticollision}
 \end{figure}
-
-Unas de las tramas definidas en la norma terminan con un CRC16 (Cyclic Redundancy Check de 16 bits). El CRC16 permite el receptor de la trama determinar si el contenido fue corrompido. El polinomio del CRC es $P\left(x\right) = x^{16} + x^{12} + x^{5} + 1$, y el valor inicial es 0x6363~\cite{iso14443-3}\cite{iso13239}.
-
-Cada PICC tiene un UID (Unique Identifier) que el PCD puede utilizar para enumerar todas las PICCs en su campo electromagnético y elegir cuáles activar. A pesar de que el nombre indique que el ID es único, no tiene que ser así. Está permitido usar un ID aleatorio (RID), o un ID no único (NUID). Los UIDs pueden ser: simples (4 bytes), dobles (7 bytes), o triples (10 bytes). Es requerido que todas las PICCs presentes en el campo de un PCD tienen UIDs únicos. Cuando se usan PICCs con NUIDs o RIDs es posible que haya conflictos. Debido a la gran cantidad de NUIDs posibles, la probabilidad de conflictos es mínima en un sistema bien diseñado.
 
 Para identificar las PICCs presentes y activarlas, la norma define cinco comandos y sus respuestas, mostrados en el \tabref{tab:tramas}. La \figref{fig:14443-3-state-machine} especifica cómo una PICC debería responder cuando recibe un comando dependiendo de su estado actual.
 
@@ -351,11 +353,11 @@ Bloques-I son usados para transmitir información al nivel de aplicación. El pr
 Bloques-R son usados para reconocer la recepción de un bloque: R(ACK) o indicar errores: R(NAK). En el caso de bloques-I encadenados un R(ACK) es enviado para pedir la siguiente parte del mensaje. También el PCD puede enviar un R(ACK/NAK) para pedir la PICC retransmita su última respuesta, esto puede ser usado para recuperar de errores. Finalmente el PCD puede enviar un R(NAK) para verificar la presencia continua de la PICC.
 
 % ---------------------------------------------
-% Descripción General del Proyecto Marco
+% Descripción del Proyecto Marco
 % ---------------------------------------------
 
 \FloatBarrier
-\chapter{Descripción General del Proyecto Marco}
+\chapter{Descripción del Proyecto Marco}
 
 Este trabajo se enmarca en un proyecto que tiene como objetivo general desarrollar un circuito integrado capaz de tomar muestras de un sensor MOSFET de radiación y transmitirlas a un dispositivo externo mediante un protocolo propietario implementado encima de la norma ISO/IEC 14443A. Este proyecto marco requiere cinco bloques como se muestra en la \figref{fig:entire_project}:
 
@@ -371,7 +373,7 @@ Este trabajo se enmarca en un proyecto que tiene como objetivo general desarroll
   \item[El sensor MOSFET de radiación] \hfill \\ Desarrollado por el Laboratorio de Física de Dispositivos-Microelectrónica (LFDM) de la facultad de ingeniería de la UBA.
   \item[El Conversor Analógico Digital (ADC, por sus siglas en inglés)] \hfill \\ Encargado de convertir la salida analógica del sensor a una señal digital.
   \item[El RFID Control Digital] \hfill \\ Es el objetivo de esta Tesis.
-  \item[El UID Control] \hfill \\ Permite asignar la parte variable del UID de la PICC.
+  \item[El UID Control] \hfill \\ Permite asignar la parte única del UID de la PICC.
 \end{description}
 
 Algunos de estos bloques no se han desarrollado todavía, por lo que es necesario asumir las especificaciones de los mismos.
@@ -390,9 +392,9 @@ El AFE es responsable de:
 
 El sensor de radiación tiene tres entradas: \textit{sens\_config[2:0]}, \textit{sens\_enable} y \textit{sens\_read} . Para leer el sensor, primero se debe establecer el valor de \textit{sens\_config[2:0]} de manera que se elija la configuración del sensor deseado por el usuario. Posteriormente se debe establecer \textit{sens\_enable} en ‘1’ para activar el sensor. Finalmente después del tiempo deseado por el usuario, llevar \textit{sens\_read} a ‘1’ configura al circuito del sensor en modo lectura para su muestreo. Por otro lado, el sensor tiene dos salidas, una analógica que está conectada al ADC, y una señal de cuatro bits que indica la versión del sensor. Este valor forma parte de la información enviada al PCD como respuesta al mensaje de protocolo IDENTIFY.
 
-Por su parte el ADC, además de la entrada analógica proveniente desde el sensor, tiene otras dos entradas: \textit{adc\_enable} y \textit{adc\_read}. El flanco ascendente de la señal \textit{adc\_read} indica el momento de muestreo de la salida del sensor.. Respecto de las salidas, hay tres: \textit{adc\_conversion\_complete}, \textit{adc\_value[15:0]} y \textit{adc\_versión[3:0]}. Cuando el ADC completa la conversión la señal \textit{adc\_conversion\_complete} toma el valor '1' durante un ciclo del reloj. La señal \textit{adc\_value} debe ser estable antes del pulso en \textit{adc\_conversion\_complete}.
+Por su parte el ADC, además de la entrada analógica proveniente desde el sensor, tiene otras dos entradas: \textit{adc\_enable} y \textit{adc\_read}. El flanco ascendente de la señal \textit{adc\_read} indica el momento de muestreo de la salida del sensor. Respecto de las salidas, hay tres: \textit{adc\_conversion\_complete}, \textit{adc\_value[15:0]} y \textit{adc\_versión[3:0]}. Cuando el ADC completa la conversión la señal \textit{adc\_conversion\_complete} toma el valor '1' durante un ciclo del reloj. La señal \textit{adc\_value} debe ser estable antes del pulso en \textit{adc\_conversion\_complete}.
 
-El bloque de UID Control es responsable de especificar los tres bits más bajos del UID de la PICC. Este valor puede ser configurado mediante una memoria no volátil, pero en esta tesis la intención es configurarlo utilizando wire bonding o resistores pull up/down.
+El bloque de UID Control es responsable de especificar los tres bits menos significativos del UID de la PICC. Este valor puede ser configurado mediante una memoria no volátil, pero en esta tesis la intención es configurarlo utilizando wire bonding o resistores pull up/down.
 
 El objetivo de esta tesis es implementar el bloque del RFID Control Digital, que consiste en dos sub-bloques: Una implementación del parte digital de la norma ISO/IEC 14443A y un protocolo a nivel aplicación que permita la lectura del sensor y envíe esta información al PCD. Un requisito de este bloque es que la entrada de UID se mantenga estable mientras el bloque no esté en un estado de reset.
 
@@ -431,7 +433,7 @@ La norma IEEE de SystemVerilog define un interfaz como:
 A su nivel más bajo, un interfaz es un conjunto nombrado de nets o variables. La interfaz es instanciada en un diseño y puede ser accedida por un puerto como un ítem sencillo; las nets o variables componentes [pueden ser] referidos cuando sea necesario. Una proporción significativa de un diseño verilog frecuentemente consiste en listas de puertos y listas de conexiones, los que son simplemente repeticiones de nombres. La habilidad de reemplazar un grupo de nombres con un nombre simple puede reducir significativamente el tamaño de una descripción y mejorar su mantenibilidad.
 \end{displaycquote}
 
-Además de esas ventajas, una interfaz puede contener funcionalidad, sea para síntesis o verificación, por ejemplo se puede agregar aserciones que verifican el comportamiento de los nets internos en vez de tener que duplicar esas pruebas en cada sitio que la interfaz es usada. Una interfaz puede tener una o más modports, los que especifican las direcciones de las señales. Esos modports pueden ser usados en la lista de puertas por un módulo en vez de especificar cada señal y su dirección individualmente.
+Además de esas ventajas, una interfaz puede contener funcionalidad, sea para síntesis o verificación, por ejemplo se puede agregar aserciones que verifican el comportamiento de los nets internos en vez de tener que duplicar esas pruebas en cada sitio que la interfaz es usada. Una interfaz puede tener uno o más modports, los que especifican las direcciones de las señales. Esos modports pueden ser usados en la lista de puertos por un módulo en vez de especificar cada señal y su dirección individualmente.
 
 Este trabajo consiste en varios módulos que contienen uno o más sumideros para recibir tramas desde otros módulos, y una o más fuentes para enviar tramas a otros módulos. Por ejemplo el módulo: \textbf{frame\_decode} recibe tramas desde el módulo: \textbf{sequence\_decode}, quita los bits de paridad, y reenvía las tramas modificadas al módulo: \textbf{deserialiser}. Por lo tanto muchos de los módulos manejan el mismo conjunto de señales, lo que es el uso principal por interfaces. Hay dos interfaces definidas en este trabajo, uno para la recepción de tramas (\textit{rx\_interface}), y otra para la transmisión de las respuestas (\textit{tx\_interface}). Las dos son parametrizadas para funcionar con series de bits o de bytes. Las interfaces son usadas para conectar una fuente en un módulo a un sumidero en otro módulo.
 
@@ -470,7 +472,7 @@ La \textit{tx\_interface} contiene:
   \item \textit{req}: El sumidero usa esta señal para pedir que la fuente envíe el siguiente bit / byte de la trama. La norma ISO/IEC 14443A-2 define la duración de bits como 128 ciclos de la portadora, por lo tanto esta señal es necesaria para limitar la tasa de envío de datos.
 \end{itemize}
 
-Cuándo una fuente está lista para transmitir una trama se establece el primer bit / byte de la trama en la señal \textit{data} y fija \textit{data\_valid} en ‘1’. El sumidero puede utilizar la señal \textit{data\_valid} para ver si la fuente tiene data enviar. Después de haber leído la primera bit / byte de data, el sumidero fija la señal \textit{req} en ‘1’ durante un ciclo del reloj. La fuente detecta ese pulso y si hay más data a enviar, se actualiza la \textit{data} con el siguiente bit / byte, dejando \textit{data\_valid} en ‘1’. Este proceso repite hasta que la fuente no tiene más data a enviar, y después del último pulso en la \textit{req}, se fija \textit{data\_valid} en ‘0’. La \figref{fig:tx_iface} muestra una simulación de la transmisión de una trama de 16 bits con una \textit{tx\_interface} de bytes, y su conversión a una serie de bits. Arriba están las señales en la \textit{tx\_interface} de bytes enviando la data 0xAE, 0x42. Abajo están las señales en una \textit{tx\_interface} de bits representando la misma trama.
+Cuando una fuente está lista para transmitir una trama se establece el primer bit / byte de la trama en la señal \textit{data} y fija \textit{data\_valid} en ‘1’. El sumidero puede utilizar la señal \textit{data\_valid} para ver si la fuente tiene data enviar. Después de haber leído la primera bit~/~byte de data, el sumidero fija la señal \textit{req} en ‘1’ durante un ciclo del reloj. La fuente detecta ese pulso y si hay más data a enviar, se actualiza la \textit{data} con el siguiente bit / byte, dejando \textit{data\_valid} en ‘1’. Este proceso repite hasta que la fuente no tiene más data a enviar, y después del último pulso en la \textit{req}, se fija \textit{data\_valid} en ‘0’. La \figref{fig:tx_iface} muestra una simulación de la transmisión de una trama de 16 bits con una \textit{tx\_interface} de bytes, y su conversión a una serie de bits. Arriba están las señales en la \textit{tx\_interface} de bytes enviando la data 0xAE, 0x42. Abajo están las señales en una \textit{tx\_interface} de bits representando la misma trama.
 
 La \textit{tx\_interface} también incluye tres aserciones que verifican: Las señales son correctas en el estado de reset, \textit{req} es ‘1’ solo para la duración de un ciclo del reloj, y que \textit{data}, \textit{data\_valid}, \textit{data\_bits} y \textit{last\_bit\_in\_byte} solo cambian estado cuando \textit{data\_valid} está ‘0’ o en los cuatro ciclos después de un pulso de req. La última aserción es para verificar que la fuente puede proveer datos cuándo es pedido con la señal \textit{req} antes de que el sumidero la necesita.
 
@@ -522,7 +524,7 @@ El marco de verificación es implementado con varios componentes, la mayoría so
 \FloatBarrier
 \subsection{Transacciones}
 
-La \figref{fig:transaction_uml} muestra un diagrama UML (Unified Modelling Language) de las clases de transacciones. La clase base es \textbf{Transaction}, es abstracta y contiene dos métodos abstractos: \textbf{compare()} que evalúa si dos transacciones son iguales, y \textbf{to\_string()} que devuelve un string describiendo la transacción. La clase \textbf{QueueTransaction} extiende \textbf{Transaction}, tiene un parámetro de tipo: \textit{ElemType}, que especifica el tipo de una cola declarada en la clase. La cola es usada para contener el dato de la trama representada por la transacción. Los dos métodos abstractos de \textbf{Transaction} son sustituidos, y hay métodos extras para ayudar con la construcción de transacciones. Hay tres clases que extienden \textbf{QueueTransaction}: \textbf{ByteQueueTransaction}, \textbf{BitQueueTransaction} y \textbf{PCDPauseNTransaction}, que definen el parámetro \textit{ElemType} como: logic[7:0] (byte), logic (bit) y \textbf{PCDBitSequence} respectivamente. \textbf{PCDBitSequence} es una enum definida en un paquete, y consiste en las secuencias X, Y y Z describidas en la sección ? (14443-2A). \textbf{ByteQueueTransaction} tiene métodos para calcular y agregar CRCs a la transacción, y para convertir la transacción a una cola de bits. \textbf{BitQueueTransaction} tiene un método para agregar los bits de paridad.
+La \figref{fig:transaction_uml} muestra un diagrama UML (Unified Modelling Language) de las clases de transacciones. La clase base es \textbf{Transaction}, es abstracta y contiene dos métodos abstractos: \textbf{compare()} que evalúa si dos transacciones son iguales, y \textbf{to\_string()} que devuelve un string describiendo la transacción. La clase \textbf{QueueTransaction} extiende \textbf{Transaction}, tiene un parámetro de tipo: \textit{ElemType}, que especifica el tipo de una cola declarada en la clase. La cola es usada para contener los datos de la trama representada por la transacción. Los dos métodos abstractos de \textbf{Transaction} son sustituidos, y hay métodos extras para ayudar con la construcción de transacciones. Hay tres clases que extienden \textbf{QueueTransaction}: \textbf{ByteQueueTransaction}, \textbf{BitQueueTransaction} y \textbf{PCDPauseNTransaction}, que definen el parámetro \textit{ElemType} como: logic[7:0] (byte), logic (bit) y \textbf{PCDBitSequence} respectivamente. \textbf{PCDBitSequence} es una enum definida en un paquete, y consiste en las secuencias X, Y y Z describidas en la \secref{sec:introduction_iso14443-2}{ISO/IEC 14443-2}. \textbf{ByteQueueTransaction} tiene métodos para calcular y agregar CRCs a la transacción, y para convertir la transacción a una cola de bits. \textbf{BitQueueTransaction} tiene un método para agregar los bits de paridad.
 
 \begin{figure}[htb]
   \centering
@@ -545,20 +547,22 @@ La \figref{fig:driver_uml} muestra un diagrama UML de clases para los controlado
 
 El controlador \textbf{PCDPauseNDriver} es parecido al \textbf{RxIfaceDriver}, pero en vez de envíar transacciones sobre una \textit{rx\_interface}, las envía mediante una señal \textit{pause\_n} como haría el detector de pausas en el AFE real.
 
-\begin{figure}[htb]
+Los controladores de transmisión (PICC a PCD) están divididos en dos partes: las fuentes y los sumideros. Los sumideros son necesarios porque la señal \textit{req} de la \textit{tx\_interface} es manejada por el sumidero. La clase \textbf{TxIfaceSinkDriver} es la clase base de los sumideros, contiene un método \textbf{start()} que espera por la activación de la señal \textit{data\_valid} de la interfaz, y después comienza a pulsar \textit{req} periódicamente hasta que \textit{data\_valid} baja a ‘0’. Unos atributos controlan los timings de los pulsos. Las clases hijas \textbf{TxByteIfaceSinkDriver} y \textbf{TxBitIfaceSinkDriver} son usadas con una \textit{tx\_interface} de bytes y de bits respectivamente. La clase \textbf{TxIfaceSourceDriver} y sus clases hijas son los controladores de las fuentes, y funcionan de la misma manera de los controladores de recepción.
+
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=1.0\textwidth]{./img/drivers_uml.vpd}
   \caption{Diagrama UML de clases para los controladores.}
   \label{fig:driver_uml}
 \end{figure}
 
-Los controladores de transmisión (PICC a PCD) están divididos en dos partes: las fuentes y los sumideros. Los sumideros son necesarios porque la señal \textit{req} de la \textit{tx\_interface} es manejada por el sumidero. La clase \textbf{TxIfaceSinkDriver} es la clase base de los sumideros, contiene un método \textbf{start()} que espera por la activación de la señal \textit{data\_valid} de la interfaz, y después comienza a pulsar \textit{req} periódicamente hasta que \textit{data\_valid} baja a ‘0’. Unos atributos controlan los timings de los pulsos. Las clases hijas \textbf{TxByteIfaceSinkDriver} y \textbf{TxBitIfaceSinkDriver} son usadas con una \textit{tx\_interface} de bytes y de bits respectivamente. La clase \textbf{TxIfaceSourceDriver} y sus clases hijas son los controladores de las fuentes, y funcionan de la misma manera de los controladores de recepción.
-
 % Monitores
 \FloatBarrier
 \subsection{Monitores}
 
 La \figref{fig:monitor_uml} muestra el diagrama UML de las clases para los monitores. La clase base es \textbf{Monitor}, es abstracta y tiene dos tipos parametrizados: \textit{IfaceType}, que es el tipo de la interfaz que monitoriza, y \textit{TransType}, que es el tipo de las transacciones que construye. El método \textbf{start()} lleva una referencia a una cola de elementos de tipo \textit{TransType} y comienza un nuevo hilo de ejecución. Ese hilo llama el método \textbf{process()}, si esa tarea devuelve una transacción válida, es empujada a la cola, para que el banco de prueba pueda verificarla, y el método \textbf{process()} es llamado de nuevo. Ese proceso se repite por siempre. En esta clase base \textbf{process()} es abstracto, las clases hijas lo sustituyen para definir cómo armar una transacción desde las señales de la interfaz.
+
+\vfill
 
 \begin{figure}[htb]
   \centering
@@ -594,7 +598,7 @@ Los conversores de transacciones son clases que facilitan la conversión de un t
 \FloatBarrier
 \subsection{Secuencias}
 
-Las clases de secuencias no deberían ser confundidas con el método que el PCD usa para codificar tramas mediante pausas, estas clases son diseñadas para verificar el comportamiento de módulos que reciben tramas desde el PCD, y responden con las respuestas adecuadas. Contienen una serie de pruebas: ponen el DUT en un estado conocido, envían una o más tramas, verifican que las respuestas son las esperadas, y que el estado del DUT cambia como se espera. Cada banco de prueba que necesita usar una secuencia debería extender una de las secuencias genéricas para proveer el funcionamiento específico para el DUT.
+Las clases de secuencias no deberían ser confundidas con el método que el PCD usa para codificar tramas mediante pausas, estas clases son diseñadas para verificar el comportamiento de módulos que reciben tramas desde el PCD, y responden con las respuestas adecuadas. Contienen una serie de pruebas que: ponen el DUT en un estado conocido, envían una o más tramas, verifican que las respuestas son las esperadas, y que el estado del DUT cambia como se espera. Cada banco de prueba que necesita usar una secuencia debería extender una de las secuencias genéricas para proveer el funcionamiento específico para el DUT.
 
 La clase base es \textbf{Sequence}, y contiene atributos:
 
@@ -625,7 +629,7 @@ Siguiente la clase \textbf{CommsTestsSequence} extiende \textbf{SpecificTargetSe
   \item Transicionar al estado READY o READY* aleatoriamente.
   \item Enviar la trama SELECT con el UID de la PICC pero con CRC corrompida.
   \item Verifica que el DUT no responde.
-  \item Verifica que el DUT está en estado IDLE o HLTA dependiendo si el estado original estuvo READY o READY respectivamente*.
+  \item Verifica que el DUT está en estado IDLE o HLTA dependiendo si el estado original estuvo READY o READY* respectivamente.
 \end{itemize}
 
 % Otros
@@ -639,7 +643,7 @@ Los controladores y monitores siendo clases no pueden utilizar señales de forma
   \item \textbf{load\_modulator\_iface}: Es usada con el monitor \textbf{LoadModulatorMonitor}. También consiste en una señal de un bit: \textit{lm}, que representa la salida hasta el modulador de carga del AFE.
 \end{itemize}
 
-La clase de ayuda \textbf{UID} está diseñada para ayudar con operaciones relacionadas con el UID de una PICC. Puede ser usada para guardar un UID simple, doble o triple. También puede ser usada para comparar los datos en una trama ANTICOLLISION o SELECT con el UID de la PICC, para conocer si es esperado que la PICC respondería a esa trama. La clase \textbf{FixedSizeUID} extiende \textbf{UID}, y tiene un parámetro para definir si el UID es simple, doble o triple. También tiene dos parámetros para especificar cuántos de los bits más significativos son constantes, y el valor de esos bits. Los bits menos significativos pueden ser generados aleatoriamente, considerando unas restricciones para asegurar que el UID generado es válido. Esta clase está diseñada en esta forma, porque la implementación de la norma en este trabajo opera de la misma manera.
+La clase de ayuda \textbf{UID} está diseñada para ayudar con operaciones relacionadas con el UID de una PICC. Puede ser usada para guardar un UID simple, doble o triple. También puede ser usada para comparar los datos en una trama ANTICOLLISION o SELECT con el UID de la PICC, para conocer si es esperado que la PICC respondería a esa trama. La clase \textbf{FixedSizeUID} extiende \textbf{UID}, y tiene un parámetro para definir si el UID es simple, doble o triple. También tiene dos parámetros para especificar cuántos de los bits más significativos son constantes, y el valor de esos bits. Los bits menos significativos pueden ser generados aleatoriamente, considerando unas restricciones para asegurar que el UID generado es válido. Esta clase está diseñada en esta forma, porque la implementación del núcleo IP en este trabajo opera de la misma manera.
 
 La clase \textbf{StdBlockAddress} guarda detalles sobre los campos CID y NAD de los bloques estándares definidos en la parte cuatro de la norma. Esta clase es usada para generar transacciones que representan tramas de bloques estándares.
 
@@ -682,17 +686,16 @@ La \figref{fig:afe_sim} muestra dos simulaciones de una pausa con argumentos de 
 
 La mayoría de los módulos en esta tesis son verificados con un banco de prueba que tiene una de las dos estructuras mostrado en la \figref{fig:tb_structures}.
 
+Los módulos que simplemente reciben tramas, operan sobre ellas, y las reenvían, son verificados con un banco de prueba sin una secuencia (izquierda). El bloque de control genera una transacción en el formato adecuado y la pasa al controlador mediante un FIFO. El DUT la recibe por su interfaz de sumidero, la procesa, y la reenvía sobre su interfaz de fuente. El monitor detecta la trama reenviada, construye una transacción, y la pasa al bloque de control mediante otro FIFO. Finalmente el bloque de control compara esas transacciones para verificar que la trama fue modificada correctamente.
+
+Los módulos que reciben solicitudes del PCD y envían respuestas, son verificados con un banco de prueba que incluye una secuencia (derecha). El banco de prueba define una nueva clase de secuencia que extiende una de las secuencias genéricas, y sustituye varios métodos para implementar funcionamiento específico a ese banco de prueba. Esos bancos de pruebas funcionan de una manera parecida a los bancos de prueba sin secuencias, pero las tramas enviadas son elegidas por las pruebas en la secuencia, y son generadas por el generador de transacciones. Además las respuestas enviadas por el DUT son comparadas en la secuencia con las respuestas esperadas.
+
 \begin{figure}[htb]
   \centering
   \includegraphics[width=1.0\textwidth]{./img/verification3}
   \caption{Dos estructuras comunes de los bancos de pruebas.}
   \label{fig:tb_structures}
 \end{figure}
-
-Los módulos que simplemente reciben tramas, operan sobre ellas, y las reenvían, son verificados con un banco de prueba sin una secuencia (izquierda). El bloque de control genera una transacción en el formato adecuado y la pasa al controlador mediante un FIFO. El DUT la recibe por su interfaz de sumidero, la procesa, y la reenvía sobre su interfaz de fuente. El monitor detecta la trama reenviada, construye una transacción, y la pasa al bloque de control mediante otro FIFO. Finalmente el bloque de control compara esas transacciones para verificar que la trama fue modificada correctamente.
-
-Los módulos que reciben solicitudes del PCD y envían respuestas, son verificados con un banco de prueba que incluye una secuencia (derecha). El banco de prueba define una nueva clase de secuencia que extiende una de las secuencias genéricas, y sustituye varios métodos para implementar funcionamiento específico a ese banco de prueba. Esos bancos de pruebas funcionan de una manera parecida a los bancos de prueba sin secuencias, pero las tramas enviadas son elegidas por las pruebas en la secuencia, y son generadas por el generador de transacciones. Además las respuestas enviadas por el DUT son comparadas en la secuencia con las respuestas esperadas.
-
 
 % ISO/IEC 14443A núcleo IP
 % --------------------------------
@@ -851,7 +854,6 @@ La \figref{fig:rx_timings} muestra el número de ciclos entre dos pausas para to
   \caption{Números de ciclos posibles entre dos pausas.}
   \label{fig:rx_timings}
 \end{figure}
-\message{TODO: Update this image}
 
 Se define $T_{nc\_min}$ y $T_{nc\_max}$ como el número de ciclos mínimos y máximos que el reloj puede estar detenido para que las secuencias puedan ser decodificadas correctamente. Este análisis es necesario para considerar variaciones en el comportamiento de los PCDs y los AFEs. Considerando las combinación de secuencias: Z~$\rightarrow$~Z, y Z~$\rightarrow$~X y observando la \figref{fig:rx_timings}, se puede calcular:
 

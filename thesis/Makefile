@@ -19,8 +19,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this code. If not, see <http://www.gnu.org/licenses/>.
 
-# Note: This thesis was written and compiled using overleaf
-#       Building it via pdflatex has been tested, but not extensively
+# Note: This version is now the golden.
+#		The formatting has been checked using this version.
+#		The overleaf version should be sync'd to this one, and the formatting should be the same
+#		but this is not guaranteed
 
 # Note: This makefile was tested using windows 10 + cygwin with the texlive package
 #		Some of the texlive-collection packages are needed to, although I can't guarantee

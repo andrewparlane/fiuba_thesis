@@ -82,7 +82,7 @@
 
 % Create a new command for referencing figures with "Figura ?.?" as the link. Same for tables, sections and appendice
 % Call with:
-%  \figref{fig:figure-label} 
+%  \figref{fig:figure-label}
 %  \tabref{tab:table-label}
 %  \secref{sec:section-label}{Section Name}
 %  \appref{appendix:appendix-label}
@@ -105,21 +105,24 @@
 \definecolor{mPurple}{rgb}{0.58,0,0.82}
 \definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
 \lstdefinestyle{CStyle}{
-    backgroundcolor=\color{backgroundColour},   
+    backgroundcolor=\color{backgroundColour},
     commentstyle=\color{mGreen},
     keywordstyle=\color{magenta},
     numberstyle=\tiny\color{mGray},
     stringstyle=\color{mPurple},
     basicstyle=\footnotesize,
-    breakatwhitespace=false,         
-    %breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
+    breakatwhitespace=false,
+    %breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
     showstringspaces=false,
-    showtabs=false,                  
+    showtabs=false,
     tabsize=2,
     language=C
 }
+
+% Change the font size of block quotes (displaycquote)
+\renewcommand{\mkbegdispquote}[2]{\smaller}
