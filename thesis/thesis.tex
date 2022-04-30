@@ -101,7 +101,7 @@ El layout final no tiene violaciones de timing, el slack de Setup menor es \SI{1
 Aclaraciones
 Por cuestiones de claridad en esta tesis cuándo se dice que una señal está en ‘1’ o ‘0’ significa que la señal tiene un valor lógico igual a '1' o ‘0’ respectivamente.
 
-El código RTL, los bancos de pruebas y los scripts de síntesis y place \& route están publicados de forma abierta en GitHub bajo la licencia GNU v3.0, de manera que cualquier parte de este trabajo pueda ser utilizada en otros proyectos académicos o comerciales. Para facilitar la adopción y modificación de este trabajo por la comunidad internacional, el código y los scripts están escritos con nombres y comentarios en Inglés.
+El código RTL, los bancos de pruebas y los scripts de síntesis y place \& route están publicados de forma abierta en GitHub bajo la licencia GNU v3.0, de manera que cualquier parte de este trabajo pueda ser utilizada en otros proyectos académicos o comerciales. Para facilitar la adopción y modificación de este trabajo por la comunidad internacional, el código y los scripts están escritos con nombres y comentarios en Inglés. El enlace al repositorio y detalles de su estructura son dados en el \appref{appendix:code_repo}.
 
 Para facilitar la lectura de esta tesis las señales, variables y parámetros están escritos en \textit{cursiva},  los módulos, clases y funciones están escritos en \textbf{negritas}. Además se utilizan paréntesis para nombrar a las funciones, aunque sin sus argumentos, por ejemplo: \textbf{compare()}. Finalmente los nombres de las tramas definidas en los protocolos están escritos en MAYÚSCULAS.
 
@@ -428,7 +428,7 @@ La implementación de esta tesis está dividida en dos: 1) El núcleo IP genéri
 La norma IEEE de SystemVerilog define un interfaz como:
 
 \begin{displaycquote}[traducción mía]{ieee1800}
-A su nivel más bajo, un interfaz es un conjunto nombrado de nets o variables. La interfaz es instanciada en un diseño y puede ser accedida por un puerto como un ítem sencillo; las nets o variables componentes [pueden ser] referidos cuando sea necesario. Una proporción significativa de un diseño verilog frecuentemente consiste en listas de puertos y listas de conexiones, los que son simplemente repeticiones de nombres. La habilidad de reemplazar un grupo de nombres con un nombre simple puede reducir significativamente el tamaño de una descripción y mejorar su mantenibilidad. 
+A su nivel más bajo, un interfaz es un conjunto nombrado de nets o variables. La interfaz es instanciada en un diseño y puede ser accedida por un puerto como un ítem sencillo; las nets o variables componentes [pueden ser] referidos cuando sea necesario. Una proporción significativa de un diseño verilog frecuentemente consiste en listas de puertos y listas de conexiones, los que son simplemente repeticiones de nombres. La habilidad de reemplazar un grupo de nombres con un nombre simple puede reducir significativamente el tamaño de una descripción y mejorar su mantenibilidad.
 \end{displaycquote}
 
 Además de esas ventajas, una interfaz puede contener funcionalidad, sea para síntesis o verificación, por ejemplo se puede agregar aserciones que verifican el comportamiento de los nets internos en vez de tener que duplicar esas pruebas en cada sitio que la interfaz es usada. Una interfaz puede tener una o más modports, los que especifican las direcciones de las señales. Esos modports pueden ser usados en la lista de puertas por un módulo en vez de especificar cada señal y su dirección individualmente.
@@ -649,7 +649,7 @@ La clase \textbf{Target} contiene información sobre una PICC, y es usada para a
 \FloatBarrier
 \subsubsection{Modelos Analógicos}
 
-Un PCD genera una señal portadora de \SI{13.56}{\mega\hertz} y la usa para enviar información a PICCs en su campo electromagnético mediante la modulación de la amplitud de esa portadora. El detector de pausas en el AFE de la PICC detecta esas pausas y genera la salida digital \textit{pause\_n} para indicar cuándo las pausas son detectadas. La pausa detectada por el AFE es una distorsión de la pausa ideal enviada del dominio digital del PCD. Los dos flancos de la pausa son retrasados debido a las implementaciones del circuito de modulación de amplitud del PCD y del detector de pausas del AFE. También esa distorsión puede retardar los flancos descendente y ascendente por tiempos diferentes, cambiando la duración de la pausa. Además el AFE de la PICC recupera el reloj desde la portadora, y por lo tanto el reloj se detiene durante las pausas. Debido a las implementaciones del circuito de modulación de amplitud del PCD y de la recuperación del reloj del AFE, el reloj puede sigue andando por unos ciclos después de que el PCD comienza la pausa, y el reloj puede seguir detenido por unos ciclos después de que el PCD termina la pausa. Para simular este comportamiento, un modelo del PCD y del AFE fue implementado. La \figref{fig:analog_model} muestra ese modelo. 
+Un PCD genera una señal portadora de \SI{13.56}{\mega\hertz} y la usa para enviar información a PICCs en su campo electromagnético mediante la modulación de la amplitud de esa portadora. El detector de pausas en el AFE de la PICC detecta esas pausas y genera la salida digital \textit{pause\_n} para indicar cuándo las pausas son detectadas. La pausa detectada por el AFE es una distorsión de la pausa ideal enviada del dominio digital del PCD. Los dos flancos de la pausa son retrasados debido a las implementaciones del circuito de modulación de amplitud del PCD y del detector de pausas del AFE. También esa distorsión puede retardar los flancos descendente y ascendente por tiempos diferentes, cambiando la duración de la pausa. Además el AFE de la PICC recupera el reloj desde la portadora, y por lo tanto el reloj se detiene durante las pausas. Debido a las implementaciones del circuito de modulación de amplitud del PCD y de la recuperación del reloj del AFE, el reloj puede sigue andando por unos ciclos después de que el PCD comienza la pausa, y el reloj puede seguir detenido por unos ciclos después de que el PCD termina la pausa. Para simular este comportamiento, un modelo del PCD y del AFE fue implementado. La \figref{fig:analog_model} muestra ese modelo.
 
 \begin{figure}[htb]
   \centering
@@ -1006,7 +1006,7 @@ Debido a que este módulo solo consiste en la instanciación de dos módulos, la
 \FloatBarrier
 \subsection{ISO/IEC 14443-3A}
 
-Esta parte de la implementación consiste en once módulos y sus bancos de pruebas correspondientes. 
+Esta parte de la implementación consiste en once módulos y sus bancos de pruebas correspondientes.
 
 \begin{itemize}
   \item \textbf{frame\_decode}: Verifica y quita los bits de paridad de tramas recibidas desde el PCD.
@@ -1050,7 +1050,7 @@ Este módulo tiene un sumidero de la \textit{rx\_interface} que está conectado 
 
 El tipo de paridad definido por la norma es impar, eso es a decir que el número de unos en el byte más el bit de paridad debería ser impar. Por ejemplo el byte: 8’b0101\_1100, tiene cuatro ‘1’s, cuatro es par, así el bit de paridad debe ser ‘1’, para que el total de los ‘1’s sea impar.
 
-Los bits de paridad son verificados y quitados mediante el siguiente proceso. Al principio de cada trama, un indicador \textit{expected\_parity} es inicializado a ‘1’. Después cuándo cada uno de los primeros ochos bits son recibidos, son reenviados, y ese indicador es actualizado con el resultado de: \textit{expecetd\_parity} XOR \textit{in\_iface.data}. Ese cálculo invierte el valor de \textit{expected\_parity} cada vez que un ‘1’ es recibido. El noveno bit es el bit de paridad, así es comparado con \textit{expected\_parity} para verificar que es correcto. Este proceso se repite hasta el fin de la trama, o hasta un error es detectado. 
+Los bits de paridad son verificados y quitados mediante el siguiente proceso. Al principio de cada trama, un indicador \textit{expected\_parity} es inicializado a ‘1’. Después cuándo cada uno de los primeros ochos bits son recibidos, son reenviados, y ese indicador es actualizado con el resultado de: \textit{expecetd\_parity} XOR \textit{in\_iface.data}. Ese cálculo invierte el valor de \textit{expected\_parity} cada vez que un ‘1’ es recibido. El noveno bit es el bit de paridad, así es comparado con \textit{expected\_parity} para verificar que es correcto. Este proceso se repite hasta el fin de la trama, o hasta un error es detectado.
 
 Hay tres errores que pueden ser detectados en este módulo: Un error indicado en la \textit{in\_iface}, Un error en un bit de paridad, y una trama que le falta su último bit de paridad. Para soportar tramas cortas y de anticolisiones que pueden terminar con un byte parcial sin un bit de paridad, ese último error solo es emitido si una trama termina con un byte entero.
 
@@ -1472,7 +1472,7 @@ La implementación es un circuito combinatorio para evitar el uso de registros y
   \label{fig:routing_rx}
 \end{figure}
 
-La ruta de transmisión tiene dos entradas: \textit{in\_tx\_iface\_init} y \textit{in\_tx\_iface\_14443\_4}, una salida: \textit{out\_tx\_iface}, y una señal de control: \textit{route\_tx\_from\_14443\_4}. Cuando \textit{route\_tx\_from\_14443\_4} está ‘0’, respuestas son dirigidas desde la entrada \textit{in\_tx\_iface\_init}, y cuándo está ‘1’ las respuestas son dirigidas desde la entrada \textit{in\_tx\_iface\_14443\_4}. Las señales \textit{in\_tx\_iface\_init.req} y \textit{in\_tx\_iface\_14443\_4.req} deben ser ‘0’ cuando su entrada está desactivada. Por lo tanto un par de compuertas AND son usadas. Las otras señales son conectadas mediante un multiplexor. La \figref{fig:routing_tx} muestra está implementación. 
+La ruta de transmisión tiene dos entradas: \textit{in\_tx\_iface\_init} y \textit{in\_tx\_iface\_14443\_4}, una salida: \textit{out\_tx\_iface}, y una señal de control: \textit{route\_tx\_from\_14443\_4}. Cuando \textit{route\_tx\_from\_14443\_4} está ‘0’, respuestas son dirigidas desde la entrada \textit{in\_tx\_iface\_init}, y cuándo está ‘1’ las respuestas son dirigidas desde la entrada \textit{in\_tx\_iface\_14443\_4}. Las señales \textit{in\_tx\_iface\_init.req} y \textit{in\_tx\_iface\_14443\_4.req} deben ser ‘0’ cuando su entrada está desactivada. Por lo tanto un par de compuertas AND son usadas. Las otras señales son conectadas mediante un multiplexor. La \figref{fig:routing_tx} muestra está implementación.
 
 \begin{figure}[htb]
   \centering
@@ -1572,7 +1572,7 @@ Las respuestas son construidas en un buffer de cinco bytes. Cuando la máquina d
 
 La \figref{fig:anticollision} muestra la solicitud y la respuesta por la trama ANTICOLLISION. El PCD envía parte de un UID y todas las PICCs quienes UIDs corresponden, responden con los de más de sus UIDs. La trama SELECT es igual a una ANTICOLLISION pero el PCD envía el UID entero y un CRC es agregado. Para determinar si el UID en la solicitud corresponde con el UID de esta PICC es necesario implementar un circuito digital que puede comparar entre cero y cinco bytes y en el caso de que el último byte es un byte parcial, entre 1 y 7 bits de ese byte. El circuito necesario para hacer esa comparación de forma combinatoria es un circuito grande. Una opción mejor y que es usada en esta implementación es comparar cada bit del UID en turno en el momento que es recibido. La entrada \textit{rx\_iface\_bits} existe por esta razón. Después de haber recibido dos bytes de una trama mediante la entrada \textit{rx\_iface\_bytes} como normal, si la data indica que la trama es una ANTICOLLISION o una SELECT, el diseño comienza comparando cada bit recibida sobre la \textit{rx\_iface\_bits} con su UID. Otra ventaja de este método es que se puede construir la respuesta usando un registro de desplazamiento iniciado con el UID completo para el nivel de cascada actual, y desplazando lo con cada bit recibido.
 
-El banco de prueba para este módulo consiste en: 
+El banco de prueba para este módulo consiste en:
 
 \begin{itemize}
   \item El controlador \textbf{RxBitIfaceDriver} para simular tramas desde el PCD
@@ -1724,7 +1724,7 @@ La respuesta a RATS es ATS que consiste en al menos un byte, pero hay algunos ca
 
 Después de la RATS y ATS, el PCD opcionalmente puede enviar la trama PPS para cambiar las tasas de transmisión y recepción. El PCD solo es permitido enviar la PPS inmediatamente después de la recepción de la respuesta ATS, por lo tanto la PICC ignora tramas PPS en cualquier otro momento. Debido a que este trabajo no soporta otras tasas de bits, este módulo solo responde a la PPS si las tasas de bits especificadas son: fc/128 en cada dirección.
 
-Un bloque estándar comienza con una cabecera de entre uno y tres bytes: 
+Un bloque estándar comienza con una cabecera de entre uno y tres bytes:
 
 \begin{description}
   \item[PCB:] \hfill \\ Contiene: el tipo del bloque (I, R, o S), unos campos específicos del tipo de bloque, y dos indicadores que especifican si los campos de CID y NAD están presentes.
@@ -1774,7 +1774,7 @@ El banco de prueba para este módulo es parecido a los bancos de pruebas de los 
 
 \begin{itemize}
   \item Verifica que el campo información de bloques estándares de tipos I son reenviados a la aplicación cuando son adecuados, y que otras tramas no son reenviadas a la aplicación.
-  \item Maneja las entradas \textit{rx\_crc\_ok}, \textit{power} y \textit{tag\_active} del DUT y verifica el comportamiento de sus salidas: \textit{rx\_rats}, \textit{rx\_deselect}, y \textit{rx\_app\_resend\_last}. 
+  \item Maneja las entradas \textit{rx\_crc\_ok}, \textit{power} y \textit{tag\_active} del DUT y verifica el comportamiento de sus salidas: \textit{rx\_rats}, \textit{rx\_deselect}, y \textit{rx\_app\_resend\_last}.
   \item Simula respuestas desde la aplicación.
   \item Sustituye las tareas \textbf{go\_to\_state\_…()}. La secuencia usa estas tareas para poner el DUT en el estado apto para cada prueba, pero en este caso el DUT no contiene la máquina de estados de la parte tres de la norma, por lo tanto las transiciones entre estos estados tienen que ser simuladas.
 \end{itemize}
@@ -1784,7 +1784,7 @@ La parte cuatro de la norma especifica algunas reglas sobre el comportamiento de
 \begin{itemize}
   \item Verifica que cuando una PICC en el estado ACTIVE o ACTIVE* recibe una trama RATS con CID válido, envía la respuesta ATS esperada, y si la PICC es en otro estado o el CID asignado no es válido, la PICC no envía una respuesta.
   \item Verifica que el DUT solo responde a la trama PPS cuándo es la primera trama después del envío de la respuesta ATS.
-  \item Verifica que cuando la PICC está en el estado PROTOCOL, los campos de información en los bloques estándares de tipo I, son enviados a la aplicación. 
+  \item Verifica que cuando la PICC está en el estado PROTOCOL, los campos de información en los bloques estándares de tipo I, son enviados a la aplicación.
   \item Verifica que el DUT cumple con las reglas descritas arriba sobre los números de bloques.
 \end{itemize}
 
@@ -1794,7 +1794,7 @@ El informe de cobertura da el DUT un resultado de 98\%. Las partes que faltan co
 \FloatBarrier
 \subsection{ISO/IEC 14443A}
 
-Este módulo es el módulo más alto del núcleo IP. Debería ser instanciado en la aplicación y conectado a un AFE conforme con parte dos de la norma. El módulo simplemente instancia los módulos: \textbf{iso14443\_2a}, \textbf{iso14443\_3a}, \textbf{iso14443\_4a}, y los conecta de forma adecuada. Este módulo es parametrizado y los parámetros son descritos en el \tabref{tab:params_iso14443a}. 
+Este módulo es el módulo más alto del núcleo IP. Debería ser instanciado en la aplicación y conectado a un AFE conforme con parte dos de la norma. El módulo simplemente instancia los módulos: \textbf{iso14443\_2a}, \textbf{iso14443\_3a}, \textbf{iso14443\_4a}, y los conecta de forma adecuada. Este módulo es parametrizado y los parámetros son descritos en el \tabref{tab:params_iso14443a}.
 
 \begin{table}[htb]
   \centering
@@ -1974,7 +1974,7 @@ Para verificar este módulo el modelo analógico: \textbf{analogue\_sim} es usad
 % Aplicación - Interfaz con el sensor MOSFET de radiación y el ADC
 % --------------------------------
 \FloatBarrier
-\section{Aplicación - \LARGE{La interfaz con el sensor y el ADC}}
+\section{Aplicación - Interfaz con el sensor y ADC}
 
 La aplicación es el bloque principal de este trabajo, instancia el núcleo IP ISO/IEC 14443A, recibe, actúa sobre, y responde a los mensajes de nivel aplicación contenidos en bloques estándares de tipo I. El propósito de este bloque es proveer un método para manipular las salidas al sensor y al ADC, y para devolver la muestra al PCD. El \tabref{tab:sens_adc_signals} muestra las señales conectadas al sensor y al ADC:
 
@@ -2012,9 +2012,9 @@ La \figref{fig:sens_adc} muestra el proceso para tomar una muestra del sensor. P
 \FloatBarrier
 \subsection{Sincronización del muestreo}
 
-Para cumplir con las metas del proyecto marco es requerido poder tomar muestras de múltiples de TAGs de forma sincronizada. Un método para sincronizar las muestras sería usar una trama broadcast para iniciar el proceso en cada PICC a la vez. Desafortunadamente la norma ISO/IEC 14443-4 no permite al PCD envíar tramas broadcast. Sería posible modificar el diseño del núcleo IP para permitir esto, por ejemplo con el CID 15 que es reservado para uso futuro en la norma. La desventaja de esto es que no conforme con la norma y significaría que el núcleo IP no sería una implementación genérica. 
+Para cumplir con las metas del proyecto marco es requerido poder tomar muestras de múltiples de TAGs de forma sincronizada. Un método para sincronizar las muestras sería usar una trama broadcast para iniciar el proceso en cada PICC a la vez. Desafortunadamente la norma ISO/IEC 14443-4 no permite al PCD envíar tramas broadcast. Sería posible modificar el diseño del núcleo IP para permitir esto, por ejemplo con el CID 15 que es reservado para uso futuro en la norma. La desventaja de esto es que no conforme con la norma y significaría que el núcleo IP no sería una implementación genérica.
 
-El método usado para sincronizar las muestras en este trabajo es parecido a como el FDT funciona para sincronizar las respuestas de las tramas de ANTICOLLISION. Todas las PICCs reciben las pausas mediante el mismo circuito, por lo tanto el flanco ascendente de la pausa debe ser recibido en todas las PICCs a aproximadamente el mismo momento. Además las PICCs recuperan sus relojes de la portadora, así todas las PICCs en el campo electromagnético de un PCD tienen relojes con exactamente la misma frecuencia. Estos hechos significan que si las PICCs tienen un contador que es reseteado a cero en cada flanco ascendente de la pausa, y en los otros ciclos del reloj incrementa su valor, los contadores serían sincronizados dentro de un margen de error de unos ciclos del reloj. El margen de error exacto depende en la implementación del AFE. 
+El método usado para sincronizar las muestras en este trabajo es parecido a como el FDT funciona para sincronizar las respuestas de las tramas de ANTICOLLISION. Todas las PICCs reciben las pausas mediante el mismo circuito, por lo tanto el flanco ascendente de la pausa debe ser recibido en todas las PICCs a aproximadamente el mismo momento. Además las PICCs recuperan sus relojes de la portadora, así todas las PICCs en el campo electromagnético de un PCD tienen relojes con exactamente la misma frecuencia. Estos hechos significan que si las PICCs tienen un contador que es reseteado a cero en cada flanco ascendente de la pausa, y en los otros ciclos del reloj incrementa su valor, los contadores serían sincronizados dentro de un margen de error de unos ciclos del reloj. El margen de error exacto depende en la implementación del AFE.
 
 Unos de los mensajes en el protocolo propietario diseñado por este trabajo tienen un campo de sincronización. Una PICC que recibe uno de esos mensajes no realiza la acción especificada hasta que su contador de sincronización ha llegado al valor especificado en ese campo. El PCD puede enviar el mismo mensaje a cada PICC activa en turno. Con un tiempo de sincronización suficientemente grande el PCD puede enviar la siguiente trama antes de que la acción sea realizada, reseteando los contadores en todas las PICCs. De esta manera se logra que todas las PICCs realizan la misma acción de forma sincronizada.
 
@@ -2040,7 +2040,7 @@ Estos valores dan un resultado de $t_{sync} > 14.188$ ciclos ($t_{sync} > \SI{1}
 \FloatBarrier
 \subsection{Protocolo Propietario}
 
-El protocolo de nivel aplicación es un protocolo propietario diseñado para este trabajo. Cada mensaje y respuesta comienzan con una cabecera de cinco bytes que consiste en un valor mágico de cuatro bytes, y un byte para indicar el tipo de comando. El valor mágico está presente porque la norma ISO/IEC 14443 no define un método para determinar qué protocolo de aplicación usa una PICC. Al comenzar cada mensaje y respuesta con un valor mágico provee un método para verificar que un PCD y una PICC son compatibles. Los comandos definidos son:
+El protocolo de nivel aplicación es un protocolo propietario diseñado para este trabajo, el \appref{appendix:protocol_defs} contiene un header del lenguaje de programación C con definiciones y estructuras por este protocolo. Cada mensaje y respuesta comienzan con una cabecera de cinco bytes que consiste en un valor mágico de cuatro bytes, y un byte para indicar el tipo de comando. El valor mágico está presente porque la norma ISO/IEC 14443 no define un método para determinar qué protocolo de aplicación usa una PICC. Al comenzar cada mensaje y respuesta con un valor mágico provee un método para verificar que un PCD y una PICC son compatibles. Los comandos definidos son:
 
 \begin{description}
   \item[IDENTIFY:] \hfill \\ Solicitud por información sobre las versiones de los bloques. El PCD puede usar la respuesta para determinar qué revisión de silicio usa una PICC. Este comando no lleva argumentos.
@@ -2048,7 +2048,7 @@ El protocolo de nivel aplicación es un protocolo propietario diseñado para est
   \begin{itemize}
     \item \textit{sync[15:0]}: Tiempo de sincronización.
     \item \textit{mask[7:0]}: Máscara de bits para especificar qué señales cambiar. Los bits son:
-    
+
     \begin{tabular}{r l}
       7-5: & \textit{sens\_config[2:0]} \\
       4: & \textit{sens\_enable} \\
@@ -2117,7 +2117,7 @@ Un ejemplo de la lectura de un único sensor mediante el comando AUTO\_READ. El 
   \item El PCD envía el comando SET\_SIGNAL para fijar la señal \textit{sens\_config} como desea y las otras señales en ‘0’.
   \item El PCD envía el comando AUTO\_READ, con los tiempos $t_1$ y $t_2$ deseados, y verifica la respuesta.
   \item El PCD espera por más que $t_1 + t_2 + t_{adc}$ para que el proceso se termine.
-  \item El PCD envía el comando GET\_RESULT, verifica que la respuesta no indica un error, y guarda la muestra. 
+  \item El PCD envía el comando GET\_RESULT, verifica que la respuesta no indica un error, y guarda la muestra.
 \end{enumerate}
 
 Un ejemplo de la lectura de dos sensores de forma sincronizada mediante el comando AUTO\_READ. La \figref{fig:app_flow} muestra el mismo flujo de forma gráfica.
@@ -2143,7 +2143,7 @@ Un ejemplo de la lectura de dos sensores de forma sincronizada mediante el coman
 \FloatBarrier
 \subsection{Marco de Verificación Extendido}
 
-El Marco de Verificación usado en el núcleo IP ISO/IEC 14443A es extendido para permitir la verificación de esta aplicación. Tres componentes extras son agregados. 
+El Marco de Verificación usado en el núcleo IP ISO/IEC 14443A es extendido para permitir la verificación de esta aplicación. Tres componentes extras son agregados.
 
 \begin{itemize}
   \item Un paquete de SystemVerilog \textbf{ProtocolGenerator} que tienen funciones para generar colas de bytes por los mensajes de nivel aplicación.
@@ -2205,7 +2205,7 @@ La implementación consiste en un contador y una máquina de estados con cinco e
 En el estado IDLE, el módulo se transiciona al estado SYNC cuando \textit{start} está ‘1’. En el estado SYNC el módulo espera por el contador a tener un valor mayor o igual que la entrada \textit{sync\_timing}. En este momento la acción realizada depende en el tipo del comando:
 
 \begin{description}
-  \item[SET\_SIGNAL:] \hfill \\ Las salidas al sensor y al ADC son asignado al resultado de: 
+  \item[SET\_SIGNAL:] \hfill \\ Las salidas al sensor y al ADC son asignado al resultado de:
   \begin{align*}
       \left(\textit{signals}~\&~\sim\textit{set\_signals\_mask}\right)~|~\left(\textit{set\_signals\_value}~\&~\textit{set\_signals\_mask}\right)
   \end{align*}
@@ -2423,7 +2423,7 @@ El consumo de potencia de un circuito digital puede ser dividido en tres categor
 
 Debido a que el archivo SAIF no contiene información sobre cuándo ocurren los cambios, las herramientas solo pueden obtener una frecuencia promedio por cada señal, lo que implica que la anàlisis de potencia produce una estimación de potencia promedio, y no incluye información sobre el consumo pico. En este trabajo el archivo SAIF fue generado con una simulación de nivel RTL, lo que significa que solo contiene información sobre las señales nombradas en el RTL, y no señales intermedias ni las señales dentro de las celdas. El otro problema con archivos SAIF es que su precisión depende del banco de prueba. Si el banco de prueba no es representativo del uso real la estimación de potencia no sería precisa. El banco de prueba que genera el SAIF para este proyecto es: \textbf{generate\_top\_saif\_tb}, es una copia modificada del banco de prueba del módulo \textbf{radiation\_sensor\_digital\_top}. Este banco de prueba simplemente realiza el proceso de inicialización definida en la norma ISO/IEC 14443 y después toma cinco muestras del sensor mediante los comandos AUTO\_READ y GET\_RESULT, lo que debería ser representativa del uso real. Este archivo SAIF es leído en Design Compiler antes de la compilación del diseño.
 
-Compilación es el proceso que convierte el diseño a un netlist de nivel de compuertas. Design Compiler puede realizar este proceso controlado por requerimientos de área, timing y potencia, que significa que intenta producir un netlist con área mínima, potencia mínima y que cumple con timing adecuado. Una optimización que se usa para reducir el consumo de potencia es Clock Gating, una técnica dónde el reloj de un registro es desactivado cuándo el valor del registro no cambia de estado. Esta optimización reduce la potencia interna del registro porqué evita el cambio de estado del reloj dentro de la celda. La \figref{fig:clock_gating} muestra esta técnica. Esta optimización puede impactar el timing de las rutas involucradas, y el área del diseño. Sin embargo puede reducir el área del diseño, porque puede reemplazar un multiplexor en la entrada de cada registro en un banco, con un solo Clock Gate compartido entre todo el banco. La estimación de consumo de potencia reportado al final de síntesis es reducido 63\% desde \SI{454.0}{\micro\watt} a \SI{169.5}{\micro\watt}, y el área total de las celdas es reducido 2\% desde \SI{56307}{\micro\meter\squared} a \SI{55348}{\micro\meter\squared} al aplicar el método de Clock Gating. 
+Compilación es el proceso que convierte el diseño a un netlist de nivel de compuertas. Design Compiler puede realizar este proceso controlado por requerimientos de área, timing y potencia, que significa que intenta producir un netlist con área mínima, potencia mínima y que cumple con timing adecuado. Una optimización que se usa para reducir el consumo de potencia es Clock Gating, una técnica dónde el reloj de un registro es desactivado cuándo el valor del registro no cambia de estado. Esta optimización reduce la potencia interna del registro porqué evita el cambio de estado del reloj dentro de la celda. La \figref{fig:clock_gating} muestra esta técnica. Esta optimización puede impactar el timing de las rutas involucradas, y el área del diseño. Sin embargo puede reducir el área del diseño, porque puede reemplazar un multiplexor en la entrada de cada registro en un banco, con un solo Clock Gate compartido entre todo el banco. La estimación de consumo de potencia reportado al final de síntesis es reducido 63\% desde \SI{454.0}{\micro\watt} a \SI{169.5}{\micro\watt}, y el área total de las celdas es reducido 2\% desde \SI{56307}{\micro\meter\squared} a \SI{55348}{\micro\meter\squared} al aplicar el método de Clock Gating.
 
 \begin{figure}[htb]
   \centering
@@ -2544,7 +2544,16 @@ Después del ruteo vienen dos acciones conocidas juntas como Finishing. La prime
 
 La próxima etapa es ICV In Design, esa etapa ejecuta unas acciones mediante la herramienta Synopsys IC Validator. La primera acción es verificar que no hay ninguna violación DRC en el diseño mediante un script provisto en el PDK, y si hay violaciones, intenta corregirlas. El próximo paso es el proceso de Metal Fill. Para reducir errores en el proceso de fabricación es necesario asegurar que la densidad de metal de cada capa está dentro de unos límites definidos en las reglas de diseño. Si la densidad de metal en una capa es demasiado baja, IC Validator puede agregar metal extra en los espacios libres. Después del metal fill, las pruebas DRC son ejecutadas de nuevo, pero esta vez activando una prueba opcional para verificar la densidad de metal.
 
-El siguiente paso es escribir los resultados del PnR. El netlist final es exportado en dos formatos, uno para uso en LVS (Layout Vs Schematic) y uno para uso en el script de verificación de equivalencia con Formality. El diseño final es guardado en el formato GDS II. La estimación de consumo de potencia final es \SI{256.0}{\micro\watt}. Análisis de timing indica que el diseño tiene \SI{1,59}{\nano\second} de Setup slack y \SI{0.02}{\nano\second} de Hold slack.
+El siguiente paso es escribir los resultados del PnR. El netlist final es exportado en dos formatos, uno para uso en LVS (Layout Vs Schematic) y uno para uso en el script de verificación de equivalencia con Formality. El layout final es guardado en el formato GDS~II.
+
+La estimación de consumo de potencia final es \SI{256.0}{\micro\watt}, compuesta de: \SI{163.5}{\micro\watt} (64,0\%) potencia interna, \SI{91.6}{\micro\watt} (35,8\%) potencia dinámica, y \SI{623.8}{\nano\watt} (0,2\%) potencia estática. Análisis de timing indica que el mínimo Setup slack es \SI{1,59}{\nano\second} y el mínimo Hold slack es \SI{0.02}{\nano\second}. La \figref{fig:setup_hold_slack} muestra la distribución de slack de Setup y slack de Hold. Los dos rutas con menor Setup slack son 1) La ruta entre el registro de \textit{lm\_out} en el módulo \textbf{tx}, y la salida \textit{lm\_out} de este diseño. 2) La ruta entre la entrada \textit{pause\_n\_async} de este diseño y el primer registro en el módulo \textbf{pause\_n\_latch\_and\_synchroniser}. Estas rutas tienen slack bajo por los constraints: “set\_max\_delay 5.0”, los cuales están presentes para minimizar los retardos en la ruta del FDT.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./img/slack}
+  \caption{Distribución de slack de Setup y de Hold en el diseño final.}
+  \label{fig:setup_hold_slack}
+\end{figure}
 
 Finalmente la herramienta Formality es usada de nuevo para verificar formalmente la equivalencia de la lógica entre el RTL y el netlist de post implementación. Este proceso es equivalente del proceso hecho después de síntesis, salvo por que se usa los archivos SVF de coordinación generados en Design Planning y en Place \& Route, en adición a lo de síntesis.
 
@@ -2558,28 +2567,78 @@ En el script de Place \& Route el diseño fue analizado para verificar violacion
 LVS (Layout Vs Schematic) es un análisis que compara la netlist final del diseño con el GDS II. La primera parte de esta operación es convertir el netlist de nivel compuertas escrito al final del script de PnR a un netlist de nivel SPICE mediante la herramienta nettran. Después IC Validator es ejecutado con un script provisto en el PDK para extraer los dispositivos y nets del layout en el archivo GDS II. Ese resultado es comparado con el netlist de nivel SPICE para confirmar que se corresponden.
 
 % ---------------------------------------------
-% Resultados y Conclusiones
+% Conclusión
 % ---------------------------------------------
 
 \FloatBarrier
-\chapter{Resultados y Conclusiones}
+\chapter{Conclusión}
+
+En este trabajo un circuito digital fue implementado, verificado mediante simulaciones y preparado para fabricación con el proceso XFAB XH018. El circuito implementado permite la lectura de un sensor de forma inalámbrica mediante un protocolo propietario implementado encima del estándar ISO/IEC 14443A. En este caso el sensor es un dosímetro MOSFET de radiación ionizante para aplicación al control en tratamientos de radioterapia. Sin embargo el circuito digital diseñado no está limitado a esta aplicación y puede trabajar con diferentes sensores para otras aplicaciones sin necesidad de modificación alguna. Los bloques externos necesarios para este uso son: un AFE (Analogue Front End) conforme con ISO/IEC 14443-2A, un ADC de 16 bits, y el sensor propiamente dicho. La implementación del estándar ISO/IEC 14443A fue diseñado como un núcleo IP genérico, cuyo código RTL y los scripts de síntesis y PnR están disponibles en GitHUB de forma abierta bajo la licencia GNU v3.0. Esto significa que puede ser usado en otros proyectos académicos o comerciales, siempre que cumplan con las condiciones de la licencia.
+
+En este proyecto, fue clave que el núcleo IP ISO/IEC 14443A sea genérico, para que funcione con AFEs distintas. Para ello las propiedades más importantes son el comportamiento del reloj y la pausa detectada. Por lo tanto:
+
+\begin{itemize}
+  \item El núcleo IP incluye un módulo asincrónico para la retención de pausas en el caso que el AFE no pueda garantizar que haya un flanco ascendente del reloj durante la pausa.
+  \item El módulo \textbf{sequence\_decode} fue diseñado para decodificar las tramas correctamente aún cuando el reloj está detenido, hasta un máximo de 59 ciclos, durante las pausas, incluyendo el caso de un reloj continuo.
+  \item El núcleo IP lleva un parámetro \textit{FDT\_TIMING\_ADJUST} que permite el ajuste del temporizador en el módulo \textbf{FDT} para compensar por los retrasos externos en la ruta del FDT.
+\end{itemize}
+
+Uno de los objetivos de esta tesis fue la posibilidad de tomar muestras de múltiples de PICCs de forma sincronizada. Para cumplir con este objetivo se propone una solución mediante el protocolo a nivel de aplicación. Este protocolo utiliza dos características del sistema: 1) Todas las PICCs extraen el reloj de la misma portadora y por lo tanto sus relojes son sincrónicos, 2) todas las PICC reciben las pausas en el mismo instante. Además se implementa una lectura del ADC y del sensor de manera automatizada y parametrizable. Aprovechando estas características es posible realizar la lectura sincrónica de todos los sensores que estén en el rango del PCD.
+
+Todo el RTL implementado es verificado con una serie de bancos de pruebas exhaustivas, con más de cien horas de simulaciones. Los bancos de pruebas contienen 187 aserciones que son ejecutados más de cien mil millones de veces en total, sin fallar siquiera una vez. Cada simulación genera un informe de cobertura y en todos los casos se observan resultados favorables. Además el modelo del AFE implementado permite la configuración de varias de sus propiedades para simular el comportamiento de diferentes AFEs. Finalmente el RTL se verifica formalmente, mediante una cadena de equivalencias: el RTL es equivalente al netlist post implementación, y a su vez este netlist es equivalente al layout del diseño.
+
+Los reportes finales indican que:
+
+\begin{itemize}
+  \item El diseño contiene 595 registros (568 de esos son gated), 2017 compuertas combinacionales y 2706 nets.
+  \item El consumo de potencia promedio estimado es \SI{256}{\micro\watt}, compuesto de: \SI{163}{\micro\watt} potencia interna, \SI{92}{\micro\watt} potencia dinámica, y \SI{624}{\micro\watt} potencia estática. Esta estimación está basada en una simulación de la inicialización de la PICC y cinco muestras del sensor.
+  \item El área total del diseño es \SI{86930}{\micro\meter\squared} = \SI{0.087}{\milli\meter\squared} (\SI{295.68}{\micro\meter}, \SI{294.00}{\micro\meter}).
+  \item No hay slack negativo de Setup. El menor slack de Setup es \SI{1.59}{\nano\second} y ocurre en la ruta entre el registro de \textit{lm\_out} en el módulo \textbf{tx}, y la salida \textit{lm\_out} del diseño entero. Esa ruta tiene un slack bajo por el constraint: “set\_max\_delay 5.0 -to [get\_ports lm\_out]”, el cual está presente para minimizar los retardos en la ruta del FDT. El mínimo slack de setup corresponde a una ruta sin un constraint de set\_max\_delay tiene un valor de \SI{32.26}{\nano\second}.
+  \item No hay slack negativo de hold. El slack mínimo es \SI{0.02}{\nano\second}.
+  \item El diseño pasa sin errores las verificaciones de DRC y LVS.
+  \item La lógica en el netlist que se obtiene post-implementación es equivalente a la del RTL.
+\end{itemize}
+
+Todos estos resultados dan una excelente confianza en el diseño. Debido a las suposiciones asumidas sobre otros bloques aún no diseñados, es altamente recomendable revisar el correcto funcionamiento del sistema completo antes de su fabricación, para verificar la correcta interoperabilidad entre todos los bloques.
+
+% Requisitos para los otros bloques
+% --------------------------------
+\FloatBarrier
+\section{Requisitos para los otros bloques}
+
+Para asegurar el funcionamiento correcto de un ASIC que incluya el diseño elaborado en esta tesis, los otros bloques presentes deben cumplir con algunos requisitos. El sensor y el ADC deben operar de forma que se puede tomar una muestra mediante la operación mostrado en la \figref{fig:sens_adc}. Los valores de $t_1$ y $t_2$ requeridos para tomar una muestra correcta deben ser menor que $\SI{33554431}{ciclos} \approx \SI{2.47}{\second}$. El AFE debe cumplir con los siguientes requisitos:
+
+\begin{itemize}
+  \item Debe ser conforme con la norma ISO/IEC 14443-2A.
+  \item Debe recuperar el reloj desde la portadora transmitida por el PCD. El reloj recuperado debe ser monótono y no tener glitches. Si se detiene durante las pausas debe hacerlo por un tiempo menor a 59~ciclos, aunque se recomienda que el tiempo sea menor a 56~ciclos, de esta manera el sistema tolera hasta $\pm 3$~ciclos de jitter en la detección de la pausa.
+  \item Para minimizar el retardo en la ruta del FDT, el reloj debe comenzar de nuevo lo antes posible y el fin de la pausa también debe ser detectado lo antes posible. Además debe minimizarse el retardo de propagación entre la salida \textit{lm\_out} de este diseño y el modulador de carga.
+  \item Cuándo la PICC entra en un campo electromagnético, la señal de reset \textit{rst\_n\_async} debe estar ‘0’ hasta que el rail de alimentación VDD y la entrada \textit{uid\_variable} de este diseño están estables.
+  \item La salida \textit{afe\_version[3:0]} debe ser constante.
+\end{itemize}
+
+El diseñador del AFE debe considerar las restricciones impuestas en la forma de la pausa especificadas en la norma ISO/IEC 14443-2A, y asegurarse que su diseño cumple con esos requisitos por cualquiera forma de la pausa válida.
 
 % Recomendaciones para Trabajos Futuros
 % --------------------------------
 \FloatBarrier
 \section{Recomendaciones para Trabajos Futuros}
 
-% ---------------------------------------------
-% Bibliography
-% ---------------------------------------------
+A continuación se listan trabajos que quedan fuera del alcance de esta tesis pero serían necesarios para la fabricación del chip considerado en el proyecto marco:
 
-\FloatBarrier
-\newpage
+\begin{itemize}
+  \item Realizar una mejor estimación del consumo de potencia, incluyendo consumo pico. Esto es importante al momento de diseñar el AFE.
+  \item Realizar simulaciones de nivel compuerta para verificar el diseño post síntesis y post PnR.
+  \item Implementar el AFE, el ADC y el sensor en la tecnología XH018 de X-Fab.
+  \item Agregar puntos de prueba al diseño para permitir realizar mediciones e inyectar señales de forma directa.
+  \item Fabricar y medir el IC.
+\end{itemize}
 
-% Prevent overful hbox warning due to long titles
-\emergencystretch=1em
-\printbibliography
-\emergencystretch=0em
+Además existen algunas características extras que podrían ser implementadas en el núcleo IP ISO/IEC 14443 para que sea adecuado para uso en un rango más amplio de proyectos:
+
+\begin{itemize}
+  \item Agregar soporte para tags de tipo B.
+  \item Implementar las partes opcionales de la norma: soporte para las otras tasas de bits, NADs, bloques estándares encadenados, los bloques estándares S(PARAMETERS) y S(WTX), y bloques aumentados~\cite{iso14443-2}\cite{iso14443-4}.
+\end{itemize}
 
 % ---------------------------------------------
 % Appendices
@@ -2588,13 +2647,14 @@ LVS (Layout Vs Schematic) es un análisis que compara la netlist final del dise�
 \appendix
 
 % Change the \chapter rules to use numbersr for the appendices
-\titleformat{\chapter}[display] 
-{\normalfont\Huge\bfseries}{\chaptertitlename\ \thechapter:}{0.2em}{\huge} 
+\titleformat{\chapter}[display]
+{\normalfont\Huge\bfseries}{\chaptertitlename\ \thechapter:}{0.2em}{\huge}
 
 % Repositorio de código fuente
 % ----------------------------
 \newpage
 \chapter{Repositorio de Código Fuente}
+\label{appendix:code_repo}
 
 Todo el código RTL y los scripts usados en este trabajo están disponibles en un repositorio de GitHUB: \url{https://github.com/andrewparlane/fiuba_thesis}. Todo el código y los scripts son disponible de forma abierto bajo la licencia GNU v3.0. Se puede clonar este repositorio con los comandos:
 
@@ -2635,11 +2695,137 @@ La carpeta \textit{fiuba\_thesis/hdl/components} contiene un Git Submodule por e
 .3 vcs\DTcomment{Contiene un Makefile para ejecutar las simulaciones}.
 }
 
-% Repositorio de código fuente
+% Definiciones del protocolo propietario
 % ----------------------------
 \newpage
 \chapter{Definiciones del protocolo propietario}
+\label{appendix:protocol_defs}
+
+Este apéndice contiene un header del lenguaje de programación C con definiciones y estructuras por el protocolo propietario de la aplicación.
+
+% texcl=true means that comments (//) are treated as LaTeX. So we need a backslash before underscores or ampersands
+\begin{lstlisting}[language=C, style=CStyle, texcl=true]
+// La mágica y la versión del protocolo
+#define PROTOCOL_MAGIC              0xF100BA00
+#define PROTOCOL_VERSION            1
+
+// Las mascaras de bits de las salidas al sensor / ADC
+#define SIGNALS_MASK_SENS_CONFIG    0xE0
+#define SIGNALS_MASK_SENS_ENABLE    0x10
+#define SIGNALS_MASK_SENS_READ      0x08
+#define SIGNALS_MASK_ADC_ENABLE     0x04
+#define SIGNALS_MASK_ADC_READ       0x02
+
+// Las mascaras de bits de los flags de estado
+#define FLAGS_MASK_CONV_COMPLETE    0x80
+#define FLAGS_MASK_ALREADY_BUSY     0x40
+#define FLAGS_MASK_UNEXPECTED_PAUSE 0x20
+#define FLAGS_MASK_ERROR            0x10
+
+// Los mensajes definidos
+enum Command
+{
+    Command_IDENTIFY    = 0,
+    Command_SET_SIGNAL  = 1,
+    Command_AUTO_READ   = 2,
+    Command_GET_RESULT  = 3,
+    Command_ABORT       = 4
+};
+
+// La cabecera
+struct __attribute__((packed)) Header
+{
+    uint32_t    magic;  // PROTOCOL\_MAGIC
+    uint8_t     cmd;    // enum Command, respuestas deben usar el mismo que el solicitud
+};
+// ----------------------------------------------
+// Solicitudes
+// ----------------------------------------------
+
+// Comand\_IDENTIFY
+struct __attribute__((packed)) IdentifyRequest
+{
+    struct Header   hdr;    // La cabecera
+};
+
+// Command\_SET\_SIGNAL
+// Cambia las salidas al sensor / ADC:
+//  nuevos = (anteriores \& ~mask) | (value \& mask);
+// dónde nuevos, anteriores, mask, y value son mascaras de bits (SIGNALS\_MASK\_...)
+struct __attribute__((packed)) SetSignalRequest
+{
+    struct Header   hdr;    // La cabecera
+    uint16_t        sync;   // Tiempo de sincronización (t\_sync)
+    uint8_t         mask;   // Mascara de bits
+    uint8_t         value;  // Señales a cambiar
+};
+
+// Command\_AUTO\_READ
+struct __attribute__((packed)) AutoReadRequest
+{
+    struct Header   hdr;        // La cabecera
+    uint16_t        sync;       // Tiempo de sincronización (t\_sync)
+    uint32_t        timing1;    // [24:0] Tiempo entre sens\_en/adc\_en y sens\_read
+    uint32_t        timing2;    // [24:0] Tiempo entre sens\_read y adc\_read
+};
+
+// Comand\_GET\_RESULT
+struct __attribute__((packed)) GetResultRequest
+{
+    struct Header   hdr;    // La cabecera
+};
+
+// Comand\_ABORT
+struct __attribute__((packed)) AbortRequest
+{
+    struct Header   hdr;    // La cabecera
+};
 
 
+// ----------------------------------------------
+// Respuestas
+// ----------------------------------------------
+
+// Command\_IDENTIFY
+struct __attribute__((packed)) IdentifyReply
+{
+    struct Header   hdr;                    // La cabecera
+    uint8_t         protocol_version;       // La versión de este protocolo
+                                            // (PROTOCOL\_VERSION)
+    uint8_t         adapter_version;        // La versión del adaptador (adapter.sv)
+    uint8_t         iso_iec_14443a_version; // [7:4] versión del núcleo IP digital
+                                            // [3:0] versión del AFE
+    uint8_t         sensor_adc_version;     // [7:4] versión del sensor
+                                            // [3:0] versión del ADC
+};
+
+// Command\_GET\_RESULT
+struct __attribute__((packed)) GetResultReply
+{
+    struct Header   hdr;        // La cabecera
+    uint8_t         flags;      // Flags de estado (FLAGS\_MASK\_...)
+    uint16_t        adc_value;  // El último dato muestreado
+};
+
+// Respuesta a cualquier otro comando incluyendo los comandos inválidos.
+struct __attribute__((packed)) StatusReply
+{
+    struct Header   hdr;    // La cabecera
+    uint8_t         flags;  // Flags de estado (FLAGS\_MASK\_...)
+};
+\end{lstlisting}
+
+
+% ---------------------------------------------
+% Bibliography
+% ---------------------------------------------
+
+\FloatBarrier
+\newpage
+
+% Prevent overful hbox warning due to long titles
+\emergencystretch=1em
+\printbibliography
+\emergencystretch=0em
 
 \end{document}

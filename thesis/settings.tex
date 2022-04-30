@@ -80,14 +80,16 @@
 % Captions should "hang" aka align with the start, and not with the label
 \captionsetup{format=hang}
 
-% Create a new command for referencing figures with "Figura ?.?" as the link. Same for tables and sections
+% Create a new command for referencing figures with "Figura ?.?" as the link. Same for tables, sections and appendice
 % Call with:
 %  \figref{fig:figure-label} 
 %  \tabref{tab:table-label}
 %  \secref{sec:section-label}{Section Name}
+%  \appref{appendix:appendix-label}
 \newcommand*{\figref}[1]{\hyperref[#1]{Figura~\ref*{#1}}}
 \newcommand*{\tabref}[1]{\hyperref[#1]{Cuadro~\ref*{#1}}}
 \newcommand*{\secref}[2]{\hyperref[#1]{Sección #2}}
+\newcommand*{\appref}[1]{\hyperref[#1]{Apéndice~\ref{#1}}}
 
 % Zebra pattern in tables
 \newcommand*{\tablezebra}{\rowcolors{2}{white}{lightgray!35}}
@@ -96,3 +98,28 @@
 \makeatletter
 \@ifundefined{c@rownum}{\let\c@rownum\rownum}{}
 \makeatother
+
+% listings settings for C code samples (appendix)
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    %breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
