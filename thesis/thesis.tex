@@ -61,7 +61,7 @@
     \Large{Facultad de Ingeniería} \\
     \Large{Tesis de Maestría en Ciencias de la Ingeniería} \\
     \vspace{5mm}
-    \huge{\bf Desarrollo de circuitos integrados CMOS para aplicaciones de RFID} \\
+    \huge{\bf Desarrollo de Circuitos Integrados CMOS para Aplicaciones de RFID} \\
     \vspace{8mm}
     \huge{\bf Andrew Parlane}
 \end{center}
@@ -87,7 +87,7 @@ Los circuitos presentados en esta tesis consisten en un bloque digital de contro
 
 El trabajo realizado incluye el diseño de los bloques digitales utilizando HDL SystemVerilog y su verificación funcional. Luego, se utiliza el kit de diseño del proceso (PDK, por sus siglas en Inglés) XH018 (nodo tecnológico de \SI{180}{\nano\meter}) de la foundry XFAB para realizar la síntesis, el place and route y la generación de las máscaras de fabricación (layout).
 
-Las pruebas de verificación llevadas a cabo dan alta confianza en el diseño. Las mismas incluyen: más de cien horas de simulaciones del RTL ejecutando 187 aserciones de SystemVerilog más de cien mil millones de veces y generando informes de cobertura de código, la verificación formal de equivalencia entre lógica RTL y los netlists post síntesis y post implementación, Design Rules Check (DRC), y Layout Vs Schematic (LVS); todas esas pruebas tienen resultados favorables.
+Las pruebas de verificación llevadas a cabo dan alta confianza en el diseño. Las mismas incluyen: 60 horas de simulaciones del RTL ejecutando 187 aserciones de SystemVerilog casi cien millones de veces y generando informes de cobertura de código, la verificación formal de equivalencia entre lógica RTL y los netlists post síntesis y post implementación, Design Rules Check (DRC), y Layout Vs Schematic (LVS); todas esas pruebas tienen resultados favorables.
 
 El layout final no tiene violaciones de timing, el slack de Setup menor es \SI{1,59}{\nano\second} y de Hold es \SI{0,02}{\nano\second}, el área utilizada es \SI{0,087}{\milli\meter\squared} (\SI{295,68}{\micro\meter} por \SI{294,00}{\micro\meter}), y la estimación de consumo de potencia promedio es \SI{256}{\micro\watt}.
 
@@ -826,7 +826,7 @@ El banco de prueba tiene un controlador \textbf{TxBitIfaceSourceDriver} y un mon
   \item Tramas son enviadas correctamente. Cien transacciones aleatorias son enviadas y las transacciones detectadas por el monitor son comparadas a las enviadas dentro de una aserción.
 \end{itemize}
 
-El informe de cobertura da un resultado de 92\% por el DUT. Las partes que faltan cobertura no son relevantes, por ejemplo no hay una transición desde el estado State\_SOC al estado State\_IDLE, ya que no está permitido transmitir una trama SOC aislada.
+El informe de cobertura da un resultado de 93\% por el DUT. Las partes que faltan cobertura no son relevantes, por ejemplo no hay una transición desde el estado State\_SOC al estado State\_IDLE, ya que no está permitido transmitir una trama SOC aislada.
 
 % sequence_decode
 \FloatBarrier
@@ -1619,7 +1619,7 @@ El banco de prueba ejecuta todas las pruebas diez veces, con UIDs diferentes. De
 
 No es posible verificar el comportamiento del diseño entero con una sola simulación. Esto se debe a que el DUT está parametrizado en el tamaño del UID y el valor de este parámetro determina qué circuito es implementado mediante un bloque “generate”. Por lo tanto el banco de prueba también es parametrizado en el tamaño del UID, y una simulación es ejecutada por cada tamaño de UID.
 
-El informe de cobertura por estas tres simulaciones dan resultados por el DUT de: 94\%, 96\% y 97\% por UIDs simples, dobles y triples respectivamente. La diferencia es debido a que algunas partes del circuito no son usadas si solo hay uno o dos niveles cascadas. En el caso del UID triple las partes que faltan cobertura son mayormente casos imposibles de ocurrir (por ejemplo la parte fija del UID falta cobertura de toggle).
+El informe de cobertura por estas tres simulaciones dan resultados por el DUT de: 94\%, 97\% y 97\% por UIDs simples, dobles y triples respectivamente. La diferencia es debido a que algunas partes del circuito no son usadas si solo hay uno o dos niveles cascadas. En el caso del UID triple las partes que faltan cobertura son mayormente casos imposibles de ocurrir (por ejemplo la parte fija del UID falta cobertura de toggle).
 
 % ISO/IEC 14443-3A
 \FloatBarrier
@@ -2407,7 +2407,7 @@ Los constraints (restricciones) de timing son una parte muy importante del dise�
   \item La entrada: \textit{rst\_n\_async} es asincrónica, el diseño contiene un sincronizador de reset para sincronizar el flanco ascendente, por lo tanto no es necesario realizar análisis de timing sobre esta ruta.
   \item Las salidas al sensor y al ADC: \textit{sens\_config}, \textit{sens\_enable}, \textit{sens\_read}, \textit{adc\_enable} y \textit{adc\_read}, son asincrónicas también. Si el sensor o el ADC necesita recibir esas señales de forma sincrónica estos bloques deben sincronizar esas señales al dominio del reloj internamente.
   \item Las entradas desde el ADC: \textit{adc\_value} y \textit{adc\_conversion\_complete}, son asíncronas y no es necesario realizar análisis de timing sobre estas rutas. En el RTL \textit{adc\_conversion\_complete} pasa por un sincronizador para prevenir metaestabilidad. Además un requisito del ADC es que \textit{adc\_value} es estable antes del pulso en \textit{adc\_conversion\_complete}. Esto significa que cuándo el pulso ocurre en la versión sincronizada de \textit{adc\_conversion\_complete}, es seguro usar \textit{adc\_value} sin arriesgar metaestabilidad. En realidad estas señales van a ser sincrónicas, pero sin conocer como son ruteados y la relación de latencia entre el reloj llegando a este bloque y al ADC, es imposible escribir constraints más precisos.
-  \item La entrada \textit{power} desde el AFE es asincrónica. Un requisito del diseño del AFE es que esa señal debe ser constante durante el envío de una respuesta al PCD, el único momento en que esa entrada es usada, así que no es necesario sincronizar esta señal.
+  \item La entrada \textit{power} desde el AFE es asincrónica. Un requisito del diseño del AFE es que esa señal debe ser constante durante la recepción de una trama y por hasta 512 ciclos después de la última pausa. Este requisito asegura que la señal estará estable cuándo es muestreado, por lo tanto no es necesario sincronizar esta señal.
   \item La entrada \textit{pause\_n\_async} y la salida \textit{lm\_out} son asincrónicas también, \textit{pause\_n\_async} pasa por un sincronizador en el RTL. A diferencia de las otras señales asincrónicas, estas rutas no son cortadas. Al cortar una ruta significa que las herramientas no intentan optimizar el tiempo de propagación interno de la ruta. Debido a que el requisito del FDT es estricto, es deseado minimizar el retardo de propagación en estas rutas. Para cumplir esto el constraint set\_max\_delay es usado, especificando un retardo de propagación máximo de \SI{5}{\nano\second}.
   \item Debe ser asumido que todas las entradas son manejadas por un inversor de tamaño mínimo, y que todas las salidas tienen carga de \SI{0.4}{\pico\farad} lo que es equivalente de aproximadamente \SI{2}{\milli\meter} de ruteo en la tecnología XH018. Estos valores son especificados en la documentación del PDK~\cite{dig_imp_guidelines}.
 \end{itemize}
@@ -2479,7 +2479,7 @@ Un script TCL fue diseñado para cargar todas esas bibliotecas y combinar la inf
 \begin{itemize}
   \item tech\_only.ndm: Contiene información sobre la tecnología, esta incluye: las reglas de la tecnología, los parasíticos y las direcciones del ruteo en cada capa de metal (Horizontal o Vertical).
   \item d\_cells\_hd.ndm: Contiene información sobre las celdas estándares de D\_CELLS\_HD.
-  \item d\_cells\_hdll.ndm: Contiene información sobre las celdas estándares de D\_CELLS\_HDLL.
+  \item d\_cells\_hdll.ndm: Contiene información sobre las celdas estándares de D\_CELLS\_\-HDLL.
 \end{itemize}
 
 El proceso para producir las CLIBs por las celdas estándares es: leer los archivos: TF, GDS, LEF y DB, y arreglar las discrepancias entre las descripciones de las celdas en cada formato. Por ejemplo: Los archivos GDS usan los nombres: vdd! y gnd! para los rails de alimentación, pero los archivos LEF usan los nombres: vdd y gnd.
@@ -2491,13 +2491,13 @@ El proceso para producir las CLIBs por las celdas estándares es: leer los archi
 
 Design Planning (DP) es un paso inicial de la implementación de un IC. En este trabajo el script de DP es principalmente usado para construir un floorplan (la forma y las dimensiones físicas del bloque), elegir ubicaciones por los pines que conectan a las otros bloques (el AFE, el Sensor MOSFET de radiación, y el ADC), y armar los anillos, mallas y rails de alimentación.
 
-El floorplan posee las dimensiones físicas del diseño, en este caso del circuito digital. Luego los diferentes bloques del proyecto serán instanciados en un top cell el cual requerirá el ruteo manual entre los mismos, los pines de entrada/salida y los pads de prueba. El área del floorplan por el circuito digital debe ser al menos suficiente para contener las celdas, y los anillos de potencia, pero frecuentemente es necesario dejar más espacio en el núcleo para evitar congestión de ruteo. El área de las celdas es calculada desde el netlist producido en síntesis, para este proyecto esto es: \SI{55347}{\micro\meter\squared}. El núcleo del floorplan es el área que contiene las celdas, y la tasa de utilización del núcleo es la proporción del núcleo que contiene celdas útiles. Usando un proceso iterativo se determinó que la tasa de utilización del núcleo máxima para que el diseño cumple con timing es 75\%. Así el núcleo debería tener un área de \SI{73796}{\micro\meter\squared}, lo que se corresponde con una región cuadrada de lado \SI{272}{\micro\meter}. La documentación del PDK especifica que los anillos de alimentación deben tener un ancho de \SI{5}{\micro\meter}, con separación de \SI{2.5}{\micro\meter}~\cite{dig_imp_guidelines}. Hay un anillo de VDD y uno de GND, así se necesita \SI{12.5}{\micro\meter} alrededor del núcleo. Esto significa que el floorplan tiene dimensiones de \SI{297}{\micro\meter} por \SI{297}{\micro\meter}, y un área total de \SI{88209}{\micro\meter\squared}. Debido a la forma de las celdas, la herramienta eligió las dimensiones: \SI{295.68}{\micro\meter} por \SI{294.0}{\micro\meter} dando un área de \SI{86930}{\micro\meter\squared}.
+El floorplan posee las dimensiones físicas del diseño, en este caso del circuito digital. Luego los diferentes bloques del proyecto serán instanciados en un top cell el cual requerirá el ruteo manual entre los mismos, los pines de entrada/salida y los pads de prueba. El área del floorplan por el circuito digital debe ser al menos suficiente para contener las celdas, y los anillos de potencia, pero frecuentemente es necesario dejar más espacio en el núcleo para evitar congestión de ruteo. El área de las celdas es calculada desde el netlist producido en síntesis, para este proyecto esto es: \SI{55347}{\micro\meter\squared}. El núcleo del floorplan es el área que contiene las celdas, y la tasa de utilización del núcleo es la proporción del núcleo que contiene esas celdas. Usando un proceso iterativo se determinó que la tasa de utilización del núcleo máxima para que el diseño cumple con timing es 75\%. Así el núcleo debería tener un área de \SI{73796}{\micro\meter\squared}, lo que se corresponde con una región cuadrada de lado \SI{272}{\micro\meter}. La documentación del PDK especifica que los anillos de alimentación deben tener un ancho de \SI{5}{\micro\meter}, con separación de \SI{2.5}{\micro\meter}~\cite{dig_imp_guidelines}. Hay un anillo de VDD y uno de GND, así se necesita \SI{12.5}{\micro\meter} alrededor del núcleo. Esto significa que el floorplan tiene dimensiones de \SI{297}{\micro\meter} por \SI{297}{\micro\meter}, y un área total de \SI{88209}{\micro\meter\squared}. Debido a la forma de las celdas, la herramienta eligió las dimensiones: \SI{295.68}{\micro\meter} por \SI{294.0}{\micro\meter} dando un área de \SI{86930}{\micro\meter\squared}.
 
 Este bloque está diseñado para ser conectado con los otros bloques del diseño internamente al IC, por eso es necesario agregar un pin por cada entrada y salida alrededor del núcleo. Esas pines son agregadas en las capas de metal: MET3 y MET4. Se ha considerado los siguientes criterios por los pines de interfaz con los bloques circuitales periféricos:
 
 \begin{itemize}
   \item Señales desde / hacia el AFE están en el borde superior, en MET4.
-  \item Señales hacia el Sensor MOSFET de Radiación están en la mitad inferior del borde derecho, en MET3.
+  \item Señales hacia el Sensor están en la mitad inferior del borde derecho, en MET3.
   \item Señales desde / hacia el ADC están en la mitad superior del borde derecho, en MET3.
   \item Las entradas del UID están juntas pero no son constrained a un borde en particular. La herramienta eligió el borde izquierdo en MET3.
 \end{itemize}
@@ -2511,20 +2511,18 @@ Las celdas estándares provistas en el PDK son diseñadas para tener la misma al
   \label{fig:xor_cell}
 \end{figure}
 
-\begin{figure}[htb]
-  \centering
-  \includegraphics[width=0.8\textwidth]{./img/floorplan}
-  \caption{El floorplan del diseño con las rutas de potencia y los pines IO.}
-  \label{fig:floorplan_pg}
-\end{figure}
-
-\FloatBarrier
-
 Para poder conectar VDD y GND a la fuente de potencia en el AFE, es necesario agregar terminales. Debido a que los otros pines que conectan al AFE están en el borde superior, los terminales son colocados en el medio del borde superior de los anillos. La documentación del PDK~\cite{dig_imp_guidelines} específica que la caída de tensión máxima entre los anillos y los stripes debe ser menor que \SI{100}{\milli\volt}. Esto es verificado con las herramientas realizando un análisis de caída IR. Asumiendo un consumo de potencia máxima de \SI{400}{\micro\watt} lo que es casi doble la estimación de potencia final, los resultados de este análisis son: por VDD la caída IR máximo es \SI{34}{\micro\volt}, y por GND es \SI{38}{\micro\volt}. Estos resultados son aproximadamente 0,036\% de la máxima especificada en el PDK. La \figref{fig:ir_drop} muestra un mapa de calor por el análisis de VDD.
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=1.0\textwidth]{./img/dp_create_power_ir_drop}
+  \includegraphics[width=0.9\textwidth]{./img/floorplan}
+  \caption{El floorplan del diseño con las rutas de potencia y los pines IO.}
+  \label{fig:floorplan_pg}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.9\textwidth]{./img/dp_create_power_ir_drop}
   \caption{Mapa de calor del análisis de caída IR sobre la ruta de alimentación VDD.}
   \label{fig:ir_drop}
 \end{figure}
@@ -2545,7 +2543,7 @@ Durante el ruteo de los nets en el diseño es necesario tener cuidado sobre el l
   En la fabricación de circuitos integrados, el óxido de gate puede ser dañado fácilmente por descargas electrostáticas. La carga estática que es acumulada en las rutas de metal durante el proceso de metalización puede dañar el dispositivo o terminar con un fallo del chip entero.
 \end{displaycquote}
 
-El PDK contiene reglas de antenas que especifican los ratios máximos entre las áreas de los segmentos de metal y de los gates de los transistores de que se conectan. Si un diseño cumple con esas reglas, no debería tener problemas de antena. Una forma de arreglar estos problemas es cortar segmentos de metal grandes con un segmento en una capa de metal superior cercana al gate. Otra forma es colocar diodos cercana a los gates. Cuándo las reglas de antena son agregadas, IC Compiler 2 intenta rutear el diseño evitando problemas de antenas, si siguen violaciones de antenas las celdas de diodos presentes en el PDK pueden ser agregadas.
+El PDK contiene reglas de antenas que especifican los ratios máximos entre las áreas de los segmentos de metal y de los gates de los transistores de que se conectan~\cite{xh018_design_rules}. Si un diseño cumple con esas reglas, no debería tener problemas de antena. Una forma de arreglar estos problemas es cortar segmentos de metal grandes con un segmento en una capa de metal superior cercana al gate. Otra forma es colocar diodos cercana a los gates. Cuándo las reglas de antena son agregadas, IC Compiler 2 intenta rutear el diseño evitando problemas de antenas, si siguen violaciones de antenas las celdas de diodos presentes en el PDK pueden ser agregadas.
 
 La operación de ruteo también es un proceso iterativo, con cada paso intentando arreglar violaciones DRC o de timing del paso anterior. Al final de este proceso el slack de Setup es \SI{2.6}{\nano\second}, y el slack de Hold es \SI{0.0}{\nano\second}. Los reportes indican que no hay violaciones DRC, ni problemas de antena, tampoco hay rutas abiertas o cortocircuitos.
 
@@ -2553,7 +2551,7 @@ Después del ruteo vienen dos acciones conocidas juntas como Finishing. La prime
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=1.0\textwidth]{./img/pnr_out}
+  \includegraphics[width=0.8\textwidth]{./img/pnr_out}
   \caption{El layout del diseño después del finishing.}
   \label{fig:pnr_out}
 \end{figure}
@@ -2566,7 +2564,7 @@ La estimación de consumo de potencia final es \SI{256.0}{\micro\watt}, compuest
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=1.0\textwidth]{./img/slack}
+  \includegraphics[width=0.8\textwidth]{./img/slack}
   \caption{Distribución de slack de Setup y de Hold en el diseño final.}
   \label{fig:setup_hold_slack}
 \end{figure}
@@ -2578,7 +2576,7 @@ Finalmente la herramienta Formality es usada de nuevo para verificar formalmente
 \FloatBarrier
 \section{LVS / DRC}
 
-En el script de Place \& Route el diseño fue analizado para verificar violaciones DRC, este paso es repetido en este punto pero usando el archivo GDS II e instanciando en IC Validator directamente. La ventaja de esto es que verifica que no haya errores DRC introducidos en el proceso de escribir el GDS II.
+En el script de Place \& Route el diseño fue analizado para verificar violaciones DRC, este paso es repetido en este punto pero usando el archivo GDS II e instanciando la herramienta IC Validator directamente. La ventaja de esto es que verifica que no haya errores DRC introducidos en el proceso de escribir el GDS II.
 
 LVS (Layout Vs Schematic) es un análisis que compara la netlist final del diseño con el GDS II. La primera parte de esta operación es convertir el netlist de nivel compuertas escrito al final del script de PnR a un netlist de nivel SPICE mediante la herramienta nettran. Después IC Validator es ejecutado con un script provisto en el PDK para extraer los dispositivos y nets del layout en el archivo GDS II. Ese resultado es comparado con el netlist de nivel SPICE para confirmar que se corresponden.
 
@@ -2594,25 +2592,25 @@ En este trabajo un circuito digital fue implementado, verificado mediante simula
 En este proyecto, fue clave que el núcleo IP ISO/IEC 14443A sea genérico, para que funcione con AFEs distintas. Para ello las propiedades más importantes son el comportamiento del reloj y la pausa detectada. Por lo tanto:
 
 \begin{itemize}
-  \item El núcleo IP incluye un módulo asincrónico para la retención de pausas en el caso que el AFE no pueda garantizar que haya un flanco ascendente del reloj durante la pausa.
+  \item El núcleo IP incluye un módulo asincrónico para la retención de pausas en el caso que el AFE no pueda garantizar que haya un flanco ascendente del reloj durante las pausas.
   \item El módulo \textbf{sequence\_decode} fue diseñado para decodificar las tramas correctamente aún cuando el reloj está detenido, hasta un máximo de 59 ciclos, durante las pausas, incluyendo el caso de un reloj continuo.
   \item El núcleo IP lleva un parámetro \textit{FDT\_TIMING\_ADJUST} que permite el ajuste del temporizador en el módulo \textbf{FDT} para compensar por los retrasos externos en la ruta del FDT.
 \end{itemize}
 
 Uno de los objetivos de esta tesis fue la posibilidad de tomar muestras de múltiples de PICCs de forma sincronizada. Para cumplir con este objetivo se propone una solución mediante el protocolo a nivel de aplicación. Este protocolo utiliza dos características del sistema: 1) Todas las PICCs extraen el reloj de la misma portadora y por lo tanto sus relojes son sincrónicos, 2) todas las PICC reciben las pausas en el mismo instante. Además se implementa una lectura del ADC y del sensor de manera automatizada y parametrizable. Aprovechando estas características es posible realizar la lectura sincrónica de todos los sensores que estén en el rango del PCD.
 
-Todo el RTL implementado es verificado con una serie de bancos de pruebas exhaustivas, con más de cien horas de simulaciones. Los bancos de pruebas contienen 187 aserciones que son ejecutados más de cien mil millones de veces en total, sin fallar siquiera una vez. Cada simulación genera un informe de cobertura y en todos los casos se observan resultados favorables. Además el modelo del AFE implementado permite la configuración de varias de sus propiedades para simular el comportamiento de diferentes AFEs. Finalmente el RTL se verifica formalmente, mediante una cadena de equivalencias: el RTL es equivalente al netlist post implementación, y a su vez este netlist es equivalente al layout del diseño.
+Todo el RTL implementado es verificado con una serie de bancos de pruebas exhaustivas, con 60 horas de simulaciones. Los bancos de pruebas contienen 187 aserciones que son ejecutados casi cien millones de veces en total, sin fallar siquiera una vez. Cada simulación genera un informe de cobertura y en todos los casos se observan resultados favorables. Además el modelo del AFE implementado permite la configuración de varias de sus propiedades para simular el comportamiento de diferentes AFEs. Finalmente el RTL se verifica formalmente, mediante una cadena de equivalencias: el RTL es equivalente al netlist post implementación, y a su vez este netlist es equivalente al layout del diseño.
 
 Los reportes finales indican que:
 
 \begin{itemize}
   \item El diseño contiene 595 registros (568 de esos son gated), 2017 compuertas combinacionales y 2706 nets.
-  \item El consumo de potencia promedio estimado es \SI{256}{\micro\watt}, compuesto de: \SI{163}{\micro\watt} potencia interna, \SI{92}{\micro\watt} potencia dinámica, y \SI{624}{\micro\watt} potencia estática. Esta estimación está basada en una simulación de la inicialización de la PICC y cinco muestras del sensor.
+  \item El consumo de potencia promedio estimado es \SI{256}{\micro\watt}, compuesto de: \SI{163}{\micro\watt} potencia interna, \SI{92}{\micro\watt} potencia dinámica, y \SI{624}{\nano\watt} potencia estática. Esta estimación está basada en una simulación de la inicialización de la PICC y cinco muestras del sensor.
   \item El área total del diseño es \SI{86930}{\micro\meter\squared} = \SI{0.087}{\milli\meter\squared} (\SI{295.68}{\micro\meter}, \SI{294.00}{\micro\meter}).
-  \item No hay slack negativo de Setup. El menor slack de Setup es \SI{1.59}{\nano\second} y ocurre en la ruta entre el registro de \textit{lm\_out} en el módulo \textbf{tx}, y la salida \textit{lm\_out} del diseño entero. Esa ruta tiene un slack bajo por el constraint: “set\_max\_delay 5.0 -to [get\_ports lm\_out]”, el cual está presente para minimizar los retardos en la ruta del FDT. El mínimo slack de setup corresponde a una ruta sin un constraint de set\_max\_delay tiene un valor de \SI{32.26}{\nano\second}.
+  \item No hay slack negativo de Setup. El menor slack de Setup es \SI{1.59}{\nano\second} y ocurre en la ruta entre el registro de \textit{lm\_out} en el módulo \textbf{tx}, y la salida \textit{lm\_out} del diseño entero. Esa ruta tiene un slack bajo por el constraint: “set\_max\_delay 5.0 -to [get\_ports lm\_out]”, el cual está presente para minimizar los retardos en la ruta del FDT. El mínimo slack de setup que corresponde a una ruta sin un constraint de set\_max\_delay tiene un valor de \SI{32.26}{\nano\second}.
   \item No hay slack negativo de hold. El slack mínimo es \SI{0.02}{\nano\second}.
   \item El diseño pasa sin errores las verificaciones de DRC y LVS.
-  \item La lógica en el netlist que se obtiene post-implementación es equivalente a la del RTL.
+  \item La lógica en el netlist post-implementación es equivalente a la del RTL.
 \end{itemize}
 
 Todos estos resultados dan una excelente confianza en el diseño. Debido a las suposiciones asumidas sobre otros bloques aún no diseñados, es altamente recomendable revisar el correcto funcionamiento del sistema completo antes de su fabricación, para verificar la correcta interoperabilidad entre todos los bloques.
@@ -2630,6 +2628,7 @@ Para asegurar el funcionamiento correcto de un ASIC que incluya el diseño elabo
   \item Para minimizar el retardo en la ruta del FDT, el reloj debe comenzar de nuevo lo antes posible y el fin de la pausa también debe ser detectado lo antes posible. Además debe minimizarse el retardo de propagación entre la salida \textit{lm\_out} de este diseño y el modulador de carga.
   \item Cuándo la PICC entra en un campo electromagnético, la señal de reset \textit{rst\_n\_async} debe estar ‘0’ hasta que el rail de alimentación VDD y la entrada \textit{uid\_variable} de este diseño están estables.
   \item La salida \textit{afe\_version[3:0]} debe ser constante.
+  \item La salida \textit{power[1:0]} debe ser estable durante 512 ciclos después de una pausa. Esto es para prevenir metastabilidad en el muestreo de esta señal.
 \end{itemize}
 
 El diseñador del AFE debe considerar las restricciones impuestas en la forma de la pausa especificadas en la norma ISO/IEC 14443-2A, y asegurarse que su diseño cumple con esos requisitos por cualquiera forma de la pausa válida.
@@ -2672,12 +2671,11 @@ Además existen algunas características extras que podrían ser implementadas e
 \chapter{Repositorio de Código Fuente}
 \label{appendix:code_repo}
 
-Todo el código RTL y los scripts usados en este trabajo están disponibles en un repositorio de GitHUB: \url{https://github.com/andrewparlane/fiuba_thesis}. Todo el código y los scripts son disponible de forma abierto bajo la licencia GNU v3.0. Se puede clonar este repositorio con los comandos:
+Todo el código RTL y los scripts usados en este trabajo están disponibles en un repositorio de GitHUB: \url{https://github.com/andrewparlane/fiuba_thesis}. El código y los scripts son disponible de forma abierta bajo la licencia GNU v3.0. Se puede clonar este repositorio con los comandos:
 
-\begin{lstlisting}[language=bash,basicstyle=\small]
+\begin{lstlisting}[language=bash,basicstyle=\small\ttfamily]
   git clone https://github.com/andrewparlane/fiuba_thesis.git
-  git submodule init
-  git submodule update
+  git submodule update --init --recursive
 \end{lstlisting}
 
 La estructura del repositorio es:
@@ -2695,10 +2693,11 @@ La estructura del repositorio es:
 .4 bfms\DTcomment{Clases y paquetes de verificación de la aplicación}.
 .4 tb\DTcomment{Los bancos de pruebas por los módulos de la aplicación}.
 .4 vcs\DTcomment{Contiene un Makefile para ejecutar las simulaciones}.
+.5 reports\DTcomment{Logs y informes de cobertura de las simulaciones}.
 .2 thesis\DTcomment{Fuente de este documento}.
 }
 
-La carpeta \textit{fiuba\_thesis/hdl/components} contiene un Git Submodule por el repositorio del núcleo IP ISO/IEC 14443A: \url{https://github.com/andrewparlane/iso_iec_14443A}. También todo el código y los scripts son disponible de forma abierto bajo la licencia GNU v3.0. La estructura de este repositorio es:
+La carpeta \textit{fiuba\_thesis/hdl/components} contiene un Git Submodule por el repositorio del núcleo IP ISO/IEC 14443A: \url{https://github.com/andrewparlane/iso_iec_14443A}. También el código y los scripts son disponible de forma abierta bajo la licencia GNU v3.0. La estructura de este repositorio es:
 
 \vspace{1em}
 
@@ -2709,6 +2708,7 @@ La carpeta \textit{fiuba\_thesis/hdl/components} contiene un Git Submodule por e
 .3 bfms\DTcomment{Clases y paquetes de verificación del núcleo IP}.
 .3 tb\DTcomment{Los bancos de pruebas por los módulos del núcleo IP}.
 .3 vcs\DTcomment{Contiene un Makefile para ejecutar las simulaciones}.
+.4 reports\DTcomment{Logs y informes de cobertura de las simulaciones}.
 }
 
 % Definiciones del protocolo propietario
@@ -2754,9 +2754,9 @@ struct __attribute__((packed)) Header
     uint32_t    magic;  // PROTOCOL\_MAGIC
     uint8_t     cmd;    // enum Command, respuestas deben usar el mismo que el solicitud
 };
-// ----------------------------------------------
+// =============================================
 // Solicitudes
-// ----------------------------------------------
+// =============================================
 
 // Comand\_IDENTIFY
 struct __attribute__((packed)) IdentifyRequest
@@ -2766,7 +2766,7 @@ struct __attribute__((packed)) IdentifyRequest
 
 // Command\_SET\_SIGNAL
 // Cambia las salidas al sensor / ADC:
-//  nuevos = (anteriores \& ~mask) | (value \& mask);
+//  nuevos = (anteriores \& $\sim$mask) $\vert$ (value \& mask);
 // dónde nuevos, anteriores, mask, y value son mascaras de bits (SIGNALS\_MASK\_...)
 struct __attribute__((packed)) SetSignalRequest
 {
@@ -2798,9 +2798,9 @@ struct __attribute__((packed)) AbortRequest
 };
 
 
-// ----------------------------------------------
+// =============================================
 // Respuestas
-// ----------------------------------------------
+// =============================================
 
 // Command\_IDENTIFY
 struct __attribute__((packed)) IdentifyReply
