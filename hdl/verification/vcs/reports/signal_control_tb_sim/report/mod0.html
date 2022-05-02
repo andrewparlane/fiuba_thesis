@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: signal_control_tb</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | <a href="asserts.html" ><b>asserts</b></a></div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_signal_control_tb'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_signal_control_tb')">signal_control_tb</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 97.47</td>
+<td class="s10 cl rt"><a href="mod0.html#Line" >100.00</a></td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"><a href="mod0.html#Toggle" > 97.01</a></td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"><a href="mod0.html#Branch" > 92.86</a></td>
+<td class="s10 cl rt"><a href="mod0.html#Assert" >100.00</a></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')">/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod0.html#inst_tag_0"  onclick="showContent('inst_tag_0')">signal_control_tb</a></td>
+<td class="s9 cl rt"> 97.47</td>
+<td class="s10 cl rt"><a href="mod0.html#Line" >100.00</a></td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"><a href="mod0.html#Toggle" > 97.01</a></td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"><a href="mod0.html#Branch" > 92.86</a></td>
+<td class="s10 cl rt"><a href="mod0.html#Assert" >100.00</a></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_signal_control_tb'>
+<hr>
+<a name="inst_tag_0"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_0" >signal_control_tb</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 97.47</td>
+<td class="s10 cl rt"><a href="mod0.html#Line" >100.00</a></td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"><a href="mod0.html#Toggle" > 97.01</a></td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"><a href="mod0.html#Branch" > 92.86</a></td>
+<td class="s10 cl rt"><a href="mod0.html#Assert" >100.00</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 97.22</td>
+<td class="s9 cl rt"> 99.69</td>
+<td class="s9 cl rt"> 95.24</td>
+<td class="s9 cl rt"> 95.20</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s9 cl rt"> 93.18</td>
+<td class="s10 cl rt">100.00</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<span class=inst>none</span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod1.html#inst_tag_1" id="tag_urg_inst_1">adc_sim_inst</a></td>
+<td class="s10 cl rt">100.00</td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod4.html#inst_tag_4" id="tag_urg_inst_4">clock_source_inst</a></td>
+<td class="s10 cl rt">100.00</td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod3.html#inst_tag_3" id="tag_urg_inst_3">dut</a></td>
+<td class="s9 cl rt"> 95.85</td>
+<td class="s9 cl rt"> 98.41</td>
+<td class="s9 cl rt"> 95.24</td>
+<td class="s9 cl rt"> 93.31</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s9 cl rt"> 92.31</td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_signal_control_tb'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod0.html" >signal_control_tb</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s10"><td class="lf">TOTAL</td><td></td><td>238</td><td>238</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>120</td><td>16</td><td>16</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ROUTINE</td><td>246</td><td>31</td><td>31</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ROUTINE</td><td>302</td><td>48</td><td>48</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ROUTINE</td><td>418</td><td>11</td><td>11</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">INITIAL</td><td>445</td><td>132</td><td>132</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+119                         always_ff @(posedge clk, negedge rst_n) begin: timingBlock
+120        1/1                  if (!rst_n) begin
+121        1/1                      signal_changes_since_last_start     &lt;= 0;
+122        1/1                      ticks_since_last_signals_change     &lt;= 0;
+123        1/1                      ticks_since_last_pause_rising_edge  &lt;= 0;
+124                             end
+125                             else begin: posedgeClk
+126        1/1                      if (start) begin
+127        1/1                          signal_changes_since_last_start &lt;= 0;
+128                                 end
+                        MISSING_ELSE
+129                     
+130        1/1                      if ($rose(pause_n_synchronised)) begin
+131                                     // pause_n_synchronised rose on the last rising edge of our clock.
+132        1/1                          ticks_since_last_pause_rising_edge  &lt;= 1;
+133                                 end
+134                                 else begin
+135        1/1                          ticks_since_last_pause_rising_edge  &lt;= ticks_since_last_pause_rising_edge + 1;
+136                                 end
+137                     
+138        1/1                      if (!$stable(signals)) begin: signalsChanged
+139                                     // signals just changed, output the values
+140                                     //$display(&quot;ticks_since_last_pause_rising_edge %d, ticks_since_last_signals_change %d&quot;,
+141                                     //          ticks_since_last_pause_rising_edge, ticks_since_last_signals_change);
+142                     
+143                                     // the first time the signals change after the start pulse it's the end
+144                                     // of the sync period.
+145                                     // The second time it's the end of timing1
+146                                     // and the third and final time, it's the end of timing2
+147                     
+148                                     // that is unless we aborted, in which case the signals all go to 0
+149                                     // except sens_config which stays the same, we check this in a continuous
+150                                     // assertion.
+151        1/1                          if (!$past(abort)) begin: notAbortCheck
+152                                         signalChangesCheck:
+153                                         assert (signal_changes_since_last_start &lt; 3)
+154                                         else $error(&quot;signal_changes_since_last_start %d out of range&quot;,
+155                                                     signal_changes_since_last_start);
+156                     
+157        1/1                              case (signal_changes_since_last_start)
+158                                             0: begin
+159                                                 syncTimingCheck:
+160                                                 assert(ticks_since_last_pause_rising_edge == expected_sync)
+161                                                 else $error(&quot;ticks_since_last_pause_rising_edge %d, expected_sync %d&quot;,
+162                                                             ticks_since_last_pause_rising_edge,
+163                                                             expected_sync);
+164                     
+165        1/1                                      if (cmd == Command_AUTO_READ) begin: AutoRead
+166                                                     autoReadSignalCheck0:
+167                                                     assert($stable(signals.sens_config) &amp;&amp;
+168                                                            $rose(signals.sens_enable)   &amp;&amp;
+169                                                            $stable(signals.sens_read)   &amp;&amp; !signals.sens_read   &amp;&amp;
+170                                                            $rose(signals.adc_enable)    &amp;&amp;
+171                                                            $stable(signals.adc_read)    &amp;&amp; !signals.adc_read)
+172                                                     else $error(&quot;signals %p not as expected after sync for AUTO_READ&quot;, signals);
+173                                                 end
+174                                                 else begin: SetSignal
+175                                                     setSignalCheck:
+176                                                     assert(signals == expected_signals)
+177                                                     else $error(&quot;signals %p not as expected after sync for SET_SIGNAL, expecting %p&quot;, signals, expected_signals);
+178                                                 end
+179                                             end
+180                     
+181                                             1: begin
+182                                                 timing1Check:
+183                                                 assert(ticks_since_last_signals_change == expected_timing1)
+184                                                 else $error(&quot;ticks_since_last_signals_change %d, expected_timing1 %d&quot;,
+185                                                             ticks_since_last_signals_change,
+186                                                             expected_timing1);
+187                     
+188                                                 autoReadSignalCheck1:
+189                                                 assert($stable(signals.sens_config) &amp;&amp;
+190                                                        $stable(signals.sens_enable) &amp;&amp; signals.sens_enable  &amp;&amp;
+191                                                        $rose(signals.sens_read)     &amp;&amp;
+192                                                        $stable(signals.adc_enable)  &amp;&amp; signals.adc_enable   &amp;&amp;
+193                                                        $stable(signals.adc_read)    &amp;&amp; !signals.adc_read)
+194                                                 else $error(&quot;signals %p not as expected after timing1&quot;, signals);
+195                                             end
+196                     
+197                                             2: begin
+198                                                 timing2Check:
+199                                                 assert(ticks_since_last_signals_change == expected_timing2)
+200                                                 else $error(&quot;ticks_since_last_signals_change %d, expected_timing2 %d&quot;,
+201                                                             ticks_since_last_signals_change,
+202                                                             expected_timing2);
+203                     
+204                                                 unexpectedPauseCheck:
+205                                                 assert(unexpected_pause == unexpected_pause_expected)
+206                                                 else $error(&quot;unexpected_pause %b, not as expected&quot;,
+207                                                             unexpected_pause);
+208                     
+209                                                 // check the signals are what we expect for an AUTO_READ
+210                                                 // AKA adc_read just asserted and nothing else changed
+211                                                 // also make sure that the other signals are as expected.
+212                                                 // If the other signals aren't reset to 0 before the auto_read command
+213                                                 // then this could fail, but we'd have other issues too if that were
+214                                                 // the case
+215                                                 autoReadSignalCheck2:
+216                                                 assert($stable(signals.sens_config) &amp;&amp;
+217                                                        $stable(signals.sens_enable) &amp;&amp; signals.sens_enable  &amp;&amp;
+218                                                        $stable(signals.sens_read)   &amp;&amp; signals.sens_read    &amp;&amp;
+219                                                        $stable(signals.adc_enable)  &amp;&amp; signals.adc_enable   &amp;&amp;
+220                                                        $rose(signals.adc_read))
+221                                                 else $error(&quot;signals %p not as expected after timing2&quot;, signals);
+222                                             end
+                   <font color = "red">==>  MISSING_DEFAULT</font>
+223                                         endcase
+224                                     end
+                        MISSING_ELSE
+225                     
+226        1/1                          signal_changes_since_last_start &lt;= signal_changes_since_last_start + 1;
+227                     
+228                                     // signals changed on the previous rising edge of our clock
+229        1/1                          ticks_since_last_signals_change &lt;= 1;
+230                                 end
+231                                 else begin
+232        1/1                          ticks_since_last_signals_change &lt;= ticks_since_last_signals_change + 1;
+233                                 end
+234                             end
+235                         end
+236                     
+237                         // --------------------------------------------------------------
+238                         // Functions / Tasks
+239                         // --------------------------------------------------------------
+240                     
+241                         // run Command_SET_SIGNAL with minimal timings and checks
+242                         // in order to reset some of the signals to 0. This is important to do
+243                         // before testing Command_AUTO_READ, so we can detect the correct changes
+244                         // at the correct timings
+245                         task reset_signals;
+246        1/1                  sync_timing = 16'd1;
+247        1/1                  cmd         = Command_SET_SIGNAL;
+248                     
+249        1/1                  set_signals_value.sens_config   = '0;
+250        1/1                  set_signals_value.sens_enable   = 1'b0;
+251        1/1                  set_signals_value.sens_read     = 1'b0;
+252        1/1                  set_signals_value.adc_enable    = 1'b0;
+253        1/1                  set_signals_value.adc_read      = 1'b0;
+254        1/1                  set_signals_value.padding       = '0;
+255                     
+256        1/1                  set_signals_mask.sens_config    = '0;
+257        1/1                  set_signals_mask.sens_enable    = 1'b1;
+258        1/1                  set_signals_mask.sens_read      = 1'b1;
+259        1/1                  set_signals_mask.adc_enable     = 1'b1;
+260        1/1                  set_signals_mask.adc_read       = 1'b1;
+261        1/1                  set_signals_mask.padding        = '0;
+262                     
+263        1/1                  expected_signals.sens_config    = signals.sens_config;  // no changes
+264        1/1                  expected_signals.sens_enable    = 1'b0;
+265        1/1                  expected_signals.sens_read      = 1'b0;
+266        1/1                  expected_signals.adc_enable     = 1'b0;
+267        1/1                  expected_signals.adc_read       = 1'b0;
+268        1/1                  expected_signals.padding        = signals.padding; // no change
+269                     
+270                             // we need to calculate the expected_sync timing so we don't assert
+271                             // in the timing checking block.
+272                             // If the above signals are already 0s, then that's fine
+273                             // since we won't detect any change, but we have no checks in place
+274                             // in this task to ensure that the change occurs.
+275        1/1                  expected_sync = 2;
+276                     
+277                             // pulse pause_n
+278        1/1                  pause_n_synchronised &lt;= 1'b0;
+279        1/1                  @(posedge clk)
+280        1/1                  pause_n_synchronised &lt;= 1'b1;
+281                     
+282                             // pulse start
+283        1/1                  start &lt;= 1'b1;
+284        1/1                  @(posedge clk)
+285        1/1                  start &lt;= 1'b0;
+286                     
+287                             // wait for the operation to complete (plus a bit)
+288        1/1                  @(posedge clk) begin end
+289        1/1                  wait (!busy) begin end
+290        2/2                  repeat (10) @(posedge clk) begin end
+291                         endtask
+292                     
+293                         // first we pulse pause, pause_to_start ticks later we pulse start
+294                         // then we pulse pause after extra_pause_timings[i] ticks for each i
+295                         // note: extra_pause_timings[i] for i &gt; 0, should not be 0.
+296                         //       this is because it would just result in a pause pulse of two ticks
+297                         task do_valid_command(Command cmd_to_send,
+298                                               int sync, int timing1, int timing2,
+299                                               int pause_to_start, int extra_pause_timings [$] = '{},
+300                                               int abort_time = -1);
+301                     
+302        1/1                  sync_timing         = 16'(sync);
+303        1/1                  auto_read_timing1   = 25'(timing1); // only used for Command_AUTO_READ
+304        1/1                  auto_read_timing2   = 25'(timing2); // only used for Command_AUTO_READ
+305        1/1                  cmd                 = cmd_to_send;
+306                     
+307                             // set set_signals_mask and set_signals_value such that signals will change
+308                             // only needed for Command_SET_SIGNAL, but may as well do it always
+309        1/1                  std::randomize (set_signals_mask, set_signals_value) with
+310                             {
+311                                 ((signals &amp; ~set_signals_mask) | (set_signals_value &amp; set_signals_mask))
+312                                     != signals;
+313                             };
+314                     
+315                             // new signals, only needed for Command_SET_SIGNAL
+316                             // I could just do the (signals &amp; ~set_signals_mask) | (set_signals_value &amp; set_signals_mask)
+317                             // thing, but I want it to be different logic to what's in the DUT
+318        1/1                  expected_signals.sens_config[0] = set_signals_mask.sens_config[0]   ? set_signals_value.sens_config[0]  : signals.sens_config[0];
+319        1/1                  expected_signals.sens_config[1] = set_signals_mask.sens_config[1]   ? set_signals_value.sens_config[1]  : signals.sens_config[1];
+320        1/1                  expected_signals.sens_config[2] = set_signals_mask.sens_config[2]   ? set_signals_value.sens_config[2]  : signals.sens_config[2];
+321        1/1                  expected_signals.sens_enable    = set_signals_mask.sens_enable      ? set_signals_value.sens_enable     : signals.sens_enable;
+322        1/1                  expected_signals.sens_read      = set_signals_mask.sens_read        ? set_signals_value.sens_read       : signals.sens_read;
+323        1/1                  expected_signals.adc_enable     = set_signals_mask.adc_enable       ? set_signals_value.adc_enable      : signals.adc_enable;
+324        1/1                  expected_signals.adc_read       = set_signals_mask.adc_read         ? set_signals_value.adc_read        : signals.adc_read;
+325        1/1                  expected_signals.padding        = set_signals_mask.padding          ? set_signals_value.padding         : signals.padding;
+326                     
+327        1/1                  if (pause_to_start &gt;= (sync-1)) begin
+328                                 // +2, 1 for start to be detected, 1 to get to State_SYNC
+329        1/1                      expected_sync = pause_to_start + 2;
+330                             end
+331                             else begin
+332        1/1                      expected_sync = sync;
+333                             end
+334                     
+335                             // timing1 and timing2 periods are one tick longer than specified
+336                             // we could have them precise but then we'd have a complication with the 0 case
+337                             // which require additional logic to handle.
+338        1/1                  expected_timing1 = timing1 + 1;
+339        1/1                  expected_timing2 = timing2 + 1;
+340                     
+341                             //$display(&quot;sync_timing %d, pause_to_start %d, extra_pause_timings&quot;,
+342                             //         sync_timing, pause_to_start, extra_pause_timings);
+343                     
+344                             // pulse pause_n
+345        1/1                  pause_n_synchronised &lt;= 1'b0;
+346        1/1                  @(posedge clk)
+347        1/1                  pause_n_synchronised &lt;= 1'b1;
+348                     
+349                             // wait a bit
+350        2/2                  repeat (pause_to_start) @(posedge clk) begin end
+                        REPEAT_FALSE
+351                     
+352                             // pulse start
+353        1/1                  start &lt;= 1'b1;
+354        1/1                  @(posedge clk)
+355        1/1                  start &lt;= 1'b0;
+356                     
+357                             fork
+358                                 // process 1 - assert abort
+359                                 begin
+360        1/1                          if (abort_time != -1) begin
+361        2/2                              repeat (abort_time) @(posedge clk) begin end
+                        REPEAT_FALSE
+362        1/1                              abort &lt;= 1'b1;
+363        1/1                              @(posedge clk) begin end
+364        1/1                              abort &lt;= 1'b0;
+365                                     end
+                        MISSING_ELSE
+366                                 end
+367                     
+368                                 // process 2 - extra_pause_timings
+369                                 begin
+370                                     // pules pause some more after the appropriate timings
+371        1/1                          foreach (extra_pause_timings[i]) begin
+372        2/2                              repeat(extra_pause_timings[i]) @(posedge clk) begin end
+                        REPEAT_FALSE
+373        1/1                              pause_n_synchronised &lt;= 1'b0;
+374        1/1                              @(posedge clk)
+375        1/1                              pause_n_synchronised &lt;= 1'b1;
+376                                     end
+377                     
+378                                     // waiting for a clock pulse here ensures that busy has asserted even if
+379                                     // extra_pause_timings is empty. And if it wasn't we just ended with a pulse
+380                                     // so there's no chance of us timing out and going !busy after this one tick
+381        1/1                          @(posedge clk) begin end
+382                     
+383                                     // sanity check we shouldn't have timed out by this point
+384                                     // only do this if we aren't testing abort
+385        1/1                          if (abort_time == -1) begin: notAbort
+386                                         stillBusy:
+387                                         assert (busy) else $error(&quot;!busy at end of extra_pause_timings&quot;);
+388                                     end
+                        MISSING_ELSE
+389                                 end
+390                             join
+391                     
+392                             // wait for the operation to complete (plus a bit)
+393        1/1                  wait (!busy &amp;&amp; !adc_sim_busy) begin end
+394        2/2                  repeat (10) @(posedge clk) begin end
+                        REPEAT_FALSE
+395                     
+396                             // if this caused an adc read, then we clear it 50% of the time to check that result_read
+397                             // asserting works as expected. We only do 50% of the time, as it should also get cleared
+398                             // with aborts and on the next start.
+399        1/1                  if (cached_adc_conversion_complete) begin
+400        1/1                      result_read &lt;= 1'($urandom);
+401        1/1                      @(posedge clk)
+402        1/1                      result_read &lt;= 1'b0;
+403                             end
+                        MISSING_ELSE
+404                     
+405                             // finally check that we saw the correct amount of changes
+406                             // only do this if we aren't testing abort
+407        1/1                  if (abort_time == -1) begin: notAbort2
+408                                 signalChanges:
+409                                 assert(signal_changes_since_last_start ==
+410                                         ((cmd == Command_SET_SIGNAL) ? 1 : 3))
+411                                 else $error(&quot;signals changed %d times expected %d times&quot;,
+412                                             signal_changes_since_last_start,
+413                                             (cmd == Command_SET_SIGNAL) ? 1 : 3);
+414                             end
+                        MISSING_ELSE
+415                         endtask
+416                     
+417                         task do_invalid_command();
+418        1/1                  sync_timing         = 16'($urandom_range(10));
+419        1/1                  auto_read_timing1   = 25'($urandom_range(10));
+420        1/1                  auto_read_timing2   = 25'($urandom_range(10));
+421                     
+422        1/1                  std::randomize (cmd) with
+423                             {
+424                                 cmd != Command_SET_SIGNAL;
+425                                 cmd != Command_AUTO_READ;
+426                             };
+427                     
+428                             // pulse start
+429        1/1                  start &lt;= 1'b1;
+430        1/1                  @(posedge clk)
+431        1/1                  start &lt;= 1'b0;
+432        1/1                  @(posedge clk) begin end
+433                     
+434                             // if the DUT does anything, wait for it to stop
+435                             // we have a concurrent assert to confirm that it doesn't do anything
+436        1/1                  wait (!busy &amp;&amp; !adc_sim_busy) begin end
+437        2/2                  repeat (10) @(posedge clk) begin end
+438                         endtask
+439                     
+440                         // --------------------------------------------------------------
+441                         // Test stimulus
+442                         // --------------------------------------------------------------
+443                     
+444                         initial begin
+445        1/1                  pause_n_synchronised        &lt;= 1'b1; // idle
+446        1/1                  start                       &lt;= 1'b0;
+447        1/1                  abort                       &lt;= 1'b0;
+448        1/1                  unexpected_pause_expected   &lt;= 1'b0;
+449                     
+450                             // reset for 5 ticks
+451        1/1                  rst_n &lt;= 1'b0;
+452        2/2                  repeat (5) @(posedge clk) begin end
+                        REPEAT_FALSE
+453        1/1                  rst_n &lt;= 1'b1;
+454        2/2                  repeat (5) @(posedge clk) begin end
+                        REPEAT_FALSE
+455                     
+456                             // Test 1a) Command_SET_SIGNAL with start occuring long enough after
+457                             // the last pause that the command is handled immediately
+458        1/1                  $display(&quot;1a) SET_SIGNAL with the sync period alread finished by the time start fires&quot;);
+459        1/1                  repeat (10000) begin
+460        1/1                      automatic int sync              = $urandom_range(0, 10);
+461        1/1                      automatic int pause_to_start    = $urandom_range(sync, sync + 100);
+462                                 // we use a pulse_to_start &gt;= sync so that we should immediately time out
+463                     
+464        1/1                      do_valid_command(Command_SET_SIGNAL,
+465                                                  sync,
+466                                                  $urandom(),    // timing1 - not used
+467                                                  $urandom(),    // timing2 - not used
+468                                                  pause_to_start);
+469                             end
+                        REPEAT_FALSE
+470                     
+471                             // Test 1b) Command_SET_SIGNAL with actual sync period but no more pauses
+472        1/1                  $display(&quot;1b) SET_SIGNAL with actual sync period but no pauses after start&quot;);
+473        1/1                  repeat (10000) begin
+474        1/1                      automatic int sync              = $urandom_range(10, 20);
+475        1/1                      automatic int pause_to_start    = $urandom_range(0, sync - 2);
+476                     
+477        1/1                      do_valid_command(Command_SET_SIGNAL,
+478                                                  sync,
+479                                                  $urandom(),    // timing1 - not used
+480                                                  $urandom(),    // timing2 - not used
+481                                                  pause_to_start);
+482                             end
+                        REPEAT_FALSE
+483                     
+484                             // Test 1c) Command_SET_SIGNAL with pauses after start during the sync period
+485        1/1                  $display(&quot;1c) SET_SIGNAL with pauses during the sync period&quot;);
+486        1/1                  repeat (10000) begin
+487                                 // sync must be &gt;= 3 as shown below.
+488                                 // pause_to_start must be &lt;= sync - 3 as shown below
+489        1/1                      automatic int sync                      = $urandom_range(3, 20);
+490        1/1                      automatic int pause_to_start            = $urandom_range(0, sync - 3);
+491        1/1                      automatic int num_extra_pause_timings   = $urandom_range(5, 10);
+492        1/1                      automatic int extra_pause_timings [$]   = '{};
+493                     
+494                                 // After starting a new pulse (falling edge) with the extra_pause_timings, we have:
+495                                 // tick 0                   - pulse falling edge
+496                                 // tick 1                   - pulse rising edge
+497                                 // tick 2                   - rising edge seen and counter reset
+498                     
+499                                 // So we have to &quot;decide&quot; to pulse 2 ticks before the actual timeout
+500                                 // would occur, I.E. extra_pause_timings[i] &lt;= (sync - 2).
+501                                 // NOTE: we should ensure it's not 0, as that would result in a single pause
+502                                 //       pulse of width 2 ticks instead of two pauses. This requires sync &gt;= 3
+503                     
+504                                 // The first extra_pause_timings is special because we have to account for
+505                                 // the pause_to_start ticks, and the start pulse
+506                                 // we have:
+507                                 // tick 0                   - pulse rising edge
+508                                 // tick pause_to_start      - start rising edge
+509                                 // tick pause_to_start+1    - start seen, entering SYNC state
+510                                 // tick pause_to_start+2    - first check of the counter in the SYNC state
+511                                 //                            earliest time &quot;signals&quot; can change.
+512                     
+513                                 // So after the start pulse we will time out in sync - (pause_to_start + 1) ticks
+514                                 // meaning extra_pause_timings[0] &lt;= sync - (pause_to_start + 1) - 2
+515                                 // or: extra_pause_timings[0] &lt;= sync - pause_to_start - 3
+516                                 // we do not need to enforce extra_pause_timings[0] &gt; 0, since that would
+517                                 // simply result in a pulse starting immediately after the start pulse.
+518                                 // However it must be positive. In order to have sync - pause_to_start - 3 &gt;= 0
+519                                 // we require that pause_to_start &lt;= sync - 3.
+520                     
+521                                 // first timing following the special first case rule.
+522        1/1                      extra_pause_timings.push_back($urandom_range(0, sync - pause_to_start - 3));
+523                     
+524                                 // add the remaining timings (between 0 and 10 of them) using the normal rule
+525        1/1                      repeat (num_extra_pause_timings-1) begin
+526        1/1                          extra_pause_timings.push_back($urandom_range(1, sync - 2));
+527                                 end
+                        REPEAT_FALSE
+528                     
+529        1/1                      do_valid_command(Command_SET_SIGNAL,
+530                                                  sync,
+531                                                  $urandom(),    // timing1 - not used
+532                                                  $urandom(),    // timing2 - not used
+533                                                  pause_to_start,
+534                                                  extra_pause_timings);
+535                             end
+                        REPEAT_FALSE
+536                     
+537                             // Test 2a) Command_AUTO_READ with start occuring long enough after
+538                             // the last pause that the command is handled immediately
+539        1/1                  $display(&quot;2a) AUTO_READ with the sync period alread finished by the time start fires&quot;);
+540        1/1                  repeat (10000) begin
+541        1/1                      automatic int sync              = $urandom_range(0, 10);
+542        1/1                      automatic int timing1           = $urandom_range(0, 100);
+543        1/1                      automatic int timing2           = $urandom_range(0, 100);
+544        1/1                      automatic int pause_to_start    = $urandom_range(sync, sync + 100);
+545                                 // we use a pulse_to_tart &gt;= sync so that we should immediately time out
+546                     
+547                                 // we first must ensure the signals are 0s otherwise we may be in a state where
+548                                 // some / all of the changes we expect will already be set and as such we'll not
+549                                 // detect the change
+550        1/1                      reset_signals;
+551                     
+552        1/1                      do_valid_command(Command_AUTO_READ,
+553                                                  sync,
+554                                                  timing1,
+555                                                  timing2,
+556                                                  pause_to_start);
+557                             end
+                        REPEAT_FALSE
+558                     
+559                             // Test 2b) Command_AUTO_READ with actual sync period but no more pauses
+560        1/1                  $display(&quot;2b) AUTO_READ with actual sync period but no pauses after start&quot;);
+561        1/1                  repeat (10000) begin
+562        1/1                      automatic int sync              = $urandom_range(10, 20);
+563        1/1                      automatic int timing1           = $urandom_range(0, 100);
+564        1/1                      automatic int timing2           = $urandom_range(0, 100);
+565        1/1                      automatic int pause_to_start    = $urandom_range(0, sync - 2);
+566                     
+567                                 // reset the signals to 0s as in test 2a)
+568        1/1                      reset_signals;
+569                     
+570        1/1                      do_valid_command(Command_AUTO_READ,
+571                                                  sync,
+572                                                  timing1,
+573                                                  timing2,
+574                                                  pause_to_start);
+575                             end
+                        REPEAT_FALSE
+576                     
+577                             // Test 2c) Command_AUTO_READ with pauses after start during the sync period
+578        1/1                  $display(&quot;2c) AUTO_READ with pauses during the sync period&quot;);
+579        1/1                  repeat (10000) begin
+580                                 // sync must be &gt;= 3 as shown below.
+581                                 // pause_to_start must be &lt;= sync - 3 as shown below
+582        1/1                      automatic int sync                      = $urandom_range(3, 20);
+583        1/1                      automatic int timing1                   = $urandom_range(0, 100);
+584        1/1                      automatic int timing2                   = $urandom_range(0, 100);
+585        1/1                      automatic int pause_to_start            = $urandom_range(0, sync - 3);
+586        1/1                      automatic int num_extra_pause_timings   = $urandom_range(5, 10);
+587        1/1                      automatic int extra_pause_timings [$]   = '{};
+588                     
+589                                 // same extra_pause_timings rules apply as in test 1b)
+590                     
+591                                 // first timing following the special first case rule.
+592        1/1                      extra_pause_timings.push_back($urandom_range(0, sync - pause_to_start - 3));
+593                     
+594                                 // add the remaining timings (between 0 and 10 of them) using the normal rule
+595        1/1                      repeat (num_extra_pause_timings-1) begin
+596        1/1                          extra_pause_timings.push_back($urandom_range(1, sync - 2));
+597                                 end
+                        REPEAT_FALSE
+598                     
+599                                 // reset the signals to 0s as in test 2a)
+600        1/1                      reset_signals;
+601                     
+602        1/1                      do_valid_command(Command_AUTO_READ,
+603                                                  sync,
+604                                                  timing1,
+605                                                  timing2,
+606                                                  pause_to_start,
+607                                                  extra_pause_timings);
+608                             end
+                        REPEAT_FALSE
+609                     
+610                             // Test 2d) Command_AUTO_READ with pauses after start during the sync period
+611                             // and a pause during timing1 / timing2
+612        1/1                  $display(&quot;2d) AUTO_READ with pauses during timing1 / timing2&quot;);
+613        1/1                  repeat (10000) begin
+614                                 // sync must be &gt;= 3 as shown below.
+615                                 // pause_to_start must be &lt;= sync - 3 as shown below
+616        1/1                      automatic int sync                      = $urandom_range(3, 20);
+617        1/1                      automatic int timing1                   = $urandom_range(0, 10);
+618        1/1                      automatic int timing2                   = $urandom_range(0, 10);
+619        1/1                      automatic int pause_to_start            = $urandom_range(0, sync - 3);
+620        1/1                      automatic int num_extra_pause_timings   = $urandom_range(5, 10);
+621        1/1                      automatic int extra_pause_timings [$]   = '{};
+622                     
+623                                 // same extra_pause_timings rules apply as in test 1b)
+624                     
+625                                 // first timing following the special first case rule.
+626        1/1                      extra_pause_timings.push_back($urandom_range(0, sync - pause_to_start - 3));
+627                     
+628                                 // add the remaining timings (between 0 and 10 of them) using the normal rule
+629        1/1                      repeat (num_extra_pause_timings-1) begin
+630        1/1                          extra_pause_timings.push_back($urandom_range(1, sync - 2));
+631                                 end
+                        REPEAT_FALSE
+632                     
+633                                 // add a final pause that will occur during timing1 / timing2
+634                                 // this pause must occur after the sync period, and as such it must
+635                                 // be that extra_pause_timings[$] &gt; (sync - 2), and it must occur before
+636                                 // the timing2 timeout. which occurs after, sync + timing1 + timing2
+637        1/1                      extra_pause_timings.push_back($urandom_range(sync - 1, sync + timing1 + timing2));
+638                     
+639                                 // reset the signals to 0s as in test 2a)
+640        1/1                      reset_signals;
+641                     
+642        1/1                      unexpected_pause_expected = 1'b1;
+643        1/1                      do_valid_command(Command_AUTO_READ,
+644                                                  sync,
+645                                                  timing1,
+646                                                  timing2,
+647                                                  pause_to_start,
+648                                                  extra_pause_timings);
+649        1/1                      unexpected_pause_expected = 1'b0;
+650                             end
+                        REPEAT_FALSE
+651                     
+652                             // Test 3) Invalid commands
+653        1/1                  $display(&quot;3) Invalid commands&quot;);
+654        1/1                  repeat (10000) begin
+655        1/1                      do_invalid_command;
+656                             end
+                        REPEAT_FALSE
+657                     
+658                             // Test 4) Abort works as expected
+659        1/1                  $display(&quot;4) Testing abort&quot;);
+660        1/1                  repeat (10000) begin
+661                                 // sync must be &gt;= 3
+662                                 // pause_to_start must be &lt;= sync - 3
+663        1/1                      automatic Command cmd_to_send           = 1'($urandom) ? Command_SET_SIGNAL : Command_AUTO_READ;
+664        1/1                      automatic int sync                      = $urandom_range(100, 200);
+665        1/1                      automatic int timing1                   = $urandom_range(100, 200);
+666        1/1                      automatic int timing2                   = $urandom_range(100, 200);
+667        1/1                      automatic int pause_to_start            = 10;
+668        1/1                      automatic int num_extra_pause_timings   = $urandom_range(5, 10);
+669        1/1                      automatic int extra_pause_timings [$]   = '{};
+670        1/1                      automatic int sum                       = 0;
+671                                 automatic int abort_time;
+672                     
+673                                 // same extra_pause_timings rules apply as in test 1b)
+674                     
+675                                 // first timing following the special first case rule.
+676        1/1                      extra_pause_timings.push_back($urandom_range(0, sync - pause_to_start - 3));
+677                     
+678                                 // add the remaining timings (between 0 and 10 of them) using the normal rule
+679        1/1                      repeat (num_extra_pause_timings-1) begin
+680        1/1                          extra_pause_timings.push_back($urandom_range(1, sync - 2));
+681                                 end
+                        REPEAT_FALSE
+682                     
+683        1/1                      foreach (extra_pause_timings[i]) begin
+684        1/1                          sum = sum + extra_pause_timings[i];
+685                                 end
+686                     
+687        1/1                      if (cmd_to_send == Command_SET_SIGNAL) begin
+688                                     // no timing1 / timing2
+689                                     // we may or may not end up asserting the adc_read signal and enterring the wait_for_adc state.
+690                     
+691                                     // we must assert abort between 1 cycle after start (val 0)
+692                                     // and SUM(extra_pause_timings) + extra_pause_timings.size
+693                                     //                              + sync - 1
+694                                     // the extra_pause_timings.size is because we take one cycle to assert pause_n
+695                     
+696                                     // I add 50 ticks to the max abort time, so that some aborts should occur during the
+697                                     // wait_for_adc state. However this means that if we don't assert adc_read, the abort
+698                                     // could come after the operation has finished. This is fine since there's nothing wrong
+699                                     // with an abort occuring when the DUT is idle.
+700                     
+701        1/1                          abort_time = $urandom_range(sum + extra_pause_timings.size + sync - 1 + 50);
+702                                 end
+703                                 else begin
+704                                     // we must assert abort in the same period as for SET_SIGNAL except
+705                                     // we have timing1 and timing2 times too, which have durations of +1 (to each)
+706                                     // additonally there's the time waiting for adc_conversion_complete to assert
+707                                     // which takes between 50 and 100 cycles, so allow an abort in the first 50 cycles of that time
+708                                     // so as to make sure the abort occurs in time.
+709        1/1                          abort_time = $urandom_range(sum + extra_pause_timings.size + sync + timing1 + timing2 + 1 + 50);
+710                     
+711                                     // add a final pause that will occur during timing1 / timing2
+712                                     // this is generated using the same rules as in test 2d) and is just
+713                                     // here to assert the unexpected_pause flag on occasion
+714        1/1                          extra_pause_timings.push_back($urandom_range(sync - 1, sync + timing1 + timing2));
+715                                 end
+716                     
+717                     
+718                                 // reset the signals to 0s as in test 2a)
+719        1/1                      reset_signals;
+720                     
+721        1/1                      unexpected_pause_expected = 1'b1;
+722        1/1                      do_valid_command(cmd_to_send,
+723                                                  sync,
+724                                                  timing1,
+725                                                  timing2,
+726                                                  pause_to_start,
+727                                                  extra_pause_timings,
+728                                                  abort_time);
+729        1/1                      unexpected_pause_expected = 1'b0;
+730                             end
+                        REPEAT_FALSE
+731                     
+732                             // Test 5a) Command_SET_SIGNAL with long synch times
+733        1/1                  $display(&quot;5a) SET_SIGNAL with large synch times&quot;);
+734        1/1                  repeat (100) begin
+735                                 // we want full toggle coverage of sync_timing, we've already tested with the MSb = 0, so
+736                                 // test with MSb = 1, and the other bits random
+737                                 // pause_to_start must be &lt;= sync - 3
+738        1/1                      automatic int sync                      = int'({1'b1, 15'($urandom)});
+739        1/1                      automatic int pause_to_start            = $urandom_range(0, sync - 3);
+740        1/1                      automatic int num_extra_pause_timings   = $urandom_range(1, 3);
+741        1/1                      automatic int extra_pause_timings [$]   = '{};
+742                     
+743        1/1                      $display(&quot;using sync: %x&quot;, sync);
+744                                 // same extra_pause_timings rules apply as in test 1b)
+745                     
+746                                 // first timing following the special first case rule.
+747        1/1                      extra_pause_timings.push_back($urandom_range(0, sync - pause_to_start - 3));
+748                     
+749                                 // add the remaining timings (between 0 and 2 of them) using the normal rule
+750        1/1                      repeat (num_extra_pause_timings-1) begin
+751        1/1                          extra_pause_timings.push_back($urandom_range(1, sync - 2));
+752                                 end
+                        REPEAT_FALSE
+753                     
+754        1/1                      do_valid_command(Command_SET_SIGNAL,
+755                                                  sync,
+756                                                  $urandom(),    // timing1 - not used
+757                                                  $urandom(),    // timing2 - not used
+758                                                  pause_to_start,
+759                                                  extra_pause_timings);
+760                             end
+                        REPEAT_FALSE
+761                     
+762                             // Test 5b) Command_AUTO_READ with long sync / timing1 / timing2 periods
+763        1/1                  $display(&quot;5b) AUTO_READ with long sync / timing1 / timing2 periods&quot;);
+764        1/1                  repeat (100) begin
+765                                 // we want full toggle coverage of sync_timing and timing1/2, we've already tested with the MSb = 0, so
+766                                 // test with MSb = 1, and the other bits random.
+767                                 // Unfortunately timing1/timing2 are 25 bits, which would lead to a timing of up to 2.4s which is unrealistic
+768                                 // to do here in simulation. So I'm limiting it to 19 bits (39 ms)
+769                                 // pause_to_start must be &lt;= sync - 3
+770        1/1                      automatic int sync                      = int'({1'b1, 15'($urandom)});
+771        1/1                      automatic int timing1                   = int'({1'b1, 18'($urandom)});
+772        1/1                      automatic int timing2                   = int'({1'b1, 18'($urandom)});
+773        1/1                      automatic int pause_to_start            = $urandom_range(0, sync - 3);
+774        1/1                      automatic int num_extra_pause_timings   = $urandom_range(5, 10);
+775        1/1                      automatic int extra_pause_timings [$]   = '{};
+776                     
+777        1/1                      $display(&quot;using sync: %x, timing1: %x, timing2: %x&quot;, sync, timing1, timing2);
+778                                 // same extra_pause_timings rules apply as in test 1b)
+779                     
+780                                 // first timing following the special first case rule.
+781        1/1                      extra_pause_timings.push_back($urandom_range(0, sync - pause_to_start - 3));
+782                     
+783                                 // add the remaining timings (between 0 and 10 of them) using the normal rule
+784        1/1                      repeat (num_extra_pause_timings-1) begin
+785        1/1                          extra_pause_timings.push_back($urandom_range(1, sync - 2));
+786                                 end
+                        REPEAT_FALSE
+787                     
+788                                 // reset the signals to 0s as in test 2a)
+789        1/1                      reset_signals;
+790                     
+791        1/1                      do_valid_command(Command_AUTO_READ,
+792                                                  sync,
+793                                                  timing1,
+794                                                  timing2,
+795                                                  pause_to_start,
+796                                                  extra_pause_timings);
+797                             end
+                        REPEAT_FALSE
+798                     
+799        2/2                  repeat (50) @(posedge clk) begin end
+                        REPEAT_FALSE
+800                             // assert reset for toggle coverage
+801        1/1                  rst_n &lt;= 1'b0;
+802        2/2                  repeat (5) @(posedge clk) begin end
+                        REPEAT_FALSE
+803        1/1                  $stop;
+</pre>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod0.html" >signal_control_tb</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s9">
+<td>Totals</td>
+<td class="rt">44</td>
+<td class="rt">43</td>
+<td class="rt">97.73 </td>
+</tr><tr class="s9">
+<td>Total Bits</td>
+<td class="rt">334</td>
+<td class="rt">324</td>
+<td class="rt">97.01 </td>
+</tr><tr class="s9">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">167</td>
+<td class="rt">162</td>
+<td class="rt">97.01 </td>
+</tr><tr class="s9">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">167</td>
+<td class="rt">162</td>
+<td class="rt">97.01 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s9">
+<td>Signals</td>
+<td class="rt">44</td>
+<td class="rt">43</td>
+<td class="rt">97.73 </td>
+</tr><tr class="s9">
+<td>Signal Bits</td>
+<td class="rt">334</td>
+<td class="rt">324</td>
+<td class="rt">97.01 </td>
+</tr><tr class="s9">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">167</td>
+<td class="rt">162</td>
+<td class="rt">97.01 </td>
+</tr><tr class="s9">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">167</td>
+<td class="rt">162</td>
+<td class="rt">97.01 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>pause_n_synchronised</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>sync_timing[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>auto_read_timing1[24:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>auto_read_timing2[24:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>cmd[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>cmd[7:3]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>set_signals_mask.padding</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_mask.adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_mask.adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_mask.sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_mask.sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_mask.sens_config[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_value.padding</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_value.adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_value.adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_value.sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_value.sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_value.sens_config[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>start</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>abort</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>result_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.padding</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.sens_config[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>adc_conversion_complete</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>adc_value[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>busy</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>unexpected_pause</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>cached_adc_conversion_complete</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>cached_adc_value[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>expected_adc_value[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>adc_sim_busy</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>unexpected_pause_expected</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>expected_signals.padding</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>expected_signals.adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>expected_signals.adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>expected_signals.sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>expected_signals.sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>expected_signals.sens_config[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>rst</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr></table><br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod0.html" >signal_control_tb</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s9">
+<td>Branches</td>
+<td></td>
+<td class="rt">14</td>
+<td class="rt">13</td>
+<td class="rt">92.86 </td>
+</tr><tr class="s9">
+<td>IF</td>
+<td class="rt">120</td>
+<td class="rt">12</td>
+<td class="rt">11</td>
+<td class="rt">91.67 </td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">687</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+120                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+121                    signal_changes_since_last_start     <= 0;
+           <font color = "green">            ==></font>
+122                    ticks_since_last_signals_change     <= 0;
+123                    ticks_since_last_pause_rising_edge  <= 0;
+124                end
+125                else begin: posedgeClk
+126                    if (start) begin
+                       <font color = "green">-2-</font>  
+127                        signal_changes_since_last_start <= 0;
+           <font color = "green">                ==></font>
+128                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+129        
+130                    if ($rose(pause_n_synchronised)) begin
+                       <font color = "green">-3-</font>  
+131                        // pause_n_synchronised rose on the last rising edge of our clock.
+132                        ticks_since_last_pause_rising_edge  <= 1;
+           <font color = "green">                ==></font>
+133                    end
+134                    else begin
+135                        ticks_since_last_pause_rising_edge  <= ticks_since_last_pause_rising_edge + 1;
+           <font color = "green">                ==></font>
+136                    end
+137        
+138                    if (!$stable(signals)) begin: signalsChanged
+                       <font color = "green">-4-</font>  
+139                        // signals just changed, output the values
+140                        //$display("ticks_since_last_pause_rising_edge %d, ticks_since_last_signals_change %d",
+141                        //          ticks_since_last_pause_rising_edge, ticks_since_last_signals_change);
+142        
+143                        // the first time the signals change after the start pulse it's the end
+144                        // of the sync period.
+145                        // The second time it's the end of timing1
+146                        // and the third and final time, it's the end of timing2
+147        
+148                        // that is unless we aborted, in which case the signals all go to 0
+149                        // except sens_config which stays the same, we check this in a continuous
+150                        // assertion.
+151                        if (!$past(abort)) begin: notAbortCheck
+                           <font color = "green">-5-</font>  
+152                            signalChangesCheck:
+153                            assert (signal_changes_since_last_start < 3)
+154                            else $error("signal_changes_since_last_start %d out of range",
+155                                        signal_changes_since_last_start);
+156        
+157                            case (signal_changes_since_last_start)
+                               <font color = "red">-6-</font>  
+158                                0: begin
+159                                    syncTimingCheck:
+160                                    assert(ticks_since_last_pause_rising_edge == expected_sync)
+161                                    else $error("ticks_since_last_pause_rising_edge %d, expected_sync %d",
+162                                                ticks_since_last_pause_rising_edge,
+163                                                expected_sync);
+164        
+165                                    if (cmd == Command_AUTO_READ) begin: AutoRead
+                                       <font color = "green">-7-</font>  
+166                                        autoReadSignalCheck0:
+167                                        assert($stable(signals.sens_config) &&
+           <font color = "green">                                ==></font>
+168                                               $rose(signals.sens_enable)   &&
+169                                               $stable(signals.sens_read)   && !signals.sens_read   &&
+170                                               $rose(signals.adc_enable)    &&
+171                                               $stable(signals.adc_read)    && !signals.adc_read)
+172                                        else $error("signals %p not as expected after sync for AUTO_READ", signals);
+173                                    end
+174                                    else begin: SetSignal
+175                                        setSignalCheck:
+176                                        assert(signals == expected_signals)
+           <font color = "green">                                ==></font>
+177                                        else $error("signals %p not as expected after sync for SET_SIGNAL, expecting %p", signals, expected_signals);
+178                                    end
+179                                end
+180        
+181                                1: begin
+182                                    timing1Check:
+183                                    assert(ticks_since_last_signals_change == expected_timing1)
+           <font color = "green">                            ==></font>
+184                                    else $error("ticks_since_last_signals_change %d, expected_timing1 %d",
+185                                                ticks_since_last_signals_change,
+186                                                expected_timing1);
+187        
+188                                    autoReadSignalCheck1:
+189                                    assert($stable(signals.sens_config) &&
+190                                           $stable(signals.sens_enable) && signals.sens_enable  &&
+191                                           $rose(signals.sens_read)     &&
+192                                           $stable(signals.adc_enable)  && signals.adc_enable   &&
+193                                           $stable(signals.adc_read)    && !signals.adc_read)
+194                                    else $error("signals %p not as expected after timing1", signals);
+195                                end
+196        
+197                                2: begin
+198                                    timing2Check:
+199                                    assert(ticks_since_last_signals_change == expected_timing2)
+           <font color = "green">                            ==></font>
+200                                    else $error("ticks_since_last_signals_change %d, expected_timing2 %d",
+201                                                ticks_since_last_signals_change,
+202                                                expected_timing2);
+203        
+204                                    unexpectedPauseCheck:
+205                                    assert(unexpected_pause == unexpected_pause_expected)
+206                                    else $error("unexpected_pause %b, not as expected",
+207                                                unexpected_pause);
+208        
+209                                    // check the signals are what we expect for an AUTO_READ
+210                                    // AKA adc_read just asserted and nothing else changed
+211                                    // also make sure that the other signals are as expected.
+212                                    // If the other signals aren't reset to 0 before the auto_read command
+213                                    // then this could fail, but we'd have other issues too if that were
+214                                    // the case
+215                                    autoReadSignalCheck2:
+216                                    assert($stable(signals.sens_config) &&
+217                                           $stable(signals.sens_enable) && signals.sens_enable  &&
+218                                           $stable(signals.sens_read)   && signals.sens_read    &&
+219                                           $stable(signals.adc_enable)  && signals.adc_enable   &&
+220                                           $rose(signals.adc_read))
+221                                    else $error("signals %p not as expected after timing2", signals);
+222                                end
+                                   MISSING_DEFAULT
+           <font color = "red">                        ==></font>
+223                            endcase
+224                        end
+                           MISSING_ELSE
+           <font color = "green">                ==></font>
+225        
+226                        signal_changes_since_last_start <= signal_changes_since_last_start + 1;
+227        
+228                        // signals changed on the previous rising edge of our clock
+229                        ticks_since_last_signals_change <= 1;
+230                    end
+231                    else begin
+232                        ticks_since_last_signals_change <= ticks_since_last_signals_change + 1;
+           <font color = "green">                ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0 </td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0 </td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1 </td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>2 </td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>MISSING_DEFAULT</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+687                    if (cmd_to_send == Command_SET_SIGNAL) begin
+                       <font color = "green">-1-</font>  
+688                        // no timing1 / timing2
+689                        // we may or may not end up asserting the adc_read signal and enterring the wait_for_adc state.
+690        
+691                        // we must assert abort between 1 cycle after start (val 0)
+692                        // and SUM(extra_pause_timings) + extra_pause_timings.size
+693                        //                              + sync - 1
+694                        // the extra_pause_timings.size is because we take one cycle to assert pause_n
+695        
+696                        // I add 50 ticks to the max abort time, so that some aborts should occur during the
+697                        // wait_for_adc state. However this means that if we don't assert adc_read, the abort
+698                        // could come after the operation has finished. This is fine since there's nothing wrong
+699                        // with an abort occuring when the DUT is idle.
+700        
+701                        abort_time = $urandom_range(sum + extra_pause_timings.size + sync - 1 + 50);
+           <font color = "green">                ==></font>
+702                    end
+703                    else begin
+704                        // we must assert abort in the same period as for SET_SIGNAL except
+705                        // we have timing1 and timing2 times too, which have durations of +1 (to each)
+706                        // additonally there's the time waiting for adc_conversion_complete to assert
+707                        // which takes between 50 and 100 cycles, so allow an abort in the first 50 cycles of that time
+708                        // so as to make sure the abort occurs in time.
+709                        abort_time = $urandom_range(sum + extra_pause_timings.size + sync + timing1 + timing2 + 1 + 50);
+           <font color = "green">                ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<hr>
+<a name="Assert"></a>
+Assert Coverage for Module : <a href="mod0.html" >signal_control_tb</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Attempted</th><th nowrap width=80>Percent</th><th nowrap width=80>Succeeded/Matched</th><th nowrap width=80>Percent</th></tr><tr>
+<td class="wht cl"><a href="#431576232" >Assertions</a></td>
+<td class="wht cl rt">23</td>
+<td class="s10 cl rt">23</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s10 cl rt">23</td>
+<td class="s10 cl rt">100.00</td>
+</tr><tr>
+<td class="wht cl"><a href="#359118237" >Cover properties</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><a href="#819001630" >Cover sequences</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><b>Total</b></td>
+<td class="wht cl rt">23</td>
+<td class="s10 cl rt">23</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s10 cl rt">23</td>
+<td class="s10 cl rt">100.00</td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<br clear=all>
+<a name="431576232"></a>
+<b>Assertion Details</b><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td>Attempts</td><td>Real Successes</td><td>Failures</td><td>Incomplete</td></tr><tr>
+<td class="wht cl"><a name="1910707688"></a>
+abortToIdle</td>
+<td class="s9 cl rt">131569984</td>
+<td class="s9 cl rt">10000</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="541070559"></a>
+adcCompFallsAfterResultRead</td>
+<td class="s9 cl rt">131569984</td>
+<td class="s9 cl rt">22330</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="343104419"></a>
+adcCompOnlyFallsAfterStartOrAbort</td>
+<td class="s9 cl rt">131569984</td>
+<td class="s9 cl rt">44325</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="510056764"></a>
+adcReadsCheck</td>
+<td class="s9 cl rt">131569984</td>
+<td class="s9 cl rt">44325</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="2063966290"></a>
+adcReadsCheck2</td>
+<td class="s9 cl rt">131569984</td>
+<td class="s9 cl rt">44325</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1525861584"></a>
+busyAfterInvalidCommand</td>
+<td class="s9 cl rt">131569984</td>
+<td class="s9 cl rt">10000</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1986919546"></a>
+busyAfterStart</td>
+<td class="s9 cl rt">131569984</td>
+<td class="s9 cl rt">130300</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1813521518"></a>
+busyOnlyAfterStart</td>
+<td class="s9 cl rt">131569984</td>
+<td class="s9 cl rt">130300</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="341320949"></a>
+cachedAdcValueStable</td>
+<td class="s9 cl rt">131569984</td>
+<td class="s9 cl rt">44325</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="140555107"></a>
+do_valid_command.notAbort.stillBusy</td>
+<td class="s9 cl rt">70200</td>
+<td class="s9 cl rt">70200</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1158372367"></a>
+do_valid_command.notAbort2.signalChanges</td>
+<td class="s9 cl rt">70200</td>
+<td class="s9 cl rt">70200</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1517579226"></a>
+flagsLowAfterStart</td>
+<td class="s9 cl rt">131569984</td>
+<td class="s9 cl rt">140300</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="865428157"></a>
+inReset</td>
+<td class="s9 cl rt">131569984</td>
+<td class="s9 cl rt">9</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="985597505"></a>
+timingBlock.posedgeClk.signalsChanged.notAbortCheck.AutoRead.autoReadSignalCheck0</td>
+<td class="s9 cl rt">41827</td>
+<td class="s9 cl rt">41827</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="199109729"></a>
+timingBlock.posedgeClk.signalsChanged.notAbortCheck.SetSignal.setSignalCheck</td>
+<td class="s9 cl rt">70555</td>
+<td class="s9 cl rt">70555</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="170791155"></a>
+timingBlock.posedgeClk.signalsChanged.notAbortCheck.autoReadSignalCheck1</td>
+<td class="s9 cl rt">41094</td>
+<td class="s9 cl rt">41094</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="767740460"></a>
+timingBlock.posedgeClk.signalsChanged.notAbortCheck.autoReadSignalCheck2</td>
+<td class="s9 cl rt">40352</td>
+<td class="s9 cl rt">40352</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="229983914"></a>
+timingBlock.posedgeClk.signalsChanged.notAbortCheck.signalChangesCheck</td>
+<td class="s9 cl rt">193828</td>
+<td class="s9 cl rt">193828</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="748717318"></a>
+timingBlock.posedgeClk.signalsChanged.notAbortCheck.syncTimingCheck</td>
+<td class="s9 cl rt">112382</td>
+<td class="s9 cl rt">112382</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="2137535614"></a>
+timingBlock.posedgeClk.signalsChanged.notAbortCheck.timing1Check</td>
+<td class="s9 cl rt">41094</td>
+<td class="s9 cl rt">41094</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="2124002813"></a>
+timingBlock.posedgeClk.signalsChanged.notAbortCheck.timing2Check</td>
+<td class="s9 cl rt">40352</td>
+<td class="s9 cl rt">40352</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1977123200"></a>
+timingBlock.posedgeClk.signalsChanged.notAbortCheck.unexpectedPauseCheck</td>
+<td class="s9 cl rt">40352</td>
+<td class="s9 cl rt">40352</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="2139474759"></a>
+unexpectedPauseOnlyFallsAfterStartOrAbort</td>
+<td class="s9 cl rt">131569984</td>
+<td class="s9 cl rt">10993</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_0">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+    <li>
+      <a href="#Assert">Assert</a>    </li>
+  </ul>
+  <ul name="tag_signal_control_tb">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+    <li>
+      <a href="#Assert">Assert</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

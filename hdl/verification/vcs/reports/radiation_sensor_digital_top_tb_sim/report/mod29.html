@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: signal_control</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | <a href="asserts.html" ><b>asserts</b></a></div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_signal_control'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_signal_control')">signal_control</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 95.22</td>
+<td class="s9 cl rt"><a href="mod29.html#Line" > 98.41</a></td>
+<td class="s9 cl rt"><a href="mod29.html#Cond" > 90.48</a></td>
+<td class="s9 cl rt"><a href="mod29.html#Toggle" > 94.88</a></td>
+<td class="s10 cl rt"><a href="mod29.html#FSM" >100.00</a></td>
+<td class="s9 cl rt"><a href="mod29.html#Branch" > 92.31</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/rtl/signal_control.sv')">/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/rtl/signal_control.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod29.html#inst_tag_43"  onclick="showContent('inst_tag_43')">radiation_sensor_digital_top_tb.dut.adapter_inst.signal_control_inst</a></td>
+<td class="s9 cl rt"> 95.22</td>
+<td class="s9 cl rt"><a href="mod29.html#Line" > 98.41</a></td>
+<td class="s9 cl rt"><a href="mod29.html#Cond" > 90.48</a></td>
+<td class="s9 cl rt"><a href="mod29.html#Toggle" > 94.88</a></td>
+<td class="s10 cl rt"><a href="mod29.html#FSM" >100.00</a></td>
+<td class="s9 cl rt"><a href="mod29.html#Branch" > 92.31</a></td>
+<td class="wht cl rt"></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_signal_control'>
+<hr>
+<a name="inst_tag_43"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_43" >radiation_sensor_digital_top_tb.dut.adapter_inst.signal_control_inst</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 95.22</td>
+<td class="s9 cl rt"><a href="mod29.html#Line" > 98.41</a></td>
+<td class="s9 cl rt"><a href="mod29.html#Cond" > 90.48</a></td>
+<td class="s9 cl rt"><a href="mod29.html#Toggle" > 94.88</a></td>
+<td class="s10 cl rt"><a href="mod29.html#FSM" >100.00</a></td>
+<td class="s9 cl rt"><a href="mod29.html#Branch" > 92.31</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 95.22</td>
+<td class="s9 cl rt"> 98.41</td>
+<td class="s9 cl rt"> 90.48</td>
+<td class="s9 cl rt"> 94.88</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s9 cl rt"> 92.31</td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s9 cl rt"> 96.73</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt"> 86.92</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td><a href="mod17.html#inst_tag_31" >adapter_inst</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td colspan=8>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_signal_control'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod29.html" >signal_control</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s9"><td class="lf">TOTAL</td><td></td><td>63</td><td>62</td><td>98.41</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>82</td><td>3</td><td>3</td><td>100.00</td></tr>
+<tr class="s9"><td class="lf">ALWAYS</td><td>122</td><td>60</td><td>59</td><td>98.33</td></tr>
+</table>
+<pre class="code"><br clear=all>
+81                          always @(posedge clk, negedge rst_n) begin
+82         1/1                  if (!rst_n) begin
+83         1/1                      pause_n_synchronised_old &lt;= 1'b1;
+84                              end
+85                              else begin
+86         1/1                      pause_n_synchronised_old &lt;= pause_n_synchronised;
+87                              end
+88                          end
+89                      
+90                          assign pause_n_rising_edge = !pause_n_synchronised_old &amp;&amp; pause_n_synchronised;
+91                      
+92                          // cached values
+93                          logic [15:0]    cached_sync_timing;
+94                          logic [24:0]    cached_auto_read_timing1;
+95                          logic [24:0]    cached_auto_read_timing2;
+96                          Command         cached_cmd;
+97                      
+98                          // on a SET_SIGNAL command we set new_signals to: (signals &amp; ~mask) | (value &amp; mask)
+99                          // then after the sync period we write that to the signals output
+100                         Signals         new_signals;
+101                     
+102                         // State machine
+103                         typedef enum logic [2:0]
+104                         {
+105                             State_IDLE,
+106                             State_SYNC,
+107                             State_TIMING1,
+108                             State_TIMING2,
+109                             State_WAIT_FOR_ADC
+110                         } State;
+111                     
+112                         State           state;
+113                         logic           valid_cmd;
+114                         logic [24:0]    counter;
+115                         logic           starts_adc_read;
+116                     
+117                         // we only use this code for the SET_SIGNAL command and the AUTO_READ command
+118                         assign valid_cmd = (cmd == Command_SET_SIGNAL) ||
+119                                            (cmd == Command_AUTO_READ);
+120                     
+121                         always @(posedge clk, negedge rst_n) begin
+122        1/1                  if (!rst_n) begin
+123        1/1                      state                           &lt;= State_IDLE;
+124                     
+125        1/1                      signals.sens_config             &lt;= '0;
+126        1/1                      signals.sens_enable             &lt;= '0;
+127        1/1                      signals.sens_read               &lt;= '0;
+128        1/1                      signals.adc_enable              &lt;= '0;
+129        1/1                      signals.adc_read                &lt;= '0;
+130        1/1                      signals.padding                 &lt;= '0;
+131                     
+132        1/1                      counter                         &lt;= '0;
+133        1/1                      unexpected_pause                &lt;= 1'b0;
+134        1/1                      cached_adc_conversion_complete  &lt;= 1'b0;
+135        1/1                      cached_adc_value                &lt;= '0;
+136                             end
+137                             else begin
+138                                 // always count unless overridden below.
+139                                 // We don't overflow.
+140        1/1                      if (counter != '1) begin
+141        1/1                          counter &lt;= counter + 1'd1;
+142                                 end
+                   <font color = "red">==>  MISSING_ELSE</font>
+143                     
+144        1/1                      if (pause_n_rising_edge) begin
+145        1/1                          if ((state == State_IDLE) || (state == State_SYNC)) begin
+146                                         // during the SYNC stage we want to time our action
+147                                         // to occur a certain number of ticks after the last
+148                                         // rising edge of pause_n_synchronised. This is because
+149                                         // all PICCs should see the same rising edge within a short
+150                                         // period of time (depending on PVT variation). It largely depends
+151                                         // on the analogue block, but I expect the maximum variation between
+152                                         // PICC's will be one tick (73.75 ns).
+153                                         // So we can use the rising edge of pause_n to synchronise action
+154                                         // accross multiple PICCs. We restart the counter on every rising edge
+155                                         // and set the timeout to sufficiently large that if the PCD were to
+156                                         // want to send a SYNC command to another PICC that command would cause
+157                                         // the counter on all PICCs to be reset. When the PCD is done, it stops
+158                                         // sending commands and finally the counter on all the PICCs expires
+159                                         // at aproximately the same time.
+160                     
+161                                         // we reset to 2, because it took one tick to detect the rising edge
+162                                         // and by the time we next check this value it'll have been one tick more
+163        1/1                              counter &lt;= 25'd2;
+164                                     end
+165                                     else begin
+166                                         // In the other states we don't want to restart the counter on pauses
+167                                         // since we aim to provide a precise time. However since there is no
+168                                         // clock during pauses, our timing gets a bit messed up. Additionally
+169                                         // we don't receive power during pauses and so our voltage levels will
+170                                         // start dropping. We set a flag so we can alert the user.
+171        1/1                              unexpected_pause &lt;= 1'b1;
+172                                     end
+173                                 end
+                        MISSING_ELSE
+174                     
+175                                 // cache the latest ADC value
+176                                 // it doesn't matter if we are in an operation or not, we may as well store the new value,
+177                                 // but we only assert cached_adc_conversion_complete if we are in State_WAIT_FOR_ADC
+178        1/1                      if (adc_conversion_complete) begin
+179        1/1                          cached_adc_value    &lt;= adc_value;
+180                                 end
+                        MISSING_ELSE
+181                     
+182                                 // clear the cached_adc_conversion_complete when requested.
+183                                 // the result_read signal should be asserted only on Cmd_GET_RESULT
+184                                 // when cached_adc_conversion_complete is set
+185        1/1                      if (result_read) begin
+186        1/1                          cached_adc_conversion_complete  &lt;= 1'b0;
+187                                 end
+                        MISSING_ELSE
+188                     
+189                     
+190                                 // if abort is asserted, it doesn't matter what state we're in
+191                                 // just return to idle, clear the flags and reset the signals (other than sens_config)
+192        1/1                      if (abort) begin
+193        1/1                          state                           &lt;= State_IDLE;
+194        1/1                          unexpected_pause                &lt;= 1'b0;
+195        1/1                          cached_adc_conversion_complete  &lt;= 1'b0;
+196                     
+197        1/1                          signals.sens_enable             &lt;= '0;
+198        1/1                          signals.sens_read               &lt;= '0;
+199        1/1                          signals.adc_enable              &lt;= '0;
+200        1/1                          signals.adc_read                &lt;= '0;
+201                                 end
+202                                 else begin
+203        1/1                          case (state)
+204                                         State_IDLE:     begin
+205                                             // do nothing until start asserts
+206        1/1                                  if (start &amp;&amp; valid_cmd) begin
+207                                                 // cache values
+208        1/1                                      cached_sync_timing              &lt;= sync_timing;
+209        1/1                                      cached_auto_read_timing1        &lt;= auto_read_timing1;
+210        1/1                                      cached_auto_read_timing2        &lt;= auto_read_timing2;
+211        1/1                                      cached_cmd                      &lt;= cmd;
+212                     
+213        1/1                                      unexpected_pause                &lt;= 1'b0;
+214        1/1                                      cached_adc_conversion_complete  &lt;= 1'b0;
+215                     
+216        1/1                                      new_signals     &lt;=  (signals            &amp; ~set_signals_mask) |
+217                                                                     (set_signals_value  &amp;  set_signals_mask);
+218                     
+219                                                 // if this is a SET_SIGNAL command then we need to know if it will
+220                                                 // start an ADC read. This occurs if the adc_read signal asserts.
+221                                                 // which means the mask must have that bit set, for it to be able to change.
+222                                                 // the value must have that bit set, for it to be asserting, and it can't
+223                                                 // already be set.
+224                                                 // Technically adc_enable also needs to already be set / assert,
+225                                                 // but we can leave that to the PCD to ensure via correct use of SET_SIGNAL.
+226                                                 // if it's not enabled the adc_conversion_complete signal will not assert
+227                                                 // and we'll require the ABORT command to restart.
+228        1/1                                      starts_adc_read &lt;=  set_signals_mask.adc_read   &amp;&amp;
+229                                                                     set_signals_value.adc_read  &amp;&amp;
+230                                                                     !signals.adc_read;
+231                     
+232        1/1                                      state &lt;= State_SYNC;
+233                                             end
+                        MISSING_ELSE
+234                                         end
+235                     
+236                                         State_SYNC:     begin
+237                                             // has the sync period elapsed? We use &gt;= because if the PCD passed
+238                                             // a sync timing of a low number of ticks (&lt; ~256), then the counter
+239                                             // will already have got passed that by the time we end up here.
+240        1/1                                  if ((counter &gt;= {9'd0, cached_sync_timing}) &amp;&amp; !pause_n_rising_edge) begin
+241        1/1                                      if (cached_cmd == Command_AUTO_READ) begin
+242                                                     // if this was a AUTO_READ command then enable the sensor
+243                                                     // and the ADC
+244        1/1                                          signals.sens_enable &lt;= 1'b1;
+245        1/1                                          signals.adc_enable  &lt;= 1'b1;
+246                     
+247                                                     // then move on to the timing1 stage
+248        1/1                                          state               &lt;= State_TIMING1;
+249                     
+250                                                     // restart the counter
+251        1/1                                          counter             &lt;= '0;
+252                                                 end
+253                                                 else begin
+254                                                     // for Command_SET_SIGNAL we set the signals as instructed.
+255        1/1                                          signals &lt;= new_signals;
+256                     
+257                                                     // if this command starts an ADC read, then we need to wait for that to complete
+258                                                     // otherwise we return to idle.
+259        1/1                                          state   &lt;= starts_adc_read ? State_WAIT_FOR_ADC : State_IDLE;
+260                                                 end
+261                                             end
+                        MISSING_ELSE
+262                                         end
+263                     
+264                                         State_TIMING1:  begin
+265                                             // We only get here for Command_AUTO_READ
+266        1/1                                  if (counter == cached_auto_read_timing1) begin
+267                                                 // set the sens_read signal
+268        1/1                                      signals.sens_read &lt;= 1'b1;
+269                     
+270                                                 // move on to timing2 and reset the counter
+271        1/1                                      state   &lt;= State_TIMING2;
+272        1/1                                      counter &lt;= '0;
+273                                             end
+                        MISSING_ELSE
+274                                         end
+275                     
+276                                         State_TIMING2:  begin
+277                                             // We only get here for Command_AUTO_READ
+278        1/1                                  if (counter == cached_auto_read_timing2) begin
+279                                                 // set the adc_read signal
+280        1/1                                      signals.adc_read &lt;= 1'b1;
+281                     
+282                                                 // wait for the ADC to report conversion_complete
+283        1/1                                      state &lt;= State_WAIT_FOR_ADC;
+284                     
+285                                                 // no need to reset the counter here
+286                                                 // it'll reset on the next pause
+287                                             end
+                        MISSING_ELSE
+288                                         end
+289                     
+290                                         State_WAIT_FOR_ADC: begin
+291        1/1                                  if (adc_conversion_complete) begin
+292                                                 // indicate that the conversion has completed
+293        1/1                                      cached_adc_conversion_complete  &lt;= 1'b1;
+294                     
+295                                                 // the new value was already cached above.
+296                     
+297                                                 // TODO: Reset signals here (not sens_config)?
+298                                                 //       Maybe only if cached_cmd == Command_AUTO_READ?
+299                     
+300                                                 // and we're done
+301        1/1                                      state &lt;= State_IDLE;
+302                     
+303                                                 // no need to reset the counter here
+304                                                 // it'll reset on the next pause
+305                                             end
+                        MISSING_ELSE
+306                                         end
+307                     
+308                                         default:        begin
+309                                             // ???
+310        <font color = "red">0/1     ==>                          state &lt;= State_IDLE;</font>
+</pre>
+<hr>
+<a name="Cond"></a>
+Cond Coverage for Module : <a href="mod29.html" >signal_control</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="3" width="82">
+<tr><th></th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s9"><td class="lf">Conditions</td><td>21</td><td>19</td><td>90.48</td></tr>
+<tr class="s9"><td class="lf">Logical</td><td>21</td><td>19</td><td>90.48</td></tr>
+<tr class="wht"><td class="lf">Non-Logical</td><td>0</td><td>0</td><td></td></tr>
+<tr class="wht"><td class="lf">Event</td><td>0</td><td>0</td><td></td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       90
+ EXPRESSION (((!pause_n_synchronised_old)) &amp;&amp; pause_n_synchronised)
+             --------------1--------------    ----------2---------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       118
+ EXPRESSION ((cmd == Command_SET_SIGNAL) || (cmd == Command_AUTO_READ))
+             -------------1-------------    -------------2------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       145
+ EXPRESSION ((state == State_IDLE) || (state == State_SYNC))
+             ----------1----------    ----------2----------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       206
+ EXPRESSION (start &amp;&amp; valid_cmd)
+             --1--    ----2----
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       228
+ EXPRESSION (set_signals_mask.adc_read &amp;&amp; set_signals_value.adc_read &amp;&amp; ((!signals.adc_read)))
+             ------------1------------    -------------2------------    ----------3----------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       240
+ EXPRESSION ((counter &gt;= {9'b0, cached_sync_timing}) &amp;&amp; ((!pause_n_rising_edge)))
+             -------------------1-------------------    ------------2-----------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       259
+ EXPRESSION (starts_adc_read ? State_WAIT_FOR_ADC : State_IDLE)
+             -------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod29.html" >signal_control</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s9">
+<td>Totals</td>
+<td class="rt">50</td>
+<td class="rt">48</td>
+<td class="rt">96.00 </td>
+</tr><tr class="s9">
+<td>Total Bits</td>
+<td class="rt">508</td>
+<td class="rt">482</td>
+<td class="rt">94.88 </td>
+</tr><tr class="s9">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">254</td>
+<td class="rt">241</td>
+<td class="rt">94.88 </td>
+</tr><tr class="s9">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">254</td>
+<td class="rt">241</td>
+<td class="rt">94.88 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s10">
+<td>Ports</td>
+<td class="rt">34</td>
+<td class="rt">34</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>Port Bits</td>
+<td class="rt">280</td>
+<td class="rt">280</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">140</td>
+<td class="rt">140</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">140</td>
+<td class="rt">140</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s8">
+<td>Signals</td>
+<td class="rt">16</td>
+<td class="rt">14</td>
+<td class="rt">87.50 </td>
+</tr><tr class="s8">
+<td>Signal Bits</td>
+<td class="rt">228</td>
+<td class="rt">202</td>
+<td class="rt">88.60 </td>
+</tr><tr class="s8">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">114</td>
+<td class="rt">101</td>
+<td class="rt">88.60 </td>
+</tr><tr class="s8">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">114</td>
+<td class="rt">101</td>
+<td class="rt">88.60 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>pause_n_synchronised</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>sync_timing[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>auto_read_timing1[24:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>auto_read_timing2[24:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>cmd[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>set_signals_mask.padding</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>set_signals_mask.adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>set_signals_mask.adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>set_signals_mask.sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>set_signals_mask.sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>set_signals_mask.sens_config[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>set_signals_value.padding</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>set_signals_value.adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>set_signals_value.adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>set_signals_value.sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>set_signals_value.sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>set_signals_value.sens_config[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>start</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>abort</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>result_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>signals.padding</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>signals.adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>signals.adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>signals.sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>signals.sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>signals.sens_config[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>adc_conversion_complete</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>adc_value[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>busy</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>unexpected_pause</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>cached_adc_conversion_complete</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>cached_adc_value[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>pause_n_synchronised_old</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>pause_n_rising_edge</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>cached_sync_timing[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>cached_auto_read_timing1[24:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>cached_auto_read_timing2[24:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>cached_cmd[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>cached_cmd[7:2]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>new_signals.padding</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>new_signals.adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>new_signals.adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>new_signals.sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>new_signals.sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>new_signals.sens_config[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>state[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>valid_cmd</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>counter[17:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>counter[24:18]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>starts_adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr></table><br clear=all>
+<hr>
+<a name="FSM"></a>
+FSM Coverage for Module : <a href="mod29.html" >signal_control</a><br clear=all>
+<table align=left class="noborder">
+<caption><b>Summary for FSM :: state</b></caption>
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th><th nowrap width=200></th></tr><tr class="wht">
+<td>States</td>
+<td class="rt">5</td>
+<td class="rt">5</td>
+<td class="rt">100.00</td>
+<td>(Not included in score)</td>
+</tr><tr class="s10">
+<td>Transitions</td>
+<td class="rt">9</td>
+<td class="rt">9</td>
+<td class="rt">100.00</td>
+<td></td>
+</tr><tr class="wht">
+<td>Sequences</td>
+<td class="rt">0</td>
+<td class="rt">0</td>
+<td></td>
+<td></td>
+</tr></table><br clear=all>
+<b>State, Transition and Sequence Details for FSM :: state</b><hr>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">states</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uGreen">
+<td nowrap>State_IDLE</td>
+<td class="rt">123</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_SYNC</td>
+<td class="rt">232</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_TIMING1</td>
+<td class="rt">248</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_TIMING2</td>
+<td class="rt">271</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_WAIT_FOR_ADC</td>
+<td class="rt">259</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">transitions</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uGreen">
+<td nowrap>State_IDLE->State_SYNC</td>
+<td class="rt">232</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_SYNC->State_IDLE</td>
+<td class="rt">123</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_SYNC->State_TIMING1</td>
+<td class="rt">248</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_SYNC->State_WAIT_FOR_ADC</td>
+<td class="rt">259</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_TIMING1->State_IDLE</td>
+<td class="rt">123</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_TIMING1->State_TIMING2</td>
+<td class="rt">271</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_TIMING2->State_IDLE</td>
+<td class="rt">123</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_TIMING2->State_WAIT_FOR_ADC</td>
+<td class="rt">283</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_WAIT_FOR_ADC->State_IDLE</td>
+<td class="rt">123</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod29.html" >signal_control</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s9">
+<td>Branches</td>
+<td></td>
+<td class="rt">26</td>
+<td class="rt">24</td>
+<td class="rt">92.31 </td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">82</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s9">
+<td>IF</td>
+<td class="rt">122</td>
+<td class="rt">24</td>
+<td class="rt">22</td>
+<td class="rt">91.67 </td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+82                 if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+83                     pause_n_synchronised_old <= 1'b1;
+           <font color = "green">            ==></font>
+84                 end
+85                 else begin
+86                     pause_n_synchronised_old <= pause_n_synchronised;
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+122                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+123                    state                           <= State_IDLE;
+           <font color = "green">            ==></font>
+124        
+125                    signals.sens_config             <= '0;
+126                    signals.sens_enable             <= '0;
+127                    signals.sens_read               <= '0;
+128                    signals.adc_enable              <= '0;
+129                    signals.adc_read                <= '0;
+130                    signals.padding                 <= '0;
+131        
+132                    counter                         <= '0;
+133                    unexpected_pause                <= 1'b0;
+134                    cached_adc_conversion_complete  <= 1'b0;
+135                    cached_adc_value                <= '0;
+136                end
+137                else begin
+138                    // always count unless overridden below.
+139                    // We don't overflow.
+140                    if (counter != '1) begin
+                       <font color = "red">-2-</font>  
+141                        counter <= counter + 1'd1;
+           <font color = "green">                ==></font>
+142                    end
+                       MISSING_ELSE
+           <font color = "red">            ==></font>
+143        
+144                    if (pause_n_rising_edge) begin
+                       <font color = "green">-3-</font>  
+145                        if ((state == State_IDLE) || (state == State_SYNC)) begin
+                           <font color = "green">-4-</font>  
+146                            // during the SYNC stage we want to time our action
+147                            // to occur a certain number of ticks after the last
+148                            // rising edge of pause_n_synchronised. This is because
+149                            // all PICCs should see the same rising edge within a short
+150                            // period of time (depending on PVT variation). It largely depends
+151                            // on the analogue block, but I expect the maximum variation between
+152                            // PICC's will be one tick (73.75 ns).
+153                            // So we can use the rising edge of pause_n to synchronise action
+154                            // accross multiple PICCs. We restart the counter on every rising edge
+155                            // and set the timeout to sufficiently large that if the PCD were to
+156                            // want to send a SYNC command to another PICC that command would cause
+157                            // the counter on all PICCs to be reset. When the PCD is done, it stops
+158                            // sending commands and finally the counter on all the PICCs expires
+159                            // at aproximately the same time.
+160        
+161                            // we reset to 2, because it took one tick to detect the rising edge
+162                            // and by the time we next check this value it'll have been one tick more
+163                            counter <= 25'd2;
+           <font color = "green">                    ==></font>
+164                        end
+165                        else begin
+166                            // In the other states we don't want to restart the counter on pauses
+167                            // since we aim to provide a precise time. However since there is no
+168                            // clock during pauses, our timing gets a bit messed up. Additionally
+169                            // we don't receive power during pauses and so our voltage levels will
+170                            // start dropping. We set a flag so we can alert the user.
+171                            unexpected_pause <= 1'b1;
+           <font color = "green">                    ==></font>
+172                        end
+173                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+174        
+175                    // cache the latest ADC value
+176                    // it doesn't matter if we are in an operation or not, we may as well store the new value,
+177                    // but we only assert cached_adc_conversion_complete if we are in State_WAIT_FOR_ADC
+178                    if (adc_conversion_complete) begin
+                       <font color = "green">-5-</font>  
+179                        cached_adc_value    <= adc_value;
+           <font color = "green">                ==></font>
+180                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+181        
+182                    // clear the cached_adc_conversion_complete when requested.
+183                    // the result_read signal should be asserted only on Cmd_GET_RESULT
+184                    // when cached_adc_conversion_complete is set
+185                    if (result_read) begin
+                       <font color = "green">-6-</font>  
+186                        cached_adc_conversion_complete  <= 1'b0;
+           <font color = "green">                ==></font>
+187                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+188        
+189        
+190                    // if abort is asserted, it doesn't matter what state we're in
+191                    // just return to idle, clear the flags and reset the signals (other than sens_config)
+192                    if (abort) begin
+                       <font color = "green">-7-</font>  
+193                        state                           <= State_IDLE;
+           <font color = "green">                ==></font>
+194                        unexpected_pause                <= 1'b0;
+195                        cached_adc_conversion_complete  <= 1'b0;
+196        
+197                        signals.sens_enable             <= '0;
+198                        signals.sens_read               <= '0;
+199                        signals.adc_enable              <= '0;
+200                        signals.adc_read                <= '0;
+201                    end
+202                    else begin
+203                        case (state)
+                           <font color = "red">-8-</font>  
+204                            State_IDLE:     begin
+205                                // do nothing until start asserts
+206                                if (start && valid_cmd) begin
+                                   <font color = "green">-9-</font>  
+207                                    // cache values
+208                                    cached_sync_timing              <= sync_timing;
+           <font color = "green">                            ==></font>
+209                                    cached_auto_read_timing1        <= auto_read_timing1;
+210                                    cached_auto_read_timing2        <= auto_read_timing2;
+211                                    cached_cmd                      <= cmd;
+212        
+213                                    unexpected_pause                <= 1'b0;
+214                                    cached_adc_conversion_complete  <= 1'b0;
+215        
+216                                    new_signals     <=  (signals            & ~set_signals_mask) |
+217                                                        (set_signals_value  &  set_signals_mask);
+218        
+219                                    // if this is a SET_SIGNAL command then we need to know if it will
+220                                    // start an ADC read. This occurs if the adc_read signal asserts.
+221                                    // which means the mask must have that bit set, for it to be able to change.
+222                                    // the value must have that bit set, for it to be asserting, and it can't
+223                                    // already be set.
+224                                    // Technically adc_enable also needs to already be set / assert,
+225                                    // but we can leave that to the PCD to ensure via correct use of SET_SIGNAL.
+226                                    // if it's not enabled the adc_conversion_complete signal will not assert
+227                                    // and we'll require the ABORT command to restart.
+228                                    starts_adc_read <=  set_signals_mask.adc_read   &&
+229                                                        set_signals_value.adc_read  &&
+230                                                        !signals.adc_read;
+231        
+232                                    state <= State_SYNC;
+233                                end
+                                   MISSING_ELSE
+           <font color = "green">                        ==></font>
+234                            end
+235        
+236                            State_SYNC:     begin
+237                                // has the sync period elapsed? We use >= because if the PCD passed
+238                                // a sync timing of a low number of ticks (< ~256), then the counter
+239                                // will already have got passed that by the time we end up here.
+240                                if ((counter >= {9'd0, cached_sync_timing}) && !pause_n_rising_edge) begin
+                                   <font color = "green">-10-</font>  
+241                                    if (cached_cmd == Command_AUTO_READ) begin
+                                       <font color = "green">-11-</font>  
+242                                        // if this was a AUTO_READ command then enable the sensor
+243                                        // and the ADC
+244                                        signals.sens_enable <= 1'b1;
+           <font color = "green">                                ==></font>
+245                                        signals.adc_enable  <= 1'b1;
+246        
+247                                        // then move on to the timing1 stage
+248                                        state               <= State_TIMING1;
+249        
+250                                        // restart the counter
+251                                        counter             <= '0;
+252                                    end
+253                                    else begin
+254                                        // for Command_SET_SIGNAL we set the signals as instructed.
+255                                        signals <= new_signals;
+256        
+257                                        // if this command starts an ADC read, then we need to wait for that to complete
+258                                        // otherwise we return to idle.
+259                                        state   <= starts_adc_read ? State_WAIT_FOR_ADC : State_IDLE;
+                                                                      <font color = "green">-12-</font>  
+                                                                      <font color = "green">==></font>  
+                                                                      <font color = "green">==></font>  
+260                                    end
+261                                end
+                                   MISSING_ELSE
+           <font color = "green">                        ==></font>
+262                            end
+263        
+264                            State_TIMING1:  begin
+265                                // We only get here for Command_AUTO_READ
+266                                if (counter == cached_auto_read_timing1) begin
+                                   <font color = "green">-13-</font>  
+267                                    // set the sens_read signal
+268                                    signals.sens_read <= 1'b1;
+           <font color = "green">                            ==></font>
+269        
+270                                    // move on to timing2 and reset the counter
+271                                    state   <= State_TIMING2;
+272                                    counter <= '0;
+273                                end
+                                   MISSING_ELSE
+           <font color = "green">                        ==></font>
+274                            end
+275        
+276                            State_TIMING2:  begin
+277                                // We only get here for Command_AUTO_READ
+278                                if (counter == cached_auto_read_timing2) begin
+                                   <font color = "green">-14-</font>  
+279                                    // set the adc_read signal
+280                                    signals.adc_read <= 1'b1;
+           <font color = "green">                            ==></font>
+281        
+282                                    // wait for the ADC to report conversion_complete
+283                                    state <= State_WAIT_FOR_ADC;
+284        
+285                                    // no need to reset the counter here
+286                                    // it'll reset on the next pause
+287                                end
+                                   MISSING_ELSE
+           <font color = "green">                        ==></font>
+288                            end
+289        
+290                            State_WAIT_FOR_ADC: begin
+291                                if (adc_conversion_complete) begin
+                                   <font color = "green">-15-</font>  
+292                                    // indicate that the conversion has completed
+293                                    cached_adc_conversion_complete  <= 1'b1;
+           <font color = "green">                            ==></font>
+294        
+295                                    // the new value was already cached above.
+296        
+297                                    // TODO: Reset signals here (not sens_config)?
+298                                    //       Maybe only if cached_cmd == Command_AUTO_READ?
+299        
+300                                    // and we're done
+301                                    state <= State_IDLE;
+302        
+303                                    // no need to reset the counter here
+304                                    // it'll reset on the next pause
+305                                end
+                                   MISSING_ELSE
+           <font color = "green">                        ==></font>
+306                            end
+307        
+308                            default:        begin
+309                                // ???
+310                                state <= State_IDLE;
+           <font color = "red">                        ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>-8-</th><th nowrap width=80>-9-</th><th nowrap width=80>-10-</th><th nowrap width=80>-11-</th><th nowrap width=80>-12-</th><th nowrap width=80>-13-</th><th nowrap width=80>-14-</th><th nowrap width=80>-15-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>State_IDLE </td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>State_IDLE </td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>State_SYNC </td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>State_SYNC </td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>State_SYNC </td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>State_SYNC </td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>State_TIMING1 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>State_TIMING1 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>State_TIMING2 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>State_TIMING2 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>State_WAIT_FOR_ADC </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>State_WAIT_FOR_ADC </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>default</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_43">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+  <ul name="tag_signal_control">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

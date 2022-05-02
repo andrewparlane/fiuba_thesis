@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: sequence_decode</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | <a href="asserts.html" ><b>asserts</b></a></div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_sequence_decode'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_sequence_decode')">sequence_decode</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 95.23</td>
+<td class="s10 cl rt"><a href="mod49.html#Line" >100.00</a></td>
+<td class="s9 cl rt"><a href="mod49.html#Cond" > 96.15</a></td>
+<td class="s10 cl rt"><a href="mod49.html#Toggle" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod49.html#FSM" > 80.00</a></td>
+<td class="s10 cl rt"><a href="mod49.html#Branch" >100.00</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/iso14443_2a/sequence_decode.sv')">/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/iso14443_2a/sequence_decode.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod49.html#inst_tag_64"  onclick="showContent('inst_tag_64')">radiation_sensor_digital_top_tb.dut.iso14443a_inst.part2.sd_inst</a></td>
+<td class="s9 cl rt"> 95.23</td>
+<td class="s10 cl rt"><a href="mod49.html#Line" >100.00</a></td>
+<td class="s9 cl rt"><a href="mod49.html#Cond" > 96.15</a></td>
+<td class="s10 cl rt"><a href="mod49.html#Toggle" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod49.html#FSM" > 80.00</a></td>
+<td class="s10 cl rt"><a href="mod49.html#Branch" >100.00</a></td>
+<td class="wht cl rt"></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_sequence_decode'>
+<hr>
+<a name="inst_tag_64"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_64" >radiation_sensor_digital_top_tb.dut.iso14443a_inst.part2.sd_inst</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 95.23</td>
+<td class="s10 cl rt"><a href="mod49.html#Line" >100.00</a></td>
+<td class="s9 cl rt"><a href="mod49.html#Cond" > 96.15</a></td>
+<td class="s10 cl rt"><a href="mod49.html#Toggle" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod49.html#FSM" > 80.00</a></td>
+<td class="s10 cl rt"><a href="mod49.html#Branch" >100.00</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 95.23</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s9 cl rt"> 96.15</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt"> 80.00</td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod33.html#inst_tag_47" >part2</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td colspan=8>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_sequence_decode'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod49.html" >sequence_decode</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s10"><td class="lf">TOTAL</td><td></td><td>67</td><td>67</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>120</td><td>3</td><td>3</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>153</td><td>13</td><td>13</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>194</td><td>1</td><td>1</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>204</td><td>25</td><td>25</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>287</td><td>25</td><td>25</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+119                         always_ff @(posedge clk, negedge rst_n) begin
+120        1/1                  if (!rst_n) begin
+121        1/1                      last_pause_n    &lt;= 1'b1; // not in pause frame
+122                             end
+123                             else begin
+124                                 // update cached value
+125        1/1                      last_pause_n &lt;= pause_n_synchronised;
+126                             end
+127                         end
+128                     
+129                         // ------------------------------------------------------------------------
+130                         // Decode the sequences
+131                         // ------------------------------------------------------------------------
+132                     
+133                         // time between pauses, max value we care about is 384, so 9 bits
+134                         logic [8:0] counter;
+135                     
+136                         // assuming a pause happens now, what would the next sequence be?
+137                         PCDBitSequence seq_on_pause;
+138                     
+139                         // the current detected sequence
+140                         // this should be of type PCDBitSequence but VCS doesn't seem to be able to
+141                         // generate a correct SAIF file if I use that directly.
+142                         logic [1:0] seq;
+143                     
+144                         // is seq valid (asserts for only one tick at a time)
+145                         logic seq_valid;
+146                     
+147                         // have we timed out yet?
+148                         logic timed_out;
+149                     
+150                         always_comb begin
+151                             // the next sequence depends on how long it's been since the last pause
+152                             // and what the last sequence was
+153        1/1                  case (seq)
+154                                 PCDBitSequence_X: begin
+155                                     // last sequence was an x
+156        1/1                          if (counter &lt;= 68) begin
+157        1/1                              seq_on_pause = PCDBitSequence_ERROR;
+158                                     end
+159                                     else begin  // &lt; 132 (times out on 132)
+160        1/1                              seq_on_pause = PCDBitSequence_X;
+161                                     end
+162                                 end
+163                     
+164                                 PCDBitSequence_Z: begin
+165                                     // last sequence was a Z
+166        1/1                          if (counter &lt;= 68) begin
+167        1/1                              seq_on_pause = PCDBitSequence_ERROR;
+168                                     end
+169        1/1                          else if (counter &lt;= 131) begin
+170        1/1                              seq_on_pause = PCDBitSequence_Z;
+171                                     end
+172                                     else begin  // &lt; 196 (times out on 196)
+173        1/1                              seq_on_pause = PCDBitSequence_X;
+174                                     end
+175                                 end
+176                     
+177                                 PCDBitSequence_Y: begin
+178        1/1                          if (counter &lt;= 64) begin
+179        1/1                              seq_on_pause = PCDBitSequence_Z;
+180                                     end
+181                                     else begin // &lt; 128 (times out on 128)
+182        1/1                              seq_on_pause = PCDBitSequence_X;
+183                                     end
+184                                 end
+185                     
+186                                 // if the previous sequence wasn't a X, Y or Z, it must have bene an error
+187                                 // so the next sequence will be an error too
+188        1/1                      default: seq_on_pause =  PCDBitSequence_ERROR;
+189                             endcase
+190                         end
+191                     
+192                         // have we timed out?
+193                         always_comb begin
+194        1/1                  timed_out = ((seq == PCDBitSequence_X)     &amp;&amp; (counter == 9'd132)) ||
+195                                         ((seq == PCDBitSequence_Y)     &amp;&amp; (counter == 9'd128)) ||
+196                                         ((seq == PCDBitSequence_Z)     &amp;&amp; (counter == 9'd196)) ||
+197                                         ((seq == PCDBitSequence_ERROR) &amp;&amp; (counter == 9'd384));
+198                         end
+199                     
+200                         logic detected_soc;     // have we seen the SOC
+201                         logic idle;             // are we currently receiving sequences?
+202                     
+203                         always_ff @(posedge clk, negedge rst_n) begin
+204        1/1                  if (!rst_n) begin
+205        1/1                      idle            &lt;= 1'b1;
+206        1/1                      seq_valid       &lt;= 1'b0;
+207        1/1                      detected_soc    &lt;= 1'b0;
+208                             end
+209                             else begin
+210                                 // these should only be asserted for one tick at a time
+211        1/1                      seq_valid       &lt;= 1'b0;
+212        1/1                      detected_soc    &lt;= 1'b0;
+213                     
+214        1/1                      if (idle) begin
+215                                     // since we are idle then the first sequence we detect has to be Z
+216                                     // This is stated in ISO/IEC 14443-2:2016 section 8.1.3.1
+217                                     // start of communications is represented by a sequence Z
+218        1/1                          if (pause_detected) begin
+219        1/1                              seq             &lt;= PCDBitSequence_Z;
+220        1/1                              seq_valid       &lt;= 1'b1;
+221        1/1                              detected_soc    &lt;= 1'b1;
+222        1/1                              idle            &lt;= 1'b0;
+223        1/1                              counter         &lt;= 9'd1;   // reset the counter
+224                                     end
+                        MISSING_ELSE
+225                                 end
+226                                 else begin
+227                                     // update the counter
+228                                     // default is to increment, but we override this later on if a pause
+229                                     // has been detected or a timeout has occured
+230        1/1                          counter &lt;= counter + 1'd1;
+231                     
+232        1/1                          if (pause_detected) begin
+233                                         // when a pause is detected we reset the counter to 1
+234        1/1                              counter &lt;= 9'd1;
+235                     
+236                                         // and we issue a sequence, unless we previously errored
+237        1/1                              if (seq != PCDBitSequence_ERROR) begin
+238        1/1                                  seq_valid &lt;= 1'b1;
+239                                         end
+                        MISSING_ELSE
+240                     
+241        1/1                              seq &lt;= seq_on_pause;
+242                                     end
+243                                     else begin
+244                                         // no pause detected yet, have we timed out
+245        1/1                              if (timed_out) begin
+246                                             // we have timed out and so this must be a Y
+247        1/1                                  seq         &lt;= PCDBitSequence_Y;
+248        1/1                                  seq_valid   &lt;= 1'b1;
+249        1/1                                  counter     &lt;= 9'd1;
+250                     
+251        1/1                                  if (seq == PCDBitSequence_Y) begin
+252                                                 // That's two Ys in a row, so we go idle now
+253        1/1                                      idle &lt;= 1'b1;
+254                                             end
+                        MISSING_ELSE
+255                                         end
+                        MISSING_ELSE
+256                                     end
+257                                 end
+258                             end
+259                         end
+260                     
+261                         // ------------------------------------------------------------------------
+262                         // Turn the sequences into bits/SOC/EOC/error
+263                         // ------------------------------------------------------------------------
+264                     
+265                         // cache the last sequence, so we can detect EOC
+266                         // this should be of type PCDBitSequence but VCS doesn't seem to be able to
+267                         // generate a correct SAIF file if I use that directly.
+268                         logic [1:0]     prev;
+269                         logic           prev_is_soc;
+270                         logic           in_frame;
+271                     
+272                         // VCS doesn't generate a valid SAIF file, if I assign to interface members directly
+273                         // in a sequential block.
+274                         logic out_iface_soc;
+275                         logic out_iface_eoc;
+276                         logic out_iface_data_valid;
+277                         logic out_iface_error;
+278                         logic out_iface_data;
+279                     
+280                         assign out_iface.soc        = out_iface_soc;
+281                         assign out_iface.eoc        = out_iface_eoc;
+282                         assign out_iface.data_valid = out_iface_data_valid;
+283                         assign out_iface.error      = out_iface_error;
+284                         assign out_iface.data       = out_iface_data;
+285                     
+286                         always_ff @(posedge clk, negedge rst_n) begin
+287        1/1                  if (!rst_n) begin
+288        1/1                      out_iface_soc           &lt;= 1'b0;
+289        1/1                      out_iface_eoc           &lt;= 1'b0;
+290        1/1                      out_iface_error         &lt;= 1'b0;
+291        1/1                      out_iface_data_valid    &lt;= 1'b0;
+292        1/1                      in_frame                &lt;= 1'b0;
+293                             end
+294                             else begin
+295                                 // these should only assert for one tick
+296        1/1                      out_iface_soc           &lt;= 1'b0;
+297        1/1                      out_iface_eoc           &lt;= 1'b0;
+298        1/1                      out_iface_error         &lt;= 1'b0;
+299        1/1                      out_iface_data_valid    &lt;= 1'b0;
+300                     
+301                                 // only do something if we have a valid seq
+302        1/1                      if (seq_valid) begin
+303                                     // cache the current seq
+304        1/1                          prev        &lt;= seq;
+305        1/1                          prev_is_soc &lt;= detected_soc;
+306                     
+307        1/1                          if (detected_soc) begin
+308                                         // do nothing, as we use prev for all tests
+309                                         // so must wait for the next sequence
+310                                     end
+311                                     else begin
+312        1/1                              if (prev_is_soc) begin
+313                                             // Issue our SOC and start the frame
+314        1/1                                  out_iface_soc           &lt;= 1'b1;
+315        1/1                                  in_frame                &lt;= 1'b1;
+316                                         end
+317        1/1                              else if (in_frame) begin
+318                                             // we emit nothing when we aren't in a frame
+319        1/1                                  if (((prev == PCDBitSequence_Y) || (prev == PCDBitSequence_Z)) &amp;&amp;
+320                                                 (seq == PCDBitSequence_Y)) begin
+321                                                 // it's the EOC if we have logic '0' followed by Y
+322                                                 // See ISO/IEC 14443-2:2016 section 8.1.3.1
+323                                                 // Issue the EOC and end the frame
+324        1/1                                      out_iface_eoc           &lt;= 1'b1;
+325        1/1                                      in_frame                &lt;= 1'b0;
+326                                             end
+327        1/1                                  else if (prev == PCDBitSequence_ERROR) begin
+328                                                 // there was a timing error
+329                                                 // seq_valid doesn't go high again until we've timed out
+330                                                 // so this can only happens once
+331        1/1                                      out_iface_error         &lt;= 1'b1;
+332                                             end
+333                                             else begin
+334                                                 // we're not SOC, EOC or an error, and we're in a frame
+335                                                 // emit the data bit
+336        1/1                                      out_iface_data_valid    &lt;= 1'b1;
+337                                                 // PCDBitSequence_X -&gt; 1, PCDBitSequence_Y -&gt; 0, PCDBitSequence_Z -&gt; 0
+338        1/1                                      out_iface_data          &lt;= (prev == PCDBitSequence_X);
+339                                             end
+340                                         end
+                        MISSING_ELSE
+341                                     end
+342                                 end
+                        MISSING_ELSE
+</pre>
+<hr>
+<a name="Cond"></a>
+Cond Coverage for Module : <a href="mod49.html" >sequence_decode</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="3" width="82">
+<tr><th></th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s9"><td class="lf">Conditions</td><td>26</td><td>25</td><td>96.15</td></tr>
+<tr class="s9"><td class="lf">Logical</td><td>26</td><td>25</td><td>96.15</td></tr>
+<tr class="wht"><td class="lf">Non-Logical</td><td>0</td><td>0</td><td></td></tr>
+<tr class="wht"><td class="lf">Event</td><td>0</td><td>0</td><td></td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       117
+ EXPRESSION ((last_pause_n == 1'b0) &amp;&amp; (pause_n_synchronised == 1'b1))
+             -----------1----------    ---------------2--------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       194
+ EXPRESSION 
+ Number  Term
+      1  ((seq == PCDBitSequence_X) &amp;&amp; (counter == 9'd132)) || 
+      2  ((seq == PCDBitSequence_Y) &amp;&amp; (counter == 9'd128)) || 
+      3  ((seq == PCDBitSequence_Z) &amp;&amp; (counter == 9'd196)) || 
+      4  ((seq == PCDBitSequence_ERROR) &amp;&amp; (counter == 9'd384)))
+</pre>
+<table class="noborder">
+<col span="4" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>-4-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>0</td><td>0</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>0</td><td>0</td><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>0</td><td>0</td><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>0</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>0</td><td>0</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       194
+ SUB-EXPRESSION ((seq == PCDBitSequence_X) &amp;&amp; (counter == 9'd132))
+                 ------------1------------    ---------2---------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       194
+ SUB-EXPRESSION ((seq == PCDBitSequence_Y) &amp;&amp; (counter == 9'd128))
+                 ------------1------------    ---------2---------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       194
+ SUB-EXPRESSION ((seq == PCDBitSequence_Z) &amp;&amp; (counter == 9'd196))
+                 ------------1------------    ---------2---------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       194
+ SUB-EXPRESSION ((seq == PCDBitSequence_ERROR) &amp;&amp; (counter == 9'd384))
+                 --------------1--------------    ---------2---------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       319
+ EXPRESSION (((prev == PCDBitSequence_Y) || (prev == PCDBitSequence_Z)) &amp;&amp; (seq == PCDBitSequence_Y))
+             -----------------------------1----------------------------    ------------2------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       319
+ SUB-EXPRESSION ((prev == PCDBitSequence_Y) || (prev == PCDBitSequence_Z))
+                 -------------1------------    -------------2------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+</table>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod49.html" >sequence_decode</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s10">
+<td>Totals</td>
+<td class="rt">20</td>
+<td class="rt">20</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>Total Bits</td>
+<td class="rt">62</td>
+<td class="rt">62</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">31</td>
+<td class="rt">31</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">31</td>
+<td class="rt">31</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s10">
+<td>Ports</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>Port Bits</td>
+<td class="rt">6</td>
+<td class="rt">6</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s10">
+<td>Signals</td>
+<td class="rt">17</td>
+<td class="rt">17</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>Signal Bits</td>
+<td class="rt">56</td>
+<td class="rt">56</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">28</td>
+<td class="rt">28</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">28</td>
+<td class="rt">28</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>pause_n_synchronised</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>last_pause_n</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>pause_detected</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>counter[8:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>seq_on_pause[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>seq[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>seq_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>timed_out</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>detected_soc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>idle</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>prev[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>prev_is_soc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>in_frame</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>out_iface_soc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>out_iface_eoc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>out_iface_data_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>out_iface_error</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>out_iface_data</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr></table><br clear=all>
+<hr>
+<a name="FSM"></a>
+FSM Coverage for Module : <a href="mod49.html" >sequence_decode</a><br clear=all>
+<table align=left class="noborder">
+<caption><b>Summary for FSM :: seq</b></caption>
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th><th nowrap width=200></th></tr><tr class="wht">
+<td>States</td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">100.00</td>
+<td>(Not included in score)</td>
+</tr><tr class="s8">
+<td>Transitions</td>
+<td class="rt">10</td>
+<td class="rt">8</td>
+<td class="rt">80.00 </td>
+<td></td>
+</tr><tr class="wht">
+<td>Sequences</td>
+<td class="rt">0</td>
+<td class="rt">0</td>
+<td></td>
+<td></td>
+</tr></table><br clear=all>
+<b>State, Transition and Sequence Details for FSM :: seq</b><hr>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">states</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uGreen">
+<td nowrap>PCDBitSequence_ERROR</td>
+<td class="rt">157</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>PCDBitSequence_X</td>
+<td class="rt">160</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>PCDBitSequence_Y</td>
+<td class="rt">247</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>PCDBitSequence_Z</td>
+<td class="rt">219</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">transitions</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uGreen">
+<td nowrap>PCDBitSequence_ERROR->PCDBitSequence_Y</td>
+<td class="rt">247</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td nowrap>PCDBitSequence_ERROR->PCDBitSequence_Z</td>
+<td class="rt">219</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>PCDBitSequence_X->PCDBitSequence_ERROR</td>
+<td class="rt">157</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>PCDBitSequence_X->PCDBitSequence_Y</td>
+<td class="rt">247</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td nowrap>PCDBitSequence_X->PCDBitSequence_Z</td>
+<td class="rt">219</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>PCDBitSequence_Y->PCDBitSequence_X</td>
+<td class="rt">182</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>PCDBitSequence_Y->PCDBitSequence_Z</td>
+<td class="rt">219</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>PCDBitSequence_Z->PCDBitSequence_ERROR</td>
+<td class="rt">167</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>PCDBitSequence_Z->PCDBitSequence_X</td>
+<td class="rt">173</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>PCDBitSequence_Z->PCDBitSequence_Y</td>
+<td class="rt">247</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod49.html" >sequence_decode</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s10">
+<td>Branches</td>
+<td></td>
+<td class="rt">26</td>
+<td class="rt">26</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">120</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>CASE</td>
+<td class="rt">153</td>
+<td class="rt">8</td>
+<td class="rt">8</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">204</td>
+<td class="rt">8</td>
+<td class="rt">8</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">287</td>
+<td class="rt">8</td>
+<td class="rt">8</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+120                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+121                    last_pause_n    <= 1'b1; // not in pause frame
+           <font color = "green">            ==></font>
+122                end
+123                else begin
+124                    // update cached value
+125                    last_pause_n <= pause_n_synchronised;
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+153                case (seq)
+                   <font color = "green">-1-</font>  
+154                    PCDBitSequence_X: begin
+155                        // last sequence was an x
+156                        if (counter <= 68) begin
+                           <font color = "green">-2-</font>  
+157                            seq_on_pause = PCDBitSequence_ERROR;
+           <font color = "green">                    ==></font>
+158                        end
+159                        else begin  // < 132 (times out on 132)
+160                            seq_on_pause = PCDBitSequence_X;
+           <font color = "green">                    ==></font>
+161                        end
+162                    end
+163        
+164                    PCDBitSequence_Z: begin
+165                        // last sequence was a Z
+166                        if (counter <= 68) begin
+                           <font color = "green">-3-</font>  
+167                            seq_on_pause = PCDBitSequence_ERROR;
+           <font color = "green">                    ==></font>
+168                        end
+169                        else if (counter <= 131) begin
+                                <font color = "green">-4-</font>  
+170                            seq_on_pause = PCDBitSequence_Z;
+           <font color = "green">                    ==></font>
+171                        end
+172                        else begin  // < 196 (times out on 196)
+173                            seq_on_pause = PCDBitSequence_X;
+           <font color = "green">                    ==></font>
+174                        end
+175                    end
+176        
+177                    PCDBitSequence_Y: begin
+178                        if (counter <= 64) begin
+                           <font color = "green">-5-</font>  
+179                            seq_on_pause = PCDBitSequence_Z;
+           <font color = "green">                    ==></font>
+180                        end
+181                        else begin // < 128 (times out on 128)
+182                            seq_on_pause = PCDBitSequence_X;
+           <font color = "green">                    ==></font>
+183                        end
+184                    end
+185        
+186                    // if the previous sequence wasn't a X, Y or Z, it must have bene an error
+187                    // so the next sequence will be an error too
+188                    default: seq_on_pause =  PCDBitSequence_ERROR;
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>PCDBitSequence_X </td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>PCDBitSequence_X </td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>PCDBitSequence_Z </td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>PCDBitSequence_Z </td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>PCDBitSequence_Z </td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>PCDBitSequence_Y </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>PCDBitSequence_Y </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>default</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+204                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+205                    idle            <= 1'b1;
+           <font color = "green">            ==></font>
+206                    seq_valid       <= 1'b0;
+207                    detected_soc    <= 1'b0;
+208                end
+209                else begin
+210                    // these should only be asserted for one tick at a time
+211                    seq_valid       <= 1'b0;
+212                    detected_soc    <= 1'b0;
+213        
+214                    if (idle) begin
+                       <font color = "green">-2-</font>  
+215                        // since we are idle then the first sequence we detect has to be Z
+216                        // This is stated in ISO/IEC 14443-2:2016 section 8.1.3.1
+217                        // start of communications is represented by a sequence Z
+218                        if (pause_detected) begin
+                           <font color = "green">-3-</font>  
+219                            seq             <= PCDBitSequence_Z;
+           <font color = "green">                    ==></font>
+220                            seq_valid       <= 1'b1;
+221                            detected_soc    <= 1'b1;
+222                            idle            <= 1'b0;
+223                            counter         <= 9'd1;   // reset the counter
+224                        end
+                           MISSING_ELSE
+           <font color = "green">                ==></font>
+225                    end
+226                    else begin
+227                        // update the counter
+228                        // default is to increment, but we override this later on if a pause
+229                        // has been detected or a timeout has occured
+230                        counter <= counter + 1'd1;
+231        
+232                        if (pause_detected) begin
+                           <font color = "green">-4-</font>  
+233                            // when a pause is detected we reset the counter to 1
+234                            counter <= 9'd1;
+235        
+236                            // and we issue a sequence, unless we previously errored
+237                            if (seq != PCDBitSequence_ERROR) begin
+                               <font color = "green">-5-</font>  
+238                                seq_valid <= 1'b1;
+           <font color = "green">                        ==></font>
+239                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+240        
+241                            seq <= seq_on_pause;
+242                        end
+243                        else begin
+244                            // no pause detected yet, have we timed out
+245                            if (timed_out) begin
+                               <font color = "green">-6-</font>  
+246                                // we have timed out and so this must be a Y
+247                                seq         <= PCDBitSequence_Y;
+248                                seq_valid   <= 1'b1;
+249                                counter     <= 9'd1;
+250        
+251                                if (seq == PCDBitSequence_Y) begin
+                                   <font color = "green">-7-</font>  
+252                                    // That's two Ys in a row, so we go idle now
+253                                    idle <= 1'b1;
+           <font color = "green">                            ==></font>
+254                                end
+                                   MISSING_ELSE
+           <font color = "green">                        ==></font>
+255                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+287                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+288                    out_iface_soc           <= 1'b0;
+           <font color = "green">            ==></font>
+289                    out_iface_eoc           <= 1'b0;
+290                    out_iface_error         <= 1'b0;
+291                    out_iface_data_valid    <= 1'b0;
+292                    in_frame                <= 1'b0;
+293                end
+294                else begin
+295                    // these should only assert for one tick
+296                    out_iface_soc           <= 1'b0;
+297                    out_iface_eoc           <= 1'b0;
+298                    out_iface_error         <= 1'b0;
+299                    out_iface_data_valid    <= 1'b0;
+300        
+301                    // only do something if we have a valid seq
+302                    if (seq_valid) begin
+                       <font color = "green">-2-</font>  
+303                        // cache the current seq
+304                        prev        <= seq;
+305                        prev_is_soc <= detected_soc;
+306        
+307                        if (detected_soc) begin
+                           <font color = "green">-3-</font>  
+           <font color = "green">                ==></font>
+308                            // do nothing, as we use prev for all tests
+309                            // so must wait for the next sequence
+310                        end
+311                        else begin
+312                            if (prev_is_soc) begin
+                               <font color = "green">-4-</font>  
+313                                // Issue our SOC and start the frame
+314                                out_iface_soc           <= 1'b1;
+           <font color = "green">                        ==></font>
+315                                in_frame                <= 1'b1;
+316                            end
+317                            else if (in_frame) begin
+                                    <font color = "green">-5-</font>  
+318                                // we emit nothing when we aren't in a frame
+319                                if (((prev == PCDBitSequence_Y) || (prev == PCDBitSequence_Z)) &&
+                                   <font color = "green">-6-</font>  
+320                                    (seq == PCDBitSequence_Y)) begin
+321                                    // it's the EOC if we have logic '0' followed by Y
+322                                    // See ISO/IEC 14443-2:2016 section 8.1.3.1
+323                                    // Issue the EOC and end the frame
+324                                    out_iface_eoc           <= 1'b1;
+           <font color = "green">                            ==></font>
+325                                    in_frame                <= 1'b0;
+326                                end
+327                                else if (prev == PCDBitSequence_ERROR) begin
+                                        <font color = "green">-7-</font>  
+328                                    // there was a timing error
+329                                    // seq_valid doesn't go high again until we've timed out
+330                                    // so this can only happens once
+331                                    out_iface_error         <= 1'b1;
+           <font color = "green">                            ==></font>
+332                                end
+333                                else begin
+334                                    // we're not SOC, EOC or an error, and we're in a frame
+335                                    // emit the data bit
+336                                    out_iface_data_valid    <= 1'b1;
+           <font color = "green">                            ==></font>
+337                                    // PCDBitSequence_X -> 1, PCDBitSequence_Y -> 0, PCDBitSequence_Z -> 0
+338                                    out_iface_data          <= (prev == PCDBitSequence_X);
+339                                end
+340                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+341                        end
+342                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_64">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+  <ul name="tag_sequence_decode">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

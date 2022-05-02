@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: tx</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | <a href="asserts.html" ><b>asserts</b></a></div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_tx'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_tx')">tx</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 91.03</td>
+<td class="s9 cl rt"><a href="mod57.html#Line" > 94.44</a></td>
+<td class="s10 cl rt"><a href="mod57.html#Cond" >100.00</a></td>
+<td class="s10 cl rt"><a href="mod57.html#Toggle" >100.00</a></td>
+<td class="s7 cl rt"><a href="mod57.html#FSM" > 75.00</a></td>
+<td class="s8 cl rt"><a href="mod57.html#Branch" > 85.71</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/iso14443_2a/tx.sv')">/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/iso14443_2a/tx.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod57.html#inst_tag_72"  onclick="showContent('inst_tag_72')">radiation_sensor_digital_top_tb.dut.iso14443a_inst.part2.tx_inst</a></td>
+<td class="s9 cl rt"> 91.03</td>
+<td class="s9 cl rt"><a href="mod57.html#Line" > 94.44</a></td>
+<td class="s10 cl rt"><a href="mod57.html#Cond" >100.00</a></td>
+<td class="s10 cl rt"><a href="mod57.html#Toggle" >100.00</a></td>
+<td class="s7 cl rt"><a href="mod57.html#FSM" > 75.00</a></td>
+<td class="s8 cl rt"><a href="mod57.html#Branch" > 85.71</a></td>
+<td class="wht cl rt"></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_tx'>
+<hr>
+<a name="inst_tag_72"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_72" >radiation_sensor_digital_top_tb.dut.iso14443a_inst.part2.tx_inst</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 91.03</td>
+<td class="s9 cl rt"><a href="mod57.html#Line" > 94.44</a></td>
+<td class="s10 cl rt"><a href="mod57.html#Cond" >100.00</a></td>
+<td class="s10 cl rt"><a href="mod57.html#Toggle" >100.00</a></td>
+<td class="s7 cl rt"><a href="mod57.html#FSM" > 75.00</a></td>
+<td class="s8 cl rt"><a href="mod57.html#Branch" > 85.71</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 92.65</td>
+<td class="s9 cl rt"> 97.30</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s9 cl rt"> 92.31</td>
+<td class="s7 cl rt"> 75.00</td>
+<td class="s9 cl rt"> 91.30</td>
+<td class="s10 cl rt">100.00</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod33.html#inst_tag_47" >part2</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod8.html#inst_tag_22" id="tag_urg_inst_22">bc_inst</a></td>
+<td class="s10 cl rt">100.00</td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod7.html#inst_tag_17" id="tag_urg_inst_17">be_iface</a></td>
+<td class="s8 cl rt"> 83.33</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s6 cl rt"> 66.67</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod3.html#inst_tag_5" id="tag_urg_inst_5">sc_inst</a></td>
+<td class="s10 cl rt">100.00</td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_tx'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod57.html" >tx</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s9"><td class="lf">TOTAL</td><td></td><td>18</td><td>17</td><td>94.44</td></tr>
+<tr class="s9"><td class="lf">ALWAYS</td><td>68</td><td>15</td><td>14</td><td>93.33</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>156</td><td>3</td><td>3</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+67                          always_ff @(posedge clk, negedge rst_n) begin
+68         1/1                  if (!rst_n) begin
+69         1/1                      state           &lt;= State_IDLE;
+70         1/1                      in_iface_req    &lt;= 1'b0;
+71                              end
+72                              else begin
+73                                  // req should only ever be asserted one tick at a time
+74         1/1                      in_iface_req    &lt;= 1'b0;
+75                      
+76         1/1                      case (state)
+77                                      State_IDLE: begin
+78                                          // we're idle
+79                                          // wait for data to go valid
+80         1/1                              if (in_iface.data_valid) begin
+81                                              // send the SOC
+82         1/1                                  state       &lt;= State_SOC;
+83                                          end
+                        MISSING_ELSE
+84                                      end
+85                      
+86                                      State_SOC: begin
+87                                          // when the REQ comes in from the bit encoder then switch to the data state
+88                                          // which starts sending the first bit of data
+89         1/1                              if (be_iface.req) begin
+90         1/1                                  state           &lt;= State_DATA;
+91                                          end
+                        MISSING_ELSE
+92                                      end
+93                      
+94                                      State_DATA: begin
+95                                          // when the REQ comes in if we still have more to send (data is valid)
+96                                          // then cache the new data and request more. Otherwise go to EOC
+97         1/1                              if (be_iface.req) begin
+98         1/1                                  if (in_iface.data_valid) begin
+99         1/1                                      in_iface_req    &lt;= 1'b1;
+100                                             end
+                   <font color = "red">==>  MISSING_ELSE</font>
+101                                         end
+102        1/1                              else if (be_last_tick &amp;&amp; !in_iface.data_valid) begin
+103        1/1                                  state &lt;= State_IDLE;
+104                                         end
+                        MISSING_ELSE
+105                                     end
+106                     
+107                                     default: begin
+108        <font color = "red">0/1     ==>                      state &lt;= State_IDLE;</font>
+109                                     end
+110                                 endcase
+111                             end
+112                         end
+113                     
+114                         // enable the subcarrier and the bit_encoder
+115                         logic en;
+116                         assign en = (state != State_IDLE);
+117                     
+118                         // The bit to send is either the SOC (logic 1, see ISE/IEC 14443-2:2016 section 8.2.5.1)
+119                         // or the data
+120                         logic bit_to_send;
+121                         assign bit_to_send = (state == State_SOC) ? 1'b1 : in_iface.data;
+122                     
+123                         // generate our subcarrier signal
+124                         logic subcarrier;
+125                         subcarrier sc_inst
+126                         (
+127                             .clk        (clk),
+128                             .rst_n      (rst_n),
+129                             .en         (en),
+130                             .subcarrier (subcarrier)
+131                         );
+132                     
+133                         tx_interface #(.BY_BYTE(0)) be_iface (.*);
+134                         assign be_iface.data                = bit_to_send;
+135                         assign be_iface.data_valid          = in_iface.data_valid &amp;&amp; (state != State_IDLE);
+136                         assign be_iface.last_bit_in_byte    = in_iface.last_bit_in_byte;
+137                         // TODO: Check data_valid and last_bit_in_byte are optimised out
+138                         // check last_bit_in_byte is optimised out all the way up the chain
+139                         // it's only used in serialiser -&gt; frame_encode
+140                     
+141                         // convert the bit to manchester encoding over 128 ticks
+142                         logic encoded_data;
+143                         bit_encoder bc_inst
+144                         (
+145                             .clk            (clk),
+146                             .rst_n          (rst_n),
+147                             .en             (en),
+148                             .in_iface       (be_iface),
+149                             .encoded_data   (encoded_data),
+150                             .last_tick      (be_last_tick)
+151                         );
+152                     
+153                         // the data we actually send is the AND of the subcarrier with the manchester encoded data
+154                         // We register the output to prevent glitches reaching the load modulator
+155                         always_ff @(posedge clk, negedge rst_n) begin
+156        1/1                  if (!rst_n) begin
+157        1/1                      lm_out &lt;= 1'b0;
+158                             end
+159                             else begin
+160        1/1                      lm_out &lt;= subcarrier &amp; encoded_data;
+</pre>
+<hr>
+<a name="Cond"></a>
+Cond Coverage for Module : <a href="mod57.html" >tx</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="3" width="82">
+<tr><th></th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s10"><td class="lf">Conditions</td><td>8</td><td>8</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">Logical</td><td>8</td><td>8</td><td>100.00</td></tr>
+<tr class="wht"><td class="lf">Non-Logical</td><td>0</td><td>0</td><td></td></tr>
+<tr class="wht"><td class="lf">Event</td><td>0</td><td>0</td><td></td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       102
+ EXPRESSION (be_last_tick &amp;&amp; ((!in_iface.data_valid)))
+             ------1-----    ------------2-----------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       121
+ EXPRESSION ((state == State_SOC) ? 1'b1 : in_iface.data)
+             ----------1---------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       135
+ EXPRESSION (in_iface.data_valid &amp;&amp; (state != State_IDLE))
+             ---------1---------    ----------2----------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod57.html" >tx</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s10">
+<td>Totals</td>
+<td class="rt">10</td>
+<td class="rt">10</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>Total Bits</td>
+<td class="rt">22</td>
+<td class="rt">22</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">11</td>
+<td class="rt">11</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">11</td>
+<td class="rt">11</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s10">
+<td>Ports</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>Port Bits</td>
+<td class="rt">6</td>
+<td class="rt">6</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s10">
+<td>Signals</td>
+<td class="rt">7</td>
+<td class="rt">7</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>Signal Bits</td>
+<td class="rt">16</td>
+<td class="rt">16</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">8</td>
+<td class="rt">8</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">8</td>
+<td class="rt">8</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>lm_out</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>state[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>be_last_tick</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>in_iface_req</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>en</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>bit_to_send</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>subcarrier</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>encoded_data</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr></table><br clear=all>
+<hr>
+<a name="FSM"></a>
+FSM Coverage for Module : <a href="mod57.html" >tx</a><br clear=all>
+<table align=left class="noborder">
+<caption><b>Summary for FSM :: state</b></caption>
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th><th nowrap width=200></th></tr><tr class="wht">
+<td>States</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+<td>(Not included in score)</td>
+</tr><tr class="s7">
+<td>Transitions</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+<td></td>
+</tr><tr class="wht">
+<td>Sequences</td>
+<td class="rt">0</td>
+<td class="rt">0</td>
+<td></td>
+<td></td>
+</tr></table><br clear=all>
+<b>State, Transition and Sequence Details for FSM :: state</b><hr>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">states</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uGreen">
+<td nowrap>State_DATA</td>
+<td class="rt">90</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_IDLE</td>
+<td class="rt">69</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_SOC</td>
+<td class="rt">82</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">transitions</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uGreen">
+<td nowrap>State_DATA->State_IDLE</td>
+<td class="rt">69</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_IDLE->State_SOC</td>
+<td class="rt">82</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_SOC->State_DATA</td>
+<td class="rt">90</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td nowrap>State_SOC->State_IDLE</td>
+<td class="rt">69</td>
+<td>Not&nbsp;Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod57.html" >tx</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s8">
+<td>Branches</td>
+<td></td>
+<td class="rt">14</td>
+<td class="rt">12</td>
+<td class="rt">85.71 </td>
+</tr><tr class="s10">
+<td>TERNARY</td>
+<td class="rt">121</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s8">
+<td>IF</td>
+<td class="rt">68</td>
+<td class="rt">10</td>
+<td class="rt">8</td>
+<td class="rt">80.00 </td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">156</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+121            assign bit_to_send = (state == State_SOC) ? 1'b1 : in_iface.data;
+                                                         <font color = "green">-1-</font>  
+                                                         <font color = "green">==></font>  
+                                                         <font color = "green">==></font>  
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+68                 if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+69                     state           <= State_IDLE;
+           <font color = "green">            ==></font>
+70                     in_iface_req    <= 1'b0;
+71                 end
+72                 else begin
+73                     // req should only ever be asserted one tick at a time
+74                     in_iface_req    <= 1'b0;
+75         
+76                     case (state)
+                       <font color = "red">-2-</font>  
+77                         State_IDLE: begin
+78                             // we're idle
+79                             // wait for data to go valid
+80                             if (in_iface.data_valid) begin
+                               <font color = "green">-3-</font>       
+81                                 // send the SOC
+82                                 state       <= State_SOC;
+           <font color = "green">                        ==></font>
+83                             end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+84                         end
+85         
+86                         State_SOC: begin
+87                             // when the REQ comes in from the bit encoder then switch to the data state
+88                             // which starts sending the first bit of data
+89                             if (be_iface.req) begin
+                               <font color = "green">-4-</font>       
+90                                 state           <= State_DATA;
+           <font color = "green">                        ==></font>
+91                             end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+92                         end
+93         
+94                         State_DATA: begin
+95                             // when the REQ comes in if we still have more to send (data is valid)
+96                             // then cache the new data and request more. Otherwise go to EOC
+97                             if (be_iface.req) begin
+                               <font color = "green">-5-</font>       
+98                                 if (in_iface.data_valid) begin
+                                   <font color = "red">-6-</font>       
+99                                     in_iface_req    <= 1'b1;
+           <font color = "green">                            ==></font>
+100                                end
+                                   MISSING_ELSE
+           <font color = "red">                        ==></font>
+101                            end
+102                            else if (be_last_tick && !in_iface.data_valid) begin
+                                    <font color = "green">-7-</font>                        
+103                                state <= State_IDLE;
+           <font color = "green">                        ==></font>
+104                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+105                        end
+106        
+107                        default: begin
+108                            state <= State_IDLE;
+           <font color = "red">                    ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_IDLE </td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_IDLE </td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_SOC </td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_SOC </td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_DATA </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>State_DATA </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_DATA </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_DATA </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>default</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+156                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+157                    lm_out <= 1'b0;
+           <font color = "green">            ==></font>
+158                end
+159                else begin
+160                    lm_out <= subcarrier & encoded_data;
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_72">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+  <ul name="tag_tx">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

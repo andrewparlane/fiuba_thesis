@@ -1,0 +1,2569 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: initialisation</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | <a href="asserts.html" ><b>asserts</b></a></div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_initialisation'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_initialisation')">initialisation</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s5 cl rt"> 58.93</td>
+<td class="s8 cl rt"><a href="mod6.html#Line" > 80.61</a></td>
+<td class="s4 cl rt"><a href="mod6.html#Cond" > 40.00</a></td>
+<td class="s1 cl rt"><a href="mod6.html#Toggle" > 15.02</a></td>
+<td class="s5 cl rt"><a href="mod6.html#FSM" > 50.00</a></td>
+<td class="s6 cl rt"><a href="mod6.html#Branch" > 67.92</a></td>
+<td class="s10 cl rt"><a href="mod6.html#Assert" >100.00</a></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/initialisation.sv')">/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/initialisation.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod6.html#inst_tag_14"  onclick="showContent('inst_tag_14')">generate_top_saif_tb.dut.iso14443a_inst.part3.initialisation_inst</a></td>
+<td class="s5 cl rt"> 58.93</td>
+<td class="s8 cl rt"><a href="mod6.html#Line" > 80.61</a></td>
+<td class="s4 cl rt"><a href="mod6.html#Cond" > 40.00</a></td>
+<td class="s1 cl rt"><a href="mod6.html#Toggle" > 15.02</a></td>
+<td class="s5 cl rt"><a href="mod6.html#FSM" > 50.00</a></td>
+<td class="s6 cl rt"><a href="mod6.html#Branch" > 67.92</a></td>
+<td class="s10 cl rt"><a href="mod6.html#Assert" >100.00</a></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_initialisation'>
+<hr>
+<a name="inst_tag_14"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_14" >generate_top_saif_tb.dut.iso14443a_inst.part3.initialisation_inst</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s5 cl rt"> 58.93</td>
+<td class="s8 cl rt"><a href="mod6.html#Line" > 80.61</a></td>
+<td class="s4 cl rt"><a href="mod6.html#Cond" > 40.00</a></td>
+<td class="s1 cl rt"><a href="mod6.html#Toggle" > 15.02</a></td>
+<td class="s5 cl rt"><a href="mod6.html#FSM" > 50.00</a></td>
+<td class="s6 cl rt"><a href="mod6.html#Branch" > 67.92</a></td>
+<td class="s10 cl rt"><a href="mod6.html#Assert" >100.00</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s5 cl rt"> 58.93</td>
+<td class="s8 cl rt"> 80.61</td>
+<td class="s4 cl rt"> 40.00</td>
+<td class="s1 cl rt"> 15.02</td>
+<td class="s5 cl rt"> 50.00</td>
+<td class="s6 cl rt"> 67.92</td>
+<td class="s10 cl rt">100.00</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s5 cl rt"> 50.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s5 cl rt"> 50.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod34.html#inst_tag_48" >part3</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td colspan=8>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_initialisation'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod6.html" >initialisation</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s8"><td class="lf">TOTAL</td><td></td><td>98</td><td>79</td><td>80.61</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>92</td><td>3</td><td>3</td><td>100.00</td></tr>
+<tr class="s9"><td class="lf">ALWAYS</td><td>189</td><td>32</td><td>29</td><td>90.62</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>341</td><td>5</td><td>5</td><td>100.00</td></tr>
+<tr class="s6"><td class="lf">ALWAYS</td><td>361</td><td>32</td><td>21</td><td>65.62</td></tr>
+<tr class="s8"><td class="lf">ALWAYS</td><td>512</td><td>26</td><td>21</td><td>80.77</td></tr>
+<tr class="wht"><td class="lf">INITIAL</td><td>608</td><td>0</td><td>0</td><td></td></tr>
+</table>
+<pre class="code"><br clear=all>
+91                          always_ff @(posedge clk, negedge rst_n) begin
+92         1/1                  if (!rst_n) begin
+93         1/1                      current_cascade_level   &lt;= '0;
+94                              end
+95                              else begin
+96         1/1                      current_cascade_level   &lt;= next_cascade_level;
+97                              end
+98                          end
+99                      
+100                         // are we in the final cascade level?
+101                         logic is_final_cascade_level;
+102                     
+103                         // the SELECT code, used to make sure the AC/SELECT message has the right level for us
+104                         logic [7:0] current_cascade_level_code;
+105                         assign current_cascade_level_code = (current_cascade_level == 0) ? SEL1 :
+106                                                             (current_cascade_level == 1) ? SEL2 :
+107                                                                                            SEL3;
+108                     
+109                         // put the expected data for the current cascade level here
+110                         UIDData current_cascade_uid_data;
+111                     
+112                         // Our our expected UID for each cascade level
+113                         // see ISO/IEC 14443-3:2016 Section 6.5.4
+114                         generate
+115                             if (UID_SIZE == UIDSize_SINGLE) begin: uidSingle
+116                                 // For single UIDs there's only the first cascade level
+117                                 // and it contains all of the UID
+118                                 logic [31:0] uid_cascade_1;
+119                     
+120                                 assign uid_cascade_1                = uid[31:0];
+121                                 assign current_cascade_uid_data.uid = uid_cascade_1;
+122                                 assign is_final_cascade_level       = 1'b1;
+123                             end
+124                             else begin: notUidSingle
+125                                 // for double and triple UIDs the first cascade level has the CASCADE_TAG
+126                                 // and then the lower 24 bits of the UID
+127                                 logic [31:0] uid_cascade_1;
+128                                 assign uid_cascade_1                    = {uid[23:0], CASCADE_TAG};
+129                     
+130                                 if (UID_SIZE == UIDSize_DOUBLE) begin: uidDouble
+131                                     // For double UIDs there are two cascade levels
+132                                     // the second has the upper 4 bytes of the UID
+133                                     logic [31:0] uid_cascade_2;
+134                     
+135                                     assign uid_cascade_2                = uid[55:24];
+136                                     assign current_cascade_uid_data.uid = (current_cascade_level == 0) ? uid_cascade_1 :
+137                                                                                                          uid_cascade_2;
+138                                     assign is_final_cascade_level       = (current_cascade_level == 1);
+139                                 end
+140                                 else if (UID_SIZE == UIDSize_TRIPLE) begin: uidTriple
+141                                     // For tripel UIDs there are three cascade levels
+142                                     // the second has the middle 3 bytes of the UID and the CASCADE_TAG
+143                                     // the third has the upper 4 bytes of the UID
+144                                     logic [31:0] uid_cascade_2;
+145                                     logic [31:0] uid_cascade_3;
+146                     
+147                                     assign uid_cascade_2                = {uid[47:24], CASCADE_TAG};
+148                                     assign uid_cascade_3                = uid[79:48];
+149                                     assign current_cascade_uid_data.uid = (current_cascade_level == 0) ? uid_cascade_1 :
+150                                                                           (current_cascade_level == 1) ? uid_cascade_2 :
+151                                                                                                          uid_cascade_3;
+152                                     assign is_final_cascade_level       = (current_cascade_level == 2);
+153                                 end
+154                                 else begin
+155                                     // cause a synth error
+156                                     synth_time_error uid_size_invalid(.*);
+157                                 end
+158                             end
+159                         endgenerate
+160                     
+161                         // calculate the BCC for the current cascade level
+162                         assign current_cascade_uid_data.bcc = current_cascade_uid_data.uid[31:24] ^
+163                                                               current_cascade_uid_data.uid[23:16] ^
+164                                                               current_cascade_uid_data.uid[15: 8] ^
+165                                                               current_cascade_uid_data.uid[7 : 0];
+166                     
+167                         // ========================================================================
+168                         // Clock in the Rx message and detect errors
+169                         // ========================================================================
+170                     
+171                         // The largest message we could receive is the SELECT message
+172                         // consisting of 7 bytes (+ 2 bytes of CRC, which we drop since we check it in the parent module)
+173                         localparam int  RX_BUFF_LEN = 7;
+174                         logic [7:0]     rx_buffer [RX_BUFF_LEN];
+175                         logic [2:0]     rx_count;
+176                         logic           rx_error_flag;
+177                         logic           pkt_received;
+178                         logic           is_AC_SELECT_for_us;
+179                         logic           uid_matching;           // currently checking our UID against the incoming data
+180                         logic [7:0]     ac_reply_buffer [5];    // the reply to AC messages
+181                     
+182                         logic is_REQA;
+183                         logic is_WUPA;
+184                         logic is_HLTA;
+185                         logic is_AC_SELECT;             // is AC or SELECT
+186                         logic is_SELECT;                // is SELECT (not AC)
+187                     
+188                         always_ff @(posedge clk, negedge rst_n) begin
+189        1/1                  if (!rst_n) begin
+190        1/1                      rx_count                &lt;= '0;
+191        1/1                      rx_error_flag           &lt;= 1'b0;
+192        1/1                      pkt_received            &lt;= 1'b0;
+193                             end
+194                             else begin
+195                                 // this should only assert for one tick at a time
+196        1/1                      pkt_received    &lt;= 1'b0;
+197                     
+198                                 // I don't check that these signals are correct. There are various things
+199                                 // that would cause trouble here such as rx_iface.data_bits != 0 when rx_eoc == 0
+200                                 // But we have to assume that the rx module produces valid signals, and that
+201                                 // the Rx testbench will catch any problems.
+202                     
+203        1/1                      if (rx_iface.soc) begin
+204                                     // start of a new message
+205        1/1                          rx_count        &lt;= '0;
+206        1/1                          rx_error_flag   &lt;= 1'b0;
+207                     
+208                                     // don't start UID matching yet
+209        1/1                          uid_matching    &lt;= 1'b0;
+210                                 end
+                        MISSING_ELSE
+211                     
+212        1/1                      if (rx_iface.eoc) begin
+213                                     // we use this rather than rx_eoc directly,
+214                                     // because for partial packets the rx_iface.data_valid assserts
+215                                     // at the same time, and so our rx_buffer won't be correct
+216                                     // until the next tick.
+217        1/1                          pkt_received    &lt;= 1'b1;
+218                                 end
+                        MISSING_ELSE
+219                     
+220        1/1                      if (rx_iface.error) begin
+221        <font color = "red">0/1     ==>                  rx_error_flag   &lt;= 1'b1;</font>
+222                                 end
+                        MISSING_ELSE
+223                     
+224        1/1                      if (rx_iface.data_valid) begin
+225        1/1                          if (rx_count != $unsigned($bits(rx_count)'(RX_BUFF_LEN))) begin
+226        1/1                              rx_buffer[rx_count]     &lt;= rx_iface.data;
+227                     
+228        1/1                              if ((rx_count == 1) &amp;&amp; is_AC_SELECT) begin
+229                                             // received SEL + NVB
+230                                             // start UID matching bit by bit
+231        1/1                                  uid_matching        &lt;= 1'b1;
+232        1/1                                  is_AC_SELECT_for_us &lt;= 1'b1;
+233                     
+234                                             // we set up this buffer, so we can just shift right
+235                                             // 1 bit for every bit we receive, and the we just copy
+236                                             // the whole buffer to the tx_buffer (if it's for us),
+237                                             // and just set the correct number of bits and bytes to send
+238        1/1                                  ac_reply_buffer     &lt;= {current_cascade_uid_data.uid[7:0],
+239                                                                     current_cascade_uid_data.uid[15:8],
+240                                                                     current_cascade_uid_data.uid[23:16],
+241                                                                     current_cascade_uid_data.uid[31:24],
+242                                                                     current_cascade_uid_data.bcc};
+243                                         end
+                        MISSING_ELSE
+244                     
+245        1/1                              if (!rx_iface.eoc) begin
+246                                             // don't count partial bytes. This makes our rx_count and rx_iface.data_bits
+247                                             // match the AC/SELECT message's NVB
+248        1/1                                  rx_count &lt;= rx_count + 1'd1;
+249                     
+250                                             // if we are matching the uid, and we've just received a full byte
+251                                             // then shift the ac_reply_buffer right by one byte and start checking
+252                                             // the next bit.
+253        1/1                                  if (uid_matching) begin
+254        1/1                                      ac_reply_buffer[0:3] &lt;= ac_reply_buffer[1:4];
+255                                             end
+                        MISSING_ELSE
+256                     
+257        1/1                                  if (rx_count == 6) begin
+258                                                 // if we were matching the UID, then we just received the BCC
+259                                                 // so next would be the CRC, stop checking the UID now, we match
+260        1/1                                      uid_matching &lt;= 1'b0;
+261                                             end
+                        MISSING_ELSE
+262                                         end
+                        MISSING_ELSE
+263                     
+264                                     end
+                        MISSING_ELSE
+265                                 end
+                        MISSING_ELSE
+266                     
+267        1/1                      if (uid_matching) begin
+268        1/1                          if (rx_iface_bits.data_valid) begin
+269                                         // received a UID bit
+270                                         // is it still for us?
+271        1/1                              if (rx_iface_bits.data != ac_reply_buffer[0][0]) begin
+272                                             // not for us.
+273        <font color = "red">0/1     ==>                          uid_matching        &lt;= 1'b0;</font>
+274        <font color = "red">0/1     ==>                          is_AC_SELECT_for_us &lt;= 1'b0;</font>
+275                                         end
+                        MISSING_ELSE
+276                     
+277                                         // shift the LSB of the reply buffer right by one
+278        1/1                              ac_reply_buffer[0][6:0] &lt;= ac_reply_buffer[0][7:1];
+279                                     end
+                        MISSING_ELSE
+280                                 end
+                        MISSING_ELSE
+281                             end
+282                         end
+283                     
+284                         // ========================================================================
+285                         // Detect the various messages that we care about
+286                         // ========================================================================
+287                     
+288                         // Messages we care about (see ISO/IEC 14443-3:2016 section 6.5.1)
+289                         // -------------------------------------------------
+290                         // MSG     HAS CRC     REPLY WITH      REPLY HAS CRC
+291                         // -------------------------------------------------
+292                         // REQA    no          ATQA            no
+293                         // WUPA    no          ATQA            no
+294                         // HLTA    yes         NO REPLY        no
+295                         // AC      no          AC              no
+296                         // SELECT  yes         SAK             yes
+297                     
+298                         // cast the rx_buffer to the AntiCollisionSelectCommand struct
+299                         AntiCollisionSelectCommand ac_sel_msg;
+300                         assign ac_sel_msg = AntiCollisionSelectCommand'(rx_buffer);
+301                     
+302                         assign is_REQA                  = (rx_buffer[0][6:0] == REQA)   &amp;&amp;
+303                                                           (rx_count == 0)               &amp;&amp;  // partial byte
+304                                                           (rx_iface.data_bits == 7);
+305                     
+306                         assign is_WUPA                  = (rx_buffer[0][6:0] == WUPA)   &amp;&amp;
+307                                                           (rx_count == 0)               &amp;&amp;  // partial byte
+308                                                           (rx_iface.data_bits == 7);
+309                     
+310                         assign is_HLTA                  = (rx_buffer[0] == HLTA[7:0])   &amp;&amp;
+311                                                           (rx_buffer[1] == HLTA[15:8])  &amp;&amp;
+312                                                           rx_crc_ok                     &amp;&amp;
+313                                                           (rx_count == 4)               &amp;&amp; // 2 bytes HLTA + 2 bytes CRC
+314                                                           (rx_iface.data_bits == 0);
+315                     
+316                         // we don't check that the received length matches the NVB here.
+317                         // If the UID matches ours, then we respond.
+318                         assign is_AC_SELECT             = (ac_sel_msg.cascadeLevel == current_cascade_level_code); /* &amp;&amp;
+319                                                           (ac_sel_msg.nvb.bits  == rx_iface.data_bits)              &amp;&amp;
+320                                                           (ac_sel_msg.nvb.bytes == rx_count); */
+321                     
+322                         // CRC is checked where we use is_SELECT
+323                         // since otherwise we are is_AC_SELECT and is_AC_SELECT_for_us
+324                         // but not is_SELECT which means we respond with our AC reply instead of erroring
+325                         assign is_SELECT                = is_AC_SELECT                  &amp;&amp;
+326                                                           (ac_sel_msg.nvb.bits == 0)    &amp;&amp;
+327                                                           (ac_sel_msg.nvb.bytes == 7);
+328                     
+329                         // ========================================================================
+330                         // State machine
+331                         // ========================================================================
+332                     
+333                         // state should be of type ISO14443A_pkg::InitialisationState.
+334                         // but VCS doesn't seem to be able to generate a correct SAIF file if I use that.
+335                         logic [1:0]         state;
+336                         logic               state_star;
+337                         InitialisationState next_state;
+338                         logic               next_state_star;
+339                     
+340                         always_ff @(posedge clk, negedge rst_n) begin
+341        1/1                  if (!rst_n) begin
+342        1/1                      state       &lt;= InitialisationState_IDLE;
+343        1/1                      state_star  &lt;= 1'b0;
+344                             end
+345                             else begin
+346        1/1                      state       &lt;= next_state;
+347        1/1                      state_star  &lt;= next_state_star;
+348                             end
+349                         end
+350                     
+351                         enum logic [1:0]
+352                         {
+353                             Reply_NONE,
+354                             Reply_ATQA,
+355                             Reply_AC,
+356                             Reply_SAK
+357                         } reply;
+358                     
+359                         always_comb begin
+360                             // assign defaults to prevent latches
+361        1/1                  next_state          = InitialisationState'(state);
+362        1/1                  next_state_star     = state_star;
+363        1/1                  reply               = Reply_NONE;
+364        1/1                  next_cascade_level  = current_cascade_level;
+365                     
+366                             // do nothing if we haven't received a packet (except if we are InitialisationState_PROTOCOL
+367                             // and the deselect command is detected in the 14443-4 block)
+368        1/1                  if (pkt_received) begin
+369                                 // See ISO/IEC 14443-3:2016 section 6.3 PICC states
+370                     
+371                                 // on an error we return to InitialisationState_IDLE (state_star remains the same)
+372        1/1                      if (rx_error_flag) begin
+373        <font color = "red">0/1     ==>                  if ((state == InitialisationState_READY) || (state == InitialisationState_ACTIVE)) begin</font>
+374        <font color = "red">0/1     ==>                      next_state = InitialisationState_IDLE;</font>
+375                                     end
+376                                     else begin
+377                                         // in other states we stay where we are, either we're already in IDLE
+378                                         // or we're in PROTOCOL which handles it's own messages.
+379                                     end
+380                                 end
+381                                 else begin
+382                                     // no error so process valid transitions
+383                     
+384        1/1                          case (state)
+385                                         InitialisationState_IDLE: begin
+386                                             // If we are !state_star and we get REQA / WUPA
+387                                             // or if we are state_star and we get WUPA, then go to READY and send ATQA
+388                                             // otherwise remain idle
+389        1/1                                  if ((is_REQA &amp;&amp; !state_star) || is_WUPA) begin
+390        1/1                                      next_state          = InitialisationState_READY;
+391        1/1                                      reply               = Reply_ATQA;
+392        1/1                                      next_cascade_level  = '0;
+393                                             end
+                        MISSING_ELSE
+394                                         end
+395                     
+396                                         InitialisationState_READY: begin
+397                                             // If it's a SELECT for us then move on to the next cascade level
+398                                             // or if done then got to InitialisationState_ACTIVE.
+399                                             // if it's a AC and matches us, then stay here
+400                                             // for all other messages return to idle
+401        1/1                                  if (is_AC_SELECT &amp;&amp; is_AC_SELECT_for_us) begin
+402        1/1                                      if (is_SELECT) begin
+403        1/1                                          if (rx_crc_ok) begin
+404        1/1                                              if (is_final_cascade_level) begin
+405        1/1                                                  next_state = InitialisationState_ACTIVE;
+406                                                         end
+407                                                         else begin
+408        <font color = "red">0/1     ==>                                          next_cascade_level = next_cascade_level + 1'd1;</font>
+409                                                         end
+410        1/1                                              reply = Reply_SAK;
+411                                                     end
+412                                                     else begin
+413                                                         // CRC fail is an error
+414        <font color = "red">0/1     ==>                                      next_state = InitialisationState_IDLE;</font>
+415                                                     end
+416                                                 end
+417                                                 else begin
+418        <font color = "red">0/1     ==>                                  reply = Reply_AC;</font>
+419                                                 end
+420                                             end
+421                                             else begin
+422        <font color = "red">0/1     ==>                              next_state = InitialisationState_IDLE;</font>
+423                                             end
+424                                         end
+425                     
+426                                         InitialisationState_ACTIVE: begin
+427                                             // if it's RATS then go to InitialisationState_PROTOCOL
+428                                             // if it's HLTA then go to InitialisationState_IDLE + set state_star
+429                                             // for anything else go to InitialisationState_IDLE
+430                     
+431                                             // note: we handle RATS detection in the part4 block,
+432                                             //       which asserts the iso14443_4a_rats signal.
+433                     
+434        1/1                                  if (iso14443_4a_rats) begin
+435        1/1                                      next_state = InitialisationState_PROTOCOL;
+436                                             end
+437                                             else begin
+438        <font color = "red">0/1     ==>                              next_state = InitialisationState_IDLE;</font>
+439                                             end
+440                     
+441        1/1                                  if (is_HLTA) begin
+442        <font color = "red">0/1     ==>                              next_state_star = 1'b1;</font>
+443                                             end
+                        MISSING_ELSE
+444                                         end
+445                     
+446                                         InitialisationState_PROTOCOL: begin
+447                                             // we shouldn't ever receive messages while in the PROTOCOL state
+448                                             // since the routing block should direct all messages only to the
+449                                             // iso14443_4a module.
+450                                             // just remain in this state.
+451                                             // we exit this state below, when iso14443_4a_deselect asserts.
+452                                         end
+453                     
+454                                         default: begin
+455                                             // shouldn't be here, revert to IDLE
+456        <font color = "red">0/1     ==>                          next_state = InitialisationState_IDLE;</font>
+457                                         end
+458                     
+459                                     endcase
+460                                 end
+461                             end
+462        1/1                  else if ((state == InitialisationState_PROTOCOL) &amp;&amp; iso14443_4a_deselect) begin
+463                                 // the ISO 14443-4 block has received the DESELECT command
+464                                 // go to idle + star
+465        <font color = "red">0/1     ==>              next_state      = InitialisationState_IDLE;</font>
+466        <font color = "red">0/1     ==>              next_state_star = 1'b1;</font>
+467                             end
+                        MISSING_ELSE
+468                         end
+469                     
+470                         // when the tag is in the active state is the only time the iso14443_4a block
+471                         // can receive the RATS message
+472                         assign iso14443_4a_tag_active   = (state == InitialisationState_ACTIVE);
+473                     
+474                         // if we are in the ACTIVE or PROTOCOL state then send the received messages to
+475                         // the 14443-4 module. if we are not in the PROTOCOL state then send the received
+476                         // messages to us.
+477                         // note: there is an overlap in the ACTIVE state. Where both us and the 14443-4
+478                         //       module receive the messages. That's because that message could be a HLTA,
+479                         //       an erroror, or RATS.
+480                         // We only allow the 14443-4 module to Tx when we are in state PROTOCOL
+481                         // because once it confirms that it received RATS, we move to protocol
+482                         // so the repyl happens there.
+483                         assign route_rx_to_14443_4a         = (state == InitialisationState_ACTIVE) ||
+484                                                               (state == InitialisationState_PROTOCOL);
+485                         assign route_rx_to_initialisation   = (state != InitialisationState_PROTOCOL);
+486                         assign route_tx_from_14443_4a       = (state == InitialisationState_PROTOCOL);
+487                     
+488                         // ========================================================================
+489                         // Replies
+490                         // ========================================================================
+491                     
+492                         // biggest reply is the AC command when 0 bits of the UID are sent by the PCD
+493                         // the PICC replies with the 4 bytes of UID + BCC
+494                         localparam int TX_BUFF_LEN = 5;
+495                         logic [7:0]     tx_buffer [TX_BUFF_LEN];
+496                         logic [2:0]     tx_count_minus_1;
+497                     
+498                         // Our ATQA response
+499                         localparam logic [15:0] ATQA_REPLY = ATQA(UID_SIZE);
+500                     
+501                         // VCS doesn't generate a valid SAIF file, if I assign to interface members directly
+502                         // in a sequential block.
+503                         logic       tx_iface_data_valid;
+504                         logic [2:0] tx_iface_data_bits;
+505                     
+506                         assign tx_iface.data_valid  = tx_iface_data_valid;
+507                         assign tx_iface.data_bits   = tx_iface_data_bits;
+508                     
+509                         assign tx_iface.data = tx_buffer[0];
+510                     
+511                         always_ff @(posedge clk, negedge rst_n) begin
+512        1/1                  if (!rst_n) begin
+513        1/1                      tx_iface_data_valid         &lt;= 1'b0;
+514                             end
+515                             else begin
+516                                 // tx_iface.data_valid is cleared when the tx_iface.req asserts and we are out of
+517                                 // stuff to send. tx_iface.data_valid gets set when reply is not Reply_NONE
+518                     
+519                                 // Deal with the Tx module requesting more data
+520        1/1                      if (tx_iface.req) begin
+521                                     // anything more to send?
+522        1/1                          if (tx_count_minus_1) begin
+523                                         // yes, decrement tx_count_minus_1
+524        1/1                              tx_count_minus_1    &lt;= tx_count_minus_1 - 1'd1;
+525                     
+526                                         // all transfers from the PICC are 8 bits wide
+527                                         // except the first of the AC reply
+528        1/1                              tx_iface_data_bits  &lt;= 3'd0; // 0 -&gt; 8 bits
+529                     
+530                                         // shift tx_buffer
+531        1/1                              for (int i = 0; i &lt; (TX_BUFF_LEN - 1); i++) begin
+532        1/1                                  tx_buffer[i]    &lt;= tx_buffer[i+1];
+533                                         end
+534                                     end
+535                                     else begin
+536                                         // nope
+537        1/1                              tx_iface_data_valid &lt;= 1'b0;
+538                                     end
+539                                 end
+                        MISSING_ELSE
+540                     
+541                                 // are we meant to send anything new?
+542        1/1                      case (reply)
+543                                     Reply_ATQA: begin
+544                                         // LSByte first
+545        1/1                              tx_buffer[0]            &lt;= ATQA_REPLY[7:0];
+546        1/1                              tx_buffer[1]            &lt;= ATQA_REPLY[15:8];
+547        1/1                              tx_count_minus_1        &lt;= 3'd1;    // send 2 bytes
+548        1/1                              tx_append_crc           &lt;= 1'b0;
+549        1/1                              tx_iface_data_valid     &lt;= 1'b1;
+550        1/1                              tx_iface_data_bits      &lt;= 3'd0;    // first tfer is 8 bits wide
+551                                     end
+552                                     Reply_AC: begin
+553                                         // copy all the data from the ac_reply_buffer,
+554                                         // although we only transmit the correct number of bits
+555        <font color = "red">0/1     ==>                      tx_buffer               &lt;= ac_reply_buffer;</font>
+556        <font color = "red">0/1     ==>                      tx_iface_data_valid     &lt;= 1'b1;</font>
+557                     
+558                                         // for the first transfer send 8 - ac_sel_msg.nvb.bits
+559                                         // since it's 3 bits wide, 0 is the same as 8.
+560                                         // 0 - 0 =  0 = 3'd000 = 0 -&gt; send 8 bits
+561                                         // 0 - 1 = -1 = 3'd111 = 7 -&gt; send 7 bits
+562                                         // 0 - 7 = -7 = 3'd001 = 1 -&gt; send 1 bit
+563        <font color = "red">0/1     ==>                      tx_iface_data_bits      &lt;= 3'd0 - ac_sel_msg.nvb.bits;</font>
+564                     
+565                                         // we have received nvb.bytes - 2, full bytes of the UID + BCC (5 bytes)
+566                                         // so we need to send 5 - (nvb.bytes - 2) = 7 - nvb.bytes
+567                                         // tx_count_minus_1 is -1 of what we actually want, so 6 - nvb.bytes
+568        <font color = "red">0/1     ==>                      tx_count_minus_1        &lt;= 3'd6 - ac_sel_msg.nvb.bytes;</font>
+569        <font color = "red">0/1     ==>                      tx_append_crc           &lt;= 1'b0;</font>
+570                                     end
+571                                     Reply_SAK: begin
+572        1/1                              tx_buffer[0]            &lt;= (is_final_cascade_level) ? SAK_UID_COMPLETE
+573                                                                                             : SAK_UID_NOT_COMPLETE;
+574        1/1                              tx_count_minus_1        &lt;= 3'd0;    // send 1 byte
+575        1/1                              tx_append_crc           &lt;= 1'b1;
+576        1/1                              tx_iface_data_valid     &lt;= 1'b1;
+577        1/1                              tx_iface_data_bits      &lt;= 3'd0;    // first tfer is 8 bits wide
+578                                     end
+                        MISSING_DEFAULT
+</pre>
+<hr>
+<a name="Cond"></a>
+Cond Coverage for Module : <a href="mod6.html" >initialisation</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="3" width="82">
+<tr><th></th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s4"><td class="lf">Conditions</td><td>45</td><td>18</td><td>40.00</td></tr>
+<tr class="s4"><td class="lf">Logical</td><td>45</td><td>18</td><td>40.00</td></tr>
+<tr class="wht"><td class="lf">Non-Logical</td><td>0</td><td>0</td><td></td></tr>
+<tr class="wht"><td class="lf">Event</td><td>0</td><td>0</td><td></td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       105
+ EXPRESSION ((current_cascade_level == 2'b0) ? ISO14443A_pkg::SEL1 : ((current_cascade_level == 2'b1) ? ISO14443A_pkg::SEL2 : ISO14443A_pkg::SEL3))
+             ---------------1---------------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       105
+ SUB-EXPRESSION ((current_cascade_level == 2'b1) ? ISO14443A_pkg::SEL2 : ISO14443A_pkg::SEL3)
+                 ---------------1---------------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td class="lf">Not Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       228
+ EXPRESSION ((rx_count == 3'b1) &amp;&amp; is_AC_SELECT)
+             ---------1--------    ------2-----
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       302
+ EXPRESSION ((rx_buffer[0][6:0] == ISO14443A_pkg::REQA) &amp;&amp; (rx_count == 3'b0) &amp;&amp; (rx_iface.data_bits == 3'h7))
+             ---------------------1--------------------    ---------2--------    --------------3-------------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       306
+ EXPRESSION ((rx_buffer[0][6:0] == ISO14443A_pkg::WUPA) &amp;&amp; (rx_count == 3'b0) &amp;&amp; (rx_iface.data_bits == 3'h7))
+             ---------------------1--------------------    ---------2--------    --------------3-------------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       310
+ EXPRESSION 
+ Number  Term
+      1  (rx_buffer[0] == ISO14443A_pkg::HLTA[7:0]) &amp;&amp; 
+      2  (rx_buffer[1] == ISO14443A_pkg::HLTA[15:8]) &amp;&amp; 
+      3  rx_crc_ok &amp;&amp; 
+      4  (rx_count == 3'h4) &amp;&amp; 
+      5  (rx_iface.data_bits == 3'b0))
+</pre>
+<table class="noborder">
+<col span="5" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>-4-</th><th>-5-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       325
+ EXPRESSION (is_AC_SELECT &amp;&amp; (ac_sel_msg.nvb.bits == 3'b0) &amp;&amp; (ac_sel_msg.nvb.bytes == 3'h7))
+             ------1-----    --------------2--------------    ---------------3--------------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       373
+ EXPRESSION ((state == InitialisationState_READY) || (state == InitialisationState_ACTIVE))
+             ------------------1-----------------    ------------------2------------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       389
+ EXPRESSION ((is_REQA &amp;&amp; ((!state_star))) || is_WUPA)
+             --------------1-------------    ---2---
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       389
+ SUB-EXPRESSION (is_REQA &amp;&amp; ((!state_star)))
+                 ---1---    -------2-------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       401
+ EXPRESSION (is_AC_SELECT &amp;&amp; is_AC_SELECT_for_us)
+             ------1-----    ---------2---------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       462
+ EXPRESSION ((state == InitialisationState_PROTOCOL) &amp;&amp; iso14443_4a_deselect)
+             -------------------1-------------------    ----------2---------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       483
+ EXPRESSION ((state == InitialisationState_ACTIVE) || (state == InitialisationState_PROTOCOL))
+             ------------------1------------------    -------------------2-------------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       572
+ EXPRESSION (is_final_cascade_level ? ISO14443A_pkg::SAK_UID_COMPLETE : ISO14443A_pkg::SAK_UID_NOT_COMPLETE)
+             -----------1----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod6.html" >initialisation</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s2">
+<td>Totals</td>
+<td class="rt">44</td>
+<td class="rt">12</td>
+<td class="rt">27.27 </td>
+</tr><tr class="s1">
+<td>Total Bits</td>
+<td class="rt">426</td>
+<td class="rt">64</td>
+<td class="rt">15.02 </td>
+</tr><tr class="s1">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">213</td>
+<td class="rt">35</td>
+<td class="rt">16.43 </td>
+</tr><tr class="s1">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">213</td>
+<td class="rt">29</td>
+<td class="rt">13.62 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s3">
+<td>Ports</td>
+<td class="rt">11</td>
+<td class="rt">4</td>
+<td class="rt">36.36 </td>
+</tr><tr class="s5">
+<td>Port Bits</td>
+<td class="rt">26</td>
+<td class="rt">13</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s6">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">13</td>
+<td class="rt">8</td>
+<td class="rt">61.54 </td>
+</tr><tr class="s3">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">13</td>
+<td class="rt">5</td>
+<td class="rt">38.46 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s2">
+<td>Signals</td>
+<td class="rt">33</td>
+<td class="rt">8</td>
+<td class="rt">24.24 </td>
+</tr><tr class="s1">
+<td>Signal Bits</td>
+<td class="rt">400</td>
+<td class="rt">51</td>
+<td class="rt">12.75 </td>
+</tr><tr class="s1">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">200</td>
+<td class="rt">27</td>
+<td class="rt">13.50 </td>
+</tr><tr class="s1">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">200</td>
+<td class="rt">24</td>
+<td class="rt">12.00 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>uid_variable[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rx_crc_ok</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>tx_append_crc</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>iso14443_4a_deselect</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>iso14443_4a_rats</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>iso14443_4a_tag_active</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>route_rx_to_initialisation</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>route_rx_to_14443_4a</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>route_tx_from_14443_4a</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>uid[31:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>current_cascade_level[1:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>next_cascade_level[1:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>is_final_cascade_level</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>current_cascade_level_code[7:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>current_cascade_uid_data.bcc[7:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>current_cascade_uid_data.uid[31:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>rx_count[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>rx_error_flag</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>pkt_received</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_AC_SELECT_for_us</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>uid_matching</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_REQA</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_WUPA</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>is_HLTA</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>is_AC_SELECT</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_SELECT</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>ac_sel_msg.uid_data.bcc[7:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.uid_data.uid[15:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.uid_data.uid[16]</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.uid_data.uid[17]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.uid_data.uid[18]</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.uid_data.uid[19]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>ac_sel_msg.uid_data.uid[21:20]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.uid_data.uid[23:22]</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.uid_data.uid[24]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.uid_data.uid[26:25]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>ac_sel_msg.uid_data.uid[28:27]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.uid_data.uid[31:29]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>ac_sel_msg.nvb.bits[0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.nvb.bits[1]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>ac_sel_msg.nvb.bits[2]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.nvb.rsvd2</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>ac_sel_msg.nvb.bytes[0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.nvb.bytes[1]</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.nvb.bytes[2]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.nvb.rsvd1</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.cascadeLevel[0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>ac_sel_msg.cascadeLevel[2:1]</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.cascadeLevel[3]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>ac_sel_msg.cascadeLevel[5:4]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>ac_sel_msg.cascadeLevel[6]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>ac_sel_msg.cascadeLevel[7]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>state[0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>state[1]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>state_star</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>next_state[0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>next_state[1]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>next_state_star</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>reply[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>tx_count_minus_1[0]</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>tx_count_minus_1[2:1]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>tx_iface_data_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>tx_iface_data_bits[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>uidSingle.uid_cascade_1[31:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr></table><br clear=all>
+<hr>
+<a name="FSM"></a>
+FSM Coverage for Module : <a href="mod6.html" >initialisation</a><br clear=all>
+<table align=left class="noborder">
+<caption><b>Summary for FSM :: state</b></caption>
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th><th nowrap width=200></th></tr><tr class="wht">
+<td>States</td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">100.00</td>
+<td>(Not included in score)</td>
+</tr><tr class="s5">
+<td>Transitions</td>
+<td class="rt">6</td>
+<td class="rt">3</td>
+<td class="rt">50.00 </td>
+<td></td>
+</tr><tr class="wht">
+<td>Sequences</td>
+<td class="rt">0</td>
+<td class="rt">0</td>
+<td></td>
+<td></td>
+</tr></table><br clear=all>
+<b>State, Transition and Sequence Details for FSM :: state</b><hr>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">states</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uGreen">
+<td nowrap>InitialisationState_ACTIVE</td>
+<td class="rt">405</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>InitialisationState_IDLE</td>
+<td class="rt">342</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>InitialisationState_PROTOCOL</td>
+<td class="rt">435</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>InitialisationState_READY</td>
+<td class="rt">390</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">transitions</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uRed">
+<td nowrap>InitialisationState_ACTIVE->InitialisationState_IDLE</td>
+<td class="rt">342</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>InitialisationState_ACTIVE->InitialisationState_PROTOCOL</td>
+<td class="rt">435</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>InitialisationState_IDLE->InitialisationState_READY</td>
+<td class="rt">390</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td nowrap>InitialisationState_PROTOCOL->InitialisationState_IDLE</td>
+<td class="rt">342</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>InitialisationState_READY->InitialisationState_ACTIVE</td>
+<td class="rt">405</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td nowrap>InitialisationState_READY->InitialisationState_IDLE</td>
+<td class="rt">342</td>
+<td>Not&nbsp;Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod6.html" >initialisation</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s6">
+<td>Branches</td>
+<td></td>
+<td class="rt">53</td>
+<td class="rt">36</td>
+<td class="rt">67.92 </td>
+</tr><tr class="s3">
+<td>TERNARY</td>
+<td class="rt">105</td>
+<td class="rt">3</td>
+<td class="rt">1</td>
+<td class="rt">33.33 </td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">92</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s9">
+<td>IF</td>
+<td class="rt">189</td>
+<td class="rt">20</td>
+<td class="rt">18</td>
+<td class="rt">90.00 </td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">341</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s3">
+<td>IF</td>
+<td class="rt">368</td>
+<td class="rt">17</td>
+<td class="rt">6</td>
+<td class="rt">35.29 </td>
+</tr><tr class="s7">
+<td>IF</td>
+<td class="rt">512</td>
+<td class="rt">9</td>
+<td class="rt">7</td>
+<td class="rt">77.78 </td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+105            assign current_cascade_level_code = (current_cascade_level == 0) ? SEL1 :
+                                                                                <font color = "red">-1-</font>  
+                                                                                <font color = "green">==></font>  
+106                                                (current_cascade_level == 1) ? SEL2 :
+                                                                                <font color = "red">-2-</font>  
+                                                                                <font color = "red">==></font>  
+                                                                                <font color = "red">==></font>  
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Not Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+92                 if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+93                     current_cascade_level   <= '0;
+           <font color = "green">            ==></font>
+94                 end
+95                 else begin
+96                     current_cascade_level   <= next_cascade_level;
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+189                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+190                    rx_count                <= '0;
+           <font color = "green">            ==></font>
+191                    rx_error_flag           <= 1'b0;
+192                    pkt_received            <= 1'b0;
+193                end
+194                else begin
+195                    // this should only assert for one tick at a time
+196                    pkt_received    <= 1'b0;
+197        
+198                    // I don't check that these signals are correct. There are various things
+199                    // that would cause trouble here such as rx_iface.data_bits != 0 when rx_eoc == 0
+200                    // But we have to assume that the rx module produces valid signals, and that
+201                    // the Rx testbench will catch any problems.
+202        
+203                    if (rx_iface.soc) begin
+                       <font color = "green">-2-</font>       
+204                        // start of a new message
+205                        rx_count        <= '0;
+           <font color = "green">                ==></font>
+206                        rx_error_flag   <= 1'b0;
+207        
+208                        // don't start UID matching yet
+209                        uid_matching    <= 1'b0;
+210                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+211        
+212                    if (rx_iface.eoc) begin
+                       <font color = "green">-3-</font>       
+213                        // we use this rather than rx_eoc directly,
+214                        // because for partial packets the rx_iface.data_valid assserts
+215                        // at the same time, and so our rx_buffer won't be correct
+216                        // until the next tick.
+217                        pkt_received    <= 1'b1;
+           <font color = "green">                ==></font>
+218                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+219        
+220                    if (rx_iface.error) begin
+                       <font color = "red">-4-</font>       
+221                        rx_error_flag   <= 1'b1;
+           <font color = "red">                ==></font>
+222                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+223        
+224                    if (rx_iface.data_valid) begin
+                       <font color = "green">-5-</font>       
+225                        if (rx_count != $unsigned($bits(rx_count)'(RX_BUFF_LEN))) begin
+                           <font color = "green">-6-</font>  
+226                            rx_buffer[rx_count]     <= rx_iface.data;
+227        
+228                            if ((rx_count == 1) && is_AC_SELECT) begin
+                               <font color = "green">-7-</font>  
+229                                // received SEL + NVB
+230                                // start UID matching bit by bit
+231                                uid_matching        <= 1'b1;
+           <font color = "green">                        ==></font>
+232                                is_AC_SELECT_for_us <= 1'b1;
+233        
+234                                // we set up this buffer, so we can just shift right
+235                                // 1 bit for every bit we receive, and the we just copy
+236                                // the whole buffer to the tx_buffer (if it's for us),
+237                                // and just set the correct number of bits and bytes to send
+238                                ac_reply_buffer     <= {current_cascade_uid_data.uid[7:0],
+239                                                        current_cascade_uid_data.uid[15:8],
+240                                                        current_cascade_uid_data.uid[23:16],
+241                                                        current_cascade_uid_data.uid[31:24],
+242                                                        current_cascade_uid_data.bcc};
+243                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+244        
+245                            if (!rx_iface.eoc) begin
+                               <font color = "green">-8-</font>        
+246                                // don't count partial bytes. This makes our rx_count and rx_iface.data_bits
+247                                // match the AC/SELECT message's NVB
+248                                rx_count <= rx_count + 1'd1;
+249        
+250                                // if we are matching the uid, and we've just received a full byte
+251                                // then shift the ac_reply_buffer right by one byte and start checking
+252                                // the next bit.
+253                                if (uid_matching) begin
+                                   <font color = "green">-9-</font>  
+254                                    ac_reply_buffer[0:3] <= ac_reply_buffer[1:4];
+           <font color = "green">                            ==></font>
+255                                end
+                                   MISSING_ELSE
+           <font color = "green">                        ==></font>
+256        
+257                                if (rx_count == 6) begin
+                                   <font color = "green">-10-</font>  
+258                                    // if we were matching the UID, then we just received the BCC
+259                                    // so next would be the CRC, stop checking the UID now, we match
+260                                    uid_matching <= 1'b0;
+           <font color = "green">                            ==></font>
+261                                end
+                                   MISSING_ELSE
+           <font color = "green">                        ==></font>
+262                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+263        
+264                        end
+                           MISSING_ELSE
+           <font color = "green">                ==></font>
+265                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+266        
+267                    if (uid_matching) begin
+                       <font color = "green">-11-</font>  
+268                        if (rx_iface_bits.data_valid) begin
+                           <font color = "green">-12-</font>       
+269                            // received a UID bit
+270                            // is it still for us?
+271                            if (rx_iface_bits.data != ac_reply_buffer[0][0]) begin
+                               <font color = "red">-13-</font>       
+272                                // not for us.
+273                                uid_matching        <= 1'b0;
+           <font color = "red">                        ==></font>
+274                                is_AC_SELECT_for_us <= 1'b0;
+275                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+276        
+277                            // shift the LSB of the reply buffer right by one
+278                            ac_reply_buffer[0][6:0] <= ac_reply_buffer[0][7:1];
+279                        end
+                           MISSING_ELSE
+           <font color = "green">                ==></font>
+280                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>-8-</th><th nowrap width=80>-9-</th><th nowrap width=80>-10-</th><th nowrap width=80>-11-</th><th nowrap width=80>-12-</th><th nowrap width=80>-13-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+341                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+342                    state       <= InitialisationState_IDLE;
+           <font color = "green">            ==></font>
+343                    state_star  <= 1'b0;
+344                end
+345                else begin
+346                    state       <= next_state;
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+368                if (pkt_received) begin
+                   <font color = "green">-1-</font>  
+369                    // See ISO/IEC 14443-3:2016 section 6.3 PICC states
+370        
+371                    // on an error we return to InitialisationState_IDLE (state_star remains the same)
+372                    if (rx_error_flag) begin
+                       <font color = "red">-2-</font>  
+373                        if ((state == InitialisationState_READY) || (state == InitialisationState_ACTIVE)) begin
+                           <font color = "red">-3-</font>  
+374                            next_state = InitialisationState_IDLE;
+375                        end
+376                        else begin
+377                            // in other states we stay where we are, either we're already in IDLE
+378                            // or we're in PROTOCOL which handles it's own messages.
+379                        end
+380                    end
+381                    else begin
+382                        // no error so process valid transitions
+383        
+384                        case (state)
+                           <font color = "red">-4-</font>  
+385                            InitialisationState_IDLE: begin
+386                                // If we are !state_star and we get REQA / WUPA
+387                                // or if we are state_star and we get WUPA, then go to READY and send ATQA
+388                                // otherwise remain idle
+389                                if ((is_REQA && !state_star) || is_WUPA) begin
+                                   <font color = "green">-5-</font>  
+390                                    next_state          = InitialisationState_READY;
+391                                    reply               = Reply_ATQA;
+392                                    next_cascade_level  = '0;
+393                                end
+394                            end
+395        
+396                            InitialisationState_READY: begin
+397                                // If it's a SELECT for us then move on to the next cascade level
+398                                // or if done then got to InitialisationState_ACTIVE.
+399                                // if it's a AC and matches us, then stay here
+400                                // for all other messages return to idle
+401                                if (is_AC_SELECT && is_AC_SELECT_for_us) begin
+                                   <font color = "red">-6-</font>  
+402                                    if (is_SELECT) begin
+                                       <font color = "red">-7-</font>  
+403                                        if (rx_crc_ok) begin
+                                           <font color = "red">-8-</font>  
+404                                            if (is_final_cascade_level) begin
+                                               <font color = "red">-9-</font>  
+405                                                next_state = InitialisationState_ACTIVE;
+406                                            end
+407                                            else begin
+408                                                next_cascade_level = next_cascade_level + 1'd1;
+409                                            end
+410                                            reply = Reply_SAK;
+411                                        end
+412                                        else begin
+413                                            // CRC fail is an error
+414                                            next_state = InitialisationState_IDLE;
+415                                        end
+416                                    end
+417                                    else begin
+418                                        reply = Reply_AC;
+419                                    end
+420                                end
+421                                else begin
+422                                    next_state = InitialisationState_IDLE;
+423                                end
+424                            end
+425        
+426                            InitialisationState_ACTIVE: begin
+427                                // if it's RATS then go to InitialisationState_PROTOCOL
+428                                // if it's HLTA then go to InitialisationState_IDLE + set state_star
+429                                // for anything else go to InitialisationState_IDLE
+430        
+431                                // note: we handle RATS detection in the part4 block,
+432                                //       which asserts the iso14443_4a_rats signal.
+433        
+434                                if (iso14443_4a_rats) begin
+                                   <font color = "red">-10-</font>  
+435                                    next_state = InitialisationState_PROTOCOL;
+436                                end
+437                                else begin
+438                                    next_state = InitialisationState_IDLE;
+439                                end
+440        
+441                                if (is_HLTA) begin
+                                   <font color = "red">-11-</font>  
+442                                    next_state_star = 1'b1;
+443                                end
+444                            end
+445        
+446                            InitialisationState_PROTOCOL: begin
+447                                // we shouldn't ever receive messages while in the PROTOCOL state
+448                                // since the routing block should direct all messages only to the
+449                                // iso14443_4a module.
+450                                // just remain in this state.
+451                                // we exit this state below, when iso14443_4a_deselect asserts.
+452                            end
+453        
+454                            default: begin
+455                                // shouldn't be here, revert to IDLE
+456                                next_state = InitialisationState_IDLE;
+457                            end
+458        
+459                        endcase
+460                    end
+461                end
+462                else if ((state == InitialisationState_PROTOCOL) && iso14443_4a_deselect) begin
+                        <font color = "red">-12-</font>  
+           <font color = "red">        ==></font>
+           <font color = "red">        ==></font>
+           <font color = "green">        ==></font>
+                   MISSING_ELSE
+           <font color = "green">        ==></font>
+           <font color = "green">        ==></font>
+           <font color = "red">        ==></font>
+           <font color = "red">        ==></font>
+           <font color = "red">        ==></font>
+           <font color = "red">        ==></font>
+           <font color = "green">        ==></font>
+           <font color = "red">        ==></font>
+           <font color = "red">        ==></font>
+                   MISSING_ELSE
+           <font color = "green">        ==></font>
+           <font color = "red">        ==></font>
+           <font color = "red">        ==></font>
+463                    // the ISO 14443-4 block has received the DESELECT command
+464                    // go to idle + star
+465                    next_state      = InitialisationState_IDLE;
+           <font color = "red">            ==></font>
+466                    next_state_star = 1'b1;
+467                end
+                   MISSING_ELSE
+           <font color = "green">        ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>-8-</th><th nowrap width=80>-9-</th><th nowrap width=80>-10-</th><th nowrap width=80>-11-</th><th nowrap width=80>-12-</th><th nowrap width=80>Status</th></tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>InitialisationState_IDLE </td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>InitialisationState_IDLE </td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>InitialisationState_READY </td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>InitialisationState_READY </td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>InitialisationState_READY </td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>InitialisationState_READY </td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>InitialisationState_READY </td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>InitialisationState_ACTIVE </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>InitialisationState_ACTIVE </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>InitialisationState_ACTIVE </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>InitialisationState_ACTIVE </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>InitialisationState_PROTOCOL </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>default</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+512                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+513                    tx_iface_data_valid         <= 1'b0;
+           <font color = "green">            ==></font>
+514                end
+515                else begin
+516                    // tx_iface.data_valid is cleared when the tx_iface.req asserts and we are out of
+517                    // stuff to send. tx_iface.data_valid gets set when reply is not Reply_NONE
+518        
+519                    // Deal with the Tx module requesting more data
+520                    if (tx_iface.req) begin
+                       <font color = "green">-2-</font>       
+521                        // anything more to send?
+522                        if (tx_count_minus_1) begin
+                           <font color = "green">-3-</font>  
+523                            // yes, decrement tx_count_minus_1
+524                            tx_count_minus_1    <= tx_count_minus_1 - 1'd1;
+           <font color = "green">                    ==></font>
+525        
+526                            // all transfers from the PICC are 8 bits wide
+527                            // except the first of the AC reply
+528                            tx_iface_data_bits  <= 3'd0; // 0 -> 8 bits
+529        
+530                            // shift tx_buffer
+531                            for (int i = 0; i < (TX_BUFF_LEN - 1); i++) begin
+532                                tx_buffer[i]    <= tx_buffer[i+1];
+533                            end
+534                        end
+535                        else begin
+536                            // nope
+537                            tx_iface_data_valid <= 1'b0;
+           <font color = "green">                    ==></font>
+538                        end
+539                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+540        
+541                    // are we meant to send anything new?
+542                    case (reply)
+                       <font color = "red">-4-</font>  
+543                        Reply_ATQA: begin
+544                            // LSByte first
+545                            tx_buffer[0]            <= ATQA_REPLY[7:0];
+           <font color = "green">                    ==></font>
+546                            tx_buffer[1]            <= ATQA_REPLY[15:8];
+547                            tx_count_minus_1        <= 3'd1;    // send 2 bytes
+548                            tx_append_crc           <= 1'b0;
+549                            tx_iface_data_valid     <= 1'b1;
+550                            tx_iface_data_bits      <= 3'd0;    // first tfer is 8 bits wide
+551                        end
+552                        Reply_AC: begin
+553                            // copy all the data from the ac_reply_buffer,
+554                            // although we only transmit the correct number of bits
+555                            tx_buffer               <= ac_reply_buffer;
+           <font color = "red">                    ==></font>
+556                            tx_iface_data_valid     <= 1'b1;
+557        
+558                            // for the first transfer send 8 - ac_sel_msg.nvb.bits
+559                            // since it's 3 bits wide, 0 is the same as 8.
+560                            // 0 - 0 =  0 = 3'd000 = 0 -> send 8 bits
+561                            // 0 - 1 = -1 = 3'd111 = 7 -> send 7 bits
+562                            // 0 - 7 = -7 = 3'd001 = 1 -> send 1 bit
+563                            tx_iface_data_bits      <= 3'd0 - ac_sel_msg.nvb.bits;
+564        
+565                            // we have received nvb.bytes - 2, full bytes of the UID + BCC (5 bytes)
+566                            // so we need to send 5 - (nvb.bytes - 2) = 7 - nvb.bytes
+567                            // tx_count_minus_1 is -1 of what we actually want, so 6 - nvb.bytes
+568                            tx_count_minus_1        <= 3'd6 - ac_sel_msg.nvb.bytes;
+569                            tx_append_crc           <= 1'b0;
+570                        end
+571                        Reply_SAK: begin
+572                            tx_buffer[0]            <= (is_final_cascade_level) ? SAK_UID_COMPLETE
+                                                                                   <font color = "red">-5-</font>  
+                                                                                   <font color = "green">==></font>  
+                                                                                   <font color = "red">==></font>  
+573                                                                                : SAK_UID_NOT_COMPLETE;
+574                            tx_count_minus_1        <= 3'd0;    // send 1 byte
+575                            tx_append_crc           <= 1'b1;
+576                            tx_iface_data_valid     <= 1'b1;
+577                            tx_iface_data_bits      <= 3'd0;    // first tfer is 8 bits wide
+578                        end
+                           MISSING_DEFAULT
+           <font color = "green">                ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>Reply_ATQA </td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>Reply_AC </td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>Reply_SAK </td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>Reply_SAK </td>
+<td align=center>0</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>MISSING_DEFAULT</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<hr>
+<a name="Assert"></a>
+Assert Coverage for Module : <a href="mod6.html" >initialisation</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Attempted</th><th nowrap width=80>Percent</th><th nowrap width=80>Succeeded/Matched</th><th nowrap width=80>Percent</th></tr><tr>
+<td class="wht cl"><a href="#382313944" >Assertions</a></td>
+<td class="wht cl rt">3</td>
+<td class="s10 cl rt">3</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s10 cl rt">3</td>
+<td class="s10 cl rt">100.00</td>
+</tr><tr>
+<td class="wht cl"><a href="#1680273667" >Cover properties</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><a href="#922332638" >Cover sequences</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><b>Total</b></td>
+<td class="wht cl rt">3</td>
+<td class="s10 cl rt">3</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s10 cl rt">3</td>
+<td class="s10 cl rt">100.00</td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<br clear=all>
+<a name="382313944"></a>
+<b>Assertion Details</b><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td>Attempts</td><td>Real Successes</td><td>Failures</td><td>Incomplete</td></tr><tr>
+<td class="wht cl"><a name="564599400"></a>
+acSelSizeChecks.acSelSize</td>
+<td class="s9 cl rt">1</td>
+<td class="s9 cl rt">1</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1823562326"></a>
+acSelSizeChecks.nvbSize</td>
+<td class="s9 cl rt">1</td>
+<td class="s9 cl rt">1</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1849825302"></a>
+acSelSizeChecks.uidDataSize</td>
+<td class="s9 cl rt">1</td>
+<td class="s9 cl rt">1</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_14">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+    <li>
+      <a href="#Assert">Assert</a>    </li>
+  </ul>
+  <ul name="tag_initialisation">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+    <li>
+      <a href="#Assert">Assert</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

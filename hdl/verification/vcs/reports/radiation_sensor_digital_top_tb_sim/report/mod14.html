@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: frame_encode</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | <a href="asserts.html" ><b>asserts</b></a></div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_frame_encode'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_frame_encode')">frame_encode</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 91.23</td>
+<td class="s9 cl rt"><a href="mod14.html#Line" > 98.25</a></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt"><a href="mod14.html#Toggle" >100.00</a></td>
+<td class="s7 cl rt"><a href="mod14.html#FSM" > 71.43</a></td>
+<td class="s9 cl rt"><a href="mod14.html#Branch" > 95.24</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/frame_encode.sv')">/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/frame_encode.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod14.html#inst_tag_28"  onclick="showContent('inst_tag_28')">radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.framing_inst.fe_inst</a></td>
+<td class="s9 cl rt"> 91.23</td>
+<td class="s9 cl rt"><a href="mod14.html#Line" > 98.25</a></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt"><a href="mod14.html#Toggle" >100.00</a></td>
+<td class="s7 cl rt"><a href="mod14.html#FSM" > 71.43</a></td>
+<td class="s9 cl rt"><a href="mod14.html#Branch" > 95.24</a></td>
+<td class="wht cl rt"></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_frame_encode'>
+<hr>
+<a name="inst_tag_28"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_28" >radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.framing_inst.fe_inst</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 91.23</td>
+<td class="s9 cl rt"><a href="mod14.html#Line" > 98.25</a></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt"><a href="mod14.html#Toggle" >100.00</a></td>
+<td class="s7 cl rt"><a href="mod14.html#FSM" > 71.43</a></td>
+<td class="s9 cl rt"><a href="mod14.html#Branch" > 95.24</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 91.23</td>
+<td class="s9 cl rt"> 98.25</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="s7 cl rt"> 71.43</td>
+<td class="s9 cl rt"> 95.24</td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod31.html#inst_tag_45" >framing_inst</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td colspan=8>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_frame_encode'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod14.html" >frame_encode</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s9"><td class="lf">TOTAL</td><td></td><td>57</td><td>56</td><td>98.25</td></tr>
+<tr class="s9"><td class="lf">ALWAYS</td><td>88</td><td>57</td><td>56</td><td>98.25</td></tr>
+</table>
+<pre class="code"><br clear=all>
+87                          always_ff @(posedge clk, negedge rst_n) begin
+88         1/1                  if (!rst_n) begin
+89         1/1                      state                   &lt;= State_IDLE;
+90         1/1                      in_iface_req            &lt;= 1'b0;
+91         1/1                      out_iface_data_valid    &lt;= 1'b0;
+92                              end
+93                              else begin
+94                                  // req should only ever be asserted one tick at a time
+95         1/1                      in_iface_req    &lt;= 1'b0;
+96                      
+97         1/1                      case (state)
+98                                      State_IDLE: begin
+99                                          // we're idle
+100                                         // wait for fdt_trigger
+101        1/1                              if (fdt_trigger) begin
+102                                             // start if data valid
+103        1/1                                  if (in_iface.data_valid) begin
+104                                                 // start sending data
+105        1/1                                      out_iface_data              &lt;= in_iface.data;
+106        1/1                                      out_iface_data_valid        &lt;= 1'b1;
+107        1/1                                      out_iface_last_bit_in_byte  &lt;= 1'b0;
+108        1/1                                      parity                      &lt;= !in_iface.data;
+109                     
+110        1/1                                      if (in_iface.last_bit_in_byte) begin
+111                                                     // send parity bit next
+112        1/1                                          state   &lt;= State_PARITY;
+113                                                 end
+114                                                 else begin
+115        1/1                                          state   &lt;= State_DATA;
+116                                                 end
+117                     
+118                                                 // and request the next bit
+119        1/1                                      in_iface_req    &lt;= 1'b1;
+120                                             end
+                        MISSING_ELSE
+121                                         end
+                        MISSING_ELSE
+122                                     end
+123                     
+124                                     State_DATA: begin
+125                                         // when the REQ comes in from the 14443-2 Tx module then send out the next data bit
+126        1/1                              if (out_iface.req) begin
+127                                             // note: We ignore in_iface.data_valid here as PICC -&gt; PCD comms should always
+128                                             // end with a parity bit. The sender should take care to always send the correct
+129                                             // number of bits
+130                     
+131                                             // send the next bit and update the parity bit
+132        1/1                                  out_iface_data              &lt;= in_iface.data;
+133        1/1                                  out_iface_last_bit_in_byte  &lt;= 1'b0;
+134        1/1                                  parity                      &lt;= parity ^ in_iface.data;
+135                     
+136        1/1                                  if (in_iface.last_bit_in_byte) begin
+137                                                 // sending the last bit of this byte
+138                                                 // next bit is the parity bit
+139        1/1                                      state   &lt;= State_PARITY;
+140                                             end
+                        MISSING_ELSE
+141                     
+142                                             // request the next bit
+143        1/1                                  in_iface_req    &lt;= 1'b1;
+144                                         end
+                        MISSING_ELSE
+145                                     end
+146                     
+147                                     State_PARITY: begin
+148                                         // wait for the bit encoder to request more data
+149        1/1                              if (out_iface.req) begin
+150                                             // send the parity bit
+151        1/1                                  out_iface_data              &lt;= parity;
+152        1/1                                  out_iface_last_bit_in_byte  &lt;= 1'b1;
+153                     
+154                                             // anything more to send?
+155        1/1                                  if (in_iface.data_valid) begin
+156                                                 // yep
+157        1/1                                      state           &lt;= State_DATA;
+158        1/1                                      parity          &lt;= 1'b1;
+159                                             end
+160        1/1                                  else if (append_crc) begin
+161                                                 // no more data to send, but we have the CRC to send
+162        1/1                                      cached_crc      &lt;= crc;
+163        1/1                                      bits_remaining  &lt;= 3'd0;
+164        1/1                                      crc_byte        &lt;= 1'd0;    // CRC gets sent out LSByte first
+165        1/1                                      parity          &lt;= 1'b1;
+166        1/1                                      state           &lt;= State_CRC;
+167                                             end
+168                                             else begin
+169                                                 // nothing more to send
+170        1/1                                      state           &lt;= State_END;
+171                                             end
+172                                         end
+                        MISSING_ELSE
+173                                     end
+174                     
+175                                     State_CRC: begin
+176                                         // when the REQ comes in from the 14443-2 Tx module then send out the next crc bit
+177        1/1                              if (out_iface.req) begin
+178                                             // send the next bit and update the parity bit and shift the crc right by one
+179        1/1                                  out_iface_data              &lt;= cached_crc[0];
+180        1/1                                  out_iface_last_bit_in_byte  &lt;= 1'b0;
+181        1/1                                  cached_crc[14:0]            &lt;= cached_crc[15:1];
+182        1/1                                  parity                      &lt;= parity ^ cached_crc[0];
+183                     
+184        1/1                                  if (bits_remaining == 1) begin
+185                                                 // sending the last bit of this byte
+186                                                 // next bit is the parity bit
+187        1/1                                      state   &lt;= State_CRC_PARITY;
+188                                             end
+                        MISSING_ELSE
+189                     
+190        1/1                                  bits_remaining  &lt;= bits_remaining - 1'd1;
+191                                         end
+                        MISSING_ELSE
+192                                     end
+193                     
+194                                     State_CRC_PARITY: begin
+195                                         // wait for the bit encoder to request more data
+196        1/1                              if (out_iface.req) begin
+197                                             // send the parity bit
+198        1/1                                  out_iface_data              &lt;= parity;
+199        1/1                                  out_iface_last_bit_in_byte  &lt;= 1'b1;
+200                     
+201                                             // anything more to send?
+202        1/1                                  if (crc_byte == 0) begin
+203                                                 // send the nex crc byte
+204        1/1                                      crc_byte        &lt;= 1'b1;
+205        1/1                                      parity          &lt;= 1'b1;
+206        1/1                                      bits_remaining  &lt;= 3'd0;
+207        1/1                                      state           &lt;= State_CRC;
+208                                             end
+209                                             else begin
+210                                                 // nothing more to send
+211        1/1                                      state           &lt;= State_END;
+212                                             end
+213                                         end
+                        MISSING_ELSE
+214                                     end
+215                     
+216                                     State_END: begin
+217                                         // wait for the bit encoder to request more data
+218        1/1                              if (out_iface.req) begin
+219                                             // no more data to send
+220        1/1                                  out_iface_data_valid    &lt;= 1'b0;
+221        1/1                                  state                   &lt;= State_IDLE;
+222                                         end
+                        MISSING_ELSE
+223                                     end
+224                     
+225                                     default: begin
+226        <font color = "red">0/1     ==>                      state &lt;= State_IDLE;</font>
+</pre>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod14.html" >frame_encode</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s10">
+<td>Totals</td>
+<td class="rt">14</td>
+<td class="rt">14</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>Total Bits</td>
+<td class="rt">96</td>
+<td class="rt">96</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">48</td>
+<td class="rt">48</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">48</td>
+<td class="rt">48</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s10">
+<td>Ports</td>
+<td class="rt">5</td>
+<td class="rt">5</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>Port Bits</td>
+<td class="rt">40</td>
+<td class="rt">40</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">20</td>
+<td class="rt">20</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">20</td>
+<td class="rt">20</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s10">
+<td>Signals</td>
+<td class="rt">9</td>
+<td class="rt">9</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>Signal Bits</td>
+<td class="rt">56</td>
+<td class="rt">56</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">28</td>
+<td class="rt">28</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">28</td>
+<td class="rt">28</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>fdt_trigger</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>append_crc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>crc[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>state[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>bits_remaining[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>parity</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>cached_crc[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>crc_byte</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>in_iface_req</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>out_iface_data_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>out_iface_data</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>out_iface_last_bit_in_byte</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr></table><br clear=all>
+<hr>
+<a name="FSM"></a>
+FSM Coverage for Module : <a href="mod14.html" >frame_encode</a><br clear=all>
+<table align=left class="noborder">
+<caption><b>Summary for FSM :: state</b></caption>
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th><th nowrap width=200></th></tr><tr class="wht">
+<td>States</td>
+<td class="rt">6</td>
+<td class="rt">6</td>
+<td class="rt">100.00</td>
+<td>(Not included in score)</td>
+</tr><tr class="s7">
+<td>Transitions</td>
+<td class="rt">14</td>
+<td class="rt">10</td>
+<td class="rt">71.43 </td>
+<td></td>
+</tr><tr class="wht">
+<td>Sequences</td>
+<td class="rt">0</td>
+<td class="rt">0</td>
+<td></td>
+<td></td>
+</tr></table><br clear=all>
+<b>State, Transition and Sequence Details for FSM :: state</b><hr>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">states</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uGreen">
+<td nowrap>State_CRC</td>
+<td class="rt">166</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_CRC_PARITY</td>
+<td class="rt">187</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_DATA</td>
+<td class="rt">115</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_END</td>
+<td class="rt">170</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_IDLE</td>
+<td class="rt">89</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_PARITY</td>
+<td class="rt">112</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">transitions</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uGreen">
+<td nowrap>State_CRC->State_CRC_PARITY</td>
+<td class="rt">187</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td nowrap>State_CRC->State_IDLE</td>
+<td class="rt">89</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_CRC_PARITY->State_CRC</td>
+<td class="rt">207</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_CRC_PARITY->State_END</td>
+<td class="rt">211</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td nowrap>State_CRC_PARITY->State_IDLE</td>
+<td class="rt">89</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uRed">
+<td nowrap>State_DATA->State_IDLE</td>
+<td class="rt">89</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_DATA->State_PARITY</td>
+<td class="rt">139</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_END->State_IDLE</td>
+<td class="rt">89</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_IDLE->State_DATA</td>
+<td class="rt">115</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_IDLE->State_PARITY</td>
+<td class="rt">112</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_PARITY->State_CRC</td>
+<td class="rt">166</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_PARITY->State_DATA</td>
+<td class="rt">157</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>State_PARITY->State_END</td>
+<td class="rt">170</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td nowrap>State_PARITY->State_IDLE</td>
+<td class="rt">89</td>
+<td>Not&nbsp;Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod14.html" >frame_encode</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s9">
+<td>Branches</td>
+<td></td>
+<td class="rt">21</td>
+<td class="rt">20</td>
+<td class="rt">95.24 </td>
+</tr><tr class="s9">
+<td>IF</td>
+<td class="rt">88</td>
+<td class="rt">21</td>
+<td class="rt">20</td>
+<td class="rt">95.24 </td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+88                 if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+89                     state                   <= State_IDLE;
+           <font color = "green">            ==></font>
+90                     in_iface_req            <= 1'b0;
+91                     out_iface_data_valid    <= 1'b0;
+92                 end
+93                 else begin
+94                     // req should only ever be asserted one tick at a time
+95                     in_iface_req    <= 1'b0;
+96         
+97                     case (state)
+                       <font color = "red">-2-</font>  
+98                         State_IDLE: begin
+99                             // we're idle
+100                            // wait for fdt_trigger
+101                            if (fdt_trigger) begin
+                               <font color = "green">-3-</font>  
+102                                // start if data valid
+103                                if (in_iface.data_valid) begin
+                                   <font color = "green">-4-</font>       
+104                                    // start sending data
+105                                    out_iface_data              <= in_iface.data;
+106                                    out_iface_data_valid        <= 1'b1;
+107                                    out_iface_last_bit_in_byte  <= 1'b0;
+108                                    parity                      <= !in_iface.data;
+109        
+110                                    if (in_iface.last_bit_in_byte) begin
+                                       <font color = "green">-5-</font>       
+111                                        // send parity bit next
+112                                        state   <= State_PARITY;
+           <font color = "green">                                ==></font>
+113                                    end
+114                                    else begin
+115                                        state   <= State_DATA;
+           <font color = "green">                                ==></font>
+116                                    end
+117        
+118                                    // and request the next bit
+119                                    in_iface_req    <= 1'b1;
+120                                end
+                                   MISSING_ELSE
+           <font color = "green">                        ==></font>
+121                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+122                        end
+123        
+124                        State_DATA: begin
+125                            // when the REQ comes in from the 14443-2 Tx module then send out the next data bit
+126                            if (out_iface.req) begin
+                               <font color = "green">-6-</font>        
+127                                // note: We ignore in_iface.data_valid here as PICC -> PCD comms should always
+128                                // end with a parity bit. The sender should take care to always send the correct
+129                                // number of bits
+130        
+131                                // send the next bit and update the parity bit
+132                                out_iface_data              <= in_iface.data;
+133                                out_iface_last_bit_in_byte  <= 1'b0;
+134                                parity                      <= parity ^ in_iface.data;
+135        
+136                                if (in_iface.last_bit_in_byte) begin
+                                   <font color = "green">-7-</font>       
+137                                    // sending the last bit of this byte
+138                                    // next bit is the parity bit
+139                                    state   <= State_PARITY;
+           <font color = "green">                            ==></font>
+140                                end
+                                   MISSING_ELSE
+           <font color = "green">                        ==></font>
+141        
+142                                // request the next bit
+143                                in_iface_req    <= 1'b1;
+144                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+145                        end
+146        
+147                        State_PARITY: begin
+148                            // wait for the bit encoder to request more data
+149                            if (out_iface.req) begin
+                               <font color = "green">-8-</font>        
+150                                // send the parity bit
+151                                out_iface_data              <= parity;
+152                                out_iface_last_bit_in_byte  <= 1'b1;
+153        
+154                                // anything more to send?
+155                                if (in_iface.data_valid) begin
+                                   <font color = "green">-9-</font>       
+156                                    // yep
+157                                    state           <= State_DATA;
+           <font color = "green">                            ==></font>
+158                                    parity          <= 1'b1;
+159                                end
+160                                else if (append_crc) begin
+                                        <font color = "green">-10-</font>  
+161                                    // no more data to send, but we have the CRC to send
+162                                    cached_crc      <= crc;
+           <font color = "green">                            ==></font>
+163                                    bits_remaining  <= 3'd0;
+164                                    crc_byte        <= 1'd0;    // CRC gets sent out LSByte first
+165                                    parity          <= 1'b1;
+166                                    state           <= State_CRC;
+167                                end
+168                                else begin
+169                                    // nothing more to send
+170                                    state           <= State_END;
+           <font color = "green">                            ==></font>
+171                                end
+172                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+173                        end
+174        
+175                        State_CRC: begin
+176                            // when the REQ comes in from the 14443-2 Tx module then send out the next crc bit
+177                            if (out_iface.req) begin
+                               <font color = "green">-11-</font>        
+178                                // send the next bit and update the parity bit and shift the crc right by one
+179                                out_iface_data              <= cached_crc[0];
+180                                out_iface_last_bit_in_byte  <= 1'b0;
+181                                cached_crc[14:0]            <= cached_crc[15:1];
+182                                parity                      <= parity ^ cached_crc[0];
+183        
+184                                if (bits_remaining == 1) begin
+                                   <font color = "green">-12-</font>  
+185                                    // sending the last bit of this byte
+186                                    // next bit is the parity bit
+187                                    state   <= State_CRC_PARITY;
+           <font color = "green">                            ==></font>
+188                                end
+                                   MISSING_ELSE
+           <font color = "green">                        ==></font>
+189        
+190                                bits_remaining  <= bits_remaining - 1'd1;
+191                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+192                        end
+193        
+194                        State_CRC_PARITY: begin
+195                            // wait for the bit encoder to request more data
+196                            if (out_iface.req) begin
+                               <font color = "green">-13-</font>        
+197                                // send the parity bit
+198                                out_iface_data              <= parity;
+199                                out_iface_last_bit_in_byte  <= 1'b1;
+200        
+201                                // anything more to send?
+202                                if (crc_byte == 0) begin
+                                   <font color = "green">-14-</font>  
+203                                    // send the nex crc byte
+204                                    crc_byte        <= 1'b1;
+           <font color = "green">                            ==></font>
+205                                    parity          <= 1'b1;
+206                                    bits_remaining  <= 3'd0;
+207                                    state           <= State_CRC;
+208                                end
+209                                else begin
+210                                    // nothing more to send
+211                                    state           <= State_END;
+           <font color = "green">                            ==></font>
+212                                end
+213                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+214                        end
+215        
+216                        State_END: begin
+217                            // wait for the bit encoder to request more data
+218                            if (out_iface.req) begin
+                               <font color = "green">-15-</font>        
+219                                // no more data to send
+220                                out_iface_data_valid    <= 1'b0;
+           <font color = "green">                        ==></font>
+221                                state                   <= State_IDLE;
+222                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+223                        end
+224        
+225                        default: begin
+226                            state <= State_IDLE;
+           <font color = "red">                    ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>-8-</th><th nowrap width=80>-9-</th><th nowrap width=80>-10-</th><th nowrap width=80>-11-</th><th nowrap width=80>-12-</th><th nowrap width=80>-13-</th><th nowrap width=80>-14-</th><th nowrap width=80>-15-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_IDLE </td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_IDLE </td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_IDLE </td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_IDLE </td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_DATA </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_DATA </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_DATA </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_PARITY </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_PARITY </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_PARITY </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_PARITY </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_CRC </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_CRC </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_CRC </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_CRC_PARITY </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_CRC_PARITY </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_CRC_PARITY </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_END </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>State_END </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>default</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_28">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+  <ul name="tag_frame_encode">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

@@ -1,0 +1,1574 @@
+]0;aparlane@micro0:~/fiuba_thesis/hdl/verification/vcs\]0;~/fiuba_thesis/hdl/verification/vcs
+[32maparlane@micro0 [33m~/fiuba_thesis/hdl/verification/vcs[0m
+$make all_tbs
+[34;01mAnalysing because of changes in: ../../../hdl/components/iso_iec_14443A/rtl/pkg/iso14443a_pkg.sv ../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv ../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_2a/bit_encoder.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_2a/iso14443_2a.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_2a/sequence_decode.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_2a/subcarrier.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_2a/tx.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/crc_a.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/crc_control.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/deserialiser.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/fdt.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/frame_decode.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/frame_encode.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/framing.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/initialisation.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/iso14443_3a.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/routing.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/serialiser.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443_4a/iso14443_4a.sv ../../../hdl/components/iso_iec_14443A/rtl/active_low_reset_synchroniser.sv ../../../hdl/components/iso_iec_14443A/rtl/iso14443a.sv ../../../hdl/components/iso_iec_14443A/rtl/pause_n_latch_and_synchroniser.sv ../../../hdl/components/iso_iec_14443A/rtl/synchroniser.sv ../../../hdl/rtl/pkg/protocol_pkg.sv ../../../hdl/rtl/adapter.sv ../../../hdl/rtl/radiation_sensor_digital_top.sv ../../../hdl/rtl/signal_control.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/interfaces/load_modulator_iface.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/interfaces/pcd_pause_n_iface.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/helper/wrapper.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/helper/uid.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/helper/std_block_address.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/helper/target.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/transaction.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/queue_transaction.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/rx_bit_transaction.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/rx_byte_transaction.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/pcd_pause_n_transaction.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/tx_bit_transaction.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/tx_byte_transaction.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/transaction_generators/transaction_generator.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/transaction_converters/transaction_converter.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/transaction_converters/rx_transaction_converter.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/transaction_converters/tx_transaction_converter.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/sequence.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/specific_target_sequence.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/comms_tests_sequence.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/driver.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/rx_iface_driver.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/rx_bit_iface_driver.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/rx_byte_iface_driver.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/tx_iface_source_driver.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/tx_bit_iface_source_driver.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/tx_byte_iface_source_driver.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/tx_iface_sink_driver.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/pcd_pause_n_driver.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/monitors/monitor.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/monitors/rx_iface_monitor.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/monitors/rx_bit_iface_monitor.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/monitors/rx_byte_iface_monitor.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/monitors/tx_iface_monitor.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/monitors/tx_bit_iface_monitor.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/monitors/tx_byte_iface_monitor.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/monitors/load_modulator_monitor.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/analogue/analogue_sim.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/analogue/clk_recovery.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/analogue/clock_source.sv ../../../hdl/components/iso_iec_14443A/verification/bfms/analogue/pause_detect.sv ../../../hdl/verification/bfms/helper/protocol_generator.sv ../../../hdl/verification/bfms/analogue/adc_sim.sv ../../../hdl/verification/bfms/sequences/app_comms_tests_sequence.sv ../../../hdl/verification/tb/adapter_tb.sv ../../../hdl/verification/tb/generate_top_saif_tb.sv ../../../hdl/verification/tb/radiation_sensor_digital_top_tb.sv ../../../hdl/verification/tb/signal_control_tb.sv [0m
+
+                         Chronologic VCS (TM)
+      Version R-2020.12-SP2-6_Full64 -- Sat Apr 30 12:22:30 2022
+
+                    Copyright (c) 1991 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/pkg/iso14443a_pkg.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_2a/bit_encoder.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_2a/iso14443_2a.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_2a/sequence_decode.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_2a/subcarrier.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_2a/tx.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/crc_a.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/crc_control.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/deserialiser.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/fdt.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/frame_decode.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/frame_encode.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/framing.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/initialisation.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/iso14443_3a.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/routing.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/serialiser.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443_4a/iso14443_4a.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/active_low_reset_synchroniser.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/iso14443a.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/pause_n_latch_and_synchroniser.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/rtl/synchroniser.sv'
+Parsing design file '../../../hdl/rtl/pkg/protocol_pkg.sv'
+Parsing design file '../../../hdl/rtl/adapter.sv'
+Parsing design file '../../../hdl/rtl/radiation_sensor_digital_top.sv'
+Parsing design file '../../../hdl/rtl/signal_control.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/interfaces/load_modulator_iface.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/interfaces/pcd_pause_n_iface.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/helper/wrapper.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/helper/uid.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/helper/std_block_address.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/helper/target.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/transaction.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/queue_transaction.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/rx_bit_transaction.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/rx_byte_transaction.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/pcd_pause_n_transaction.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/tx_bit_transaction.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/tx_byte_transaction.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/transaction_generators/transaction_generator.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/transaction_converters/transaction_converter.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/transaction_converters/rx_transaction_converter.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/transaction_converters/tx_transaction_converter.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/sequence.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/specific_target_sequence.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/comms_tests_sequence.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/driver.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/rx_iface_driver.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/rx_bit_iface_driver.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/rx_byte_iface_driver.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/tx_iface_source_driver.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/tx_bit_iface_source_driver.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/tx_byte_iface_source_driver.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/tx_iface_sink_driver.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/drivers/pcd_pause_n_driver.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/monitors/monitor.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/monitors/rx_iface_monitor.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/monitors/rx_bit_iface_monitor.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/monitors/rx_byte_iface_monitor.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/monitors/tx_iface_monitor.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/monitors/tx_bit_iface_monitor.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/monitors/tx_byte_iface_monitor.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/monitors/load_modulator_monitor.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/analogue/analogue_sim.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/analogue/clk_recovery.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/analogue/clock_source.sv'
+Parsing design file '../../../hdl/components/iso_iec_14443A/verification/bfms/analogue/pause_detect.sv'
+Parsing design file '../../../hdl/verification/bfms/helper/protocol_generator.sv'
+Parsing design file '../../../hdl/verification/bfms/analogue/adc_sim.sv'
+Parsing design file '../../../hdl/verification/bfms/sequences/app_comms_tests_sequence.sv'
+Parsing design file '../../../hdl/verification/tb/adapter_tb.sv'
+Parsing design file '../../../hdl/verification/tb/generate_top_saif_tb.sv'
+Parsing design file '../../../hdl/verification/tb/radiation_sensor_digital_top_tb.sv'
+Parsing design file '../../../hdl/verification/tb/signal_control_tb.sv'
+CPU time: .473 seconds to compile
+[34;01melaborating signal_control_tb with arguments  as signal_control_tb_sim/simv [0m
+
+Doing common elaboration 
+                         Chronologic VCS (TM)
+      Version R-2020.12-SP2-6_Full64 -- Sat Apr 30 12:22:32 2022
+
+                    Copyright (c) 1991 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Top Level Modules:
+       signal_control_tb
+TimeScale is 1 ps / 1 ps
+VCS Coverage Metrics Release R-2020.12-SP2-6_Full64 Copyright (c) 1991-2020 by Synopsys Inc.
+Starting vcs inline pass...
+5 modules and 0 UDP read.
+recompiling package protocol_pkg
+recompiling module signal_control_tb
+recompiling module signal_control
+recompiling module clock_source
+recompiling module adc_sim
+All of 5 modules done
+make[1]: Entering directory `/home/aparlane/fiuba_thesis/hdl/verification/vcs/csrc'
+make[1]: Leaving directory `/home/aparlane/fiuba_thesis/hdl/verification/vcs/csrc'
+make[1]: Entering directory `/home/aparlane/fiuba_thesis/hdl/verification/vcs/csrc'
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../signal_control_tb_sim/simv ]; then chmod a-x ../signal_control_tb_sim/simv; fi
+g++  -o ../signal_control_tb_sim/simv      -rdynamic -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib -L/usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _7925_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -lvirsim -lreader_common /usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib/libBA.a -luclinative /usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib/vcs_save_restore_new.o /usr/synopsys2/verdi/R-2020.12-SP2-6/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
+../signal_control_tb_sim/simv up to date
+make[1]: Leaving directory `/home/aparlane/fiuba_thesis/hdl/verification/vcs/csrc'
+CPU time: .593 seconds to compile + .283 seconds to elab + .196 seconds to link
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
+[34;01mSimulating signal_control_tb_sim[0m
+
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2-6_Full64; Runtime version R-2020.12-SP2-6_Full64;  Apr 30 12:22 2022
+[34;01mNOTE: automatic random seed used: 1183022520[0m
+
+ VCS Coverage Metrics Release R-2020.12-SP2-6_Full64 Copyright (c) 1991-2020 by Synopsys Inc.
+ucli% run
+1a) SET_SIGNAL with the sync period alread finished by the time start fires
+1b) SET_SIGNAL with actual sync period but no pauses after start
+1c) SET_SIGNAL with pauses during the sync period
+2a) AUTO_READ with the sync period alread finished by the time start fires
+2b) AUTO_READ with actual sync period but no pauses after start
+2c) AUTO_READ with pauses during the sync period
+2d) AUTO_READ with pauses during timing1 / timing2
+3) Invalid commands
+4) Testing abort
+5a) SET_SIGNAL with large synch times
+using sync: 0000f8ea
+using sync: 0000a31d
+using sync: 00008629
+using sync: 0000b584
+using sync: 0000a798
+using sync: 00008794
+using sync: 00009af1
+using sync: 0000a26d
+using sync: 0000d500
+using sync: 00008471
+using sync: 0000fb3f
+using sync: 0000e96b
+using sync: 0000b0f9
+using sync: 0000fe18
+using sync: 0000def4
+using sync: 000092ca
+using sync: 0000fdc1
+using sync: 0000cd90
+using sync: 0000b4a1
+using sync: 00009300
+using sync: 0000eadc
+using sync: 0000eb15
+using sync: 0000b457
+using sync: 0000c231
+using sync: 0000f126
+using sync: 00008103
+using sync: 0000d54b
+using sync: 000094b3
+using sync: 000085bf
+using sync: 0000cff8
+using sync: 0000ea38
+using sync: 00008e3b
+using sync: 0000a677
+using sync: 0000d1e4
+using sync: 0000c2e3
+using sync: 0000b38c
+using sync: 0000896b
+using sync: 0000be85
+using sync: 0000c7a0
+using sync: 0000c19c
+using sync: 0000f70a
+using sync: 00008d66
+using sync: 0000d0c5
+using sync: 0000f846
+using sync: 0000cd22
+using sync: 0000be2c
+using sync: 0000e791
+using sync: 0000888f
+using sync: 0000d4b1
+using sync: 0000a0d9
+using sync: 0000ace1
+using sync: 0000974c
+using sync: 0000c759
+using sync: 0000c78c
+using sync: 0000a292
+using sync: 0000c311
+using sync: 0000c711
+using sync: 00009bce
+using sync: 0000b9f0
+using sync: 0000962c
+using sync: 0000943b
+using sync: 0000d0d5
+using sync: 00008750
+using sync: 0000c995
+using sync: 0000e7fc
+using sync: 0000d77f
+using sync: 00009b40
+using sync: 00009490
+using sync: 000083f6
+using sync: 00008c79
+using sync: 0000901d
+using sync: 0000a839
+using sync: 0000ffe2
+using sync: 0000cefc
+using sync: 0000e80e
+using sync: 0000f5bb
+using sync: 0000eaab
+using sync: 0000ec0b
+using sync: 0000c904
+using sync: 0000ac96
+using sync: 0000d1fb
+using sync: 0000890b
+using sync: 0000b877
+using sync: 0000f6c4
+using sync: 0000ce64
+using sync: 0000e440
+using sync: 0000ec0e
+using sync: 000081d2
+using sync: 0000c8dd
+using sync: 0000c9f9
+using sync: 0000e9b8
+using sync: 00009e22
+using sync: 0000c4af
+using sync: 0000c33f
+using sync: 00008ca3
+using sync: 00008588
+using sync: 0000841b
+using sync: 0000da79
+using sync: 0000e91b
+using sync: 00009b1a
+5b) AUTO_READ with long sync / timing1 / timing2 periods
+using sync: 00008e6a, timing1: 0006f745, timing2: 000787d6
+using sync: 0000be1c, timing1: 0004579d, timing2: 00048cbf
+using sync: 000086a2, timing1: 0007b1c8, timing2: 00068fa6
+using sync: 0000ccf7, timing1: 0006c704, timing2: 00069953
+using sync: 0000aa20, timing1: 0005f929, timing2: 000439a7
+using sync: 0000aabb, timing1: 000614b4, timing2: 00058b4c
+using sync: 0000e149, timing1: 00079345, timing2: 0006178a
+using sync: 0000afd9, timing1: 0004427e, timing2: 00047065
+using sync: 0000c60d, timing1: 0006ca15, timing2: 00047b5d
+using sync: 0000e8dd, timing1: 0005f36f, timing2: 0005be86
+using sync: 0000f62f, timing1: 00048012, timing2: 00053478
+using sync: 0000985b, timing1: 0005eef7, timing2: 00072f8e
+using sync: 0000f9e6, timing1: 0006aa2f, timing2: 0004a521
+using sync: 00009428, timing1: 00056eb6, timing2: 0004f45c
+using sync: 0000eb67, timing1: 0006425e, timing2: 0006df43
+using sync: 0000ccdb, timing1: 0007b877, timing2: 0006efc2
+using sync: 0000b9fd, timing1: 0006889a, timing2: 000585ee
+using sync: 0000aa16, timing1: 00070c8f, timing2: 00050108
+using sync: 00009496, timing1: 00073d0e, timing2: 00060a46
+using sync: 0000facf, timing1: 0005e2d0, timing2: 0006e31e
+using sync: 0000de0e, timing1: 0007edd1, timing2: 00071546
+using sync: 0000a1bc, timing1: 00074f55, timing2: 0004c223
+using sync: 0000f477, timing1: 000454cb, timing2: 000647ef
+using sync: 0000f8b1, timing1: 00067d04, timing2: 000585b3
+using sync: 0000bdf7, timing1: 00063a6c, timing2: 00057d0b
+using sync: 0000ebb6, timing1: 0006cfbd, timing2: 000745b1
+using sync: 0000c1d5, timing1: 0004e80d, timing2: 0007fe8b
+using sync: 0000ce8d, timing1: 0005746d, timing2: 000509d3
+using sync: 0000ad47, timing1: 00074d07, timing2: 00063421
+using sync: 0000ffa8, timing1: 00074e51, timing2: 00064e96
+using sync: 00008221, timing1: 0005c33b, timing2: 0005a037
+using sync: 000092e1, timing1: 0007e1b3, timing2: 0005044b
+using sync: 0000db13, timing1: 000643f2, timing2: 000761ca
+using sync: 0000c877, timing1: 0006491a, timing2: 0004b987
+using sync: 0000ac24, timing1: 00070ad7, timing2: 0004c462
+using sync: 000083d5, timing1: 00062858, timing2: 00062c3f
+using sync: 0000dc84, timing1: 0004a658, timing2: 0004380f
+using sync: 0000d3ba, timing1: 00064f9d, timing2: 000638d1
+using sync: 00009925, timing1: 00056ab5, timing2: 0004b8b8
+using sync: 000086de, timing1: 0007d351, timing2: 0007619c
+using sync: 0000dd0a, timing1: 0004a08a, timing2: 000525e7
+using sync: 00009b1f, timing1: 00067a01, timing2: 00078d85
+using sync: 0000ecf4, timing1: 0004dfa3, timing2: 0007cfee
+using sync: 0000f78b, timing1: 00067f2d, timing2: 00057e39
+using sync: 0000a86a, timing1: 0005ce02, timing2: 0004d699
+using sync: 0000d2fe, timing1: 0006d91e, timing2: 00046335
+using sync: 0000db7b, timing1: 00072d81, timing2: 0007bb5d
+using sync: 00009ccb, timing1: 000725e6, timing2: 000668ec
+using sync: 0000d4d0, timing1: 00045729, timing2: 0006d9b8
+using sync: 0000cb11, timing1: 0004f34b, timing2: 00052555
+using sync: 0000ed8d, timing1: 00070034, timing2: 00068db7
+using sync: 00008d52, timing1: 0005ee2d, timing2: 00040dce
+using sync: 00008148, timing1: 000409ae, timing2: 000628c8
+using sync: 0000e478, timing1: 0004c566, timing2: 0005e106
+using sync: 0000da93, timing1: 00047ec7, timing2: 00067ed9
+using sync: 0000c7d9, timing1: 000725bd, timing2: 000453cb
+using sync: 0000cb88, timing1: 00051f68, timing2: 000627a5
+using sync: 0000face, timing1: 0004cb68, timing2: 0006a43d
+using sync: 000094cb, timing1: 00071003, timing2: 0004e75d
+using sync: 00009808, timing1: 00055b95, timing2: 0007089f
+using sync: 0000c666, timing1: 0007a076, timing2: 0006cff0
+using sync: 0000b043, timing1: 0006d45c, timing2: 000510b9
+using sync: 00009506, timing1: 000441d8, timing2: 0005f4cc
+using sync: 0000a3cb, timing1: 0007d652, timing2: 0005e0ea
+using sync: 0000eda3, timing1: 00056a06, timing2: 0006e0fd
+using sync: 0000c165, timing1: 0006d677, timing2: 00044a49
+using sync: 0000a70e, timing1: 00070536, timing2: 00050f5b
+using sync: 0000895c, timing1: 000588c5, timing2: 00064851
+using sync: 000083b0, timing1: 00050307, timing2: 0005e316
+using sync: 00008f96, timing1: 0006eded, timing2: 0004df97
+using sync: 0000a79b, timing1: 0006eee6, timing2: 0005ea8f
+using sync: 0000bfe5, timing1: 00043752, timing2: 00073b20
+using sync: 0000fe31, timing1: 0005a9c3, timing2: 0004822b
+using sync: 0000eda4, timing1: 00059cca, timing2: 0006f081
+using sync: 00008bdc, timing1: 0004556d, timing2: 0004f860
+using sync: 0000e6d1, timing1: 0006fa5c, timing2: 00065460
+using sync: 000087a9, timing1: 00065b39, timing2: 0007df77
+using sync: 00008e08, timing1: 0006bf65, timing2: 000533d3
+using sync: 00009398, timing1: 000789eb, timing2: 000761cc
+using sync: 0000edbf, timing1: 0005d626, timing2: 0004d055
+using sync: 0000cdd3, timing1: 0007c93d, timing2: 00052e3a
+using sync: 0000e93d, timing1: 00076898, timing2: 000483c6
+using sync: 0000f250, timing1: 00048355, timing2: 0005bd33
+using sync: 0000960e, timing1: 00047e2c, timing2: 00056062
+using sync: 0000a9c8, timing1: 00041315, timing2: 00070ee1
+using sync: 00009320, timing1: 0007225d, timing2: 0006916f
+using sync: 00008ad4, timing1: 000495b7, timing2: 0004869b
+using sync: 000084e8, timing1: 0005743e, timing2: 000695c9
+using sync: 0000eb7c, timing1: 0005ced4, timing2: 0005a292
+using sync: 00008708, timing1: 0006a080, timing2: 00073226
+using sync: 0000ff4b, timing1: 00049564, timing2: 000677ff
+using sync: 0000964e, timing1: 00060a88, timing2: 00073bdd
+using sync: 0000d4f1, timing1: 000580c9, timing2: 000433ed
+using sync: 0000f781, timing1: 00042490, timing2: 00049d76
+using sync: 0000fc81, timing1: 0006fc4e, timing2: 0007d046
+using sync: 0000845f, timing1: 0006bdb5, timing2: 0004b576
+using sync: 0000f118, timing1: 00077cfb, timing2: 00067596
+using sync: 0000da56, timing1: 0004f4f6, timing2: 000482eb
+using sync: 0000bc1c, timing1: 0004417f, timing2: 00055560
+using sync: 00008bdd, timing1: 00072c1b, timing2: 0005113a
+ucli% assertion report -r .
+[32;01m"signal_control_tb.inReset", 9 successes, 0 failures[0m
+[32;01m"signal_control_tb.busyAfterStart", 130300 successes, 0 failures[0m
+[32;01m"signal_control_tb.busyAfterInvalidCommand", 10000 successes, 0 failures[0m
+[32;01m"signal_control_tb.busyOnlyAfterStart", 130300 successes, 0 failures[0m
+[32;01m"signal_control_tb.flagsLowAfterStart", 140300 successes, 0 failures[0m
+[32;01m"signal_control_tb.unexpectedPauseOnlyFallsAfterStartOrAbort", 10993 successes, 0 failures[0m
+[32;01m"signal_control_tb.abortToIdle", 10000 successes, 0 failures[0m
+[32;01m"signal_control_tb.adcReadsCheck", 44325 successes, 0 failures[0m
+[32;01m"signal_control_tb.adcCompOnlyFallsAfterStartOrAbort", 44325 successes, 0 failures[0m
+[32;01m"signal_control_tb.adcCompFallsAfterResultRead", 22330 successes, 0 failures[0m
+[32;01m"signal_control_tb.adcReadsCheck2", 44325 successes, 0 failures[0m
+[32;01m"signal_control_tb.cachedAdcValueStable", 44325 successes, 0 failures[0m
+[32;01m"signal_control_tb.do_valid_command.notAbort.stillBusy", 70200 successes, 0 failures[0m
+[32;01m"signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.autoReadSignalCheck2", 40352 successes, 0 failures[0m
+[32;01m"signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.unexpectedPauseCheck", 40352 successes, 0 failures[0m
+[32;01m"signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.timing2Check", 40352 successes, 0 failures[0m
+[32;01m"signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.autoReadSignalCheck1", 41094 successes, 0 failures[0m
+[32;01m"signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.timing1Check", 41094 successes, 0 failures[0m
+[32;01m"signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.SetSignal.setSignalCheck", 70555 successes, 0 failures[0m
+[32;01m"signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.AutoRead.autoReadSignalCheck0", 41827 successes, 0 failures[0m
+[32;01m"signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.syncTimingCheck", 112382 successes, 0 failures[0m
+[32;01m"signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.signalChangesCheck", 193828 successes, 0 failures[0m
+[32;01m"signal_control_tb.do_valid_command.notAbort2.signalChanges", 70200 successes, 0 failures[0m
+ucli% quit
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+
+ Coverage status: End of All Coverages ...
+
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 9702760076937 ps
+CPU Time:    251.180 seconds;       Data structure size:   0.0Mb
+Sat Apr 30 12:26:45 2022
+Note: Bumping stack limit from 10240 to unlimited Kbytes.
+URG Version R-2020.12-SP2-6                                    infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Note-[URG-RDG] Report directory generated
+  Report written to directory signal_control_tb_sim/report
+
+[34;01melaborating adapter_tb with arguments  as adapter_tb_sim/simv [0m
+
+Doing common elaboration 
+                         Chronologic VCS (TM)
+      Version R-2020.12-SP2-6_Full64 -- Sat Apr 30 12:26:46 2022
+
+                    Copyright (c) 1991 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Top Level Modules:
+       adapter_tb
+TimeScale is 1 ps / 1 ps
+VCS Coverage Metrics Release R-2020.12-SP2-6_Full64 Copyright (c) 1991-2020 by Synopsys Inc.
+Notice: Ports coerced to inout, use -notice for details
+Starting vcs inline pass...
+36 modules and 0 UDP read.
+recompiling package vcs_paramclassrepository
+recompiling package wrapper_pkg
+recompiling package monitor_pkg
+recompiling package tx_iface_monitor_pkg
+recompiling package transaction_pkg
+recompiling package queue_transaction_pkg
+recompiling package tx_byte_transaction_pkg
+recompiling package tx_byte_iface_monitor_pkg
+recompiling package std_block_address_pkg
+recompiling package ISO14443A_pkg
+recompiling package uid_pkg
+recompiling package protocol_pkg
+recompiling package rx_byte_transaction_pkg
+recompiling package transaction_generator_pkg
+recompiling package target_pkg
+recompiling package sequence_pkg
+recompiling package specific_target_sequence_pkg
+recompiling package comms_tests_sequence_pkg
+recompiling package protocol_generator_pkg
+recompiling package app_comms_tests_sequence_pkg
+recompiling package tx_iface_sink_driver_pkg
+recompiling package driver_pkg
+recompiling package rx_iface_driver_pkg
+recompiling package rx_byte_iface_driver_pkg
+recompiling package rx_bit_transaction_pkg
+recompiling package transaction_converter_pkg
+recompiling package pcd_pause_n_transaction_pkg
+recompiling package rx_transaction_converter_pkg
+recompiling package tx_bit_transaction_pkg
+recompiling package tx_transaction_converter_pkg
+recompiling module adapter_tb
+recompiling module rx_interface
+recompiling module tx_interface
+recompiling module adapter
+recompiling module clock_source
+recompiling module adc_sim
+All of 36 modules done
+make[1]: Entering directory `/home/aparlane/fiuba_thesis/hdl/verification/vcs/csrc'
+make[1]: Leaving directory `/home/aparlane/fiuba_thesis/hdl/verification/vcs/csrc'
+make[1]: Entering directory `/home/aparlane/fiuba_thesis/hdl/verification/vcs/csrc'
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../adapter_tb_sim/simv ]; then chmod a-x ../adapter_tb_sim/simv; fi
+g++  -o ../adapter_tb_sim/simv      -rdynamic -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib -L/usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _9536_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -lvirsim -lreader_common /usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib/libBA.a -luclinative /usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib/vcs_save_restore_new.o /usr/synopsys2/verdi/R-2020.12-SP2-6/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
+../adapter_tb_sim/simv up to date
+make[1]: Leaving directory `/home/aparlane/fiuba_thesis/hdl/verification/vcs/csrc'
+CPU time: 1.376 seconds to compile + .285 seconds to elab + .212 seconds to link
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
+[34;01mSimulating adapter_tb_sim[0m
+
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2-6_Full64; Runtime version R-2020.12-SP2-6_Full64;  Apr 30 12:26 2022
+[34;01mNOTE: automatic random seed used: 2030418852[0m
+
+ VCS Coverage Metrics Release R-2020.12-SP2-6_Full64 Copyright (c) 1991-2020 by Synopsys Inc.
+ucli% run
+1) Testing Command_IDENTIFY
+2a) Command_SET_SIGNAL, short sync time, no extra pauses
+2b) Command_SET_SIGNAL, long sync time, no extra pauses
+2c) Command_SET_SIGNAL with extra pauses
+3a) Command_AUTO_READ, short times, no extra pauses
+3b) Command_AUTO_READ, long sync time, no extra pauses
+3c) Command_AUTO_READ with extra pauses
+3d) Command_AUTO_READ, from invalid start state
+4a) Command_SET_SIGNAL + Command_ABORT
+4b) Command_AUTO_READ + Command_ABORT
+5) Manual reads using Command_SET_SIGNAL
+6) Testing the busy flag is set
+7a) Invalid magic
+7b) Errors / CRC corruption
+8a) Testing sending an ACK/NACK to test app_resend_last while idle
+8b) Testing sending an ACK/NACK to test app_resend_last while busy
+ucli% assertion report -r .
+[32;01m"adapter_tb.inReset", 10 successes, 0 failures[0m
+[32;01m"adapter_tb.eventOccurred.eventCheck.eventAsExpected", 27178 successes, 0 failures[0m
+[32;01m"adapter_tb.eventOccurred.eventExpected", 27178 successes, 0 failures[0m
+[32;01m"adapter_tb.\AdapterTbSequence::send_std_r_ack .blockNumsEqual", 2000 successes, 0 failures[0m
+[32;01m"adapter_tb.\AdapterTbSequence::send_transaction .onlyStdIBlocks", 35078 successes, 0 failures[0m
+[32;01m"adapter_tb.\AdapterTbSequence::verify_trans .onlyStdIBlocks", 32924 successes, 0 failures[0m
+[32;01m"adapter_tb.rx_iface.useAsserts.signalsInReset", 10 successes, 0 failures[0m
+[32;01m"adapter_tb.rx_iface.useAsserts.socOnlyOneTick", 35078 successes, 0 failures[0m
+[32;01m"adapter_tb.rx_iface.useAsserts.eocOnlyOneTick", 35078 successes, 0 failures[0m
+[32;01m"adapter_tb.rx_iface.useAsserts.errorOnlyOneTick", 1000 successes, 0 failures[0m
+[32;01m"adapter_tb.rx_iface.useAsserts.dataValidOnlyOneTick", 381301 successes, 0 failures[0m
+[32;01m"adapter_tb.rx_iface.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid", 22171299 successes, 0 failures[0m
+[32;01m"adapter_tb.tx_iface.useAsserts.signalsInReset", 10 successes, 0 failures[0m
+[32;01m"adapter_tb.tx_iface.useAsserts.reqOnlyOneTick", 223498 successes, 0 failures[0m
+[32;01m"adapter_tb.tx_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle", 272846 successes, 0 failures[0m
+ucli% quit
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+
+ Coverage status: End of All Coverages ...
+
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 2217129950000 ps
+CPU Time:     65.450 seconds;       Data structure size:   0.1Mb
+Sat Apr 30 12:27:54 2022
+Note: Bumping stack limit from 10240 to unlimited Kbytes.
+URG Version R-2020.12-SP2-6                                    infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Note-[URG-RDG] Report directory generated
+  Report written to directory adapter_tb_sim/report
+
+[34;01melaborating radiation_sensor_digital_top_tb with arguments  as radiation_sensor_digital_top_tb_sim/simv [0m
+
+Doing common elaboration 
+                         Chronologic VCS (TM)
+      Version R-2020.12-SP2-6_Full64 -- Sat Apr 30 12:27:56 2022
+
+                    Copyright (c) 1991 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Top Level Modules:
+       radiation_sensor_digital_top_tb
+TimeScale is 1 ps / 1 ps
+VCS Coverage Metrics Release R-2020.12-SP2-6_Full64 Copyright (c) 1991-2020 by Synopsys Inc.
+Notice: Ports coerced to inout, use -notice for details
+Starting vcs inline pass...
+42 modules and 0 UDP read.
+recompiling package vcs_paramclassrepository
+recompiling package wrapper_pkg
+recompiling package std_block_address_pkg
+recompiling package ISO14443A_pkg
+recompiling package uid_pkg
+recompiling package protocol_pkg
+recompiling package driver_pkg
+recompiling package transaction_pkg
+recompiling package queue_transaction_pkg
+recompiling package pcd_pause_n_transaction_pkg
+recompiling package pcd_pause_n_driver_pkg
+recompiling package tx_bit_transaction_pkg
+recompiling package monitor_pkg
+recompiling package load_modulator_monitor_pkg
+recompiling package tx_byte_transaction_pkg
+recompiling package rx_byte_transaction_pkg
+recompiling package transaction_generator_pkg
+recompiling package target_pkg
+recompiling package sequence_pkg
+recompiling package specific_target_sequence_pkg
+recompiling package comms_tests_sequence_pkg
+recompiling package protocol_generator_pkg
+recompiling package app_comms_tests_sequence_pkg
+recompiling package rx_bit_transaction_pkg
+recompiling package transaction_converter_pkg
+recompiling package rx_transaction_converter_pkg
+recompiling package tx_transaction_converter_pkg
+recompiling module radiation_sensor_digital_top_tb
+recompiling module radiation_sensor_digital_top
+recompiling module pause_n_latch_and_synchroniser
+recompiling module synchroniser
+recompiling module rx_interface
+recompiling module tx_interface
+recompiling module initialisation
+recompiling module iso14443_4a
+recompiling module adapter
+recompiling module analogue_sim
+recompiling module pcd_pause_n_iface
+recompiling module clk_recovery
+recompiling module pause_detect
+recompiling module adc_sim
+recompiling module load_modulator_iface
+All of 42 modules done
+make[1]: Entering directory `/home/aparlane/fiuba_thesis/hdl/verification/vcs/csrc'
+make[1]: Leaving directory `/home/aparlane/fiuba_thesis/hdl/verification/vcs/csrc'
+make[1]: Entering directory `/home/aparlane/fiuba_thesis/hdl/verification/vcs/csrc'
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../radiation_sensor_digital_top_tb_sim/simv ]; then chmod a-x ../radiation_sensor_digital_top_tb_sim/simv; fi
+g++  -o ../radiation_sensor_digital_top_tb_sim/simv      -rdynamic -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib -L/usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _11094_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -lvirsim -lreader_common /usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib/libBA.a -luclinative /usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib/vcs_save_restore_new.o /usr/synopsys2/verdi/R-2020.12-SP2-6/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
+../radiation_sensor_digital_top_tb_sim/simv up to date
+make[1]: Leaving directory `/home/aparlane/fiuba_thesis/hdl/verification/vcs/csrc'
+CPU time: 1.885 seconds to compile + .309 seconds to elab + .226 seconds to link
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
+[34;01mSimulating radiation_sensor_digital_top_tb_sim[0m
+
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2-6_Full64; Runtime version R-2020.12-SP2-6_Full64;  Apr 30 12:27 2022
+[34;01mNOTE: automatic random seed used: 2144574963[0m
+
+ VCS Coverage Metrics Release R-2020.12-SP2-6_Full64 Copyright (c) 1991-2020 by Synopsys Inc.
+ucli% run
+[34;01mNOTE: New UID: Fixed: 11101111111111101100011100000 (1dffd8e0), uid: 11101111111111101100011100000000 (effec700), levels: '{'heffec700} [0m
+State_IDLE + REQA/WUPA
+State_IDLE + others
+State_READY + AC
+State_READY + SELECT
+State_READY + others
+State_ACTIVE + HLTA
+State_ACTIVE + others
+State_HALT + WUPA
+State_HALT + others
+State_READY_STAR + AC
+State_READY_STAR + SEL
+State_READY_STAR + others
+State_ACTIVE_STAR + others
+into and out of State_PROTOCOL*
+State_READY + all ACs
+State_READY + nAC/nSELECT
+State_READY + AC/SELECT for wrong level
+State_READY + AC/SELECT with level code incorrect
+State_READY + SELECT with last bit wrong
+State_READY_STAR + all ACs
+State_READY_STAR + nAC/nSELECT
+State_READY_STAR + AC/SELECT for wrong level
+State_READY_STAR + AC/SELECT with level code incorrect
+State_READY_STAR + SELECT with last bit wrong
+Testing SELECT with CRC error
+Testing HLTA with CRC error
+Testing part4 comms messages are ignored
+  Testing state: State_IDLE
+  Testing state: State_READY
+  Testing state: State_ACTIVE
+  Testing state: State_HALT
+  Testing state: State_READY_STAR
+  Testing state: State_ACTIVE_STAR
+Testing Rule 1) The first block shall be sent by the PCD
+Testing State_EXPECT_RATS + valid RATS -> ATS
+Testing State_EXPECT_RATS + invalid RATS
+Testing State_EXPECT_RATS + others
+Testing State_PPS_ALLOWED + valid PPS -> PPSR
+Testing State_PPS_ALLOWED + invalid PPS (cid not us) -> no reply
+Testing State_PPS_ALLOWED + invalid PPS (dividers) -> no reply
+Testing State_PPS_ALLOWED + invalid PPS (crc) -> no reply
+Testing State_PPS_ALLOWED + invalid PPS (error) -> no reply
+Testing State_PPS_ALLOWED + RATS -> no reply
+Running test: TestType_STATE_PPS_ALLOWED_BEFORE_EACH_TEST with cid_type CID_RANDOM_NOT_ZERO
+  Testing RATS is ignored
+  Testing S(PARAMETERS)
+  Testing S(DESELECT)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing no CID
+  Testing PICC presence check Method 2 (before first I-Block exchange
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_PPS_ALLOWED_BEFORE_EACH_TEST with cid_type CID_NONE
+  Testing RATS is ignored
+  Testing S(PARAMETERS)
+  Testing S(DESELECT)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing PICC presence check Method 2 (before first I-Block exchange
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_STD_COMMS_BEFORE_EACH_TEST with cid_type CID_RANDOM_NOT_ZERO
+  Testing RATS is ignored
+  Testing PPS is ignored
+  Testing S(PARAMETERS)
+  Testing S(DESELECT)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing no CID
+  Testing PICC presence check Method 2 (before first I-Block exchange
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_STD_COMMS_BEFORE_EACH_TEST with cid_type CID_NONE
+  Testing RATS is ignored
+  Testing PPS is ignored
+  Testing S(PARAMETERS)
+  Testing S(DESELECT)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing PICC presence check Method 2 (before first I-Block exchange
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_STD_COMMS_ONCE with cid_type CID_RANDOM_NOT_ZERO
+  Testing RATS is ignored
+  Testing PPS is ignored
+  Testing S(PARAMETERS)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing no CID
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_STD_COMMS_ONCE with cid_type CID_NONE
+  Testing RATS is ignored
+  Testing PPS is ignored
+  Testing S(PARAMETERS)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing initialisation comms are ignored
+1) Testing Command_IDENTIFY
+2a) Command_SET_SIGNAL, short sync time, no extra pauses
+2b) Command_SET_SIGNAL, long sync time, no extra pauses
+2c) Command_SET_SIGNAL with extra pauses
+3a) Command_AUTO_READ, short times, no extra pauses
+3b) Command_AUTO_READ, long sync time, no extra pauses
+3c) Command_AUTO_READ with extra pauses
+3d) Command_AUTO_READ, from invalid start state
+4a) Command_SET_SIGNAL + Command_ABORT
+4b) Command_AUTO_READ + Command_ABORT
+5) Manual reads using Command_SET_SIGNAL
+6) Testing the busy flag is set
+7a) Invalid magic
+7b) Errors / CRC corruption
+8a) Testing sending an ACK/NACK to test app_resend_last while idle
+8b) Testing sending an ACK/NACK to test app_resend_last while busy
+[34;01mNOTE: New UID: Fixed: 11101111111111101100011100000 (1dffd8e0), uid: 11101111111111101100011100000111 (effec707), levels: '{'heffec707} [0m
+State_IDLE + REQA/WUPA
+State_IDLE + others
+State_READY + AC
+State_READY + SELECT
+State_READY + others
+State_ACTIVE + HLTA
+State_ACTIVE + others
+State_HALT + WUPA
+State_HALT + others
+State_READY_STAR + AC
+State_READY_STAR + SEL
+State_READY_STAR + others
+State_ACTIVE_STAR + others
+into and out of State_PROTOCOL*
+State_READY + all ACs
+State_READY + nAC/nSELECT
+State_READY + AC/SELECT for wrong level
+State_READY + AC/SELECT with level code incorrect
+State_READY + SELECT with last bit wrong
+State_READY_STAR + all ACs
+State_READY_STAR + nAC/nSELECT
+State_READY_STAR + AC/SELECT for wrong level
+State_READY_STAR + AC/SELECT with level code incorrect
+State_READY_STAR + SELECT with last bit wrong
+Testing SELECT with CRC error
+Testing HLTA with CRC error
+Testing part4 comms messages are ignored
+  Testing state: State_IDLE
+  Testing state: State_READY
+  Testing state: State_ACTIVE
+  Testing state: State_HALT
+  Testing state: State_READY_STAR
+  Testing state: State_ACTIVE_STAR
+Testing Rule 1) The first block shall be sent by the PCD
+Testing State_EXPECT_RATS + valid RATS -> ATS
+Testing State_EXPECT_RATS + invalid RATS
+Testing State_EXPECT_RATS + others
+Testing State_PPS_ALLOWED + valid PPS -> PPSR
+Testing State_PPS_ALLOWED + invalid PPS (cid not us) -> no reply
+Testing State_PPS_ALLOWED + invalid PPS (dividers) -> no reply
+Testing State_PPS_ALLOWED + invalid PPS (crc) -> no reply
+Testing State_PPS_ALLOWED + invalid PPS (error) -> no reply
+Testing State_PPS_ALLOWED + RATS -> no reply
+Running test: TestType_STATE_PPS_ALLOWED_BEFORE_EACH_TEST with cid_type CID_RANDOM_NOT_ZERO
+  Testing RATS is ignored
+  Testing S(PARAMETERS)
+  Testing S(DESELECT)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing no CID
+  Testing PICC presence check Method 2 (before first I-Block exchange
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_PPS_ALLOWED_BEFORE_EACH_TEST with cid_type CID_NONE
+  Testing RATS is ignored
+  Testing S(PARAMETERS)
+  Testing S(DESELECT)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing PICC presence check Method 2 (before first I-Block exchange
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_STD_COMMS_BEFORE_EACH_TEST with cid_type CID_RANDOM_NOT_ZERO
+  Testing RATS is ignored
+  Testing PPS is ignored
+  Testing S(PARAMETERS)
+  Testing S(DESELECT)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing no CID
+  Testing PICC presence check Method 2 (before first I-Block exchange
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_STD_COMMS_BEFORE_EACH_TEST with cid_type CID_NONE
+  Testing RATS is ignored
+  Testing PPS is ignored
+  Testing S(PARAMETERS)
+  Testing S(DESELECT)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing PICC presence check Method 2 (before first I-Block exchange
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_STD_COMMS_ONCE with cid_type CID_RANDOM_NOT_ZERO
+  Testing RATS is ignored
+  Testing PPS is ignored
+  Testing S(PARAMETERS)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing no CID
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_STD_COMMS_ONCE with cid_type CID_NONE
+  Testing RATS is ignored
+  Testing PPS is ignored
+  Testing S(PARAMETERS)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing initialisation comms are ignored
+1) Testing Command_IDENTIFY
+2a) Command_SET_SIGNAL, short sync time, no extra pauses
+2b) Command_SET_SIGNAL, long sync time, no extra pauses
+2c) Command_SET_SIGNAL with extra pauses
+3a) Command_AUTO_READ, short times, no extra pauses
+3b) Command_AUTO_READ, long sync time, no extra pauses
+3c) Command_AUTO_READ with extra pauses
+3d) Command_AUTO_READ, from invalid start state
+4a) Command_SET_SIGNAL + Command_ABORT
+4b) Command_AUTO_READ + Command_ABORT
+5) Manual reads using Command_SET_SIGNAL
+6) Testing the busy flag is set
+7a) Invalid magic
+7b) Errors / CRC corruption
+8a) Testing sending an ACK/NACK to test app_resend_last while idle
+8b) Testing sending an ACK/NACK to test app_resend_last while busy
+[34;01mNOTE: New UID: Fixed: 11101111111111101100011100000 (1dffd8e0), uid: 11101111111111101100011100000100 (effec704), levels: '{'heffec704} [0m
+State_IDLE + REQA/WUPA
+State_IDLE + others
+State_READY + AC
+State_READY + SELECT
+State_READY + others
+State_ACTIVE + HLTA
+State_ACTIVE + others
+State_HALT + WUPA
+State_HALT + others
+State_READY_STAR + AC
+State_READY_STAR + SEL
+State_READY_STAR + others
+State_ACTIVE_STAR + others
+into and out of State_PROTOCOL*
+State_READY + all ACs
+State_READY + nAC/nSELECT
+State_READY + AC/SELECT for wrong level
+State_READY + AC/SELECT with level code incorrect
+State_READY + SELECT with last bit wrong
+State_READY_STAR + all ACs
+State_READY_STAR + nAC/nSELECT
+State_READY_STAR + AC/SELECT for wrong level
+State_READY_STAR + AC/SELECT with level code incorrect
+State_READY_STAR + SELECT with last bit wrong
+Testing SELECT with CRC error
+Testing HLTA with CRC error
+Testing part4 comms messages are ignored
+  Testing state: State_IDLE
+  Testing state: State_READY
+  Testing state: State_ACTIVE
+  Testing state: State_HALT
+  Testing state: State_READY_STAR
+  Testing state: State_ACTIVE_STAR
+Testing Rule 1) The first block shall be sent by the PCD
+Testing State_EXPECT_RATS + valid RATS -> ATS
+Testing State_EXPECT_RATS + invalid RATS
+Testing State_EXPECT_RATS + others
+Testing State_PPS_ALLOWED + valid PPS -> PPSR
+Testing State_PPS_ALLOWED + invalid PPS (cid not us) -> no reply
+Testing State_PPS_ALLOWED + invalid PPS (dividers) -> no reply
+Testing State_PPS_ALLOWED + invalid PPS (crc) -> no reply
+Testing State_PPS_ALLOWED + invalid PPS (error) -> no reply
+Testing State_PPS_ALLOWED + RATS -> no reply
+Running test: TestType_STATE_PPS_ALLOWED_BEFORE_EACH_TEST with cid_type CID_RANDOM_NOT_ZERO
+  Testing RATS is ignored
+  Testing S(PARAMETERS)
+  Testing S(DESELECT)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing no CID
+  Testing PICC presence check Method 2 (before first I-Block exchange
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_PPS_ALLOWED_BEFORE_EACH_TEST with cid_type CID_NONE
+  Testing RATS is ignored
+  Testing S(PARAMETERS)
+  Testing S(DESELECT)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing PICC presence check Method 2 (before first I-Block exchange
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_STD_COMMS_BEFORE_EACH_TEST with cid_type CID_RANDOM_NOT_ZERO
+  Testing RATS is ignored
+  Testing PPS is ignored
+  Testing S(PARAMETERS)
+  Testing S(DESELECT)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing no CID
+  Testing PICC presence check Method 2 (before first I-Block exchange
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_STD_COMMS_BEFORE_EACH_TEST with cid_type CID_NONE
+  Testing RATS is ignored
+  Testing PPS is ignored
+  Testing S(PARAMETERS)
+  Testing S(DESELECT)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing PICC presence check Method 2 (before first I-Block exchange
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_STD_COMMS_ONCE with cid_type CID_RANDOM_NOT_ZERO
+  Testing RATS is ignored
+  Testing PPS is ignored
+  Testing S(PARAMETERS)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing no CID
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_STD_COMMS_ONCE with cid_type CID_NONE
+  Testing RATS is ignored
+  Testing PPS is ignored
+  Testing S(PARAMETERS)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing initialisation comms are ignored
+1) Testing Command_IDENTIFY
+2a) Command_SET_SIGNAL, short sync time, no extra pauses
+2b) Command_SET_SIGNAL, long sync time, no extra pauses
+2c) Command_SET_SIGNAL with extra pauses
+3a) Command_AUTO_READ, short times, no extra pauses
+3b) Command_AUTO_READ, long sync time, no extra pauses
+3c) Command_AUTO_READ with extra pauses
+3d) Command_AUTO_READ, from invalid start state
+4a) Command_SET_SIGNAL + Command_ABORT
+4b) Command_AUTO_READ + Command_ABORT
+5) Manual reads using Command_SET_SIGNAL
+6) Testing the busy flag is set
+7a) Invalid magic
+7b) Errors / CRC corruption
+8a) Testing sending an ACK/NACK to test app_resend_last while idle
+8b) Testing sending an ACK/NACK to test app_resend_last while busy
+[34;01mNOTE: New UID: Fixed: 11101111111111101100011100000 (1dffd8e0), uid: 11101111111111101100011100000101 (effec705), levels: '{'heffec705} [0m
+State_IDLE + REQA/WUPA
+State_IDLE + others
+State_READY + AC
+State_READY + SELECT
+State_READY + others
+State_ACTIVE + HLTA
+State_ACTIVE + others
+State_HALT + WUPA
+State_HALT + others
+State_READY_STAR + AC
+State_READY_STAR + SEL
+State_READY_STAR + others
+State_ACTIVE_STAR + others
+into and out of State_PROTOCOL*
+State_READY + all ACs
+State_READY + nAC/nSELECT
+State_READY + AC/SELECT for wrong level
+State_READY + AC/SELECT with level code incorrect
+State_READY + SELECT with last bit wrong
+State_READY_STAR + all ACs
+State_READY_STAR + nAC/nSELECT
+State_READY_STAR + AC/SELECT for wrong level
+State_READY_STAR + AC/SELECT with level code incorrect
+State_READY_STAR + SELECT with last bit wrong
+Testing SELECT with CRC error
+Testing HLTA with CRC error
+Testing part4 comms messages are ignored
+  Testing state: State_IDLE
+  Testing state: State_READY
+  Testing state: State_ACTIVE
+  Testing state: State_HALT
+  Testing state: State_READY_STAR
+  Testing state: State_ACTIVE_STAR
+Testing Rule 1) The first block shall be sent by the PCD
+Testing State_EXPECT_RATS + valid RATS -> ATS
+Testing State_EXPECT_RATS + invalid RATS
+Testing State_EXPECT_RATS + others
+Testing State_PPS_ALLOWED + valid PPS -> PPSR
+Testing State_PPS_ALLOWED + invalid PPS (cid not us) -> no reply
+Testing State_PPS_ALLOWED + invalid PPS (dividers) -> no reply
+Testing State_PPS_ALLOWED + invalid PPS (crc) -> no reply
+Testing State_PPS_ALLOWED + invalid PPS (error) -> no reply
+Testing State_PPS_ALLOWED + RATS -> no reply
+Running test: TestType_STATE_PPS_ALLOWED_BEFORE_EACH_TEST with cid_type CID_RANDOM_NOT_ZERO
+  Testing RATS is ignored
+  Testing S(PARAMETERS)
+  Testing S(DESELECT)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing no CID
+  Testing PICC presence check Method 2 (before first I-Block exchange
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_PPS_ALLOWED_BEFORE_EACH_TEST with cid_type CID_NONE
+  Testing RATS is ignored
+  Testing S(PARAMETERS)
+  Testing S(DESELECT)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing PICC presence check Method 2 (before first I-Block exchange
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_STD_COMMS_BEFORE_EACH_TEST with cid_type CID_RANDOM_NOT_ZERO
+  Testing RATS is ignored
+  Testing PPS is ignored
+  Testing S(PARAMETERS)
+  Testing S(DESELECT)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing no CID
+  Testing PICC presence check Method 2 (before first I-Block exchange
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_STD_COMMS_BEFORE_EACH_TEST with cid_type CID_NONE
+  Testing RATS is ignored
+  Testing PPS is ignored
+  Testing S(PARAMETERS)
+  Testing S(DESELECT)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing PICC presence check Method 2 (before first I-Block exchange
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_STD_COMMS_ONCE with cid_type CID_RANDOM_NOT_ZERO
+  Testing RATS is ignored
+  Testing PPS is ignored
+  Testing S(PARAMETERS)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing no CID
+  Testing initialisation comms are ignored
+Running test: TestType_STATE_STD_COMMS_ONCE with cid_type CID_NONE
+  Testing RATS is ignored
+  Testing PPS is ignored
+  Testing S(PARAMETERS)
+  Testing I-blocks with chaining
+  Testing I-blocks with NADs
+  Testing valid I-blocks
+  Testing valid I-blocks with CRC fails
+  Testing valid I-blocks with errors
+  Testing R(ACK) with current PCD block num
+  Testing R(NAK) with current PCD block num -> R(ACK)
+  Testing R(ACK/NAK) with toggled PCD block num
+  Testing invalid / errors
+  Testing CRC errors
+  Testing not for us
+  Testing initialisation comms are ignored
+1) Testing Command_IDENTIFY
+2a) Command_SET_SIGNAL, short sync time, no extra pauses
+2b) Command_SET_SIGNAL, long sync time, no extra pauses
+2c) Command_SET_SIGNAL with extra pauses
+3a) Command_AUTO_READ, short times, no extra pauses
+3b) Command_AUTO_READ, long sync time, no extra pauses
+3c) Command_AUTO_READ with extra pauses
+3d) Command_AUTO_READ, from invalid start state
+4a) Command_SET_SIGNAL + Command_ABORT
+4b) Command_AUTO_READ + Command_ABORT
+5) Manual reads using Command_SET_SIGNAL
+6) Testing the busy flag is set
+7a) Invalid magic
+7b) Errors / CRC corruption
+8a) Testing sending an ACK/NACK to test app_resend_last while idle
+8b) Testing sending an ACK/NACK to test app_resend_last while busy
+ucli% assertion report -r .
+[32;01m"radiation_sensor_digital_top_tb.eventOccurred.eventCheck.eventAsExpected", 10817 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.eventOccurred.eventExpected", 10817 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.\RadSensDigTop_TbSequence::verify_dut_cid .cidAsExpected", 33947 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.\RadSensDigTop_TbSequence::check_state .isProtocol2", 75859 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.\RadSensDigTop_TbSequence::check_state .isProtocol1", 30412 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.\RadSensDigTop_TbSequence::check_state .isActiveStar", 3089 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.\RadSensDigTop_TbSequence::check_state .isReadyStar", 6002 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.\RadSensDigTop_TbSequence::check_state .isHalt", 7130 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.\RadSensDigTop_TbSequence::check_state .isActive", 31272 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.\RadSensDigTop_TbSequence::check_state .isReady", 34204 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.\RadSensDigTop_TbSequence::check_state .isIdle", 34545 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.fdtVerificationBlock.foreverLoop.fdtTime", 147027 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.app_rx_iface.useAsserts.signalsInReset", 210070 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.app_rx_iface.useAsserts.socOnlyOneTick", 22570 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.app_rx_iface.useAsserts.eocOnlyOneTick", 22570 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.app_rx_iface.useAsserts.errorOnlyOneTick", 7801 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.app_rx_iface.useAsserts.dataValidOnlyOneTick", 319924 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.app_rx_iface.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid", 3346330016 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.app_tx_iface.useAsserts.signalsInReset", 210070 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.app_tx_iface.useAsserts.reqOnlyOneTick", 89378 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.app_tx_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle", 109087 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.signalsInReset", 210070 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.socOnlyOneTick", 198673 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.eocOnlyOneTick", 198673 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.errorOnlyOneTick", 5253 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.dataValidOnlyOneTick", 12118127 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid", 3346330016 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3_to_part2_tx_iface.useAsserts.signalsInReset", 210070 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3_to_part2_tx_iface.useAsserts.reqOnlyOneTick", 4610277 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3_to_part2_tx_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle", 2250623 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part2.tx_inst.be_iface.useAsserts.signalsInReset", 210070 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part2.tx_inst.be_iface.useAsserts.reqOnlyOneTick", 4757304 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part2.tx_inst.be_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle", 2495736 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.signalsInReset", 210070 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.socOnlyOneTick", 117985 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.eocOnlyOneTick", 117985 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.errorOnlyOneTick", 5041 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.dataValidOnlyOneTick", 960465 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid", 3346330016 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part4_to_part3_tx_iface.useAsserts.signalsInReset", 210070 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part4_to_part3_tx_iface.useAsserts.reqOnlyOneTick", 182674 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part4_to_part3_tx_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle", 253698 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.signalsInReset", 210070 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.socOnlyOneTick", 198673 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.eocOnlyOneTick", 198673 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.errorOnlyOneTick", 5253 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.dataValidOnlyOneTick", 1356093 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid", 3346330016 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.signalsInReset", 210070 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.socOnlyOneTick", 114649 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.eocOnlyOneTick", 114649 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.errorOnlyOneTick", 355 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.dataValidOnlyOneTick", 542259 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid", 3346330016 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.signalsInReset", 210070 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.socOnlyOneTick", 198673 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.eocOnlyOneTick", 198673 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.errorOnlyOneTick", 5253 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.dataValidOnlyOneTick", 10807856 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid", 3346330016 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.tx_iface_from_routing.useAsserts.signalsInReset", 210070 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.tx_iface_from_routing.useAsserts.reqOnlyOneTick", 299027 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.tx_iface_from_routing.useAsserts.signalChangesOnlyAfterReqOrWhenIdle", 505441 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.tx_iface_from_init.useAsserts.signalsInReset", 210070 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.tx_iface_from_init.useAsserts.reqOnlyOneTick", 116353 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.tx_iface_from_init.useAsserts.signalChangesOnlyAfterReqOrWhenIdle", 190921 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.signalsInReset", 210070 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.socOnlyOneTick", 198673 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.eocOnlyOneTick", 198673 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.errorOnlyOneTick", 5253 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.dataValidOnlyOneTick", 10807856 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid", 3346330016 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.framing_inst.tx_iface_bits.useAsserts.signalsInReset", 210070 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.framing_inst.tx_iface_bits.useAsserts.reqOnlyOneTick", 2388472 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.framing_inst.tx_iface_bits.useAsserts.signalChangesOnlyAfterReqOrWhenIdle", 1530841 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.initialisation_inst.acSelSizeChecks.acSelSize", 1 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.initialisation_inst.acSelSizeChecks.uidDataSize", 1 successes, 0 failures[0m
+[32;01m"radiation_sensor_digital_top_tb.dut.iso14443a_inst.part3.initialisation_inst.acSelSizeChecks.nvbSize", 1 successes, 0 failures[0m
+ucli% quit
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+
+ Coverage status: End of All Coverages ...
+
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 258824429165313 ps
+CPU Time:  24581.000 seconds;       Data structure size:   0.2Mb
+Sat Apr 30 19:18:09 2022
+Note: Bumping stack limit from 10240 to unlimited Kbytes.
+URG Version R-2020.12-SP2-6                                    infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Note-[URG-RDG] Report directory generated
+  Report written to directory radiation_sensor_digital_top_tb_sim/report
+
+[34;01melaborating generate_top_saif_tb with arguments  as generate_top_saif_tb_sim/simv [0m
+
+Doing common elaboration 
+                         Chronologic VCS (TM)
+      Version R-2020.12-SP2-6_Full64 -- Sat Apr 30 19:18:10 2022
+
+                    Copyright (c) 1991 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Top Level Modules:
+       generate_top_saif_tb
+TimeScale is 1 ps / 1 ps
+VCS Coverage Metrics Release R-2020.12-SP2-6_Full64 Copyright (c) 1991-2020 by Synopsys Inc.
+Notice: Ports coerced to inout, use -notice for details
+Starting vcs inline pass...
+42 modules and 0 UDP read.
+recompiling package vcs_paramclassrepository
+recompiling package std_block_address_pkg
+recompiling package uid_pkg
+recompiling package transaction_generator_pkg
+recompiling package protocol_generator_pkg
+recompiling module generate_top_saif_tb
+recompiling module radiation_sensor_digital_top
+recompiling module rx_interface
+recompiling module tx_interface
+recompiling module initialisation
+recompiling module iso14443_4a
+recompiling module adapter
+recompiling module analogue_sim
+recompiling module clk_recovery
+recompiling module pause_detect
+recompiling module adc_sim
+16 of 42 modules done
+	However, due to incremental compilation, only 16 modules need to be compiled. 
+make[1]: Entering directory `/home/aparlane/fiuba_thesis/hdl/verification/vcs/csrc'
+make[1]: Leaving directory `/home/aparlane/fiuba_thesis/hdl/verification/vcs/csrc'
+make[1]: Entering directory `/home/aparlane/fiuba_thesis/hdl/verification/vcs/csrc'
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../generate_top_saif_tb_sim/simv ]; then chmod a-x ../generate_top_saif_tb_sim/simv; fi
+g++  -o ../generate_top_saif_tb_sim/simv      -rdynamic -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib -L/usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _2480_archive_1.so _prev_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -lvirsim -lreader_common /usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib/libBA.a -luclinative /usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/synopsys2/vcs/R-2020.12-SP2-6/linux64/lib/vcs_save_restore_new.o /usr/synopsys2/verdi/R-2020.12-SP2-6/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
+../generate_top_saif_tb_sim/simv up to date
+make[1]: Leaving directory `/home/aparlane/fiuba_thesis/hdl/verification/vcs/csrc'
+CPU time: 1.610 seconds to compile + .284 seconds to elab + .217 seconds to link
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
+[34;01mSimulating generate_top_saif_tb_sim[0m
+
+
+[33;01mWarning-[LCA_FEATURES_ENABLED] Usage warning[0m
+  LCA features enabled by '-lca' argument on the command line.  For more 
+  information regarding list of LCA features please refer to Chapter "LCA 
+  features" in the VCS Release Notes
+
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2-6_Full64; Runtime version R-2020.12-SP2-6_Full64;  Apr 30 19:18 2022
+[34;01mNOTE: automatic random seed used: 1976941021[0m
+
+ VCS Coverage Metrics Release R-2020.12-SP2-6_Full64 Copyright (c) 1991-2020 by Synopsys Inc.
+ucli% run
+[34;01mNOTE: New UID: Fixed: 11101111111111101100011100000 (1dffd8e0), uid: 11101111111111101100011100000000 (effec700), levels: '{'heffec700} [0m
+ucli% assertion report -r .
+[32;01m"generate_top_saif_tb.dut.app_rx_iface.useAsserts.signalsInReset", 7 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.app_rx_iface.useAsserts.socOnlyOneTick", 16 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.app_rx_iface.useAsserts.eocOnlyOneTick", 16 successes, 0 failures[0m
+[34;01m"generate_top_saif_tb.dut.app_rx_iface.useAsserts.errorOnlyOneTick", 0 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.app_rx_iface.useAsserts.dataValidOnlyOneTick", 182 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.app_rx_iface.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid", 454816 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.app_tx_iface.useAsserts.signalsInReset", 7 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.app_tx_iface.useAsserts.reqOnlyOneTick", 109 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.app_tx_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle", 136 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.signalsInReset", 7 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.socOnlyOneTick", 20 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.eocOnlyOneTick", 20 successes, 0 failures[0m
+[34;01m"generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.errorOnlyOneTick", 0 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.dataValidOnlyOneTick", 2086 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid", 454816 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3_to_part2_tx_iface.useAsserts.signalsInReset", 7 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3_to_part2_tx_iface.useAsserts.reqOnlyOneTick", 1656 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3_to_part2_tx_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle", 827 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part2.tx_inst.be_iface.useAsserts.signalsInReset", 7 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part2.tx_inst.be_iface.useAsserts.reqOnlyOneTick", 1676 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part2.tx_inst.be_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle", 858 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.signalsInReset", 7 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.socOnlyOneTick", 18 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.eocOnlyOneTick", 18 successes, 0 failures[0m
+[34;01m"generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.errorOnlyOneTick", 0 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.dataValidOnlyOneTick", 222 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid", 454816 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part4_to_part3_tx_iface.useAsserts.signalsInReset", 7 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part4_to_part3_tx_iface.useAsserts.reqOnlyOneTick", 143 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part4_to_part3_tx_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle", 157 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.signalsInReset", 7 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.socOnlyOneTick", 20 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.eocOnlyOneTick", 20 successes, 0 failures[0m
+[34;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.errorOnlyOneTick", 0 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.dataValidOnlyOneTick", 232 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid", 454816 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.signalsInReset", 7 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.socOnlyOneTick", 3 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.eocOnlyOneTick", 3 successes, 0 failures[0m
+[34;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.errorOnlyOneTick", 0 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.dataValidOnlyOneTick", 14 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid", 454816 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.signalsInReset", 7 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.socOnlyOneTick", 20 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.eocOnlyOneTick", 20 successes, 0 failures[0m
+[34;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.errorOnlyOneTick", 0 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.dataValidOnlyOneTick", 1855 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid", 454816 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_routing.useAsserts.signalsInReset", 7 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_routing.useAsserts.reqOnlyOneTick", 146 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_routing.useAsserts.signalChangesOnlyAfterReqOrWhenIdle", 163 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_init.useAsserts.signalsInReset", 7 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_init.useAsserts.reqOnlyOneTick", 3 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_init.useAsserts.signalChangesOnlyAfterReqOrWhenIdle", 6 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.signalsInReset", 7 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.socOnlyOneTick", 20 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.eocOnlyOneTick", 20 successes, 0 failures[0m
+[34;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.errorOnlyOneTick", 0 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.dataValidOnlyOneTick", 1855 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid", 454816 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.tx_iface_bits.useAsserts.signalsInReset", 7 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.tx_iface_bits.useAsserts.reqOnlyOneTick", 1168 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.tx_iface_bits.useAsserts.signalChangesOnlyAfterReqOrWhenIdle", 724 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.initialisation_inst.acSelSizeChecks.acSelSize", 1 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.initialisation_inst.acSelSizeChecks.uidDataSize", 1 successes, 0 failures[0m
+[32;01m"generate_top_saif_tb.dut.iso14443a_inst.part3.initialisation_inst.acSelSizeChecks.nvbSize", 1 successes, 0 failures[0m
+ucli% quit
+"../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv", 206: generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.errorOnlyOneTick: Antecedent of the implication never satisfied.
+"../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv", 206: generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.errorOnlyOneTick: Antecedent of the implication never satisfied.
+"../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv", 206: generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.errorOnlyOneTick: Antecedent of the implication never satisfied.
+"../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv", 206: generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.errorOnlyOneTick: Antecedent of the implication never satisfied.
+"../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv", 206: generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.errorOnlyOneTick: Antecedent of the implication never satisfied.
+"../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv", 206: generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.errorOnlyOneTick: Antecedent of the implication never satisfied.
+"../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv", 206: generate_top_saif_tb.dut.app_rx_iface.useAsserts.errorOnlyOneTick: Antecedent of the implication never satisfied.
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+
+ Coverage status: End of All Coverages ...
+
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 37653879216 ps
+CPU Time:      5.200 seconds;       Data structure size:   0.2Mb
+Sat Apr 30 19:18:18 2022
+Note: Bumping stack limit from 10240 to unlimited Kbytes.
+URG Version R-2020.12-SP2-6                                    infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Note-[URG-RDG] Report directory generated
+  Report written to directory generate_top_saif_tb_sim/report
+
+]0;aparlane@micro0:~/fiuba_thesis/hdl/verification/vcs\]0;~/fiuba_thesis/hdl/verification/vcs
+[32maparlane@micro0 [33m~/fiuba_thesis/hdl/verification/vcs[0m
+$xit

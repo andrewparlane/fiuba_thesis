@@ -1,0 +1,3282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: rx_interface</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | <a href="asserts.html" ><b>asserts</b></a></div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_rx_interface'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_rx_interface')">rx_interface</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s7 cl rt"> 73.88</td>
+<td class="s6 cl rt"><a href="mod4.html#Line" > 65.22</a></td>
+<td class="wht cl rt"></td>
+<td class="s7 cl rt"><a href="mod4.html#Toggle" > 73.09</a></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod4.html#Assert" > 83.33</a></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')">/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left class="sortable">
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod4.html#inst_tag_7"  onclick="showContent('inst_tag_7')">generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface</a></td>
+<td class="s6 cl rt"> 67.85</td>
+<td class="s6 cl rt"><a href="mod4.html#inst_tag_7_Line" > 65.22</a></td>
+<td class="wht cl rt"></td>
+<td class="s5 cl rt"><a href="mod4.html#inst_tag_7_Toggle" > 55.00</a></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod4.html#inst_tag_7_Assert" > 83.33</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod4.html#inst_tag_11"  onclick="showContent('inst_tag_11')">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init</a></td>
+<td class="s6 cl rt"> 67.85</td>
+<td class="s6 cl rt"><a href="mod4.html#inst_tag_11_Line" > 65.22</a></td>
+<td class="wht cl rt"></td>
+<td class="s5 cl rt"><a href="mod4.html#inst_tag_11_Toggle" > 55.00</a></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod4.html#inst_tag_11_Assert" > 83.33</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod4.html#inst_tag_12"  onclick="showContent('inst_tag_12')">generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits</a></td>
+<td class="s6 cl rt"> 67.85</td>
+<td class="s6 cl rt"><a href="mod4.html#inst_tag_12_Line" > 65.22</a></td>
+<td class="wht cl rt"></td>
+<td class="s5 cl rt"><a href="mod4.html#inst_tag_12_Toggle" > 55.00</a></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod4.html#inst_tag_12_Assert" > 83.33</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod4.html#inst_tag_6"  onclick="showContent('inst_tag_6')">generate_top_saif_tb.dut.app_rx_iface</a></td>
+<td class="s7 cl rt"> 74.03</td>
+<td class="s6 cl rt"><a href="mod4.html#inst_tag_6_Line" > 65.22</a></td>
+<td class="wht cl rt"></td>
+<td class="s7 cl rt"><a href="mod4.html#inst_tag_6_Toggle" > 73.53</a></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod4.html#inst_tag_6_Assert" > 83.33</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod4.html#inst_tag_8"  onclick="showContent('inst_tag_8')">generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface</a></td>
+<td class="s7 cl rt"> 79.91</td>
+<td class="s6 cl rt"><a href="mod4.html#inst_tag_8_Line" > 65.22</a></td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"><a href="mod4.html#inst_tag_8_Toggle" > 91.18</a></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod4.html#inst_tag_8_Assert" > 83.33</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod4.html#inst_tag_9"  onclick="showContent('inst_tag_9')">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing</a></td>
+<td class="s7 cl rt"> 79.91</td>
+<td class="s6 cl rt"><a href="mod4.html#inst_tag_9_Line" > 65.22</a></td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"><a href="mod4.html#inst_tag_9_Toggle" > 91.18</a></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod4.html#inst_tag_9_Assert" > 83.33</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod4.html#inst_tag_10"  onclick="showContent('inst_tag_10')">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init</a></td>
+<td class="s7 cl rt"> 79.91</td>
+<td class="s6 cl rt"><a href="mod4.html#inst_tag_10_Line" > 65.22</a></td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"><a href="mod4.html#inst_tag_10_Toggle" > 91.18</a></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod4.html#inst_tag_10_Assert" > 83.33</a></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='inst_tag_7'>
+<hr>
+<a name="inst_tag_7"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_7" >generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s6 cl rt"> 67.85</td>
+<td class="s6 cl rt"><a href="mod4.html#inst_tag_7_Line" > 65.22</a></td>
+<td class="wht cl rt"></td>
+<td class="s5 cl rt"><a href="mod4.html#inst_tag_7_Toggle" > 55.00</a></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod4.html#inst_tag_7_Assert" > 83.33</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s6 cl rt"> 67.85</td>
+<td class="s6 cl rt"> 65.22</td>
+<td class="wht cl rt"></td>
+<td class="s5 cl rt"> 55.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"> 83.33</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s4 cl rt"> 44.74</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s4 cl rt"> 44.74</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod27.html#inst_tag_41" >iso14443a_inst</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td colspan=8>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div name='inst_tag_11'>
+<hr>
+<a name="inst_tag_11"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_11" >generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s6 cl rt"> 67.85</td>
+<td class="s6 cl rt"><a href="mod4.html#inst_tag_11_Line" > 65.22</a></td>
+<td class="wht cl rt"></td>
+<td class="s5 cl rt"><a href="mod4.html#inst_tag_11_Toggle" > 55.00</a></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod4.html#inst_tag_11_Assert" > 83.33</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s6 cl rt"> 67.85</td>
+<td class="s6 cl rt"> 65.22</td>
+<td class="wht cl rt"></td>
+<td class="s5 cl rt"> 55.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"> 83.33</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s5 cl rt"> 50.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s5 cl rt"> 50.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod34.html#inst_tag_48" >part3</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td colspan=8>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div name='inst_tag_12'>
+<hr>
+<a name="inst_tag_12"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_12" >generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s6 cl rt"> 67.85</td>
+<td class="s6 cl rt"><a href="mod4.html#inst_tag_12_Line" > 65.22</a></td>
+<td class="wht cl rt"></td>
+<td class="s5 cl rt"><a href="mod4.html#inst_tag_12_Toggle" > 55.00</a></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod4.html#inst_tag_12_Assert" > 83.33</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s6 cl rt"> 67.85</td>
+<td class="s6 cl rt"> 65.22</td>
+<td class="wht cl rt"></td>
+<td class="s5 cl rt"> 55.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"> 83.33</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s9 cl rt"> 95.65</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"> 95.65</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod31.html#inst_tag_45" >framing_inst</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td colspan=8>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div name='inst_tag_6'>
+<hr>
+<a name="inst_tag_6"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_6" >generate_top_saif_tb.dut.app_rx_iface</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s7 cl rt"> 74.03</td>
+<td class="s6 cl rt"><a href="mod4.html#inst_tag_6_Line" > 65.22</a></td>
+<td class="wht cl rt"></td>
+<td class="s7 cl rt"><a href="mod4.html#inst_tag_6_Toggle" > 73.53</a></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod4.html#inst_tag_6_Assert" > 83.33</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s7 cl rt"> 74.03</td>
+<td class="s6 cl rt"> 65.22</td>
+<td class="wht cl rt"></td>
+<td class="s7 cl rt"> 73.53</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"> 83.33</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s5 cl rt"> 54.72</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s5 cl rt"> 54.72</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod55.html#inst_tag_70" >dut</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td colspan=8>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div name='inst_tag_8'>
+<hr>
+<a name="inst_tag_8"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_8" >generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s7 cl rt"> 79.91</td>
+<td class="s6 cl rt"><a href="mod4.html#inst_tag_8_Line" > 65.22</a></td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"><a href="mod4.html#inst_tag_8_Toggle" > 91.18</a></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod4.html#inst_tag_8_Assert" > 83.33</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s7 cl rt"> 79.91</td>
+<td class="s6 cl rt"> 65.22</td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"> 91.18</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"> 83.33</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s4 cl rt"> 44.74</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s4 cl rt"> 44.74</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod27.html#inst_tag_41" >iso14443a_inst</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td colspan=8>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div name='inst_tag_9'>
+<hr>
+<a name="inst_tag_9"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_9" >generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s7 cl rt"> 79.91</td>
+<td class="s6 cl rt"><a href="mod4.html#inst_tag_9_Line" > 65.22</a></td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"><a href="mod4.html#inst_tag_9_Toggle" > 91.18</a></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod4.html#inst_tag_9_Assert" > 83.33</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s7 cl rt"> 79.91</td>
+<td class="s6 cl rt"> 65.22</td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"> 91.18</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"> 83.33</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s5 cl rt"> 50.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s5 cl rt"> 50.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod34.html#inst_tag_48" >part3</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td colspan=8>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div name='inst_tag_10'>
+<hr>
+<a name="inst_tag_10"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_10" >generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s7 cl rt"> 79.91</td>
+<td class="s6 cl rt"><a href="mod4.html#inst_tag_10_Line" > 65.22</a></td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"><a href="mod4.html#inst_tag_10_Toggle" > 91.18</a></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod4.html#inst_tag_10_Assert" > 83.33</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s7 cl rt"> 79.91</td>
+<td class="s6 cl rt"> 65.22</td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"> 91.18</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"> 83.33</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s5 cl rt"> 50.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s5 cl rt"> 50.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod34.html#inst_tag_48" >part3</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td colspan=8>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_rx_interface'>
+<a name="Line"></a>
+Line Coverage for Module : <a name="770458176"></a>
+<a href="mod4.html" >rx_interface</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s6"><td class="lf">TOTAL</td><td></td><td>23</td><td>15</td><td>65.22</td></tr>
+<tr class="s6"><td class="lf">ROUTINE</td><td>102</td><td>20</td><td>12</td><td>60.00</td></tr>
+<tr class="s10"><td class="lf">INITIAL</td><td>170</td><td>3</td><td>3</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+101                                 function logic validate;
+102        1/1                          automatic logic err = 1'b0;
+103                     
+104                                     //$display(&quot;validating&quot;);
+105                     
+106                                     // soc, eoc, error, data_valid can never be unknown
+107        1/1                          if ($isunknown(soc)     ||
+108                                         $isunknown(eoc)     ||
+109                                         $isunknown(error)   ||
+110                                         $isunknown(data_valid)) begin
+111        <font color = "red">0/1     ==>                      err = 1'b1;</font>
+112                                         //$display(&quot;not valid because of unknown&quot;);
+113                                     end
+                        MISSING_ELSE
+114                     
+115        1/1                          if (soc) begin
+116                                         // no other flags can be set
+117        1/1                              if (eoc || error || data_valid) begin
+118        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+119                                             //$display(&quot;not valid because of soc + other&quot;);
+120                                         end
+                        MISSING_ELSE
+121                                     end
+                        MISSING_ELSE
+122                     
+123        1/1                          if (eoc) begin
+124                                         // soc can't be set
+125        1/1                              if (soc) begin
+126        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+127                                             //$display(&quot;not valid because of eoc + soc&quot;);
+128                                         end
+                        MISSING_ELSE
+129                                         // data_valid can only be set if BY_BYTE and data_bits != 0
+130        1/1                              if (data_valid &amp;&amp; (!BY_BYTE || (data_bits == 0))) begin
+131        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+132                                             //$display(&quot;not valid because of eoc + data_valid&quot;);
+133                                         end
+                        MISSING_ELSE
+134                                     end
+                        MISSING_ELSE
+135                     
+136        1/1                          if (error) begin
+137                                         // only eoc can be set
+138        <font color = "red">0/1     ==>                      if (soc || data_valid) begin</font>
+139        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+140                                             //$display(&quot;not valid because of error + something&quot;);
+141                                         end
+                   <font color = "red">==>  MISSING_ELSE</font>
+142                                     end
+                        MISSING_ELSE
+143                     
+144        1/1                          if (data_valid) begin
+145                                         // soc and error can't be set
+146        1/1                              if (soc || error) begin
+147        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+148                                             //$display(&quot;not valid because of data_valid + something&quot;);
+149                                         end
+                        MISSING_ELSE
+150                     
+151                                         // eoc can only be set if BY_BYTE and bit_count != 0
+152        1/1                              if (eoc &amp;&amp; (!BY_BYTE || (data_bits == 0))) begin
+153        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+154                                             //$display(&quot;not valid because of data_valid + eoc&quot;);
+155                                         end
+                        MISSING_ELSE
+156                                     end
+                        MISSING_ELSE
+157                     
+158                                     //$display(&quot;result: %b&quot;, err);
+159                     
+160        1/1                          return !err;
+161                                 endfunction
+162                     
+163                                 // TODO: check outputs_valid and validate are optimised out in synthesis
+164                     
+165                                 // have to put this in an initial block, because I can't call validate() from the assertion
+166                                 // since VCS complains about none constant functions in assertions (even though it is constant)
+167                                 // and using a temp variable only assigns to it once at startup, meaning everything is unknown
+168                                 initial begin: rxInterfaceInitial
+169                                     automatic logic outputs_valid;
+170        1/1                          forever begin: foreverBlock
+171                     
+172        1/1                              @(posedge clk)
+173        1/1                              outputs_valid = validate();
+</pre>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a name="2035642011"></a>
+<a href="mod4.html" >rx_interface ( parameter BY_BYTE=1,USE_ASSERTS=1 ) </a><br clear=all>
+Toggle Coverage for Module self-instances : 
+<div>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>TOGGLE</td></tr><tr>
+<td class="s7 cl rt"> 74.03</td>
+<td class="s7 cl rt"> 73.53</td>
+</tr></table>
+<span class=inst><a href="mod4.html#inst_tag_6_Toggle" >generate_top_saif_tb.dut.app_rx_iface</a></span></div>
+<br clear=all>
+<div>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>TOGGLE</td></tr><tr>
+<td class="s7 cl rt"> 79.91</td>
+<td class="s9 cl rt"> 91.18</td>
+</tr></table>
+<span class=inst><a href="mod4.html#inst_tag_8_Toggle" >generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface</a></span></div>
+<br clear=all>
+<div>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>TOGGLE</td></tr><tr>
+<td class="s7 cl rt"> 79.91</td>
+<td class="s9 cl rt"> 91.18</td>
+</tr></table>
+<span class=inst><a href="mod4.html#inst_tag_9_Toggle" >generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing</a></span></div>
+<br clear=all>
+<div>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>TOGGLE</td></tr><tr>
+<td class="s7 cl rt"> 79.91</td>
+<td class="s9 cl rt"> 91.18</td>
+</tr></table>
+<span class=inst><a href="mod4.html#inst_tag_10_Toggle" >generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init</a></span></div>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s7">
+<td>Totals</td>
+<td class="rt">8</td>
+<td class="rt">6</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s9">
+<td>Total Bits</td>
+<td class="rt">34</td>
+<td class="rt">31</td>
+<td class="rt">91.18 </td>
+</tr><tr class="s9">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">17</td>
+<td class="rt">16</td>
+<td class="rt">94.12 </td>
+</tr><tr class="s8">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">17</td>
+<td class="rt">15</td>
+<td class="rt">88.24 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s5">
+<td>Ports</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s7">
+<td>Port Bits</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s5">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s8">
+<td>Signals</td>
+<td class="rt">6</td>
+<td class="rt">5</td>
+<td class="rt">83.33 </td>
+</tr><tr class="s9">
+<td>Signal Bits</td>
+<td class="rt">30</td>
+<td class="rt">28</td>
+<td class="rt">93.33 </td>
+</tr><tr class="s9">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">15</td>
+<td class="rt">14</td>
+<td class="rt">93.33 </td>
+</tr><tr class="s9">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">15</td>
+<td class="rt">14</td>
+<td class="rt">93.33 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>soc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>eoc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_bits[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>error</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr></table><br clear=all>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a name="1233833286"></a>
+<a href="mod4.html" >rx_interface ( parameter BY_BYTE=0,USE_ASSERTS=1 ) </a><br clear=all>
+Toggle Coverage for Module self-instances : 
+<div>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>TOGGLE</td></tr><tr>
+<td class="s6 cl rt"> 67.85</td>
+<td class="s5 cl rt"> 55.00</td>
+</tr></table>
+<span class=inst><a href="mod4.html#inst_tag_7_Toggle" >generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface</a></span></div>
+<br clear=all>
+<div>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>TOGGLE</td></tr><tr>
+<td class="s6 cl rt"> 67.85</td>
+<td class="s5 cl rt"> 55.00</td>
+</tr></table>
+<span class=inst><a href="mod4.html#inst_tag_11_Toggle" >generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init</a></span></div>
+<br clear=all>
+<div>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>TOGGLE</td></tr><tr>
+<td class="s6 cl rt"> 67.85</td>
+<td class="s5 cl rt"> 55.00</td>
+</tr></table>
+<span class=inst><a href="mod4.html#inst_tag_12_Toggle" >generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits</a></span></div>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s6">
+<td>Totals</td>
+<td class="rt">8</td>
+<td class="rt">5</td>
+<td class="rt">62.50 </td>
+</tr><tr class="s5">
+<td>Total Bits</td>
+<td class="rt">20</td>
+<td class="rt">11</td>
+<td class="rt">55.00 </td>
+</tr><tr class="s6">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">10</td>
+<td class="rt">6</td>
+<td class="rt">60.00 </td>
+</tr><tr class="s5">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">10</td>
+<td class="rt">5</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s5">
+<td>Ports</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s7">
+<td>Port Bits</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s5">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s6">
+<td>Signals</td>
+<td class="rt">6</td>
+<td class="rt">4</td>
+<td class="rt">66.67 </td>
+</tr><tr class="s5">
+<td>Signal Bits</td>
+<td class="rt">16</td>
+<td class="rt">8</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s5">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">8</td>
+<td class="rt">4</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s5">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">8</td>
+<td class="rt">4</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>soc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>eoc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_bits[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>error</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr></table><br clear=all>
+<hr>
+<a name="Assert"></a>
+Assert Coverage for Module : <a name="770458176"></a>
+<a href="mod4.html" >rx_interface</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Attempted</th><th nowrap width=80>Percent</th><th nowrap width=80>Succeeded/Matched</th><th nowrap width=80>Percent</th></tr><tr>
+<td class="wht cl"><a href="#797536335" >Assertions</a></td>
+<td class="wht cl rt">6</td>
+<td class="s10 cl rt">6</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt">5</td>
+<td class="s8 cl rt">83.33 </td>
+</tr><tr>
+<td class="wht cl"><a href="#745712028" >Cover properties</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><a href="#1762336457" >Cover sequences</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><b>Total</b></td>
+<td class="wht cl rt">6</td>
+<td class="s10 cl rt">6</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt">5</td>
+<td class="s8 cl rt">83.33 </td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<br clear=all>
+<a name="797536335"></a>
+<b>Assertion Details</b><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td>Attempts</td><td>Real Successes</td><td>Failures</td><td>Incomplete</td></tr><tr>
+<td class="wht cl"><a name="1506318273"></a>
+useAsserts.dataValidOnlyOneTick</td>
+<td class="s9 cl rt">3183712</td>
+<td class="s9 cl rt">6446</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1573502328"></a>
+useAsserts.eocOnlyOneTick</td>
+<td class="s9 cl rt">3183712</td>
+<td class="s9 cl rt">117</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="985883799"></a>
+useAsserts.errorOnlyOneTick</td>
+<td class="s9 cl rt">3183712</td>
+<td class="s3 cl rt">0</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1069370801"></a>
+useAsserts.rxInterfaceInitial.foreverBlock.outputsValid</td>
+<td class="s9 cl rt">3183712</td>
+<td class="s9 cl rt">3183712</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="2123731993"></a>
+useAsserts.signalsInReset</td>
+<td class="s9 cl rt">3183712</td>
+<td class="s9 cl rt">49</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="589662058"></a>
+useAsserts.socOnlyOneTick</td>
+<td class="s9 cl rt">3183712</td>
+<td class="s9 cl rt">117</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr></table><br clear=all>
+</div>
+<div name='inst_tag_7'>
+<a name="inst_tag_7_Line"></a>
+<b>Line Coverage for Instance : <a href="mod4.html#inst_tag_7" >generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface</a></b><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s6"><td class="lf">TOTAL</td><td></td><td>23</td><td>15</td><td>65.22</td></tr>
+<tr class="s6"><td class="lf">ROUTINE</td><td>102</td><td>20</td><td>12</td><td>60.00</td></tr>
+<tr class="s10"><td class="lf">INITIAL</td><td>170</td><td>3</td><td>3</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+101                                 function logic validate;
+102        1/1                          automatic logic err = 1'b0;
+103                     
+104                                     //$display(&quot;validating&quot;);
+105                     
+106                                     // soc, eoc, error, data_valid can never be unknown
+107        1/1                          if ($isunknown(soc)     ||
+108                                         $isunknown(eoc)     ||
+109                                         $isunknown(error)   ||
+110                                         $isunknown(data_valid)) begin
+111        <font color = "red">0/1     ==>                      err = 1'b1;</font>
+112                                         //$display(&quot;not valid because of unknown&quot;);
+113                                     end
+                        MISSING_ELSE
+114                     
+115        1/1                          if (soc) begin
+116                                         // no other flags can be set
+117        1/1                              if (eoc || error || data_valid) begin
+118        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+119                                             //$display(&quot;not valid because of soc + other&quot;);
+120                                         end
+                        MISSING_ELSE
+121                                     end
+                        MISSING_ELSE
+122                     
+123        1/1                          if (eoc) begin
+124                                         // soc can't be set
+125        1/1                              if (soc) begin
+126        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+127                                             //$display(&quot;not valid because of eoc + soc&quot;);
+128                                         end
+                        MISSING_ELSE
+129                                         // data_valid can only be set if BY_BYTE and data_bits != 0
+130        1/1                              if (data_valid &amp;&amp; (!BY_BYTE || (data_bits == 0))) begin
+131        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+132                                             //$display(&quot;not valid because of eoc + data_valid&quot;);
+133                                         end
+                        MISSING_ELSE
+134                                     end
+                        MISSING_ELSE
+135                     
+136        1/1                          if (error) begin
+137                                         // only eoc can be set
+138        <font color = "red">0/1     ==>                      if (soc || data_valid) begin</font>
+139        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+140                                             //$display(&quot;not valid because of error + something&quot;);
+141                                         end
+                   <font color = "red">==>  MISSING_ELSE</font>
+142                                     end
+                        MISSING_ELSE
+143                     
+144        1/1                          if (data_valid) begin
+145                                         // soc and error can't be set
+146        1/1                              if (soc || error) begin
+147        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+148                                             //$display(&quot;not valid because of data_valid + something&quot;);
+149                                         end
+                        MISSING_ELSE
+150                     
+151                                         // eoc can only be set if BY_BYTE and bit_count != 0
+152        1/1                              if (eoc &amp;&amp; (!BY_BYTE || (data_bits == 0))) begin
+153        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+154                                             //$display(&quot;not valid because of data_valid + eoc&quot;);
+155                                         end
+                        MISSING_ELSE
+156                                     end
+                        MISSING_ELSE
+157                     
+158                                     //$display(&quot;result: %b&quot;, err);
+159                     
+160        1/1                          return !err;
+161                                 endfunction
+162                     
+163                                 // TODO: check outputs_valid and validate are optimised out in synthesis
+164                     
+165                                 // have to put this in an initial block, because I can't call validate() from the assertion
+166                                 // since VCS complains about none constant functions in assertions (even though it is constant)
+167                                 // and using a temp variable only assigns to it once at startup, meaning everything is unknown
+168                                 initial begin: rxInterfaceInitial
+169                                     automatic logic outputs_valid;
+170        1/1                          forever begin: foreverBlock
+171                     
+172        1/1                              @(posedge clk)
+173        1/1                              outputs_valid = validate();
+</pre>
+<hr>
+<a name="inst_tag_7_Toggle"></a>
+<b>Toggle Coverage for Instance : <a href="mod4.html#inst_tag_7" >generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s6">
+<td>Totals</td>
+<td class="rt">8</td>
+<td class="rt">5</td>
+<td class="rt">62.50 </td>
+</tr><tr class="s5">
+<td>Total Bits</td>
+<td class="rt">20</td>
+<td class="rt">11</td>
+<td class="rt">55.00 </td>
+</tr><tr class="s6">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">10</td>
+<td class="rt">6</td>
+<td class="rt">60.00 </td>
+</tr><tr class="s5">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">10</td>
+<td class="rt">5</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s5">
+<td>Ports</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s7">
+<td>Port Bits</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s5">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s6">
+<td>Signals</td>
+<td class="rt">6</td>
+<td class="rt">4</td>
+<td class="rt">66.67 </td>
+</tr><tr class="s5">
+<td>Signal Bits</td>
+<td class="rt">16</td>
+<td class="rt">8</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s5">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">8</td>
+<td class="rt">4</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s5">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">8</td>
+<td class="rt">4</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>soc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>eoc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_bits[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>error</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr></table><br clear=all>
+<hr>
+<a name="inst_tag_7_Assert"></a>
+<b>Assert Coverage for Instance : <a href="mod4.html#inst_tag_7" >generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Attempted</th><th nowrap width=80>Percent</th><th nowrap width=80>Succeeded/Matched</th><th nowrap width=80>Percent</th></tr><tr>
+<td class="wht cl"><a href="#656313555" >Assertions</a></td>
+<td class="wht cl rt">6</td>
+<td class="s10 cl rt">6</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt">5</td>
+<td class="s8 cl rt">83.33 </td>
+</tr><tr>
+<td class="wht cl"><a href="#512461064" >Cover properties</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><a href="#605645197" >Cover sequences</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><b>Total</b></td>
+<td class="wht cl rt">6</td>
+<td class="s10 cl rt">6</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt">5</td>
+<td class="s8 cl rt">83.33 </td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<br clear=all>
+<a name="656313555"></a>
+<b>Assertion Details</b><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td>Attempts</td><td>Real Successes</td><td>Failures</td><td>Incomplete</td></tr><tr>
+<td class="wht cl"><a name="700732805"></a>
+useAsserts.dataValidOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">2086</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1030635436"></a>
+useAsserts.eocOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">20</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1525257755"></a>
+useAsserts.errorOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s3 cl rt">0</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="335384203"></a>
+useAsserts.rxInterfaceInitial.foreverBlock.outputsValid</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1829224299"></a>
+useAsserts.signalsInReset</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">7</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1607875462"></a>
+useAsserts.socOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">20</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr></table><br clear=all>
+</div>
+<div name='inst_tag_11'>
+<a name="inst_tag_11_Line"></a>
+<b>Line Coverage for Instance : <a href="mod4.html#inst_tag_11" >generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init</a></b><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s6"><td class="lf">TOTAL</td><td></td><td>23</td><td>15</td><td>65.22</td></tr>
+<tr class="s6"><td class="lf">ROUTINE</td><td>102</td><td>20</td><td>12</td><td>60.00</td></tr>
+<tr class="s10"><td class="lf">INITIAL</td><td>170</td><td>3</td><td>3</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+101                                 function logic validate;
+102        1/1                          automatic logic err = 1'b0;
+103                     
+104                                     //$display(&quot;validating&quot;);
+105                     
+106                                     // soc, eoc, error, data_valid can never be unknown
+107        1/1                          if ($isunknown(soc)     ||
+108                                         $isunknown(eoc)     ||
+109                                         $isunknown(error)   ||
+110                                         $isunknown(data_valid)) begin
+111        <font color = "red">0/1     ==>                      err = 1'b1;</font>
+112                                         //$display(&quot;not valid because of unknown&quot;);
+113                                     end
+                        MISSING_ELSE
+114                     
+115        1/1                          if (soc) begin
+116                                         // no other flags can be set
+117        1/1                              if (eoc || error || data_valid) begin
+118        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+119                                             //$display(&quot;not valid because of soc + other&quot;);
+120                                         end
+                        MISSING_ELSE
+121                                     end
+                        MISSING_ELSE
+122                     
+123        1/1                          if (eoc) begin
+124                                         // soc can't be set
+125        1/1                              if (soc) begin
+126        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+127                                             //$display(&quot;not valid because of eoc + soc&quot;);
+128                                         end
+                        MISSING_ELSE
+129                                         // data_valid can only be set if BY_BYTE and data_bits != 0
+130        1/1                              if (data_valid &amp;&amp; (!BY_BYTE || (data_bits == 0))) begin
+131        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+132                                             //$display(&quot;not valid because of eoc + data_valid&quot;);
+133                                         end
+                        MISSING_ELSE
+134                                     end
+                        MISSING_ELSE
+135                     
+136        1/1                          if (error) begin
+137                                         // only eoc can be set
+138        <font color = "red">0/1     ==>                      if (soc || data_valid) begin</font>
+139        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+140                                             //$display(&quot;not valid because of error + something&quot;);
+141                                         end
+                   <font color = "red">==>  MISSING_ELSE</font>
+142                                     end
+                        MISSING_ELSE
+143                     
+144        1/1                          if (data_valid) begin
+145                                         // soc and error can't be set
+146        1/1                              if (soc || error) begin
+147        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+148                                             //$display(&quot;not valid because of data_valid + something&quot;);
+149                                         end
+                        MISSING_ELSE
+150                     
+151                                         // eoc can only be set if BY_BYTE and bit_count != 0
+152        1/1                              if (eoc &amp;&amp; (!BY_BYTE || (data_bits == 0))) begin
+153        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+154                                             //$display(&quot;not valid because of data_valid + eoc&quot;);
+155                                         end
+                        MISSING_ELSE
+156                                     end
+                        MISSING_ELSE
+157                     
+158                                     //$display(&quot;result: %b&quot;, err);
+159                     
+160        1/1                          return !err;
+161                                 endfunction
+162                     
+163                                 // TODO: check outputs_valid and validate are optimised out in synthesis
+164                     
+165                                 // have to put this in an initial block, because I can't call validate() from the assertion
+166                                 // since VCS complains about none constant functions in assertions (even though it is constant)
+167                                 // and using a temp variable only assigns to it once at startup, meaning everything is unknown
+168                                 initial begin: rxInterfaceInitial
+169                                     automatic logic outputs_valid;
+170        1/1                          forever begin: foreverBlock
+171                     
+172        1/1                              @(posedge clk)
+173        1/1                              outputs_valid = validate();
+</pre>
+<hr>
+<a name="inst_tag_11_Toggle"></a>
+<b>Toggle Coverage for Instance : <a href="mod4.html#inst_tag_11" >generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s6">
+<td>Totals</td>
+<td class="rt">8</td>
+<td class="rt">5</td>
+<td class="rt">62.50 </td>
+</tr><tr class="s5">
+<td>Total Bits</td>
+<td class="rt">20</td>
+<td class="rt">11</td>
+<td class="rt">55.00 </td>
+</tr><tr class="s6">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">10</td>
+<td class="rt">6</td>
+<td class="rt">60.00 </td>
+</tr><tr class="s5">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">10</td>
+<td class="rt">5</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s5">
+<td>Ports</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s7">
+<td>Port Bits</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s5">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s6">
+<td>Signals</td>
+<td class="rt">6</td>
+<td class="rt">4</td>
+<td class="rt">66.67 </td>
+</tr><tr class="s5">
+<td>Signal Bits</td>
+<td class="rt">16</td>
+<td class="rt">8</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s5">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">8</td>
+<td class="rt">4</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s5">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">8</td>
+<td class="rt">4</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>soc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>eoc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_bits[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>error</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr></table><br clear=all>
+<hr>
+<a name="inst_tag_11_Assert"></a>
+<b>Assert Coverage for Instance : <a href="mod4.html#inst_tag_11" >generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Attempted</th><th nowrap width=80>Percent</th><th nowrap width=80>Succeeded/Matched</th><th nowrap width=80>Percent</th></tr><tr>
+<td class="wht cl"><a href="#1929264068" >Assertions</a></td>
+<td class="wht cl rt">6</td>
+<td class="s10 cl rt">6</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt">5</td>
+<td class="s8 cl rt">83.33 </td>
+</tr><tr>
+<td class="wht cl"><a href="#1233644167" >Cover properties</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><a href="#1989661826" >Cover sequences</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><b>Total</b></td>
+<td class="wht cl rt">6</td>
+<td class="s10 cl rt">6</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt">5</td>
+<td class="s8 cl rt">83.33 </td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<br clear=all>
+<a name="1929264068"></a>
+<b>Assertion Details</b><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td>Attempts</td><td>Real Successes</td><td>Failures</td><td>Incomplete</td></tr><tr>
+<td class="wht cl"><a name="1488168074"></a>
+useAsserts.dataValidOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">1855</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1575560675"></a>
+useAsserts.eocOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">20</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1276338444"></a>
+useAsserts.errorOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s3 cl rt">0</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1539637402"></a>
+useAsserts.rxInterfaceInitial.foreverBlock.outputsValid</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1700553308"></a>
+useAsserts.signalsInReset</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">7</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="2126989291"></a>
+useAsserts.socOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">20</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr></table><br clear=all>
+</div>
+<div name='inst_tag_12'>
+<a name="inst_tag_12_Line"></a>
+<b>Line Coverage for Instance : <a href="mod4.html#inst_tag_12" >generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits</a></b><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s6"><td class="lf">TOTAL</td><td></td><td>23</td><td>15</td><td>65.22</td></tr>
+<tr class="s6"><td class="lf">ROUTINE</td><td>102</td><td>20</td><td>12</td><td>60.00</td></tr>
+<tr class="s10"><td class="lf">INITIAL</td><td>170</td><td>3</td><td>3</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+101                                 function logic validate;
+102        1/1                          automatic logic err = 1'b0;
+103                     
+104                                     //$display(&quot;validating&quot;);
+105                     
+106                                     // soc, eoc, error, data_valid can never be unknown
+107        1/1                          if ($isunknown(soc)     ||
+108                                         $isunknown(eoc)     ||
+109                                         $isunknown(error)   ||
+110                                         $isunknown(data_valid)) begin
+111        <font color = "red">0/1     ==>                      err = 1'b1;</font>
+112                                         //$display(&quot;not valid because of unknown&quot;);
+113                                     end
+                        MISSING_ELSE
+114                     
+115        1/1                          if (soc) begin
+116                                         // no other flags can be set
+117        1/1                              if (eoc || error || data_valid) begin
+118        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+119                                             //$display(&quot;not valid because of soc + other&quot;);
+120                                         end
+                        MISSING_ELSE
+121                                     end
+                        MISSING_ELSE
+122                     
+123        1/1                          if (eoc) begin
+124                                         // soc can't be set
+125        1/1                              if (soc) begin
+126        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+127                                             //$display(&quot;not valid because of eoc + soc&quot;);
+128                                         end
+                        MISSING_ELSE
+129                                         // data_valid can only be set if BY_BYTE and data_bits != 0
+130        1/1                              if (data_valid &amp;&amp; (!BY_BYTE || (data_bits == 0))) begin
+131        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+132                                             //$display(&quot;not valid because of eoc + data_valid&quot;);
+133                                         end
+                        MISSING_ELSE
+134                                     end
+                        MISSING_ELSE
+135                     
+136        1/1                          if (error) begin
+137                                         // only eoc can be set
+138        <font color = "red">0/1     ==>                      if (soc || data_valid) begin</font>
+139        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+140                                             //$display(&quot;not valid because of error + something&quot;);
+141                                         end
+                   <font color = "red">==>  MISSING_ELSE</font>
+142                                     end
+                        MISSING_ELSE
+143                     
+144        1/1                          if (data_valid) begin
+145                                         // soc and error can't be set
+146        1/1                              if (soc || error) begin
+147        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+148                                             //$display(&quot;not valid because of data_valid + something&quot;);
+149                                         end
+                        MISSING_ELSE
+150                     
+151                                         // eoc can only be set if BY_BYTE and bit_count != 0
+152        1/1                              if (eoc &amp;&amp; (!BY_BYTE || (data_bits == 0))) begin
+153        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+154                                             //$display(&quot;not valid because of data_valid + eoc&quot;);
+155                                         end
+                        MISSING_ELSE
+156                                     end
+                        MISSING_ELSE
+157                     
+158                                     //$display(&quot;result: %b&quot;, err);
+159                     
+160        1/1                          return !err;
+161                                 endfunction
+162                     
+163                                 // TODO: check outputs_valid and validate are optimised out in synthesis
+164                     
+165                                 // have to put this in an initial block, because I can't call validate() from the assertion
+166                                 // since VCS complains about none constant functions in assertions (even though it is constant)
+167                                 // and using a temp variable only assigns to it once at startup, meaning everything is unknown
+168                                 initial begin: rxInterfaceInitial
+169                                     automatic logic outputs_valid;
+170        1/1                          forever begin: foreverBlock
+171                     
+172        1/1                              @(posedge clk)
+173        1/1                              outputs_valid = validate();
+</pre>
+<hr>
+<a name="inst_tag_12_Toggle"></a>
+<b>Toggle Coverage for Instance : <a href="mod4.html#inst_tag_12" >generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s6">
+<td>Totals</td>
+<td class="rt">8</td>
+<td class="rt">5</td>
+<td class="rt">62.50 </td>
+</tr><tr class="s5">
+<td>Total Bits</td>
+<td class="rt">20</td>
+<td class="rt">11</td>
+<td class="rt">55.00 </td>
+</tr><tr class="s6">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">10</td>
+<td class="rt">6</td>
+<td class="rt">60.00 </td>
+</tr><tr class="s5">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">10</td>
+<td class="rt">5</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s5">
+<td>Ports</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s7">
+<td>Port Bits</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s5">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s6">
+<td>Signals</td>
+<td class="rt">6</td>
+<td class="rt">4</td>
+<td class="rt">66.67 </td>
+</tr><tr class="s5">
+<td>Signal Bits</td>
+<td class="rt">16</td>
+<td class="rt">8</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s5">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">8</td>
+<td class="rt">4</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s5">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">8</td>
+<td class="rt">4</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>soc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>eoc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_bits[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>error</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr></table><br clear=all>
+<hr>
+<a name="inst_tag_12_Assert"></a>
+<b>Assert Coverage for Instance : <a href="mod4.html#inst_tag_12" >generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Attempted</th><th nowrap width=80>Percent</th><th nowrap width=80>Succeeded/Matched</th><th nowrap width=80>Percent</th></tr><tr>
+<td class="wht cl"><a href="#1388046792" >Assertions</a></td>
+<td class="wht cl rt">6</td>
+<td class="s10 cl rt">6</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt">5</td>
+<td class="s8 cl rt">83.33 </td>
+</tr><tr>
+<td class="wht cl"><a href="#770114979" >Cover properties</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><a href="#1142745790" >Cover sequences</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><b>Total</b></td>
+<td class="wht cl rt">6</td>
+<td class="s10 cl rt">6</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt">5</td>
+<td class="s8 cl rt">83.33 </td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<br clear=all>
+<a name="1388046792"></a>
+<b>Assertion Details</b><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td>Attempts</td><td>Real Successes</td><td>Failures</td><td>Incomplete</td></tr><tr>
+<td class="wht cl"><a name="263189958"></a>
+useAsserts.dataValidOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">1855</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1656588159"></a>
+useAsserts.eocOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">20</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="679805456"></a>
+useAsserts.errorOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s3 cl rt">0</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1225111594"></a>
+useAsserts.rxInterfaceInitial.foreverBlock.outputsValid</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1630424736"></a>
+useAsserts.signalsInReset</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">7</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1406110321"></a>
+useAsserts.socOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">20</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr></table><br clear=all>
+</div>
+<div name='inst_tag_6'>
+<a name="inst_tag_6_Line"></a>
+<b>Line Coverage for Instance : <a href="mod4.html#inst_tag_6" >generate_top_saif_tb.dut.app_rx_iface</a></b><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s6"><td class="lf">TOTAL</td><td></td><td>23</td><td>15</td><td>65.22</td></tr>
+<tr class="s6"><td class="lf">ROUTINE</td><td>102</td><td>20</td><td>12</td><td>60.00</td></tr>
+<tr class="s10"><td class="lf">INITIAL</td><td>170</td><td>3</td><td>3</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+101                                 function logic validate;
+102        1/1                          automatic logic err = 1'b0;
+103                     
+104                                     //$display(&quot;validating&quot;);
+105                     
+106                                     // soc, eoc, error, data_valid can never be unknown
+107        1/1                          if ($isunknown(soc)     ||
+108                                         $isunknown(eoc)     ||
+109                                         $isunknown(error)   ||
+110                                         $isunknown(data_valid)) begin
+111        <font color = "red">0/1     ==>                      err = 1'b1;</font>
+112                                         //$display(&quot;not valid because of unknown&quot;);
+113                                     end
+                        MISSING_ELSE
+114                     
+115        1/1                          if (soc) begin
+116                                         // no other flags can be set
+117        1/1                              if (eoc || error || data_valid) begin
+118        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+119                                             //$display(&quot;not valid because of soc + other&quot;);
+120                                         end
+                        MISSING_ELSE
+121                                     end
+                        MISSING_ELSE
+122                     
+123        1/1                          if (eoc) begin
+124                                         // soc can't be set
+125        1/1                              if (soc) begin
+126        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+127                                             //$display(&quot;not valid because of eoc + soc&quot;);
+128                                         end
+                        MISSING_ELSE
+129                                         // data_valid can only be set if BY_BYTE and data_bits != 0
+130        1/1                              if (data_valid &amp;&amp; (!BY_BYTE || (data_bits == 0))) begin
+131        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+132                                             //$display(&quot;not valid because of eoc + data_valid&quot;);
+133                                         end
+                        MISSING_ELSE
+134                                     end
+                        MISSING_ELSE
+135                     
+136        1/1                          if (error) begin
+137                                         // only eoc can be set
+138        <font color = "red">0/1     ==>                      if (soc || data_valid) begin</font>
+139        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+140                                             //$display(&quot;not valid because of error + something&quot;);
+141                                         end
+                   <font color = "red">==>  MISSING_ELSE</font>
+142                                     end
+                        MISSING_ELSE
+143                     
+144        1/1                          if (data_valid) begin
+145                                         // soc and error can't be set
+146        1/1                              if (soc || error) begin
+147        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+148                                             //$display(&quot;not valid because of data_valid + something&quot;);
+149                                         end
+                        MISSING_ELSE
+150                     
+151                                         // eoc can only be set if BY_BYTE and bit_count != 0
+152        1/1                              if (eoc &amp;&amp; (!BY_BYTE || (data_bits == 0))) begin
+153        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+154                                             //$display(&quot;not valid because of data_valid + eoc&quot;);
+155                                         end
+                        MISSING_ELSE
+156                                     end
+                        MISSING_ELSE
+157                     
+158                                     //$display(&quot;result: %b&quot;, err);
+159                     
+160        1/1                          return !err;
+161                                 endfunction
+162                     
+163                                 // TODO: check outputs_valid and validate are optimised out in synthesis
+164                     
+165                                 // have to put this in an initial block, because I can't call validate() from the assertion
+166                                 // since VCS complains about none constant functions in assertions (even though it is constant)
+167                                 // and using a temp variable only assigns to it once at startup, meaning everything is unknown
+168                                 initial begin: rxInterfaceInitial
+169                                     automatic logic outputs_valid;
+170        1/1                          forever begin: foreverBlock
+171                     
+172        1/1                              @(posedge clk)
+173        1/1                              outputs_valid = validate();
+</pre>
+<hr>
+<a name="inst_tag_6_Toggle"></a>
+<b>Toggle Coverage for Instance : <a href="mod4.html#inst_tag_6" >generate_top_saif_tb.dut.app_rx_iface</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s6">
+<td>Totals</td>
+<td class="rt">8</td>
+<td class="rt">5</td>
+<td class="rt">62.50 </td>
+</tr><tr class="s7">
+<td>Total Bits</td>
+<td class="rt">34</td>
+<td class="rt">25</td>
+<td class="rt">73.53 </td>
+</tr><tr class="s7">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">17</td>
+<td class="rt">13</td>
+<td class="rt">76.47 </td>
+</tr><tr class="s7">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">17</td>
+<td class="rt">12</td>
+<td class="rt">70.59 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s5">
+<td>Ports</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s7">
+<td>Port Bits</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s5">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s6">
+<td>Signals</td>
+<td class="rt">6</td>
+<td class="rt">4</td>
+<td class="rt">66.67 </td>
+</tr><tr class="s7">
+<td>Signal Bits</td>
+<td class="rt">30</td>
+<td class="rt">22</td>
+<td class="rt">73.33 </td>
+</tr><tr class="s7">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">15</td>
+<td class="rt">11</td>
+<td class="rt">73.33 </td>
+</tr><tr class="s7">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">15</td>
+<td class="rt">11</td>
+<td class="rt">73.33 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>soc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>eoc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_bits[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>error</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr></table><br clear=all>
+<hr>
+<a name="inst_tag_6_Assert"></a>
+<b>Assert Coverage for Instance : <a href="mod4.html#inst_tag_6" >generate_top_saif_tb.dut.app_rx_iface</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Attempted</th><th nowrap width=80>Percent</th><th nowrap width=80>Succeeded/Matched</th><th nowrap width=80>Percent</th></tr><tr>
+<td class="wht cl"><a href="#1830552871" >Assertions</a></td>
+<td class="wht cl rt">6</td>
+<td class="s10 cl rt">6</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt">5</td>
+<td class="s8 cl rt">83.33 </td>
+</tr><tr>
+<td class="wht cl"><a href="#1443188558" >Cover properties</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><a href="#825510931" >Cover sequences</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><b>Total</b></td>
+<td class="wht cl rt">6</td>
+<td class="s10 cl rt">6</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt">5</td>
+<td class="s8 cl rt">83.33 </td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<br clear=all>
+<a name="1830552871"></a>
+<b>Assertion Details</b><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td>Attempts</td><td>Real Successes</td><td>Failures</td><td>Incomplete</td></tr><tr>
+<td class="wht cl"><a name="433208843"></a>
+useAsserts.dataValidOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">182</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1014827762"></a>
+useAsserts.eocOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">16</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="329518625"></a>
+useAsserts.errorOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s3 cl rt">0</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1044158981"></a>
+useAsserts.rxInterfaceInitial.foreverBlock.outputsValid</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="616875151"></a>
+useAsserts.signalsInReset</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">7</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="87422272"></a>
+useAsserts.socOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">16</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr></table><br clear=all>
+</div>
+<div name='inst_tag_8'>
+<a name="inst_tag_8_Line"></a>
+<b>Line Coverage for Instance : <a href="mod4.html#inst_tag_8" >generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface</a></b><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s6"><td class="lf">TOTAL</td><td></td><td>23</td><td>15</td><td>65.22</td></tr>
+<tr class="s6"><td class="lf">ROUTINE</td><td>102</td><td>20</td><td>12</td><td>60.00</td></tr>
+<tr class="s10"><td class="lf">INITIAL</td><td>170</td><td>3</td><td>3</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+101                                 function logic validate;
+102        1/1                          automatic logic err = 1'b0;
+103                     
+104                                     //$display(&quot;validating&quot;);
+105                     
+106                                     // soc, eoc, error, data_valid can never be unknown
+107        1/1                          if ($isunknown(soc)     ||
+108                                         $isunknown(eoc)     ||
+109                                         $isunknown(error)   ||
+110                                         $isunknown(data_valid)) begin
+111        <font color = "red">0/1     ==>                      err = 1'b1;</font>
+112                                         //$display(&quot;not valid because of unknown&quot;);
+113                                     end
+                        MISSING_ELSE
+114                     
+115        1/1                          if (soc) begin
+116                                         // no other flags can be set
+117        1/1                              if (eoc || error || data_valid) begin
+118        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+119                                             //$display(&quot;not valid because of soc + other&quot;);
+120                                         end
+                        MISSING_ELSE
+121                                     end
+                        MISSING_ELSE
+122                     
+123        1/1                          if (eoc) begin
+124                                         // soc can't be set
+125        1/1                              if (soc) begin
+126        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+127                                             //$display(&quot;not valid because of eoc + soc&quot;);
+128                                         end
+                        MISSING_ELSE
+129                                         // data_valid can only be set if BY_BYTE and data_bits != 0
+130        1/1                              if (data_valid &amp;&amp; (!BY_BYTE || (data_bits == 0))) begin
+131        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+132                                             //$display(&quot;not valid because of eoc + data_valid&quot;);
+133                                         end
+                        MISSING_ELSE
+134                                     end
+                        MISSING_ELSE
+135                     
+136        1/1                          if (error) begin
+137                                         // only eoc can be set
+138        <font color = "red">0/1     ==>                      if (soc || data_valid) begin</font>
+139        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+140                                             //$display(&quot;not valid because of error + something&quot;);
+141                                         end
+                   <font color = "red">==>  MISSING_ELSE</font>
+142                                     end
+                        MISSING_ELSE
+143                     
+144        1/1                          if (data_valid) begin
+145                                         // soc and error can't be set
+146        1/1                              if (soc || error) begin
+147        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+148                                             //$display(&quot;not valid because of data_valid + something&quot;);
+149                                         end
+                        MISSING_ELSE
+150                     
+151                                         // eoc can only be set if BY_BYTE and bit_count != 0
+152        1/1                              if (eoc &amp;&amp; (!BY_BYTE || (data_bits == 0))) begin
+153        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+154                                             //$display(&quot;not valid because of data_valid + eoc&quot;);
+155                                         end
+                        MISSING_ELSE
+156                                     end
+                        MISSING_ELSE
+157                     
+158                                     //$display(&quot;result: %b&quot;, err);
+159                     
+160        1/1                          return !err;
+161                                 endfunction
+162                     
+163                                 // TODO: check outputs_valid and validate are optimised out in synthesis
+164                     
+165                                 // have to put this in an initial block, because I can't call validate() from the assertion
+166                                 // since VCS complains about none constant functions in assertions (even though it is constant)
+167                                 // and using a temp variable only assigns to it once at startup, meaning everything is unknown
+168                                 initial begin: rxInterfaceInitial
+169                                     automatic logic outputs_valid;
+170        1/1                          forever begin: foreverBlock
+171                     
+172        1/1                              @(posedge clk)
+173        1/1                              outputs_valid = validate();
+</pre>
+<hr>
+<a name="inst_tag_8_Toggle"></a>
+<b>Toggle Coverage for Instance : <a href="mod4.html#inst_tag_8" >generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s7">
+<td>Totals</td>
+<td class="rt">8</td>
+<td class="rt">6</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s9">
+<td>Total Bits</td>
+<td class="rt">34</td>
+<td class="rt">31</td>
+<td class="rt">91.18 </td>
+</tr><tr class="s9">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">17</td>
+<td class="rt">16</td>
+<td class="rt">94.12 </td>
+</tr><tr class="s8">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">17</td>
+<td class="rt">15</td>
+<td class="rt">88.24 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s5">
+<td>Ports</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s7">
+<td>Port Bits</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s5">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s8">
+<td>Signals</td>
+<td class="rt">6</td>
+<td class="rt">5</td>
+<td class="rt">83.33 </td>
+</tr><tr class="s9">
+<td>Signal Bits</td>
+<td class="rt">30</td>
+<td class="rt">28</td>
+<td class="rt">93.33 </td>
+</tr><tr class="s9">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">15</td>
+<td class="rt">14</td>
+<td class="rt">93.33 </td>
+</tr><tr class="s9">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">15</td>
+<td class="rt">14</td>
+<td class="rt">93.33 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>soc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>eoc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_bits[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>error</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr></table><br clear=all>
+<hr>
+<a name="inst_tag_8_Assert"></a>
+<b>Assert Coverage for Instance : <a href="mod4.html#inst_tag_8" >generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Attempted</th><th nowrap width=80>Percent</th><th nowrap width=80>Succeeded/Matched</th><th nowrap width=80>Percent</th></tr><tr>
+<td class="wht cl"><a href="#1919044531" >Assertions</a></td>
+<td class="wht cl rt">6</td>
+<td class="s10 cl rt">6</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt">5</td>
+<td class="s8 cl rt">83.33 </td>
+</tr><tr>
+<td class="wht cl"><a href="#1775192040" >Cover properties</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><a href="#1868376173" >Cover sequences</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><b>Total</b></td>
+<td class="wht cl rt">6</td>
+<td class="s10 cl rt">6</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt">5</td>
+<td class="s8 cl rt">83.33 </td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<br clear=all>
+<a name="1919044531"></a>
+<b>Assertion Details</b><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td>Attempts</td><td>Real Successes</td><td>Failures</td><td>Incomplete</td></tr><tr>
+<td class="wht cl"><a name="1963463781"></a>
+useAsserts.dataValidOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">222</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="2001600884"></a>
+useAsserts.eocOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">18</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1506978565"></a>
+useAsserts.errorOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s3 cl rt">0</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="927346773"></a>
+useAsserts.rxInterfaceInitial.foreverBlock.outputsValid</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1203012021"></a>
+useAsserts.signalsInReset</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">7</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="345144486"></a>
+useAsserts.socOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">18</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr></table><br clear=all>
+</div>
+<div name='inst_tag_9'>
+<a name="inst_tag_9_Line"></a>
+<b>Line Coverage for Instance : <a href="mod4.html#inst_tag_9" >generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing</a></b><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s6"><td class="lf">TOTAL</td><td></td><td>23</td><td>15</td><td>65.22</td></tr>
+<tr class="s6"><td class="lf">ROUTINE</td><td>102</td><td>20</td><td>12</td><td>60.00</td></tr>
+<tr class="s10"><td class="lf">INITIAL</td><td>170</td><td>3</td><td>3</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+101                                 function logic validate;
+102        1/1                          automatic logic err = 1'b0;
+103                     
+104                                     //$display(&quot;validating&quot;);
+105                     
+106                                     // soc, eoc, error, data_valid can never be unknown
+107        1/1                          if ($isunknown(soc)     ||
+108                                         $isunknown(eoc)     ||
+109                                         $isunknown(error)   ||
+110                                         $isunknown(data_valid)) begin
+111        <font color = "red">0/1     ==>                      err = 1'b1;</font>
+112                                         //$display(&quot;not valid because of unknown&quot;);
+113                                     end
+                        MISSING_ELSE
+114                     
+115        1/1                          if (soc) begin
+116                                         // no other flags can be set
+117        1/1                              if (eoc || error || data_valid) begin
+118        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+119                                             //$display(&quot;not valid because of soc + other&quot;);
+120                                         end
+                        MISSING_ELSE
+121                                     end
+                        MISSING_ELSE
+122                     
+123        1/1                          if (eoc) begin
+124                                         // soc can't be set
+125        1/1                              if (soc) begin
+126        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+127                                             //$display(&quot;not valid because of eoc + soc&quot;);
+128                                         end
+                        MISSING_ELSE
+129                                         // data_valid can only be set if BY_BYTE and data_bits != 0
+130        1/1                              if (data_valid &amp;&amp; (!BY_BYTE || (data_bits == 0))) begin
+131        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+132                                             //$display(&quot;not valid because of eoc + data_valid&quot;);
+133                                         end
+                        MISSING_ELSE
+134                                     end
+                        MISSING_ELSE
+135                     
+136        1/1                          if (error) begin
+137                                         // only eoc can be set
+138        <font color = "red">0/1     ==>                      if (soc || data_valid) begin</font>
+139        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+140                                             //$display(&quot;not valid because of error + something&quot;);
+141                                         end
+                   <font color = "red">==>  MISSING_ELSE</font>
+142                                     end
+                        MISSING_ELSE
+143                     
+144        1/1                          if (data_valid) begin
+145                                         // soc and error can't be set
+146        1/1                              if (soc || error) begin
+147        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+148                                             //$display(&quot;not valid because of data_valid + something&quot;);
+149                                         end
+                        MISSING_ELSE
+150                     
+151                                         // eoc can only be set if BY_BYTE and bit_count != 0
+152        1/1                              if (eoc &amp;&amp; (!BY_BYTE || (data_bits == 0))) begin
+153        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+154                                             //$display(&quot;not valid because of data_valid + eoc&quot;);
+155                                         end
+                        MISSING_ELSE
+156                                     end
+                        MISSING_ELSE
+157                     
+158                                     //$display(&quot;result: %b&quot;, err);
+159                     
+160        1/1                          return !err;
+161                                 endfunction
+162                     
+163                                 // TODO: check outputs_valid and validate are optimised out in synthesis
+164                     
+165                                 // have to put this in an initial block, because I can't call validate() from the assertion
+166                                 // since VCS complains about none constant functions in assertions (even though it is constant)
+167                                 // and using a temp variable only assigns to it once at startup, meaning everything is unknown
+168                                 initial begin: rxInterfaceInitial
+169                                     automatic logic outputs_valid;
+170        1/1                          forever begin: foreverBlock
+171                     
+172        1/1                              @(posedge clk)
+173        1/1                              outputs_valid = validate();
+</pre>
+<hr>
+<a name="inst_tag_9_Toggle"></a>
+<b>Toggle Coverage for Instance : <a href="mod4.html#inst_tag_9" >generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s7">
+<td>Totals</td>
+<td class="rt">8</td>
+<td class="rt">6</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s9">
+<td>Total Bits</td>
+<td class="rt">34</td>
+<td class="rt">31</td>
+<td class="rt">91.18 </td>
+</tr><tr class="s9">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">17</td>
+<td class="rt">16</td>
+<td class="rt">94.12 </td>
+</tr><tr class="s8">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">17</td>
+<td class="rt">15</td>
+<td class="rt">88.24 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s5">
+<td>Ports</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s7">
+<td>Port Bits</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s5">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s8">
+<td>Signals</td>
+<td class="rt">6</td>
+<td class="rt">5</td>
+<td class="rt">83.33 </td>
+</tr><tr class="s9">
+<td>Signal Bits</td>
+<td class="rt">30</td>
+<td class="rt">28</td>
+<td class="rt">93.33 </td>
+</tr><tr class="s9">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">15</td>
+<td class="rt">14</td>
+<td class="rt">93.33 </td>
+</tr><tr class="s9">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">15</td>
+<td class="rt">14</td>
+<td class="rt">93.33 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>soc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>eoc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_bits[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>error</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr></table><br clear=all>
+<hr>
+<a name="inst_tag_9_Assert"></a>
+<b>Assert Coverage for Instance : <a href="mod4.html#inst_tag_9" >generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Attempted</th><th nowrap width=80>Percent</th><th nowrap width=80>Succeeded/Matched</th><th nowrap width=80>Percent</th></tr><tr>
+<td class="wht cl"><a href="#884186231" >Assertions</a></td>
+<td class="wht cl rt">6</td>
+<td class="s10 cl rt">6</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt">5</td>
+<td class="s8 cl rt">83.33 </td>
+</tr><tr>
+<td class="wht cl"><a href="#1507304770" >Cover properties</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><a href="#1218189757" >Cover sequences</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><b>Total</b></td>
+<td class="wht cl rt">6</td>
+<td class="s10 cl rt">6</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt">5</td>
+<td class="s8 cl rt">83.33 </td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<br clear=all>
+<a name="884186231"></a>
+<b>Assertion Details</b><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td>Attempts</td><td>Real Successes</td><td>Failures</td><td>Incomplete</td></tr><tr>
+<td class="wht cl"><a name="415278533"></a>
+useAsserts.dataValidOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">232</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1707879778"></a>
+useAsserts.eocOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">20</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="524133585"></a>
+useAsserts.errorOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s3 cl rt">0</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1017477589"></a>
+useAsserts.rxInterfaceInitial.foreverBlock.outputsValid</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="2122677793"></a>
+useAsserts.signalsInReset</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">7</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1976894512"></a>
+useAsserts.socOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">20</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr></table><br clear=all>
+</div>
+<div name='inst_tag_10'>
+<a name="inst_tag_10_Line"></a>
+<b>Line Coverage for Instance : <a href="mod4.html#inst_tag_10" >generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init</a></b><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s6"><td class="lf">TOTAL</td><td></td><td>23</td><td>15</td><td>65.22</td></tr>
+<tr class="s6"><td class="lf">ROUTINE</td><td>102</td><td>20</td><td>12</td><td>60.00</td></tr>
+<tr class="s10"><td class="lf">INITIAL</td><td>170</td><td>3</td><td>3</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+101                                 function logic validate;
+102        1/1                          automatic logic err = 1'b0;
+103                     
+104                                     //$display(&quot;validating&quot;);
+105                     
+106                                     // soc, eoc, error, data_valid can never be unknown
+107        1/1                          if ($isunknown(soc)     ||
+108                                         $isunknown(eoc)     ||
+109                                         $isunknown(error)   ||
+110                                         $isunknown(data_valid)) begin
+111        <font color = "red">0/1     ==>                      err = 1'b1;</font>
+112                                         //$display(&quot;not valid because of unknown&quot;);
+113                                     end
+                        MISSING_ELSE
+114                     
+115        1/1                          if (soc) begin
+116                                         // no other flags can be set
+117        1/1                              if (eoc || error || data_valid) begin
+118        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+119                                             //$display(&quot;not valid because of soc + other&quot;);
+120                                         end
+                        MISSING_ELSE
+121                                     end
+                        MISSING_ELSE
+122                     
+123        1/1                          if (eoc) begin
+124                                         // soc can't be set
+125        1/1                              if (soc) begin
+126        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+127                                             //$display(&quot;not valid because of eoc + soc&quot;);
+128                                         end
+                        MISSING_ELSE
+129                                         // data_valid can only be set if BY_BYTE and data_bits != 0
+130        1/1                              if (data_valid &amp;&amp; (!BY_BYTE || (data_bits == 0))) begin
+131        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+132                                             //$display(&quot;not valid because of eoc + data_valid&quot;);
+133                                         end
+                        MISSING_ELSE
+134                                     end
+                        MISSING_ELSE
+135                     
+136        1/1                          if (error) begin
+137                                         // only eoc can be set
+138        <font color = "red">0/1     ==>                      if (soc || data_valid) begin</font>
+139        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+140                                             //$display(&quot;not valid because of error + something&quot;);
+141                                         end
+                   <font color = "red">==>  MISSING_ELSE</font>
+142                                     end
+                        MISSING_ELSE
+143                     
+144        1/1                          if (data_valid) begin
+145                                         // soc and error can't be set
+146        1/1                              if (soc || error) begin
+147        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+148                                             //$display(&quot;not valid because of data_valid + something&quot;);
+149                                         end
+                        MISSING_ELSE
+150                     
+151                                         // eoc can only be set if BY_BYTE and bit_count != 0
+152        1/1                              if (eoc &amp;&amp; (!BY_BYTE || (data_bits == 0))) begin
+153        <font color = "red">0/1     ==>                          err = 1'b1;</font>
+154                                             //$display(&quot;not valid because of data_valid + eoc&quot;);
+155                                         end
+                        MISSING_ELSE
+156                                     end
+                        MISSING_ELSE
+157                     
+158                                     //$display(&quot;result: %b&quot;, err);
+159                     
+160        1/1                          return !err;
+161                                 endfunction
+162                     
+163                                 // TODO: check outputs_valid and validate are optimised out in synthesis
+164                     
+165                                 // have to put this in an initial block, because I can't call validate() from the assertion
+166                                 // since VCS complains about none constant functions in assertions (even though it is constant)
+167                                 // and using a temp variable only assigns to it once at startup, meaning everything is unknown
+168                                 initial begin: rxInterfaceInitial
+169                                     automatic logic outputs_valid;
+170        1/1                          forever begin: foreverBlock
+171                     
+172        1/1                              @(posedge clk)
+173        1/1                              outputs_valid = validate();
+</pre>
+<hr>
+<a name="inst_tag_10_Toggle"></a>
+<b>Toggle Coverage for Instance : <a href="mod4.html#inst_tag_10" >generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s7">
+<td>Totals</td>
+<td class="rt">8</td>
+<td class="rt">6</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s9">
+<td>Total Bits</td>
+<td class="rt">34</td>
+<td class="rt">31</td>
+<td class="rt">91.18 </td>
+</tr><tr class="s9">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">17</td>
+<td class="rt">16</td>
+<td class="rt">94.12 </td>
+</tr><tr class="s8">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">17</td>
+<td class="rt">15</td>
+<td class="rt">88.24 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s5">
+<td>Ports</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s7">
+<td>Port Bits</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s5">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s8">
+<td>Signals</td>
+<td class="rt">6</td>
+<td class="rt">5</td>
+<td class="rt">83.33 </td>
+</tr><tr class="s9">
+<td>Signal Bits</td>
+<td class="rt">30</td>
+<td class="rt">28</td>
+<td class="rt">93.33 </td>
+</tr><tr class="s9">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">15</td>
+<td class="rt">14</td>
+<td class="rt">93.33 </td>
+</tr><tr class="s9">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">15</td>
+<td class="rt">14</td>
+<td class="rt">93.33 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>soc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>eoc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>data_bits[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>error</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr></table><br clear=all>
+<hr>
+<a name="inst_tag_10_Assert"></a>
+<b>Assert Coverage for Instance : <a href="mod4.html#inst_tag_10" >generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Attempted</th><th nowrap width=80>Percent</th><th nowrap width=80>Succeeded/Matched</th><th nowrap width=80>Percent</th></tr><tr>
+<td class="wht cl"><a href="#589645919" >Assertions</a></td>
+<td class="wht cl rt">6</td>
+<td class="s10 cl rt">6</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt">5</td>
+<td class="s8 cl rt">83.33 </td>
+</tr><tr>
+<td class="wht cl"><a href="#144446604" >Cover properties</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><a href="#1817264345" >Cover sequences</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><b>Total</b></td>
+<td class="wht cl rt">6</td>
+<td class="s10 cl rt">6</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s8 cl rt">5</td>
+<td class="s8 cl rt">83.33 </td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<br clear=all>
+<a name="589645919"></a>
+<b>Assertion Details</b><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td>Attempts</td><td>Real Successes</td><td>Failures</td><td>Incomplete</td></tr><tr>
+<td class="wht cl"><a name="844140079"></a>
+useAsserts.dataValidOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">14</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1865030552"></a>
+useAsserts.eocOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">3</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="644496217"></a>
+useAsserts.errorOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s3 cl rt">0</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="751409089"></a>
+useAsserts.rxInterfaceInitial.foreverBlock.outputsValid</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="910255113"></a>
+useAsserts.signalsInReset</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">7</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1244868698"></a>
+useAsserts.socOnlyOneTick</td>
+<td class="s9 cl rt">454816</td>
+<td class="s9 cl rt">3</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_10">
+    <li>
+      <a href="#inst_tag_10_Line">Line</a>    </li>
+    <li>
+      <a href="#inst_tag_10_Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#inst_tag_10_Assert">Assert</a>    </li>
+  </ul>
+  <ul name="inst_tag_11">
+    <li>
+      <a href="#inst_tag_11_Line">Line</a>    </li>
+    <li>
+      <a href="#inst_tag_11_Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#inst_tag_11_Assert">Assert</a>    </li>
+  </ul>
+  <ul name="inst_tag_12">
+    <li>
+      <a href="#inst_tag_12_Line">Line</a>    </li>
+    <li>
+      <a href="#inst_tag_12_Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#inst_tag_12_Assert">Assert</a>    </li>
+  </ul>
+  <ul name="inst_tag_6">
+    <li>
+      <a href="#inst_tag_6_Line">Line</a>    </li>
+    <li>
+      <a href="#inst_tag_6_Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#inst_tag_6_Assert">Assert</a>    </li>
+  </ul>
+  <ul name="inst_tag_7">
+    <li>
+      <a href="#inst_tag_7_Line">Line</a>    </li>
+    <li>
+      <a href="#inst_tag_7_Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#inst_tag_7_Assert">Assert</a>    </li>
+  </ul>
+  <ul name="inst_tag_8">
+    <li>
+      <a href="#inst_tag_8_Line">Line</a>    </li>
+    <li>
+      <a href="#inst_tag_8_Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#inst_tag_8_Assert">Assert</a>    </li>
+  </ul>
+  <ul name="inst_tag_9">
+    <li>
+      <a href="#inst_tag_9_Line">Line</a>    </li>
+    <li>
+      <a href="#inst_tag_9_Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#inst_tag_9_Assert">Assert</a>    </li>
+  </ul>
+  <ul name="tag_rx_interface">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Assert">Assert</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

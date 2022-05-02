@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: generate_top_saif_tb</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | <a href="asserts.html" ><b>asserts</b></a></div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_generate_top_saif_tb'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_generate_top_saif_tb')">generate_top_saif_tb</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s8 cl rt"> 82.37</td>
+<td class="s10 cl rt"><a href="mod13.html#Line" >100.00</a></td>
+<td class="wht cl rt"></td>
+<td class="s4 cl rt"><a href="mod13.html#Toggle" > 47.12</a></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt"><a href="mod13.html#Branch" >100.00</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/generate_top_saif_tb.sv')">/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/generate_top_saif_tb.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod13.html#inst_tag_27"  onclick="showContent('inst_tag_27')">generate_top_saif_tb</a></td>
+<td class="s8 cl rt"> 82.37</td>
+<td class="s10 cl rt"><a href="mod13.html#Line" >100.00</a></td>
+<td class="wht cl rt"></td>
+<td class="s4 cl rt"><a href="mod13.html#Toggle" > 47.12</a></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt"><a href="mod13.html#Branch" >100.00</a></td>
+<td class="wht cl rt"></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_generate_top_saif_tb'>
+<hr>
+<a name="inst_tag_27"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_27" >generate_top_saif_tb</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s8 cl rt"> 82.37</td>
+<td class="s10 cl rt"><a href="mod13.html#Line" >100.00</a></td>
+<td class="wht cl rt"></td>
+<td class="s4 cl rt"><a href="mod13.html#Toggle" > 47.12</a></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt"><a href="mod13.html#Branch" >100.00</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s7 cl rt"> 71.86</td>
+<td class="s8 cl rt"> 86.54</td>
+<td class="s6 cl rt"> 61.54</td>
+<td class="s5 cl rt"> 54.16</td>
+<td class="s6 cl rt"> 60.47</td>
+<td class="s7 cl rt"> 79.08</td>
+<td class="s8 cl rt"> 89.39</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<span class=inst>none</span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod11.html#inst_tag_25" id="tag_urg_inst_25">adc_sim_inst</a></td>
+<td class="s8 cl rt"> 81.82</td>
+<td class="s9 cl rt"> 95.45</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s5 cl rt"> 50.00</td>
+<td class="wht cl rt"></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod53.html#inst_tag_68" id="tag_urg_inst_68">analogue_sim_inst</a></td>
+<td class="s9 cl rt"> 94.14</td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"> 90.74</td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"> 91.67</td>
+<td class="wht cl rt"></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod55.html#inst_tag_70" id="tag_urg_inst_70">dut</a></td>
+<td class="s7 cl rt"> 71.43</td>
+<td class="s8 cl rt"> 85.46</td>
+<td class="s6 cl rt"> 61.54</td>
+<td class="s5 cl rt"> 52.92</td>
+<td class="s6 cl rt"> 60.47</td>
+<td class="s7 cl rt"> 78.83</td>
+<td class="s8 cl rt"> 89.39</td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod47.html#inst_tag_62" id="tag_urg_inst_62">lm_iface</a></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_generate_top_saif_tb'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod13.html" >generate_top_saif_tb</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s10"><td class="lf">TOTAL</td><td></td><td>29</td><td>29</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>164</td><td>3</td><td>3</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">INITIAL</td><td>372</td><td>26</td><td>26</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+163                         always_ff @(posedge dut.pause_n_synchronised, negedge rst_n) begin
+164        1/1                  if (!rst_n) begin
+165        1/1                      last_pause_time &lt;= 0ns;
+166                             end
+167                             else begin
+168        1/1                      last_pause_time &lt;= $time;
+169                             end
+170                         end
+171                     
+172                         // --------------------------------------------------------------
+173                         // The driver / queue / etc... for the pause_n_synchronised input
+174                         // --------------------------------------------------------------
+175                     
+176                         // driver, note the actual driver is in the analogue_sim above
+177                         typedef pcd_pause_n_driver_pkg::PCDPauseNDriver                             RxDriverType;
+178                     
+179                         // Rx Transactions
+180                         typedef pcd_pause_n_transaction_pkg::PCDPauseNTransaction                   RxTransType;
+181                         typedef rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter RxTransConvType;
+182                     
+183                         // the send queue
+184                         typedef RxTransType                                                     RxTransQueueType [$];
+185                         typedef wrapper_pkg::Wrapper #(.Type(RxTransQueueType))                 RxQueueWrapperType;
+186                         RxQueueWrapperType                                                      rx_send_queue;
+187                     
+188                         // --------------------------------------------------------------
+189                         // The monitor for the lm_out (load modulator) signal
+190                         // --------------------------------------------------------------
+191                     
+192                         // monitor (produces TxBitTransactions)
+193                         typedef load_modulator_monitor_pkg::LoadModulatorMonitor                TxMonitorType;
+194                         TxMonitorType                                                           tx_monitor;
+195                     
+196                         // Tx Transactions
+197                         typedef tx_bit_transaction_pkg::TxBitTransaction                        TxTransType;
+198                         typedef tx_transaction_converter_pkg::TxByteToBitTransactionConverter   TxTransConvType;
+199                     
+200                         // and the recv_queue
+201                         typedef TxTransType                                                     TxTransQueueType [$];
+202                         typedef wrapper_pkg::Wrapper #(.Type(TxTransQueueType))                 TxQueueWrapperType;
+203                         TxQueueWrapperType                                                      tx_recv_queue;
+204                     
+205                         // interface
+206                         load_modulator_iface                                                    lm_iface (.*);
+207                         assign lm_iface.lm = lm_out;
+208                     
+209                         // ----------------------------------------------------------------
+210                         // Extend AppCommsTestsSequence to do TB specific stuff
+211                         // ----------------------------------------------------------------
+212                     
+213                         class SAIF_TbSequence
+214                         extends app_comms_tests_sequence_pkg::AppCommsTestsSequence
+215                         #(
+216                             .RxTransType        (RxTransType),
+217                             .TxTransType        (TxTransType),
+218                             .RxTransConvType    (RxTransConvType),
+219                             .TxTransConvType    (TxTransConvType),
+220                             .RxDriverType       (RxDriverType),
+221                             .TxMonitorType      (TxMonitorType),
+222                     
+223                             .ADC_SIM_MIN_CYCLES         (ADC_SIM_MIN_CYCLES),
+224                             .ADC_SIM_MAX_CYCLES         (ADC_SIM_MAX_CYCLES)
+225                         );
+226                     
+227                             // constructor
+228                             function new(uid_pkg::UID               _picc_uid,
+229                                          TransGenType               _rx_trans_gen,
+230                                          TransGenType               _tx_trans_gen,
+231                                          RxTransConvType            _rx_trans_conv,
+232                                          TxTransConvType            _tx_trans_conv,
+233                                          RxQueueWrapperType         _rx_send_queue,
+234                                          TxQueueWrapperType         _tx_recv_queue,
+235                                          RxDriverType               _rx_driver,
+236                                          TxMonitorType              _tx_monitor,
+237                                          int                        _reply_timeout,
+238                                          int                        _max_rx_msg_ticks);
+239                     
+240                                 super.new(_picc_uid,
+241                                           _rx_trans_gen,
+242                                           _tx_trans_gen,
+243                                           _rx_trans_conv,
+244                                           _tx_trans_conv,
+245                                           _rx_send_queue,
+246                                           _tx_recv_queue,
+247                                           _rx_driver,
+248                                           _tx_monitor,
+249                                           _reply_timeout,
+250                                           _max_rx_msg_ticks,
+251                                           0);                   // we don't actually run any of the tests
+252                     
+253                             endfunction
+254                     
+255                             virtual task do_reset;
+256                                 rst_n &lt;= 1'b0;
+257                                 repeat (5) @(posedge clk) begin end
+258                                 rst_n &lt;= 1'b1;
+259                                 repeat (5) @(posedge clk) begin end
+260                             endtask
+261                     
+262                             virtual protected function void set_power_input(logic [1:0] _power);
+263                                 power = _power;
+264                             endfunction
+265                     
+266                             // pure virtual, must be overwritten
+267                             virtual function logic verify_dut_cid(logic [3:0] expected);
+268                                 // don't care about verifying anything here
+269                             endfunction
+270                     
+271                             // pure virtual, must be overwritten
+272                             virtual task wait_for_ticks_since_last_pause(int ticks);
+273                                 longint ps = longint'(ticks) * CLOCK_PERIOD_PS;
+274                                 while ($time &lt; (last_pause_time + ps)) begin
+275                                     @(posedge clk) begin end
+276                                 end
+277                             endtask
+278                     
+279                             // pure virtual, must be overwritten
+280                             virtual task wait_for_signal_control_idle;
+281                                 wait (!dut.adapter_inst.signal_control_busy) @(posedge clk) begin end
+282                             endtask
+283                     
+284                             // pure virtual, must be overwritten
+285                             virtual function logic get_signal_control_busy;
+286                                 return dut.adapter_inst.signal_control_busy;
+287                             endfunction
+288                     
+289                             // pure virtual, must be overwritten
+290                             virtual function Signals get_current_signals;
+291                                 return signals;
+292                             endfunction
+293                     
+294                             // pure virtual, must be overwritten
+295                             virtual function logic [15:0] get_last_read_adc_value;
+296                                 return expected_adc_value;
+297                             endfunction
+298                     
+299                             // pure virtual, must be overwritten
+300                             virtual function IdentifyReplyArgs get_identify_reply_args;
+301                                 automatic IdentifyReplyArgs identify_reply_args;
+302                     
+303                                 identify_reply_args.protocol_version        = PROTOCOL_VERSION;
+304                                 identify_reply_args.adapter_version         = dut.adapter_inst.ADAPTER_VERSION;
+305                                 identify_reply_args.iso_iec_14443a_version  = {4'(dut.iso14443a_inst.ISO_IEC_14443A_VERSION),
+306                                                                                afe_version};
+307                                 identify_reply_args.sensor_adc_version      = {sens_version,
+308                                                                                adc_version};
+309                     
+310                                 return identify_reply_args;
+311                             endfunction
+312                     
+313                             task generate_saif;
+314                                 automatic StdBlockAddress       addr;
+315                                 automatic AutoReadRequestArgs   auto_read_args;
+316                                 automatic SetSignalRequestArgs  set_signal_args;
+317                     
+318                                 auto_read_args.sync     = 10;
+319                                 auto_read_args.timing1  = 10;
+320                                 auto_read_args.timing2  = 10;
+321                     
+322                                 set_signal_args.sync    = 10;
+323                                 set_signal_args.mask    = '1;   // set all signals
+324                                 set_signal_args.value   = '0;   // to 0
+325                     
+326                                 // Set up to generate the .saif
+327                                 $set_gate_level_monitoring(&quot;rtl_on&quot;, &quot;sv&quot;);
+328                                 $set_toggle_region(dut);
+329                                 $toggle_start;
+330                     
+331                                 // run all the initialisation comms to enter protocol state, then get our address
+332                                 go_to_state_protocol_std_comms(CID_RANDOM);
+333                                 addr = get_std_block_address(CID_CURRENT);
+334                     
+335                                 // Command_IDENTIFY
+336                                 send_app_identify_request_verify_reply(addr);
+337                     
+338                                 // make a few readings
+339                                 repeat (5) begin
+340                     
+341                                     // Command_AUTO_READ
+342                                     do_auto_read(addr, auto_read_args, 0, ExitAction_WAIT_FOR_IDLE);
+343                     
+344                                     // Command_GET_RESULT
+345                                     do_get_result(addr);
+346                     
+347                                     // Command_SET_SIGNAL (reset back to idle, ready to start again)
+348                                     do_set_signal(addr, set_signal_args, 0, ExitAction_WAIT_FOR_IDLE);
+349                                 end
+350                     
+351                                 $toggle_stop;
+352                                 $toggle_report(&quot;radiation_sensor_digital_top.saif&quot;, 1.0e-9, dut);
+353                     
+354                             endtask
+355                     
+356                         endclass
+357                     
+358                         SAIF_TbSequence seq;
+359                     
+360                         // --------------------------------------------------------------
+361                         // Test stimulus
+362                         // --------------------------------------------------------------
+363                     
+364                         initial begin
+365                             automatic transaction_generator_pkg::TransactionGenerator   rx_trans_gen;
+366                             automatic transaction_generator_pkg::TransactionGenerator   tx_trans_gen;
+367                             automatic RxTransConvType                                   rx_trans_conv;
+368                             automatic TxTransConvType                                   tx_trans_conv;
+369                             automatic int                                               reply_timeout;
+370                             automatic int                                               max_rx_msg_ticks;
+371                     
+372        1/1                  power           = 2'b00;
+373                     
+374                             // Set these once (they are constants in the real design)
+375        1/1                  afe_version     = 4'($urandom);
+376        1/1                  adc_version     = 4'($urandom);
+377        1/1                  sens_version    = 4'($urandom);
+378                     
+379        1/1                  analogue_sim_inst.init();   // inits the RxDriver
+380                     
+381        1/1                  tx_monitor          = new(lm_iface);
+382                     
+383        1/1                  rx_send_queue       = new('{});
+384        1/1                  tx_recv_queue       = new('{});
+385                     
+386        1/1                  rx_trans_gen        = new(1'b1);    // Rx messages must have CRCs applied
+387        1/1                  tx_trans_gen        = new(1'b1);    // Tx messages will have CRCs applied
+388                     
+389        1/1                  rx_trans_conv       = new(1'b1);    // Rx messages must have parity bits
+390        1/1                  tx_trans_conv       = new(1'b1);    // Tx messages will have parity bits
+391                     
+392        1/1                  picc_uid            = new('x);
+393                     
+394                             // longest reply is an app IDENTIFY reply:
+395                             //      PCB + CID + 5 byte app header + 5 bytes data + 2 bytes CRC
+396                             // = 14 bytes, each byte has 8 bits + parity -&gt; 126 bits.
+397                             // there are 128 ticks in a bit, so 16,128 ticks
+398                             // then the FDT takes 1236 ticks to fire (in the worst case)
+399                             // so 17,364 ticks total. Use 18,000 ticks
+400        1/1                  reply_timeout   = 18000;
+401                     
+402                             // longest valid request is the AUTO_READ request with:
+403                             // PCB + CID + 5 byte app header + 10 bytes data + 2 bytes CRC
+404                             // = 19 bytes, each byte has 8 bits + parity -&gt; 171 bits.
+405                             // Then there's the SOC (equivalent to 1 bit) and the EOC (equivalent to 2 bits)
+406                             // So 174 bits. Each bit takes 128 ticks, so 22,272.
+407                             // using 22,500
+408        1/1                  max_rx_msg_ticks    = 22500;
+409                     
+410        1/1                  seq             = new(picc_uid,
+411                                                   rx_trans_gen,
+412                                                   tx_trans_gen,
+413                                                   rx_trans_conv,
+414                                                   tx_trans_conv,
+415                                                   rx_send_queue,
+416                                                   tx_recv_queue,
+417                                                   analogue_sim_inst.driver,
+418                                                   tx_monitor,
+419                                                   reply_timeout,
+420                                                   max_rx_msg_ticks);
+421                     
+422        1/1                  analogue_sim_inst.start (rx_send_queue.data);
+423        1/1                  tx_monitor.start        (tx_recv_queue.data);
+424                     
+425                             // randomise the variable part of the UID
+426        1/1                  picc_uid.randomize;
+427        1/1                  full_uid = picc_uid.get_uid;
+428        1/1                  $display(&quot;NOTE: New UID: %s&quot;, picc_uid.to_string);
+429        1/1                  seq.do_reset;
+430                     
+431                             // send messages
+432        1/1                  seq.generate_saif;
+433                     
+434        2/2                  repeat (5) @(posedge clk) begin end
+                        REPEAT_FALSE
+435                     
+436        1/1                  $stop;
+</pre>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod13.html" >generate_top_saif_tb</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s6">
+<td>Totals</td>
+<td class="rt">27</td>
+<td class="rt">17</td>
+<td class="rt">62.96 </td>
+</tr><tr class="s4">
+<td>Total Bits</td>
+<td class="rt">208</td>
+<td class="rt">98</td>
+<td class="rt">47.12 </td>
+</tr><tr class="s4">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">104</td>
+<td class="rt">50</td>
+<td class="rt">48.08 </td>
+</tr><tr class="s4">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">104</td>
+<td class="rt">48</td>
+<td class="rt">46.15 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s6">
+<td>Signals</td>
+<td class="rt">27</td>
+<td class="rt">17</td>
+<td class="rt">62.96 </td>
+</tr><tr class="s4">
+<td>Signal Bits</td>
+<td class="rt">208</td>
+<td class="rt">98</td>
+<td class="rt">47.12 </td>
+</tr><tr class="s4">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">104</td>
+<td class="rt">50</td>
+<td class="rt">48.08 </td>
+</tr><tr class="s4">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">104</td>
+<td class="rt">48</td>
+<td class="rt">46.15 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>rst_n_async</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>power[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>pause_n_async</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>lm_out</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>afe_version[3:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>uid_variable[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>sens_version[3:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>sens_config[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>adc_version[3:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>adc_conversion_complete_async</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>adc_value[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>full_uid[31:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>pcd_pause_n</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>expected_adc_value[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>adc_sim_busy</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.padding</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>signals.adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.sens_config[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr></table><br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod13.html" >generate_top_saif_tb</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s10">
+<td>Branches</td>
+<td></td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">164</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+164                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+165                    last_pause_time <= 0ns;
+           <font color = "green">            ==></font>
+166                end
+167                else begin
+168                    last_pause_time <= $time;
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_27">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+  <ul name="tag_generate_top_saif_tb">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

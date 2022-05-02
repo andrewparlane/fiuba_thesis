@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: adapter</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | <a href="asserts.html" ><b>asserts</b></a></div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_adapter'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_adapter')">adapter</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 97.12</td>
+<td class="s10 cl rt"><a href="mod13.html#Line" >100.00</a></td>
+<td class="s10 cl rt"><a href="mod13.html#Cond" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod13.html#Toggle" > 88.46</a></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt"><a href="mod13.html#Branch" >100.00</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/rtl/adapter.sv')">/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/rtl/adapter.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod13.html#inst_tag_13"  onclick="showContent('inst_tag_13')">adapter_tb.dut</a></td>
+<td class="s9 cl rt"> 97.12</td>
+<td class="s10 cl rt"><a href="mod13.html#Line" >100.00</a></td>
+<td class="s10 cl rt"><a href="mod13.html#Cond" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod13.html#Toggle" > 88.46</a></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt"><a href="mod13.html#Branch" >100.00</a></td>
+<td class="wht cl rt"></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_adapter'>
+<hr>
+<a name="inst_tag_13"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_13" >adapter_tb.dut</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 97.12</td>
+<td class="s10 cl rt"><a href="mod13.html#Line" >100.00</a></td>
+<td class="s10 cl rt"><a href="mod13.html#Cond" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod13.html#Toggle" > 88.46</a></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt"><a href="mod13.html#Branch" >100.00</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 95.77</td>
+<td class="s9 cl rt"> 99.30</td>
+<td class="s9 cl rt"> 93.88</td>
+<td class="s8 cl rt"> 89.02</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s9 cl rt"> 96.67</td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s8 cl rt"> 83.59</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s4 cl rt"> 43.75</td>
+<td class="s9 cl rt"> 92.41</td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"> 81.82</td>
+<td class="s10 cl rt">100.00</td>
+<td><a href="mod0.html#inst_tag_0" >adapter_tb</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod23.html#inst_tag_23" id="tag_urg_inst_23">signal_control_inst</a></td>
+<td class="s9 cl rt"> 93.32</td>
+<td class="s9 cl rt"> 98.41</td>
+<td class="s8 cl rt"> 85.71</td>
+<td class="s9 cl rt"> 90.16</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s9 cl rt"> 92.31</td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_adapter'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod13.html" >adapter</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s10"><td class="lf">TOTAL</td><td></td><td>79</td><td>79</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>115</td><td>3</td><td>3</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>168</td><td>5</td><td>5</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>235</td><td>13</td><td>13</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>294</td><td>43</td><td>43</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>429</td><td>5</td><td>5</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>445</td><td>10</td><td>10</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+114                             // header
+115        1/1                  rx_msg              = {&gt;&gt;byte{rx_buffer[0:4]}};
+116                     
+117                             // arguments for Command_SET_SIGNAL
+118        1/1                  set_signal_req_args = {&gt;&gt;byte{rx_buffer[5:8]}};
+119                     
+120                             // arguments for Command_AUTO_READ
+121        1/1                  auto_read_req_args  = {&gt;&gt;byte{rx_buffer[5:14]}};
+122                     
+123                             // The remaining messages don't have any arguments to decode
+124                         end
+125                     
+126                         // ========================================================================
+127                         // Tx buffer and encoding
+128                         // ========================================================================
+129                     
+130                         logic [7:0] tx_buffer [TX_BUFF_LEN];
+131                     
+132                         Command             reply_cmd;
+133                         logic [15:0]        cached_adc_value;
+134                         StatusFlags         status_flags;
+135                     
+136                         // These are all encoded with the byte order swapped using the {&lt;&lt;byte{...}} streaming
+137                         // operator. This lets us encode the tx_buffer easier, but means you shouldn't read
+138                         // directly from any of these.
+139                         Message             tx_msg;
+140                         IdentifyReplyArgs   identify_reply_args;
+141                         StatusReplyArgs     status_reply_args;
+142                         GetResultReplyArgs  get_result_reply_args;
+143                     
+144                         // header (5 bytes)
+145                         assign tx_msg.magic                                 = {&lt;&lt;byte{PROTOCOL_MAGIC}};
+146                         assign tx_msg.cmd                                   = {&lt;&lt;byte{reply_cmd}};
+147                     
+148                         // the identify reply is based off parameters and inputs that should be constant
+149                         assign identify_reply_args.protocol_version         = PROTOCOL_VERSION;
+150                         assign identify_reply_args.adapter_version          = ADAPTER_VERSION;
+151                         assign identify_reply_args.iso_iec_14443a_version   = {const_iso_iec_14443a_digital_version,
+152                                                                                const_iso_iec_14443a_AFE_version};
+153                         assign identify_reply_args.sensor_adc_version       = {const_sensor_version,
+154                                                                                const_adc_version};
+155                     
+156                         // GetResultReplyArgs and StatusReplyArgs both contain StatusFlags
+157                         assign status_reply_args.flags                      = {&lt;&lt;byte{status_flags}};
+158                         assign get_result_reply_args.flags                  = {&lt;&lt;byte{status_flags}};
+159                     
+160                         assign status_flags.padding                         = '0;
+161                     
+162                         // GetResultReplyArgs also contains the cached ADC value
+163                         assign get_result_reply_args.adc_value              = {&lt;&lt;byte{cached_adc_value}};
+164                     
+165                         // fill in the tx_buffer based on the reply we want to send
+166                         always_comb begin
+167                             // header (5 bytes) (little endian encoded)
+168        1/1                  tx_buffer[0:4] = {&gt;&gt;byte{tx_msg}};
+169                     
+170        1/1                  case(reply_cmd)
+171        1/1                      Command_IDENTIFY:   tx_buffer[5:TX_BUFF_LEN-1] = {&gt;&gt;byte{identify_reply_args}};
+172        1/1                      Command_GET_RESULT: tx_buffer[5:TX_BUFF_LEN-1] = {&gt;&gt;byte{get_result_reply_args}};
+173        1/1                      default:            tx_buffer[5:TX_BUFF_LEN-1] = {&gt;&gt;byte{status_reply_args}};
+174                             endcase
+175                         end
+176                     
+177                         // ========================================================================
+178                         // Signal Control
+179                         // ========================================================================
+180                         logic           signal_control_start;
+181                         logic           signal_control_abort;
+182                         logic           signal_control_result_read;
+183                         logic           signal_control_busy;
+184                         logic           signal_control_unexpected_pause;
+185                         logic           signal_control_conversion_complete;
+186                         logic   [15:0]  signal_control_adc_value;
+187                         Signals         signals;
+188                     
+189                         assign sens_config  = signals.sens_config;
+190                         assign sens_enable  = signals.sens_enable;
+191                         assign sens_read    = signals.sens_read;
+192                         assign adc_enable   = signals.adc_enable;
+193                         assign adc_read     = signals.adc_read;
+194                     
+195                         signal_control signal_control_inst
+196                         (
+197                             .clk                            (clk),
+198                             .rst_n                          (rst_n),
+199                     
+200                             .pause_n_synchronised           (pause_n_synchronised),
+201                     
+202                             .sync_timing                    (sync_timing),
+203                             .auto_read_timing1              (auto_read_timing1[24:0]),
+204                             .auto_read_timing2              (auto_read_timing2[24:0]),
+205                     
+206                             .cmd                            (rx_cmd),
+207                     
+208                             .set_signals_mask               (set_signals_mask),
+209                             .set_signals_value              (set_signals_value),
+210                     
+211                             .start                          (signal_control_start),
+212                             .abort                          (signal_control_abort),
+213                     
+214                             .result_read                    (signal_control_result_read),
+215                     
+216                             .signals                        (signals),
+217                             .adc_conversion_complete        (adc_conversion_complete),
+218                             .adc_value                      (adc_value),
+219                     
+220                             .busy                           (signal_control_busy),
+221                             .unexpected_pause               (signal_control_unexpected_pause),
+222                             .cached_adc_conversion_complete (signal_control_conversion_complete),
+223                             .cached_adc_value               (signal_control_adc_value)
+224                         );
+225                     
+226                         // ========================================================================
+227                         // Receive data from the rx_iface into the rx_buffer
+228                         // ========================================================================
+229                     
+230                         // max message length is 17 bytes (including CRC) -&gt; 5 bits
+231                         logic [4:0] rx_count;
+232                         logic       rx_error_flag;
+233                     
+234                         always_ff @(posedge clk, negedge rst_n) begin
+235        1/1                  if (!rst_n) begin
+236        1/1                      rx_count        &lt;= '0;
+237        1/1                      rx_error_flag   &lt;= 1'b0;
+238                             end
+239                             else begin
+240        1/1                      if (rx_iface.soc) begin
+241                                     // start of a new message
+242        1/1                          rx_count        &lt;= '0;
+243        1/1                          rx_error_flag   &lt;= 1'b0;
+244                                 end
+                        MISSING_ELSE
+245                     
+246        1/1                      if (rx_iface.error) begin
+247        1/1                          rx_error_flag &lt;= 1'b1;
+248                                 end
+                        MISSING_ELSE
+249                     
+250        1/1                      if (rx_iface.data_valid) begin
+251        1/1                          if (rx_count &lt; $bits(rx_count)'(RX_BUFF_LEN)) begin
+252        1/1                              rx_buffer[rx_count] &lt;= rx_iface.data;
+253                                     end
+                        MISSING_ELSE
+254                     
+255                                     // keep counting even if the buffer is full
+256                                     // this is so we can compare the received bytes with the expected
+257                                     // number of bytes for each message (including the CRC)
+258        1/1                          if (rx_count != '1) begin
+259        1/1                              rx_count &lt;= rx_count + 1'd1;
+260                                     end
+                        MISSING_ELSE
+261                                 end
+                        MISSING_ELSE
+262                             end
+263                         end
+264                     
+265                         // ========================================================================
+266                         // Handle Rx messages
+267                         // ========================================================================
+268                     
+269                         logic is_rx_cmd_identify;
+270                         logic is_rx_cmd_set_signal;
+271                         logic is_rx_cmd_auto_read;
+272                         logic is_rx_cmd_get_result;
+273                         logic is_rx_cmd_abort;
+274                     
+275                         assign is_rx_cmd_identify       = (rx_cmd == Command_IDENTIFY) &amp;&amp;
+276                                                           (rx_count == COMMAND_IDENTIFY_REQUEST_LEN);
+277                     
+278                         assign is_rx_cmd_set_signal     = (rx_cmd == Command_SET_SIGNAL) &amp;&amp;
+279                                                           (rx_count == COMMAND_SET_SIGNAL_REQUEST_LEN);
+280                     
+281                         assign is_rx_cmd_auto_read      = (rx_cmd == Command_AUTO_READ) &amp;&amp;
+282                                                           (rx_count == COMMAND_AUTO_READ_REQUEST_LEN);
+283                     
+284                         assign is_rx_cmd_get_result     = (rx_cmd == Command_GET_RESULT) &amp;&amp;
+285                                                           (rx_count == COMMAND_GET_RESULT_REQUEST_LEN);
+286                     
+287                         assign is_rx_cmd_abort          = (rx_cmd == Command_ABORT) &amp;&amp;
+288                                                           (rx_count == COMMAND_ABORT_REQUEST_LEN);
+289                     
+290                         logic send_reply;
+291                         logic last_rx_had_invalid_magic;
+292                     
+293                         always_ff @(posedge clk, negedge rst_n) begin
+294        1/1                  if (!rst_n) begin
+295        1/1                      send_reply &lt;= 1'b0;
+296                     
+297                                 // We need to initialise this, so that if app_resend_last asserts
+298                                 // before we send any reply, we actually have something valid to send.
+299                                 // This should never happen as the ISO/IEC 14443A IP core should never
+300                                 // assert app_resend_last until a STD I-Block has been received and a
+301                                 // reply has been sent.
+302                                 // We use Command_IDENTIFY here so that the reply is our version info
+303        1/1                      reply_cmd                       &lt;= Command_IDENTIFY;
+304                     
+305        1/1                      last_rx_had_invalid_magic       &lt;= 1'b0;
+306                     
+307        1/1                      status_flags.already_busy       &lt;= 1'b0;
+308        1/1                      status_flags.conv_complete      &lt;= 1'b0;
+309        1/1                      status_flags.error              &lt;= 1'b0;
+310                     
+311        1/1                      cached_adc_value                &lt;= '0;
+312                     
+313        1/1                      signal_control_result_read      &lt;= 1'b0;
+314                             end
+315                             else begin
+316                                 // should only assert for one tick
+317        1/1                      send_reply                  &lt;= 1'b0;
+318        1/1                      signal_control_start        &lt;= 1'b0;
+319        1/1                      signal_control_abort        &lt;= 1'b0;
+320        1/1                      signal_control_result_read  &lt;= 1'b0;
+321                     
+322        1/1                      if (app_resend_last &amp;&amp; !last_rx_had_invalid_magic) begin
+323                                     // we already have reply_cmd set, so just indicate that we want to reply
+324        1/1                          send_reply  &lt;= 1'b1;
+325                                 end
+326        1/1                      else if (rx_iface.eoc) begin
+327                                     // received a packet
+328                                     // rx_iface.error can be set on the EOC, and in that case the rx_error_flag
+329                                     // won't have been updated yet.
+330        1/1                          if (!rx_error_flag &amp;&amp; !rx_iface.error) begin
+331                                         // valid packet
+332                     
+333                                         // check if the magic is correct
+334        1/1                              if (rx_magic != PROTOCOL_MAGIC) begin
+335                                             // it's not. We don't respond when there's an invalid magic
+336                                             // but if an app_resend_last comes in next we need to make sure
+337                                             // we still don't respond
+338        1/1                                  last_rx_had_invalid_magic   &lt;= 1'b1;
+339                                         end
+340                                         else begin
+341        1/1                                  last_rx_had_invalid_magic   &lt;= 1'b0;
+342                     
+343                                             // at this point we always respond
+344        1/1                                  send_reply  &lt;= 1'b1;
+345        1/1                                  reply_cmd   &lt;= rx_cmd;
+346                     
+347                                             // assume there's no error, this can be overridden below
+348        1/1                                  status_flags.error &lt;= 1'b0;
+349                     
+350                                             // update the other status flags
+351        1/1                                  status_flags.conv_complete      &lt;= signal_control_conversion_complete;
+352        1/1                                  status_flags.already_busy       &lt;= signal_control_busy;
+353        1/1                                  status_flags.unexpected_pause   &lt;= signal_control_unexpected_pause;
+354                     
+355        1/1                                  if (is_rx_cmd_identify) begin
+356                                                 // IDENTIFY
+357                                                 // nothing to do here, since the response is always the same
+358                                                 // and is already set up.
+359                                             end
+360        1/1                                  else if (is_rx_cmd_set_signal) begin
+361                                                 // SET_SIGNAL
+362                                                 // start the signal_control logic
+363                                                 // everything else is passed in directly
+364        1/1                                      signal_control_start &lt;= 1'b1;
+365                                             end
+366        1/1                                  else if (is_rx_cmd_auto_read) begin
+367                                                 // AUTO_READ
+368                                                 // only valid if sens_enable, sens_read, adc_enable and adc_read
+369                                                 // are not currently asserted
+370        1/1                                      if (sens_enable || sens_read || adc_enable || adc_read) begin
+371                                                     // invalid start conditions
+372        1/1                                          status_flags.error &lt;= 1'b1;
+373                                                 end
+374                                                 else begin
+375                                                     // start the signal_control logic
+376                                                     // everything else is passed in directly
+377        1/1                                          signal_control_start &lt;= 1'b1;
+378                                                 end
+379                                             end
+380        1/1                                  else if (is_rx_cmd_get_result) begin
+381                                                 // GET_RESULT
+382                     
+383                                                 // update the reported result with the value reported by the signal_control module
+384        1/1                                      cached_adc_value            &lt;= signal_control_adc_value;
+385                     
+386        1/1                                      if (signal_control_conversion_complete) begin
+387                                                     // clear the signal_control_conversion_complete flag
+388                                                     // as we have now read the result
+389        1/1                                          signal_control_result_read  &lt;= 1'b1;
+390                                                 end
+                        MISSING_ELSE
+391                                             end
+392        1/1                                  else if (is_rx_cmd_abort) begin
+393                                                 // ABORT
+394                                                 // abort any current signal_control operation
+395        1/1                                      signal_control_abort    &lt;= 1'b1;
+396                                                 // and clear the status_flags
+397        1/1                                      status_flags.conv_complete      &lt;= 1'b0;
+398        1/1                                      status_flags.already_busy       &lt;= 1'b0;
+399        1/1                                      status_flags.unexpected_pause   &lt;= 1'b0;
+400                                             end
+401                                             else begin
+402                                                 // unknown message or invalid length
+403                                                 // we respond with the appropriate command and the error flag set
+404        1/1                                      status_flags.error &lt;= 1'b1;
+405                                             end
+406                                         end
+407                                     end
+                        MISSING_ELSE
+408                                 end
+                        MISSING_ELSE
+409                             end
+410                         end
+411                     
+412                         // ========================================================================
+413                         // Transmit Tx messages
+414                         // ========================================================================
+415                     
+416                         logic [3:0] tx_len;
+417                         logic [3:0] tx_idx;
+418                         assign tx_len = get_reply_len(reply_cmd);
+419                     
+420                         // since tx_idx is not initialised until rst_n asserts
+421                         // VCS doesn't like it if we use it as an index:
+422                         // assign tx_iface.data = tx_buffer[tx_idx];
+423                         // However if we initialise tx_idx in the declaration to '0; then
+424                         // dc_compiler complains about initial assignments being ignored.
+425                         // the below code should synthesise to a mux with inputs 0 to TX_BUFF_LEN-1
+426                         // being tx_buffer[0] to tx_buffer[TX_BUFF_LEN-1], and all remaining inputs being
+427                         // tx_buffer[0]. Both synthesis and simulation are happy with this
+428                         always_comb begin
+429        1/1                  tx_iface.data = tx_buffer[0]; // default to [0]
+430        1/1                  for (int unsigned i = 0; i &lt; TX_BUFF_LEN; i++) begin
+431        1/1                      if (tx_idx == 4'(i)) begin
+432        1/1                          tx_iface.data = tx_buffer[i];
+433        1/1                          break;
+434                                 end
+                        MISSING_ELSE
+435                             end
+436                         end
+437                         assign tx_iface.data_bits   = 3'd0;         // all transfers are 8 bits wide
+438                     
+439                         // VCS doesn't generate a valid SAIF file, if I assign to interface members directly
+440                         // in a sequential block.
+441                         logic tx_iface_data_valid;
+442                         assign tx_iface.data_valid = tx_iface_data_valid;
+443                     
+444                         always_ff @(posedge clk, negedge rst_n) begin
+445        1/1                  if (!rst_n) begin
+446        1/1                      tx_iface_data_valid &lt;= 1'b0;
+447        1/1                      tx_idx              &lt;= 4'b0;
+448                             end
+449                             else begin
+450        1/1                      if (send_reply) begin
+451        1/1                          tx_iface_data_valid &lt;= 1'b1;
+452        1/1                          tx_idx              &lt;= 4'b0;
+453                                 end
+                        MISSING_ELSE
+454                     
+455        1/1                      if (tx_iface.req) begin
+456        1/1                          if ((tx_idx + 1'd1) == tx_len) begin
+457                                         // done
+458        1/1                              tx_iface_data_valid &lt;= 1'b0;
+459                                     end
+460                                     else begin
+461        1/1                              tx_idx &lt;= tx_idx + 1'd1;
+462                                     end
+463                                 end
+                        MISSING_ELSE
+</pre>
+<hr>
+<a name="Cond"></a>
+Cond Coverage for Module : <a href="mod13.html" >adapter</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="3" width="82">
+<tr><th></th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s10"><td class="lf">Conditions</td><td>28</td><td>28</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">Logical</td><td>28</td><td>28</td><td>100.00</td></tr>
+<tr class="wht"><td class="lf">Non-Logical</td><td>0</td><td>0</td><td></td></tr>
+<tr class="wht"><td class="lf">Event</td><td>0</td><td>0</td><td></td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       102
+ EXPRESSION ((rx_cmd == Command_SET_SIGNAL) ? ({ &lt;&lt; byte {set_signal_req_args.sync}}) : ({ &lt;&lt; byte {auto_read_req_args.sync}}))
+             ---------------1--------------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       275
+ EXPRESSION ((rx_cmd == Command_IDENTIFY) &amp;&amp; (rx_count == protocol_pkg::COMMAND_IDENTIFY_REQUEST_LEN))
+             --------------1-------------    ----------------------------2---------------------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       278
+ EXPRESSION ((rx_cmd == Command_SET_SIGNAL) &amp;&amp; (rx_count == protocol_pkg::COMMAND_SET_SIGNAL_REQUEST_LEN))
+             ---------------1--------------    -----------------------------2----------------------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       281
+ EXPRESSION ((rx_cmd == Command_AUTO_READ) &amp;&amp; (rx_count == protocol_pkg::COMMAND_AUTO_READ_REQUEST_LEN))
+             --------------1--------------    ----------------------------2----------------------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       284
+ EXPRESSION ((rx_cmd == Command_GET_RESULT) &amp;&amp; (rx_count == protocol_pkg::COMMAND_GET_RESULT_REQUEST_LEN))
+             ---------------1--------------    -----------------------------2----------------------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       287
+ EXPRESSION ((rx_cmd == Command_ABORT) &amp;&amp; (rx_count == protocol_pkg::COMMAND_ABORT_REQUEST_LEN))
+             ------------1------------    --------------------------2--------------------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       322
+ EXPRESSION (app_resend_last &amp;&amp; ((!last_rx_had_invalid_magic)))
+             -------1-------    ---------------2--------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       330
+ EXPRESSION (((!rx_error_flag)) &amp;&amp; ((!rx_iface.error)))
+             ---------1--------    ---------2---------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       370
+ EXPRESSION (sens_enable || sens_read || adc_enable || adc_read)
+             -----1-----    ----2----    -----3----    ----4---
+</pre>
+<table class="noborder">
+<col span="4" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>-4-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>0</td><td>0</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>0</td><td>0</td><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>0</td><td>0</td><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>0</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>0</td><td>0</td><td class="lf">Covered</td></tr>
+</table>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod13.html" >adapter</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s9">
+<td>Totals</td>
+<td class="rt">99</td>
+<td class="rt">93</td>
+<td class="rt">93.94 </td>
+</tr><tr class="s8">
+<td>Total Bits</td>
+<td class="rt">1040</td>
+<td class="rt">920</td>
+<td class="rt">88.46 </td>
+</tr><tr class="s8">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">520</td>
+<td class="rt">460</td>
+<td class="rt">88.46 </td>
+</tr><tr class="s8">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">520</td>
+<td class="rt">460</td>
+<td class="rt">88.46 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s10">
+<td>Ports</td>
+<td class="rt">15</td>
+<td class="rt">15</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>Port Bits</td>
+<td class="rt">88</td>
+<td class="rt">88</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">44</td>
+<td class="rt">44</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">44</td>
+<td class="rt">44</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s9">
+<td>Signals</td>
+<td class="rt">84</td>
+<td class="rt">78</td>
+<td class="rt">92.86 </td>
+</tr><tr class="s8">
+<td>Signal Bits</td>
+<td class="rt">952</td>
+<td class="rt">832</td>
+<td class="rt">87.39 </td>
+</tr><tr class="s8">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">476</td>
+<td class="rt">416</td>
+<td class="rt">87.39 </td>
+</tr><tr class="s8">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">476</td>
+<td class="rt">416</td>
+<td class="rt">87.39 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>pause_n_synchronised</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>app_resend_last</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>sens_config[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>adc_conversion_complete</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>adc_value[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>const_iso_iec_14443a_digital_version[3:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>const_iso_iec_14443a_AFE_version[3:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>const_sensor_version[3:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>const_adc_version[3:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>rx_msg.cmd[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>rx_msg.magic[31:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signal_req_args.value.padding</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signal_req_args.value.adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signal_req_args.value.adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signal_req_args.value.sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signal_req_args.value.sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signal_req_args.value.sens_config[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signal_req_args.mask.padding</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signal_req_args.mask.adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signal_req_args.mask.adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signal_req_args.mask.sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signal_req_args.mask.sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signal_req_args.mask.sens_config[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signal_req_args.sync[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>auto_read_req_args.timing2[31:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>auto_read_req_args.timing1[31:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>auto_read_req_args.sync[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>rx_magic[31:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>rx_cmd[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>sync_timing[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>auto_read_timing1[31:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>auto_read_timing2[31:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_mask.padding</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_mask.adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_mask.adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_mask.sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_mask.sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_mask.sens_config[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_value.padding</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_value.adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_value.adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_value.sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_value.sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>set_signals_value.sens_config[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>reply_cmd[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>cached_adc_value[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>status_flags.padding[3:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>status_flags.error</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>status_flags.unexpected_pause</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>status_flags.already_busy</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>status_flags.conv_complete</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>tx_msg.cmd[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>tx_msg.magic[31:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>identify_reply_args.sensor_adc_version[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>identify_reply_args.iso_iec_14443a_version[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>identify_reply_args.adapter_version[7:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>identify_reply_args.protocol_version[7:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>status_reply_args.flags.padding[3:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>status_reply_args.flags.error</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>status_reply_args.flags.unexpected_pause</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>status_reply_args.flags.already_busy</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>status_reply_args.flags.conv_complete</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>get_result_reply_args.adc_value[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>get_result_reply_args.flags.padding[3:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>get_result_reply_args.flags.error</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>get_result_reply_args.flags.unexpected_pause</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>get_result_reply_args.flags.already_busy</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>get_result_reply_args.flags.conv_complete</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signal_control_start</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signal_control_abort</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signal_control_result_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signal_control_busy</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signal_control_unexpected_pause</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signal_control_conversion_complete</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signal_control_adc_value[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.padding</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.sens_config[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>rx_count[4:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>rx_error_flag</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_rx_cmd_identify</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_rx_cmd_set_signal</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_rx_cmd_auto_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_rx_cmd_get_result</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_rx_cmd_abort</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>send_reply</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>last_rx_had_invalid_magic</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>tx_len[3:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>tx_idx[3:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>tx_iface_data_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr></table><br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod13.html" >adapter</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s10">
+<td>Branches</td>
+<td></td>
+<td class="rt">34</td>
+<td class="rt">34</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>TERNARY</td>
+<td class="rt">102</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>CASE</td>
+<td class="rt">170</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">235</td>
+<td class="rt">10</td>
+<td class="rt">10</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">294</td>
+<td class="rt">13</td>
+<td class="rt">13</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">445</td>
+<td class="rt">6</td>
+<td class="rt">6</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+102            assign sync_timing          = (rx_cmd == Command_SET_SIGNAL)
+                                                                           
+103                                                ? {<<byte{set_signal_req_args.sync}}
+                                                   <font color = "green">-1-</font>  
+                                                   <font color = "green">==></font>  
+                                                   <font color = "green">==></font>  
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+170                case(reply_cmd)
+                   <font color = "green">-1-</font>  
+171                    Command_IDENTIFY:   tx_buffer[5:TX_BUFF_LEN-1] = {>>byte{identify_reply_args}};
+           <font color = "green">            ==></font>
+172                    Command_GET_RESULT: tx_buffer[5:TX_BUFF_LEN-1] = {>>byte{get_result_reply_args}};
+           <font color = "green">            ==></font>
+173                    default:            tx_buffer[5:TX_BUFF_LEN-1] = {>>byte{status_reply_args}};
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>Command_IDENTIFY </td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>Command_GET_RESULT </td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>default</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+235                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+236                    rx_count        <= '0;
+           <font color = "green">            ==></font>
+237                    rx_error_flag   <= 1'b0;
+238                end
+239                else begin
+240                    if (rx_iface.soc) begin
+                       <font color = "green">-2-</font>       
+241                        // start of a new message
+242                        rx_count        <= '0;
+           <font color = "green">                ==></font>
+243                        rx_error_flag   <= 1'b0;
+244                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+245        
+246                    if (rx_iface.error) begin
+                       <font color = "green">-3-</font>       
+247                        rx_error_flag <= 1'b1;
+           <font color = "green">                ==></font>
+248                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+249        
+250                    if (rx_iface.data_valid) begin
+                       <font color = "green">-4-</font>       
+251                        if (rx_count < $bits(rx_count)'(RX_BUFF_LEN)) begin
+                           <font color = "green">-5-</font>  
+252                            rx_buffer[rx_count] <= rx_iface.data;
+           <font color = "green">                    ==></font>
+253                        end
+                           MISSING_ELSE
+           <font color = "green">                ==></font>
+254        
+255                        // keep counting even if the buffer is full
+256                        // this is so we can compare the received bytes with the expected
+257                        // number of bytes for each message (including the CRC)
+258                        if (rx_count != '1) begin
+                           <font color = "green">-6-</font>  
+259                            rx_count <= rx_count + 1'd1;
+           <font color = "green">                    ==></font>
+260                        end
+                           MISSING_ELSE
+           <font color = "green">                ==></font>
+261                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+294                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+295                    send_reply <= 1'b0;
+           <font color = "green">            ==></font>
+296        
+297                    // We need to initialise this, so that if app_resend_last asserts
+298                    // before we send any reply, we actually have something valid to send.
+299                    // This should never happen as the ISO/IEC 14443A IP core should never
+300                    // assert app_resend_last until a STD I-Block has been received and a
+301                    // reply has been sent.
+302                    // We use Command_IDENTIFY here so that the reply is our version info
+303                    reply_cmd                       <= Command_IDENTIFY;
+304        
+305                    last_rx_had_invalid_magic       <= 1'b0;
+306        
+307                    status_flags.already_busy       <= 1'b0;
+308                    status_flags.conv_complete      <= 1'b0;
+309                    status_flags.error              <= 1'b0;
+310        
+311                    cached_adc_value                <= '0;
+312        
+313                    signal_control_result_read      <= 1'b0;
+314                end
+315                else begin
+316                    // should only assert for one tick
+317                    send_reply                  <= 1'b0;
+318                    signal_control_start        <= 1'b0;
+319                    signal_control_abort        <= 1'b0;
+320                    signal_control_result_read  <= 1'b0;
+321        
+322                    if (app_resend_last && !last_rx_had_invalid_magic) begin
+                       <font color = "green">-2-</font>  
+323                        // we already have reply_cmd set, so just indicate that we want to reply
+324                        send_reply  <= 1'b1;
+           <font color = "green">                ==></font>
+325                    end
+326                    else if (rx_iface.eoc) begin
+                            <font color = "green">-3-</font>       
+327                        // received a packet
+328                        // rx_iface.error can be set on the EOC, and in that case the rx_error_flag
+329                        // won't have been updated yet.
+330                        if (!rx_error_flag && !rx_iface.error) begin
+                           <font color = "green">-4-</font>                          
+331                            // valid packet
+332        
+333                            // check if the magic is correct
+334                            if (rx_magic != PROTOCOL_MAGIC) begin
+                               <font color = "green">-5-</font>  
+335                                // it's not. We don't respond when there's an invalid magic
+336                                // but if an app_resend_last comes in next we need to make sure
+337                                // we still don't respond
+338                                last_rx_had_invalid_magic   <= 1'b1;
+           <font color = "green">                        ==></font>
+339                            end
+340                            else begin
+341                                last_rx_had_invalid_magic   <= 1'b0;
+342        
+343                                // at this point we always respond
+344                                send_reply  <= 1'b1;
+345                                reply_cmd   <= rx_cmd;
+346        
+347                                // assume there's no error, this can be overridden below
+348                                status_flags.error <= 1'b0;
+349        
+350                                // update the other status flags
+351                                status_flags.conv_complete      <= signal_control_conversion_complete;
+352                                status_flags.already_busy       <= signal_control_busy;
+353                                status_flags.unexpected_pause   <= signal_control_unexpected_pause;
+354        
+355                                if (is_rx_cmd_identify) begin
+                                   <font color = "green">-6-</font>                   
+           <font color = "green">                        ==></font>
+356                                    // IDENTIFY
+357                                    // nothing to do here, since the response is always the same
+358                                    // and is already set up.
+359                                end
+360                                else if (is_rx_cmd_set_signal) begin
+                                        <font color = "green">-7-</font>  
+361                                    // SET_SIGNAL
+362                                    // start the signal_control logic
+363                                    // everything else is passed in directly
+364                                    signal_control_start <= 1'b1;
+           <font color = "green">                            ==></font>
+365                                end
+366                                else if (is_rx_cmd_auto_read) begin
+                                        <font color = "green">-8-</font>  
+367                                    // AUTO_READ
+368                                    // only valid if sens_enable, sens_read, adc_enable and adc_read
+369                                    // are not currently asserted
+370                                    if (sens_enable || sens_read || adc_enable || adc_read) begin
+                                       <font color = "green">-9-</font>  
+371                                        // invalid start conditions
+372                                        status_flags.error <= 1'b1;
+           <font color = "green">                                ==></font>
+373                                    end
+374                                    else begin
+375                                        // start the signal_control logic
+376                                        // everything else is passed in directly
+377                                        signal_control_start <= 1'b1;
+           <font color = "green">                                ==></font>
+378                                    end
+379                                end
+380                                else if (is_rx_cmd_get_result) begin
+                                        <font color = "green">-10-</font>  
+381                                    // GET_RESULT
+382        
+383                                    // update the reported result with the value reported by the signal_control module
+384                                    cached_adc_value            <= signal_control_adc_value;
+385        
+386                                    if (signal_control_conversion_complete) begin
+                                       <font color = "green">-11-</font>  
+387                                        // clear the signal_control_conversion_complete flag
+388                                        // as we have now read the result
+389                                        signal_control_result_read  <= 1'b1;
+           <font color = "green">                                ==></font>
+390                                    end
+                                       MISSING_ELSE
+           <font color = "green">                            ==></font>
+391                                end
+392                                else if (is_rx_cmd_abort) begin
+                                        <font color = "green">-12-</font>  
+393                                    // ABORT
+394                                    // abort any current signal_control operation
+395                                    signal_control_abort    <= 1'b1;
+           <font color = "green">                            ==></font>
+396                                    // and clear the status_flags
+397                                    status_flags.conv_complete      <= 1'b0;
+398                                    status_flags.already_busy       <= 1'b0;
+399                                    status_flags.unexpected_pause   <= 1'b0;
+400                                end
+401                                else begin
+402                                    // unknown message or invalid length
+403                                    // we respond with the appropriate command and the error flag set
+404                                    status_flags.error <= 1'b1;
+           <font color = "green">                            ==></font>
+405                                end
+406                            end
+407                        end
+                           MISSING_ELSE
+           <font color = "green">                ==></font>
+408                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>-8-</th><th nowrap width=80>-9-</th><th nowrap width=80>-10-</th><th nowrap width=80>-11-</th><th nowrap width=80>-12-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+445                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+446                    tx_iface_data_valid <= 1'b0;
+           <font color = "green">            ==></font>
+447                    tx_idx              <= 4'b0;
+448                end
+449                else begin
+450                    if (send_reply) begin
+                       <font color = "green">-2-</font>  
+451                        tx_iface_data_valid <= 1'b1;
+           <font color = "green">                ==></font>
+452                        tx_idx              <= 4'b0;
+453                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+454        
+455                    if (tx_iface.req) begin
+                       <font color = "green">-3-</font>       
+456                        if ((tx_idx + 1'd1) == tx_len) begin
+                           <font color = "green">-4-</font>  
+457                            // done
+458                            tx_iface_data_valid <= 1'b0;
+           <font color = "green">                    ==></font>
+459                        end
+460                        else begin
+461                            tx_idx <= tx_idx + 1'd1;
+           <font color = "green">                    ==></font>
+462                        end
+463                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_13">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+  <ul name="tag_adapter">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

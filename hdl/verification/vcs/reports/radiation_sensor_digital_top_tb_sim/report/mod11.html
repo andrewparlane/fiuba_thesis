@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: radiation_sensor_digital_top_tb</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | <a href="asserts.html" ><b>asserts</b></a></div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_radiation_sensor_digital_top_tb'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_radiation_sensor_digital_top_tb')">radiation_sensor_digital_top_tb</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s8 cl rt"> 83.86</td>
+<td class="s10 cl rt"><a href="mod11.html#Line" >100.00</a></td>
+<td class="s6 cl rt"><a href="mod11.html#Cond" > 66.67</a></td>
+<td class="s6 cl rt"><a href="mod11.html#Toggle" > 69.30</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod11.html#Branch" > 83.33</a></td>
+<td class="s10 cl rt"><a href="mod11.html#Assert" >100.00</a></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/radiation_sensor_digital_top_tb.sv')">/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/radiation_sensor_digital_top_tb.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod11.html#inst_tag_25"  onclick="showContent('inst_tag_25')">radiation_sensor_digital_top_tb</a></td>
+<td class="s8 cl rt"> 83.86</td>
+<td class="s10 cl rt"><a href="mod11.html#Line" >100.00</a></td>
+<td class="s6 cl rt"><a href="mod11.html#Cond" > 66.67</a></td>
+<td class="s6 cl rt"><a href="mod11.html#Toggle" > 69.30</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod11.html#Branch" > 83.33</a></td>
+<td class="s10 cl rt"><a href="mod11.html#Assert" >100.00</a></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_radiation_sensor_digital_top_tb'>
+<hr>
+<a name="inst_tag_25"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_25" >radiation_sensor_digital_top_tb</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s8 cl rt"> 83.86</td>
+<td class="s10 cl rt"><a href="mod11.html#Line" >100.00</a></td>
+<td class="s6 cl rt"><a href="mod11.html#Cond" > 66.67</a></td>
+<td class="s6 cl rt"><a href="mod11.html#Toggle" > 69.30</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod11.html#Branch" > 83.33</a></td>
+<td class="s10 cl rt"><a href="mod11.html#Assert" >100.00</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s9 cl rt"> 91.77</td>
+<td class="s9 cl rt"> 94.26</td>
+<td class="s9 cl rt"> 92.50</td>
+<td class="s8 cl rt"> 85.19</td>
+<td class="s8 cl rt"> 83.72</td>
+<td class="s9 cl rt"> 94.93</td>
+<td class="s10 cl rt">100.00</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<span class=inst>none</span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod12.html#inst_tag_26" id="tag_urg_inst_26">adc_sim_inst</a></td>
+<td class="s10 cl rt">100.00</td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod53.html#inst_tag_68" id="tag_urg_inst_68">analogue_sim_inst</a></td>
+<td class="s9 cl rt"> 95.99</td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"> 96.30</td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"> 91.67</td>
+<td class="wht cl rt"></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod55.html#inst_tag_70" id="tag_urg_inst_70">dut</a></td>
+<td class="s9 cl rt"> 91.92</td>
+<td class="s9 cl rt"> 93.43</td>
+<td class="s9 cl rt"> 93.16</td>
+<td class="s8 cl rt"> 85.78</td>
+<td class="s8 cl rt"> 83.72</td>
+<td class="s9 cl rt"> 95.44</td>
+<td class="s10 cl rt">100.00</td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod47.html#inst_tag_62" id="tag_urg_inst_62">lm_iface</a></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_radiation_sensor_digital_top_tb'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod11.html" >radiation_sensor_digital_top_tb</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s10"><td class="lf">TOTAL</td><td></td><td>76</td><td>76</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>185</td><td>18</td><td>18</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>244</td><td>17</td><td>17</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>288</td><td>3</td><td>3</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>351</td><td>1</td><td>1</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">INITIAL</td><td>354</td><td>5</td><td>5</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">INITIAL</td><td>705</td><td>32</td><td>32</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+184                         always_ff @(posedge clk, negedge rst_n) begin
+185        1/1                  if (!rst_n) begin
+186        1/1                      last_event_time = '0;
+187                             end
+188                             else begin
+189        1/1                      if (!$stable(sens_config)       ||
+190                                     !$stable(sens_enable)       ||
+191                                     !$stable(sens_read)         ||
+192                                     !$stable(adc_enable)        ||
+193                                     !$stable(adc_read)) begin: eventOccurred
+194                     
+195                                     // event occurred construct the Event
+196                                     automatic Event actual;
+197                     
+198        1/1                          last_event_time                     &lt;= $time;
+199                     
+200                                     //$display(&quot;event ocurred, current state: %p&quot;, signals);
+201                     
+202        1/1                          actual.change_mask.sens_config[0]   = !$stable(sens_config[0]);
+203        1/1                          actual.change_mask.sens_config[1]   = !$stable(sens_config[1]);
+204        1/1                          actual.change_mask.sens_config[2]   = !$stable(sens_config[2]);
+205        1/1                          actual.change_mask.sens_enable      = !$stable(sens_enable);
+206        1/1                          actual.change_mask.sens_read        = !$stable(sens_read);
+207        1/1                          actual.change_mask.adc_enable       = !$stable(adc_enable);
+208        1/1                          actual.change_mask.adc_read         = !$stable(adc_read);
+209        1/1                          actual.change_mask.padding          = '0;
+210                     
+211        1/1                          actual.new_value                = signals;
+212                     
+213                                     eventExpected:
+214                                     assert (expected_events.size()) else $error(&quot;Event %p occurred but nothing expected&quot;, actual);
+215                     
+216        1/1                          if (expected_events.size()) begin: eventCheck
+217        1/1                              automatic Event expected = expected_events.pop_front;
+218                                         automatic logic res;
+219                     
+220                                         // don't care about padding
+221        1/1                              expected.change_mask.padding    = '0;
+222        1/1                              expected.new_value.padding      = '0;
+223                     
+224                                         // mask and value must always be correct
+225        1/1                              res = (actual.new_value     == expected.new_value) &amp;&amp;
+226                                               (actual.change_mask   == expected.change_mask);
+227                     
+228                                         eventAsExpected:
+229                                         assert (res) else $error(&quot;Event %p occurred but doesn't match expected %p&quot;, actual, expected);
+230                                     end
+                   <font color = "red">==>  MISSING_ELSE</font>
+231                                 end
+                        MISSING_ELSE
+232                             end
+233                         end
+234                     
+235                         Event   new_expected_events[$] = '{};
+236                         logic   cmd_valid;
+237                         Command cmd;
+238                     
+239                         always @(posedge clk) begin
+240                             // the DUT only update the signal_control module on detecting EOC
+241                             // We update the expected events one tick later, this is because the abort command needs to flush
+242                             // old events, but if an event occurs on the same tick that the abort is asserted we don't want to
+243                             // miss it.
+244        1/1                  if ($past(dut.app_rx_iface.eoc)) begin
+245        1/1                      if (cmd_valid) begin
+246        1/1                          if ((cmd == Command_SET_SIGNAL) ||
+247                                         (cmd == Command_AUTO_READ)) begin
+248        1/1                              foreach (new_expected_events[i]) begin
+249        1/1                                  expected_events.push_back(new_expected_events[i]);
+250                                         end
+251                                     end
+252        1/1                          else if (cmd == Command_ABORT) begin
+253                                         automatic Event e;
+254                                         // we are aborting so clear all expected events and replace them with one
+255                                         // where all the signals deassert
+256        1/1                              new_expected_events         = '{};
+257                     
+258                                         // sens_config stays the same
+259        1/1                              e.new_value.sens_config     = signals.sens_config;
+260                                         // the others reset to 0;
+261        1/1                              e.new_value.sens_enable     = 1'b0;
+262        1/1                              e.new_value.sens_read       = 1'b0;
+263        1/1                              e.new_value.adc_enable      = 1'b0;
+264        1/1                              e.new_value.adc_read        = 1'b0;
+265                     
+266                                         // the change mask is only those bits that actually change (ignoring padding)
+267        1/1                              e.change_mask               = signals ^ e.new_value;
+268        1/1                              e.change_mask.padding       = '0;
+269                     
+270        1/1                              if (e.change_mask) begin
+271                                             // push it and delete all others
+272        1/1                                  expected_events = '{e};
+273                                         end
+274                                         else begin
+275                                             // nothing is actually changing so just delete any other pending events
+276        1/1                                  expected_events = '{};
+277                                         end
+278                                     end
+                   <font color = "red">==>  MISSING_ELSE</font>
+279                                 end
+                        MISSING_ELSE
+280                             end
+                        MISSING_ELSE
+281                         end
+282                     
+283                         // ----------------------------------------------------------------
+284                         // pause_n_synchronised monitoring
+285                         // ----------------------------------------------------------------
+286                     
+287                         always_ff @(posedge dut.pause_n_synchronised, negedge rst_n) begin
+288        1/1                  if (!rst_n) begin
+289        1/1                      last_pause_time &lt;= 0ns;
+290                             end
+291                             else begin
+292        1/1                      last_pause_time &lt;= $time;
+293                             end
+294                         end
+295                     
+296                     
+297                         // --------------------------------------------------------------
+298                         // The driver / queue / etc... for the pause_n_synchronised input
+299                         // --------------------------------------------------------------
+300                     
+301                         // driver, note the actual driver is in the analogue_sim above
+302                         typedef pcd_pause_n_driver_pkg::PCDPauseNDriver                             RxDriverType;
+303                     
+304                         // Rx Transactions
+305                         typedef pcd_pause_n_transaction_pkg::PCDPauseNTransaction                   RxTransType;
+306                         typedef rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter RxTransConvType;
+307                     
+308                         // the send queue
+309                         typedef RxTransType                                                     RxTransQueueType [$];
+310                         typedef wrapper_pkg::Wrapper #(.Type(RxTransQueueType))                 RxQueueWrapperType;
+311                         RxQueueWrapperType                                                      rx_send_queue;
+312                     
+313                         // --------------------------------------------------------------
+314                         // The monitor for the lm_out (load modulator) signal
+315                         // --------------------------------------------------------------
+316                     
+317                         // monitor (produces TxBitTransactions)
+318                         typedef load_modulator_monitor_pkg::LoadModulatorMonitor                TxMonitorType;
+319                         TxMonitorType                                                           tx_monitor;
+320                     
+321                         // Tx Transactions
+322                         typedef tx_bit_transaction_pkg::TxBitTransaction                        TxTransType;
+323                         typedef tx_transaction_converter_pkg::TxByteToBitTransactionConverter   TxTransConvType;
+324                     
+325                         // and the recv_queue
+326                         typedef TxTransType                                                     TxTransQueueType [$];
+327                         typedef wrapper_pkg::Wrapper #(.Type(TxTransQueueType))                 TxQueueWrapperType;
+328                         TxQueueWrapperType                                                      tx_recv_queue;
+329                     
+330                         // interface
+331                         load_modulator_iface                                                    lm_iface (.*);
+332                         assign lm_iface.lm = lm_out;
+333                     
+334                         // --------------------------------------------------------------
+335                         // FDT verification
+336                         // --------------------------------------------------------------
+337                     
+338                         // Timings, from ISO/IEC 14443-3:2016 section 6.2.1.1
+339                         localparam int FDT_LAST_BIT_0 = 1172;
+340                         localparam int FDT_LAST_BIT_1 = 1236;
+341                     
+342                         logic last_rx_bit;
+343                         assign last_rx_bit = dut.iso14443a_inst.part3.framing_inst.last_rx_bit;
+344                     
+345                         // measure the time between the rising edge of pcd_pause_n
+346                         // and the rising edge of data_valid
+347                     
+348                         // this is a time in ps (`timescale)
+349                         longint lastPCDPauseRiseTime;
+350                     
+351        1/1              always_ff @(posedge pcd_pause_n) lastPCDPauseRiseTime &lt;= $time;
+352                     
+353                         initial begin: fdtVerificationBlock
+354        1/1                  forever begin: foreverLoop
+355                                 automatic longint diff;
+356                                 automatic longint expected;
+357                     
+358                                 // wait for the start of the next Rx frame
+359                                 // this ensure we don't check the fdt time on any lm_out pulses other than the first
+360        1/1                      @(posedge pcd_pause_n) begin end
+361                     
+362                                 // wait for the start of the reply
+363                                 // it doesn't matter if there was no reply to a message, we just get here on the next
+364                                 // actual reply. lastPCDPauseRise has been updated for the last rise of the last rx message
+365        1/1                      @(posedge lm_out) begin end
+366                     
+367        1/1                      diff        = $time - lastPCDPauseRiseTime;
+368        1/1                      expected    = CLOCK_PERIOD_PS * (last_rx_bit ? FDT_LAST_BIT_1 : FDT_LAST_BIT_0);
+369                     
+370                                 // ISO/IEC 14443-3:2016 section 6.2.1.1 requires that the PICC ensures a FDT of
+371                                 // the between the value calculated above (expected) and that value + 0.4us.
+372                                 // There are several delays that eat into that 400ns margin, in this testbench
+373                                 // we only vary two of them (pause_n_deasserts_after_ps, and the delay in the
+374                                 // pause_n_latch_and_synchroniser which varies between 2 and 3 periods depending
+375                                 // on when pause_n_async deasserts in relation to the clock). These two delays
+376                                 // should total a max of 373.78ns. So we check here that the FDT time is between
+377                                 // the expected value and that value + 374ns.
+378                     
+379                                 fdtTime: assert ((diff &gt; expected) &amp;&amp;
+380                                                  (diff &lt; (expected + (374 * 1000))))
+381                                     else $error(&quot;Tx started at %d ps, lastPCDPauseRiseTime %d ps, diff %d, expected %d&quot;,
+382                                                 $time, lastPCDPauseRiseTime, diff, expected);
+383                             end
+384                         end
+385                     
+386                         // ----------------------------------------------------------------
+387                         // Extend AppCommsTestsSequence to do TB specific stuff
+388                         // ----------------------------------------------------------------
+389                     
+390                         class RadSensDigTop_TbSequence
+391                         extends app_comms_tests_sequence_pkg::AppCommsTestsSequence
+392                         #(
+393                             .RxTransType        (RxTransType),
+394                             .TxTransType        (TxTransType),
+395                             .RxTransConvType    (RxTransConvType),
+396                             .TxTransConvType    (TxTransConvType),
+397                             .RxDriverType       (RxDriverType),
+398                             .TxMonitorType      (TxMonitorType),
+399                     
+400                             .ADC_SIM_MIN_CYCLES         (ADC_SIM_MIN_CYCLES),
+401                             .ADC_SIM_MAX_CYCLES         (ADC_SIM_MAX_CYCLES)
+402                         );
+403                     
+404                             // constructor
+405                             function new(uid_pkg::UID               _picc_uid,
+406                                          TransGenType               _rx_trans_gen,
+407                                          TransGenType               _tx_trans_gen,
+408                                          RxTransConvType            _rx_trans_conv,
+409                                          TxTransConvType            _tx_trans_conv,
+410                                          RxQueueWrapperType         _rx_send_queue,
+411                                          TxQueueWrapperType         _tx_recv_queue,
+412                                          RxDriverType               _rx_driver,
+413                                          TxMonitorType              _tx_monitor,
+414                                          int                        _reply_timeout,
+415                                          int                        _max_rx_msg_ticks);
+416                     
+417                                 super.new(_picc_uid,
+418                                           _rx_trans_gen,
+419                                           _tx_trans_gen,
+420                                           _rx_trans_conv,
+421                                           _tx_trans_conv,
+422                                           _rx_send_queue,
+423                                           _tx_recv_queue,
+424                                           _rx_driver,
+425                                           _tx_monitor,
+426                                           _reply_timeout,
+427                                           _max_rx_msg_ticks,
+428                                           100);                 // TODO: Run optimised builds and test with more than 100 loops per test
+429                     
+430                             endfunction
+431                     
+432                             virtual task do_reset;
+433                                 rst_n &lt;= 1'b0;
+434                                 repeat (5) @(posedge clk) begin end
+435                                 rst_n &lt;= 1'b1;
+436                                 repeat (5) @(posedge clk) begin end
+437                             endtask
+438                     
+439                             function void specific_target_callback(SpecificTargetEventCode ec, int arg=0);
+440                                 if ((ec == SpecificTargetEventCode_ENTERED_STATE) ||
+441                                     (ec == SpecificTargetEventCode_REMAINING_IN_STATE)) begin
+442                                     automatic State state = State'(arg);
+443                                     //$display(&quot;Event Code %s, %s&quot;, ec.name, state.name);
+444                                     check_state(state);
+445                                 end
+446                                 else begin
+447                                     $error(&quot;Unknown event code %s&quot;, ec.name);
+448                                 end
+449                             endfunction
+450                     
+451                             function void check_state (State state);
+452                                 ISO14443A_pkg::InitialisationState  initState;
+453                                 logic                               initStar;
+454                                 logic                               allow_pps;
+455                     
+456                                 initState   = ISO14443A_pkg::InitialisationState'(dut.iso14443a_inst.part3.initialisation_inst.state);
+457                                 initStar    = dut.iso14443a_inst.part3.initialisation_inst.state_star;
+458                                 allow_pps   = dut.iso14443a_inst.part4.allow_pps;
+459                     
+460                                 case (state)
+461                                     State_IDLE:                 isIdle:         assert ((initState == ISO14443A_pkg::InitialisationState_IDLE)      &amp;&amp; !initStar)   else $error(&quot;DUT not in correct state expected State_IDLE, 0 got %s, %b&quot;,                               initState.name, initStar);
+462                                     State_READY:                isReady:        assert ((initState == ISO14443A_pkg::InitialisationState_READY)     &amp;&amp; !initStar)   else $error(&quot;DUT not in correct state expected State_READY, 0 got %s, %b&quot;,                              initState.name, initStar);
+463                                     State_ACTIVE:               isActive:       assert ((initState == ISO14443A_pkg::InitialisationState_ACTIVE)    &amp;&amp; !initStar)   else $error(&quot;DUT not in correct state expected State_ACTIVE, 0 got %s, %b&quot;,                             initState.name, initStar);
+464                                     State_HALT:                 isHalt:         assert ((initState == ISO14443A_pkg::InitialisationState_IDLE)      &amp;&amp;  initStar)   else $error(&quot;DUT not in correct state expected State_IDLE, 1 got %s, %b&quot;,                               initState.name, initStar);
+465                                     State_READY_STAR:           isReadyStar:    assert ((initState == ISO14443A_pkg::InitialisationState_READY)     &amp;&amp;  initStar)   else $error(&quot;DUT not in correct state expected State_READY, 1 got %s, %b&quot;,                              initState.name, initStar);
+466                                     State_ACTIVE_STAR:          isActiveStar:   assert ((initState == ISO14443A_pkg::InitialisationState_ACTIVE)    &amp;&amp;  initStar)   else $error(&quot;DUT not in correct state expected State_ACTIVE, 1 got %s, %b&quot;,                             initState.name, initStar);
+467                                     State_PROTOCOL_PPS_ALLOWED: isProtocol1:    assert ((initState == ISO14443A_pkg::InitialisationState_PROTOCOL)  &amp;&amp;  allow_pps)  else $error(&quot;DUT not in correct state expected State_PROTOCOL_PPS_ALLOWED, got %s, %b, allow_pps %b&quot;,   initState.name, initStar, allow_pps);
+468                                     State_PROTOCOL_STD_COMMS:   isProtocol2:    assert ((initState == ISO14443A_pkg::InitialisationState_PROTOCOL)  &amp;&amp; !allow_pps)  else $error(&quot;DUT not in correct state expected State_PROTOCOL_STD_COMMS, got %s, %b, allow_pps %b&quot;,     initState.name, initStar, allow_pps);
+469                                 endcase
+470                             endfunction
+471                     
+472                             virtual protected function void set_power_input(logic [1:0] _power);
+473                                 power = _power;
+474                             endfunction
+475                     
+476                             // pure virtual, must be overwritten
+477                             virtual function logic verify_dut_cid(logic [3:0] expected);
+478                                 cidAsExpected:
+479                                 assert(dut.iso14443a_inst.part4.our_cid == expected) else $error(&quot;DUT's CID is %d expected %d&quot;, dut.iso14443a_inst.part4.our_cid, expected);
+480                                 return dut.iso14443a_inst.part4.our_cid == expected;
+481                             endfunction
+482                     
+483                             // pure virtual, must be overwritten
+484                             virtual task wait_for_ticks_since_last_pause(int ticks);
+485                                 longint ps = longint'(ticks) * CLOCK_PERIOD_PS;
+486                                 while ($time &lt; (last_pause_time + ps)) begin
+487                                     @(posedge clk) begin end
+488                                 end
+489                             endtask
+490                     
+491                             // pure virtual, must be overwritten
+492                             virtual task wait_for_signal_control_idle;
+493                                 wait (!dut.adapter_inst.signal_control_busy) @(posedge clk) begin end
+494                             endtask
+495                     
+496                             // pure virtual, must be overwritten
+497                             virtual function logic get_signal_control_busy;
+498                                 return dut.adapter_inst.signal_control_busy;
+499                             endfunction
+500                     
+501                             // pure virtual, must be overwritten
+502                             virtual function Signals get_current_signals;
+503                                 return signals;
+504                             endfunction
+505                     
+506                             // pure virtual, must be overwritten
+507                             virtual function logic [15:0] get_last_read_adc_value;
+508                                 return expected_adc_value;
+509                             endfunction
+510                     
+511                             // pure virtual, must be overwritten
+512                             virtual function IdentifyReplyArgs get_identify_reply_args;
+513                                 automatic IdentifyReplyArgs identify_reply_args;
+514                     
+515                                 identify_reply_args.protocol_version        = PROTOCOL_VERSION;
+516                                 identify_reply_args.adapter_version         = ADAPTER_VERSION;
+517                                 identify_reply_args.iso_iec_14443a_version  = {ISO_IEC_14443A_VERSION,
+518                                                                                afe_version};
+519                                 identify_reply_args.sensor_adc_version      = {sens_version,
+520                                                                                adc_version};
+521                     
+522                                 return identify_reply_args;
+523                             endfunction
+524                     
+525                             // ====================================================================
+526                             // sending tasks
+527                             // ====================================================================
+528                     
+529                             // override this so we can randomise the AFE behaviour for FDT verification
+530                             virtual task send_transaction (rx_byte_transaction_pkg::RxByteTransaction byte_trans,
+531                                                            EventMessageID mid);
+532                                 int pcd_pause_len;
+533                                 int pause_n_asserts_after_ps;
+534                                 int pause_n_deasserts_after_ps;
+535                                 int clock_stops_after_ps;
+536                                 int clock_starts_after_ps;
+537                     
+538                                 std::randomize(pcd_pause_len,
+539                                                pause_n_asserts_after_ps, pause_n_deasserts_after_ps,
+540                                                clock_stops_after_ps, clock_starts_after_ps)
+541                                 with
+542                                 {
+543                                     // ISO/IEC 14443-2A:2016 section 8.1.2.1
+544                                     // figure 3 and table 4. PCD pause length is T1. The time from when it starts
+545                                     // transmitting a pause until it starts stopping to transmit a pause.
+546                                     // My DUT shouldn't care about this length though, so I've increased the tested
+547                                     // range. This gives more flexibility to the other parameters, ensuring we test
+548                                     // larger ranges of those.
+549                                     pcd_pause_len &gt;= 10;
+550                                     pcd_pause_len &lt;= 50;
+551                     
+552                                     // Pause Detector Requirements
+553                                     pause_n_asserts_after_ps &gt;= 0;
+554                                     pause_n_asserts_after_ps &lt; (pcd_pause_len*CLOCK_PERIOD_PS_INT);
+555                                     pause_n_deasserts_after_ps &gt;= 0;
+556                                     pause_n_deasserts_after_ps &lt; 300*1000;  // 300ns
+557                     
+558                                     // Clock recovery requirements
+559                                     clock_stops_after_ps &gt;= 0;
+560                                     clock_stops_after_ps &lt; (pcd_pause_len*CLOCK_PERIOD_PS_INT);
+561                                     clock_starts_after_ps &gt;= 0;
+562                                     clock_starts_after_ps &lt; pause_n_deasserts_after_ps;
+563                     
+564                                     // there's some simulation errors where we get the wrong number of ticks
+565                                     // if the clock/pause starts/stops exactly on an edge. So make sure that doesn't happen
+566                                     (clock_stops_after_ps*2 % CLOCK_PERIOD_PS_INT) != 0;
+567                                     (clock_starts_after_ps*2 % CLOCK_PERIOD_PS_INT) != 0;
+568                                     (pause_n_asserts_after_ps*2 % CLOCK_PERIOD_PS_INT) != 0;
+569                                     (pause_n_deasserts_after_ps*2 % CLOCK_PERIOD_PS_INT) != 0;
+570                                 };
+571                     /*
+572                                 $display(&quot;\nUsing:&quot;);
+573                                 $display(&quot;  PCD pause length     %d ticks&quot;, pcd_pause_len);
+574                                 $display(&quot;  pause_n_asserts_after   %d ps&quot;, pause_n_asserts_after_ps);
+575                                 $display(&quot;  pause_n_deasserts_after %d ps&quot;, pause_n_deasserts_after_ps);
+576                                 $display(&quot;  clock_stops_after       %d ps&quot;, clock_stops_after_ps);
+577                                 $display(&quot;  clock_starts_after      %d ps&quot;, clock_starts_after_ps);
+578                                 $display(&quot;========================================&quot;); */
+579                     
+580                                 analogue_sim_inst.set_pause_ticks(pcd_pause_len);
+581                                 analogue_sim_inst.set_params(.clock_stops                   (1'b1),
+582                                                              .clock_stops_after_ps          (clock_stops_after_ps),
+583                                                              .clock_starts_after_ps         (clock_starts_after_ps),
+584                                                              .pause_n_asserts_after_ps      (pause_n_asserts_after_ps),
+585                                                              .pause_n_deasserts_after_ps    (pause_n_deasserts_after_ps));
+586                     
+587                                 super.send_transaction(byte_trans, mid);
+588                             endtask
+589                     
+590                             // ====================================================================
+591                             // send message verify reply tasks
+592                             // ====================================================================
+593                     
+594                             virtual task send_app_set_signal_request_verify_reply(StdBlockAddress addr, SetSignalRequestArgs request_args, StatusReplyArgs reply_args);
+595                                 automatic Event e;
+596                     
+597                                 // clear the new_expected_events queue
+598                                 new_expected_events = '{};
+599                     
+600                                 // if we expect the signal_control module to already be busy
+601                                 // don't add new events, as they won't occur.
+602                                 if (!reply_args.flags.already_busy) begin
+603                                     // the signals changing event
+604                                     // the new value is calculated as normal
+605                                     e.new_value                 = (signals &amp; (~request_args.mask)) | (request_args.value &amp; request_args.mask);
+606                     
+607                                     // the change mask is only those bits that actually change (ignoring padding)
+608                                     e.change_mask               = signals ^ e.new_value;
+609                                     e.change_mask.padding       = '0;
+610                     
+611                                     if (e.change_mask) begin
+612                                         // signals will actually change
+613                                         new_expected_events = '{e};
+614                                     end
+615                     
+616                                     cmd         = Command_SET_SIGNAL;
+617                                     cmd_valid   = 1'b1;
+618                                 end
+619                     
+620                                 super.send_app_set_signal_request_verify_reply(addr, request_args, reply_args);
+621                                 cmd_valid = 1'b0;
+622                             endtask
+623                     
+624                             virtual task send_app_auto_read_request_verify_reply(StdBlockAddress addr, AutoReadRequestArgs request_args, StatusReplyArgs reply_args);
+625                                 automatic Event e;
+626                     
+627                                 // clear the new_expected_events queue
+628                                 new_expected_events = '{};
+629                     
+630                                 // if we expect the signal_control module to already be busy
+631                                 // or we expect the DUT to return an error (invalid start state)
+632                                 // don't add new events, as they won't occur.
+633                                 if (!reply_args.flags.already_busy &amp;&amp; !reply_args.flags.error) begin
+634                                     // at the end of the sync period sens_enable and adc_enable assert
+635                                     e.new_value                 = '0;
+636                                     // sens_config stays the same
+637                                     e.new_value.sens_config     = signals.sens_config;
+638                                     // sens_enable and adc_enable assert
+639                                     e.new_value.sens_enable     = 1'b1;
+640                                     e.new_value.adc_enable      = 1'b1;
+641                     
+642                                     // only sens_enable and adc_enable change
+643                                     e.change_mask               = '0;
+644                                     e.change_mask.sens_enable   = 1'b1;
+645                                     e.change_mask.adc_enable    = 1'b1;
+646                     
+647                                     new_expected_events.push_back(e);
+648                     
+649                                     // at the end of timing1 sens_read asserts
+650                                     e.new_value.sens_read       = 1'b1;
+651                                     e.change_mask               = '0;
+652                                     e.change_mask.sens_read     = 1'b1;
+653                     
+654                                     new_expected_events.push_back(e);
+655                     
+656                                     // at the end of timing2 adc_read asserts
+657                                     e.new_value.adc_read        = 1'b1;
+658                                     e.change_mask               = '0;
+659                                     e.change_mask.adc_read      = 1'b1;
+660                     
+661                                     new_expected_events.push_back(e);
+662                     
+663                                     cmd         = Command_AUTO_READ;
+664                                     cmd_valid   = 1'b1;
+665                                 end
+666                     
+667                                 super.send_app_auto_read_request_verify_reply(addr, request_args, reply_args);
+668                                 cmd_valid = 1'b0;
+669                             endtask
+670                     
+671                             virtual task send_app_abort_request_verify_reply(StdBlockAddress addr, StatusReplyArgs reply_args);
+672                                 // The event handling code deals with clearing pending events and adding the abort event
+673                                 cmd         = Command_ABORT;
+674                                 cmd_valid   = 1'b1;
+675                                 super.send_app_abort_request_verify_reply(addr, reply_args);
+676                                 cmd_valid   = 1'b0;
+677                             endtask
+678                     
+679                             // override this to first randomise the version inputs to the DUT
+680                             // they are meant to be constants, but varying them here lets us check they are
+681                             // correctly connected
+682                             virtual task send_app_identify_request_verify_reply(StdBlockAddress addr);
+683                                 afe_version     = 4'($urandom);
+684                                 sens_version    = 4'($urandom);
+685                                 adc_version     = 4'($urandom);
+686                     
+687                                 super.send_app_identify_request_verify_reply(addr);
+688                             endtask
+689                         endclass
+690                     
+691                         RadSensDigTop_TbSequence seq;
+692                     
+693                         // --------------------------------------------------------------
+694                         // Test stimulus
+695                         // --------------------------------------------------------------
+696                     
+697                         initial begin
+698                             automatic transaction_generator_pkg::TransactionGenerator   rx_trans_gen;
+699                             automatic transaction_generator_pkg::TransactionGenerator   tx_trans_gen;
+700                             automatic RxTransConvType                                   rx_trans_conv;
+701                             automatic TxTransConvType                                   tx_trans_conv;
+702                             automatic int                                               reply_timeout;
+703                             automatic int                                               max_rx_msg_ticks;
+704                     
+705        1/1                  power = 2'b00;
+706                     
+707                             // TODO: randomise some settings:
+708                             //      CLOCK_STARTS/STOPS_AFTER_PS
+709                             //      PAUSE_N_ASSERTS/DEASSERTS_AFTER_PS
+710                             //      pause ticks
+711                             //      clock speed
+712                             //      ...?
+713                     
+714        1/1                  analogue_sim_inst.init(512);    // inits the RxDriver
+715                     
+716        1/1                  tx_monitor          = new(lm_iface);
+717                     
+718        1/1                  rx_send_queue       = new('{});
+719        1/1                  tx_recv_queue       = new('{});
+720                     
+721        1/1                  rx_trans_gen        = new(1'b1);    // Rx messages must have CRCs applied
+722        1/1                  tx_trans_gen        = new(1'b1);    // Tx messages will have CRCs applied
+723                     
+724        1/1                  rx_trans_conv       = new(1'b1);    // Rx messages must have parity bits
+725        1/1                  tx_trans_conv       = new(1'b1);    // Tx messages will have parity bits
+726                     
+727                             // initialise the variable part of the UID to be all ones.
+728                             // this is so on the first test when we swap to all 0s, we get the 1-&gt;0 toggle coverage
+729                             // we then switch back to 1 to get 0-&gt;1.
+730        1/1                  picc_uid        = new('1);
+731        1/1                  full_uid = picc_uid.get_uid;
+732                     
+733                             // longest reply is an app IDENTIFY reply:
+734                             //      PCB + CID + 5 byte app header + 5 bytes data + 2 bytes CRC
+735                             // = 14 bytes, each byte has 8 bits + parity -&gt; 126 bits.
+736                             // there are 128 ticks in a bit, so 16,128 ticks
+737                             // then the FDT takes 1236 ticks to fire (in the worst case)
+738                             // so 17,364 ticks total. Use 18,000 ticks
+739        1/1                  reply_timeout   = 18000;
+740                     
+741                             // longest valid request is the AUTO_READ request with:
+742                             // PCB + CID + 5 byte app header + 10 bytes data + 2 bytes CRC
+743                             // = 19 bytes, each byte has 8 bits + parity -&gt; 171 bits.
+744                             // Then there's the SOC (equivalent to 1 bit) and the EOC (equivalent to 2 bits)
+745                             // So 174 bits. Each bit takes 128 ticks, so 22,272.
+746                             // using 22,500
+747        1/1                  max_rx_msg_ticks    = 22500;
+748                     
+749        1/1                  seq             = new(picc_uid,
+750                                                   rx_trans_gen,
+751                                                   tx_trans_gen,
+752                                                   rx_trans_conv,
+753                                                   tx_trans_conv,
+754                                                   rx_send_queue,
+755                                                   tx_recv_queue,
+756                                                   analogue_sim_inst.driver,
+757                                                   tx_monitor,
+758                                                   reply_timeout,
+759                                                   max_rx_msg_ticks);
+760                     
+761        1/1                  analogue_sim_inst.start (rx_send_queue.data);
+762        1/1                  tx_monitor.start        (tx_recv_queue.data);
+763                     
+764        1/1                  seq.do_reset;
+765                     
+766                             // we don't run a huge amount of tests here, since this already takes a long time to run.
+767                             // All the other testbenches prove that the rest of the design works, so really all this needs
+768                             // to do is show that we haven't missed connecting something at the top level.
+769                             // Still, it'd be worth running a lot more tests as a one off, and leaving it running for a few days.
+770                     
+771                             // repeat 4 times with different UIDs
+772        1/1                  for (int i = 0; i &lt; 4; i++) begin
+773        1/1                      if (i == 0) begin
+774                                     // set the variable part of the uid to 0
+775                                     // this and the i == 1 case help us get toggle coverage
+776        1/1                          picc_uid.set_uid('0);
+777                                 end
+778        1/1                      else if (i == 1) begin
+779                                     // set the variable part of the uid to all ones
+780        1/1                          picc_uid.set_uid('1);
+781                                 end
+782                                 else begin
+783                                     // randomise the variable part of the UID
+784        1/1                          picc_uid.randomize;
+785                                 end
+786                     
+787        1/1                      full_uid = picc_uid.get_uid;
+788        1/1                      $display(&quot;NOTE: New UID: %s&quot;, picc_uid.to_string);
+789        1/1                      seq.do_reset;
+790                     
+791                                 // Run the tests
+792        1/1                      seq.run_all_initialisation_tests();
+793        1/1                      seq.run_all_part4_tests();
+794        1/1                      seq.run_protocol_tests();
+795                             end
+796                     
+797        2/2                  repeat (5) @(posedge clk) begin end
+                        REPEAT_FALSE
+798        1/1                  $stop;
+</pre>
+<hr>
+<a name="Cond"></a>
+Cond Coverage for Module : <a href="mod11.html" >radiation_sensor_digital_top_tb</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="3" width="82">
+<tr><th></th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s6"><td class="lf">Conditions</td><td>6</td><td>4</td><td>66.67</td></tr>
+<tr class="s6"><td class="lf">Logical</td><td>6</td><td>4</td><td>66.67</td></tr>
+<tr class="wht"><td class="lf">Non-Logical</td><td>0</td><td>0</td><td></td></tr>
+<tr class="wht"><td class="lf">Event</td><td>0</td><td>0</td><td></td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       225
+ EXPRESSION ((actual.new_value == expected.new_value) &amp;&amp; (actual.change_mask == expected.change_mask))
+             --------------------1-------------------    ----------------------2---------------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       246
+ EXPRESSION ((cmd == Command_SET_SIGNAL) || (cmd == Command_AUTO_READ))
+             -------------1-------------    -------------2------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+</table>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod11.html" >radiation_sensor_digital_top_tb</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s9">
+<td>Totals</td>
+<td class="rt">30</td>
+<td class="rt">27</td>
+<td class="rt">90.00 </td>
+</tr><tr class="s6">
+<td>Total Bits</td>
+<td class="rt">228</td>
+<td class="rt">158</td>
+<td class="rt">69.30 </td>
+</tr><tr class="s6">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">114</td>
+<td class="rt">79</td>
+<td class="rt">69.30 </td>
+</tr><tr class="s6">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">114</td>
+<td class="rt">79</td>
+<td class="rt">69.30 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s9">
+<td>Signals</td>
+<td class="rt">30</td>
+<td class="rt">27</td>
+<td class="rt">90.00 </td>
+</tr><tr class="s6">
+<td>Signal Bits</td>
+<td class="rt">228</td>
+<td class="rt">158</td>
+<td class="rt">69.30 </td>
+</tr><tr class="s6">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">114</td>
+<td class="rt">79</td>
+<td class="rt">69.30 </td>
+</tr><tr class="s6">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">114</td>
+<td class="rt">79</td>
+<td class="rt">69.30 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>rst_n_async</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>power[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>pause_n_async</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>lm_out</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>afe_version[3:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>uid_variable[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>sens_version[3:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>sens_config[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>adc_version[3:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>adc_conversion_complete_async</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>adc_value[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>full_uid[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>full_uid[31:3]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>pcd_pause_n</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>expected_adc_value[15:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>adc_sim_busy</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.padding</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>signals.adc_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.adc_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.sens_read</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.sens_enable</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>signals.sens_config[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>cmd_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>cmd[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>cmd[7:3]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>last_rx_bit</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr></table><br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod11.html" >radiation_sensor_digital_top_tb</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s8">
+<td>Branches</td>
+<td></td>
+<td class="rt">12</td>
+<td class="rt">10</td>
+<td class="rt">83.33 </td>
+</tr><tr class="s7">
+<td>IF</td>
+<td class="rt">185</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s8">
+<td>IF</td>
+<td class="rt">244</td>
+<td class="rt">6</td>
+<td class="rt">5</td>
+<td class="rt">83.33 </td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">288</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+185                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+186                    last_event_time = '0;
+           <font color = "green">            ==></font>
+187                end
+188                else begin
+189                    if (!$stable(sens_config)       ||
+                       <font color = "green">-2-</font>  
+190                        !$stable(sens_enable)       ||
+191                        !$stable(sens_read)         ||
+192                        !$stable(adc_enable)        ||
+193                        !$stable(adc_read)) begin: eventOccurred
+194        
+195                        // event occurred construct the Event
+196                        automatic Event actual;
+197        
+198                        last_event_time                     <= $time;
+199        
+200                        //$display("event ocurred, current state: %p", signals);
+201        
+202                        actual.change_mask.sens_config[0]   = !$stable(sens_config[0]);
+203                        actual.change_mask.sens_config[1]   = !$stable(sens_config[1]);
+204                        actual.change_mask.sens_config[2]   = !$stable(sens_config[2]);
+205                        actual.change_mask.sens_enable      = !$stable(sens_enable);
+206                        actual.change_mask.sens_read        = !$stable(sens_read);
+207                        actual.change_mask.adc_enable       = !$stable(adc_enable);
+208                        actual.change_mask.adc_read         = !$stable(adc_read);
+209                        actual.change_mask.padding          = '0;
+210        
+211                        actual.new_value                = signals;
+212        
+213                        eventExpected:
+214                        assert (expected_events.size()) else $error("Event %p occurred but nothing expected", actual);
+215        
+216                        if (expected_events.size()) begin: eventCheck
+                           <font color = "red">-3-</font>  
+217                            automatic Event expected = expected_events.pop_front;
+           <font color = "green">                    ==></font>
+218                            automatic logic res;
+219        
+220                            // don't care about padding
+221                            expected.change_mask.padding    = '0;
+222                            expected.new_value.padding      = '0;
+223        
+224                            // mask and value must always be correct
+225                            res = (actual.new_value     == expected.new_value) &&
+226                                  (actual.change_mask   == expected.change_mask);
+227        
+228                            eventAsExpected:
+229                            assert (res) else $error("Event %p occurred but doesn't match expected %p", actual, expected);
+230                        end
+                           MISSING_ELSE
+           <font color = "red">                ==></font>
+231                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+244                if ($past(dut.app_rx_iface.eoc)) begin
+                   <font color = "green">-1-</font>                     
+245                    if (cmd_valid) begin
+                       <font color = "green">-2-</font>  
+246                        if ((cmd == Command_SET_SIGNAL) ||
+                           <font color = "green">-3-</font>  
+247                            (cmd == Command_AUTO_READ)) begin
+248                            foreach (new_expected_events[i]) begin
+           <font color = "green">                    ==></font>
+249                                expected_events.push_back(new_expected_events[i]);
+250                            end
+251                        end
+252                        else if (cmd == Command_ABORT) begin
+                                <font color = "red">-4-</font>  
+253                            automatic Event e;
+254                            // we are aborting so clear all expected events and replace them with one
+255                            // where all the signals deassert
+256                            new_expected_events         = '{};
+257        
+258                            // sens_config stays the same
+259                            e.new_value.sens_config     = signals.sens_config;
+260                            // the others reset to 0;
+261                            e.new_value.sens_enable     = 1'b0;
+262                            e.new_value.sens_read       = 1'b0;
+263                            e.new_value.adc_enable      = 1'b0;
+264                            e.new_value.adc_read        = 1'b0;
+265        
+266                            // the change mask is only those bits that actually change (ignoring padding)
+267                            e.change_mask               = signals ^ e.new_value;
+268                            e.change_mask.padding       = '0;
+269        
+270                            if (e.change_mask) begin
+                               <font color = "green">-5-</font>  
+271                                // push it and delete all others
+272                                expected_events = '{e};
+           <font color = "green">                        ==></font>
+273                            end
+274                            else begin
+275                                // nothing is actually changing so just delete any other pending events
+276                                expected_events = '{};
+           <font color = "green">                        ==></font>
+277                            end
+278                        end
+                           MISSING_ELSE
+           <font color = "red">                ==></font>
+279                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+280                end
+                   MISSING_ELSE
+           <font color = "green">        ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+288                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+289                    last_pause_time <= 0ns;
+           <font color = "green">            ==></font>
+290                end
+291                else begin
+292                    last_pause_time <= $time;
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<hr>
+<a name="Assert"></a>
+Assert Coverage for Module : <a href="mod11.html" >radiation_sensor_digital_top_tb</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Attempted</th><th nowrap width=80>Percent</th><th nowrap width=80>Succeeded/Matched</th><th nowrap width=80>Percent</th></tr><tr>
+<td class="wht cl"><a href="#991806423" >Assertions</a></td>
+<td class="wht cl rt">12</td>
+<td class="s10 cl rt">12</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s10 cl rt">12</td>
+<td class="s10 cl rt">100.00</td>
+</tr><tr>
+<td class="wht cl"><a href="#18527138" >Cover properties</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><a href="#892240099" >Cover sequences</a></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+<td class="wht cl rt">0</td>
+<td class="wht cl"></td>
+</tr><tr>
+<td class="wht cl"><b>Total</b></td>
+<td class="wht cl rt">12</td>
+<td class="s10 cl rt">12</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s10 cl rt">12</td>
+<td class="s10 cl rt">100.00</td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<br clear=all>
+<a name="991806423"></a>
+<b>Assertion Details</b><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td>Attempts</td><td>Real Successes</td><td>Failures</td><td>Incomplete</td></tr><tr>
+<td class="wht cl"><a name="319521109"></a>
+\RadSensDigTop_TbSequence::check_state .isActive</td>
+<td class="s9 cl rt">31272</td>
+<td class="s9 cl rt">31272</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1649737593"></a>
+\RadSensDigTop_TbSequence::check_state .isActiveStar</td>
+<td class="s9 cl rt">3089</td>
+<td class="s9 cl rt">3089</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="21258768"></a>
+\RadSensDigTop_TbSequence::check_state .isHalt</td>
+<td class="s9 cl rt">7130</td>
+<td class="s9 cl rt">7130</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="2077995875"></a>
+\RadSensDigTop_TbSequence::check_state .isIdle</td>
+<td class="s9 cl rt">34545</td>
+<td class="s9 cl rt">34545</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="179270602"></a>
+\RadSensDigTop_TbSequence::check_state .isProtocol1</td>
+<td class="s9 cl rt">30412</td>
+<td class="s9 cl rt">30412</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1305784949"></a>
+\RadSensDigTop_TbSequence::check_state .isProtocol2</td>
+<td class="s9 cl rt">75859</td>
+<td class="s9 cl rt">75859</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="674420140"></a>
+\RadSensDigTop_TbSequence::check_state .isReady</td>
+<td class="s9 cl rt">34204</td>
+<td class="s9 cl rt">34204</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="887990330"></a>
+\RadSensDigTop_TbSequence::check_state .isReadyStar</td>
+<td class="s9 cl rt">6002</td>
+<td class="s9 cl rt">6002</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="847890619"></a>
+\RadSensDigTop_TbSequence::verify_dut_cid .cidAsExpected</td>
+<td class="s9 cl rt">33947</td>
+<td class="s9 cl rt">33947</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="667337189"></a>
+eventOccurred.eventCheck.eventAsExpected</td>
+<td class="s9 cl rt">10817</td>
+<td class="s9 cl rt">10817</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1561265851"></a>
+eventOccurred.eventExpected</td>
+<td class="s9 cl rt">10817</td>
+<td class="s9 cl rt">10817</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr><tr>
+<td class="wht cl"><a name="1770294730"></a>
+fdtVerificationBlock.foreverLoop.fdtTime</td>
+<td class="s9 cl rt">147027</td>
+<td class="s9 cl rt">147027</td>
+<td class="s9 cl rt">0</td>
+<td class="wht cl rt">0</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_25">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+    <li>
+      <a href="#Assert">Assert</a>    </li>
+  </ul>
+  <ul name="tag_radiation_sensor_digital_top_tb">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+    <li>
+      <a href="#Assert">Assert</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

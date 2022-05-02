@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Assertions</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Assertions</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | <a href="asserts.html" ><b>asserts</b></a></div>
+
+</div>
+<br clear=all>
+<div class="ui-layout-west">
+<b>Assertions by Category</b><table class="noborder">
+<col width="180">
+<col span="3" width="60"><tr class="sortablehead"><td> </td><td>ASSERT</td><td>PROPERTIES</td><td>SEQUENCES</td>
+<tr class="wht"><td class="lf">Total</td><td>76</td><td>0</td><td>0</td></tr>
+<tr class="wht"><td class="lf">Category 0</td><td>76</td><td>0</td><td>0</td></tr>
+</table>
+<hr>
+<br clear=all>
+<b>Assertions by Severity</b><table class="noborder">
+<col width="180">
+<col span="3" width="60"><tr class="sortablehead"><td> </td><td>ASSERT</td><td>PROPERTIES</td><td>SEQUENCES</td>
+<tr class="wht"><td class="lf">Total</td><td>76</td><td>0</td><td>0</td></tr>
+<tr class="wht"><td class="lf">Severity 0</td><td>76</td><td>0</td><td>0</td></tr>
+</table>
+<hr>
+<br clear=all>
+<b>Summary for Assertions</b><table class="noborder">
+<col width="180">
+<col span="2" width="60"><tr class="sortablehead"><td> </td><td>NUMBER</td><td>PERCENT</td>
+<tr class="wht"><td class="lf">Total Number</td><td>76</td><td>100.00</td></tr>
+<tr class="wht"><td class="lf"><a href="#tag_ast_no_covr">Uncovered</a></td><td>12</td><td>15.79</td></tr>
+<tr class="wht"><td class="lf"><a href="#tag_ast_succ">Success</a></td><td>64</td><td>84.21</td></tr>
+<tr class="wht"><td class="lf">Failure</td><td>0</td><td>0.00</td></tr>
+<tr class="wht"><td class="lf">Incomplete</td><td>0</td><td>0.00</td></tr>
+<tr class="wht"><td class="lf"><a href="#tag_ast_no_attp">Without Attempts</a></td><td>5</td><td>6.58</td></tr>
+</table>
+</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<hr>
+<br clear=all>
+<b>Detail Report for Assertions</b><br clear=all>
+<br clear=all>
+Assertions Uncovered:<a name="tag_ast_no_covr"></a>
+<table class="sortable rt">
+<col width="180">
+<col span="6" width="60"><tr class="sortablehead">
+<td class="alfsrt">ASSERTIONS<td>CATEGORY</td><td>SEVERITY</td><td>ATTEMPTS</td><td>REAL SUCCESSES</td><td>FAILURES</td><td>INCOMPLETE</td><td>SRC</td>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_app_comms_tests_sequence_pkg.\AppCommsTestsSequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor,5000,8000)::do_abort .abortResetSignals" title="mod40.html#1502743771" href="mod40.html#1502743771">app_comms_tests_sequence_pkg.\AppCommsTestsSequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor,5000,8000)::do_abort .abortResetSignals</a>
+</td><td>0</td><td>0</td><td class="s3">0</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/bfms/sequences/app_comms_tests_sequence.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/bfms/sequences/app_comms_tests_sequence.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_comms_tests_sequence_pkg.\CommsTestsSequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::run_part4_pps_tests .PPSAllowedPlusRATS.ourCIDNotChanged" title="mod41.html#764412168" href="mod41.html#764412168">comms_tests_sequence_pkg.\CommsTestsSequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::run_part4_pps_tests .PPSAllowedPlusRATS.ourCIDNotChanged</a>
+</td><td>0</td><td>0</td><td class="s3">0</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/comms_tests_sequence.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/comms_tests_sequence.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.app_rx_iface.useAsserts.errorOnlyOneTick" title="mod4.html#329518625" href="mod4.html#329518625">generate_top_saif_tb.dut.app_rx_iface.useAsserts.errorOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.errorOnlyOneTick" title="mod4.html#1525257755" href="mod4.html#1525257755">generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.errorOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.errorOnlyOneTick" title="mod4.html#679805456" href="mod4.html#679805456">generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.errorOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.errorOnlyOneTick" title="mod4.html#1276338444" href="mod4.html#1276338444">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.errorOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.errorOnlyOneTick" title="mod4.html#644496217" href="mod4.html#644496217">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.errorOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.errorOnlyOneTick" title="mod4.html#524133585" href="mod4.html#524133585">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.errorOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.errorOnlyOneTick" title="mod4.html#1506978565" href="mod4.html#1506978565">generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.errorOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_sequence_pkg.\Sequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::send_ac .uidBitsNot32" title="mod37.html#312361934" href="mod37.html#312361934">sequence_pkg.\Sequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::send_ac .uidBitsNot32</a>
+</td><td>0</td><td>0</td><td class="s3">0</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/sequence.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/sequence.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_sequence_pkg.\Sequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::verify_no_reply .noReply" title="mod37.html#559727458" href="mod37.html#559727458">sequence_pkg.\Sequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::verify_no_reply .noReply</a>
+</td><td>0</td><td>0</td><td class="s3">0</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/sequence.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/sequence.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_specific_target_sequence_pkg.\SpecificTargetSequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::verify_resend_last .resendLastAsExpected" title="mod24.html#153176918" href="mod24.html#153176918">specific_target_sequence_pkg.\SpecificTargetSequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::verify_resend_last .resendLastAsExpected</a>
+</td><td>0</td><td>0</td><td class="s3">0</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/specific_target_sequence.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/specific_target_sequence.sv')"><img class="sourcefile"></a>
+</td></tr>
+</table>
+<br clear=all>
+Assertions Success:<a name="tag_ast_succ"></a>
+<table class="sortable rt">
+<col width="180">
+<col span="6" width="60"><tr class="sortablehead">
+<td class="alfsrt">ASSERTIONS<td>CATEGORY</td><td>SEVERITY</td><td>ATTEMPTS</td><td>REAL SUCCESSES</td><td>FAILURES</td><td>INCOMPLETE</td><td>SRC</td>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_app_comms_tests_sequence_pkg.\AppCommsTestsSequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor,5000,8000)::check_signal_control_busy .signalControlBusyAsExpected" title="mod40.html#997560330" href="mod40.html#997560330">app_comms_tests_sequence_pkg.\AppCommsTestsSequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor,5000,8000)::check_signal_control_busy .signalControlBusyAsExpected</a>
+</td><td>0</td><td>0</td><td class="s9">10</td><td class="s9">10</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/bfms/sequences/app_comms_tests_sequence.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/bfms/sequences/app_comms_tests_sequence.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.app_rx_iface.useAsserts.dataValidOnlyOneTick" title="mod4.html#433208843" href="mod4.html#433208843">generate_top_saif_tb.dut.app_rx_iface.useAsserts.dataValidOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">182</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.app_rx_iface.useAsserts.eocOnlyOneTick" title="mod4.html#1014827762" href="mod4.html#1014827762">generate_top_saif_tb.dut.app_rx_iface.useAsserts.eocOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">16</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.app_rx_iface.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid" title="mod4.html#1044158981" href="mod4.html#1044158981">generate_top_saif_tb.dut.app_rx_iface.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">454816</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.app_rx_iface.useAsserts.signalsInReset" title="mod4.html#616875151" href="mod4.html#616875151">generate_top_saif_tb.dut.app_rx_iface.useAsserts.signalsInReset</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">7</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.app_rx_iface.useAsserts.socOnlyOneTick" title="mod4.html#87422272" href="mod4.html#87422272">generate_top_saif_tb.dut.app_rx_iface.useAsserts.socOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">16</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.app_tx_iface.useAsserts.reqOnlyOneTick" title="mod7.html#387775609" href="mod7.html#387775609">generate_top_saif_tb.dut.app_tx_iface.useAsserts.reqOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">109</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.app_tx_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle" title="mod7.html#2068974572" href="mod7.html#2068974572">generate_top_saif_tb.dut.app_tx_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">136</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.app_tx_iface.useAsserts.signalsInReset" title="mod7.html#639507405" href="mod7.html#639507405">generate_top_saif_tb.dut.app_tx_iface.useAsserts.signalsInReset</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">7</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part2.tx_inst.be_iface.useAsserts.reqOnlyOneTick" title="mod7.html#756213837" href="mod7.html#756213837">generate_top_saif_tb.dut.iso14443a_inst.part2.tx_inst.be_iface.useAsserts.reqOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">1676</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part2.tx_inst.be_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle" title="mod7.html#251465786" href="mod7.html#251465786">generate_top_saif_tb.dut.iso14443a_inst.part2.tx_inst.be_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">858</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part2.tx_inst.be_iface.useAsserts.signalsInReset" title="mod7.html#1061796397" href="mod7.html#1061796397">generate_top_saif_tb.dut.iso14443a_inst.part2.tx_inst.be_iface.useAsserts.signalsInReset</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">7</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.dataValidOnlyOneTick" title="mod4.html#700732805" href="mod4.html#700732805">generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.dataValidOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">2086</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.eocOnlyOneTick" title="mod4.html#1030635436" href="mod4.html#1030635436">generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.eocOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">20</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid" title="mod4.html#335384203" href="mod4.html#335384203">generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">454816</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.signalsInReset" title="mod4.html#1829224299" href="mod4.html#1829224299">generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.signalsInReset</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">7</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.socOnlyOneTick" title="mod4.html#1607875462" href="mod4.html#1607875462">generate_top_saif_tb.dut.iso14443a_inst.part2_to_part3_rx_iface.useAsserts.socOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">20</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.dataValidOnlyOneTick" title="mod4.html#263189958" href="mod4.html#263189958">generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.dataValidOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">1855</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.eocOnlyOneTick" title="mod4.html#1656588159" href="mod4.html#1656588159">generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.eocOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">20</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid" title="mod4.html#1225111594" href="mod4.html#1225111594">generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">454816</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.signalsInReset" title="mod4.html#1630424736" href="mod4.html#1630424736">generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.signalsInReset</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">7</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.socOnlyOneTick" title="mod4.html#1406110321" href="mod4.html#1406110321">generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.rx_iface_bits.useAsserts.socOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">20</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.tx_iface_bits.useAsserts.reqOnlyOneTick" title="mod7.html#1398928932" href="mod7.html#1398928932">generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.tx_iface_bits.useAsserts.reqOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">1168</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.tx_iface_bits.useAsserts.signalChangesOnlyAfterReqOrWhenIdle" title="mod7.html#1627188617" href="mod7.html#1627188617">generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.tx_iface_bits.useAsserts.signalChangesOnlyAfterReqOrWhenIdle</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">724</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.tx_iface_bits.useAsserts.signalsInReset" title="mod7.html#1428600802" href="mod7.html#1428600802">generate_top_saif_tb.dut.iso14443a_inst.part3.framing_inst.tx_iface_bits.useAsserts.signalsInReset</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">7</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.initialisation_inst.acSelSizeChecks.acSelSize" title="mod6.html#564599400" href="mod6.html#564599400">generate_top_saif_tb.dut.iso14443a_inst.part3.initialisation_inst.acSelSizeChecks.acSelSize</a>
+</td><td>0</td><td>0</td><td class="s9">1</td><td class="s9">1</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/initialisation.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/initialisation.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.initialisation_inst.acSelSizeChecks.nvbSize" title="mod6.html#1823562326" href="mod6.html#1823562326">generate_top_saif_tb.dut.iso14443a_inst.part3.initialisation_inst.acSelSizeChecks.nvbSize</a>
+</td><td>0</td><td>0</td><td class="s9">1</td><td class="s9">1</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/initialisation.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/initialisation.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.initialisation_inst.acSelSizeChecks.uidDataSize" title="mod6.html#1849825302" href="mod6.html#1849825302">generate_top_saif_tb.dut.iso14443a_inst.part3.initialisation_inst.acSelSizeChecks.uidDataSize</a>
+</td><td>0</td><td>0</td><td class="s9">1</td><td class="s9">1</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/initialisation.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/iso14443_3a/initialisation.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.dataValidOnlyOneTick" title="mod4.html#1488168074" href="mod4.html#1488168074">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.dataValidOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">1855</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.eocOnlyOneTick" title="mod4.html#1575560675" href="mod4.html#1575560675">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.eocOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">20</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid" title="mod4.html#1539637402" href="mod4.html#1539637402">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">454816</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.signalsInReset" title="mod4.html#1700553308" href="mod4.html#1700553308">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.signalsInReset</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">7</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.socOnlyOneTick" title="mod4.html#2126989291" href="mod4.html#2126989291">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bits_to_init.useAsserts.socOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">20</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.dataValidOnlyOneTick" title="mod4.html#844140079" href="mod4.html#844140079">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.dataValidOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">14</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.eocOnlyOneTick" title="mod4.html#1865030552" href="mod4.html#1865030552">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.eocOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">3</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid" title="mod4.html#751409089" href="mod4.html#751409089">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">454816</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.signalsInReset" title="mod4.html#910255113" href="mod4.html#910255113">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.signalsInReset</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">7</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.socOnlyOneTick" title="mod4.html#1244868698" href="mod4.html#1244868698">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_init.useAsserts.socOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">3</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.dataValidOnlyOneTick" title="mod4.html#415278533" href="mod4.html#415278533">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.dataValidOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">232</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.eocOnlyOneTick" title="mod4.html#1707879778" href="mod4.html#1707879778">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.eocOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">20</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid" title="mod4.html#1017477589" href="mod4.html#1017477589">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">454816</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.signalsInReset" title="mod4.html#2122677793" href="mod4.html#2122677793">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.signalsInReset</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">7</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.socOnlyOneTick" title="mod4.html#1976894512" href="mod4.html#1976894512">generate_top_saif_tb.dut.iso14443a_inst.part3.rx_iface_bytes_to_routing.useAsserts.socOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">20</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_init.useAsserts.reqOnlyOneTick" title="mod7.html#456487014" href="mod7.html#456487014">generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_init.useAsserts.reqOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">3</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_init.useAsserts.signalChangesOnlyAfterReqOrWhenIdle" title="mod7.html#724914451" href="mod7.html#724914451">generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_init.useAsserts.signalChangesOnlyAfterReqOrWhenIdle</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">6</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_init.useAsserts.signalsInReset" title="mod7.html#1400341612" href="mod7.html#1400341612">generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_init.useAsserts.signalsInReset</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">7</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_routing.useAsserts.reqOnlyOneTick" title="mod7.html#699679818" href="mod7.html#699679818">generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_routing.useAsserts.reqOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">146</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_routing.useAsserts.signalChangesOnlyAfterReqOrWhenIdle" title="mod7.html#192350333" href="mod7.html#192350333">generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_routing.useAsserts.signalChangesOnlyAfterReqOrWhenIdle</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">163</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_routing.useAsserts.signalsInReset" title="mod7.html#78878076" href="mod7.html#78878076">generate_top_saif_tb.dut.iso14443a_inst.part3.tx_iface_from_routing.useAsserts.signalsInReset</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">7</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3_to_part2_tx_iface.useAsserts.reqOnlyOneTick" title="mod7.html#156074641" href="mod7.html#156074641">generate_top_saif_tb.dut.iso14443a_inst.part3_to_part2_tx_iface.useAsserts.reqOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">1656</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3_to_part2_tx_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle" title="mod7.html#1688754244" href="mod7.html#1688754244">generate_top_saif_tb.dut.iso14443a_inst.part3_to_part2_tx_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">827</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3_to_part2_tx_iface.useAsserts.signalsInReset" title="mod7.html#367667765" href="mod7.html#367667765">generate_top_saif_tb.dut.iso14443a_inst.part3_to_part2_tx_iface.useAsserts.signalsInReset</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">7</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.dataValidOnlyOneTick" title="mod4.html#1963463781" href="mod4.html#1963463781">generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.dataValidOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">222</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.eocOnlyOneTick" title="mod4.html#2001600884" href="mod4.html#2001600884">generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.eocOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">18</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid" title="mod4.html#927346773" href="mod4.html#927346773">generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.rxInterfaceInitial.foreverBlock.outputsValid</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">454816</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.signalsInReset" title="mod4.html#1203012021" href="mod4.html#1203012021">generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.signalsInReset</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">7</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.socOnlyOneTick" title="mod4.html#345144486" href="mod4.html#345144486">generate_top_saif_tb.dut.iso14443a_inst.part3_to_part4_rx_iface.useAsserts.socOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">18</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/rx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part4_to_part3_tx_iface.useAsserts.reqOnlyOneTick" title="mod7.html#1418805617" href="mod7.html#1418805617">generate_top_saif_tb.dut.iso14443a_inst.part4_to_part3_tx_iface.useAsserts.reqOnlyOneTick</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">143</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part4_to_part3_tx_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle" title="mod7.html#1343482076" href="mod7.html#1343482076">generate_top_saif_tb.dut.iso14443a_inst.part4_to_part3_tx_iface.useAsserts.signalChangesOnlyAfterReqOrWhenIdle</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">157</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_generate_top_saif_tb.dut.iso14443a_inst.part4_to_part3_tx_iface.useAsserts.signalsInReset" title="mod7.html#895063211" href="mod7.html#895063211">generate_top_saif_tb.dut.iso14443a_inst.part4_to_part3_tx_iface.useAsserts.signalsInReset</a>
+</td><td>0</td><td>0</td><td class="s9">454816</td><td class="s9">7</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/interfaces/tx_interface.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_rx_byte_transaction_pkg.\RxByteTransaction::append_crc .fullBytes" title="mod5.html#1056510090" href="mod5.html#1056510090">rx_byte_transaction_pkg.\RxByteTransaction::append_crc .fullBytes</a>
+</td><td>0</td><td>0</td><td class="s9">3</td><td class="s9">3</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/rx_byte_transaction.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/rx_byte_transaction.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_sequence_pkg.\Sequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::verify_trans .transAsExpected" title="mod37.html#1407605901" href="mod37.html#1407605901">sequence_pkg.\Sequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::verify_trans .transAsExpected</a>
+</td><td>0</td><td>0</td><td class="s9">20</td><td class="s9">20</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/sequence.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/sequence.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_sequence_pkg.\Sequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::wait_for_reply .replyReceived" title="mod37.html#1473953122" href="mod37.html#1473953122">sequence_pkg.\Sequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::wait_for_reply .replyReceived</a>
+</td><td>0</td><td>0</td><td class="s9">20</td><td class="s9">20</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/sequence.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/sequence.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_tx_byte_transaction_pkg.\TxByteTransaction::append_crc .fullBytes" title="mod59.html#1118549706" href="mod59.html#1118549706">tx_byte_transaction_pkg.\TxByteTransaction::append_crc .fullBytes</a>
+</td><td>0</td><td>0</td><td class="s9">3</td><td class="s9">3</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/tx_byte_transaction.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/transactions/tx_byte_transaction.sv')"><img class="sourcefile"></a>
+</td></tr>
+</table>
+<br clear=all>
+Assertions Without Attempts:<a name="tag_ast_no_attp"></a>
+<table class="sortable rt">
+<col width="180">
+<col span="6" width="60"><tr class="sortablehead">
+<td class="alfsrt">ASSERTIONS<td>CATEGORY</td><td>SEVERITY</td><td>ATTEMPTS</td><td>REAL SUCCESSES</td><td>FAILURES</td><td>INCOMPLETE</td><td>SRC</td>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_app_comms_tests_sequence_pkg.\AppCommsTestsSequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor,5000,8000)::do_abort .abortResetSignals" title="mod40.html#1502743771" href="mod40.html#1502743771">app_comms_tests_sequence_pkg.\AppCommsTestsSequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor,5000,8000)::do_abort .abortResetSignals</a>
+</td><td>0</td><td>0</td><td class="s3">0</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/bfms/sequences/app_comms_tests_sequence.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/bfms/sequences/app_comms_tests_sequence.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_comms_tests_sequence_pkg.\CommsTestsSequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::run_part4_pps_tests .PPSAllowedPlusRATS.ourCIDNotChanged" title="mod41.html#764412168" href="mod41.html#764412168">comms_tests_sequence_pkg.\CommsTestsSequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::run_part4_pps_tests .PPSAllowedPlusRATS.ourCIDNotChanged</a>
+</td><td>0</td><td>0</td><td class="s3">0</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/comms_tests_sequence.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/comms_tests_sequence.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_sequence_pkg.\Sequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::send_ac .uidBitsNot32" title="mod37.html#312361934" href="mod37.html#312361934">sequence_pkg.\Sequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::send_ac .uidBitsNot32</a>
+</td><td>0</td><td>0</td><td class="s3">0</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/sequence.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/sequence.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_sequence_pkg.\Sequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::verify_no_reply .noReply" title="mod37.html#559727458" href="mod37.html#559727458">sequence_pkg.\Sequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::verify_no_reply .noReply</a>
+</td><td>0</td><td>0</td><td class="s3">0</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/sequence.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/sequence.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_specific_target_sequence_pkg.\SpecificTargetSequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::verify_resend_last .resendLastAsExpected" title="mod24.html#153176918" href="mod24.html#153176918">specific_target_sequence_pkg.\SpecificTargetSequence#(pcd_pause_n_transaction_pkg::PCDPauseNTransaction,tx_bit_transaction_pkg::TxBitTransaction,transaction_generator_pkg::TransactionGenerator,rx_transaction_converter_pkg::RxByteToPCDPauseNTransactionConverter,tx_transaction_converter_pkg::TxByteToBitTransactionConverter,pcd_pause_n_driver_pkg::PCDPauseNDriver,load_modulator_monitor_pkg::LoadModulatorMonitor)::verify_resend_last .resendLastAsExpected</a>
+</td><td>0</td><td>0</td><td class="s3">0</td><td class="s3">0</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/specific_target_sequence.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/verification/bfms/sequences/specific_target_sequence.sv')"><img class="sourcefile"></a>
+</td></tr>
+</table>
+<br clear=all>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul>
+    <li>
+      <a href="#tag_ast_no_covr">Assertions Uncovered</a>    </li>
+    <li>
+      <a href="#tag_ast_succ">Assertions Success</a>    </li>
+    <li>
+      <a href="#tag_ast_no_attp">Assertions Without Attempts</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Assertions</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Assertions</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | <a href="asserts.html" ><b>asserts</b></a></div>
+
+</div>
+<br clear=all>
+<div class="ui-layout-west">
+<b>Assertions by Category</b><table class="noborder">
+<col width="180">
+<col span="3" width="60"><tr class="sortablehead"><td> </td><td>ASSERT</td><td>PROPERTIES</td><td>SEQUENCES</td>
+<tr class="wht"><td class="lf">Total</td><td>23</td><td>0</td><td>0</td></tr>
+<tr class="wht"><td class="lf">Category 0</td><td>23</td><td>0</td><td>0</td></tr>
+</table>
+<hr>
+<br clear=all>
+<b>Assertions by Severity</b><table class="noborder">
+<col width="180">
+<col span="3" width="60"><tr class="sortablehead"><td> </td><td>ASSERT</td><td>PROPERTIES</td><td>SEQUENCES</td>
+<tr class="wht"><td class="lf">Total</td><td>23</td><td>0</td><td>0</td></tr>
+<tr class="wht"><td class="lf">Severity 0</td><td>23</td><td>0</td><td>0</td></tr>
+</table>
+<hr>
+<br clear=all>
+<b>Summary for Assertions</b><table class="noborder">
+<col width="180">
+<col span="2" width="60"><tr class="sortablehead"><td> </td><td>NUMBER</td><td>PERCENT</td>
+<tr class="wht"><td class="lf">Total Number</td><td>23</td><td>100.00</td></tr>
+<tr class="wht"><td class="lf">Uncovered</td><td>0</td><td>0.00</td></tr>
+<tr class="wht"><td class="lf"><a href="#tag_ast_succ">Success</a></td><td>23</td><td>100.00</td></tr>
+<tr class="wht"><td class="lf">Failure</td><td>0</td><td>0.00</td></tr>
+<tr class="wht"><td class="lf">Incomplete</td><td>0</td><td>0.00</td></tr>
+<tr class="wht"><td class="lf">Without Attempts</td><td>0</td><td>0.00</td></tr>
+</table>
+</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<hr>
+<br clear=all>
+<b>Detail Report for Assertions</b><br clear=all>
+<br clear=all>
+Assertions Success:<a name="tag_ast_succ"></a>
+<table class="sortable rt">
+<col width="180">
+<col span="6" width="60"><tr class="sortablehead">
+<td class="alfsrt">ASSERTIONS<td>CATEGORY</td><td>SEVERITY</td><td>ATTEMPTS</td><td>REAL SUCCESSES</td><td>FAILURES</td><td>INCOMPLETE</td><td>SRC</td>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.abortToIdle" title="mod0.html#1910707688" href="mod0.html#1910707688">signal_control_tb.abortToIdle</a>
+</td><td>0</td><td>0</td><td class="s9">131569984</td><td class="s9">10000</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.adcCompFallsAfterResultRead" title="mod0.html#541070559" href="mod0.html#541070559">signal_control_tb.adcCompFallsAfterResultRead</a>
+</td><td>0</td><td>0</td><td class="s9">131569984</td><td class="s9">22330</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.adcCompOnlyFallsAfterStartOrAbort" title="mod0.html#343104419" href="mod0.html#343104419">signal_control_tb.adcCompOnlyFallsAfterStartOrAbort</a>
+</td><td>0</td><td>0</td><td class="s9">131569984</td><td class="s9">44325</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.adcReadsCheck" title="mod0.html#510056764" href="mod0.html#510056764">signal_control_tb.adcReadsCheck</a>
+</td><td>0</td><td>0</td><td class="s9">131569984</td><td class="s9">44325</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.adcReadsCheck2" title="mod0.html#2063966290" href="mod0.html#2063966290">signal_control_tb.adcReadsCheck2</a>
+</td><td>0</td><td>0</td><td class="s9">131569984</td><td class="s9">44325</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.busyAfterInvalidCommand" title="mod0.html#1525861584" href="mod0.html#1525861584">signal_control_tb.busyAfterInvalidCommand</a>
+</td><td>0</td><td>0</td><td class="s9">131569984</td><td class="s9">10000</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.busyAfterStart" title="mod0.html#1986919546" href="mod0.html#1986919546">signal_control_tb.busyAfterStart</a>
+</td><td>0</td><td>0</td><td class="s9">131569984</td><td class="s9">130300</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.busyOnlyAfterStart" title="mod0.html#1813521518" href="mod0.html#1813521518">signal_control_tb.busyOnlyAfterStart</a>
+</td><td>0</td><td>0</td><td class="s9">131569984</td><td class="s9">130300</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.cachedAdcValueStable" title="mod0.html#341320949" href="mod0.html#341320949">signal_control_tb.cachedAdcValueStable</a>
+</td><td>0</td><td>0</td><td class="s9">131569984</td><td class="s9">44325</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.do_valid_command.notAbort.stillBusy" title="mod0.html#140555107" href="mod0.html#140555107">signal_control_tb.do_valid_command.notAbort.stillBusy</a>
+</td><td>0</td><td>0</td><td class="s9">70200</td><td class="s9">70200</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.do_valid_command.notAbort2.signalChanges" title="mod0.html#1158372367" href="mod0.html#1158372367">signal_control_tb.do_valid_command.notAbort2.signalChanges</a>
+</td><td>0</td><td>0</td><td class="s9">70200</td><td class="s9">70200</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.flagsLowAfterStart" title="mod0.html#1517579226" href="mod0.html#1517579226">signal_control_tb.flagsLowAfterStart</a>
+</td><td>0</td><td>0</td><td class="s9">131569984</td><td class="s9">140300</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.inReset" title="mod0.html#865428157" href="mod0.html#865428157">signal_control_tb.inReset</a>
+</td><td>0</td><td>0</td><td class="s9">131569984</td><td class="s9">9</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.AutoRead.autoReadSignalCheck0" title="mod0.html#985597505" href="mod0.html#985597505">signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.AutoRead.autoReadSignalCheck0</a>
+</td><td>0</td><td>0</td><td class="s9">41827</td><td class="s9">41827</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.SetSignal.setSignalCheck" title="mod0.html#199109729" href="mod0.html#199109729">signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.SetSignal.setSignalCheck</a>
+</td><td>0</td><td>0</td><td class="s9">70555</td><td class="s9">70555</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.autoReadSignalCheck1" title="mod0.html#170791155" href="mod0.html#170791155">signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.autoReadSignalCheck1</a>
+</td><td>0</td><td>0</td><td class="s9">41094</td><td class="s9">41094</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.autoReadSignalCheck2" title="mod0.html#767740460" href="mod0.html#767740460">signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.autoReadSignalCheck2</a>
+</td><td>0</td><td>0</td><td class="s9">40352</td><td class="s9">40352</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.signalChangesCheck" title="mod0.html#229983914" href="mod0.html#229983914">signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.signalChangesCheck</a>
+</td><td>0</td><td>0</td><td class="s9">193828</td><td class="s9">193828</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.syncTimingCheck" title="mod0.html#748717318" href="mod0.html#748717318">signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.syncTimingCheck</a>
+</td><td>0</td><td>0</td><td class="s9">112382</td><td class="s9">112382</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.timing1Check" title="mod0.html#2137535614" href="mod0.html#2137535614">signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.timing1Check</a>
+</td><td>0</td><td>0</td><td class="s9">41094</td><td class="s9">41094</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.timing2Check" title="mod0.html#2124002813" href="mod0.html#2124002813">signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.timing2Check</a>
+</td><td>0</td><td>0</td><td class="s9">40352</td><td class="s9">40352</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.unexpectedPauseCheck" title="mod0.html#1977123200" href="mod0.html#1977123200">signal_control_tb.timingBlock.posedgeClk.signalsChanged.notAbortCheck.unexpectedPauseCheck</a>
+</td><td>0</td><td>0</td><td class="s9">40352</td><td class="s9">40352</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+<tr class="wht"><td class="lf"><a name="tag_hvp_ast_signal_control_tb.unexpectedPauseOnlyFallsAfterStartOrAbort" title="mod0.html#2139474759" href="mod0.html#2139474759">signal_control_tb.unexpectedPauseOnlyFallsAfterStartOrAbort</a>
+</td><td>0</td><td>0</td><td class="s9">131569984</td><td class="s9">10993</td><td>0</td><td>0</td><td class="ct"><a title="/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv" href="javascript:void(0);" onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/verification/tb/signal_control_tb.sv')"><img class="sourcefile"></a>
+</td></tr>
+</table>
+<br clear=all>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul>
+    <li>
+      <a href="#tag_ast_succ">Assertions Success</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

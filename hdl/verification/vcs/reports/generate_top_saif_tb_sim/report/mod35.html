@@ -1,0 +1,2779 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: iso14443_4a</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | <a href="asserts.html" ><b>asserts</b></a></div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_iso14443_4a'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_iso14443_4a')">iso14443_4a</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s6 cl rt"> 68.52</td>
+<td class="s8 cl rt"><a href="mod35.html#Line" > 85.50</a></td>
+<td class="s5 cl rt"><a href="mod35.html#Cond" > 52.83</a></td>
+<td class="s7 cl rt"><a href="mod35.html#Toggle" > 72.41</a></td>
+<td class="wht cl rt"></td>
+<td class="s6 cl rt"><a href="mod35.html#Branch" > 63.33</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/iso14443_4a/iso14443_4a.sv')">/home/aparlane/fiuba_thesis/hdl/verification/vcs/../../../hdl/components/iso_iec_14443A/rtl/iso14443_4a/iso14443_4a.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod35.html#inst_tag_49"  onclick="showContent('inst_tag_49')">generate_top_saif_tb.dut.iso14443a_inst.part4</a></td>
+<td class="s6 cl rt"> 68.52</td>
+<td class="s8 cl rt"><a href="mod35.html#Line" > 85.50</a></td>
+<td class="s5 cl rt"><a href="mod35.html#Cond" > 52.83</a></td>
+<td class="s7 cl rt"><a href="mod35.html#Toggle" > 72.41</a></td>
+<td class="wht cl rt"></td>
+<td class="s6 cl rt"><a href="mod35.html#Branch" > 63.33</a></td>
+<td class="wht cl rt"></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_iso14443_4a'>
+<hr>
+<a name="inst_tag_49"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_49" >generate_top_saif_tb.dut.iso14443a_inst.part4</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s6 cl rt"> 68.52</td>
+<td class="s8 cl rt"><a href="mod35.html#Line" > 85.50</a></td>
+<td class="s5 cl rt"><a href="mod35.html#Cond" > 52.83</a></td>
+<td class="s7 cl rt"><a href="mod35.html#Toggle" > 72.41</a></td>
+<td class="wht cl rt"></td>
+<td class="s6 cl rt"><a href="mod35.html#Branch" > 63.33</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td class="s6 cl rt"> 68.52</td>
+<td class="s8 cl rt"> 85.50</td>
+<td class="s5 cl rt"> 52.83</td>
+<td class="s7 cl rt"> 72.41</td>
+<td class="wht cl rt"></td>
+<td class="s6 cl rt"> 63.33</td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s4 cl rt"> 44.74</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s4 cl rt"> 44.74</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod27.html#inst_tag_41" >iso14443a_inst</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td>ASSERT</td></tr><tr>
+<td colspan=8>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_iso14443_4a'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod35.html" >iso14443_4a</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s8"><td class="lf">TOTAL</td><td></td><td>131</td><td>112</td><td>85.50</td></tr>
+<tr class="s9"><td class="lf">ALWAYS</td><td>147</td><td>50</td><td>47</td><td>94.00</td></tr>
+<tr class="s6"><td class="lf">ALWAYS</td><td>348</td><td>38</td><td>26</td><td>68.42</td></tr>
+<tr class="s9"><td class="lf">ALWAYS</td><td>527</td><td>43</td><td>39</td><td>90.70</td></tr>
+</table>
+<pre class="code"><br clear=all>
+146                         always_ff @(posedge clk, negedge rst_n) begin
+147        1/1                  if (!rst_n) begin
+148        1/1                      rx_count                    &lt;= '0;
+149        1/1                      rx_error_flag               &lt;= 1'b0;
+150        1/1                      pkt_received                &lt;= 1'b0;
+151        1/1                      forward_to_app              &lt;= 1'b0;
+152        1/1                      app_rx_iface_soc            &lt;= 1'b0;
+153        1/1                      app_rx_iface_eoc            &lt;= 1'b0;
+154        1/1                      app_rx_iface_data_valid     &lt;= 1'b0;
+155        1/1                      app_rx_iface_error          &lt;= 1'b0;
+156                             end
+157                             else begin
+158                                 // these should only assert for one tick at a time
+159        1/1                      pkt_received                    &lt;= 1'b0;
+160        1/1                      check_need_to_forward_to_app    &lt;= 1'b0;
+161        1/1                      app_rx_iface_soc                &lt;= 1'b0;
+162        1/1                      app_rx_iface_eoc                &lt;= 1'b0;
+163        1/1                      app_rx_iface_data_valid         &lt;= 1'b0;
+164        1/1                      app_rx_iface_error              &lt;= 1'b0;
+165                     
+166                                 // always pass through the data
+167        1/1                      app_rx_iface_data               &lt;= rx_iface.data;
+168                     
+169        1/1                      if (rx_iface.soc) begin
+170                                     // start of a new message
+171        1/1                          rx_count                                        &lt;= '0;
+172        1/1                          rx_error_flag                                   &lt;= 1'b0;
+173        1/1                          forward_to_app                                  &lt;= 1'b0;
+174        1/1                          check_need_to_forward_to_app_after_next_byte    &lt;= 1'b0;
+175                                 end
+                        MISSING_ELSE
+176                     
+177        1/1                      if (rx_iface.eoc) begin
+178                                     // we use this rather than rx_eoc directly,
+179                                     // because for partial packets the rx_iface.data_valid assserts
+180                                     // at the same time, and so our rx_buffer won't be correct
+181                                     // until the next tick.
+182        1/1                          pkt_received    &lt;= 1'b1;
+183                     
+184        1/1                          if (forward_to_app) begin
+185        1/1                              app_rx_iface_eoc    &lt;= 1'b1;
+186        1/1                              app_rx_iface_error  &lt;= !rx_crc_ok;  // error if the CRC failed
+187        1/1                              forward_to_app      &lt;= 1'b0;
+188                                     end
+                        MISSING_ELSE
+189                                 end
+                        MISSING_ELSE
+190                     
+191                                 // don't do anything once we've seen an error
+192        1/1                      if (!rx_error_flag) begin
+193        1/1                          if (rx_iface.error) begin
+194        <font color = "red">0/1     ==>                      rx_error_flag &lt;= 1'b1;</font>
+195        <font color = "red">0/1     ==>                      if (forward_to_app) begin</font>
+196        <font color = "red">0/1     ==>                          app_rx_iface_error  &lt;= 1'b1;</font>
+197                                         end
+                   <font color = "red">==>  MISSING_ELSE</font>
+198                                     end
+                        MISSING_ELSE
+199                     
+200        1/1                          if (rx_iface.data_valid) begin
+201        1/1                              if (forward_to_app) begin
+202        1/1                                  app_rx_iface_data_valid &lt;= 1'b1;
+203                                         end
+                        MISSING_ELSE
+204                     
+205        1/1                              if (rx_count != $unsigned($bits(rx_count)'(RX_BUFF_LEN))) begin
+206        1/1                                  rx_buffer[rx_count] &lt;= rx_iface.data;
+207        1/1                                  rx_count            &lt;= rx_count + 1'd1;
+208                     
+209                                             // If this is a valid I-block that's for us, we need to forward everything
+210                                             // after the prologue field to the APP.
+211                                             // There are two options here:
+212                                             //      1) after receiving the first byte, we find that it's a STD I-Block
+213                                             //         with no chaining, no NAD, and no CID, and our CID is 0, so it's
+214                                             //         valid and for us. The next byte is the first byte of the INF field
+215                                             //      2) after receiving the first byte, we find that it's a STD I-BLock
+216                                             //         with no chaining, no NAD, and a CID. After the second byte we know
+217                                             //         if it's for us or not. After that we start forwarding it to the app.
+218                                             // We do the checking on the next tick, so we can use the is_... and has_...
+219                                             // signals that depend on the data to be in the rx_buffer.
+220        1/1                                  if (rx_count == 0) begin
+221                                                 // on the next tick, see if we are a STD I-block with no chaining and no NAD
+222        1/1                                      check_need_to_forward_to_app &lt;= 1'b1;
+223                                             end
+224        1/1                                  else if (check_need_to_forward_to_app_after_next_byte) begin
+225                                                 // just received the second byte, so on the next tick check if
+226                                                 // the CID is for us.
+227        1/1                                      check_need_to_forward_to_app                    &lt;= 1'b1;
+228        1/1                                      check_need_to_forward_to_app_after_next_byte    &lt;= 1'b0;
+229                                             end
+                        MISSING_ELSE
+230                                         end
+                        MISSING_ELSE
+231                                     end
+                        MISSING_ELSE
+232                     
+233                                     // don't forward anything if the tag is in the ACTIVE state. As we shouldn't
+234                                     // respond to STD I-BLock until we are in the PRTOCOL state.
+235        1/1                          if (check_need_to_forward_to_app &amp;&amp; !tag_active) begin
+236                                         // Now we're on the next tick, check if the data received is a valid STD I-BLock
+237        1/1                              if (is_I_BLOCK &amp;&amp; !has_NAD &amp;&amp; !is_CHAINING) begin
+238                                             // Is a valid I-BLock, is it for us?
+239                                             // this could happen after the first byte if there's no CID and our CID is 0
+240                                             // or after the second byte if there is a CID
+241        1/1                                  if ((rx_count == 1) &amp;&amp; has_CID) begin
+242                                                 // we don't know if it's for us yet. wait until the next byte.
+243        1/1                                      check_need_to_forward_to_app_after_next_byte &lt;= 1'b1;
+244                                             end
+245                                             else begin
+246                                                 // either rx_count == 1 and the message doesn't have a CID
+247                                                 // so is_for_us reduces to (our_cid == 0).
+248                                                 // or rx_count == 2 and has_CID is true, since we wouldn't get here otherwise
+249                                                 // in which case is_for_us reduces to our_cid == rx_buffer[1][3:0]
+250                                                 // either way we can use is_for_us to determine if we forward this message
+251                                                 // to the app
+252        1/1                                      if (is_for_us) begin
+253                                                     // start forwarding to the app
+254        1/1                                          forward_to_app      &lt;= 1'b1;
+255                     
+256                                                     // start with SOC
+257        1/1                                          app_rx_iface_soc    &lt;= 1'b1;
+258                                                 end
+                   <font color = "red">==>  MISSING_ELSE</font>
+259                                             end
+260                                         end
+                        MISSING_ELSE
+261                                     end
+                        MISSING_ELSE
+262                                 end
+                   <font color = "red">==>  MISSING_ELSE</font>
+263                             end
+264                         end
+265                     
+266                         // ========================================================================
+267                         // Detect the various messages that we care about
+268                         // ========================================================================
+269                     
+270                         // For it to be a valid ISO/IEC 14443-4 message
+271                         assign is_valid_iso14443_4_msg  = rx_crc_ok                 &amp;&amp;
+272                                                           !rx_error_flag;
+273                     
+274                         assign is_RATS                  = (rx_buffer[0] == RATS)    &amp;&amp;
+275                                                           (rx_count == 4)           &amp;&amp;  // 2 bytes + 2 bytes CRC
+276                                                           (rx_buffer[1][3:0] != 4'hF);  // CID must not be 15
+277                     
+278                         // tell the iso14443_3a.initialisation module that this is a RATS message
+279                         // we do this with combinatory logic, because it has to be quick enough
+280                         // that the initialisation block gets it in time.
+281                         assign rx_rats                  = is_valid_iso14443_4_msg &amp;&amp;
+282                                                           is_RATS;
+283                     
+284                         // We don't really need to support PPS. Since we don't support any other bit rates
+285                         // this message is useless. However ISO/IEC 14443-4:2016 section 5.6.2.2 a) states
+286                         // that when the PICC receives a valid PPS request, the PICC &quot;shall&quot; send the PPS response.
+287                         // so to be in spec we must support this message
+288                     
+289                         // We could potentially skimp on the checks here to save area?
+290                         // However the below checks the PPS message is correct thus we must reply
+291                         assign is_PPS                   = (rx_buffer[0] == {PPSS, our_cid}) &amp;&amp;
+292                                                           (((rx_count == 4) &amp;&amp; (rx_buffer[1] == 8'h01)) ||
+293                                                            ((rx_count == 5) &amp;&amp; (rx_buffer[1] == 8'h11) &amp;&amp;
+294                                                                                (rx_buffer[2] == 8'h00)));
+295                     
+296                         assign is_I_BLOCK               = rx_buffer[0] ==? 8'b000???1?;
+297                         assign is_R_BLOCK               = rx_buffer[0] ==? 8'b101??01?;
+298                         assign is_S_BLOCK               = rx_buffer[0] ==? 8'b11???0?0;
+299                         assign has_CID                  = rx_buffer[0][3];
+300                         assign has_NAD                  = rx_buffer[0][2];
+301                     
+302                         // ISO/IEC 14443-4 section 7.1.2.2 states:
+303                         //  A PICC which supports a CID (we do)
+304                         //  shall respond to blocks containing it's CID
+305                         //  shall, in case it's CID is 0, respond also to blocks containing no CID
+306                         assign is_for_us                = has_CID ? (our_cid == rx_buffer[1][3:0]) : (our_cid == 0);
+307                     
+308                         assign is_CHAINING              = rx_buffer[0][4];
+309                         assign is_NAK                   = rx_buffer[0][4];
+310                         assign is_DESELECT              = rx_buffer[0] ==? 8'b??00??1?;
+311                         assign rx_block_num             = rx_buffer[0][0];
+312                     
+313                         // ========================================================================
+314                         // Control logic
+315                         // ========================================================================
+316                     
+317                         logic allow_pps;        // PPS may only come immediately after we have received RATS and sent our ATS
+318                     
+319                         typedef enum logic [1:0]
+320                         {
+321                             Reply_ATS,
+322                             Reply_PPSR,
+323                             Reply_STANDARD_BLOCK
+324                         } ReplyType;
+325                     
+326                         typedef enum logic [1:0]
+327                         {
+328                             // S()
+329                             ReplyStdBlock_DESELECT,
+330                     
+331                             // R()
+332                             ReplyStdBlock_ACK,
+333                     
+334                             // I()
+335                             ReplyStdBlock_I_BLOCK
+336                         } ReplyStdBlockType;
+337                     
+338                         // These should be of type ReplyType / ReplyStdBlockType
+339                         // but VCS doesn't seem to be able to generate a correct SAIF file
+340                         // if I use those types.
+341                         logic [1:0] reply;
+342                         logic [1:0] replyStdBlock;
+343                     
+344                         logic send_reply;
+345                         logic our_block_num;
+346                     
+347                         always_ff @(posedge clk, negedge rst_n) begin
+348        1/1                  if (!rst_n) begin
+349        1/1                      allow_pps       &lt;= 1'b0;
+350        1/1                      app_resend_last &lt;= 1'b0;
+351                             end
+352                             else begin
+353                                 // should only assert for one tick
+354        1/1                      send_reply      &lt;= 1'b0;
+355        1/1                      app_resend_last &lt;= 1'b0;
+356                     
+357        1/1                      if (pkt_received) begin
+358                                     // if we've received anything at all, whether it be PPS or not
+359                                     // then we no longer allow PPS messages
+360                                     // this can be overriden if we received a valid RATS while the tag was active
+361        1/1                          allow_pps &lt;= 1'b0;
+362                     
+363        1/1                          if (is_valid_iso14443_4_msg) begin
+364        1/1                              if (tag_active) begin
+365                                             // only valid thing to receive is RATS
+366        1/1                                  if (rx_rats) begin
+367                                                 // received RATS
+368        1/1                                      our_cid                 &lt;= rx_buffer[1][3:0];
+369                                                 // we ignore FSDI since we don't support chaining
+370                                                 // for future reference:
+371                                                 // ISO/IEC 14443-4:2016 section 5.1: A PCD setting FSDI = 'D' - 'F'
+372                                                 // is not compliant with this part of ISO/IEC 14443. Until the RFU
+373                                                 // values 'D' - 'F' are assigned by ISO/IEC, a PICC receiving values
+374                                                 // of FSDI = 'D' - 'F' should interpret it as FSDI = 'C'
+375                                                 //fsdi                    &lt;= rx_buffer[1][7:4];
+376                     
+377                                                 // respond with out ATS
+378        1/1                                      reply                   &lt;= Reply_ATS;
+379        1/1                                      send_reply              &lt;= 1'b1;
+380                     
+381                                                 // we allow PPS as the next message
+382                                                 // but others are valid too
+383        1/1                                      allow_pps               &lt;= 1'b1;
+384                     
+385                                                 // Rule C: The PICC block number shall be initialised to 1 at activation
+386        1/1                                      our_block_num           &lt;= 1'b1;
+387                                             end
+                   <font color = "red">==>  MISSING_ELSE</font>
+388                                         end
+389                                         else begin
+390                                             // first message after RATS can be a PPS
+391        1/1                                  if (allow_pps &amp;&amp; is_PPS) begin
+392        1/1                                      reply       &lt;= Reply_PPSR;
+393        1/1                                      send_reply  &lt;= 1'b1;
+394                     
+395                                                 // note: above we clear allow_pps upon receiving any packet
+396                                                 //       valid or not, pps or not
+397                                             end
+398                                             // others messages are also allowed
+399        1/1                                  else if (is_for_us &amp;&amp; !has_NAD) begin // we don't support frames with the NAD field
+400                     
+401                                                 // we've received our RATS so we can now receive standard blocks
+402                                                 // we don't have to worry about a PPS / another RATS being picked up here
+403                                                 // as their first bytes don't match bit patterns for the first byte of any
+404                                                 // standard block.
+405                     
+406        1/1                                      if (is_S_BLOCK) begin
+407                                                     // ISO/IEC 14443-4:2016 section 7.5.5
+408                                                     // Rule 3: S-Blocks are only used in pairs
+409        <font color = "red">0/1     ==>                                  if (is_DESELECT) begin</font>
+410                                                         // send the DESELECT reply
+411        <font color = "red">0/1     ==>                                      reply           &lt;= Reply_STANDARD_BLOCK;</font>
+412        <font color = "red">0/1     ==>                                      replyStdBlock   &lt;= ReplyStdBlock_DESELECT;</font>
+413        <font color = "red">0/1     ==>                                      send_reply      &lt;= 1'b1;</font>
+414                     
+415                                                         // after our reply has been sent rx_deselect is asserted
+416                                                         // which causes the iso14443_3a module to go to the HALT state
+417                                                     end
+                   <font color = "red">==>  MISSING_ELSE</font>
+418                                                     // Other S-Blocks are: S(PARAMETERS) and S(WTX).
+419                                                     // The PCD can't send S(WTX).
+420                                                     // ISO/IEC 14443-4:2016 section 9, states:
+421                                                     //      if the PICC supports S(PARAMETERS) blocks, the PICC shall
+422                                                     //      respond with an S(PARAMETERS) block containing values for
+423                                                     //      all supported parameters. If the PICC does not support
+424                                                     //      S(PARAMETERS) it shall stay mute.
+425                                                     // So we ignore any other S-Block
+426                                                 end
+427        1/1                                      else if (is_R_BLOCK) begin
+428                                                     // ISO/IEC 14443-4:2016 section 7.5.5
+429                                                     // Rule 11: When an R(ACK)/R(NAK) block is received, if it's
+430                                                     //          block number is equal to the PICC's current block
+431                                                     //          number, the last block shall be retransmitted
+432        <font color = "red">0/1     ==>                                  if (rx_block_num == our_block_num) begin</font>
+433                                                         // resend last message
+434                                                         // reply and replyStdBlock are already set
+435        <font color = "red">0/1     ==>                                      send_reply      &lt;= 1'b1;</font>
+436                     
+437                                                         // if the last message sent was an I-Block
+438                                                         // tell the app to resend it's last message
+439        <font color = "red">0/1     ==>                                      if ((reply == Reply_STANDARD_BLOCK) &amp;&amp;</font>
+440                                                             (replyStdBlock == ReplyStdBlock_I_BLOCK)) begin
+441        <font color = "red">0/1     ==>                                          app_resend_last &lt;= 1'b1;</font>
+442                                                         end
+                   <font color = "red">==>  MISSING_ELSE</font>
+443                                                     end
+444                                                     else begin
+445        <font color = "red">0/1     ==>                                      if (is_NAK) begin</font>
+446                                                             // R(NAK)
+447                                                             // Rule 12: When an R(NAK) block is received, if it's block number
+448                                                             //          is not equal to the PICC's current block number an R(ACK)
+449                                                             //          block shall be sent
+450        <font color = "red">0/1     ==>                                          reply           &lt;= Reply_STANDARD_BLOCK;</font>
+451        <font color = "red">0/1     ==>                                          replyStdBlock   &lt;= ReplyStdBlock_ACK;</font>
+452        <font color = "red">0/1     ==>                                          send_reply      &lt;= 1'b1;</font>
+453                     
+454                                                             // ISO/IEC 14443-4:2016 section 7.5.4.2 Block Numbering Rules (PICC rules)
+455                                                             // Rule E Note 2: There is no block toggling when an R(NAK) block is received
+456                                                         end
+457                                                         else begin
+458                                                             // R(ACK)
+459                                                             // Rule 13:  When an R[ACl{] block is received, if its block
+460                                                             //           number is not equal to the PICC’s current block
+461                                                             //           number, and the PICC is in chaining, chaining
+462                                                             //           shall be continued.
+463                     
+464                                                             // we don't support chaining so no need to do anything
+465                     
+466                                                             // ISO/IEC 14443-4:2016 section 7.5.4.2 Block Numbering Rules (PICC rules)
+467                                                             // Rule E: When an R(ACK) block with a block number not equal to the current
+468                                                             //         PICC's block number is received, the PICC shall toggle it's block
+469                                                             //         number before sending a block.
+470                                                             /* if (rx_block_num != our_block_num) begin
+471                                                                 our_block_num   &lt;= !our_block_num;
+472                                                             end */
+473                                                         end
+474                                                     end
+475                                                 end
+476        1/1                                      else if (is_I_BLOCK &amp;&amp; !is_CHAINING) begin
+477                                                     // ISO/IEC 14443-4:2016 section 7.5.5
+478                                                     // Rule 10: When an I-Block not indicating chaining is received
+479                                                     //          The block shall be acknowledged with an I-Block
+480                                                     // respond with an I block
+481        1/1                                          reply                   &lt;= Reply_STANDARD_BLOCK;
+482        1/1                                          replyStdBlock           &lt;= ReplyStdBlock_I_BLOCK;
+483        1/1                                          send_reply              &lt;= 1'b1;
+484                     
+485                                                     // ISO/IEC 14443-4:2016 section 7.5.4 Block Numbering Rules
+486                                                     // Rule D: When an I-block is received, the PICC shall toggle it's block number
+487                                                     //         before sending a block.
+488        1/1                                          our_block_num           &lt;= !our_block_num;
+489                     
+490                                                     // Rule D, Note 1:
+491                                                     // The PICC can check if the received block number is not in compliance with PCD rules
+492                                                     // to decide neither to toggle its internal block number nor to send a response block.
+493                     
+494                                                     // I don't think this is necessary since it says &quot;can&quot;, and if the PCD
+495                                                     // follows the error detection and recovery rules, we should never end up
+496                                                     // with this issue.
+497                                                 end
+                   <font color = "red">==>  MISSING_ELSE</font>
+498                                             end
+                   <font color = "red">==>  MISSING_ELSE</font>
+499                                         end
+500                                     end
+                   <font color = "red">==>  MISSING_ELSE</font>
+501                                 end
+                        MISSING_ELSE
+502                             end
+503                         end
+504                     
+505                         // ========================================================================
+506                         // Replies
+507                         // ========================================================================
+508                     
+509                         // The longest reply we send is 2 bytes + CRC
+510                         localparam int TX_BUFF_LEN = 2;
+511                         logic [7:0]     tx_buffer [TX_BUFF_LEN];
+512                         logic [0:0]     tx_count_minus_1;
+513                         logic           forward_from_app;
+514                     
+515                         // VCS doesn't generate a valid SAIF file, if I assign to interface members directly
+516                         // in a sequential block.
+517                         logic tx_iface_data_valid;
+518                         logic app_tx_iface_req;
+519                         assign tx_iface.data_valid  = tx_iface_data_valid;
+520                         assign app_tx_iface.req     = app_tx_iface_req;
+521                     
+522                         assign tx_append_crc        = 1'b1;         // part4 comms always have the CRC appended
+523                         assign tx_iface.data        = tx_buffer[0];
+524                         assign tx_iface.data_bits   = 3'd0;         // all transfers from the PICC are 8 bits wide
+525                     
+526                         always_ff @(posedge clk, negedge rst_n) begin
+527        1/1                  if (!rst_n) begin
+528        1/1                      tx_iface_data_valid     &lt;= 1'b0;
+529        1/1                      forward_from_app        &lt;= 1'b0;
+530        1/1                      rx_deselect             &lt;= 1'b0;
+531        1/1                      app_tx_iface_req        &lt;= 1'b0;
+532                             end
+533                             else begin
+534                                 // these are only asserted for one tick
+535        1/1                      app_tx_iface_req        &lt;= 1'b0;
+536        1/1                      rx_deselect             &lt;= 1'b0;
+537                     
+538                                 // tx_iface_data_valid is cleared when the tx_iface.req asserts and we are out of
+539                                 // stuff to send. tx_iface_data_valid gets set when reply is not Reply_NONE
+540                     
+541                                 // Deal with the Tx module requesting more data
+542        1/1                      if (tx_iface.req) begin
+543                                     // anything more to send?
+544        1/1                          if (tx_count_minus_1) begin
+545                                         // yes, decrement tx_count_minus_1
+546        1/1                              tx_count_minus_1    &lt;= tx_count_minus_1 - 1'd1;
+547                     
+548                                         // shift tx_buffer
+549        1/1                              for (int i = 0; i &lt; (TX_BUFF_LEN - 1); i++) begin
+550        1/1                                  tx_buffer[i]    &lt;= tx_buffer[i+1];
+551                                         end
+552                                     end
+553                                     else begin
+554                                         // nothing from us, are we forwarding from the app?
+555        1/1                              if (forward_from_app) begin
+556                                             // we are, is there still data to send?
+557        1/1                                  if (app_tx_iface.data_valid) begin
+558                                                 // forward the request
+559        1/1                                      app_tx_iface_req        &lt;= 1'b1;
+560                                                 // fill in the data
+561        1/1                                      tx_buffer[0]            &lt;= app_tx_iface.data;
+562                                             end
+563                                             else begin
+564                                                 // no more data to send
+565        1/1                                      tx_iface_data_valid     &lt;= 1'b0;
+566        1/1                                      forward_from_app        &lt;= 1'b0;
+567                                             end
+568                                         end
+569                                         else begin
+570                                             // not forwarding from the app, so we're done
+571        1/1                                  tx_iface_data_valid &lt;= 1'b0;
+572                     
+573                                             // if this was a DESELECT reply, then we need to inform
+574                                             // the 14443-3 layer to move us to the HALT state
+575        1/1                                  if ((reply == Reply_STANDARD_BLOCK) &amp;&amp;
+576                                                 (replyStdBlock == ReplyStdBlock_DESELECT)) begin
+577        <font color = "red">0/1     ==>                              rx_deselect &lt;= 1'b1;</font>
+578                                             end
+                        MISSING_ELSE
+579                                         end
+580                                     end
+581                                 end
+                        MISSING_ELSE
+582                     
+583                                 // are we meant to send anything new?
+584        1/1                      if (send_reply) begin
+585        1/1                          case (reply)
+586                                         Reply_ATS: begin
+587                                             // for now we just send the minimum ATS which uses all the default options
+588        1/1                                  tx_buffer[0]            &lt;= 8'd1;    // first byte is TL (length including itself, not including CRC)
+589        1/1                                  tx_count_minus_1        &lt;= 1'd0;    // 1 byte + CRC
+590        1/1                                  tx_iface_data_valid     &lt;= 1'b1;
+591                                         end
+592                                         Reply_PPSR: begin
+593        1/1                                  tx_buffer[0]            &lt;= {PPSS, our_cid}; // PPS response is just the start byte
+594        1/1                                  tx_count_minus_1        &lt;= 1'd0;            // 1 byte + CRC
+595        1/1                                  tx_iface_data_valid     &lt;= 1'b1;
+596                                         end
+597                                         Reply_STANDARD_BLOCK: begin
+598                                             // a standard block consists of the header, the INF field and the CRC
+599                                             // the CRC is filled in automatically by the 14443-3 layer
+600                                             // the INF field is only used (by us) for the I block, and that
+601                                             // comes from the app layer.
+602                                             // So just fill in the header
+603                     
+604                                             // PCB
+605        1/1                                  case (replyStdBlock)
+606        <font color = "red">0/1     ==>                              ReplyStdBlock_DESELECT:     tx_buffer[0] &lt;= S_DESELECT;</font>
+607        <font color = "red">0/1     ==>                              ReplyStdBlock_ACK:          tx_buffer[0] &lt;= R_ACK;</font>
+608        1/1                                      ReplyStdBlock_I_BLOCK:      tx_buffer[0] &lt;= I_NO_CHAINING;
+                   <font color = "red">==>  MISSING_DEFAULT</font>
+609                                             endcase
+610                     
+611                                             // The CID bit is set if the request had a CID
+612        1/1                                  tx_buffer[0][3] &lt;= has_CID;
+613                     
+614                                             // In the case of I-blocks and R-blocks we have to set the block num field
+615        1/1                                  if ((replyStdBlock == ReplyStdBlock_ACK) ||
+616                                                 (replyStdBlock == ReplyStdBlock_I_BLOCK)) begin
+617        1/1                                      tx_buffer[0][0] &lt;= our_block_num;
+618                                             end
+                   <font color = "red">==>  MISSING_ELSE</font>
+619                     
+620                                             // The next byte is the CID byte if we have one
+621        1/1                                  if (has_CID) begin
+622        1/1                                      tx_buffer[1]        &lt;= {power, 2'b00, our_cid}; // power indicator + CID
+623        1/1                                      tx_count_minus_1    &lt;= 1'b1;                    // 2 bytes + CRC
+624                                             end
+625                                             else begin
+626        <font color = "red">0/1     ==>                              tx_count_minus_1    &lt;= 1'b0;                    // 1 byte + CRC</font>
+627                                             end
+628                     
+629                                             // The final byte is the NAD byte, but we don't support that
+630                     
+631                                             // if this is an I-block reply, we need to forward data from the app
+632        1/1                                  if (replyStdBlock == ReplyStdBlock_I_BLOCK) begin
+633        1/1                                      forward_from_app        &lt;= 1'b1;
+634                                             end
+                   <font color = "red">==>  MISSING_ELSE</font>
+635                     
+636                                             // set it going
+637        1/1                                  tx_iface_data_valid     &lt;= 1'b1;
+638                                         end
+                   <font color = "red">==>  MISSING_DEFAULT</font>
+639                                     endcase
+640                                 end
+                        MISSING_ELSE
+</pre>
+<hr>
+<a name="Cond"></a>
+Cond Coverage for Module : <a href="mod35.html" >iso14443_4a</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="3" width="82">
+<tr><th></th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s5"><td class="lf">Conditions</td><td>53</td><td>28</td><td>52.83</td></tr>
+<tr class="s5"><td class="lf">Logical</td><td>53</td><td>28</td><td>52.83</td></tr>
+<tr class="wht"><td class="lf">Non-Logical</td><td>0</td><td>0</td><td></td></tr>
+<tr class="wht"><td class="lf">Event</td><td>0</td><td>0</td><td></td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       235
+ EXPRESSION (check_need_to_forward_to_app &amp;&amp; ((!tag_active)))
+             --------------1-------------    -------2-------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       237
+ EXPRESSION (is_I_BLOCK &amp;&amp; ((!has_NAD)) &amp;&amp; ((!is_CHAINING)))
+             -----1----    ------2-----    --------3-------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       241
+ EXPRESSION ((rx_count == 3'b1) &amp;&amp; has_CID)
+             ---------1--------    ---2---
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       271
+ EXPRESSION (rx_crc_ok &amp;&amp; ((!rx_error_flag)))
+             ----1----    ---------2--------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       274
+ EXPRESSION ((rx_buffer[0] == ISO14443A_pkg::RATS) &amp;&amp; (rx_count == 3'h4) &amp;&amp; (rx_buffer[1][3:0] != 4'hf))
+             ------------------1------------------    ---------2--------    -------------3-------------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       281
+ EXPRESSION (is_valid_iso14443_4_msg &amp;&amp; is_RATS)
+             -----------1-----------    ---2---
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       291
+ EXPRESSION 
+ Number  Term
+      1  (rx_buffer[0] == {ISO14443A_pkg::PPSS, our_cid}) &amp;&amp; 
+      2  (((rx_count == 3'h4) &amp;&amp; (rx_buffer[1] == 8'b1)) || ((rx_count == 3'h5) &amp;&amp; (rx_buffer[1] == 8'h11) &amp;&amp; (rx_buffer[2] == 8'b0))))
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       291
+ SUB-EXPRESSION (((rx_count == 3'h4) &amp;&amp; (rx_buffer[1] == 8'b1)) || ((rx_count == 3'h5) &amp;&amp; (rx_buffer[1] == 8'h11) &amp;&amp; (rx_buffer[2] == 8'b0)))
+                 -----------------------1----------------------    ------------------------------------2------------------------------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       291
+ SUB-EXPRESSION ((rx_count == 3'h4) &amp;&amp; (rx_buffer[1] == 8'b1))
+                 ---------1--------    -----------2----------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       291
+ SUB-EXPRESSION ((rx_count == 3'h5) &amp;&amp; (rx_buffer[1] == 8'h11) &amp;&amp; (rx_buffer[2] == 8'b0))
+                 ---------1--------    -----------2-----------    -----------3----------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       306
+ EXPRESSION (has_CID ? (our_cid == rx_buffer[1][3:0]) : (our_cid == 4'b0))
+             ---1---
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td></tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       391
+ EXPRESSION (allow_pps &amp;&amp; is_PPS)
+             ----1----    ---2--
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       399
+ EXPRESSION (is_for_us &amp;&amp; ((!has_NAD)))
+             ----1----    ------2-----
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       439
+ EXPRESSION ((reply == Reply_STANDARD_BLOCK) &amp;&amp; (replyStdBlock == ReplyStdBlock_I_BLOCK))
+             ---------------1---------------    --------------------2-------------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       476
+ EXPRESSION (is_I_BLOCK &amp;&amp; ((!is_CHAINING)))
+             -----1----    --------2-------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       575
+ EXPRESSION ((reply == Reply_STANDARD_BLOCK) &amp;&amp; (replyStdBlock == ReplyStdBlock_DESELECT))
+             ---------------1---------------    --------------------2--------------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uRed"><td>1</td><td>1</td><td class="lf">Not Covered</td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       615
+ EXPRESSION ((replyStdBlock == ReplyStdBlock_ACK) || (replyStdBlock == ReplyStdBlock_I_BLOCK))
+             ------------------1-----------------    --------------------2-------------------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th></tr>
+<tr class="uRed"><td>0</td><td>0</td><td class="lf">Not Covered</td></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td></tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td></tr>
+</table>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod35.html" >iso14443_4a</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s6">
+<td>Totals</td>
+<td class="rt">43</td>
+<td class="rt">28</td>
+<td class="rt">65.12 </td>
+</tr><tr class="s7">
+<td>Total Bits</td>
+<td class="rt">116</td>
+<td class="rt">84</td>
+<td class="rt">72.41 </td>
+</tr><tr class="s7">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">58</td>
+<td class="rt">44</td>
+<td class="rt">75.86 </td>
+</tr><tr class="s6">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">58</td>
+<td class="rt">40</td>
+<td class="rt">68.97 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s5">
+<td>Ports</td>
+<td class="rt">9</td>
+<td class="rt">5</td>
+<td class="rt">55.56 </td>
+</tr><tr class="s6">
+<td>Port Bits</td>
+<td class="rt">20</td>
+<td class="rt">13</td>
+<td class="rt">65.00 </td>
+</tr><tr class="s7">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">10</td>
+<td class="rt">7</td>
+<td class="rt">70.00 </td>
+</tr><tr class="s6">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">10</td>
+<td class="rt">6</td>
+<td class="rt">60.00 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s6">
+<td>Signals</td>
+<td class="rt">34</td>
+<td class="rt">23</td>
+<td class="rt">67.65 </td>
+</tr><tr class="s7">
+<td>Signal Bits</td>
+<td class="rt">96</td>
+<td class="rt">71</td>
+<td class="rt">73.96 </td>
+</tr><tr class="s7">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">48</td>
+<td class="rt">37</td>
+<td class="rt">77.08 </td>
+</tr><tr class="s7">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">48</td>
+<td class="rt">34</td>
+<td class="rt">70.83 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst_n</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>power[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rx_crc_ok</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>tx_append_crc</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>tag_active</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rx_rats</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>rx_deselect</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>app_resend_last</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td>OUTPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>rx_count[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>rx_error_flag</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>pkt_received</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>our_cid[3:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>check_need_to_forward_to_app</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>check_need_to_forward_to_app_after_next_byte</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>forward_to_app</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_valid_iso14443_4_msg</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_RATS</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_PPS</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_I_BLOCK</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_R_BLOCK</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>is_S_BLOCK</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>has_CID</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>has_NAD</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>is_for_us</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_CHAINING</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_NAK</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>is_DESELECT</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>rx_block_num</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>app_rx_iface_soc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>app_rx_iface_eoc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>app_rx_iface_data_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>app_rx_iface_error</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>app_rx_iface_data[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>allow_pps</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>reply[0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>reply[1]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>replyStdBlock[1:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+</tr><tr>
+<td>send_reply</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>our_block_num</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>tx_count_minus_1</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>forward_from_app</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>tx_iface_data_valid</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>app_tx_iface_req</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr></table><br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod35.html" >iso14443_4a</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s6">
+<td>Branches</td>
+<td></td>
+<td class="rt">60</td>
+<td class="rt">38</td>
+<td class="rt">63.33 </td>
+</tr><tr class="s10">
+<td>TERNARY</td>
+<td class="rt">306</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s8">
+<td>IF</td>
+<td class="rt">147</td>
+<td class="rt">22</td>
+<td class="rt">18</td>
+<td class="rt">81.82 </td>
+</tr><tr class="s3">
+<td>IF</td>
+<td class="rt">348</td>
+<td class="rt">15</td>
+<td class="rt">5</td>
+<td class="rt">33.33 </td>
+</tr><tr class="s6">
+<td>IF</td>
+<td class="rt">527</td>
+<td class="rt">21</td>
+<td class="rt">13</td>
+<td class="rt">61.90 </td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+306            assign is_for_us                = has_CID ? (our_cid == rx_buffer[1][3:0]) : (our_cid == 0);
+                                                         <font color = "green">-1-</font>  
+                                                         <font color = "green">==></font>  
+                                                         <font color = "green">==></font>  
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+147                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+148                    rx_count                    <= '0;
+           <font color = "green">            ==></font>
+149                    rx_error_flag               <= 1'b0;
+150                    pkt_received                <= 1'b0;
+151                    forward_to_app              <= 1'b0;
+152                    app_rx_iface_soc            <= 1'b0;
+153                    app_rx_iface_eoc            <= 1'b0;
+154                    app_rx_iface_data_valid     <= 1'b0;
+155                    app_rx_iface_error          <= 1'b0;
+156                end
+157                else begin
+158                    // these should only assert for one tick at a time
+159                    pkt_received                    <= 1'b0;
+160                    check_need_to_forward_to_app    <= 1'b0;
+161                    app_rx_iface_soc                <= 1'b0;
+162                    app_rx_iface_eoc                <= 1'b0;
+163                    app_rx_iface_data_valid         <= 1'b0;
+164                    app_rx_iface_error              <= 1'b0;
+165        
+166                    // always pass through the data
+167                    app_rx_iface_data               <= rx_iface.data;
+168        
+169                    if (rx_iface.soc) begin
+                       <font color = "green">-2-</font>       
+170                        // start of a new message
+171                        rx_count                                        <= '0;
+           <font color = "green">                ==></font>
+172                        rx_error_flag                                   <= 1'b0;
+173                        forward_to_app                                  <= 1'b0;
+174                        check_need_to_forward_to_app_after_next_byte    <= 1'b0;
+175                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+176        
+177                    if (rx_iface.eoc) begin
+                       <font color = "green">-3-</font>       
+178                        // we use this rather than rx_eoc directly,
+179                        // because for partial packets the rx_iface.data_valid assserts
+180                        // at the same time, and so our rx_buffer won't be correct
+181                        // until the next tick.
+182                        pkt_received    <= 1'b1;
+183        
+184                        if (forward_to_app) begin
+                           <font color = "green">-4-</font>  
+185                            app_rx_iface_eoc    <= 1'b1;
+           <font color = "green">                    ==></font>
+186                            app_rx_iface_error  <= !rx_crc_ok;  // error if the CRC failed
+187                            forward_to_app      <= 1'b0;
+188                        end
+                           MISSING_ELSE
+           <font color = "green">                ==></font>
+189                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+190        
+191                    // don't do anything once we've seen an error
+192                    if (!rx_error_flag) begin
+                       <font color = "red">-5-</font>  
+193                        if (rx_iface.error) begin
+                           <font color = "red">-6-</font>       
+194                            rx_error_flag <= 1'b1;
+195                            if (forward_to_app) begin
+                               <font color = "red">-7-</font>  
+196                                app_rx_iface_error  <= 1'b1;
+           <font color = "red">                        ==></font>
+197                            end
+                               MISSING_ELSE
+           <font color = "red">                    ==></font>
+198                        end
+                           MISSING_ELSE
+           <font color = "green">                ==></font>
+199        
+200                        if (rx_iface.data_valid) begin
+                           <font color = "green">-8-</font>       
+201                            if (forward_to_app) begin
+                               <font color = "green">-9-</font>  
+202                                app_rx_iface_data_valid <= 1'b1;
+           <font color = "green">                        ==></font>
+203                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+204        
+205                            if (rx_count != $unsigned($bits(rx_count)'(RX_BUFF_LEN))) begin
+                               <font color = "green">-10-</font>  
+206                                rx_buffer[rx_count] <= rx_iface.data;
+207                                rx_count            <= rx_count + 1'd1;
+208        
+209                                // If this is a valid I-block that's for us, we need to forward everything
+210                                // after the prologue field to the APP.
+211                                // There are two options here:
+212                                //      1) after receiving the first byte, we find that it's a STD I-Block
+213                                //         with no chaining, no NAD, and no CID, and our CID is 0, so it's
+214                                //         valid and for us. The next byte is the first byte of the INF field
+215                                //      2) after receiving the first byte, we find that it's a STD I-BLock
+216                                //         with no chaining, no NAD, and a CID. After the second byte we know
+217                                //         if it's for us or not. After that we start forwarding it to the app.
+218                                // We do the checking on the next tick, so we can use the is_... and has_...
+219                                // signals that depend on the data to be in the rx_buffer.
+220                                if (rx_count == 0) begin
+                                   <font color = "green">-11-</font>  
+221                                    // on the next tick, see if we are a STD I-block with no chaining and no NAD
+222                                    check_need_to_forward_to_app <= 1'b1;
+           <font color = "green">                            ==></font>
+223                                end
+224                                else if (check_need_to_forward_to_app_after_next_byte) begin
+                                        <font color = "green">-12-</font>  
+225                                    // just received the second byte, so on the next tick check if
+226                                    // the CID is for us.
+227                                    check_need_to_forward_to_app                    <= 1'b1;
+           <font color = "green">                            ==></font>
+228                                    check_need_to_forward_to_app_after_next_byte    <= 1'b0;
+229                                end
+                                   MISSING_ELSE
+           <font color = "green">                        ==></font>
+230                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+231                        end
+                           MISSING_ELSE
+           <font color = "green">                ==></font>
+232        
+233                        // don't forward anything if the tag is in the ACTIVE state. As we shouldn't
+234                        // respond to STD I-BLock until we are in the PRTOCOL state.
+235                        if (check_need_to_forward_to_app && !tag_active) begin
+                           <font color = "green">-13-</font>  
+236                            // Now we're on the next tick, check if the data received is a valid STD I-BLock
+237                            if (is_I_BLOCK && !has_NAD && !is_CHAINING) begin
+                               <font color = "green">-14-</font>  
+238                                // Is a valid I-BLock, is it for us?
+239                                // this could happen after the first byte if there's no CID and our CID is 0
+240                                // or after the second byte if there is a CID
+241                                if ((rx_count == 1) && has_CID) begin
+                                   <font color = "green">-15-</font>  
+242                                    // we don't know if it's for us yet. wait until the next byte.
+243                                    check_need_to_forward_to_app_after_next_byte <= 1'b1;
+           <font color = "green">                            ==></font>
+244                                end
+245                                else begin
+246                                    // either rx_count == 1 and the message doesn't have a CID
+247                                    // so is_for_us reduces to (our_cid == 0).
+248                                    // or rx_count == 2 and has_CID is true, since we wouldn't get here otherwise
+249                                    // in which case is_for_us reduces to our_cid == rx_buffer[1][3:0]
+250                                    // either way we can use is_for_us to determine if we forward this message
+251                                    // to the app
+252                                    if (is_for_us) begin
+                                       <font color = "red">-16-</font>  
+253                                        // start forwarding to the app
+254                                        forward_to_app      <= 1'b1;
+           <font color = "green">                                ==></font>
+255        
+256                                        // start with SOC
+257                                        app_rx_iface_soc    <= 1'b1;
+258                                    end
+                                       MISSING_ELSE
+           <font color = "red">                            ==></font>
+259                                end
+260                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+261                        end
+                           MISSING_ELSE
+           <font color = "green">                ==></font>
+262                    end
+                       MISSING_ELSE
+           <font color = "red">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>-8-</th><th nowrap width=80>-9-</th><th nowrap width=80>-10-</th><th nowrap width=80>-11-</th><th nowrap width=80>-12-</th><th nowrap width=80>-13-</th><th nowrap width=80>-14-</th><th nowrap width=80>-15-</th><th nowrap width=80>-16-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+348                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+349                    allow_pps       <= 1'b0;
+350                    app_resend_last <= 1'b0;
+351                end
+352                else begin
+353                    // should only assert for one tick
+354                    send_reply      <= 1'b0;
+355                    app_resend_last <= 1'b0;
+356        
+357                    if (pkt_received) begin
+                       <font color = "green">-2-</font>  
+358                        // if we've received anything at all, whether it be PPS or not
+359                        // then we no longer allow PPS messages
+360                        // this can be overriden if we received a valid RATS while the tag was active
+361                        allow_pps <= 1'b0;
+362        
+363                        if (is_valid_iso14443_4_msg) begin
+                           <font color = "red">-3-</font>  
+364                            if (tag_active) begin
+                               <font color = "green">-4-</font>  
+365                                // only valid thing to receive is RATS
+366                                if (rx_rats) begin
+                                   <font color = "red">-5-</font>  
+367                                    // received RATS
+368                                    our_cid                 <= rx_buffer[1][3:0];
+369                                    // we ignore FSDI since we don't support chaining
+370                                    // for future reference:
+371                                    // ISO/IEC 14443-4:2016 section 5.1: A PCD setting FSDI = 'D' - 'F'
+372                                    // is not compliant with this part of ISO/IEC 14443. Until the RFU
+373                                    // values 'D' - 'F' are assigned by ISO/IEC, a PICC receiving values
+374                                    // of FSDI = 'D' - 'F' should interpret it as FSDI = 'C'
+375                                    //fsdi                    <= rx_buffer[1][7:4];
+376        
+377                                    // respond with out ATS
+378                                    reply                   <= Reply_ATS;
+379                                    send_reply              <= 1'b1;
+380        
+381                                    // we allow PPS as the next message
+382                                    // but others are valid too
+383                                    allow_pps               <= 1'b1;
+384        
+385                                    // Rule C: The PICC block number shall be initialised to 1 at activation
+386                                    our_block_num           <= 1'b1;
+387                                end
+388                            end
+389                            else begin
+390                                // first message after RATS can be a PPS
+391                                if (allow_pps && is_PPS) begin
+                                   <font color = "green">-6-</font>  
+392                                    reply       <= Reply_PPSR;
+393                                    send_reply  <= 1'b1;
+394        
+395                                    // note: above we clear allow_pps upon receiving any packet
+396                                    //       valid or not, pps or not
+397                                end
+398                                // others messages are also allowed
+399                                else if (is_for_us && !has_NAD) begin // we don't support frames with the NAD field
+                                        <font color = "red">-7-</font>  
+400        
+401                                    // we've received our RATS so we can now receive standard blocks
+402                                    // we don't have to worry about a PPS / another RATS being picked up here
+403                                    // as their first bytes don't match bit patterns for the first byte of any
+404                                    // standard block.
+405        
+406                                    if (is_S_BLOCK) begin
+                                       <font color = "red">-8-</font>  
+407                                        // ISO/IEC 14443-4:2016 section 7.5.5
+408                                        // Rule 3: S-Blocks are only used in pairs
+409                                        if (is_DESELECT) begin
+                                           <font color = "red">-9-</font>  
+410                                            // send the DESELECT reply
+411                                            reply           <= Reply_STANDARD_BLOCK;
+412                                            replyStdBlock   <= ReplyStdBlock_DESELECT;
+413                                            send_reply      <= 1'b1;
+414        
+415                                            // after our reply has been sent rx_deselect is asserted
+416                                            // which causes the iso14443_3a module to go to the HALT state
+417                                        end
+418                                        // Other S-Blocks are: S(PARAMETERS) and S(WTX).
+419                                        // The PCD can't send S(WTX).
+420                                        // ISO/IEC 14443-4:2016 section 9, states:
+421                                        //      if the PICC supports S(PARAMETERS) blocks, the PICC shall
+422                                        //      respond with an S(PARAMETERS) block containing values for
+423                                        //      all supported parameters. If the PICC does not support
+424                                        //      S(PARAMETERS) it shall stay mute.
+425                                        // So we ignore any other S-Block
+426                                    end
+427                                    else if (is_R_BLOCK) begin
+                                            <font color = "red">-10-</font>  
+428                                        // ISO/IEC 14443-4:2016 section 7.5.5
+429                                        // Rule 11: When an R(ACK)/R(NAK) block is received, if it's
+430                                        //          block number is equal to the PICC's current block
+431                                        //          number, the last block shall be retransmitted
+432                                        if (rx_block_num == our_block_num) begin
+                                           <font color = "red">-11-</font>  
+433                                            // resend last message
+434                                            // reply and replyStdBlock are already set
+435                                            send_reply      <= 1'b1;
+436        
+437                                            // if the last message sent was an I-Block
+438                                            // tell the app to resend it's last message
+439                                            if ((reply == Reply_STANDARD_BLOCK) &&
+                                               <font color = "red">-12-</font>  
+440                                                (replyStdBlock == ReplyStdBlock_I_BLOCK)) begin
+441                                                app_resend_last <= 1'b1;
+442                                            end
+443                                        end
+444                                        else begin
+445                                            if (is_NAK) begin
+                                               <font color = "red">-13-</font>  
+446                                                // R(NAK)
+447                                                // Rule 12: When an R(NAK) block is received, if it's block number
+448                                                //          is not equal to the PICC's current block number an R(ACK)
+449                                                //          block shall be sent
+450                                                reply           <= Reply_STANDARD_BLOCK;
+451                                                replyStdBlock   <= ReplyStdBlock_ACK;
+452                                                send_reply      <= 1'b1;
+453        
+454                                                // ISO/IEC 14443-4:2016 section 7.5.4.2 Block Numbering Rules (PICC rules)
+455                                                // Rule E Note 2: There is no block toggling when an R(NAK) block is received
+456                                            end
+457                                            else begin
+458                                                // R(ACK)
+459                                                // Rule 13:  When an R[ACl{] block is received, if its block
+460                                                //           number is not equal to the PICC’s current block
+461                                                //           number, and the PICC is in chaining, chaining
+462                                                //           shall be continued.
+463        
+464                                                // we don't support chaining so no need to do anything
+465        
+466                                                // ISO/IEC 14443-4:2016 section 7.5.4.2 Block Numbering Rules (PICC rules)
+467                                                // Rule E: When an R(ACK) block with a block number not equal to the current
+468                                                //         PICC's block number is received, the PICC shall toggle it's block
+469                                                //         number before sending a block.
+470                                                /* if (rx_block_num != our_block_num) begin
+471                                                    our_block_num   <= !our_block_num;
+472                                                end */
+473                                            end
+474                                        end
+475                                    end
+476                                    else if (is_I_BLOCK && !is_CHAINING) begin
+                                            <font color = "red">-14-</font>  
+           <font color = "red">                            ==></font>
+           <font color = "green">                            ==></font>
+           <font color = "green">                            ==></font>
+                                       MISSING_ELSE
+           <font color = "red">                            ==></font>
+           <font color = "green">                            ==></font>
+           <font color = "red">                            ==></font>
+                                       MISSING_ELSE
+           <font color = "red">                            ==></font>
+           <font color = "red">                            ==></font>
+                                       MISSING_ELSE
+           <font color = "red">                            ==></font>
+           <font color = "red">                            ==></font>
+477                                        // ISO/IEC 14443-4:2016 section 7.5.5
+478                                        // Rule 10: When an I-Block not indicating chaining is received
+479                                        //          The block shall be acknowledged with an I-Block
+480                                        // respond with an I block
+481                                        reply                   <= Reply_STANDARD_BLOCK;
+           <font color = "green">                                ==></font>
+482                                        replyStdBlock           <= ReplyStdBlock_I_BLOCK;
+483                                        send_reply              <= 1'b1;
+484        
+485                                        // ISO/IEC 14443-4:2016 section 7.5.4 Block Numbering Rules
+486                                        // Rule D: When an I-block is received, the PICC shall toggle it's block number
+487                                        //         before sending a block.
+488                                        our_block_num           <= !our_block_num;
+489        
+490                                        // Rule D, Note 1:
+491                                        // The PICC can check if the received block number is not in compliance with PCD rules
+492                                        // to decide neither to toggle its internal block number nor to send a response block.
+493        
+494                                        // I don't think this is necessary since it says "can", and if the PCD
+495                                        // follows the error detection and recovery rules, we should never end up
+496                                        // with this issue.
+497                                    end
+                                       MISSING_ELSE
+           <font color = "red">                            ==></font>
+498                                end
+                                   MISSING_ELSE
+           <font color = "red">                        ==></font>
+499                            end
+500                        end
+                           MISSING_ELSE
+           <font color = "red">                ==></font>
+501                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>-8-</th><th nowrap width=80>-9-</th><th nowrap width=80>-10-</th><th nowrap width=80>-11-</th><th nowrap width=80>-12-</th><th nowrap width=80>-13-</th><th nowrap width=80>-14-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+527                if (!rst_n) begin
+                   <font color = "green">-1-</font>  
+528                    tx_iface_data_valid     <= 1'b0;
+           <font color = "green">            ==></font>
+529                    forward_from_app        <= 1'b0;
+530                    rx_deselect             <= 1'b0;
+531                    app_tx_iface_req        <= 1'b0;
+532                end
+533                else begin
+534                    // these are only asserted for one tick
+535                    app_tx_iface_req        <= 1'b0;
+536                    rx_deselect             <= 1'b0;
+537        
+538                    // tx_iface_data_valid is cleared when the tx_iface.req asserts and we are out of
+539                    // stuff to send. tx_iface_data_valid gets set when reply is not Reply_NONE
+540        
+541                    // Deal with the Tx module requesting more data
+542                    if (tx_iface.req) begin
+                       <font color = "green">-2-</font>       
+543                        // anything more to send?
+544                        if (tx_count_minus_1) begin
+                           <font color = "green">-3-</font>  
+545                            // yes, decrement tx_count_minus_1
+546                            tx_count_minus_1    <= tx_count_minus_1 - 1'd1;
+           <font color = "green">                    ==></font>
+547        
+548                            // shift tx_buffer
+549                            for (int i = 0; i < (TX_BUFF_LEN - 1); i++) begin
+550                                tx_buffer[i]    <= tx_buffer[i+1];
+551                            end
+552                        end
+553                        else begin
+554                            // nothing from us, are we forwarding from the app?
+555                            if (forward_from_app) begin
+                               <font color = "green">-4-</font>  
+556                                // we are, is there still data to send?
+557                                if (app_tx_iface.data_valid) begin
+                                   <font color = "green">-5-</font>           
+558                                    // forward the request
+559                                    app_tx_iface_req        <= 1'b1;
+           <font color = "green">                            ==></font>
+560                                    // fill in the data
+561                                    tx_buffer[0]            <= app_tx_iface.data;
+562                                end
+563                                else begin
+564                                    // no more data to send
+565                                    tx_iface_data_valid     <= 1'b0;
+           <font color = "green">                            ==></font>
+566                                    forward_from_app        <= 1'b0;
+567                                end
+568                            end
+569                            else begin
+570                                // not forwarding from the app, so we're done
+571                                tx_iface_data_valid <= 1'b0;
+572        
+573                                // if this was a DESELECT reply, then we need to inform
+574                                // the 14443-3 layer to move us to the HALT state
+575                                if ((reply == Reply_STANDARD_BLOCK) &&
+                                   <font color = "red">-6-</font>  
+576                                    (replyStdBlock == ReplyStdBlock_DESELECT)) begin
+577                                    rx_deselect <= 1'b1;
+           <font color = "red">                            ==></font>
+578                                end
+                                   MISSING_ELSE
+           <font color = "green">                        ==></font>
+579                            end
+580                        end
+581                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+582        
+583                    // are we meant to send anything new?
+584                    if (send_reply) begin
+                       <font color = "green">-7-</font>  
+585                        case (reply)
+                           <font color = "red">-8-</font>  
+586                            Reply_ATS: begin
+587                                // for now we just send the minimum ATS which uses all the default options
+588                                tx_buffer[0]            <= 8'd1;    // first byte is TL (length including itself, not including CRC)
+           <font color = "green">                        ==></font>
+589                                tx_count_minus_1        <= 1'd0;    // 1 byte + CRC
+590                                tx_iface_data_valid     <= 1'b1;
+591                            end
+592                            Reply_PPSR: begin
+593                                tx_buffer[0]            <= {PPSS, our_cid}; // PPS response is just the start byte
+           <font color = "green">                        ==></font>
+594                                tx_count_minus_1        <= 1'd0;            // 1 byte + CRC
+595                                tx_iface_data_valid     <= 1'b1;
+596                            end
+597                            Reply_STANDARD_BLOCK: begin
+598                                // a standard block consists of the header, the INF field and the CRC
+599                                // the CRC is filled in automatically by the 14443-3 layer
+600                                // the INF field is only used (by us) for the I block, and that
+601                                // comes from the app layer.
+602                                // So just fill in the header
+603        
+604                                // PCB
+605                                case (replyStdBlock)
+                                   <font color = "red">-9-</font>  
+606                                    ReplyStdBlock_DESELECT:     tx_buffer[0] <= S_DESELECT;
+           <font color = "red">                            ==></font>
+607                                    ReplyStdBlock_ACK:          tx_buffer[0] <= R_ACK;
+           <font color = "red">                            ==></font>
+608                                    ReplyStdBlock_I_BLOCK:      tx_buffer[0] <= I_NO_CHAINING;
+           <font color = "green">                            ==></font>
+                                       MISSING_DEFAULT
+           <font color = "red">                            ==></font>
+609                                endcase
+610        
+611                                // The CID bit is set if the request had a CID
+612                                tx_buffer[0][3] <= has_CID;
+613        
+614                                // In the case of I-blocks and R-blocks we have to set the block num field
+615                                if ((replyStdBlock == ReplyStdBlock_ACK) ||
+                                   <font color = "red">-10-</font>  
+616                                    (replyStdBlock == ReplyStdBlock_I_BLOCK)) begin
+617                                    tx_buffer[0][0] <= our_block_num;
+           <font color = "green">                            ==></font>
+618                                end
+                                   MISSING_ELSE
+           <font color = "red">                        ==></font>
+619        
+620                                // The next byte is the CID byte if we have one
+621                                if (has_CID) begin
+                                   <font color = "red">-11-</font>  
+622                                    tx_buffer[1]        <= {power, 2'b00, our_cid}; // power indicator + CID
+           <font color = "green">                            ==></font>
+623                                    tx_count_minus_1    <= 1'b1;                    // 2 bytes + CRC
+624                                end
+625                                else begin
+626                                    tx_count_minus_1    <= 1'b0;                    // 1 byte + CRC
+           <font color = "red">                            ==></font>
+627                                end
+628        
+629                                // The final byte is the NAD byte, but we don't support that
+630        
+631                                // if this is an I-block reply, we need to forward data from the app
+632                                if (replyStdBlock == ReplyStdBlock_I_BLOCK) begin
+                                   <font color = "red">-12-</font>  
+633                                    forward_from_app        <= 1'b1;
+           <font color = "green">                            ==></font>
+634                                end
+                                   MISSING_ELSE
+           <font color = "red">                        ==></font>
+635        
+636                                // set it going
+637                                tx_iface_data_valid     <= 1'b1;
+638                            end
+                               MISSING_DEFAULT
+           <font color = "red">                    ==></font>
+639                        endcase
+640                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>-8-</th><th nowrap width=80>-9-</th><th nowrap width=80>-10-</th><th nowrap width=80>-11-</th><th nowrap width=80>-12-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>Reply_ATS </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>Reply_PPSR </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>Reply_STANDARD_BLOCK </td>
+<td align=center>ReplyStdBlock_DESELECT </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>Reply_STANDARD_BLOCK </td>
+<td align=center>ReplyStdBlock_ACK </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>Reply_STANDARD_BLOCK </td>
+<td align=center>ReplyStdBlock_I_BLOCK </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>Reply_STANDARD_BLOCK </td>
+<td align=center>MISSING_DEFAULT</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>Reply_STANDARD_BLOCK </td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>Reply_STANDARD_BLOCK </td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>Reply_STANDARD_BLOCK </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>Reply_STANDARD_BLOCK </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>Reply_STANDARD_BLOCK </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>Reply_STANDARD_BLOCK </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>MISSING_DEFAULT</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_49">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+  <ul name="tag_iso14443_4a">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>
