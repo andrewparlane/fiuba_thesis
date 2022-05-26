@@ -63,7 +63,9 @@
     \vspace{5mm}
     \huge{\bf Desarrollo de Circuitos Integrados CMOS para Aplicaciones de RFID} \\
     \vspace{8mm}
-    \huge{\bf Andrew Parlane}
+    \huge{\bf Andrew Parlane} \\
+    \vspace{8mm}
+    \huge{\bf Junio de 2022}
 \end{center}
 
 \vspace*{\fill}
@@ -104,7 +106,7 @@ Por cuestiones de claridad en esta tesis cuándo se dice que una señal está en
 
 El código RTL, los bancos de pruebas y los scripts de síntesis y place \& route están publicados de forma abierta en GitHub bajo la licencia GNU v3.0, de manera que cualquier parte de este trabajo pueda ser utilizada en otros proyectos académicos o comerciales. Para facilitar la adopción y modificación de este trabajo por la comunidad internacional, el código y los scripts están escritos con nombres y comentarios en Inglés. El enlace al repositorio y detalles de su estructura son dados en el \appref{appendix:code_repo}.
 
-Para facilitar la lectura de esta tesis las señales, variables y parámetros están escritos en \textit{cursiva},  los módulos, clases y funciones están escritos en \textbf{negritas}. Además se utilizan paréntesis para nombrar a las funciones, aunque sin sus argumentos, por ejemplo: \textbf{compare()}. Finalmente los nombres de las tramas definidas en los protocolos están escritos en MAYÚSCULAS.
+Para facilitar la lectura de esta tesis las señales, variables y parámetros están escritos en \textit{cursiva},  los módulos, clases y funciones están escritos en \textbf{negrita}. Además se utilizan paréntesis para nombrar a las funciones, aunque sin sus argumentos, por ejemplo: \textbf{compare()}. Finalmente los nombres de las tramas definidas en los protocolos están escritos en MAYÚSCULAS.
 
 % ---------------------------------------------
 % TOC
@@ -124,23 +126,23 @@ Para facilitar la lectura de esta tesis las señales, variables y parámetros es
 \FloatBarrier
 \section{Motivación y Contexto de Trabajo}
 
-La radioterapia es un tratamiento médico que consiste en utilizar radiación ionizante para eliminar células cancerígenas que forman tumores. Sin embargo, la radiación puede presentar riesgos a tejido sano, especialmente si la dosis aplicada es mayor a la necesaria o mal localizada. Hay varios incidentes registrados donde algunas personas recibieron una sobredosis durante radioterapia, y en algunos casos dosis letales~\cite{UNSE_2019}. Por otro lado, una dosis localizada pero demasiado pequeña reduciría la efectividad del tratamiento. Por esas razones es muy importante adoptar consideraciones de QA (Quality Assurance), la cual puede definirse como:
+La radioterapia es un tratamiento médico que consiste en utilizar radiación ionizante para eliminar células cancerígenas que forman tumores. Sin embargo, la radiación puede presentar riesgos a tejido sano, especialmente si la dosis aplicada es mayor a la necesaria o mal localizada. Hay varios incidentes registrados donde algunas personas recibieron una sobredosis durante radioterapia, y en algunos casos dosis letales~\cite{accidentaly_exposures}. Por otro lado, una dosis localizada pero demasiado pequeña reduciría la efectividad del tratamiento. Por esas razones es muy importante adoptar consideraciones de QA (Quality Assurance), la cual puede definirse como:
 
-\begin{displaycquote}[traducción mía]{qa_in_radiotherapy}
+\begin{displaycquote}[traducido de][]{qa_in_radiotherapy}
 Los procedimientos que aseguren el cumplimiento de las prescripciones médicas con respeto a la dosis entregada al volumen deseado, junto con una dosis mínima a tejido sano, exposición mínima al personal, y el monitoreo adecuado del paciente para determinar el resultado del tratamiento.
 \end{displaycquote}
 
-Una técnica importante en QA es dosimetría in-vivo (IVD), que es la práctica de medir la dosis recibida durante el tratamiento en tiempo real. La IVD es recomendada para su uso en radioterapia~\cite{AAPM-1994}\cite{ICRP-2000}, con un error menor del 3\% por tratamiento. Existen varios tipos de sensores de radiación que pueden ser utilizados en IVD con radioterapia. Entre ellos se encuentran los sensores MOSFET, los cuales tienen varias ventajas, como por ejemplo que pueden ser leídos en tiempo real o posteriormente, son pequeños y robustos, pero también tienen algunas limitaciones~\cite{UNSE_2019}. Los investigadores del Laboratorio de Física de Dispositivos - Microelectrónica de la Facultad de Ingeniería de la Universidad de Buenos Aires han trabajando durante los últimos años en mejorar el desempeño de sensores MOSFET de radiación para uso en IVD~\cite{mosfet_mismatch_amplification}\cite{6MV_LINAC}. Otra ventaja de los sensores MOSFETs es que pueden ser integrados en un mismo chip con circuitos adicionales que permitan su lectura, digitalización y posterior transmisión de los resultados en tiempo real. Esto representa una importante ventaja frente al método usual de lectura post irradiación, ya que el seguimiento en tiempo real permitiría ajustar la dosis durante la ejecución del tratamiento.
+Una técnica importante en QA es dosimetría in-vivo (IVD), que es la práctica de medir la dosis recibida durante el tratamiento. El uso de IVD es recomendado en radioterapia~\cite{AAPM-1994}\cite{ICRP-2000} y su aplicación requiere un error de medición menor al 3\% a lo largo del tratamiento. Existen varios tipos de sensores de radiación que pueden ser utilizados para IVD en radioterapia. Entre ellos se encuentran los sensores MOSFET, los cuales tienen varias ventajas, como por ejemplo que pueden ser leídos tanto en tiempo real como posteriormente, son pequeños y robustos, pero también tienen algunas limitaciones~\cite{electronic_dosimetry}. Los investigadores del Laboratorio de Física de Dispositivos - Microelectrónica de la Facultad de Ingeniería de la Universidad de Buenos Aires han trabajando durante los últimos años en mejorar el desempeño de sensores MOSFET de radiación para uso en IVD~\cite{mosfet_mismatch_amplification}\cite{6MV_LINAC}. Otra ventaja de los sensores MOSFETs es que pueden ser integrados en un mismo chip con circuitos adicionales que permitan su lectura, digitalización y posterior transmisión de los resultados en tiempo real. Esto representa una importante ventaja frente al método usual de lectura post irradiación, ya que el seguimiento en tiempo real permitiría ajustar la dosis durante la ejecución del tratamiento.
 
 Un sensor pequeño construido con una cantidad mínima de componentes permitiría obtener arreglos de sensores con excelente resolución espacial y así realizar un mapeo dosimétrico de una zona de interés. A la hora de implementar esta solución, los TAGs RFID (Radio Frequency Identification) pasivos son una excelente opción, ya que sólo requieren del circuito integrado y una antena externa. La alimentación y la comunicación pueden realizarse a través del campo electromagnético generado por el dispositivo de lectura. Un sistema de estas características, además de ser más simple, sería más cómodo para el paciente y más práctico para su uso en el campo médico.
 
-En su tesis de 2018~\cite{Arana_thesis}, Arana analizó la relación entre la frecuencia de operación de un TAG RFID y su distancia máxima de la lectura considerando los límites de exposición de humanos a campos electromagnéticos definidos en IEEE C95.1. Los resultados muestran que una frecuencia en el orden de 10 MHz daría el mejor rango de operación mientras manteniendo el campo electromagnético (EM) dentro de límites seguros. Esta frecuencia se encuentra cercana a los 13.56 MHz de RFID HF (High Frequency). Arana muestra en su tesis el diseño de la antena y de circuitos integrados analógicos para un TAG ISO/IEC 14443 tipo A que puede funcionar a una distancia de 30 cm de la lectura. También en una publicación de 2014~\cite{fabricio_eamta}, Alcalde et al. presentan el diseño y fabricación de un TAG RFID que implementa parte de la norma ISO/IEC 14443 tipo A. El funcionamiento es verificado a través de mediciones experimentales del sistema funcionando en loopback.
+En su tesis de 2018~\cite{Arana_thesis}, Arana analizó la relación entre la frecuencia de operación de un TAG RFID y su distancia máxima de la lectura considerando los límites de exposición de humanos a campos electromagnéticos definidos en IEEE C95.1. Los resultados muestran que una frecuencia en el orden de 10 MHz daría el mejor rango de operación mientras manteniendo el campo electromagnético dentro de límites seguros. Esta frecuencia se encuentra cercana a los 13.56 MHz de RFID HF (High Frequency). Arana muestra en su tesis el diseño de la antena y de circuitos integrados analógicos para un TAG ISO/IEC 14443 tipo A que puede funcionar a una distancia de 30 cm de la lectura. También en una publicación de 2014~\cite{fabricio_eamta}, Alcalde et al. presentan el diseño y fabricación de un TAG RFID que implementa parte de la norma ISO/IEC 14443 tipo A. El funcionamiento es verificado a través de mediciones experimentales del sistema en loopback.
 
 Un atributo del protocolo ISO/IEC 14443A es que permite hasta 15 TAGs activos al mismo tiempo. Esto da la posibilidad de obtener muestras de los sensores de forma sincronizada, con la ventaja de medir en múltiples lugares del cuerpo del paciente. Esto contribuye a mejorar la verificación de la ejecución del tratamiento planificado y por lo tanto se alinea con los criterios de QA.
 
-En un artículo publicado en 2016~\cite{monolithic_180nm}, Villani et al. se desarrolló un sensor de radiación inalámbrico para uso en IVD por radioterapia. El sensor emite una señal RF con frecuencia que depende de la dosis de radiación recibida. La ventaja de este enfoque es la simplicidad del diseño, el circuito integrado no necesita un bloque digital complejo para soportar el protocolo. Las desventajas son: solo es posible usar solo un sensor a la vez, requiere una fuente de alimentación externa (batería), no permite configurar el sensor inalámbricamente, y por no haber sido diseñado dentro de una norma, no es compatible con otros equipos requiriendo de un lector diseñado ad hoc para la aplicación.
+En un artículo publicado en 2016~\cite{monolithic_180nm}, Villani et al. se desarrolló un sensor de radiación inalámbrico para IVD en radioterapia. El sensor emite una señal RF con frecuencia que depende de la dosis de radiación recibida. La ventaja de este enfoque es la simplicidad del diseño, el circuito integrado no necesita un bloque digital complejo para soportar el protocolo. Las desventajas son: solo es posible usar solo un sensor a la vez, requiere una fuente de alimentación externa (batería), no permite configurar el sensor inalámbricamente, y por no haber sido diseñado dentro de una norma, no es compatible con otros equipos requiriendo de un lector diseñado ad hoc para la aplicación.
 
-Los circuitos diseñados en esta tesis permitirán implementar una red de sensores inalámbricos cuya finalidad es medir dosis de radiación en un tratamiento de radioterapia en diferentes lugares de interés. La adquisición en múltiples puntos tiene como objetivo mejorar el control de la irradiación para ajustar con mayor precisión la dosis entregada por el acelerador a la planificación previa. Típicamente, la dosis entregada por los LINAC no es lineal con el tiempo por lo cual, para que la medición en tiempo real sea útil, se requiere sincronizar el muestreo de los sensores.
+Los circuitos diseñados en esta tesis permitirán implementar una red de sensores inalámbricos cuya finalidad es medir dosis de radiación en un tratamiento de radioterapia en diferentes lugares de interés. La adquisición en múltiples puntos tiene como objetivo mejorar el control de la irradiación para ajustar con mayor precisión la dosis entregada por el acelerador a la planificación previa. Típicamente, la dosis entregada por los LINAC es pulsada por lo cual, para que la medición en tiempo real sea útil, se requiere sincronizar el muestreo de los sensores.
 
 % ISO/IEC 14443A
 % --------------------------------
@@ -158,14 +160,14 @@ La norma viene en cuatro partes:
     \item ISO/IEC 14443-4: Protocolo de Transmisión.
 \end{itemize}
 
-La parte una define atributos físicas de la PICC (Proximity Card, la tarjeta o TAG) como las dimensiones y el rango de operación a temperatura ambiente. La parte dos define la interfaz inalámbrica de la transmisión de potencia y comunicaciones bidireccionales entre un PCD (Proximity Coupling Device, la lectura) y la PICC. La parte tres define el formato de los bytes, la estructura de las tramas y los mensajes necesarios para el descubrimiento de todas las PICCs presentes en el campo del PCD y para activarlas. Finalmente, la parte cuatro define un protocolo de bloques para la configuración de la PICC y la transmisión de mensajes de nivel aplicación.
+La parte 1 define atributos físicas de la PICC (Proximity Card, la tarjeta o TAG) como las dimensiones y el rango de operación a temperatura ambiente. La parte 2 define la interfaz inalámbrica de la transmisión de potencia y comunicaciones bidireccionales entre un PCD (Proximity Coupling Device, el lector) y la PICC. La parte 3 define el formato de los bytes, la estructura de las tramas y los mensajes necesarios para el descubrimiento y activación de todas las PICCs presentes en el campo del PCD. Finalmente, la parte 4 define un protocolo de bloques para la configuración de la PICC y la transmisión de mensajes de nivel aplicación.
 
 Un sistema tiene un PCD que es el maestro y una o más PICCs que son los esclavas. Una PICC solo responde a solicitudes, no inicia comunicaciones. Durante el proceso de inicialización múltiples PICCs pueden responder a la misma solicitud, así colisiones son posibles y esperadas. Después del proceso de inicialización, en un sistema correctamente configurado, solo una PICC responde a cada solicitud.
 
 \FloatBarrier
 \subsection{ISO/IEC 14443-1: \large{Características Físicas}}
 
-Esta parte de la norma define las condiciones de operación en cuáles la PICC debe poder operar correctamente. Estos requisitos son: la exposición a rayos X, el límite dinámico de flexión y de torsión, la exposición a campos magnéticos y eléctricos alternos, la exposición a electricidad estática, y la temperatura ambiente\cite{iso14443-1}.
+Esta parte de la norma define las condiciones de operación en cuáles la PICC debe poder funcionar correctamente. Estos requisitos son: la exposición máxima a rayos X, el límite dinámico de flexión y de torsión, la exposición a campos magnéticos y eléctricos alternos, la exposición a electricidad estática, y la temperatura ambiente\cite{iso14443-1}.
 
 \FloatBarrier
 \subsection{ISO/IEC 14443-2: \large{Radiofrecuencia Potencia y Señal Interfaz}}
@@ -176,7 +178,7 @@ El PCD emite un campo electromagnético con frecuencia $f_c = \SI{13.56}{\mega\h
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.47]{./img/modulation_and_bit_encoding}
-\caption{Comunicaciones con una tasa de bits de $\nicefrac{f_c}{128}$~\cite[Modificaciones Mías]{iso14443-2}}
+\caption{Comunicaciones con una tasa de bits de $\nicefrac{f_c}{128}$~\cite[Adaptado de][]{iso14443-2}}
 \label{fig:mod-encode}
 \end{figure}
 
@@ -223,7 +225,7 @@ Para PICCs de tipo A la modulación por comunicaciones desde el PCD hasta la PIC
 % There's a lot of images around here, make sure we keep them separated correctly
 \FloatBarrier
 
-Para responder las PICCs tipo A usan modulación de carga para generar una subportadora.  La frecuencia de la subportadora ($f_s$) depende de la tasa de bit. Para una tasa de bit de $\nicefrac{f_c}{128}$ la frecuencia de la subportadora es $f_s = \nicefrac{f_c}{16} \approx \SI{848}{\kilo\hertz}$. Como en el caso de comunicaciones del PCD a la PICC la duración de un bit es $\nicefrac{128}{f_c} = \nicefrac{8}{f_s}$. La portadora debe ser solo modulada con la subportadora cuando la PICC está enviando datos. Los bits a transmitir tienen codificación Manchester, para representar un ‘1’ lógico la señal es en ‘1’ por la primera mitad de la duración de bit, y en ‘0’ por la segunda mitad, para representar un ‘0’ lógico es al revés. La señal que maneja el modulador de carga es la operación lógica AND entre la señal de codificación Manchester y la subportadora como se muestra en la \figref{fig:picc_to_pcd}. Una trama comienza con un SOC lo que es un ‘1’ lógico, y termina con un EOC lo que es una duración de bit sin modulación, eso es a decir que la señal al modulador de carga es en ‘0’ por toda la duración de bit. La \figref{fig:tx_frame_example} muestra un ejemplo de una trama que ingresa a la compuerta AND con la subportadora.
+Para responder las PICCs tipo A usan modulación de carga para generar una subportadora.  La frecuencia de la subportadora ($f_s$) depende de la tasa de bit. Para una tasa de bit de $\nicefrac{f_c}{128}$ la frecuencia de la subportadora es $f_s = \nicefrac{f_c}{16} \approx \SI{848}{\kilo\hertz}$. Como en el caso de comunicaciones del PCD a la PICC la duración de un bit es $\nicefrac{128}{f_c} = \nicefrac{8}{f_s}$. La portadora debe ser solo modulada con la subportadora cuando la PICC está enviando datos. Los bits a transmitir tienen codificación Manchester, para representar un ‘1’ lógico la señal se mantiene en ‘1’ por la primera mitad de la duración de bit, y en ‘0’ por la segunda mitad, para representar un ‘0’ lógico es al revés. La señal que maneja el modulador de carga es la operación lógica AND entre la señal de codificación Manchester y la subportadora como se muestra en la \figref{fig:picc_to_pcd}. Una trama comienza con un SOC lo que es un ‘1’ lógico, y termina con un EOC lo que es una duración de bit sin modulación, es decir que la señal al modulador de carga está en ‘0’ por toda la duración de bit. La \figref{fig:tx_frame_example} muestra un ejemplo de una trama que ingresa a la compuerta AND con la subportadora.
 
 \begin{figure}[htb]
   \centering
@@ -264,7 +266,7 @@ La parte 3 de la norma define un FDT (Frame Delay Time), lo que es el tiempo ent
   \label{tab:fdt}
 \end{table}
 
-Una trama comienza con un SOC, después se envían los datos empezando por el bit menos significativo, y termina con un EOC. Cada 8 bits de data hay un bit de paridad impar, así que el número de los 1s en cada byte más su bit de paridad es impar. Hay tres tipos de tramas definidas:
+Una trama comienza con un SOC, después se envían los datos empezando por el bit menos significativo, y termina con un EOC. Cada 8 bits de datos hay un bit de paridad impar, así que el número de los 1s en cada byte más su bit de paridad es impar. Hay tres tipos de tramas definidas:
 
 \begin{description}
   \item [Tramas Cortas] \hfill \\ Tienen siete bits de datos sin bit de paridad.
@@ -279,7 +281,7 @@ Cada PICC tiene un UID (Unique Identifier) que el PCD puede utilizar para enumer
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.5]{./img/anticollision_frames}
-  \caption{Trama Anticolisión orientada a bits~\cite[Modificaciones Mías]{iso14443-3}}
+  \caption{Trama Anticolisión orientada a bits~\cite[Adaptado de][]{iso14443-3}}
   \label{fig:anticollision}
 \end{figure}
 
@@ -311,7 +313,7 @@ Para identificar las PICCs presentes y activarlas, la norma define cinco comando
 
 \FloatBarrier
 
-Cuando una PICC entra en un campo electromagnético, comienza en el estado IDLE. Un comando REQA o WUPA cambia el estado a READY. En ese estado el PCD puede enviar comandos de ANTICOLLISION para determinar el UID de una de las PICCs presentes. Con ese UID el PCD puede enviar un SELECT para mover la PICC al estado ACTIVE. Desde aquí el PCD puede enviar un RATS para terminar activando la PICC. En el caso de recibir un error, o un comando no esperado, la PICC vuelve al estado IDLE. Hay tres otros estados también: HALT, READY* y ACTIVE*. Las diferencias únicas entre estos estados y IDLE, READY y ACTIVE, son: WUPA es el único comando aceptado en HALT y el comando REQA es ignorado, y un error o un comando no esperado recibido en READY* o ACTIVE* causa la PICC volver a HALT en vez de IDLE. La ventaja de esto es que si el PCD decide que no quiere activar una PICC particular, puede ponerla en el estado HALT, y enviando un nuevo REQA comenzará el proceso de inicialización de nuevo en todos las PICCs menos aquellos que están en HALT.
+Cuando una PICC entra en un campo electromagnético, comienza en el estado IDLE. Un comando REQA o WUPA cambia el estado a READY. En ese estado el PCD puede enviar comandos de ANTICOLLISION para determinar el UID de una de las PICCs presentes. Con ese UID el PCD puede enviar un SELECT para mover la PICC al estado ACTIVE. Desde aquí el PCD puede enviar un RATS para terminar activando la PICC. En el caso de recibir un error, o un comando no esperado, la PICC vuelve al estado IDLE. Hay tres otros estados también: HALT, READY* y ACTIVE*. Las diferencias únicas entre estos estados e IDLE, READY y ACTIVE, son: WUPA es el único comando aceptado en HALT y el comando REQA es ignorado, y un error o un comando no esperado recibido en READY* o ACTIVE* causa la PICC volver a HALT en vez de IDLE. La ventaja de esto es que si el PCD decide que no quiere activar una PICC particular, puede ponerla en el estado HALT, y enviando un nuevo REQA comenzará el proceso de inicialización de nuevo en todos las PICCs menos aquellos que están en HALT.
 
 En el caso de una PICC con UID doble el proceso de ANTICOLLISION y SELECT tiene que repetir dos veces antes de que la PICC se mueva al estado ACTIVE. En el primer lazo, los mensajes usan los primeros tres bytes de su UID junto con una etiqueta cascada: CT (Cascade Tag). La PICC responde al SELECT especificando que su UID no está completo todavía, y el lazo comienza de nuevo, esta vez usando los últimos cuatro bytes del UID. Por una PICC con UID triple este proceso tiene tres lazos. La \figref{fig:cascade_levels} muestra este proceso.
 
@@ -370,7 +372,7 @@ Este trabajo se enmarca en un proyecto que tiene como objetivo general desarroll
 
 \begin{description}
   \item[El Analogue Front End (AFE)] \hfill \\ Es la parte analógica de la norma ISO/IEC 14443A-2.
-  \item[El sensor MOSFET de radiación] \hfill \\ Desarrollado por el Laboratorio de Física de Dispositivos-Microelectrónica (LFDM) de la facultad de ingeniería de la UBA.
+  \item[El sensor MOSFET de radiación] \hfill \\ Desarrollado por el Laboratorio de Física de Dispositivos-Microelectrónica (LFDM) de la Facultad de Ingeniería de la UBA~\cite{Lipovetzky_2013}\cite{mosfet_mismatch_amplification}\cite{6MV_LINAC}. El sensor es un transistor MOS de óxido grueso completamente compatible con el proceso de fabricación CMOS. Su elevado espesor de óxido ($\sim$40 veces mayor al nativo) permite obtener una sensibilidad adecuada para radioterapia y al mismo tiempo puede integrarse en el chip con otros circuitos. Durante la exposición a radiación ionizante todos los transistores del chip reciben la misma dosis de radiación, pero  los efectos sobre los transistores nativos del proceso de espesor de óxido regular son despreciables en el rango correspondiente a la aplicación~\cite{Saks_1984}.
   \item[El Conversor Analógico Digital (ADC, por sus siglas en inglés)] \hfill \\ Encargado de convertir la salida analógica del sensor a una señal digital.
   \item[El RFID Control Digital] \hfill \\ Es el objetivo de esta Tesis.
   \item[El UID Control] \hfill \\ Permite asignar la parte única del UID de la PICC.
@@ -405,7 +407,7 @@ El objetivo de esta tesis es implementar el bloque del RFID Control Digital, que
 \FloatBarrier
 \chapter{Implementación y Verificación}
 
-La implementación de todos los módulos y los bancos de prueba se escriben con el HDL (Hardware Description Language) SystemVerilog, el cual  es definido en IEEE 1800~\cite{ieee1800}. SystemVerilog es basado en Verilog,  formalmente definido en IEEE 1364~\cite{ieee1364}. SystemVerilog es conocido principalmente como un HDL para verificación debido a sus extensiones sustanciales a verilog en ese ámbito, por ejemplo en la adicción de conceptos de programación orientados a objetivos (como clases), y aserciones. Además SystemVerilog tiene varias ventajas a Verilog para uso en síntesis~\cite{synthesisable_sv}, por ejemplo:
+La implementación de todos los módulos y los bancos de prueba se escriben con el HDL (Hardware Description Language) SystemVerilog, el cual  es definido en IEEE 1800~\cite{ieee1800}. SystemVerilog es basado en Verilog,  formalmente definido en IEEE 1364~\cite{ieee1364}. SystemVerilog es conocido principalmente como un HDL para verificación debido a sus extensiones sustanciales a verilog en ese ámbito, por ejemplo en la adición de conceptos de programación orientados a objetivos (como clases), y aserciones. Además SystemVerilog tiene varias ventajas a Verilog para uso en síntesis~\cite{synthesisable_sv}, por ejemplo:
 
 \begin{description}
   \item[Enumeraciones (enum) y estructuras (struct)] \hfill \\ Como en el lenguaje de programación C.
@@ -429,7 +431,7 @@ La implementación de esta tesis está dividida en dos: 1) El núcleo IP genéri
 
 La norma IEEE de SystemVerilog define un interfaz como:
 
-\begin{displaycquote}[traducción mía]{ieee1800}
+\begin{displaycquote}[traducido de][]{ieee1800}
 A su nivel más bajo, un interfaz es un conjunto nombrado de nets o variables. La interfaz es instanciada en un diseño y puede ser accedida por un puerto como un ítem sencillo; las nets o variables componentes [pueden ser] referidos cuando sea necesario. Una proporción significativa de un diseño verilog frecuentemente consiste en listas de puertos y listas de conexiones, los que son simplemente repeticiones de nombres. La habilidad de reemplazar un grupo de nombres con un nombre simple puede reducir significativamente el tamaño de una descripción y mejorar su mantenibilidad.
 \end{displaycquote}
 
@@ -472,7 +474,7 @@ La \textit{tx\_interface} contiene:
   \item \textit{req}: El sumidero usa esta señal para pedir que la fuente envíe el siguiente bit / byte de la trama. La norma ISO/IEC 14443A-2 define la duración de bits como 128 ciclos de la portadora, por lo tanto esta señal es necesaria para limitar la tasa de envío de datos.
 \end{itemize}
 
-Cuando una fuente está lista para transmitir una trama se establece el primer bit / byte de la trama en la señal \textit{data} y fija \textit{data\_valid} en ‘1’. El sumidero puede utilizar la señal \textit{data\_valid} para ver si la fuente tiene data enviar. Después de haber leído la primera bit~/~byte de data, el sumidero fija la señal \textit{req} en ‘1’ durante un ciclo del reloj. La fuente detecta ese pulso y si hay más data a enviar, se actualiza la \textit{data} con el siguiente bit / byte, dejando \textit{data\_valid} en ‘1’. Este proceso repite hasta que la fuente no tiene más data a enviar, y después del último pulso en la \textit{req}, se fija \textit{data\_valid} en ‘0’. La \figref{fig:tx_iface} muestra una simulación de la transmisión de una trama de 16 bits con una \textit{tx\_interface} de bytes, y su conversión a una serie de bits. Arriba están las señales en la \textit{tx\_interface} de bytes enviando la data 0xAE, 0x42. Abajo están las señales en una \textit{tx\_interface} de bits representando la misma trama.
+Cuando una fuente está lista para transmitir una trama se establece el primer bit / byte de la trama en la señal \textit{data} y fija \textit{data\_valid} en ‘1’. El sumidero puede utilizar la señal \textit{data\_valid} para ver si la fuente tiene datos para enviar. Después de haber leído la primera bit~/~byte de data, el sumidero fija la señal \textit{req} en ‘1’ durante un ciclo del reloj. La fuente detecta ese pulso y si hay más datos a enviar, se actualiza la \textit{data} con el siguiente bit / byte, dejando \textit{data\_valid} en ‘1’. Este proceso repite hasta que la fuente no tiene más datos a enviar, y después del último pulso en la \textit{req}, se fija \textit{data\_valid} en ‘0’. La \figref{fig:tx_iface} muestra una simulación de la transmisión de una trama de 16 bits con una \textit{tx\_interface} de bytes, y su conversión a una serie de bits. Arriba están las señales en la \textit{tx\_interface} de bytes enviando la data 0xAE, 0x42. Abajo están las señales en una \textit{tx\_interface} de bits representando la misma trama.
 
 La \textit{tx\_interface} también incluye tres aserciones que verifican: Las señales son correctas en el estado de reset, \textit{req} es ‘1’ solo para la duración de un ciclo del reloj, y que \textit{data}, \textit{data\_valid}, \textit{data\_bits} y \textit{last\_bit\_in\_byte} solo cambian estado cuando \textit{data\_valid} está ‘0’ o en los cuatro ciclos después de un pulso de req. La última aserción es para verificar que la fuente puede proveer datos cuándo es pedido con la señal \textit{req} antes de que el sumidero la necesita.
 
@@ -489,7 +491,7 @@ La \textit{tx\_interface} también incluye tres aserciones que verifican: Las se
 \FloatBarrier
 \section{Marco de Verificación}
 
-Simulación y verificación es una parte muy importante del diseño digital. En un informe de 2020 sobre las tendencias de diseño y verificación de ICs y ASICs~\cite{verification_trends_2020}, los autores encontraron que en promedio más de 50\% del tiempo de un proyecto es utilizado en verificación. También encontraron que en promedio hay un ingeniero de verificación por cada ingeniero de diseño, además los ingenieros de diseño gastan aproximadamente la mitad de su tiempo verificando sus diseños.
+Simulación y verificación son una parte muy importante del diseño digital. En un informe de 2020 sobre las tendencias de diseño y verificación de ICs y ASICs~\cite{verification_trends_2020}, los autores encontraron que en promedio más de 50\% del tiempo de un proyecto es utilizado en verificación. También encontraron que en promedio hay un ingeniero de verificación por cada ingeniero de diseño, además los ingenieros de diseño gastan aproximadamente la mitad de su tiempo verificando sus diseños.
 
 En esta tesis se utiliza verificación funcional mediante simulaciones con la herramienta VCS de Synopsys. Las simulaciones son completamente automatizadas y son ejecutadas con un comando sencillo utilizando un Makefile, por ejemplo: “make serialiser\_tb”.
 
@@ -1556,7 +1558,7 @@ El UID de la PICC es la concatenación del parámetro \textit{UID\_FIXED} y la e
     \item [UIDSize\_TRIPLE:] 80 bits, 3 niveles cascadas.
 \end{description}
 
-Un bloque “generate” es usado para partir el UID y agregar las tags cascadas al tiempo de elaboración, de la forma que muestra la \figref{fig:cascade_levels}. Hay una señal \textit{current\_cascade\_level} que indica en qué lazo de anticolisión la PICC está actualmente. Usando esa señal y un mux, una señal \textit{current\_cascade\_uid\_data} está asignada con los datos correspondientes para el nivel de cascada actual. Finalmente cada nivel de cascada termina con un byte BCC (Block Check Character), lo que es el XOR de los últimos cuatros bytes, este valor es calculado y incluido en la señal \textit{current\_cascade\_uid\_data}. Esta señal es usada con las tramas: ANTICOLLISION y SELECT para comparar el UID enviado en la trama con lo de esta PICC. En el caso de la trama ANTICOLLISION, esta señal también es usada para armar la respuesta. La \figref{fig:init_cascade_levels} muestra el circuito implementado para una PICC con UID doble.
+Un bloque “generate” es usado para partir el UID y agregar las tags cascadas al tiempo de elaboración, de la forma que muestra la \figref{fig:cascade_levels}. Hay una señal \textit{current\_cascade\_level} que indica en qué lazo de anticolisión la PICC está actualmente. Usando esa señal y un mux, una señal \textit{current\_cascade\_uid\_data} está asignada con los datos correspondientes para el nivel de cascada actual. Finalmente cada nivel de cascada termina con un byte BCC (Block Check Character), lo que es el XOR de los últimos cuatros bytes, este valor es calculado e incluido en la señal \textit{current\_cascade\_uid\_data}. Esta señal es usada con las tramas: ANTICOLLISION y SELECT para comparar el UID enviado en la trama con lo de esta PICC. En el caso de la trama ANTICOLLISION, esta señal también es usada para armar la respuesta. La \figref{fig:init_cascade_levels} muestra el circuito implementado para una PICC con UID doble.
 
 Las tramas recibidas desde el PCD son guardadas en un buffer. La trama más larga es la SELECT lo que tiene siete bytes más dos bytes de CRC. Debido a que el CRC es verificado en el módulo \textbf{framing}, no es necesario guardar el CRC en el buffer, así el tamaño del buffer implementado es siete bytes. Si la señal \textit{in\_rx\_iface\_bytes.error} indica un error los demás datos de la trama son ignorados.
 
@@ -1755,7 +1757,7 @@ Hay tres bloques estándares de tipo S definidos en la norma:
 
 Bloques estándares de tipos I y R tienen un bit en el campo PCB que se llama el número de bloque. La PICC también tiene un registro de un bit que guarda un número de bloque. Cuándo la PICC envía un bloque estándar de tipo I o R, el número de bloque en la cabecera debe ser igual al valor en su registro. Las reglas de cómo manipular este registro en la PICC son:
 
-\begin{displaycquote}[traducción mía]{iso14443-4}
+\begin{displaycquote}[traducido de][]{iso14443-4}
   \begin{itemize}
     \item La PICC debe iniciar su número de bloque a ‘1’ cuando está activada.
     \item Cuando la PICC recibe un bloque estándar de tipo I, debe invertir el valor en su registro antes de enviar la respuesta.
@@ -1765,7 +1767,7 @@ Bloques estándares de tipos I y R tienen un bit en el campo PCB que se llama el
 
 Hay dos mensajes que usan bloques estándares de tipo R: R(ACK), y R(NAK). Las reglas de cómo la PICC debe responder a esos mensajes son:
 
-\begin{displaycquote}[traducción mía]{iso14443-4}
+\begin{displaycquote}[traducido de][]{iso14443-4}
   \begin{itemize}
     \item Cuando un R(ACK) o un R(NAK) es recibido, si el número de bloque [en la cabecera] es igual al número de bloque actual de la PICC, la PICC debe reenviar su última respuesta.
     \item Cuándo un R(NAK) es recibido, si el número de bloque [en la cabecera] no es igual al número de bloque actual de la PICC, la PICC debe responder con un R(ACK).
@@ -2307,7 +2309,7 @@ Las pruebas ejecutadas son en la secuencia \textbf{AppCommsTestsSequence}. Unos 
   \item Envía el comando IDENTIFY y verifica la respuesta.
   \item Envía los comando SET\_SIGNAL y AUTO\_READ con pausas en los periodos $t_{sync}$, $t_1$, $t_2$, y $t_{adc}$.
   \item Envía los comando SET\_SIGNAL y AUTO\_READ, y después abandonar el proceso con el comando ABORT.
-  \item Realiza una lectura manualmente mediante los comandos SET\_SIGNAL y GET\_RESULT.
+  \item Realiza una lectura manualmente mediante los comandos SET\_SIGNAL y GET\_\-RESULT.
   \item Envía un comando con un mágico inválido, o un error de CRC.
   \item Envía un comando y después un R(ACK) / R(NAK) con número de bloque igual a lo de la PICC para verificar que la PICC retransmite su última respuesta.
 \end{itemize}
@@ -2444,18 +2446,18 @@ Compilación es el proceso que convierte el diseño a un netlist de nivel de com
 \begin{figure}[htb]
   \centering
   \includegraphics[width=1.0\textwidth]{./img/clock_gating}
-  \caption{Optimización de potencia interna mediante la técnica de Clock Gating~\cite[modificaciones mías]{power_compiler_ug}.}
+  \caption{Optimización de potencia interna mediante la técnica de Clock Gating~\cite[Adaptado de][]{power_compiler_ug}.}
   \label{fig:clock_gating}
 \end{figure}
 
 Al final de la síntesis se obtiene el netlist de nivel compuertas el cual es procesado con IC Compiler 2 para realizar el PnR. A partir de los reportes de síntesis se obtienen los siguientes resultados: el área total de las celdas es \SI{55348}{\micro\meter\squared}, y la estimación de consumo de potencia es \SI{169.5}{\micro\watt}.
 
-Después del script de síntesis se usa la herramienta Formality de Synopsys para verificar formalmente la equivalencia entre la lógica representada en el RTL y en el netlist de post síntesis. Este proceso es realizado mediante métodos formales y no requiere vectores de simulación~\cite[traducción mía]{formality_ug}. Design Compiler produce un archivo SVF que contiene información de orientación sobre los cambios realizados en el proceso de síntesis, por ejemplo: el renombramiento de registros, o el agregado de celdas de Clock Gating. En el proceso conocido como Matching, Formality usa este archivo para encontrar puntos de comparación comunes entre los dos diseños. Un punto de comparación puede ser una salida del diseño o un registro. Desde un punto de comparación Formality determina un cono lógico moviendo atrás que incluye toda la lógica que conecta a ese punto, hasta llegar a otro punto de comparación o una entrada del diseño. La \figref{fig:logic_cones} muestra un cono lógico. Después en el proceso de verificación Formality compara formalmente los conos de los dos diseños por cada punto de comparación.
+Después del script de síntesis se usa la herramienta Formality de Synopsys para verificar formalmente la equivalencia entre la lógica representada en el RTL y en el netlist de post síntesis. Este proceso es realizado mediante métodos formales y no requiere vectores de simulación~\cite[traducido de][]{formality_ug}. Design Compiler produce un archivo SVF que contiene información de orientación sobre los cambios realizados en el proceso de síntesis, por ejemplo: el renombramiento de registros, o el agregado de celdas de Clock Gating. En el proceso conocido como Matching, Formality usa este archivo para encontrar puntos de comparación comunes entre los dos diseños. Un punto de comparación puede ser una salida del diseño o un registro. Desde un punto de comparación Formality determina un cono lógico moviendo atrás que incluye toda la lógica que conecta a ese punto, hasta llegar a otro punto de comparación o una entrada del diseño. La \figref{fig:logic_cones} muestra un cono lógico. Después en el proceso de verificación Formality compara formalmente los conos de los dos diseños por cada punto de comparación.
 
 \begin{figure}[htb]
   \centering
   \includegraphics[width=1.0\textwidth]{./img/logic_cones}
-  \caption{Un cono lógico~\cite[modificaciones mías]{formality_ug}.}
+  \caption{Un cono lógico~\cite[Adaptado de][]{formality_ug}.}
   \label{fig:logic_cones}
 \end{figure}
 
@@ -2539,7 +2541,7 @@ La próxima operación es CTS (Clock Tree Synthesis), el proceso de construir y 
 
 Durante el ruteo de los nets en el diseño es necesario tener cuidado sobre el largo de cada segmento de metal en la ruta, para evitar efectos de antenas. Synopsys define el problema de antenas como:
 
-\begin{displaycquote}[traducción mía]{icc2_imp_ug}
+\begin{displaycquote}[traducido de][]{icc2_imp_ug}
   En la fabricación de circuitos integrados, el óxido de gate puede ser dañado fácilmente por descargas electrostáticas. La carga estática que es acumulada en las rutas de metal durante el proceso de metalización puede dañar el dispositivo o terminar con un fallo del chip entero.
 \end{displaycquote}
 
@@ -2693,7 +2695,7 @@ La estructura del repositorio es:
 .4 bfms\DTcomment{Clases y paquetes de verificación de la aplicación}.
 .4 tb\DTcomment{Los bancos de pruebas por los módulos de la aplicación}.
 .4 vcs\DTcomment{Contiene un Makefile para ejecutar las simulaciones}.
-.5 reports\DTcomment{Logs y informes de cobertura de las simulaciones}.
+.5 reports\DTcomment{Logs e informes de cobertura de las simulaciones}.
 .2 thesis\DTcomment{Fuente de este documento}.
 }
 
@@ -2708,7 +2710,7 @@ La carpeta \textit{fiuba\_thesis/hdl/components} contiene un Git Submodule por e
 .3 bfms\DTcomment{Clases y paquetes de verificación del núcleo IP}.
 .3 tb\DTcomment{Los bancos de pruebas por los módulos del núcleo IP}.
 .3 vcs\DTcomment{Contiene un Makefile para ejecutar las simulaciones}.
-.4 reports\DTcomment{Logs y informes de cobertura de las simulaciones}.
+.4 reports\DTcomment{Logs e informes de cobertura de las simulaciones}.
 }
 
 % Definiciones del protocolo propietario
